@@ -1,2 +1,22 @@
-*.exe*.exe
+*.exe
+# Ignore executables and binaries
+*.exe
+*.dll
+*.msi
+
+# Ignore archives
+*.zip
+*.tar
+*.gz
+*.rar
+*.7z
+
+# Ignore media
+*.mp4
+*.avi
+*.mov
+*.iso
+
+# Ignore logs
+*.log
 
