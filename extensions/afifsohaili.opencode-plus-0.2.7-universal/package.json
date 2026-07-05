@@ -1,0 +1,144 @@
+{
+	"name": "opencode-plus",
+	"displayName": "opencode+",
+	"description": "Enhanced opencode extension with code review features",
+	"version": "0.2.7",
+	"publisher": "afifsohaili",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/afifsohaili/opencode-plus"
+	},
+	"license": "MIT",
+	"icon": "images/icon.png",
+	"galleryBanner": {
+		"color": "#000000",
+		"theme": "dark"
+	},
+	"engines": {
+		"vscode": "^1.94.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [],
+	"main": "./dist/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "opencode-plus.openNewTerminal",
+				"title": "Opencode Plus: Open in new tab",
+				"icon": {
+					"light": "images/button-dark.svg",
+					"dark": "images/button-light.svg"
+				}
+			},
+			{
+				"command": "opencode-plus.addFilepathToTerminal",
+				"title": "Opencode Plus: Add Filepath to Terminal"
+			},
+			{
+				"command": "opencode-plus.continueInNewTab",
+				"title": "Opencode Plus: Continue from last session",
+				"icon": {
+					"light": "images/button-dark.svg",
+					"dark": "images/button-light.svg"
+				}
+			},
+			{
+				"command": "opencode-plus.addComment",
+				"title": "Opencode Plus: Add comment to instance",
+				"icon": {
+					"light": "images/button-dark.svg",
+					"dark": "images/button-light.svg"
+				}
+			}
+		],
+		"menus": {
+			"editor/title": [
+				{
+					"command": "opencode-plus.openNewTerminal",
+					"group": "navigation"
+				}
+			],
+			"editor/context": [
+				{
+					"command": "opencode-plus.addComment",
+					"group": "9_cutcopypaste@5",
+					"when": "editorHasSelection"
+				}
+			],
+			"comments/commentThread/context": [
+				{
+					"command": "opencode-plus.addComment",
+					"group": "inline",
+					"when": "commentController == opencode-comments"
+				}
+			]
+		},
+		"keybindings": [
+			{
+				"command": "opencode-plus.openNewTerminal",
+				"title": "Opencode Plus: Run",
+				"key": "cmd+shift+escape",
+				"mac": "cmd+shift+escape",
+				"win": "ctrl+shift+escape",
+				"linux": "ctrl+shift+escape"
+			},
+			{
+				"command": "opencode-plus.addFilepathToTerminal",
+				"title": "Opencode Plus: Insert At-Mentioned",
+				"key": "cmd+alt+k",
+				"mac": "cmd+alt+k",
+				"win": "ctrl+alt+K",
+				"linux": "ctrl+alt+K"
+			},
+			{
+				"command": "opencode-plus.continueInNewTab",
+				"title": "Opencode Plus: Continue from last session",
+				"key": "cmd+shift+c",
+				"mac": "cmd+shift+c",
+				"win": "ctrl+shift+c",
+				"linux": "ctrl+shift+c"
+			},
+			{
+				"command": "opencode-plus.addComment",
+				"title": "Opencode Plus: Add comment",
+				"key": "cmd+shift+a",
+				"mac": "cmd+shift+a",
+				"win": "ctrl+shift+a",
+				"linux": "ctrl+shift+a",
+				"when": "editorHasSelection"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "bun run package",
+		"compile": "bun run check-types && bun run lint && node esbuild.js",
+		"watch:esbuild": "node esbuild.js --watch",
+		"watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+		"package": "bun run check-types && bun run lint && node esbuild.js --production",
+		"compile-tests": "tsc -p . --outDir out",
+		"watch-tests": "tsc -p . -w --outDir out",
+		"pretest": "bun run compile-tests && bun run compile && bun run lint",
+		"check-types": "tsc --noEmit",
+		"lint": "eslint src",
+		"test": "vscode-test"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.94.0",
+		"@types/mocha": "^10.0.10",
+		"@types/node": "20.x",
+		"@typescript-eslint/eslint-plugin": "^8.31.1",
+		"@typescript-eslint/parser": "^8.31.1",
+		"eslint": "^9.25.1",
+		"esbuild": "^0.25.3",
+		"typescript": "^5.8.3",
+		"@vscode/test-cli": "^0.0.11",
+		"@vscode/test-electron": "^2.5.2"
+	},
+	"__metadata": {
+		"installedTimestamp": 1783217988213,
+		"targetPlatform": "universal",
+		"size": 21314
+	}
+}
