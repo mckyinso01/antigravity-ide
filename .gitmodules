@@ -1,0 +1,6 @@
+[submodule "ARIA-X"]
+	path = ARIA-X
+	url = https://github.com/mckyinso01/ARIA-X.git
+[submodule "RaketMate"]
+	path = RaketMate
+	url = https://github.com/mckyinso01/RaketMate.git
