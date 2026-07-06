@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aetheris - Hugging Face Multi-Agent Hub</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-logo">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Aetheris</h1>
+          <span>Multi-Agent Hub</span>
+        </div>
+      </div>
+      
+      <nav class="sidebar-menu">
+        <a href="#" class="menu-item active" id="nav-agent-builder" data-tab="tab-agent-builder">
+          <i class="fa-solid fa-network-wired"></i>
+          <span>Multi-Agent Builder</span>
+        </a>
+        <a href="#" class="menu-item" id="nav-playground" data-tab="tab-playground">
+          <i class="fa-solid fa-gamepad"></i>
+          <span>Single Model Playground</span>
+        </a>
+        <a href="#" class="menu-item" id="nav-settings" data-tab="tab-settings">
+          <i class="fa-solid fa-sliders"></i>
+          <span>Settings & Config</span>
+        </a>
+      </nav>
+      
+      <div class="sidebar-status">
+        <div class="status-indicator-container">
+          <span class="status-dot offline" id="status-dot"></span>
+          <span id="status-text">HF Key: Missing</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Workspace -->
+    <main class="workspace">
+      <!-- Top Header -->
+      <header class="workspace-header">
+        <div class="header-title">
+          <h2 id="current-tab-title">Multi-Agent Builder</h2>
+          <p id="current-tab-subtitle">Coordinate collaborative agents to build complete layouts and code files for free.</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn btn-secondary" id="btn-quick-check-token">
+            <i class="fa-solid fa-key"></i> Verify Token
+          </button>
+        </div>
+      </header>
+
+      <!-- Content Container -->
+      <div class="workspace-content">
+        
+        <!-- Tab 1: Multi-Agent Builder -->
+        <section class="tab-pane active" id="tab-agent-builder">
+          <div class="grid-layout">
+            <!-- Left Config Panel -->
+            <div class="glass-card config-panel">
+              <h3>Pipeline Configuration</h3>
+              <p class="description">Select free Hugging Face models for each specialized role in the pipeline.</p>
+              
+              <div class="form-group">
+                <label for="select-planner"><i class="fa-solid fa-map-location-dot"></i> Planning Agent</label>
+                <select id="select-planner" class="form-control">
+                  <option value="meta-llama/Llama-3.3-70B-Instruct" selected>Llama 3.3 70B Instruct (Recommended)</option>
+                  <option value="Qwen/Qwen2.5-72B-Instruct">Qwen 2.5 72B Instruct</option>
+                  <option value="mistralai/Mistral-7B-Instruct-v0.3">Mistral 7B Instruct</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="select-uiux"><i class="fa-solid fa-palette"></i> UI/UX Designer Agent</label>
+                <select id="select-uiux" class="form-control">
+                  <option value="Qwen/Qwen2.5-72B-Instruct" selected>Qwen 2.5 72B Instruct (Recommended)</option>
+                  <option value="meta-llama/Llama-3.3-70B-Instruct">Llama 3.3 70B Instruct</option>
+                  <option value="mistralai/Mistral-7B-Instruct-v0.3">Mistral 7B Instruct</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="select-coder"><i class="fa-solid fa-code"></i> Coding & Logic Agent</label>
+                <select id="select-coder" class="form-control">
+                  <option value="Qwen/Qwen2.5-Coder-32B-Instruct" selected>Qwen 2.5 Coder 32B (Recommended)</option>
+                  <option value="Qwen/Qwen2.5-Coder-7B-Instruct">Qwen 2.5 Coder 7B (Fast)</option>
+                  <option value="meta-llama/Meta-Llama-3-8B-Instruct">Llama 3 8B Instruct</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="select-reviewer"><i class="fa-solid fa-shield-halved"></i> Code Reviewer Agent</label>
+                <select id="select-reviewer" class="form-control">
+                  <option value="Qwen/Qwen2.5-Coder-32B-Instruct" selected>Qwen 2.5 Coder 32B (Recommended)</option>
+                  <option value="meta-llama/Llama-3.3-70B-Instruct">Llama 3.3 70B Instruct</option>
+                  <option value="Qwen/Qwen2.5-72B-Instruct">Qwen 2.5 72B Instruct</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="select-marketing"><i class="fa-solid fa-chart-line"></i> Marketing & Monetization Agent</label>
+                <select id="select-marketing" class="form-control">
+                  <option value="meta-llama/Llama-3.3-70B-Instruct" selected>Llama 3.3 70B Instruct (Recommended)</option>
+                  <option value="Qwen/Qwen2.5-72B-Instruct">Qwen 2.5 72B Instruct</option>
+                  <option value="mistralai/Mistral-7B-Instruct-v0.3">Mistral 7B Instruct</option>
+                </select>
+              </div>
+
+              <div class="form-group border-top">
+                <label for="app-prompt">What application do you want to build?</label>
+                <textarea id="app-prompt" class="form-control" rows="4" placeholder="Describe the application, layout, or script in detail (e.g. 'A premium dark mode Pomodoro timer with stats, custom sounds, and animated transitions')."></textarea>
+              </div>
+
+              <button class="btn btn-primary btn-block" id="btn-start-pipeline">
+                <i class="fa-solid fa-circle-play"></i> Run Multi-Agent Builder
+              </button>
+            </div>
+
+            <!-- Right Execution Workspace -->
+            <div class="glass-card output-panel flex-column">
+              <div class="pipeline-header">
+                <h3>Execution Timeline</h3>
+                <div class="pipeline-loader hidden" id="pipeline-loader">
+                  <i class="fa-solid fa-spinner fa-spin"></i> Running Pipeline...
+                </div>
+              </div>
+              
+              <!-- Pipeline Timeline UI -->
+              <div class="timeline">
+                <div class="timeline-item" id="time-planner">
+                  <div class="timeline-node"><i class="fa-solid fa-map"></i></div>
+                  <div class="timeline-content">
+                    <h4>Planning Agent</h4>
+                    <span class="badge badge-idle">Idle</span>
+                  </div>
+                </div>
+                <div class="timeline-item" id="time-uiux">
+                  <div class="timeline-node"><i class="fa-solid fa-palette"></i></div>
+                  <div class="timeline-content">
+                    <h4>UI/UX Designer Agent</h4>
+                    <span class="badge badge-idle">Idle</span>
+                  </div>
+                </div>
+                <div class="timeline-item" id="time-coder">
+                  <div class="timeline-node"><i class="fa-solid fa-code"></i></div>
+                  <div class="timeline-content">
+                    <h4>Coding & Logic Agent</h4>
+                    <span class="badge badge-idle">Idle</span>
+                  </div>
+                </div>
+                <div class="timeline-item" id="time-reviewer">
+                  <div class="timeline-node"><i class="fa-solid fa-shield-halved"></i></div>
+                  <div class="timeline-content">
+                    <h4>Code Reviewer Agent</h4>
+                    <span class="badge badge-idle">Idle</span>
+                  </div>
+                </div>
+                <div class="timeline-item" id="time-marketing">
+                  <div class="timeline-node"><i class="fa-solid fa-chart-line"></i></div>
+                  <div class="timeline-content">
+                    <h4>Marketing Agent</h4>
+                    <span class="badge badge-idle">Idle</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Real-time Console & File View -->
+              <div class="output-container">
+                <div class="tab-header">
+                  <button class="tab-btn active" data-output="out-planner">Plan</button>
+                  <button class="tab-btn" data-output="out-html">HTML Layout</button>
+                  <button class="tab-btn" data-output="out-css">CSS Styles</button>
+                  <button class="tab-btn" data-output="out-js">JS Logic</button>
+                  <button class="tab-btn" data-output="out-review">Review</button>
+                  <button class="tab-btn" data-output="out-marketing">Marketing</button>
+                </div>
+                <div class="tab-body">
+                  <pre class="code-view active" id="out-planner-pre">Plan details will appear here...</pre>
+                  <pre class="code-view" id="out-html-pre">HTML layout structure will appear here...</pre>
+                  <pre class="code-view" id="out-css-pre">CSS style properties will appear here...</pre>
+                  <pre class="code-view" id="out-js-pre">JavaScript interactive code will appear here...</pre>
+                  <pre class="code-view" id="out-review-pre">Code review and suggestions will appear here...</pre>
+                  <pre class="code-view" id="out-marketing-pre">Marketing and monetization strategy will appear here...</pre>
+                </div>
+              </div>
+
+              <!-- Export Controls -->
+              <div class="export-actions hidden" id="pipeline-exports">
+                <button class="btn btn-secondary" id="btn-copy-code"><i class="fa-solid fa-copy"></i> Copy Files</button>
+                <button class="btn btn-emerald" id="btn-download-zip"><i class="fa-solid fa-download"></i> Save Project Files</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tab 2: Single Model Playground -->
+        <section class="tab-pane" id="tab-playground">
+          <div class="grid-layout">
+            <!-- Left Side controls -->
+            <div class="glass-card config-panel">
+              <h3>Task Selection</h3>
+              
+              <div class="form-group">
+                <label for="select-play-task">Task Type</label>
+                <select id="select-play-task" class="form-control">
+                  <option value="chat" selected>Chat & Reasoning LLM</option>
+                  <option value="text-to-image">Text to Image Generation</option>
+                  <option value="text-to-speech">Text to Speech Synthesis</option>
+                  <option value="image-classification">Image Classification</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="select-play-model">AI Model</label>
+                <select id="select-play-model" class="form-control">
+                  <!-- Dynamically populated depending on task -->
+                </select>
+                <div class="custom-model-input-wrapper hidden" id="custom-model-container">
+                  <input type="text" id="input-custom-model" class="form-control mt-2" placeholder="e.g. meta-llama/Llama-3.2-1B-Instruct">
+                  <small class="text-muted">Enter any Hugging Face model repository path.</small>
+                </div>
+              </div>
+
+              <!-- Chat Input Fields -->
+              <div class="playground-task-inputs" id="inputs-chat">
+                <div class="form-group">
+                  <label for="play-chat-prompt">User Prompt</label>
+                  <textarea id="play-chat-prompt" class="form-control" rows="5" placeholder="Ask anything..."></textarea>
+                </div>
+              </div>
+
+              <!-- Image Input Fields -->
+              <div class="playground-task-inputs hidden" id="inputs-image">
+                <div class="form-group">
+                  <label for="play-image-prompt">Image Prompt</label>
+                  <textarea id="play-image-prompt" class="form-control" rows="5" placeholder="A futuristic cyberpunk cafe, neon signs, rainy night..."></textarea>
+                </div>
+              </div>
+
+              <!-- TTS Input Fields -->
+              <div class="playground-task-inputs hidden" id="inputs-tts">
+                <div class="form-group">
+                  <label for="play-tts-prompt">Text to Synthesize</label>
+                  <textarea id="play-tts-prompt" class="form-control" rows="5" placeholder="Enter text to convert to a computer generated voice..."></textarea>
+                </div>
+              </div>
+
+              <!-- Image Classification Input Fields -->
+              <div class="playground-task-inputs hidden" id="inputs-classification">
+                <div class="form-group">
+                  <label>Upload Image</label>
+                  <div class="upload-dropzone" id="dropzone">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <p>Click or drag image to classify</p>
+                    <input type="file" id="upload-image-file" accept="image/*" class="hidden">
+                  </div>
+                  <div class="preview-uploaded-image-wrapper hidden" id="uploaded-image-preview-container">
+                    <img id="uploaded-image-preview" src="#" alt="Upload preview">
+                  </div>
+                </div>
+              </div>
+
+              <button class="btn btn-primary btn-block" id="btn-run-playground">
+                <i class="fa-solid fa-play"></i> Run Inference
+              </button>
+            </div>
+
+            <!-- Right Side outputs -->
+            <div class="glass-card output-panel flex-column">
+              <h3>Playground Output</h3>
+              
+              <!-- Loader -->
+              <div class="playground-loader-wrapper hidden" id="playground-loader">
+                <div class="spinner"></div>
+                <p>Generating response from Hugging Face...</p>
+              </div>
+
+              <!-- Outputs display area -->
+              <div class="playground-output-container" id="playground-output-area">
+                
+                <!-- Chat Output -->
+                <div class="output-subpane" id="play-out-chat">
+                  <div class="chat-thread" id="chat-thread-container">
+                    <div class="chat-bubble assistant">
+                      <p>Select a model on the left, type a prompt, and click Run Inference to test Hugging Face chat completion.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Image Output -->
+                <div class="output-subpane hidden" id="play-out-image">
+                  <div class="image-result-wrapper">
+                    <img id="play-out-img" src="" alt="AI generated image output" class="hidden">
+                    <div class="placeholder-result" id="img-placeholder">
+                      <i class="fa-regular fa-image"></i>
+                      <p>Generated image output will display here</p>
+                    </div>
+                  </div>
+                  <div class="image-actions hidden" id="image-action-buttons">
+                    <a href="#" class="btn btn-emerald" id="btn-download-image" download="generated_image.png">
+                      <i class="fa-solid fa-download"></i> Download Image
+                    </a>
+                  </div>
+                </div>
+
+                <!-- TTS Output -->
+                <div class="output-subpane hidden" id="play-out-tts">
+                  <div class="audio-result-wrapper">
+                    <div class="placeholder-result" id="audio-placeholder">
+                      <i class="fa-solid fa-volume-high"></i>
+                      <p>Generated audio output will display here</p>
+                    </div>
+                    <div class="audio-player-container hidden" id="audio-player-wrapper">
+                      <audio id="play-out-audio" controls></audio>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Classification Output -->
+                <div class="output-subpane hidden" id="play-out-classification">
+                  <div class="placeholder-result" id="class-placeholder">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <p>Image classification details will display here</p>
+                  </div>
+                  <div class="classification-results-list hidden" id="classification-results-wrapper">
+                    <!-- Dynamic bar graphs are inserted here -->
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tab 3: Settings -->
+        <section class="tab-pane" id="tab-settings">
+          <div class="glass-card settings-card">
+            <h3>Hugging Face Configuration</h3>
+            <p class="description">Set up your authentication details to access Hugging Face serverless services. Keys are saved locally in your browser storage and `.env` configuration file.</p>
+            
+            <div class="form-group">
+              <label for="settings-token-input"><i class="fa-solid fa-key"></i> Hugging Face API Access Token</label>
+              <input type="password" id="settings-token-input" class="form-control" placeholder="hf_...">
+              <small class="text-muted">Generate a token for free by creating an account on <a href="https://huggingface.co/settings/tokens" target="_blank">huggingface.co</a>.</small>
+            </div>
+
+            <div class="settings-status-box status-inactive" id="settings-status-box">
+              <i class="fa-solid fa-circle-exclamation" id="settings-status-icon"></i>
+              <div>
+                <h4 id="settings-status-title">Status: Disconnected</h4>
+                <p id="settings-status-desc">Input your API access token above and click Save Configuration.</p>
+              </div>
+            </div>
+
+            <button class="btn btn-primary" id="btn-save-settings">
+              <i class="fa-solid fa-floppy-disk"></i> Save Configuration
+            </button>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Toast notifications -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
