@@ -35,7 +35,8 @@ def load_env_token():
 def query_api(model, payload, token, is_binary_input=False, content_type="application/json"):
     url = f"https://api-inference.huggingface.co/models/{model}"
     headers = {
-        "Content-Type": content_type
+        "Content-Type": content_type,
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     }
     if token:
         headers["Authorization"] = f"Bearer {token}"
@@ -76,9 +77,10 @@ def query_api(model, payload, token, is_binary_input=False, content_type="applic
     raise RuntimeError("Model failed to load after multiple retries")
 
 def query_chat_api(model, messages, token):
-    url = "https://api-inference.huggingface.co/v1/chat/completions"
+    url = "https://router.huggingface.co/v1/chat/completions"
     headers = {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     }
     if token:
         headers["Authorization"] = f"Bearer {token}"

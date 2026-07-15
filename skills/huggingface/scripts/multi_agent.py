@@ -34,7 +34,8 @@ def load_env_token():
 def query_chat_api(model, messages, token):
     url = "https://router.huggingface.co/v1/chat/completions"
     headers = {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     }
     if token:
         headers["Authorization"] = f"Bearer {token}"
