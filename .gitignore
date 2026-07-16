@@ -35,3 +35,7 @@ npm-debug.log
 yarn-error.log
 # Ignore attorneyAgent project since it will be its own repository
 attorneyAgent/
+
+# Local development ignores
+scratch/
+*.code-workspace
