@@ -39,3 +39,21 @@ attorneyAgent/
 # Local development ignores
 scratch/
 *.code-workspace
+
+# IDE Configs and Extensions ignores
+extensions/
+.gemini/
+.vscode/
+.cursor/
+.trae/
+.trae-cn/
+.claude/
+.codex/
+.opencode/
+.pi/
+.kiro/
+
+# Nested Project ignores
+antigravity-clean/
+marketmaster-ai/
+social_launch/
