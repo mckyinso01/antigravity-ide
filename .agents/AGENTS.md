@@ -232,6 +232,15 @@ Every product landing page and enterprise marketing portal built under the Softw
 2. **Pillar 2: Custom Agency Build vs Turnkey Full Source Code Buyout**: Comparing $40,000–$120,000 agency development costs and 6-month delays against our 1-click **$4,999 Full Source Code & IP Buyout**.
 3. **Pillar 3: White-Label Agency Revenue ROI**: Demonstrating how agencies purchasing a **$1,499 White-Label License** re-sell to 10–20 clients at $250/mo to generate $2,500–$5,000/mo recurring revenue (paying for itself in 30 days).
 
+### 21. Mandatory Desktop App Install & PWA Showcase Protocol
+
+Every product landing page and marketing portal built under the Software Factory workflow **MUST** incorporate a **`<DesktopAppInstallShowcase />`** component demonstrating native Desktop App capabilities:
+
+1. **1-Click Native Desktop Installation Badge**: Displaying instant installation support for Windows, macOS, and Linux with custom high-resolution Desktop Icons.
+2. **Standalone Window Experience**: Highlighting zero browser address bar clutter, taskbar icon branding, and instant desktop shortcut launching.
+3. **Offline Resilience & PWA Capability**: Demonstrating offline data caching, background sync, and sub-millisecond local startup times.
+
+
 
 
 
