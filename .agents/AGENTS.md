@@ -56,13 +56,15 @@ To run a complete, high-integrity UI/UX audit using the Saccade visual evaluator
 
 ### 6. Role-Based Subagent Council & MCP Wiring Matrix
 
-- **CTO Master Orchestrator**: Coordinates tasks, enforces zero-quota policies, and monitors stage telemetry (`Chrome DevTools MCP`, `Firebase MCP`, `CloudRun MCP`, `GitHub MCP`, `GKE MCP`).
-- **OpenAI DRI Code Synthesis Subagent**: Single-owner feature drafting and code compilation (`huggingface-multi-agent`, `gopls-mcp-server`).
+- **CTO Master Orchestrator**: Coordinates tasks, enforces zero-quota policies, monitors stage telemetry, and enforces Sections 14–19 Dual-State Cognitive Engine (`Chrome DevTools MCP`, `Firebase MCP`, `CloudRun MCP`, `GitHub MCP`, `GKE MCP`).
+- **OpenAI DRI Code Synthesis Subagent**: Single-owner feature drafting executing State 1 Code Drafting ➔ State 2 Proactive 5-Question Journey Reflection ➔ State 3 Sukdulang-Antas Composition (`huggingface-multi-agent`, `gopls-mcp-server`).
+- **Apple HIG & Accessibility Reviewer**: Audits WCAG 2.2 AAA ratios, touch targets (>= 48px), Semantic Microcopy Action Verbs, Visual Signifiers, and Level 2/3 Slide Drawers (`chrome-devtools-mcp` -> `take_screenshot`).
+- **Ecosystem Integration Solutions Architect**: Proactively discovers, designs, and wires 3 to 5 domain-aligned 3rd-party connectors (`<EcosystemIntegrationsHub />`, Slack, Teams, QuickBooks, Stripe, Zapier, BigQuery).
 - **Google SRE & Performance Auditor**: Measures Core Web Vitals, runs 100/100 Lighthouse audits, and validates Speculation Rules pre-rendering (`chrome-devtools-mcp` -> `lighthouse_audit`, `evaluate_script`).
 - **Stripe Security & Cryptography Architect**: Enforces sub-10ms atomic ACID queries, AES-256-CBC encryption, and Kyverno In-Toto admission gates (`alloydb-postgresql`, `datacloud_cloud-sql_remote`, `mcp-server-neon`).
-- **Apple HIG & Accessibility Reviewer**: Audits WCAG 2.2 AAA ratios, touch targets (>= 48px), and fluid animations (`chrome-devtools-mcp` -> `take_screenshot`).
 - **Netflix Chaos & Offline Resilience Tester**: Executes chaos tests, verifies Zephyr local semantic router fallbacks, and tests 429 rate limit failovers (`google-cloud-logging`, `manage_task`, `schedule`).
 - **Enterprise Self-Host Sanitization Auditor**: Verifies 3-step provisioning wizard and atomic database table purges (`run_command` -> `npm test`, `vite build`, `purgeClientState`).
+
 
 ### 7. Markdownlint MD060 Table Column & Clean Documentation Protocol
 
@@ -96,7 +98,7 @@ To run a complete, high-integrity UI/UX audit using the Saccade visual evaluator
 
 ### 12. Enterprise Pre-Deployment Multi-Layer Testing Protocol (FAANG & 7-Point Quality Standards)
 
-Before any application receiving final clearance for production deployment or client delivery, the Orchestrator **MUST** execute and pass all **18 Tiers of FAANG-Grade & Enterprise Multi-Layer Testing**:
+Before any application receiving final clearance for production deployment or client delivery, the Orchestrator **MUST** execute and pass all **19 Tiers of FAANG-Grade & Enterprise Multi-Layer Testing**:
 
 1. **Tier 1: Unit & Functional Logic Verification (`Vitest` / `npm test`)**: Automated unit testing for state mutations, utility functions, and calculation logic.
 2. **Tier 2: Strict TypeScript Compiler Audit (`npm run lint` / `tsc --noEmit`)**: Mandatory 0 type errors, 0 missing symbols, and 0 implicit `any` leaks.
@@ -116,6 +118,120 @@ Before any application receiving final clearance for production deployment or cl
 16. **Tier 16: 4-Tier Commercial Licensing Modal Audit**: Full-logic modals for Self-Hosted, White-Label Agency, Perpetual Source Code IP, and Cloud SaaS.
 17. **Tier 17: 7-Role Subagent Council Multi-Angle Review**: CTO, OpenAI DRI, Google SRE, Stripe Security, Apple HIG, Netflix Chaos, and Self-Host Auditor.
 18. **Tier 18: Pre-Commit & GitHub Remote Synchronization Gate**: 100% clean working tree (`nothing to commit, working tree clean`) and remote sync to GitHub origin main.
+19. **Tier 19: Full UI/UX Intent, Affordance & Ecosystem Evaluator Audit (`evaluate_ui_ux_intent.ts`)**: Mandatory automated pre-commit execution verifying Component Continuity (100%), Semantic Microcopy (>=95%), Contextual Guidance (100%), Visual Signifiers (100%), Dark Mode Contrast (100%), and Ecosystem Integrations (100%).
+
+
+### 13. Mandatory Titan Ultimate 15-Point UI/UX & Software Engineering Blueprint
+
+Every application built or enhanced under the Software Factory workflow **MUST** incorporate the following 15-Point Master Framework:
+
+#### UI/UX Design Patterns & Visual WOW-Effects
+1. **Kinetic Glowing Neon Borders**: Kinetic animated gradient outlines (`border-image: conic-gradient`) on active cards, status badges, and critical action nodes.
+2. **Liquid Glassmorphism 3.0**: Multi-layered dynamic backdrop blurs (`backdrop-blur-xl bg-[#131316]/80`) with light-refracting dynamic highlights.
+3. **Master-Detail Overlay & Progressive Disclosure**: Summary cards opening in-context drill-down modals/sheets (`DepartmentDetailModal`, `QuickActionDrawer`) without navigating away from the current view (Zero Context-Switching).
+4. **Global Command Palette (`Ctrl+K`)**: Instant keyboard action dispatcher across the whole app for power-user shortcuts and search.
+5. **WCAG 2.2 AAA Contrast & Accessibility Lock**: Minimum 4.5:1 text contrast ratio, 48px touch targets, and visible focus rings (`focus:ring-2 focus:ring-purple-500/50`).
+6. **Spring Physics Micro-Interactions**: Tactile button nudges and spring physics transitions (`cubic-bezier(0.34, 1.56, 0.64, 1)`).
+7. **Spatial 3D Command Matrices**: Apple HIG-inspired spatial 3D perspective grids (60 FPS).
+8. **Cryptographic Trust Badges**: Real-time hash digests and ZKP privacy status rings on security components.
+9. **Adaptive Generative UI**: Layout morphing based on data volume, user role, and active interactions.
+10. **Self-Healing Canvas Fallbacks**: Dual-mode HTML5 Canvas rendering on media load failure to guarantee 0 black-screen errors.
+
+#### Advanced Software Engineering Techniques
+11. **AI Voice-Biometric Spectral Waveform Visualizer**: Web Audio API Fast Fourier Transform (FFT) reactive audio visualizer.
+12. **WebGPU Quantum Shader Grid**: GPU-accelerated ambient reactive particle matrix with zero CPU overhead.
+13. **Biometric Thermal Heatmap Analyzer**: Visual attention tracking overlay highlighting high-value action nodes.
+14. **WebRTC Ghost Cursors & Swarm**: Peer-to-peer live multi-user presence and ghost cursor tracking.
+15. **Speculation Rules 0ms Teleportation Engine**: Background pre-rendering via Chromium Speculation Rules API for instantaneous page navigation.
+
+### 14. Component-by-Component World-Class UI/UX Master Catalog (12 Core UI Primitives)
+
+Whenever designing, generating, or refining specific UI components, all agents **MUST** follow these 12 component-level interaction and visual standards:
+
+1. **Views & Containers**: Use Bento Grid asymmetric layouts, Kinetic Animated Neon Border Shells, Liquid Glassmorphism 3.0 floating panels, and Inverted-L workspace structures.
+2. **Tabs & Segmented Controls**: Use Framer Motion sliding pill selection indicators (`layoutId`), real-time badge-augmented counts (`Alerts (2)`), and animated gradient underlines.
+3. **Buttons & Action Nodes**: Enforce spring physics tactile nudges (`cubic-bezier(0.34, 1.56, 0.64, 1)`), shimmer loading states (`"Authorizing..."`), and icon-only tooltip badges (`⌘Enter`).
+4. **Inputs & Textareas**: Use glowing focus rings (`focus:ring-2 focus:ring-purple-500/50`), auto-growing expandable textareas, and AI intent auto-suggest inline ghost text.
+5. **Tooltips & Popovers**: Use ultra-contextual backdrop-blurred glass tooltips (`backdrop-blur-md`), embedded hotkey badges (`⌘K`), and interactive hover card popovers.
+6. **Folders, Trees & File Explorers**: Use smooth collapsible arrow rotations (`rotate-90`), drag-and-drop placement lines, and file type color badges (TS ➔ Blue, JSON ➔ Yellow).
+7. **Drawers & Slide-Over Sheets**: Use non-blocking right-side slide drawers (`SlideOverDrawer` with `bg-slate-950/40 backdrop-blur-xs`), multi-tier nested drawer stacking, and mobile responsive bottom sheets.
+8. **Borders, Outlines & Dividers**: Use kinetic conic-gradient rotating borders (`@property --angle`), subdued theme-aligned grid lines (`border-slate-800/80`), and pulsing status rings (`animate-ping`).
+9. **Toggle Buttons, Switches & Radios**: Enforce smooth thumb sliding switches with haptic bounce, dual-state icon indicators (Sun/Moon, Lock/Unlock), and segmented multi-state toggle bars.
+10. **Modals, Dialogs & Command Palettes**: Use floating liquid glass dialogs, global command palettes (`Ctrl+K`), ESC key dismiss animations, and scroll-locked backdrops.
+11. **Dropdowns, Context Menus & Selectors**: Support right-click canvas context menus, searchable filterable dropdowns, and multi-select tag chips.
+12. **Toast Alerts, Badges & Status Indicators**: Enforce 3-second auto-dismissing spring bounce toasts (`animate-bounce`), cryptographic hash status badges (`sha256:...`), and pulsing latency health dots.
+
+### 15. Mandatory Component Continuity & Subagent Deep Research Protocol (Zero-Quota Standard)
+
+Every agent, subagent, and automated code synthesis pipeline operating in this workspace **MUST STRICTLY COMPLY** with these two mandatory directives:
+
+#### A. Data Entity Interactive Intent & Component Continuity Rule
+- **Data Entity = Interactive Object**: Any UI element rendering a Data Entity (Department, Employee, Invoice, Lead, Product, Ticket, Campaign) **MUST NOT** be rendered as static text/markup. It MUST have an active `onClick` handler.
+- **Mandatory 3-Tier Hierarchy**: Every list, grid, or card rendering entities MUST be wired to a Level 2 Slide Drawer (`SlideOverDrawer`), which in turn MUST support nested Level 3 Leaf Record Drawers (`EmployeeDetailDrawer`).
+- **Empathy Self-Check**: Before claiming completion, the agent MUST run a mental user-journey check: *"If a user clicks this card/row/avatar, what is their natural expectation? Will they be frustrated if nothing opens?"* If yes, the agent MUST wire the follow-up drawer before declaring done.
+
+#### B. Subagent Mandatory Deep Research Rule (Strict Zero Quota)
+- **Pre-Task Research Obligation**: Every subagent and council member MUST conduct pre-task deep research (using cached knowledge, AGENTS.md directives, local search, and free Hugging Face endpoints) BEFORE producing recommendations or code.
+- **Zero-Quota Enforcement**: All research and subagent operations MUST run under **100% Zero-Quota Simulation Mode** (using local scripts, free endpoints, or cached knowledge) with **$0 API credit consumption**.
+
+### 16. Semantic Microcopy & Action Verb Intent Protocol
+
+Every button, anchor, or interactive element with microcopy text MUST trigger the exact user journey promised by its semantic action verb:
+
+1. **"Preview" / "Click to Preview"**: MUST open a dynamic live preview modal or slide-over drawer window.
+2. **"Inspect" / "View Profile" / "Bio"**: MUST open a Level 3 Leaf Record Drawer showing full history, hire date, performance wave, and direct management actions.
+3. **"Configure" / "Customize" / "Settings"**: MUST open a configuration panel or brand customizer modal.
+4. **"Authorize" / "Approve" / "Grant"**: MUST execute the transaction and emit an instant toast feedback alert with an audit log record.
+5. **"Export" / "Download"**: MUST trigger file compilation and display a download notification toast.
+
+### 17. Contextual Guidance, Visual Affordance & Machine Experience (MX) Protocol
+
+All agents and subagents MUST parse instructional sub-text, visual symbols, and structural affordances to wire context-aware reactive UI flows:
+
+1. **Instructional Microcopy Parsing**: Whenever a container includes helper microcopy (e.g., *"Select options below to compare"* or *"Drag files here"*), the agent MUST automatically inject and wire a Floating Selection Action Bar or Dropzone Upload Handler.
+2. **Visual Signifier Contract**: All `::` drag handles, `v` accordions, and `border-dashed` containers MUST be bound to active drag-and-drop, expand/collapse, or upload handlers.
+3. **Dissolving Contextual Toolbars**: Multi-item selection containers MUST trigger dissolving floating glass toolbars when selected item count > 0.
+4. **Machine Experience (MX) AST Audit**: Pre-commit scanners (`audit_card_modals.ts`) MUST verify 100% interactive clickability, semantic accessibility, and component continuity across all UI primitives before deployment clearance.
+
+### 18. Proactive Ecosystem Integrations & Connectors Protocol
+
+Every agent, subagent, and integration engineer operating in this workspace **MUST NOT** build standalone, isolated applications. All agents MUST proactively discover, design, and integrate 3rd-party ecosystem connectors:
+
+1. **Mandatory Ecosystem Integration Discovery**: Before starting any project or feature, the agent MUST run an Ecosystem Integration Discovery scan to identify 3 to 5 domain-aligned external connectors (e.g., Slack, Microsoft Teams, QuickBooks, Google Workspace, Zapier, Stripe, GitHub, BigQuery).
+2. **Native `<EcosystemIntegrationsHub />` Component**: Every enterprise application MUST incorporate a dedicated `<EcosystemIntegrationsHub />` interface featuring live connector health dots, API Key configuration drawers, real-time webhook listeners, and 1-click data synchronization triggers.
+3. **Proactive Integration Recommendations**: In implementation plans and architectural proposals, the agent MUST include explicit integration specs detailing API endpoints (`/api/integrations/*`), payload schemas, and zero-downtime failover fallbacks.
+
+### 19. Universal Dual-State Cognitive Re-Reflection & Sukdulang-Antas Journey Protocol
+
+Every agent, subagent, and role-based council member MUST operate under the **Universal Dual-State Cognitive Engine** across ALL UI components, entities, inputs, modals, views, and integrations:
+
+#### A. Dual-State Cognitive Cycle
+1. **State 1 (Isolated Code Drafting)**: Draft initial feature logic and syntax structure.
+2. **State 2 (Proactive Journey & Edge-Case Reflection)**: Switch cognitive state to **Proactive Mode** and execute the **5 Sukdulang-Antas Journey Questions**:
+   - *Question 1 (Enhancement)*: *"What additional feature, micro-animation, or polish will make this 10x better?"*
+   - *Question 2 (Negative Edge-Case)*: *"If user input fails or is denied, what error state, shake animation, or toast alert is displayed?"*
+   - *Question 3 (Positive Journey)*: *"If user input succeeds, what success animation, redirect, or follow-up logic triggers?"*
+   - *Question 4 (Fallback & Onboarding)*: *"What if the user has no account or data is empty? Where does the fallback onboarding journey lead?"*
+   - *Question 5 (Exhaustive Quality Lock)*: *"Is the component capability exhausted to its ultimate level? Are tooltips, hover glows, and contrast AAA verified?"*
+3. **State 3 (Stitched Ultimate Composition)**: Combine all journey outcomes (Success, Error, Fallback, Hover, Animations, Toasts) into a single production-grade component.
+4. **State 4 (Post-Execution Re-Audit)**: Re-evaluate to confirm zero missing edge cases before claiming task completion.
+
+#### B. Universal Scope (Enforced Across All Primitives)
+- **Buttons & Action Nodes**: Success redirects, error shake animations, fallback sign-up routes, loading shimmers.
+- **Inputs & Textareas**: Validation feedback, error toasts, inline auto-suggest ghost text, clear triggers.
+- **Cards & Data Entities**: Level 1 hover elevation, Level 2 cluster drawers, Level 3 leaf record inspection.
+- **Tables & Data Grids**: Sorting, filtering, dissolving floating selection bars, empty state banners.
+- **Modals & Drawers**: Non-blocking slide animations, ESC key dismiss, backdrop locks, nested drawers.
+- **Connectors & APIs**: Live status health dots, auto-retries, offline sync, payload encryption.
+
+### 20. Mandatory Competitive Price & ROI Comparison Matrix Protocol
+
+Every product landing page and enterprise marketing portal built under the Software Factory workflow **MUST** incorporate an interactive **`<EnterprisePriceComparisonMatrix />`** component covering the 3 Core Value Pillars:
+
+1. **Pillar 1: Per-Employee vs Unlimited Headcount Cost Advantage**: Real-time slider comparing competitor per-employee/month costs (e.g. BambooHR/Rippling @ $18/emp/mo) vs our flat SaaS subscription ($149/mo unlimited headcount), demonstrating 80%+ annual savings.
+2. **Pillar 2: Custom Agency Build vs Turnkey Full Source Code Buyout**: Comparing $40,000–$120,000 agency development costs and 6-month delays against our 1-click **$4,999 Full Source Code & IP Buyout**.
+3. **Pillar 3: White-Label Agency Revenue ROI**: Demonstrating how agencies purchasing a **$1,499 White-Label License** re-sell to 10–20 clients at $250/mo to generate $2,500–$5,000/mo recurring revenue (paying for itself in 30 days).
+
 
 
 
