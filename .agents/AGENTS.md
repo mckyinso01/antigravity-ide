@@ -240,6 +240,27 @@ Every product landing page and marketing portal built under the Software Factory
 2. **Standalone Window Experience**: Highlighting zero browser address bar clutter, taskbar icon branding, and instant desktop shortcut launching.
 3. **Offline Resilience & PWA Capability**: Demonstrating offline data caching, background sync, and sub-millisecond local startup times.
 
+### 22. Mandatory Copilot365 15-Point Enterprise UI/UX Engineering & Evaluation Standard
+
+Every application, page, component, and project created or evaluated under the Software Factory workflow **MUST** adhere to and be audited against the **Copilot365 15-Point Enterprise UI/UX Engineering Blueprint**:
+
+1. **Design Systems & Component-Driven UI**: Centralized tokens for color, spacing, typography + isolated component packages.
+2. **Atomic / Component-First Design**: UI structured from Atoms ➔ Molecules ➔ Organisms + pure UI separated from behavioral hooks.
+3. **Design Tokens & Dynamic Themes**: CSS custom properties for instant light/dark runtime theme switching with zero visual breaking.
+4. **Responsive & Constraint-Based Layouts**: CSS Grid + Flexbox + Container Queries for component-level responsiveness.
+5. **Microinteractions & Motion Design**: Tactile spring physics nudges (`cubic-bezier(0.34, 1.56, 0.64, 1)`), kinetic glowing neon borders, and reduced-motion support.
+6. **Progressive Disclosure & Contextual UI**: On-demand controls, inline validation, and secondary actions hidden until contextual trigger.
+7. **Conversational UI & Assistive Microcopy**: Smart defaults, autofill suggestions, clear error messages, and assistive microcopy verbs.
+8. **Data-Driven Personalization & Adaptive Interfaces**: Role-based UI morphing, feature flags, and customizable power-user shortcuts.
+9. **Micro-Frontends & Modular Architecture**: Decoupled micro-apps with shared design tokens and zero duplicate dependencies.
+10. **Accessibility-First Design (a11y)**: Built-in WCAG 2.2 AAA contrast (minimum 4.5:1 ratio), 48px touch targets, ARIA roles, and keyboard navigation.
+11. **Performance-Aware UI (Perceived Performance)**: Skeleton loading screens, optimistic UI updates, lazy loading, and WebWorker offline caching.
+12. **Conversational & Multimodal Interfaces**: Voice commands, Web Audio API FFT visualizer, and gesture controls.
+13. **Dashboard & Data-Heavy Layout Patterns**: Bento Grid asymmetric card grids, responsive tables, microcharts, and sparklines.
+14. **Mobile-First & Gesture-Optimized Patterns**: 44–48px touch targets, thumb-reachable bottom drawers, and native ergonomic flows.
+15. **Observability in UX / Telemetry**: Component-level telemetry capturing user flows, render times, click events, and drop-off rates.
+
+
 
 
 
