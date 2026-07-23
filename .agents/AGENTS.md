@@ -33,3 +33,27 @@ To run a complete, high-integrity UI/UX audit using the Saccade visual evaluator
 3. **Incremental Result Persistence:**
    - When running follow-up audits on modified views, always load the existing results database (`aria_x_consolidated_results.json`) and fallback to cached screenshots in the brain folder to preserve logs for unmodified screens.
 
+## Enterprise Core Knowledge & Architectural Directives
+
+### 1. Mandatory 100% Zero-Bypass Software Factory Compliance
+- Every active application or retrofitted repository **MUST REACH A 100% FACTORY COMPLIANCE SCORE (181/181 Frameworks & 166 DoD Checkpoints)** across all 12 Stages before receiving final deployment clearance.
+- **Mandatory Stage 10 Deliverables**: Every codebase must maintain machine-readable AI context files (`llms.txt`, `llms-full.txt`), an OpenAPI 3.1 REST specification (`openapi.json`), Level 1-3 C4 Mermaid architecture diagrams, and an Architecture Decision Record (ADR) log.
+
+### 2. Self-Healing Media & Fallback Component Architecture
+- Never rely solely on remote video/audio media streams without fallbacks.
+- **Dual-Mode Canvas Simulation Pattern**: All interactive media elements must be wrapped in a self-healing player component (`<InteractiveVideoPlayer />`) that monitors network stream errors and automatically falls back to an animated, high-contrast HTML5 `<canvas>` simulator to guarantee **0ms perceived latency and zero black-screen errors**.
+
+### 3. Self-Host Provisioning & Automated Data Sanitization Engine
+- Any enterprise software offered as an On-Premise or Self-Host package **MUST** contain an automated 3-step sanitization wizard and backend purge endpoint (`/api/admin/self-host-provision` & `purgeClientState`).
+- **Data Purge Standard**: Sanitization must permanently wipe all demo SQLite/IndexedDB tables (`leads`, `campaigns`, `messages`), flush LocalStorage/IndexedDB caches, clear default developer API keys, and seed a clean initial Super-Admin user credential.
+
+### 4. Interactive Enterprise Proof Points & Conversion Engineering
+- Web landing pages and enterprise portals **MUST** feature interactive proof points to convert enterprise IT buyers:
+  - **ROI & Efficiency Calculators**: Real-time sliders computing team time saved, closed deal increases, and annual profit gains.
+  - **Searchable FAQ Accordions**: Instant real-time search and category filtering for enterprise buyer objections.
+  - **Cryptographic Security Strips**: Prominently displaying AES-256-CBC, SLSA Level 3 SBOM, In-Toto Kyverno attestation, and 100/100 Google Lighthouse Best Practices badges.
+
+
+
+
+
