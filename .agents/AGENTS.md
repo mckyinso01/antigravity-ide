@@ -47,14 +47,15 @@ To run a complete, high-integrity UI/UX audit using the Saccade visual evaluator
 - Any enterprise software offered as an On-Premise or Self-Host package **MUST** contain an automated 3-step sanitization wizard and backend purge endpoint (`/api/admin/self-host-provision` & `purgeClientState`).
 - **Data Purge Standard**: Sanitization must permanently wipe all demo SQLite/IndexedDB tables (`leads`, `campaigns`, `messages`), flush LocalStorage/IndexedDB caches, clear default developer API keys, and seed a clean initial Super-Admin user credential.
 
-### 5. The 7 Titan Directives of Ultimate Quality (Google + OpenAI + Stripe + Apple + Linear + Netflix)
-- **Directly Responsible Subagent Ownership (OpenAI DRI)**: Autonomous single-owner subagents execute tasks with end-to-end accountability.
-- **Google SRE & 100/100 Core Vitals**: Maintain `100/100` Lighthouse Best Practices & Technical SEO and 0ms Speculation Rules API pre-rendering.
-- **Stripe Transactional Speed & AES-256 Crypto**: Sub-10ms atomic ACID queries with end-to-end AES-256-CBC encryption for sensitive API keys.
-- **Apple HIG & WCAG 2.2 AAA Standards**: Touch targets >= 48px, minimum 4.5:1 contrast ratio, zero unreadable text overlays.
-- **Linear Zero-Clutter & Self-Healing Media**: Zero broken video/image links, self-healing HTML5 Canvas fallbacks (`<InteractiveVideoPlayer />`).
-- **Netflix Chaos Engineering & Offline Heuristics**: Auto-failover to local rule-based semantic routers (Zephyr) when remote APIs hit rate limits.
-- **Enterprise Self-Host Sanitization Engine**: 3-step automated wizard & endpoint (`/api/admin/self-host-provision` & `purgeClientState`) for clean sales.
+### 6. Role-Based Subagent Council & MCP Wiring Matrix
+- **CTO Master Orchestrator**: Coordinates tasks, enforces zero-quota policies, and monitors stage telemetry (`Chrome DevTools MCP`, `Firebase MCP`, `CloudRun MCP`, `GitHub MCP`, `GKE MCP`).
+- **OpenAI DRI Code Synthesis Subagent**: Single-owner feature drafting and code compilation (`huggingface-multi-agent`, `gopls-mcp-server`).
+- **Google SRE & Performance Auditor**: Measures Core Web Vitals, runs 100/100 Lighthouse audits, and validates Speculation Rules pre-rendering (`chrome-devtools-mcp` -> `lighthouse_audit`, `evaluate_script`).
+- **Stripe Security & Cryptography Architect**: Enforces sub-10ms atomic ACID queries, AES-256-CBC encryption, and Kyverno In-Toto admission gates (`alloydb-postgresql`, `datacloud_cloud-sql_remote`, `mcp-server-neon`).
+- **Apple HIG & Accessibility Reviewer**: Audits WCAG 2.2 AAA ratios, touch targets (>= 48px), and fluid animations (`chrome-devtools-mcp` -> `take_screenshot`).
+- **Netflix Chaos & Offline Resilience Tester**: Executes chaos tests, verifies Zephyr local semantic router fallbacks, and tests 429 rate limit failovers (`google-cloud-logging`, `manage_task`, `schedule`).
+- **Enterprise Self-Host Sanitization Auditor**: Verifies 3-step provisioning wizard and atomic database table purges (`run_command` -> `npm test`, `vite build`, `purgeClientState`).
+
 
 
 
