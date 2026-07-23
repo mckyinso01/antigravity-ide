@@ -69,3 +69,22 @@ To run a complete, high-integrity UI/UX audit using the Saccade visual evaluator
 - **MD060 Compact Table Style Standard**: All Markdown tables must use consistent, single-space cell padding (`| Cell |`) and single-space header separators (`| --- | --- |`). Tight (`|---|`) or misaligned spaces are strictly forbidden to prevent linter errors across all IDEs.
 - **MD022 & MD032 Spacing Rules**: Every Markdown heading (`#`, `##`, `###`) and list (`-`, `1.`) must be surrounded by a blank line above and below.
 - **MD009 Zero Trailing Whitespace**: All Markdown files must have 0 trailing whitespace spaces at line ends and 0 redundant blank lines at file ends.
+
+### 8. Mandatory 4-Tier Full-Logic Licensing Modals
+
+- Every commercial software application **MUST** contain interactive, full-logic modals for all 4 buying and deployment models:
+  1. **Enterprise Self-Hosted / On-Premise**: `<SelfHostProvisioningModal />` with 1-click state purge engine and database reset.
+  2. **White-Label Agency License**: `<WhiteLabelCustomizerModal />` with live logo URL preview, brand color picker, and CNAME DNS validator.
+  3. **Perpetual Source Code / Full IP Ownership**: `<SourceCodeLicenseModal />` with SSH deploy keys, Git clone command, and 1-click `docker-compose.yml` downloader.
+  4. **Hosted Cloud SaaS**: Instant managed cloud portal login.
+
+### 9. Stage 12 Micro-to-Macro Full App Evaluation SOP
+
+- Stage 12 of the Software Factory workflow **MUST** execute an exhaustive, micro-to-macro evaluation sweeping every single component, route, and edge case (*bawat kasulok-sulukan ng software*):
+  - **Micro Details**: Button hover states, focus rings, accessibility contrast (WCAG AAA), form validation, and toast feedback.
+  - **Macro Architecture**: Router state persistence, IndexedDB offline fallbacks, Error Boundary wrappers, and zero-defect build verification.
+
+### 10. Post-Evaluation Subagent Council & MCP Deep Research Protocol
+
+- Immediately after completing the Stage 12 full evaluation, the Orchestrator **MUST** invoke the Subagent Council and available MCP tools to perform deep research, gathering next-gen feature enhancements, cutting-edge tools, and technical specs for that specific project **BEFORE** giving final clearance to list the application on the official website.
+
