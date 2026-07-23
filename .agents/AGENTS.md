@@ -47,11 +47,15 @@ To run a complete, high-integrity UI/UX audit using the Saccade visual evaluator
 - Any enterprise software offered as an On-Premise or Self-Host package **MUST** contain an automated 3-step sanitization wizard and backend purge endpoint (`/api/admin/self-host-provision` & `purgeClientState`).
 - **Data Purge Standard**: Sanitization must permanently wipe all demo SQLite/IndexedDB tables (`leads`, `campaigns`, `messages`), flush LocalStorage/IndexedDB caches, clear default developer API keys, and seed a clean initial Super-Admin user credential.
 
-### 4. Interactive Enterprise Proof Points & Conversion Engineering
-- Web landing pages and enterprise portals **MUST** feature interactive proof points to convert enterprise IT buyers:
-  - **ROI & Efficiency Calculators**: Real-time sliders computing team time saved, closed deal increases, and annual profit gains.
-  - **Searchable FAQ Accordions**: Instant real-time search and category filtering for enterprise buyer objections.
-  - **Cryptographic Security Strips**: Prominently displaying AES-256-CBC, SLSA Level 3 SBOM, In-Toto Kyverno attestation, and 100/100 Google Lighthouse Best Practices badges.
+### 5. The 7 Titan Directives of Ultimate Quality (Google + OpenAI + Stripe + Apple + Linear + Netflix)
+- **Directly Responsible Subagent Ownership (OpenAI DRI)**: Autonomous single-owner subagents execute tasks with end-to-end accountability.
+- **Google SRE & 100/100 Core Vitals**: Maintain `100/100` Lighthouse Best Practices & Technical SEO and 0ms Speculation Rules API pre-rendering.
+- **Stripe Transactional Speed & AES-256 Crypto**: Sub-10ms atomic ACID queries with end-to-end AES-256-CBC encryption for sensitive API keys.
+- **Apple HIG & WCAG 2.2 AAA Standards**: Touch targets >= 48px, minimum 4.5:1 contrast ratio, zero unreadable text overlays.
+- **Linear Zero-Clutter & Self-Healing Media**: Zero broken video/image links, self-healing HTML5 Canvas fallbacks (`<InteractiveVideoPlayer />`).
+- **Netflix Chaos Engineering & Offline Heuristics**: Auto-failover to local rule-based semantic routers (Zephyr) when remote APIs hit rate limits.
+- **Enterprise Self-Host Sanitization Engine**: 3-step automated wizard & endpoint (`/api/admin/self-host-provision` & `purgeClientState`) for clean sales.
+
 
 
 
