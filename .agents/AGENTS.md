@@ -88,3 +88,10 @@ To run a complete, high-integrity UI/UX audit using the Saccade visual evaluator
 
 - Immediately after completing the Stage 12 full evaluation, the Orchestrator **MUST** invoke the Subagent Council and available MCP tools to perform deep research, gathering next-gen feature enhancements, cutting-edge tools, and technical specs for that specific project **BEFORE** giving final clearance to list the application on the official website.
 
+### 11. Mandatory Stage 12 Heavy Upgrades & Breakthrough Innovation Protocol (Enterprise Market Dominance Gate)
+
+- **Unrestricted Heavy Upgrade Discovery Standard**: Every project evaluated under the Software Factory workflow **MUST** undergo an unconstrained Heavy Upgrade Discovery session via the Subagent Council and MCP web research.
+- **Continuous Market Dominance Mandate**: The Orchestrator **MUST NOT** settle for simple bug fixes or basic baseline audits. The workflow must explicitly research, design, and implement cutting-edge 2026-2028 breakthrough features (such as Agentic AI Dispatchers, Post-Quantum Cryptography Vaults, WebWorker Performance Engines, Algorithmic Bias Auditors, and Multi-Variable Quantum Scenario Simulators) to ensure the application reaches and maintains the absolute highest tier of enterprise market dominance.
+- **Mandatory Commit & Sync**: All discovered heavy upgrades must be incorporated into the project's Implementation Plan, built with 0 lint/build errors, and synchronized directly to GitHub origin main.
+
+
