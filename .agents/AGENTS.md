@@ -63,3 +63,9 @@ To run a complete, high-integrity UI/UX audit using the Saccade visual evaluator
 - **Apple HIG & Accessibility Reviewer**: Audits WCAG 2.2 AAA ratios, touch targets (>= 48px), and fluid animations (`chrome-devtools-mcp` -> `take_screenshot`).
 - **Netflix Chaos & Offline Resilience Tester**: Executes chaos tests, verifies Zephyr local semantic router fallbacks, and tests 429 rate limit failovers (`google-cloud-logging`, `manage_task`, `schedule`).
 - **Enterprise Self-Host Sanitization Auditor**: Verifies 3-step provisioning wizard and atomic database table purges (`run_command` -> `npm test`, `vite build`, `purgeClientState`).
+
+### 7. Markdownlint MD060 Table Column & Clean Documentation Protocol
+
+- **MD060 Compact Table Style Standard**: All Markdown tables must use consistent, single-space cell padding (`| Cell |`) and single-space header separators (`| --- | --- |`). Tight (`|---|`) or misaligned spaces are strictly forbidden to prevent linter errors across all IDEs.
+- **MD022 & MD032 Spacing Rules**: Every Markdown heading (`#`, `##`, `###`) and list (`-`, `1.`) must be surrounded by a blank line above and below.
+- **MD009 Zero Trailing Whitespace**: All Markdown files must have 0 trailing whitespace spaces at line ends and 0 redundant blank lines at file ends.
