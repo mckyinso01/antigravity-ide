@@ -1,6 +1,6 @@
 # Workspace Rules - Hugging Face Credit Savings
 
-## Enforced Credit Savings via Hugging Face Skill
+## Enforced Credit Savings via Hugging Face Skill and Stitch MCP
 
 Whenever the user requests a new code file, web application, script, audio synthesis, or image generation task, you **MUST** delegate the core code drafting, design layout, styling rules, and visual/audio compilation to the native Hugging Face skill (`huggingface-multi-agent`).
 
@@ -21,9 +21,9 @@ When developing or modifying UI components in a dark-themed application (like AR
    - Any elements styled with dark text classes (`text-slate-850`, `text-slate-800`, `text-slate-700`, `text-slate-600`) must be automatically translated or overridden in the global stylesheet (`index.css`) under `body:not(.light)` selectors, or replaced with light text counterparts (`text-slate-200`, `text-slate-300`, `text-slate-400`) to guarantee high contrast (minimum WCAG 4.5:1 ratio).
    - Form inputs, textareas, and placeholders in dark panels must always use a dark-aligned background (`bg-[#0A0A0C]`) and light text (`text-slate-200` or similar).
 
-## Saccade Visual & Contrast Evaluation SOP
+## Saccade Visual & Contrast Evaluation SOP with stitch mcp and chrome mcp
 
-To run a complete, high-integrity UI/UX audit using the Saccade visual evaluator, follow these procedural steps:
+To run a complete, high-integrity UI/UX audit using the Saccade visual evaluator, stitch mcp server and chrome mcp server follow these procedural steps:
 
 1. **Exhaustive Automated Traversals:**
    - Always programmatically traverse and capture all unique view architectures, layouts, and hidden interactive overlays (e.g., dropdowns, slide-out drawers, modals, floating tools).
@@ -64,7 +64,6 @@ To run a complete, high-integrity UI/UX audit using the Saccade visual evaluator
 - **Stripe Security & Cryptography Architect**: Enforces sub-10ms atomic ACID queries, AES-256-CBC encryption, and Kyverno In-Toto admission gates (`alloydb-postgresql`, `datacloud_cloud-sql_remote`, `mcp-server-neon`).
 - **Netflix Chaos & Offline Resilience Tester**: Executes chaos tests, verifies Zephyr local semantic router fallbacks, and tests 429 rate limit failovers (`google-cloud-logging`, `manage_task`, `schedule`).
 - **Enterprise Self-Host Sanitization Auditor**: Verifies 3-step provisioning wizard and atomic database table purges (`run_command` -> `npm test`, `vite build`, `purgeClientState`).
-
 
 ### 7. Markdownlint MD060 Table Column & Clean Documentation Protocol
 
@@ -120,12 +119,12 @@ Before any application receiving final clearance for production deployment or cl
 18. **Tier 18: Pre-Commit & GitHub Remote Synchronization Gate**: 100% clean working tree (`nothing to commit, working tree clean`) and remote sync to GitHub origin main.
 19. **Tier 19: Full UI/UX Intent, Affordance & Ecosystem Evaluator Audit (`evaluate_ui_ux_intent.ts`)**: Mandatory automated pre-commit execution verifying Component Continuity (100%), Semantic Microcopy (>=95%), Contextual Guidance (100%), Visual Signifiers (100%), Dark Mode Contrast (100%), and Ecosystem Integrations (100%).
 
-
 ### 13. Mandatory Titan Ultimate 15-Point UI/UX & Software Engineering Blueprint
 
 Every application built or enhanced under the Software Factory workflow **MUST** incorporate the following 15-Point Master Framework:
 
 #### UI/UX Design Patterns & Visual WOW-Effects
+
 1. **Kinetic Glowing Neon Borders**: Kinetic animated gradient outlines (`border-image: conic-gradient`) on active cards, status badges, and critical action nodes.
 2. **Liquid Glassmorphism 3.0**: Multi-layered dynamic backdrop blurs (`backdrop-blur-xl bg-[#131316]/80`) with light-refracting dynamic highlights.
 3. **Master-Detail Overlay & Progressive Disclosure**: Summary cards opening in-context drill-down modals/sheets (`DepartmentDetailModal`, `QuickActionDrawer`) without navigating away from the current view (Zero Context-Switching).
@@ -138,11 +137,12 @@ Every application built or enhanced under the Software Factory workflow **MUST**
 10. **Self-Healing Canvas Fallbacks**: Dual-mode HTML5 Canvas rendering on media load failure to guarantee 0 black-screen errors.
 
 #### Advanced Software Engineering Techniques
+
 11. **AI Voice-Biometric Spectral Waveform Visualizer**: Web Audio API Fast Fourier Transform (FFT) reactive audio visualizer.
-12. **WebGPU Quantum Shader Grid**: GPU-accelerated ambient reactive particle matrix with zero CPU overhead.
-13. **Biometric Thermal Heatmap Analyzer**: Visual attention tracking overlay highlighting high-value action nodes.
-14. **WebRTC Ghost Cursors & Swarm**: Peer-to-peer live multi-user presence and ghost cursor tracking.
-15. **Speculation Rules 0ms Teleportation Engine**: Background pre-rendering via Chromium Speculation Rules API for instantaneous page navigation.
+2. **WebGPU Quantum Shader Grid**: GPU-accelerated ambient reactive particle matrix with zero CPU overhead.
+3. **Biometric Thermal Heatmap Analyzer**: Visual attention tracking overlay highlighting high-value action nodes.
+4. **WebRTC Ghost Cursors & Swarm**: Peer-to-peer live multi-user presence and ghost cursor tracking.
+5. **Speculation Rules 0ms Teleportation Engine**: Background pre-rendering via Chromium Speculation Rules API for instantaneous page navigation.
 
 ### 14. Component-by-Component World-Class UI/UX Master Catalog (12 Core UI Primitives)
 
@@ -166,11 +166,13 @@ Whenever designing, generating, or refining specific UI components, all agents *
 Every agent, subagent, and automated code synthesis pipeline operating in this workspace **MUST STRICTLY COMPLY** with these two mandatory directives:
 
 #### A. Data Entity Interactive Intent & Component Continuity Rule
+
 - **Data Entity = Interactive Object**: Any UI element rendering a Data Entity (Department, Employee, Invoice, Lead, Product, Ticket, Campaign) **MUST NOT** be rendered as static text/markup. It MUST have an active `onClick` handler.
 - **Mandatory 3-Tier Hierarchy**: Every list, grid, or card rendering entities MUST be wired to a Level 2 Slide Drawer (`SlideOverDrawer`), which in turn MUST support nested Level 3 Leaf Record Drawers (`EmployeeDetailDrawer`).
 - **Empathy Self-Check**: Before claiming completion, the agent MUST run a mental user-journey check: *"If a user clicks this card/row/avatar, what is their natural expectation? Will they be frustrated if nothing opens?"* If yes, the agent MUST wire the follow-up drawer before declaring done.
 
 #### B. Subagent Mandatory Deep Research Rule (Strict Zero Quota)
+
 - **Pre-Task Research Obligation**: Every subagent and council member MUST conduct pre-task deep research (using cached knowledge, AGENTS.md directives, local search, and free Hugging Face endpoints) BEFORE producing recommendations or code.
 - **Zero-Quota Enforcement**: All research and subagent operations MUST run under **100% Zero-Quota Simulation Mode** (using local scripts, free endpoints, or cached knowledge) with **$0 API credit consumption**.
 
@@ -206,6 +208,7 @@ Every agent, subagent, and integration engineer operating in this workspace **MU
 Every agent, subagent, and role-based council member MUST operate under the **Universal Dual-State Cognitive Engine** across ALL UI components, entities, inputs, modals, views, and integrations:
 
 #### A. Dual-State Cognitive Cycle
+
 1. **State 1 (Isolated Code Drafting)**: Draft initial feature logic and syntax structure.
 2. **State 2 (Proactive Journey & Edge-Case Reflection)**: Switch cognitive state to **Proactive Mode** and execute the **5 Sukdulang-Antas Journey Questions**:
    - *Question 1 (Enhancement)*: *"What additional feature, micro-animation, or polish will make this 10x better?"*
@@ -217,6 +220,7 @@ Every agent, subagent, and role-based council member MUST operate under the **Un
 4. **State 4 (Post-Execution Re-Audit)**: Re-evaluate to confirm zero missing edge cases before claiming task completion.
 
 #### B. Universal Scope (Enforced Across All Primitives)
+
 - **Buttons & Action Nodes**: Success redirects, error shake animations, fallback sign-up routes, loading shimmers.
 - **Inputs & Textareas**: Validation feedback, error toasts, inline auto-suggest ghost text, clear triggers.
 - **Cards & Data Entities**: Level 1 hover elevation, Level 2 cluster drawers, Level 3 leaf record inspection.
@@ -262,10 +266,13 @@ Every application, page, component, and project created or evaluated under the S
 
 ### 23. Mandatory Stitch MCP & Subagent Council Platinum-Diamond Tier UI/UX Protocol
 
-Whenever initiating a new application, UI module, or major view refactor under the Software Factory workflow, the Orchestrator **MUST** invoke **Stitch MCP** and the **Subagent Council** (CTO, Apple HIG Reviewer, OpenAI DRI, Google SRE, Accessibility Auditor) to design cutting-edge, world-class UI/UX layouts, color schemes, and interaction patterns.
+**STITCH MCP SERVER ABSOLUTE UI DESIGN AUTHORITY DIRECTIVE:**
+For all UI design layouts, visual aesthetics, theme selection, screen structures, wireframes, color systems, and component styling across every application built or enhanced under the Software Factory workflow, **STITCH MCP SERVER IS THE ULTIMATE & ABSOLUTE AUTHORITY**. All agents, subagents, council members, and orchestrators MUST strictly follow, defer to, and execute the UI/UX design specifications, design systems, screens, variants, and visual directives generated by or designed with Stitch MCP Server without deviation.
 
 **Strict Platinum-Diamond Rules:**
-1. **Unified UI & UX Dual Requirement:** Every new app MUST implement 1 UI Visual Theme (from `world_class_ui_ux_layout_catalog.md` Part II) AND at least 3 Advanced UX Interaction Engineering Patterns (from Part III).
+
+1. **Stitch MCP Supreme Authority:** In any decision regarding UI design, screen layout, visual styling, or component structure, Stitch MCP Server's output and recommendations take precedence over all default or ad-hoc agent layouts.
+2. **Unified UI & UX Dual Requirement:** Every new app MUST implement 1 UI Visual Theme (from `world_class_ui_ux_layout_catalog.md` Part II) AND at least 3 Advanced UX Interaction Engineering Patterns (from Part III).
 2. **Never Default Exclusively to Dark Theme:** Applications MUST offer crisp light, warm sand, o glacial frost options with strict WCAG 2.2 AAA contrast ($\ge 4.5:1$ Standard, $\ge 7.0:1$ High Priority Data).
 3. **Mandatory 8 UI Visual Themes Matrix:**
    - **Theme 1: 💎 Liquid Quartz 4.0** (Upgraded Spatial Glassmorphism)
@@ -292,6 +299,7 @@ Whenever initiating a new application, UI module, or major view refactor under t
 Whenever building or enhancing an enterprise software application under the Software Factory workflow, the Orchestrator **MUST NOT** jump straight to execution without explicit stage tracking and user clearance.
 
 **Strict Stage Telemetry & Clearance Directives:**
+
 1. **Mandatory Stage Announcement:** At the start of every stage, the Orchestrator MUST explicitly announce the current stage to the user (e.g. *"Nasa Stage 1 tayo ngayon — Code Drafting & Architectural Planning..."*).
 2. **Stage Telemetry Artifact:** The Orchestrator MUST maintain a live `stage_progress_tracker.md` artifact showing the status (🟡 ACTIVE, ✅ COMPLETED, ⚪ QUEUED) across all 12 Stages.
 3. **Explicit User Stage Gate:** Before advancing to the next stage, the Orchestrator MUST stop and ask the user for approval or feature additions.
@@ -312,6 +320,7 @@ Whenever building or enhancing an enterprise software application under the Soft
 ### 25. Mandatory Stage-by-Stage Deep Research Protocol
 
 Across **EVERY SINGLE STAGE (Stages 1 through 12)** of the Software Factory workflow, the Orchestrator **MUST** execute **Deep Web Research** via `search_web`, MCP tools, and the Subagent Council specific to that stage:
+
 1. **Stage-Specific Deep Research:** Research employer pain points (Stage 1), edge-case UX journeys (Stage 2), state-of-the-art UI primitives (Stage 3), 3rd-party API schemas (Stage 4), licensing models (Stage 5), ROI matrices (Stage 6), accessibility standards (Stage 7), testing frameworks (Stage 8), PWA resilience (Stage 9), AI context schemas (Stage 10), breakthrough upgrades (Stage 11), and full app audit benchmarks (Stage 12).
 2. **Platinum Quality Guarantee:** Deep research ensures that every layer of the product — inside and out — reaches 100% World-Class Platinum Tier excellence.
 
@@ -325,15 +334,3 @@ This rule is strictly enforced across all agents, subagents, tools, and council 
 4. **Universal Dual-State Cognitive Engine (Sukdulang-Antas Execution):** Operate under Isolated Drafting ➔ Proactive Edge-Case Reflection ➔ Sukdulang-Antas Composition. Push every component, feature, button, drawer, modal, and API until its capability is **COMPLETELY MAXED OUT (*maisagad ang antas*)** and stop ONLY when fully exhausted.
 5. **No Shortcuts (Zero Shortcuts Standard):** Never skip verification commands, build audits, or testing gates.
 6. **Subagent Council & MCP Collaboration Mandate:** Whenever encountering technical complexity, ambiguity, or friction, IMMEDIATELY invoke the Subagent Council (CTO, OpenAI DRI, Apple HIG, Stripe Security, Google SRE, Netflix Chaos) and available MCP tools to engineer platinum-grade solutions.
-
-
-
-
-
-
-
-
-
-
-
-
