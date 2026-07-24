@@ -1,6 +1,6 @@
 import React from 'react';
-import { EnterpriseCommandSuite } from './components/EnterpriseCommandSuite';
+import { WazeCompactCommercialSuite } from './components/WazeCompactCommercialSuite';
 
 export default function App() {
-  return <EnterpriseCommandSuite />;
+  return <WazeCompactCommercialSuite />;
 }
