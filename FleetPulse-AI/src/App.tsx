@@ -12,7 +12,7 @@ import {
   Menu,
   X,
   Plus,
-  Radio,
+  Compass,
   Zap,
   Activity
 } from 'lucide-react';
@@ -28,7 +28,7 @@ import { DesktopAppInstallShowcase } from './components/DesktopAppInstallShowcas
 import { UserOperationsGuide } from './components/UserOperationsGuide';
 import { CryptographicAuditProofModal } from './components/CryptographicAuditProofModal';
 import { WebGPU3DRadarModal } from './components/WebGPU3DRadarModal';
-import { LiveFleetRadarCanvas } from './components/LiveFleetRadarCanvas';
+import { InteractiveFleetMap } from './components/InteractiveFleetMap';
 
 export default function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -179,7 +179,7 @@ export default function App() {
             <nav className="space-y-1">
               <a href="#" className="flex items-center space-x-3 px-3 py-2.5 rounded-xl bg-teal-50 text-teal-700 font-bold text-xs">
                 <Truck className="w-4 h-4 shrink-0 text-teal-600" />
-                <span className={`${!sidebarOpen && 'hidden'}`}>Fleet Telematics Grid</span>
+                <span className={`${!sidebarOpen && 'hidden'}`}>Fleet Telematics GIS Map</span>
               </a>
 
               <a href="#" onClick={() => setRadarOpen(true)} className="flex items-center space-x-3 px-3 py-2.5 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-xs">
@@ -203,68 +203,40 @@ export default function App() {
         {/* Main Workspace Action Canvas */}
         <main className="flex-1 overflow-y-auto p-6 space-y-8">
           
-          {/* Hero Section with Integrated Live Telematics Radar Canvas */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-white p-6 rounded-2xl border border-slate-200 shadow-2xs">
-            
-            <div className="lg:col-span-6 space-y-4 flex flex-col justify-between">
-              <div>
-                <div className="inline-flex items-center space-x-2 bg-teal-50 text-teal-800 text-xs font-extrabold px-3 py-1 rounded-full border border-teal-200 mb-3">
-                  <span className="w-2 h-2 rounded-full bg-teal-600 animate-ping"></span>
-                  <span>FMCSA 2026 Telematics & ADS Compliance Active</span>
-                </div>
-
-                <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                  Enterprise Fleet Telematics Command Center
-                </h2>
-
-                <p className="text-xs text-slate-500 mt-2 leading-relaxed">
-                  Replaces $165,000/yr Fleet Supervisor headcount overhead with 0ms real-time AI vehicle tracking, live radar streams, and automated DVIR inspection logs.
-                </p>
+          {/* Hero Header Section */}
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 bg-white p-6 rounded-2xl border border-slate-200 shadow-2xs">
+            <div>
+              <div className="inline-flex items-center space-x-2 bg-teal-50 text-teal-800 text-xs font-extrabold px-3 py-1 rounded-full border border-teal-200 mb-2">
+                <span className="w-2 h-2 rounded-full bg-teal-600 animate-ping"></span>
+                <span>FMCSA 2026 Telematics & ADS Compliance Active</span>
               </div>
-
-              {/* Action Buttons & Quick Stats */}
-              <div className="space-y-3 pt-2">
-                <div className="grid grid-cols-3 gap-2 text-xs">
-                  <div className="p-2.5 bg-slate-50 border border-slate-200 rounded-xl">
-                    <span className="text-[10px] text-slate-500 font-medium block">Active Units</span>
-                    <span className="font-extrabold text-slate-900 text-sm">450 Heavy Trucks</span>
-                  </div>
-                  <div className="p-2.5 bg-slate-50 border border-slate-200 rounded-xl">
-                    <span className="text-[10px] text-slate-500 font-medium block">Live MPG</span>
-                    <span className="font-extrabold text-teal-700 text-sm">7.8 Avg MPG</span>
-                  </div>
-                  <div className="p-2.5 bg-slate-50 border border-slate-200 rounded-xl">
-                    <span className="text-[10px] text-slate-500 font-medium block">AEB System</span>
-                    <span className="font-extrabold text-emerald-700 text-sm">100% Passed</span>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-3 pt-1">
-                  <button
-                    onClick={() => setAuditProofOpen(true)}
-                    className="btn-spring px-4 py-2.5 bg-emerald-50 border border-emerald-200 text-emerald-900 font-bold text-xs rounded-xl flex items-center space-x-1.5"
-                  >
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                    <span>Verify Actual Telemetry Proof</span>
-                  </button>
-
-                  <button
-                    onClick={() => alert("Simulating New Heavy Transport Unit Connection...")}
-                    className="btn-spring px-4 py-2.5 bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs rounded-xl shadow-md flex items-center space-x-2"
-                  >
-                    <Plus className="w-4 h-4" />
-                    <span>Connect Heavy Truck Unit</span>
-                  </button>
-                </div>
-              </div>
+              <h2 className="text-2xl font-extrabold text-slate-900 tracking-tight">Enterprise Fleet Telematics Command Center</h2>
+              <p className="text-xs text-slate-500 mt-1 max-w-xl">
+                Replaces $165,000/yr Fleet Supervisor headcount overhead with 0ms real-time AI vehicle tracking, live interactive GIS corridor maps, and automated DVIR inspection logs.
+              </p>
             </div>
 
-            {/* Right Side: Embedded HTML5 Live Fleet Radar Canvas */}
-            <div className="lg:col-span-6">
-              <LiveFleetRadarCanvas />
-            </div>
+            <div className="flex items-center space-x-2">
+              <button
+                onClick={() => setAuditProofOpen(true)}
+                className="btn-spring px-4 py-2.5 bg-emerald-50 border border-emerald-200 text-emerald-900 font-bold text-xs rounded-xl flex items-center space-x-1.5"
+              >
+                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                <span>Verify Actual Telemetry Proof</span>
+              </button>
 
+              <button
+                onClick={() => alert("Simulating New Heavy Transport Unit Connection...")}
+                className="btn-spring px-4 py-2.5 bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs rounded-xl shadow-md flex items-center space-x-2"
+              >
+                <Plus className="w-4 h-4" />
+                <span>Connect Heavy Truck Unit</span>
+              </button>
+            </div>
           </div>
+
+          {/* REAL INTERACTIVE FLEET GIS MAP COMPONENT */}
+          <InteractiveFleetMap onSelectTruck={handleSelectTruck} />
 
           {/* Section 13: Asymmetric Bento Grid 3.0 Telematics */}
           <FleetTelematicsGrid onSelectTruck={handleSelectTruck} />
