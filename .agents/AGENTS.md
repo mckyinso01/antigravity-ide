@@ -309,6 +309,15 @@ Whenever building or enhancing an enterprise software application under the Soft
    - **Stage 11:** Market Dominance Heavy Upgrade Discovery Gate (WebGPU, Post-Quantum Vault)
    - **Stage 12:** Micro-to-Macro Full App Sweep & Subagent Council Final Clearance
 
+### 25. Mandatory Stage 1 Employer & Industry Deep Research Protocol
+
+Before completing Stage 1 for any application, the Orchestrator **MUST** execute **Deep Web Research** via `search_web` and the Subagent Council to analyze:
+1. **Employer-Specific Pain Points:** The target employer's actual operational bottlenecks, job role responsibilities, and corporate scale.
+2. **Industry Benchmarks & Competitors:** State-of-the-art industry software standards (e.g. Samsara, Geotab, Salesforce, BambooHR, Stripe Connect 2026).
+3. **Federal/Regulatory Compliance:** Legal requirements (e.g. FMCSA/DOT 2026 ADS rules, FDA 21 CFR Part 11, HIPAA, GDPR, SOC2).
+4. **Research Integration Output:** Incorporate all research findings directly into the Stage 1 `implementation_plan.md` before seeking user stage clearance.
+
+
 
 
 
