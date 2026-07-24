@@ -1,6 +1,6 @@
 import React from 'react';
-import { GrabDriverStyleLayout } from './components/GrabDriverStyleLayout';
+import { EnterpriseCommandSuite } from './components/EnterpriseCommandSuite';
 
 export default function App() {
-  return <GrabDriverStyleLayout />;
+  return <EnterpriseCommandSuite />;
 }
