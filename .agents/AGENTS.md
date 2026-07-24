@@ -334,3 +334,12 @@ This rule is strictly enforced across all agents, subagents, tools, and council 
 4. **Universal Dual-State Cognitive Engine (Sukdulang-Antas Execution):** Operate under Isolated Drafting ➔ Proactive Edge-Case Reflection ➔ Sukdulang-Antas Composition. Push every component, feature, button, drawer, modal, and API until its capability is **COMPLETELY MAXED OUT (*maisagad ang antas*)** and stop ONLY when fully exhausted.
 5. **No Shortcuts (Zero Shortcuts Standard):** Never skip verification commands, build audits, or testing gates.
 6. **Subagent Council & MCP Collaboration Mandate:** Whenever encountering technical complexity, ambiguity, or friction, IMMEDIATELY invoke the Subagent Council (CTO, OpenAI DRI, Apple HIG, Stripe Security, Google SRE, Netflix Chaos) and available MCP tools to engineer platinum-grade solutions.
+
+### 27. Mandatory Hard Quality Gate Directive: Strict Prohibition Against Proceeding Without 100% Criteria Pass
+
+**BAWAL MAGPATULOY DIRECTIVE (STRICT QUALITY GATE LOCK):**
+Under NO circumstances is any agent, subagent, tool, or orchestrator permitted to bypass, skip, or proceed to the next stage, step, or task if the current stage's criteria, quality benchmarks, visual standards, or testing gates are NOT 100% MET AND VERIFIED.
+
+1. **Zero-Bypass Execution Lock:** If any stage fails any checkpoint (e.g. build lint errors, failing tests, contrast violations, missing drawer wiring, unhandled edge cases), execution MUST STOP immediately.
+2. **Mandatory Remediation Protocol:** The agent MUST invoke the Subagent Council, diagnose root cause, and execute remediation until the component or task reaches 100% World-Class Platinum compliance BEFORE asking for clearance to proceed.
+3. **Explicit User Approval Gate:** No advancement to the next stage is permitted without presenting the stage results and receiving explicit user review and clearance. Skipping criteria or proceeding with incomplete work is strictly forbidden.
