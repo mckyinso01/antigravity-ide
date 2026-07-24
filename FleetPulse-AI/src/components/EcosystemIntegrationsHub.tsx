@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
-import { Network, CheckCircle, RefreshCw, Key, ShieldCheck } from 'lucide-react';
+import { Network, CheckCircle, RefreshCw, ShieldCheck } from 'lucide-react';
 
 export const EcosystemIntegrationsHub: React.FC = () => {
-  const [connectors, setConnectors] = useState([
+  const [connectors] = useState([
     { id: 'samsara', name: 'Samsara 2026 Telematics API', category: 'GPS & Telematics', status: 'connected', latency: '0.4ms' },
     { id: 'geotab', name: 'Geotab GO Focus Pro Engine', category: 'Engine Diagnostics', status: 'connected', latency: '0.6ms' },
     { id: 'fmcsa', name: 'FMCSA DOT Electronic Logging Vault', category: 'Regulatory Audit', status: 'connected', latency: '1.2ms' },
     { id: 'slack', name: 'Slack Enterprise Safety Alerts', category: 'Incident Dispatch', status: 'connected', latency: '0.3ms' },
-    { id: 'quickbooks', name: 'QuickBooks Fuel & Maintenance Ledger', category: 'Financial Sync', status: 'connected', latency: '0.9ms' }
+    { id: 'quickbooks', name: 'QuickBooks Fuel & Maintenance Ledger', category: 'Financial Sync', status: 'connected', latency: '0.9ms' },
+    { id: 'snowflake', name: 'Snowflake Data Warehouse Sync', category: 'Analytics Lake', status: 'connected', latency: '1.4ms' },
+    { id: 'teams', name: 'Microsoft Teams Operations Bot', category: 'Incident Dispatch', status: 'connected', latency: '0.5ms' },
+    { id: 'azure', name: 'Azure Digital Twins Spatial Engine', category: '3D Simulation', status: 'connected', latency: '1.8ms' }
   ]);
 
   const [isSyncing, setIsSyncing] = useState(false);
@@ -25,9 +28,9 @@ export const EcosystemIntegrationsHub: React.FC = () => {
         <div>
           <div className="flex items-center space-x-2 text-xs font-bold text-teal-600 uppercase tracking-wider">
             <Network className="w-4 h-4" />
-            <span>Section 18 Ecosystem Integrations Hub</span>
+            <span>Section 18 Proactive Ecosystem Integrations Hub</span>
           </div>
-          <h3 className="text-lg font-extrabold text-slate-900">5 Enterprise Telematics Connectors</h3>
+          <h3 className="text-lg font-extrabold text-slate-900">8 Enterprise Telematics & Infrastructure Connectors</h3>
         </div>
 
         <button
@@ -40,7 +43,7 @@ export const EcosystemIntegrationsHub: React.FC = () => {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 pt-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 pt-2">
         {connectors.map(c => (
           <div key={c.id} className="p-3.5 bg-white border border-slate-200/80 rounded-xl space-y-2 hover:border-teal-400 transition-colors shadow-2xs">
             <div className="flex items-center justify-between">

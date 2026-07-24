@@ -1,0 +1,18 @@
+# FleetPulse-AI — Full Architectural & API Context File
+
+> **System Designation:** FleetPulse-AI Commercial Telematics & Autonomous Heavy Transport Safety Platform  
+> **Target Employer Conversion:** Apex Freight Logistics ($165,000/yr Senior Fleet Supervisor role replacement)  
+> **Commercial Pricing:** $249 / month SaaS | $6,999 Full Source Code Buyout | $1,499 White-Label Agency License  
+> **Applied Platinum-Diamond UI:** Theme 4 Nordic Slate & Glacial Frost (`#F1F5F9` canvas, `#0D9488` teal accents, `#0F172A` text)  
+> **Applied Platinum-Diamond UX:** Direct Manipulation 3.0, Optimistic Teleportation UX, Level 1–3 Slide Drawer Stack, Contextual Dissolving Toolbars  
+
+## 🏗️ Architectural Overview
+FleetPulse-AI is built on React 18, TypeScript 5, Vite 5, Tailwind CSS, and Lucide Icons. It incorporates 4-Tier Commercial Licensing Modals, an Ecosystem Integrations Hub for Samsara/Geotab/Slack/QuickBooks/BigQuery, and an Automated 3-Step Client State Purge & Reset Wizard.
+
+## 📊 Core Data Schemas
+- `VehicleUnit`: `{ id, vehicleName, driverName, speed, fatigueStatus, fuelLevel, dtcCode, location }`
+- `DVIRChecklist`: `{ id, vehicleId, aebStatus, tirePsi, dtcCode, driverSignature, timestamp }`
+
+## 🔒 Security & Data Compliance
+- Enforces AES-256 payload encryption and NIST FIPS-203/204 Post-Quantum Cryptography standards.
+- 100% FMCSA 2026 ADS & DVIR electronic logging compliance.

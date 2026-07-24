@@ -6,13 +6,12 @@ import {
   Server,
   Palette,
   Code,
-  Laptop,
-  Command,
-  Bell,
+  BookOpen,
+  CheckCircle2,
+  Sparkles,
   Menu,
   X,
-  Plus,
-  RefreshCw
+  Plus
 } from 'lucide-react';
 import { FleetTelematicsGrid } from './components/FleetTelematicsGrid';
 import { DriverInspectionDrawer } from './components/DriverInspectionDrawer';
@@ -23,6 +22,9 @@ import { WhiteLabelCustomizerModal } from './components/WhiteLabelCustomizerModa
 import { SourceCodeLicenseModal } from './components/SourceCodeLicenseModal';
 import { EnterprisePriceComparisonMatrix } from './components/EnterprisePriceComparisonMatrix';
 import { DesktopAppInstallShowcase } from './components/DesktopAppInstallShowcase';
+import { UserOperationsGuide } from './components/UserOperationsGuide';
+import { CryptographicAuditProofModal } from './components/CryptographicAuditProofModal';
+import { WebGPU3DRadarModal } from './components/WebGPU3DRadarModal';
 
 export default function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -30,10 +32,15 @@ export default function App() {
   const [level2Open, setLevel2Open] = useState(false);
   const [level3Open, setLevel3Open] = useState(false);
 
-  // Commercial Modals State
+  // Modals State
   const [selfHostOpen, setSelfHostOpen] = useState(false);
   const [whiteLabelOpen, setWhiteLabelOpen] = useState(false);
   const [sourceCodeOpen, setSourceCodeOpen] = useState(false);
+
+  // Heavy Upgrade Modals State
+  const [guideOpen, setGuideOpen] = useState(false);
+  const [auditProofOpen, setAuditProofOpen] = useState(false);
+  const [radarOpen, setRadarOpen] = useState(false);
 
   // Command Palette State
   const [cmdOpen, setCmdOpen] = useState(false);
@@ -91,17 +98,44 @@ export default function App() {
         </div>
 
         {/* Right Header Actions */}
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-2.5">
+          
+          {/* User Operations Guide Button */}
           <button
-            onClick={() => setCmdOpen(true)}
-            className="hidden md:flex items-center space-x-2 px-3.5 py-1.5 bg-slate-100 border border-slate-200 rounded-xl text-xs font-medium text-slate-600 hover:bg-slate-200 btn-spring"
+            onClick={() => setGuideOpen(true)}
+            className="btn-spring px-3 py-1.5 bg-teal-50 border border-teal-200 text-teal-800 text-xs font-bold rounded-xl flex items-center space-x-1.5 shadow-2xs hover:bg-teal-100"
           >
-            <Search className="w-3.5 h-3.5 text-slate-400" />
-            <span>Search Command Palette...</span>
-            <kbd className="bg-white text-slate-700 px-1.5 py-0.5 rounded text-[10px] shadow-2xs border border-slate-200">⌘K</kbd>
+            <BookOpen className="w-3.5 h-3.5 text-teal-600" />
+            <span className="hidden lg:inline">User Operations Guide</span>
           </button>
 
-          {/* 4-Tier Commercial Licensing Modals Triggers */}
+          {/* Cryptographic Result Verification Proof Button */}
+          <button
+            onClick={() => setAuditProofOpen(true)}
+            className="btn-spring px-3 py-1.5 bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs font-bold rounded-xl flex items-center space-x-1.5 shadow-2xs hover:bg-emerald-100"
+          >
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+            <span className="hidden lg:inline">Actual Results Proof</span>
+          </button>
+
+          {/* WebGPU 3D Quantum Radar Heavy Upgrade Button */}
+          <button
+            onClick={() => setRadarOpen(true)}
+            className="btn-spring px-3 py-1.5 bg-indigo-50 border border-indigo-200 text-indigo-900 text-xs font-bold rounded-xl flex items-center space-x-1.5 shadow-2xs hover:bg-indigo-100"
+          >
+            <Sparkles className="w-3.5 h-3.5 text-indigo-600 animate-pulse" />
+            <span className="hidden lg:inline">WebGPU 3D Radar</span>
+          </button>
+
+          <button
+            onClick={() => setCmdOpen(true)}
+            className="hidden xl:flex items-center space-x-2 px-3 py-1.5 bg-slate-100 border border-slate-200 rounded-xl text-xs font-medium text-slate-600 hover:bg-slate-200 btn-spring"
+          >
+            <Search className="w-3.5 h-3.5 text-slate-400" />
+            <span>Search ⌘K</span>
+          </button>
+
+          {/* Commercial Licensing Modals Triggers */}
           <button
             onClick={() => setSelfHostOpen(true)}
             className="btn-spring px-3 py-1.5 bg-slate-900 text-white text-xs font-bold rounded-xl flex items-center space-x-1.5 shadow-sm"
@@ -123,7 +157,7 @@ export default function App() {
             className="btn-spring px-3 py-1.5 bg-teal-600 text-white text-xs font-bold rounded-xl flex items-center space-x-1.5 shadow-sm"
           >
             <Code className="w-3.5 h-3.5 text-teal-100" />
-            <span className="hidden sm:inline">Source Code $6.9k</span>
+            <span className="hidden sm:inline">Source $6.9k</span>
           </button>
         </div>
       </header>
@@ -144,9 +178,14 @@ export default function App() {
                 <span className={`${!sidebarOpen && 'hidden'}`}>Fleet Telematics Grid</span>
               </a>
 
-              <a href="#" className="flex items-center space-x-3 px-3 py-2.5 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-xs">
-                <ShieldCheck className="w-4 h-4 shrink-0 text-slate-400" />
-                <span className={`${!sidebarOpen && 'hidden'}`}>360° AI Driver Coaching</span>
+              <a href="#" onClick={() => setRadarOpen(true)} className="flex items-center space-x-3 px-3 py-2.5 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-xs">
+                <Sparkles className="w-4 h-4 shrink-0 text-indigo-600" />
+                <span className={`${!sidebarOpen && 'hidden'}`}>WebGPU 3D Spatial Radar</span>
+              </a>
+
+              <a href="#" onClick={() => setGuideOpen(true)} className="flex items-center space-x-3 px-3 py-2.5 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-xs">
+                <BookOpen className="w-4 h-4 shrink-0 text-teal-600" />
+                <span className={`${!sidebarOpen && 'hidden'}`}>User Operations Guide</span>
               </a>
             </nav>
           </div>
@@ -173,13 +212,23 @@ export default function App() {
               </p>
             </div>
 
-            <button
-              onClick={() => alert("Simulating New Heavy Transport Unit Connection...")}
-              className="btn-spring px-4 py-2.5 bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs rounded-xl shadow-md flex items-center space-x-2"
-            >
-              <Plus className="w-4 h-4" />
-              <span>Connect Heavy Truck Unit</span>
-            </button>
+            <div className="flex items-center space-x-2">
+              <button
+                onClick={() => setAuditProofOpen(true)}
+                className="btn-spring px-4 py-2.5 bg-emerald-50 border border-emerald-200 text-emerald-900 font-bold text-xs rounded-xl flex items-center space-x-1.5"
+              >
+                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                <span>Verify Actual Telemetry Proof</span>
+              </button>
+
+              <button
+                onClick={() => alert("Simulating New Heavy Transport Unit Connection...")}
+                className="btn-spring px-4 py-2.5 bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs rounded-xl shadow-md flex items-center space-x-2"
+              >
+                <Plus className="w-4 h-4" />
+                <span>Connect Heavy Truck Unit</span>
+              </button>
+            </div>
           </div>
 
           {/* Section 13: Asymmetric Bento Grid 3.0 Telematics */}
@@ -213,6 +262,11 @@ export default function App() {
         vehicleName={selectedTruck?.vehicleName || 'Truck Unit'}
         dtcCode={selectedTruck?.dtcCode || 'P0171'}
       />
+
+      {/* Heavy Upgrades & Documentation Modals */}
+      <UserOperationsGuide isOpen={guideOpen} onClose={() => setGuideOpen(false)} />
+      <CryptographicAuditProofModal isOpen={auditProofOpen} onClose={() => setAuditProofOpen(false)} />
+      <WebGPU3DRadarModal isOpen={radarOpen} onClose={() => setRadarOpen(false)} />
 
       {/* 4-Tier Commercial Licensing Modals */}
       <SelfHostProvisioningModal isOpen={selfHostOpen} onClose={() => setSelfHostOpen(false)} />
