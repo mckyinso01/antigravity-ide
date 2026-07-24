@@ -285,6 +285,8 @@ Whenever initiating a new application, UI module, or major view refactor under t
    - **UX Pattern 6: AI Intent Ghost Text & Spatial Keyboard Nav** (`⌘K`, `⌘Enter`, inline suggestions)
    - **UX Pattern 7: Defensive Zero-Defect UX & Silent Rollback** (IndexedDB draft auto-save & error recovery)
    - **UX Pattern 8: Multimodal Audio Waveforms & WebRTC Swarms** (FFT sound visualizer & live ghost cursors)
+5. **Mandatory 10 Visual & Micro-Component Primitives:** All components MUST strictly follow the design specifications in `world_class_ui_ux_layout_catalog.md` Part IV for: Buttons & Action Nodes, Borders & Outlines, Views & Containers, Drawers & Panels, Navigation Bars, Motion & Animations, Toggles & Switches, Bubbles & Tooltips, Widgets & Bento Cards, and Ambient Background Canvases.
+
 
 
 
