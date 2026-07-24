@@ -2,65 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    background-color: #F1F5F9;
-    color: #0F172A;
-    font-family: 'Inter', sans-serif;
+@layer utilities {
+  /* Theme 4: Nordic Slate & Glacial Frost Palette */
+  .theme-glacial-frost {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
   }
-}
 
-/* Theme 4 Nordic Glacial Frost Specifications */
-.theme-glacial-frost {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px) saturate(160%);
-  border: 1px solid rgba(203, 213, 225, 0.8);
-  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05);
-  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
-}
+  /* Kinetic Glowing Neon Border Animation */
+  @property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
 
-.theme-glacial-frost:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 20px 40px -12px rgba(13, 148, 136, 0.12);
-}
+  .neon-border-glow {
+    position: relative;
+    border-radius: 1rem;
+    background: #ffffff;
+  }
 
-/* Spring Physics Buttons */
-.btn-spring {
-  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, background-color 0.2s ease;
-}
+  .neon-border-glow::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 1.1rem;
+    background: conic-gradient(from var(--angle), #0d9488, #6366f1, #14b8a6, #0d9488);
+    animation: spin-angle 4s linear infinite;
+    z-index: -1;
+    opacity: 0.8;
+  }
 
-.btn-spring:hover {
-  transform: translateY(-2px) scale(1.01);
-}
+  @keyframes spin-angle {
+    0% { --angle: 0deg; }
+    100% { --angle: 360deg; }
+  }
 
-.btn-spring:active {
-  transform: translateY(1px) scale(0.97);
-}
+  /* Spring Physics Tactile Button Effect */
+  .btn-spring {
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+  }
+  
+  .btn-spring:active {
+    transform: scale(0.96);
+  }
 
-/* Shimmer Loading Background */
-.shimmer-effect {
-  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
-  background-size: 200% 100%;
-  animation: shimmerAnim 2s infinite;
-}
-
-@keyframes shimmerAnim {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
-/* Custom Ergonomic Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #F1F5F9;
-}
-::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
-  border-radius: 9999px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #0D9488;
+  /* Liquid Glassmorphism 3.0 Overlay */
+  .liquid-glass-panel {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+  }
 }
