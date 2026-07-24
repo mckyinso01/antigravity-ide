@@ -287,6 +287,29 @@ Whenever initiating a new application, UI module, or major view refactor under t
    - **UX Pattern 8: Multimodal Audio Waveforms & WebRTC Swarms** (FFT sound visualizer & live ghost cursors)
 5. **Mandatory 10 Visual & Micro-Component Primitives:** All components MUST strictly follow the design specifications in `world_class_ui_ux_layout_catalog.md` Part IV for: Buttons & Action Nodes, Borders & Outlines, Views & Containers, Drawers & Panels, Navigation Bars, Motion & Animations, Toggles & Switches, Bubbles & Tooltips, Widgets & Bento Cards, and Ambient Background Canvases.
 
+### 24. Mandatory 12-Stage Software Factory Progress Monitoring & User Clearance Protocol
+
+Whenever building or enhancing an enterprise software application under the Software Factory workflow, the Orchestrator **MUST NOT** jump straight to execution without explicit stage tracking and user clearance.
+
+**Strict Stage Telemetry & Clearance Directives:**
+1. **Mandatory Stage Announcement:** At the start of every stage, the Orchestrator MUST explicitly announce the current stage to the user (e.g. *"Nasa Stage 1 tayo ngayon — Code Drafting & Architectural Planning..."*).
+2. **Stage Telemetry Artifact:** The Orchestrator MUST maintain a live `stage_progress_tracker.md` artifact showing the status (🟡 ACTIVE, ✅ COMPLETED, ⚪ QUEUED) across all 12 Stages.
+3. **Explicit User Stage Gate:** Before advancing to the next stage, the Orchestrator MUST stop and ask the user for approval or feature additions.
+4. **The 12 Stages Standard:**
+   - **Stage 1:** Code Drafting & Architectural Planning (Friction Analysis, C4 Architecture, UI/UX Selection)
+   - **Stage 2:** Proactive 5-Question Journey Reflection & Edge-Case Audit (Success, Error, Fallback, Empty States)
+   - **Stage 3:** Sukdulang-Antas Component Composition (UI Primitives, Bento Grid 3.0, Level 1–3 Slide Drawers)
+   - **Stage 4:** Ecosystem Connectors & API Wiring (`<EcosystemIntegrationsHub />`, Slack, Teams, Stripe, BigQuery)
+   - **Stage 5:** 4-Tier Commercial Licensing Modals (Self-Hosted Purge Engine, White-Label, Buyout, SaaS)
+   - **Stage 6:** Competitive Price ROI Matrix & Desktop PWA Install Showcase
+   - **Stage 7:** Saccade Visual Attention & WCAG 2.2 AAA Contrast Audit
+   - **Stage 8:** 19-Tier FAANG Multi-Layer Testing (Vitest, `tsc --noEmit`, `audit_all_buttons.ts`, `evaluate_ui_ux_intent.ts`)
+   - **Stage 9:** Netflix Chaos & Offline PWA Resilience Testing
+   - **Stage 10:** Machine-Readable AI Context & Deliverables (`llms.txt`, `llms-full.txt`, `openapi.json`, ADR Log)
+   - **Stage 11:** Market Dominance Heavy Upgrade Discovery Gate (WebGPU, Post-Quantum Vault)
+   - **Stage 12:** Micro-to-Macro Full App Sweep & Subagent Council Final Clearance
+
+
 
 
 
