@@ -260,22 +260,32 @@ Every application, page, component, and project created or evaluated under the S
 14. **Mobile-First & Gesture-Optimized Patterns**: 44–48px touch targets, thumb-reachable bottom drawers, and native ergonomic flows.
 15. **Observability in UX / Telemetry**: Component-level telemetry capturing user flows, render times, click events, and drop-off rates.
 
-### 23. Mandatory Stitch MCP & Subagent Council 8-Theme World-Class UI/UX Layout Design Protocol
+### 23. Mandatory Stitch MCP & Subagent Council Platinum-Diamond Tier UI/UX Protocol
 
-Whenever initiating a new application, UI module, or major view refactor under the Software Factory workflow, the Orchestrator **MUST** invoke **Stitch MCP** and the **Subagent Council** (CTO, Apple HIG Reviewer, OpenAI DRI, Google SRE, Accessibility Auditor) to design cutting-edge, world-class UI/UX layouts and color schemes.
+Whenever initiating a new application, UI module, or major view refactor under the Software Factory workflow, the Orchestrator **MUST** invoke **Stitch MCP** and the **Subagent Council** (CTO, Apple HIG Reviewer, OpenAI DRI, Google SRE, Accessibility Auditor) to design cutting-edge, world-class UI/UX layouts, color schemes, and interaction patterns.
 
-**Strict Theme & Design Rules:**
-1. **Never Default Exclusively to Dark Theme:** Applications MUST offer crisp light, warm sand, or glacial frost options with high WCAG 2.2 AAA contrast (minimum 4.5:1 text ratio).
-2. **Mandatory 8-Theme Selection Matrix:** Every new app MUST select or support one of the 8 Master Themes compiled in `world_class_ui_ux_layout_catalog.md`:
-   - **Theme 1: 💎 Sukdulang-Antas Liquid Quartz 4.0** (Upgraded Next-Gen Translucent Glass with zero dark opacity bugs)
-   - **Theme 2: ☀️ Crisp Titanium Light Enterprise** (Pure White & Crisp Slate, Stripe/Apple SaaS Level)
+**Strict Platinum-Diamond Rules:**
+1. **Unified UI & UX Dual Requirement:** Every new app MUST implement 1 UI Visual Theme (from `world_class_ui_ux_layout_catalog.md` Part II) AND at least 3 Advanced UX Interaction Engineering Patterns (from Part III).
+2. **Never Default Exclusively to Dark Theme:** Applications MUST offer crisp light, warm sand, o glacial frost options with strict WCAG 2.2 AAA contrast ($\ge 4.5:1$ Standard, $\ge 7.0:1$ High Priority Data).
+3. **Mandatory 8 UI Visual Themes Matrix:**
+   - **Theme 1: 💎 Liquid Quartz 4.0** (Upgraded Spatial Glassmorphism)
+   - **Theme 2: ☀️ Titanium Light Enterprise** (Pure White & Crisp Slate, Stripe/Apple SaaS Level)
    - **Theme 3: ☕ Warm Sand & Editorial Clay** (Humanist Cream & Terracotta, Editorial Elegance)
    - **Theme 4: ❄️ Nordic Slate & Glacial Frost** (Medium Light Cool Gray & Deep Teal)
    - **Theme 5: ⚡ Velvet Neo-Brutalism Light** (Vibrant B2B SaaS with 2px solid borders & hard press shadows)
    - **Theme 6: 🌌 Atmospheric Dusk & Radiant Amber** (Semi-Dark Twilight Comfort with Amber Glow)
    - **Theme 7: 🏛️ Monochrome Architectural High-Contrast** (21:1 Contrast Jet Black on Pure White)
    - **Theme 8: 🌿 Biophilic Emerald & Solar Light** (Nature-Inspired Meadow Light & Forest Emerald)
-3. **Flawless Ergonomics & Zero Cognitive Load:** All UI components MUST feature 48px touch targets, non-blocking Level 2/3 slide drawers (`SlideOverDrawer`), clear visual signifiers, and dynamic bento grid cards.
+4. **Mandatory 8 Advanced UX Interaction Engineering Patterns:**
+   - **UX Pattern 1: Direct Manipulation 3.0** (Magnetic Drag & Spatial Reorder)
+   - **UX Pattern 2: Optimistic Teleportation UX** (0ms Perceived Latency & Intent Vector Hover)
+   - **UX Pattern 3: Contextual Dissolving Floating Toolbars** (Fitts's Law Bulk Operations)
+   - **UX Pattern 4: Level 1 ➔ Level 2 ➔ Level 3 Slide Drawer Stack** (Zero Context Switching)
+   - **UX Pattern 5: Agentic Human-on-the-Loop Sandbox & XAI Control** (Explainable AI & Cancel Triggers)
+   - **UX Pattern 6: AI Intent Ghost Text & Spatial Keyboard Nav** (`⌘K`, `⌘Enter`, inline suggestions)
+   - **UX Pattern 7: Defensive Zero-Defect UX & Silent Rollback** (IndexedDB draft auto-save & error recovery)
+   - **UX Pattern 8: Multimodal Audio Waveforms & WebRTC Swarms** (FFT sound visualizer & live ghost cursors)
+
 
 
 
