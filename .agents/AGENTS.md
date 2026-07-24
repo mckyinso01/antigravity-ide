@@ -309,13 +309,23 @@ Whenever building or enhancing an enterprise software application under the Soft
    - **Stage 11:** Market Dominance Heavy Upgrade Discovery Gate (WebGPU, Post-Quantum Vault)
    - **Stage 12:** Micro-to-Macro Full App Sweep & Subagent Council Final Clearance
 
-### 25. Mandatory Stage 1 Employer & Industry Deep Research Protocol
+### 25. Mandatory Stage-by-Stage Deep Research Protocol
 
-Before completing Stage 1 for any application, the Orchestrator **MUST** execute **Deep Web Research** via `search_web` and the Subagent Council to analyze:
-1. **Employer-Specific Pain Points:** The target employer's actual operational bottlenecks, job role responsibilities, and corporate scale.
-2. **Industry Benchmarks & Competitors:** State-of-the-art industry software standards (e.g. Samsara, Geotab, Salesforce, BambooHR, Stripe Connect 2026).
-3. **Federal/Regulatory Compliance:** Legal requirements (e.g. FMCSA/DOT 2026 ADS rules, FDA 21 CFR Part 11, HIPAA, GDPR, SOC2).
-4. **Research Integration Output:** Incorporate all research findings directly into the Stage 1 `implementation_plan.md` before seeking user stage clearance.
+Across **EVERY SINGLE STAGE (Stages 1 through 12)** of the Software Factory workflow, the Orchestrator **MUST** execute **Deep Web Research** via `search_web`, MCP tools, and the Subagent Council specific to that stage:
+1. **Stage-Specific Deep Research:** Research employer pain points (Stage 1), edge-case UX journeys (Stage 2), state-of-the-art UI primitives (Stage 3), 3rd-party API schemas (Stage 4), licensing models (Stage 5), ROI matrices (Stage 6), accessibility standards (Stage 7), testing frameworks (Stage 8), PWA resilience (Stage 9), AI context schemas (Stage 10), breakthrough upgrades (Stage 11), and full app audit benchmarks (Stage 12).
+2. **Platinum Quality Guarantee:** Deep research ensures that every layer of the product — inside and out — reaches 100% World-Class Platinum Tier excellence.
+
+### 26. Mandatory Sukdulang-Antas Platinum-Grade & Zero-Shortcut Rule
+
+This rule is strictly enforced across all agents, subagents, tools, and council members. **NO EXCEPTIONS.**
+
+1. **Be Proactive Always:** Anticipate user requirements, edge-case failures, fallback states, and next-generation features before being prompted.
+2. **Bawal ang Tamad (Zero Laziness):** Never write partial placeholder code, dummy stub functions, or un-styled components. Every component MUST be mature, fully wired, visually stunning, and production-ready.
+3. **World-Class Platinum-Grade Results Only:** Never settle for *"pwede na / ok na yan / basta gumagana"*. Outputs MUST be world-class, professional, high-contrast (WCAG AAA), and zero-defect.
+4. **Universal Dual-State Cognitive Engine (Sukdulang-Antas Execution):** Operate under Isolated Drafting ➔ Proactive Edge-Case Reflection ➔ Sukdulang-Antas Composition. Push every component, feature, button, drawer, modal, and API until its capability is **COMPLETELY MAXED OUT (*maisagad ang antas*)** and stop ONLY when fully exhausted.
+5. **No Shortcuts (Zero Shortcuts Standard):** Never skip verification commands, build audits, or testing gates.
+6. **Subagent Council & MCP Collaboration Mandate:** Whenever encountering technical complexity, ambiguity, or friction, IMMEDIATELY invoke the Subagent Council (CTO, OpenAI DRI, Apple HIG, Stripe Security, Google SRE, Netflix Chaos) and available MCP tools to engineer platinum-grade solutions.
+
 
 
 
