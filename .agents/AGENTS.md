@@ -260,6 +260,24 @@ Every application, page, component, and project created or evaluated under the S
 14. **Mobile-First & Gesture-Optimized Patterns**: 44–48px touch targets, thumb-reachable bottom drawers, and native ergonomic flows.
 15. **Observability in UX / Telemetry**: Component-level telemetry capturing user flows, render times, click events, and drop-off rates.
 
+### 23. Mandatory Stitch MCP & Subagent Council 8-Theme World-Class UI/UX Layout Design Protocol
+
+Whenever initiating a new application, UI module, or major view refactor under the Software Factory workflow, the Orchestrator **MUST** invoke **Stitch MCP** and the **Subagent Council** (CTO, Apple HIG Reviewer, OpenAI DRI, Google SRE, Accessibility Auditor) to design cutting-edge, world-class UI/UX layouts and color schemes.
+
+**Strict Theme & Design Rules:**
+1. **Never Default Exclusively to Dark Theme:** Applications MUST offer crisp light, warm sand, or glacial frost options with high WCAG 2.2 AAA contrast (minimum 4.5:1 text ratio).
+2. **Mandatory 8-Theme Selection Matrix:** Every new app MUST select or support one of the 8 Master Themes compiled in `world_class_ui_ux_layout_catalog.md`:
+   - **Theme 1: 💎 Sukdulang-Antas Liquid Quartz 4.0** (Upgraded Next-Gen Translucent Glass with zero dark opacity bugs)
+   - **Theme 2: ☀️ Crisp Titanium Light Enterprise** (Pure White & Crisp Slate, Stripe/Apple SaaS Level)
+   - **Theme 3: ☕ Warm Sand & Editorial Clay** (Humanist Cream & Terracotta, Editorial Elegance)
+   - **Theme 4: ❄️ Nordic Slate & Glacial Frost** (Medium Light Cool Gray & Deep Teal)
+   - **Theme 5: ⚡ Velvet Neo-Brutalism Light** (Vibrant B2B SaaS with 2px solid borders & hard press shadows)
+   - **Theme 6: 🌌 Atmospheric Dusk & Radiant Amber** (Semi-Dark Twilight Comfort with Amber Glow)
+   - **Theme 7: 🏛️ Monochrome Architectural High-Contrast** (21:1 Contrast Jet Black on Pure White)
+   - **Theme 8: 🌿 Biophilic Emerald & Solar Light** (Nature-Inspired Meadow Light & Forest Emerald)
+3. **Flawless Ergonomics & Zero Cognitive Load:** All UI components MUST feature 48px touch targets, non-blocking Level 2/3 slide drawers (`SlideOverDrawer`), clear visual signifiers, and dynamic bento grid cards.
+
+
 
 
 
