@@ -1,0 +1,40 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "FleetPulse-AI Telematics API",
+    "version": "1.0.0",
+    "description": "API for commercial fleet telematics, driver coaching, and FMCSA DVIR digital logs."
+  },
+  "paths": {
+    "/api/telematics/vehicles": {
+      "get": {
+        "summary": "List active telematics vehicle units",
+        "responses": {
+          "200": {
+            "description": "List of 450 active heavy transport units with speed, location, and DTC codes."
+          }
+        }
+      }
+    },
+    "/api/dvir/submit": {
+      "post": {
+        "summary": "Submit digital pre-trip inspection report",
+        "responses": {
+          "200": {
+            "description": "DVIR report verified and logged for FMCSA audit readiness."
+          }
+        }
+      }
+    },
+    "/api/admin/self-host-provision/purgeClientState": {
+      "post": {
+        "summary": "3-Step Automated Client State Purge & Reset Wizard",
+        "responses": {
+          "200": {
+            "description": "Demo IndexedDB databases, local storage, and cookies wiped; Super-Admin re-seeded."
+          }
+        }
+      }
+    }
+  }
+}

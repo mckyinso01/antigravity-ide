@@ -1,0 +1,13 @@
+# FleetPulse-AI — Commercial Fleet Telematics & Autonomous Safety Platform
+
+> **System Overview:** AI-driven telematics and autonomous fleet safety platform designed for Apex Freight Logistics. Replaces $165,000/yr Fleet Supervisor headcount overhead with 0ms real-time vehicle tracking, Samsara/Geotab 2026 AI coaching, and FMCSA DOT digital inspection logs.
+
+## 🚀 Key Features & Endpoints
+- **Real-Time Telematics Grid:** Live 450-vehicle tracking, speed, fuel, and driver fatigue monitoring.
+- **Digital Pre-Trip DVIR Checklist:** 100% electronic inspection report with photo verification.
+- **Level 1–3 Slide-Over Drawers:** Zero-context-switching in-depth vehicle DTC fault code inspection.
+- **4-Tier Commercial Licensing:** Enterprise Self-Hosted, White-Label Agency ($1,499), Source Code Buyout ($6,999), Cloud SaaS ($249/mo).
+
+## 📄 Documentation Links
+- OpenAPI REST Spec: /openapi.json
+- C4 Mermaid Architecture: /docs/C4_ARCHITECTURE.md
