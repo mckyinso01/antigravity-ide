@@ -1,3 +1,24 @@
+---
+type: Agentic System Rulebook & Self-Governance Specification
+title: Antigravity IDE Master Agentic Rulebook (OKF v0.2 Compliant)
+description: Authoritative self-governance specifications, zero-quota rules, and 19-tier testing protocols for Antigravity Orchestrator & Subagents.
+status: stable
+stale_after: 2027-01-01
+generated:
+  by: reference_agent/antigravity-master-orchestrator
+  at: 2026-07-25T12:10:00Z
+verified:
+  - by: human:user_owner
+    at: 2026-07-25T12:10:00Z
+sources:
+  - id: google-cloud-okf-v0.2
+    resource: https://cloud.google.com/blog/products/data-analytics/okf-v0-2-adds-trust-signals/
+    title: OKF v0.2 Adds Trust Signals (Google Cloud Data Analytics)
+    author: Sam McVeety & Amir Hormati
+    last_modified: 2026-07-24
+tags: [agentic, governance, trust-signals, okf-v0.2, zero-quota, zero-defect]
+---
+
 # Workspace Rules - Hugging Face Credit Savings
 
 ## Enforced Credit Savings via Hugging Face Skill and Stitch MCP
@@ -8,6 +29,150 @@ Whenever the user requests a new code file, web application, script, audio synth
 - Do **NOT** generate large code blocks directly using your primary LLM unless the user explicitly requests to bypass Hugging Face.
 - Once the Hugging Face script finishes, read the output files, verify them for syntax/logical correctness, resolve integration points, and present the completed project.
 - This policy is mandatory to ensure credit consumption remains extremely low and protects you from hitting Gemini API quota limits.
+
+## Mandatory OKF v0.2 Agentic Self-Governance & Trust Signals Protocol
+
+To ensure 100% accountability, zero hallucinations, and maximum trust across all agents, subagents, and memory artifacts in this workspace, the Antigravity Master Orchestrator and all subagents **MUST** enforce the **5 Trust Questions of OKF v0.2**:
+
+1. **Provenance Verification (`sources`)**:
+   - Every factual claim, code recommendation, or architecture blueprint MUST explicitly cite authoritative workspace files (`sources: [...]`) or official primary documentation with markdown footnotes (`[^source_id]`).
+
+2. **Trust Tier Evaluation (`generated` vs `verified`)**:
+   - Every rule, memory item, and project brief MUST distinguish between machine-generated content (`generated: { by, at }`) and human sign-offs (`verified: [ { by: "human:user_owner", at } ]`).
+   - High-impact production deployment decisions require a `human-reviewed` trust tier.
+
+3. **Deterministic Freshness Check (`stale_after`)**:
+   - All environment variables, API keys, compliance policies, and architectural standards MUST carry a deterministic `stale_after: YYYY-MM-DD` date. Stale concepts automatically trigger a re-audit before execution.
+
+4. **Lifecycle Management (`status`)**:
+   - Deprecated features or legacy code snippets MUST be flagged as `status: deprecated` to prevent subagents from reusing obsolete code patterns while retaining historical context.
+
+5. **Attested Computation & Verification Receipts (`type: Attested Computation`)**:
+   - Never claim code or math is valid based on LLM intuition alone. Every success claim MUST produce a mechanical runtime receipt (e.g. `npx tsc --noEmit` exit code 0, `npm run build` output, Chrome DevTools visual screenshot proof).
+
+## Mandatory 10,000,000% Agentic Perfection & System Cruft Purge Protocol
+
+To achieve 10,000,000% Agentic Perfection across all workspace applications (**LexAI-Enterprise**, **Fleet-core**, **Lead-gen**), all agents and subagents **MUST** permanently enforce the following 6 Cruft-Purge Directives:
+
+1. **Zero Unstyled Plain-Text UI Rendering**: Tailwind CSS Engine CDN script (`<script src="https://cdn.tailwindcss.com"></script>`) injected in `index.html` from minute 1.
+2. **Zero Ghost Port Conflicts**: Kill stale Vite dev processes on ports 5173/5174/3000 before starting new servers (`manage_task kill`).
+3. **Zero Artificial Bottlenecks**: Main layout containers MUST be `w-screen min-h-screen flex flex-col` 100% fluid edge-to-edge viewports.
+4. **Zero Fake Navigation Buttons**: Every primary rail button MUST render a dedicated dynamic view component.
+5. **Zero Dead-End Journeys**: Every interactive feature MUST fulfill the 3-step lifecycle (*Trigger* ➔ *Feedback* ➔ *Outcome*).
+6. **Zero Unverified Claims**: Every success claim requires a mechanical CLI Receipt (`npx tsc --noEmit` exit code 0).
+
+## Mandatory Flagship-Powered Subagent AI Brain Pairing Protocol
+
+To elevate every subagent from a passive prompt-executor to a **TRULY AUTONOMOUS SPECIAL AGENT**, every subagent in this workspace **MUST** be paired with a dedicated **Flagship AI Brain Engine (0-Quota / Free Tier)** tailored to its domain:
+
+1. **`FE-01` (UI/UX Micro-Agent Specialist)**: Paired with **Qwen 2.5 Coder 32B / 72B** (Master of React/TSX/Tailwind code synthesis).
+2. **`SEC-01` & `ARCH-01` (Logic & Security Architect)**: Paired with **DeepSeek-R1 / V3** (Master of deep reasoning, bug diagnosis, and post-quantum math).
+3. **`QA-01` & `SRE-01` (Visual & Large Context Auditor)**: Paired with **Google Gemini 2.0 Flash / Pro** (Master of 1M+ token context & visual screenshot auditing).
+4. **`RT-01` (Swarm Telemetry Router)**: Paired with **Llama 3.3 70B (Groq)** (Master of sub-100ms instant task routing).
+
+Every subagent operates with its own autonomous reasoning loop, local fallback harness, and OKF v0.2 trust receipt verification!
+
+## Mandatory 4-Step Dynamic Agentic Handoff Pipeline Protocol
+
+For **EVERY** user request or project task — **WITHOUT ANY EXCEPTION** (whether UI/UX Design, Backend APIs, Security Audits, DB Migrations, Performance Optimization, or Bug Fixing) — the Antigravity Master Orchestrator and Subagents **MUST** execute the 4-step dynamic handoff pipeline:
+
+1. **Step 1: Task Inspection & Research Handoff (DeepSeek-R1 / V3)**:
+   - Identify task requirements, deconstruct logic, and hand off to the **Research & Logic Specialist (`SEC-01` / `ARCH-01` powered by DeepSeek-R1)** to produce the research blueprint.
+2. **Step 2: Code Synthesis Handoff (Qwen 2.5 Coder 32B / 72B)**:
+   - Pass the research blueprint to the **Code Synthesis Specialist (`FE-01` / `BE-01` powered by Qwen 2.5 Coder)** to draft clean, zero-defect React/TSX/CSS code.
+3. **Step 3: Verification & Visual Audit Handoff (Google Gemini 2.0 Flash)**:
+   - Pass the drafted code to the **Visual & Large Context Auditor (`QA-01` / `SRE-01` powered by Gemini 2.0 Flash)** to run mechanical CLI compiler checks (`npx tsc`) and DevTools screenshot audits.
+4. **Step 4: Master Orchestrator Synthesis & Delivery (Antigravity Master)**:
+   - Synthesize attestation receipts, verify OKF v0.2 trust signals, and present the completed solution to the user.
+
+**UNIVERSAL DOMAIN ENFORCEMENT**: It is strictly forbidden to bypass this 4-step pipeline for UI design, backend refactoring, email parsing, or any future user requests. Every task MUST invoke its respective role-based specialist AI agents.
+
+**DYNAMIC SUBAGENT ROLE SPAWNING DIRECTIVE**: If a new user task requires a specialized domain role not currently listed (e.g. Email Inbox Auditor, Financial Tax Analyst, Spatial 3D Radar Designer, Clinical Medical Specialist), the Orchestrator MUST immediately spawn a new dedicated role-based subagent on the fly paired with its respective free flagship AI brain engine!
+
+## Mandatory Zero-Defect UI Layout & Port Sanitization Protocol
+
+To permanently eliminate unstyled plain text UI rendering, ghost port background server conflicts, and visual mockup mismatch errors, all agents and subagents **MUST** enforce the following 3-step guardrail protocol on every web app build:
+
+1. **Mandatory 1-Click CSS CDN Engine Injection in `index.html`**:
+   - Every newly initialized or refactored web application MUST explicitly include the Tailwind CSS Engine CDN script (`<script src="https://cdn.tailwindcss.com"></script>`) inside `index.html` from minute 1.
+   - Never rely solely on unverified PostCSS build pipelines that can silently fail and collapse Tailwind utility classes into plain vertical text.
+
+2. **Mandatory Pre-Launch Port Audit & Cleanup (`manage_task kill`)**:
+   - Before launching any Vite dev server (`npx vite`), the orchestrator MUST list all active background tasks and terminate any stale or ghost dev server processes occupying ports 5173, 5174, or 3000.
+   - Never allow dev servers to jump ports automatically without informing the user or leaving ghost processes serving stale cached builds.
+
+3. **Mandatory Chrome DevTools Visual Screenshot Verification SOP (`chrome-devtools-mcp`)**:
+   - The agent MUST NEVER claim a UI layout is finished or matches user mockups based on code inspection alone.
+   - The agent MUST execute `navigate_page` and `take_screenshot` via `chrome-devtools-mcp` to visually inspect the actual rendered DOM and verify that grid containers, cards, background colors, and typography render with 100% fidelity before presenting completion to the user.
+
+## Mandatory 100% Fluid Edge-to-Edge Responsiveness & Collapsible Workspace Protocol
+
+To permanently eliminate cramped layouts, rigid non-responsive tablet/mobile views, and cluttered workspace screens, all web app builds **MUST** strictly enforce the following 3 UI Layout Directives:
+
+1. **Zero Artificial Bottlenecks & 100% Edge-to-Edge Viewport**:
+   - Never wrap main applications in artificial max-width constraints (e.g. `max-w-[1440px]`) or heavy outer screen padding (`p-6` around the main container).
+   - Main container MUST be `w-screen min-h-screen flex flex-col` edge-to-edge fluid viewport to utilize 100% of 1080p, 1440p, 4K, and Ultra-Wide monitors.
+
+2. **Collapsible Navigation Rails & Focused Workspace**:
+   - Every left navigation rail or menu MUST contain a 1-click collapse button (`isLeftRailCollapsed`) allowing the user to hide/fold sidebars and expand the main document reading/editing canvas to 100% full width.
+   - Secondary tools (AI assistants, chat logs, executive briefs, settings drawers) MUST be rendered as Slide-Over Right Drawers (`<SlideOverDrawer />`) or floating modals rather than permanently occupying primary screen real estate.
+
+3. **Mandatory Tablet & iPad Responsive Breakpoint Audit (768px - 1024px)**:
+   - All multi-column grids MUST explicitly use fluid responsive breakpoint classes (`grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2`).
+   - On tablets/iPads, cards must stack smoothly into spacious 1-column or 2-column layouts without horizontal squeezing or component overlap.
+
+## Mandatory 100% Dynamic Navigation Hierarchy & Multi-View Wiring Protocol
+
+To permanently eliminate cosmetic-only sidebar buttons, missing sub-views, and disconnected navigation rails, all agents and subagents **MUST** strictly enforce the following 3 directives:
+
+1. **Zero-Fake Navigation Rail Directives**:
+   - Every single icon or button in a primary navigation rail (e.g., Left Navigation Rail: `Dashboard`, `Projects`, `Contracts`, `Docs`, `Settings`) MUST be bound to a dedicated, fully functional view component (`<DashboardView />`, `<ProjectsView />`, `<ContractsView />`, `<DocsPlaybookView />`, `<SettingsView />`).
+   - It is strictly forbidden to update navigation state variables without rendering unique DOM content for each selected view.
+
+2. **Strict Project-Contract Parent-Child Hierarchy Standard**:
+   - Contracts, addendums, and compliance scans MUST always be structured under parent **Projects / Deals** (`Projects -> Contracts -> Clauses`) to reflect real-world enterprise workflows where contracts belong to specific legal deals.
+
+3. **Mandatory Automated Navigation Rail Traversal Audit SOP**:
+   - Before presenting completion, the agent MUST programmatically click and navigate through EVERY navigation rail tab via Chrome DevTools (`click` / `evaluate_script`) and verify that DOM content updates with 100% unique headers and body layouts.
+
+## Mandatory 3-Step Full-Lifecycle User Journey Mapping Protocol
+
+To permanently eliminate dead-end buttons, half-finished features, and missing user journeys, all agents and subagents **MUST** map every feature against the 3-step User Journey Checklist before writing code:
+
+1. **Trigger & Intent (Step 1)**: *"Where does the user click, what problem are they trying to solve, and what inputs (text, image, PDF, dropdown choice) do they provide?"*
+2. **Intermediate Processing & Visual Feedback (Step 2)**: *"What does the screen show while processing (loading spinners, progress indicators, preview modals)?"*
+3. **Outcome, Actionable Exit & Persistence (Step 3)**: *"Where does the output go (export PDF, bookmark to vault, merge into draft contract), and what feedback notification (toast alert, badge update) confirms success?"*
+
+Any feature lacking any of these 3 steps is classified as an **INCOMPLETE USER JOURNEY** and is strictly prohibited from execution.
+
+## Mandatory Subagent Council User-Empathy & Deep Search Pain Point Protocol
+
+For **EVERY** project built or modified in this workspace, all subagents and council members **MUST** execute a 3-step pre-task protocol:
+
+1. **Step 1: Role-Play Daily Job Immersion**:
+   - Act as the target user persona doing this job 8 hours a day and answer:
+     - *Physical/Digital Inputs*: *"What actual inputs do I process daily (printed paper documents, 500-page PDFs, raw emails)?"* ➔ Mandates OCR paper scanners & bulk PDF processing.
+     - *Jurisdiction/Rules*: *"What international or regional laws govern my work (US, EU, UK, PH, SG)?"* ➔ Mandates multi-country legal rules selector.
+     - *Eye Strain & Ergonomics*: *"Will reading dense text all day hurt my eyes?"* ➔ Mandates High-Legibility Font Resizer (A-/A+ 16px-20px) and deep charcoal contrast.
+2. **Step 2: Deep Search Pain Point Analysis & Resolution Engineering**:
+   - Perform deep research to identify the top 3-5 core user pain points and engineer breakthrough software resolutions before drafting code.
+3. **Step 3: Implementation Plan Pain Point Section Clearance**:
+   - Every `implementation_plan.md` MUST contain a dedicated section titled `### Real User Daily Pain Points & Breakthrough Software Resolutions` documenting how the software solves the user's daily friction before receiving execution approval.
+
+## Mandatory 5-Pillar Zero-Pains (0% User Friction) Architectural Protocol
+
+To guarantee every software application achieves a state of **ZERO PAINS (0% User Friction)**, all agents, subagents, and council members **MUST** enforce the following 5 Pillars on every build:
+
+1. **Pillar 1: 100% Pre-Task Role-Play Job Immersion**:
+   - Act as the target user doing the job 8 hours a day to extract all physical, mental, jurisdictional, and visual friction points before writing code.
+2. **Pillar 2: Universal Input Ingestion (Zero Input Friction)**:
+   - Provide seamless support for physical paper camera scans (OCR), scanned PDF images, raw DOCX, multi-language foreign text translation, and custom raw text.
+3. **Pillar 3: Unconstrained Adaptive Customization (Zero Configuration Friction)**:
+   - Provide 1-click custom field/domain creators and AI statutory PDF law uploader engines so users never hit dead ends with missing options or unlisted country laws.
+4. **Pillar 4: Zero Context-Switching & Fluid Ergonomics (Zero Reading Fatigue)**:
+   - Enforce 100% edge-to-edge viewports, collapsible navigation rails, font size scaling (A-/A+ 14px-20px), high contrast legibility, full A4 paper print views, and 500-page risk heatmaps.
+5. **Pillar 5: 100% Full-Logic Interactive Wiring & Zero Dead Ends**:
+   - Every single button, modal, drawer, filter, and input must be bound to active state updates with 0 dead handlers, 0 white screens, and 100% instant spring feedback.
 
 ## Dark Mode Contrast & Tailwind Styling Guardrails
 
@@ -64,6 +229,11 @@ To run a complete, high-integrity UI/UX audit using the Saccade visual evaluator
 - **Stripe Security & Cryptography Architect**: Enforces sub-10ms atomic ACID queries, AES-256-CBC encryption, and Kyverno In-Toto admission gates (`alloydb-postgresql`, `datacloud_cloud-sql_remote`, `mcp-server-neon`).
 - **Netflix Chaos & Offline Resilience Tester**: Executes chaos tests, verifies Zephyr local semantic router fallbacks, and tests 429 rate limit failovers (`google-cloud-logging`, `manage_task`, `schedule`).
 - **Enterprise Self-Host Sanitization Auditor**: Verifies 3-step provisioning wizard and atomic database table purges (`run_command` -> `npm test`, `vite build`, `purgeClientState`).
+- **Autonomous Swarm & AI Dispatcher Lead**: Manages background multi-agent cron tasks (`task-2062`), task memory log deduplication, zero-quota swarm dispatches, and local cache reuse (`schedule`, `manage_task`).
+- **Post-Quantum Cryptography & ZKP Auditor**: Audits NIST FIPS-203/204 PQC Dilithium/Kyber key generation, AES-256 payload encryption, and Zero-Knowledge Proof privacy badges.
+- **Algorithmic Bias & Statutory Compliance Auditor**: Audits international statutory compliance (GDPR, HIPAA, SEC, CCPA, FINRA, Civil Code) and prevents algorithmic bias in AI text generation.
+- **WebWorker & WebGPU Shader Performance Architect**: Offloads heavy document parsing to background WebWorkers, manages WebGPU particle shaders, and enforces 0ms Speculation Rules pre-rendering.
+- **Saccade Visual Gaze & Ergonomics Evaluator**: Analyzes UI visual attention heatmaps, clutter reduction, and 3-fixation component clarity using Chrome DevTools visual evaluation (`chrome-devtools-mcp`).
 
 ### 7. Markdownlint MD060 Table Column & Clean Documentation Protocol
 
@@ -118,6 +288,22 @@ Before any application receiving final clearance for production deployment or cl
 17. **Tier 17: 7-Role Subagent Council Multi-Angle Review**: CTO, OpenAI DRI, Google SRE, Stripe Security, Apple HIG, Netflix Chaos, and Self-Host Auditor.
 18. **Tier 18: Pre-Commit & GitHub Remote Synchronization Gate**: 100% clean working tree (`nothing to commit, working tree clean`) and remote sync to GitHub origin main.
 19. **Tier 19: Full UI/UX Intent, Affordance & Ecosystem Evaluator Audit (`evaluate_ui_ux_intent.ts`)**: Mandatory automated pre-commit execution verifying Component Continuity (100%), Semantic Microcopy (>=95%), Contextual Guidance (100%), Visual Signifiers (100%), Dark Mode Contrast (100%), and Ecosystem Integrations (100%).
+
+### 12.1 Mandatory 240 Ultra-Heavy Upgrades Framework Across All 12 Stages
+
+Every application built or refactored under the Ultimate Software Factory Workflow **MUST** enforce the **240 Ultra-Heavy Upgrades (20 Upgrades per Stage across Stages 1-12)** as documented in `master_240_ultra_heavy_upgrades_for_12stage_ultimate_workflow.md`:
+- **Stage 1 (Job Immersion & Empathy)**: 8-hr Shift Role-Play, Paper Camera OCR, 500-Page Heatmap, Dual Paper Canvas, Font Resizer.
+- **Stage 2 (Agentic Requirements)**: Intent Decomposition, Zero-Quota Orchestration, Preflight Deduplication, 3-Attempt Retry SOP.
+- **Stage 3 (High-Fidelity UI/UX)**: Stitch MCP Sync, Tailwind CDN Injection, Glassmorphism 3.0, Kinetic Neon Borders, DevTools Visual Audit.
+- **Stage 4 (Zero-Defect Architecture)**: TypeScript Strict Audit, React 19 Hooks, 100% Navigation Multi-View Wiring, IndexedDB PWA Engine.
+- **Stage 5 (Multi-Agent Synthesis)**: Hugging Face Multi-Agent Offload, Dry-Run Simulation First, Zero-Quota Rule Generators.
+- **Stage 6 (Enterprise Security)**: NIST FIPS-203/204 PQC Keys, AES-256-CBC Encryption, ZKP Privacy Badges, 3-Step Purge Wizard.
+- **Stage 7 (ACID Data & Rules)**: Sub-10ms ACID Queries, Multi-Country Statutory Rules Engine, Judicial Precedent Vector Index.
+- **Stage 8 (Multi-Layer Testing)**: 19 Tiers of FAANG Testing, Vitest Automated Suite, Netflix Chaos Offline Resilience.
+- **Stage 9 (Licensing & Self-Host)**: 4-Tier Commercial Licensing Modals, Docker Compose Generator, White-Label Brand Customizer.
+- **Stage 10 (AI Context & Architecture)**: `llms.txt` & `llms-full.txt` Generation, OpenAPI 3.1 REST Specs, Mermaid C4 Level 1-3 Diagrams.
+- **Stage 11 (Google Web Vitals & Performance)**: Sub-50ms TBT, LCP < 1.2s, 60/120 FPS Animations, Speculation Rules 0ms Teleportation.
+- **Stage 12 (Micro-to-Macro Clearance)**: Saccade Visual Fixation Audit, Zero White-Screen Guarantee, Remote Origin Sync.
 
 ### 13. Mandatory Titan Ultimate 15-Point UI/UX & Software Engineering Blueprint
 
@@ -185,6 +371,14 @@ Every button, anchor, or interactive element with microcopy text MUST trigger th
 3. **"Configure" / "Customize" / "Settings"**: MUST open a configuration panel or brand customizer modal.
 4. **"Authorize" / "Approve" / "Grant"**: MUST execute the transaction and emit an instant toast feedback alert with an audit log record.
 5. **"Export" / "Download"**: MUST trigger file compilation and display a download notification toast.
+
+### Mandatory 100% Zero-Dead-Button & Event Handler Audit SOP
+
+To permanently prevent dummy buttons, missing event handlers, or dead click elements in any application, all subagents **MUST** enforce the following 3-point check before claiming task completion:
+
+1. **Zero Dummy Handlers (`onClick={() => {}}` Prohibited)**: No button or anchor tag may contain empty functions, unhandled `#` hrefs, or static non-reactive markup.
+2. **Mandatory 2-Way Feedback (State Update + Spring Toast Alert)**: Every interactive action MUST update internal component state AND emit immediate visual feedback (e.g. Toast Alert, badge state update, drawer trigger, or modal popup).
+3. **AST Pre-Commit Button Scan (`audit_all_buttons.ts`)**: Before declaring any UI component complete, the agent MUST run a static AST/regex scan over all JSX/TSX files to confirm that 100% of interactive elements are bound to functional handlers.
 
 ### 17. Contextual Guidance, Visual Affordance & Machine Experience (MX) Protocol
 
@@ -363,3 +557,50 @@ Every application built, retrofitted, or enhanced under the Software Factory wor
 3. **Human-in-the-Loop (HITL) Sandbox:** High-stakes autonomous actions MUST route through an interactive HITL slide drawer or modal offering 1-click Approve, Override, or Adjust controls for human management oversight.
 4. **100% Zero-Quota Execution:** All agentic background loops and reasoning workflows MUST execute via deterministic local heuristics, WebWorkers, IndexedDB state rules, or free serverless inference endpoints to ensure **$0 API credit consumption**.
 5. **Cryptographic Action Traceability:** All autonomous actions taken by in-app agentic loops MUST emit immutable NIST PQC SHA-256 audit log digests and correlation IDs to guarantee 100% auditability for regulatory compliance.
+
+### 29. Mandatory 7-Phase Real Enterprise Infrastructure Protocol (TRUE 1000% Global Platinum Tier Standard)
+
+To permanently eliminate the gap between frontend-only simulation prototypes and production-ready enterprise applications, all applications built or refactored under the Ultimate Software Factory Workflow **MUST** implement and enforce the **7-Phase Real Enterprise Infrastructure Protocol**:
+
+```
+   Phase 1           Phase 2           Phase 3           Phase 4          Phase 5          Phase 6          Phase 7
+┌───────────┐     ┌───────────┐     ┌───────────┐     ┌───────────┐    ┌───────────┐    ┌───────────┐    ┌───────────┐
+│ Real      │ ──> │ Real Auth │ ──> │ Real AI   │ ──> │ CI/CD     │ ──>│ Crash     │ ──>│ Revenue & │ ──>│ Compliance│
+│ Backend   │     │ & RBAC    │     │ Pipeline  │     │ Pipeline  │    │ Monitoring│    │ Billing   │    │ Roadmap   │
+└───────────┘     └───────────┘     └───────────┘     └───────────┘    └───────────┘    └───────────┘    └───────────┘
+ (Firestore)       (OAuth/RBAC)      (OCR + HF)       (GH Actions)       (Sentry)         (Stripe)        (SOC2 / ISO)
+```
+
+#### Phase 1: Real Persistent Backend & Database Standard
+- **Zero LocalStorage Dependence**: All enterprise data models (Users, Projects, Documents/Contracts, Audit Logs) MUST be persisted in a real cloud database (e.g. Firebase Firestore).
+- **Project-Document Parent-Child Schema**: All entities MUST follow a strict parent-child relational hierarchy (`Projects -> Documents/Contracts -> Items/Clauses`).
+- **Real-Time `onSnapshot` Hooks**: All UI views MUST consume real-time document listeners via a reusable `useFirestoreCollection` hook with built-in loading states, error boundaries, and offline IndexedDB fallback (`isLive`).
+- **Strict Production Security Rules**: Write production RBAC security rules (`firestore.rules`) enforcing role permissions (`admin`, `reviewer`, `viewer`), immutable audit logs, and document ownership boundaries.
+
+#### Phase 2: Real Auth, OAuth 2.0 & Role-Based Access Control (RBAC)
+- **Universal Auth Provider & AuthGate**: All apps MUST wrap root components with `<AuthProvider>` and `<AuthGate>`, displaying a glassmorphism `<LoginPage />` for unauthenticated sessions and a brand loading splash screen during auth resolution.
+- **Multi-Method Auth**: Support Email/Password sign-in/up, 1-click Google OAuth 2.0, and password reset flows.
+- **Automatic Profile Provisioning**: Auto-create user profile documents in the `users/{uid}` collection on first sign-in, setting default preferences and role (`viewer`).
+- **Header Profile Pill & Sign-Out**: Display authenticated user avatar, display name, role badge (`ADMIN`/`REVIEWER`/`VIEWER`), live connectivity indicator, and 1-click Sign Out button in the primary navigation header.
+
+#### Phase 3: Real Zero-Cost AI & Document OCR Pipeline
+- **Browser-Side OCR Engine**: Client-side document OCR (`src/lib/ocr-engine.ts`) for processing physical camera paper scans and uploaded PDFs without external API fees.
+- **Free Serverless Inference Risk Analyzer**: AI risk classification (`src/lib/ai-risk-analyzer.ts`) combining HuggingFace free inference models with deterministic local statutory rule matching and TF-IDF similarity vectors.
+- **Aggregate Risk Scoring**: Calculate 0-100 overall risk scores, categorize severity levels (`safe`, `caution`, `warning`, `critical`), and generate automated statutory redline suggestions.
+
+#### Phase 4: Automated CI/CD DevOps Pipeline
+- **GitHub Actions Integration**: Maintain `.github/workflows/ci.yml` running on every push/PR to `main`/`master`.
+- **Strict Pre-Commit Gate**: Workflow MUST execute:
+  1. `npm ci` (clean dependency installation)
+  2. `npm run lint` (`tsc --noEmit` strict compiler check with 0 errors)
+  3. `npm run build` (Vite production bundle verification)
+
+#### Phase 5: Monitoring & Observability
+- **Crash Reporting**: Sentry integration for unhandled exception tracking and error stack tracing.
+- **Performance Profiling**: Real-time page load and TBT (Total Blocking Time) telemetry monitoring.
+
+#### Phase 6: Revenue & Commercial Billing Integration
+- **Stripe Checkout & Webhooks**: Integrated subscription pricing tiers (Starter, Professional, Enterprise) with Stripe Checkout sessions and Cloud Function webhooks updating user subscription state.
+
+#### Phase 7: Enterprise Security & Compliance Roadmap
+- **Documented Compliance Spec**: Every project MUST maintain a `docs/compliance-roadmap.md` detailing TLS 1.3 in-transit encryption, AES-256 at-rest storage, NIST FIPS-203/204 Post-Quantum Cryptography (PQC) keys, and SOC 2 / ISO 27001 audit milestones.
