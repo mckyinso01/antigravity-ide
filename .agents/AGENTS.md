@@ -59,6 +59,12 @@ Whenever the user requests a new code file, web application, script, audio synth
 - **LISTEN-FIRST PROTOCOL**: Always read, digest, and understand the user's intent 100% first.
 - **MANDATORY CONFIRMATION GATE**: If any task requirement, client brief, or workflow logic is ambiguous or unverified, you MUST STOP immediately, present your understanding and proposed plan in chat, and get explicit user confirmation BEFORE making any code changes or file edits.
 
+## Mandatory Client Data Persistence & 360° Pre-Task Research Directive
+
+- **MANDATORY CLIENT DATA PERSISTENCE**: Whenever scraping, selecting, or processing a client lead, you **MUST IMMEDIATELY PERSIST & SAVE** the selected client's full raw profile data (Business Name, Niche, Contact Info, Location, Budget, Website, Raw Requirements) into a dedicated `client_profile.json` or `client_brief.md` file in the project repository FIRST so it is never lost or forgotten.
+- **MANDATORY 360° CLIENT RESEARCH PHASE**: Before drafting any implementation plan or modifying code, you **MUST CONDUCT DEEP 360° RESEARCH** on the client's business (their industry niche, operational pain points, target customer demographics, visual brand style, competitor gaps, and specific technical requirements).
+- **MANDATORY 360° CLIENT BRIEF PRESENTATION**: Present this 360° Client Research Brief in chat and get explicit user approval BEFORE proceeding to the implementation plan or writing any code.
+
 ## Mandatory OKF v0.2 Agentic Self-Governance & Trust Signals Protocol
 
 To ensure 100% accountability, zero hallucinations, and maximum trust across all agents, subagents, and memory artifacts in this workspace, the Antigravity Master Orchestrator and all subagents **MUST** enforce the **5 Trust Questions of OKF v0.2**:
