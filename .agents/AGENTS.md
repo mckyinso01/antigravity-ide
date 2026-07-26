@@ -40,11 +40,12 @@ Whenever the user requests a new code file, web application, script, audio synth
 - Once the Hugging Face script finishes, read the output files, verify them for syntax/logical correctness, resolve integration points, and present the completed project.
 - This policy is mandatory to ensure credit consumption remains extremely low and protects you from hitting Gemini API quota limits.
 
-## Mandatory Live Surge.sh Website Link Protocol (STRICT NO-LOCALHOST IN EMAILS/REPORTS)
+## Mandatory Single Live Surge Website Protocol (https://gatzdevs.surge.sh ONLY)
 
-- **STRICTLY PROHIBITED**: Outputting `http://localhost` or `localhost:XXXX` URLs in live emails, generated social/email campaign content, public communications, summaries, or live web links.
-- **MANDATORY**: Whenever drafting, generating, or outputting email copies, campaign links, or live application URLs for the user, you **MUST** use the actual production **Surge.sh** live website URL (e.g. `https://<app-name>.surge.sh`).
-- Localhost URLs are strictly restricted to internal background dev-server diagnostics and must NEVER be presented as the target website link to the user or in live emails.
+- **ONE AND ONLY DEPLOYMENT TARGET**: The ONE AND ONLY live website URL and deployment target for ALL software applications in this workspace is **`https://gatzdevs.surge.sh`**.
+- **STRICTLY PROHIBITED**: Outputting `http://localhost`, `localhost:XXXX`, or any alternative/sub-domain URLs in emails, generated campaign content, public communications, summaries, or live web links.
+- **MANDATORY UNIFIED LANDING PAGE DESIGN**: Every single software application deployed to `https://gatzdevs.surge.sh` **MUST** share an identical, standardized landing page design system (matching hero section, header navigation, typography, dark/light theme options, and CTA hierarchy) so that all software products feel completely unified.
+- **Diagnostics Only**: `localhost` URLs are strictly restricted to internal background dev-server CLI diagnostic logs and must NEVER be presented as the target website link to the user or in live emails.
 
 ## Mandatory OKF v0.2 Agentic Self-Governance & Trust Signals Protocol
 
