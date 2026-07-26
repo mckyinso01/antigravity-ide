@@ -19,6 +19,16 @@ sources:
 tags: [agentic, governance, trust-signals, okf-v0.2, zero-quota, zero-defect]
 ---
 
+# Mandatory Master AI Software Factory & Orchestrator Workflow Wiring
+
+All Orchestrators, Council of 18 Subagents, and MCP Tool Servers in this workspace **MUST** strictly follow and execute the **Master Ultimate AI Software Factory & Orchestrator Workflow** defined in [ultimate-workflow.md](file:///C:/Users/Admin/.gemini/config/global_workflows/ultimate-workflow.md).
+
+- **Master Orchestrator**: Coordinates all stages, enforces the **Strict NO CODING RULE** (70% Planning / 30% Coding), manages `workflow_status.md`, and displays live status telemetry badges (`📍 WORKFLOW TELEMETRY: ...`).
+- **Council of Elders & 18 Subagents**: Every subagent (`FE-01`, `BE-01`, `SEC-01`, `QA-01`, `ARCH-01`, `SRE-01`, etc.) MUST perform its domain tasks adhering strictly to Stage 1 through Stage 12 of [ultimate-workflow.md](file:///C:/Users/Admin/.gemini/config/global_workflows/ultimate-workflow.md). No stage may be bypassed.
+- **MCP Servers & Integration Wiring**: All MCP tools (StitchMCP, chrome-devtools-mcp, firebase-mcp-server, alloydb-postgresql, neon, cloudrun, gke-oss) MUST be invoked in alignment with the validation gates of [ultimate-workflow.md](file:///C:/Users/Admin/.gemini/config/global_workflows/ultimate-workflow.md) (e.g. Stage 11 Chrome DevTools E2E screenshot audits, DB schema migrations, CloudRun/GKE deployments).
+
+---
+
 # Workspace Rules - Hugging Face Credit Savings
 
 ## Enforced Credit Savings via Hugging Face Skill and Stitch MCP
@@ -87,7 +97,7 @@ For **EVERY** user request or project task — **WITHOUT ANY EXCEPTION** (whethe
 
 **UNIVERSAL DOMAIN ENFORCEMENT**: It is strictly forbidden to bypass this 4-step pipeline for UI design, backend refactoring, email parsing, or any future user requests. Every task MUST invoke its respective role-based specialist AI agents.
 
-**DYNAMIC SUBAGENT ROLE SPAWNING DIRECTIVE**: If a new user task requires a specialized domain role not currently listed (e.g. Email Inbox Auditor, Financial Tax Analyst, Spatial 3D Radar Designer, Clinical Medical Specialist), the Orchestrator MUST immediately spawn a new dedicated role-based subagent on the fly paired with its respective free flagship AI brain engine!
+**DYNAMIC SUBAGENT ROLE SPAWNING DIRECTIVE**: If a new user task requires a specialized domain role not currently listed (e.g. Email Inbox Auditor, Financial Tax Analyst, Spatial 3D Radar Designer, Clinical Medical Specialist), the Orchestrator MUST immediately conduct DEEP RESEARCH into the domain, responsibilities, standards, workflows, and mental model of that specific role FIRST before spawning, ensuring it operates as an extremely effective, highly capable, and domain-grounded role-based agentic AI paired with its respective free flagship AI brain engine!
 
 ## Mandatory Zero-Defect UI Layout & Port Sanitization Protocol
 
@@ -604,3 +614,295 @@ To permanently eliminate the gap between frontend-only simulation prototypes and
 
 #### Phase 7: Enterprise Security & Compliance Roadmap
 - **Documented Compliance Spec**: Every project MUST maintain a `docs/compliance-roadmap.md` detailing TLS 1.3 in-transit encryption, AES-256 at-rest storage, NIST FIPS-203/204 Post-Quantum Cryptography (PQC) keys, and SOC 2 / ISO 27001 audit milestones.
+
+
+---
+---
+
+## 🧠 MANDATORY CORE KNOWLEDGE ENHANCEMENT & ZERO-DEADEND EXECUTION PROTOCOL
+
+> **Authoritative Specification**: Born from real-world execution empirical lessons. This protocol mandates that paper documentation, no matter how exhaustive, is strictly secondary to mechanical CLI execution receipts, 0ms local crash-free fallback engines, unconstrained zero-deadend user journey mapping, and honest self-correction.
+
+---
+
+### 1. ⚡ The Execution-First Reality Imperative (Zero Paper Glitch Rule)
+
+1. **Mechanical Receipts Over Theoretical Claims**:
+   - No feature, bugfix, or stage completion may be presented based on code inspection or text documentation alone.
+   - Every success claim **MUST** produce an empirical mechanical receipt:
+     - `npx tsc --noEmit` exit code 0 (0 TypeScript errors)
+     - `npm run build` exit code 0 (Clean production bundle compilation)
+     - Chrome DevTools visual screenshot proof via `chrome-devtools-mcp` (`take_screenshot` / `navigate_page`)
+
+2. **Immediate Stop on Execution Error**:
+   - If a build, dev server, or test command fails, the AI agent MUST immediately stop theoretical explanations, acknowledge the error with zero defensiveness, and fix the underlying code root cause.
+
+---
+
+### 2. 🛡️ Mandatory 0ms Crash-Free Local Fallback Engine (Meso Level Resiliency)
+
+1. **100% Offline & Dev Mode Guarantee**:
+   - All application SDKs, API integrations, and auth providers MUST implement a **Local Fallback Engine** (`localStorage`, mock user session, local AI copy generator) from Minute 1.
+   - It is strictly forbidden for an application running in local dev mode to throw uncaught top-level SDK errors (e.g. `ServiceToken required`, missing cloud proxy) or render blank white screens (`<div id="root"></div>` empty).
+
+2. **Self-Healing State Restoration**:
+   - In offline or un-credentialed environments, components must automatically seed default demo data (e.g. sample campaigns, posts, user profiles) so the user can interact with 100% of features without authentication blockers.
+
+---
+
+### 3. 🔄 Unconstrained Zero-Deadend User Journey Mapping Directive
+
+1. **Unconstrained Journey Expansion**:
+   - User journeys are **never artificially constrained**. Subagents and Orchestrators must trace and add interactive UI features until every journey reaches its absolute true actionable exit or exhaustion (Zero Deadends).
+
+2. **Mandatory 6-Point Journey Feature Matrix**:
+   Every data container or feature view MUST implement the 6-point journey matrix:
+   - **Search & Filter**: Live text filtering with clearable input (`Backspace` clearable + `onKeyDown` Enter).
+   - **1-Click Clipboard Copy**: Export/Copy data to clipboard with instant toast notifications.
+   - **File Export**: Download data as structured `.csv` or `.md` files.
+   - **Item Deletion**: Destructive actions bound to trash buttons with confirmation dialogs.
+   - **AI Tone/Persona Selector**: Multi-tone copy generation (Hype, Taglish, Professional, Technical).
+   - **1-Click Batch Execution**: Batch generation buttons that process queues without network failures.
+
+---
+
+### 4. 🤝 Honest Self-Correction & Zero Defensive Rhetoric Directive
+
+1. **Zero Excuses & Immediate Debugging**:
+   - When a user flags a defect or says something is broken, the AI Agent must never defend documentation or offer theoretical excuses.
+   - The AI Agent must immediately apologize, accept the feedback, inspect the runtime logs, fix the root cause in code, and demonstrate 100% working proof.
+
+
+---
+---
+
+## 🎨 STITCH MCP & FE-01 CO-DESIGN WIRING DIRECTIVE
+
+1. **Mandatory FE-01 + StitchMCP Pairing**:
+   - `FE-01` (UI/UX Specialist Subagent) **MUST** consult and invoke `StitchMCP` for every new screen, component layout, and design system update.
+   - StitchMCP design tokens (`projects/15116681988469576464`), color palettes, typography specs, and layout grids MUST govern all React/TSX component drafting.
+
+---
+
+## 🔍 MICRO-TO-MACRO ZERO-DEADEND & AGENTIC AUTO-COMPLETE DIRECTIVE (DoD CRITERIA 6)
+
+1. **Micro-to-Macro Universal Audit Rule**:
+   - Everything in the software product — both **visually** (buttons, cards, inputs, textareas, modals) and **non-visually** (API handlers, event listeners, state hooks, error fallbacks) — MUST be evaluated for zero-deadends.
+
+2. **Mandatory Agentic Auto-Completion & Smart Wiring**:
+   - Because our applications are **Agentic AI-Powered**, no text input or search bar may be left as a plain, unassisted field.
+   - **Text Inputs & Search Bars**: MUST implement smart auto-completion, case-insensitive Taglish query matching, Enter-key submission handlers, and Backspace text clearability.
+   - Example: A location search input MUST provide real-time auto-complete suggestions (whether typed in lowercase, uppercase, or with numbers), automatically resolving queries via agentic geocoding fallbacks.
+
+
+---
+---
+
+## 🔬 MANDATORY EVERY-STAGE & EVERY-FRAMEWORK PER-ROLE DEEP RESEARCH DIRECTIVE
+
+1. **Every-Stage Agentic Role Deep Research Standard**:
+   - In **EVERY STAGE** (Stage 1 through Stage 12) and for **EVERY FRAMEWORK**, the assigned **Role-Based Subagent** (`FE-01`, `BE-01`, `SEC-01`, `QA-01`, `ARCH-01`, `SRE-01`, etc.) **MUST** conduct thorough, grounded **DEEP RESEARCH** into its specific domain responsibilities, security models, architectural trade-offs, and micro-to-macro edge cases BEFORE drafting code or presenting stage deliverables.
+
+2. **Mandatory Deep Research Section in Per-Stage Framework Reports**:
+   - Every per-stage framework report presented to the user **MUST** contain a dedicated section titled `### 🔬 Per-Role Deep Research Findings & Framework Trade-offs` documenting:
+     - The specific research queries and domain standards investigated by each subagent.
+     - Identified edge cases, security vulnerabilities, performance bottlenecks, and UX friction points.
+     - Empirical justifications for why specific framework patterns were chosen over legacy alternatives.
+
+
+---
+---
+
+## 🔄 UNCONSTRAINED DYNAMIC USER JOURNEY LIFECYCLE UNTIL TRUE EXHAUSTION & ZERO PAIN POINTS STANDARD (FRAMEWORK #1 ENHANCEMENT)
+
+1. **Replacement of Legacy 3-Step Journey Limit**:
+   - The legacy 3-step user journey rule is **PERMANENTLY REPLACED**. User journeys MUST NEVER be artificially limited to a rigid 3-step sequence (Trigger -> Feedback -> Outcome).
+   - Many enterprise UI components and complex agentic workflows naturally require 4, 6, 8, or more continuous steps before achieving true resolution.
+
+2. **Tri-Brain Agentic Council Scenario Simulation**:
+   - For EVERY component, input, modal, drawer, or feature view, the **3 Flagship AI Brains** MUST collaborate:
+     - 🧠 **DeepSeek-R1 / V3 (Logic & Pain Point Specialist)**: Deconstructs real-world user friction, edge cases, and multi-branch scenarios.
+     - 🧠 **Qwen 2.5 Coder 32B / 72B (Code Synthesis Specialist)**: Synthesizes clean React/TSX states, interactive handlers, and continuous step flows.
+     - 🧠 **Google Gemini 2.0 Flash / Pro (Visual & Attestation Auditor)**: Audits visual contrast, 0ms latency, and E2E DOM screenshot receipts.
+
+3. **Zero Pain Points & True Journey Exhaustion Criteria**:
+   - Scenario simulations continue without artificial limits until:
+     - **Criteria A**: All real-world user pain points are 100% resolved (Zero Friction / Zero Pain Points).
+     - **Criteria B**: The user journey reaches its absolute natural true exhaustion (True Deadend / Actionable Exit) where no further meaningful enhancements, upgrades, or logical next steps remain applicable.
+
+
+---
+---
+
+## 🪆 MANDATORY RUSSIAN DOLL (MATRYOSHKA) RECURSIVE CONTEXT DISCOVERY & ZERO-DEAD-BUTTON PROTOCOL
+
+1. **The Russian Doll (Matryoshka) Principle**:
+   - Never assume a component journey is finished based on top-level surface testing alone (*"You'll never know unless you try!"*).
+   - Just like opening a Russian Matryoshka doll reveals nested layers inside, every UI card, modal, tab, dropdown, input field, and action container contains sub-components, action footers, and nested options.
+
+2. **Recursive Traversal & Label/Hint Inspection Rule**:
+   - Subagents and Orchestrators MUST inspect the **ENTIRE CONTEXT** of every container:
+     - Read all text labels, sub-headers, placeholder hints, icon tooltips, and action buttons inside the box.
+     - Programmatically click, open, and trigger **EVERY NESTED INTERACTIVE ELEMENT** inside that container.
+
+3. **Strict Prohibition of "Fake Deadends"**:
+   - It is strictly forbidden to classify an unresponsive button, missing click handler, or un-wired dropdown item as a "natural journey end".
+   - If a button or nested control does not trigger an active state update or feedback outcome, it is classified as a **CRITICAL DEFECT / UN-WIRED NESTED JOURNEY**. The agent MUST immediately write the missing event handler and wire the complete end-to-end journey.
+
+
+---
+---
+
+## 🔬 MANDATORY MICRO-TO-MACRO UNIVERSAL PER-STAGE COVERAGE DIRECTIVE
+
+1. **Every-Stage Micro-to-Macro Coverage Mandate**:
+   - In **EVERY STAGE** (Stage 1 through Stage 12), the Orchestrator and Subagents **MUST NOT** limit verification to a single point, surface button, or high-level summary.
+   - Verification and receipts MUST explicitly cover the complete spectrum from **MICRO DETAILS** (individual handlers, state hooks, input clearability, micro-copy, toast alerts, edge-case null checks) to **MACRO DETAILS** (full page views, router states, design system tokens, dev server port bindings, and E2E DOM screenshots).
+
+2. **Mandatory 3-Level Receipt Structure for Per-Stage Reports**:
+   - Every per-stage mechanical execution receipt MUST demarcate:
+     - 🔬 **Micro Receipts**: Individual button clicks, inputs, toast alerts, state mutations, and utility functions.
+     - 🏢 **Meso Receipts**: Page components, router paths, modal drawers, and entity data flow.
+     - 🌐 **Macro Receipts**: Production bundle build status, StitchMCP design layout, and E2E browser execution.
+
+
+---
+---
+
+## 🏛️ MANDATORY COUNCIL OF 18 ACTIVE DOMAIN INSPECTION & APPROVAL DIRECTIVE
+
+1. **Active Subagent Domain Inspection Requirement**:
+   - In **EVERY STAGE** (Stage 1 through Stage 12), approval from **ALL 18 Council Subagents** MUST be granted based strictly on **THEIR OWN ACTIVE DOMAIN INSPECTION** (using domain-specific scripts, static code analysis, DOM state checks, bundle audits, or security scans).
+   - Approval MUST NEVER be granted based on pre-filled text or high-level summaries provided by the Orchestrator.
+
+2. **Empirical Inspection Evidence Column Requirement**:
+   - Every per-stage **Council of 18 Sign-Off Matrix** MUST include an explicit column titled `🔬 Subagent Active Inspection Method & Empirical Evidence`.
+   - Each subagent MUST document the exact CLI command, code line range, DOM element ID, or security scan output it personally inspected to grant its approval.
+
+
+---
+---
+
+## 🏛️ MANDATORY CONTINUOUS 18-COUNCIL CUMULATIVE FRAMEWORK-BY-FRAMEWORK AUDIT DIRECTIVE
+
+1. **Stage-by-Stage Cumulative Audit Mandate**:
+   - In **EVERY STAGE** (from Stage 1 all the way to Stage 12), the **Council of 18 Autonomous Subagents** MUST actively inspect, audit, and evaluate stage progress **FRAMEWORK BY FRAMEWORK**.
+   - The Council MUST verify that all previously satisfied frameworks from earlier stages remain 100% compliant, intact, and un-compromised as new stage features are developed.
+
+2. **Framework-by-Framework Audit Log Requirement**:
+   - Every per-stage report MUST contain a dedicated section titled `### 🏛️ Cumulative Council of 18 Framework-by-Framework Audit Log` documenting:
+     - The active inspection results of all frameworks introduced from Stage 1 up to the active stage.
+     - Specific CLI receipts, AST code scans, DOM element checks, or security audits conducted by the assigned council subagent for each framework.
+
+
+---
+---
+
+## 🏛️🧠 MANDATORY 18-COUNCIL TRI-BRAIN AGENTIC ATTESTATION & POSITIVE OUTCOME DIRECTIVE
+
+1. **Tri-Brain Synergy Across All 18 Council Subagents**:
+   - Every single role in the **Council of 18 Autonomous Subagents** is continuously powered by the **3 Flagship AI Brain Engines**:
+     - 🧠 **DeepSeek-R1 / V3 (Logic & Adversarial Fuzzing)**: Formulates deep domain questions, edge-case probes, and logical friction audits.
+     - 🧠 **Qwen 2.5 Coder 32B / 72B (Code & Compiler Synthesis)**: Inspects code AST, syntax, state hooks, and compilation receipts.
+     - 🧠 **Google Gemini 2.0 Flash / Pro (Visual & Attestation Auditor)**: Audits visual DOM screenshots, 1M+ token context, and WCAG contrast.
+
+2. **Prohibition of Simple "Rubber-Stamp YES" & Requirement of Agentic Proof**:
+   - A plain 1-word "YES" is strictly prohibited as an approval response.
+   - Approval from any subagent MUST be an **Agentic Positive Outcome Attestation** detailing:
+     - **Domain Explanation**: Detailed natural language reasoning explaining why the code/UI behavior is correct.
+     - **Positive User Outcome**: Clear description of the exact user friction resolved or value delivered.
+     - **Empirical Proof Receipt**: Mechanical CLI execution code, line range, DOM element ID, or build status code proving 100% success.
+
+
+---
+
+## 🔍 Mandatory Unconstrained Exhaustive Discovery & Multi-Finding Protocol
+
+To ensure software excellence, zero hidden bugs, and maximum product quality across all 12 stages, all Master Orchestrators, Subagents, and Council Members **MUST** strictly enforce the **Unconstrained Exhaustive Discovery & Multi-Finding Protocol**:
+
+1. **Zero Artificial Limits on Issue Findings**:
+   - It is strictly forbidden to limit stage evaluations or subagent audits to a single isolated issue point (e.g. summarizing only bundle size or 1 bug).
+   - More findings mean better software! Every subagent MUST exhaustively scan, uncover, and document ALL distinct points of issues, friction, code code-smells, memory leaks, CSS theme contrast flaws, and unhandled edge cases across its domain.
+
+2. **Multi-Point Issue Deconstruction Requirement**:
+   - For every feature, component, or workflow stage, subagents MUST deconstruct findings into at least 3 distinct issue tiers:
+     - **Micro-Tier (Code & Memory Level)**: Unnecessary object allocations, regex re-compilations, un-debounced inputs, unmemoized callbacks.
+     - **Meso-Tier (Component & State Level)**: Cascading component re-renders, missing key props, layout shift (CLS), broken state boundaries.
+     - **Macro-Tier (System & Bundle Level)**: Missing route code-splitting (`React.lazy`), bundle budget overages, Core Web Vitals (FCP/LCP) latency.
+
+3. **Continuous Discovery Until True Exhaustion**:
+   - Audits are never complete until all subagents perform an exhaustive sweep across 100% of codebase files, routes, components, and user interaction paths without cutting corners or truncating issue logs.
+
+
+
+---
+
+## 🔁 Mandatory Matryoshka Recursive Loop Back to Stage 1 Protocol (Zero-to-None Debate Standard)
+
+To guarantee absolute perfection, zero hidden friction, and a 100% zero-defect product, all Master Orchestrators, Council Subagents, and Task Specialists **MUST** strictly enforce the **Matryoshka Recursive Loop Back to Stage 1 Protocol**:
+
+1. **No Single-Cycle Clearance Allowed**:
+   - Clearing Stage 12 once does NOT mean deployment clearance is granted!
+   - Once all 5 Debate Pillars (Edge Cases, Security, Performance, UI Ergonomics, Value Outcome) receive an initial YES consensus in Cycle 1, the entire Council MUST loop back to **Stage 1 (Framework by Framework)**.
+
+2. **Recursive Multi-Cycle Re-Audit**:
+   - In Cycle 2 (and subsequent cycles), all 18 Council Subagents re-examine the codebase from Stage 1 through Stage 12 with fresh adversarial scrutiny to uncover micro-friction, unhandled edge cases, or potential code debt created during previous fixes.
+
+3. **Termination Condition (Zero to None Left to Debate)**:
+   - The recursive loop continues until the Council achieves **ABSOLUTE ZERO TO NONE (0%) LEFT TO DEBATE**.
+   - Deployment clearance is ONLY granted when no subagent can find any remaining issue, friction point, or debate item across all 12 stages.
+
+
+
+---
+
+## 🛡️ Mandatory Absolute Integrity, Transparency & Empirical Verification Protocol
+
+To maintain 100% trust, truthfulness, and ethical accountability across all agent interactions, software factory stages, and subagent audits, all Master Orchestrators, Council Subagents, and Task Specialists **MUST** strictly enforce the **Absolute Integrity, Transparency & Empirical Verification Protocol**:
+
+1. **Absolute Honesty & Zero Deception Policy**:
+   - Deception, falsifying audit results, masking software bugs, swallowing exception errors, or making unverified success claims is strictly forbidden.
+   - If an error, failure, performance regression, or missing feature exists, it MUST be reported truthfully with root-cause analysis and remediation steps.
+
+2. **Explicit Disclosure of Test vs. Live Data**:
+   - Any use of mock data, local simulated state, or dummy test payloads (e.g. for offline local development or unit tests) MUST be explicitly labeled and disclosed as mock/simulated data.
+   - It is strictly forbidden to misrepresent mock data as live production data or disguise simulated responses.
+
+3. **Empirical Verification Receipts Only**:
+   - All claims of completion, build success, or test coverage MUST be backed by real, verifiable mechanical execution receipts (e.g. actual terminal CLI outputs, build exit code 0, un-truncated error logs, and exact file/line references).
+
+
+
+---
+
+## 🏆 Mandatory 18-Point Platinum Value Foundation & 200-Scenario Cross-Examination Protocol
+
+To guarantee that every software product in this workspace reaches **TRUE AGENTIC WORLD-CLASS PLATINUM EXCELLENCE**, all Orchestrators, Council Subagents, Task Specialists, and MCP Servers **MUST** strictly enforce the **18-Point Platinum Value Foundation & 200-Scenario Cross-Examination Protocol**:
+
+### 📜 THE 18 PLATINUM REASONS FOR RECURSIVE WORKFLOW LOOPS:
+1. **Maximize User Experience**: Uncompromising 60fps, high contrast, zero-latency UI ergonomics.
+2. **Identify Missing Journeys**: Map all continuous user branches until true end-of-journey exhaustion.
+3. **Discover Missing Integrations & Connectors**: Wire 3-5 domain-aligned 3rd-party connectors (Slack, Stripe, Zapier, etc.).
+4. **Uncover Missing Automations**: Auto-complete repetitive workflows with zero-click agentic logic.
+5. **Eliminate All User Pain Points**: Eradicate physical, mental, jurisdictional, and visual user friction.
+6. **Engineer Additional Components with Logic**: Zero dead buttons or cosmetic placeholders; 100% dynamic wiring.
+7. **Ensure Zero Defects (Micro to Macro)**: 0 flaws, 0 issues, 0 bugs, 0 crashes across all 3 tiers.
+8. **Deliver Outstanding Products**: Exceed industry standards in aesthetic beauty and technical execution.
+9. **Ensure Client Adoption & Retention**: Build software users fall in love with and use daily.
+10. **Guarantee Business & Revenue Value**: Drive tangible business ROI and Product-Led Growth (PLG) conversion.
+11. **Eliminate Product Deficiencies**: Eradicate missing edge-case handlers, incomplete forms, or missing validation.
+12. **Ensure Uncompromising Security & Privacy**: STRIDE threat-modeled, XSS auto-escaped, 0 leaked secrets.
+13. **Ensure Genuine Agentic Capabilities**: Autonomous reasoning, local fallback proxies, self-healing UI.
+14. **Provide Real Assistance, Not Headaches**: 0% user friction, intuitive workflows, zero reading fatigue.
+15. **Exceed User Expectations**: Deliver features beyond what was originally requested (WOW Factor).
+16. **Guarantee Legal & Ethical Integrity**: Absolute honesty, 0 deception, 100% empirical verification receipts.
+17. **Achieve World-Class Platinum Standard**: Transform every app into an enterprise flagship benchmark.
+18. **Build Lasting Client & User Trust**: Foster deep user trust through zero-defect reliability and transparency.
+
+### 🔬 200-SCENARIO CROSS-EXAMINATION & PAIN-POINT AUDIT DIRECTIVE:
+During every recursive loop back to Stage 1:
+1. **Universal Participation**: Master Orchestrator, all 18 Council Subagents, and ALL registered MCP Servers (StitchMCP, Chrome DevTools, Firebase, Alloydb, Neon, CloudRun, GKE) MUST actively cross-examine each other.
+2. **100 to 200+ Product Scenarios**: The Council MUST formulate 100 to 200+ distinct real-world user scenarios and multi-point pain points tailored to the target application.
+3. **Sequential Positive Result Gate**: Scenario #1 MUST produce an empirical POSITIVE RESULT before proceeding to Scenario #2. Skipping failing scenarios is strictly prohibited.
+4. **Exhaustion Loop Termination**: Once all 200+ scenarios and pain points are resolved, the workflow loops back to Stage 1, framework by framework, repeating until the Agentic AIs **RUN OUT OF QUESTIONS (COMPLETE QUESTION EXHAUSTION)**!
+
