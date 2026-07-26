@@ -47,6 +47,12 @@ Whenever the user requests a new code file, web application, script, audio synth
 - **MANDATORY UNIFIED LANDING PAGE DESIGN**: Every single software application deployed to `https://gatzdevs.surge.sh` **MUST** share an identical, standardized landing page design system (matching hero section, header navigation, typography, dark/light theme options, and CTA hierarchy) so that all software products feel completely unified.
 - **Diagnostics Only**: `localhost` URLs are strictly restricted to internal background dev-server CLI diagnostic logs and must NEVER be presented as the target website link to the user or in live emails.
 
+## Mandatory Direct Live Real-Email Dispatch Directive
+
+- **ABSOLUTE RULE**: Whenever the user requests to "send email", "dispatch email", or "isend ang email", it **MUST ALWAYS MEAN A 100% REAL LIVE SMTP NETWORK EMAIL DISPATCH DIRECTLY TO THE INBOX**.
+- Never output simulation logs, mock placeholders, or local outbox text files when a live email dispatch is requested.
+- Always execute the live SMTP email script (`send_real_email.py`) using the active configured Gmail App Password credentials to guarantee 100% actual delivery into the recipient's inbox.
+
 ## Mandatory OKF v0.2 Agentic Self-Governance & Trust Signals Protocol
 
 To ensure 100% accountability, zero hallucinations, and maximum trust across all agents, subagents, and memory artifacts in this workspace, the Antigravity Master Orchestrator and all subagents **MUST** enforce the **5 Trust Questions of OKF v0.2**:
