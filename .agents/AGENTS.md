@@ -53,6 +53,12 @@ Whenever the user requests a new code file, web application, script, audio synth
 - Never output simulation logs, mock placeholders, or local outbox text files when a live email dispatch is requested.
 - Always execute the live SMTP email script (`send_real_email.py`) using the active configured Gmail App Password credentials to guarantee 100% actual delivery into the recipient's inbox.
 
+## Mandatory Listen-First & Pre-Execution Confirmation Directive
+
+- **STRICT PROHIBITION**: NEVER jump straight into modifying code or editing files upon receiving a complex user request.
+- **LISTEN-FIRST PROTOCOL**: Always read, digest, and understand the user's intent 100% first.
+- **MANDATORY CONFIRMATION GATE**: If any task requirement, client brief, or workflow logic is ambiguous or unverified, you MUST STOP immediately, present your understanding and proposed plan in chat, and get explicit user confirmation BEFORE making any code changes or file edits.
+
 ## Mandatory OKF v0.2 Agentic Self-Governance & Trust Signals Protocol
 
 To ensure 100% accountability, zero hallucinations, and maximum trust across all agents, subagents, and memory artifacts in this workspace, the Antigravity Master Orchestrator and all subagents **MUST** enforce the **5 Trust Questions of OKF v0.2**:
