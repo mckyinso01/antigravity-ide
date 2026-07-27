@@ -1,0 +1,14 @@
+{
+  "name": "quad-brain-council-service",
+  "version": "1.0.0",
+  "description": "GitHub Models Quad-Brain Swarm Engine for Council Subagents (FE-01, SEC-01, ARCH-01, QA-01, COPILOT-01)",
+  "main": "quad_brain_council_orchestrator.js",
+  "type": "module",
+  "scripts": {
+    "start": "node quad_brain_council_orchestrator.js",
+    "test": "node test_quad_brain_swarm.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}

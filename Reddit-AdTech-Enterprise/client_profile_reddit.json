@@ -1,0 +1,28 @@
+{
+  "clientId": "client_reddit_adtech_003",
+  "clientName": "Reddit Inc.",
+  "clientType": "High-Volume Social Media & Advertising Engineering",
+  "contactEmail": "jobs@reddit.com",
+  "appTitle": "Reddit Enterprise Ad Ranking Data Streams & ML Latency Analytics Engine",
+  "nicheIndustry": "AdTech, Real-Time Bidding (RTB) & MLOps",
+  "statedBudget": "$8,800 USD",
+  "offeredRate": "$8,800 USD",
+  "deploymentTarget": "https://gatzdevs.surge.sh",
+  "brandPalette": {
+    "primaryCanvas": "#0F1419",
+    "secondaryCard": "#1A1F26",
+    "accentRedOrange": "#FF4500",
+    "accentElectricBlue": "#0079D3",
+    "textPrimary": "#F8FAFC",
+    "textSecondary": "#94A3B8",
+    "borderSlate": "#2D3748"
+  },
+  "rawRequirements": [
+    "High-throughput ad ranking telemetry stream monitoring real-time post auction bid scores & eCPM rates",
+    "Sub-millisecond ML model inference latency distribution histogram across CPU/GPU inference clusters",
+    "Campaign budget optimizer modal for dynamic eCPM threshold tuning & automated bid adjustments",
+    "Ad policy compliance auditor for automated creative copy scanning & 1-click violation redaction"
+  ],
+  "verificationStatus": "VERIFIED_REAL_NETWORK_LEAD",
+  "createdTimestamp": "2026-07-27T18:40:00Z"
+}

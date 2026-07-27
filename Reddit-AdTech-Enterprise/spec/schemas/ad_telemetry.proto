@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+package reddit.adtech.telemetry.v1;
+
+option go_package = "github.com/reddit/adtech/telemetry/v1;telemetryv1";
+
+// 1. Ad Auction Event Payload (Ingested via Confluent Kafka @ 1.5M events/sec)
+message AdAuctionEvent {
+  string auction_id = 1;
+  uint64 timestamp_ns = 2;          // Nanosecond monotonic timestamp
+  string trace_id = 3;              // OpenTelemetry trace identifier
+  string shard_id = 4;              // Geographic / Kubernetes shard ID
+  string subreddit_id = 5;          // e.g. "r/technology", "r/gaming"
+  string advertiser_id = 6;
+  string campaign_id = 7;
+  string ad_id = 8;
+  double bid_cpm = 9;               // Advertiser base CPM bid in USD
+  double predicted_ctr = 10;        // ML model pCTR score
+  double predicted_cvr = 11;        // ML model pCVR score
+  double relevance_score = 12;      // Quality & engagement multiplier
+  double final_ecpm = 13;           // eCPM = Bid_CPM + (pCTR * pCVR * Bid_CPC * 1000) + RelevanceScore
+  bool auction_won = 14;            // True if bid won impression
+  uint32 total_candidates = 15;     // Number of ad candidates evaluated in auction
+}
+
+// 2. ML Latency Event Payload (Triton ML Inference Server Telemetry)
+message MLLatencyEvent {
+  string trace_id = 1;
+  uint64 timestamp_ns = 2;
+  string model_name = 3;            // e.g. "RankingTransformer-v4.2"
+  string model_version = 4;
+  string node_pool_id = 5;          // e.g. "gpu-cluster-us-east-a100-04"
+  string compute_unit = 6;          // "GPU_A100", "GPU_H100", "CPU_FALLBACK"
+  double inference_duration_ms = 7; // Precise inference execution time in ms (e.g. 1.84ms)
+  double preprocessing_ms = 8;
+  double postprocessing_ms = 9;
+  uint32 batch_size = 10;
+  float gpu_vram_used_gb = 11;
+  bool target_slo_met = 12;         // True if duration <= 2.0ms SLA
+}
+
+// 3. Campaign Budget Optimizer Command Event
+message OptimizerConfigEvent {
+  string config_id = 1;
+  uint64 timestamp_ns = 2;
+  string campaign_id = 3;
+  string advertiser_id = 4;
+  double target_ecpm_floor = 5;
+  double target_ecpm_ceiling = 6;
+  string pacing_mode = 7;           // "ACCELERATED", "EVEN_STANDARD", "STRICT_CAP"
+  double daily_budget_usd = 8;
+  string currency_code = 9;         // "USD", "EUR", "GBP", "JPY"
+  string updated_by_role = 10;       // "AdOpsLead", "AutomatedRLAgent"
+  string rollback_token = 11;
+}
+
+// 4. Ad Policy Compliance Audit Event
+message PolicyAuditEvent {
+  string audit_id = 1;
+  uint64 timestamp_ns = 2;
+  string ad_id = 3;
+  string advertiser_id = 4;
+  string raw_text_sha256 = 5;
+  uint32 detected_violation_count = 6;
+  repeated string violation_types = 7; // e.g. ["DECEPTIVE_RETURNS_CLAIM", "EXPOSED_AWS_KEY"]
+  string redaction_status = 8;     // "REDACTED", "PASSED_CLEAN", "PENDING_REVIEW"
+  string prev_block_hash = 9;       // SHA-256 Chain link
+  string current_block_hash = 10;   // SHA-256 WORM cryptographic signature
+}

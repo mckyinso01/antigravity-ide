@@ -1,0 +1,12 @@
+{
+  "title": "1Password Enterprise Zero-Knowledge Vault & Workflow Learnings",
+  "summary": "Authoritative retrospective learnings for 1Password Enterprise AI Platform including strict independent workspace isolation, 120+ exhaustive scenario audits, 100% zero-mock database purity, authenticated Gmail SMTP dispatch protocol, and sub-10ms regex secret interceptor engineering.",
+  "last_accessed": "2026-07-27T15:01:50+08:00",
+  "stale_after": "2027-01-01",
+  "status": "stable",
+  "tags": ["1password", "zero-knowledge", "aes-256-gcm", "soc2", "zero-mock", "smtp-dispatch"],
+  "paths": {
+    "relative_dir": "artifacts",
+    "files": ["learnings.md"]
+  }
+}

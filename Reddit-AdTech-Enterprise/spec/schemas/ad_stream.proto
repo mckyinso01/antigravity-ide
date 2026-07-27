@@ -1,0 +1,36 @@
+syntax = "proto3";
+package reddit.adstream.v1;
+
+option go_package = "github.com/reddit/adstream/v1;adstreamv1";
+
+message BidScore {
+  string bidder_id = 1;
+  double score = 2;
+  double ecpm = 3;
+  string model_version = 4;
+}
+
+message AuctionEvent {
+  string auction_id = 1;
+  int64 timestamp_ns = 2;        // monotonic ns timestamp at auction creation
+  string trace_id = 3;           // distributed trace id
+  string shard_id = 4;           // partitioning key
+  repeated BidScore bidder_scores = 5;
+  string winning_ad_id = 6;
+  double winning_ecpm = 7;
+  string creative_hash = 8;
+  repeated string policy_flags = 9;
+  map<string,string> metadata = 10;
+}
+
+message ModelTelemetry {
+  string model_id = 1;
+  string node_id = 2;
+  string trace_id = 3;
+  int64 inference_start_ns = 4;
+  int64 inference_end_ns = 5;
+  int64 timestamp_ns = 6;
+  string model_version = 7;
+  bool cache_hit = 8;
+  map<string,double> metrics = 9;
+}

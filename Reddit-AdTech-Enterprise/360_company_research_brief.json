@@ -1,0 +1,39 @@
+{
+  "researchTimestamp": "2026-07-27T18:44:00Z",
+  "companyProfile": {
+    "legalName": "Reddit Inc.",
+    "ticker": "NASDAQ: RDDT",
+    "industry": "Social Media, Content Discovery & Ad Technology",
+    "headquarters": "San Francisco, California, USA",
+    "globalReach": "70M+ Daily Active Uniques (DAU), 100,000+ Subreddits",
+    "annualAdRevenue": "$800M+ USD",
+    "targetAudience": "Tech Enthusiasts, Gamers, Developers, Investors, Everyday Consumers"
+  },
+  "technicalArchitectureResearch": {
+    "adRankingEngine": "Triton ML Inference Server clusters running 1.2B parameter transformer models",
+    "latencyTarget": "Sub-20ms P99 auction evaluation SLA",
+    "auctionAlgorithm": "Second-Price Sealed Bid with eCPM Quality Weighting",
+    "formula": "eCPM = Bid_CPM + (pCTR * pCVR * Bid_CPC * 1000) + RelevanceScore",
+    "primaryPainPoints": [
+      "GPU inference latency spikes causing dropped auctions and lost ad revenue",
+      "Lack of real-time eCPM visibility and manual budget pacing during viral events",
+      "Brand safety risks from unauthorized crypto claims or leaked credentials in ad copy"
+    ]
+  },
+  "competitiveLandscape": {
+    "keyCompetitors": ["Meta Ads Manager", "Google AdX", "X (Twitter) Ads", "TikTok Ads Manager"],
+    "redditCompetitiveEdge": "Intent-rich, topic-specific Subreddit targeting with high conversion intent"
+  },
+  "userPersonasAudited": [
+    {
+      "role": "Principal ML Infrastructure Engineer",
+      "dailyFrustration": "Unplanned 5ms inference spikes causing 12% auction drop-off",
+      "requiredTool": "Sub-millisecond latency distribution histogram across GPU/CPU node pools"
+    },
+    {
+      "role": "VP of Ad Operations & Brand Safety",
+      "dailyFrustration": "Manual review of thousands of ad posts for policy compliance",
+      "requiredTool": "Sub-1.5ms regex policy scanner with 1-click violation redaction"
+    }
+  ]
+}
