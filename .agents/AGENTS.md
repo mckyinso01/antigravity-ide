@@ -59,12 +59,16 @@ Whenever the user requests a new code file, web application, script, audio synth
 - **LISTEN-FIRST PROTOCOL**: Always read, digest, and understand the user's intent 100% first.
 - **MANDATORY CONFIRMATION GATE**: If any task requirement, client brief, or workflow logic is ambiguous or unverified, you MUST STOP immediately, present your understanding and proposed plan in chat, and get explicit user confirmation BEFORE making any code changes or file edits.
 
-## Mandatory Absolute Zero-Mock Client Data Directive
+## Mandatory Absolute Zero-Mock Client Data & Bounce Audit Directive
 
 - **ABSOLUTE ZERO MOCK DATA RULE**: Under NO circumstances shall mock, synthetic, benchmark sample, or placeholder data EVER be generated, presented, or used for client leads, client scraping, client profiles, job postings, RFPs, or outreach campaigns.
 - **100% REAL NETWORK SCRAPING ONLY**: All lead generation, client prospecting, market searches, and client emails MUST be 100% extracted live from verified real-world network sources (OpenStreetMap, live public job API feeds, real business web footprints) with active clickable URLs, real business email addresses, and verified live job specifications.
-- **STRICT ENFORCEMENT**: Violating this policy or generating mock client data is classified as a critical system governance breach and is permanently prohibited across all subagents, scripts, and workflows.
+- **IMAP BOUNCE AUDIT & EXCLUSION**: Following any outreach dispatch, perform an automated IMAP inbox audit (`check_gmail_bounces.py`). Bounced client recipients MUST be immediately flagged and permanently excluded from software build baselines.
 
+## Mandatory Laser-Focused 1-to-1 Requirement Pitch Directive
+
+- **1-TO-1 REQUIREMENT MATCHING**: Every proposal and pitch email MUST explicitly match and answer EVERY requirement requested by the client in their platform post. Generic titles, filler text, or vague descriptions are strictly prohibited.
+- **AUTHORITATIVE BUILD BASELINE**: Before starting software build cycles, save the exact platform post details, raw requirements, and 1-to-1 component plans into `master_build_baseline.md`. Always rank clients by complexity (e.g. Priority #1 Low Complexity) for fast execution.
 
 ## Mandatory Client Data Persistence & 360° Pre-Task Research Directive
 
