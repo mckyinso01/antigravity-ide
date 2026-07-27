@@ -70,6 +70,12 @@ Whenever the user requests a new code file, web application, script, audio synth
 - **1-TO-1 REQUIREMENT MATCHING**: Every proposal and pitch email MUST explicitly match and answer EVERY requirement requested by the client in their platform post. Generic titles, filler text, or vague descriptions are strictly prohibited.
 - **AUTHORITATIVE BUILD BASELINE**: Before starting software build cycles, save the exact platform post details, raw requirements, and 1-to-1 component plans into `master_build_baseline.md`. Always rank clients by complexity (e.g. Priority #1 Low Complexity) for fast execution.
 
+## Mandatory StitchMCP UI/UX Design System Invocation Protocol
+
+- **ABSOLUTE MANDATE**: For ALL web application builds, UI/UX refactoring, screen layout planning, or design system creation in this workspace, the Master Orchestrator **MUST MANDATORILY CALL STITCH MCP** (`create_project`, `generate_screen_from_text`, `create_design_system`).
+- **PRE-CODE DESIGN SYSTEM GENERATION**: Before drafting any React/TSX components or CSS layout code, StitchMCP must be invoked to establish the official design system colors, baseline grid, typography scales, and component guidelines.
+- **STRICT ENFORCEMENT**: Omitting StitchMCP during UI/UX design or screen layout phases is classified as a strict workflow violation.
+
 ## Mandatory Client Data Persistence & 360° Pre-Task Research Directive
 
 - **MANDATORY CLIENT DATA PERSISTENCE**: Whenever scraping, selecting, or processing a client lead, you **MUST IMMEDIATELY PERSIST & SAVE** the selected client's full raw profile data (Business Name, Niche, Contact Info, Location, Budget, Website, Raw Requirements) into a dedicated `client_profile.json` or `client_brief.md` file in the project repository FIRST so it is never lost or forgotten.
