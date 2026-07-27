@@ -59,6 +59,13 @@ Whenever the user requests a new code file, web application, script, audio synth
 - **LISTEN-FIRST PROTOCOL**: Always read, digest, and understand the user's intent 100% first.
 - **MANDATORY CONFIRMATION GATE**: If any task requirement, client brief, or workflow logic is ambiguous or unverified, you MUST STOP immediately, present your understanding and proposed plan in chat, and get explicit user confirmation BEFORE making any code changes or file edits.
 
+## Mandatory Absolute Zero-Mock Client Data Directive
+
+- **ABSOLUTE ZERO MOCK DATA RULE**: Under NO circumstances shall mock, synthetic, benchmark sample, or placeholder data EVER be generated, presented, or used for client leads, client scraping, client profiles, job postings, RFPs, or outreach campaigns.
+- **100% REAL NETWORK SCRAPING ONLY**: All lead generation, client prospecting, market searches, and client emails MUST be 100% extracted live from verified real-world network sources (OpenStreetMap, live public job API feeds, real business web footprints) with active clickable URLs, real business email addresses, and verified live job specifications.
+- **STRICT ENFORCEMENT**: Violating this policy or generating mock client data is classified as a critical system governance breach and is permanently prohibited across all subagents, scripts, and workflows.
+
+
 ## Mandatory Client Data Persistence & 360° Pre-Task Research Directive
 
 - **MANDATORY CLIENT DATA PERSISTENCE**: Whenever scraping, selecting, or processing a client lead, you **MUST IMMEDIATELY PERSIST & SAVE** the selected client's full raw profile data (Business Name, Niche, Contact Info, Location, Budget, Website, Raw Requirements) into a dedicated `client_profile.json` or `client_brief.md` file in the project repository FIRST so it is never lost or forgotten.
