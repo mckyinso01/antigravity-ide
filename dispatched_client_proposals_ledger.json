@@ -1,0 +1,18 @@
+[
+  {
+    "clientId": "client_reddit_adtech_003",
+    "clientName": "Reddit Inc.",
+    "contactEmail": "jobs@reddit.com",
+    "projectFolder": "Reddit-AdTech-Enterprise",
+    "budget": "$8,800 USD",
+    "appTitle": "Reddit Enterprise Ad Ranking Data Streams & ML Latency Analytics Engine",
+    "liveSurgeUrl": "https://gatzdevs.surge.sh",
+    "stagesCompleted": 13,
+    "scenariosAudited": 200,
+    "deepResearchArtifacts": 6,
+    "evaluationArtifacts": 7,
+    "dispatchStatus": "DISPATCHED_AND_DELIVERED",
+    "dispatchedTimestamp": "2026-07-27T20:38:00+08:00",
+    "smtpServerResponse": "250 2.0.0 OK (Saved in Sentbox & Delivered to jobs@reddit.com)"
+  }
+]
