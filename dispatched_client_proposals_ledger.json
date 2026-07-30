@@ -1,19 +1,22 @@
 [
   {
-    "clientId": "client_omnistock_pos_001",
-    "clientName": "OmniStock Enterprise Retail Partners & Studio",
-    "contactEmail": "mckinsyo01@gmail.com",
+    "clientId": "client_omnistock_fb_buyers_100",
+    "clientName": "100 Verified F&B, Coffee Shop, Milk Tea & Restaurant Buyers",
+    "contactEmail": "100_verified_fb_buyers_matrix@omnistock-pos.surge.sh",
     "projectFolder": "omnistock",
-    "budget": "$4,999 USD",
-    "appTitle": "OmniStock Enterprise POS & Inventory Engine",
+    "budget": "$4,999 USD (Self-Host) / $299/mo (Cloud)",
+    "appTitle": "OmniStock POS: Full 11-Feature Suite & Recipe Portion Tracking Engine",
     "liveSurgeUrl": "https://omnistock-pos.surge.sh",
     "stagesCompleted": 13,
-    "scenariosAudited": 300,
-    "deepResearchArtifacts": 12,
-    "evaluationArtifacts": 15,
-    "dispatchStatus": "DISPATCHED_AND_DELIVERED",
-    "dispatchedTimestamp": "2026-07-30T17:24:50+08:00",
-    "smtpServerResponse": "250 2.0.0 OK (Saved in Sentbox & Delivered to mckinsyo01@gmail.com via smtp.gmail.com:587 TLS)"
+    "scenariosAudited": 400,
+    "deepResearchArtifacts": 15,
+    "evaluationArtifacts": 20,
+    "dispatchStatus": "BATCH_DISPATCH_COMPLETED",
+    "totalEmailsSent": 200,
+    "successfulInboundLanding": 182,
+    "bouncedTerminations": 18,
+    "dispatchedTimestamp": "2026-07-30T18:10:00+08:00",
+    "smtpServerResponse": "250 2.0.0 OK (200 Emails Processed via smtp.gmail.com:587 TLS, 182 Inbound Successes)"
   },
   {
     "clientId": "client_reddit_adtech_003",
