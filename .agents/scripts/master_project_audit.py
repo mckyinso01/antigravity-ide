@@ -582,7 +582,7 @@ def run_audit(target_dir, fix_mode=False):
     ch26_details = []
     prohibited_patterns = [
         (re.compile(r'\b(bg-rose-100|bg-rose-50|bg-slate-100|bg-slate-200|text-indigo-700|text-indigo-800)\b'), "Un-mapped light mode or low-contrast text color"),
-        (re.compile(r'\b(bg-blue-600|text-blue-600)\b'), "Ad-hoc blue override instead of theme tokens"),
+        (re.compile(r'\b(bg-blue-600|text-blue-600|bg-blue-500|focus:ring-indigo-500)\b'), "Ad-hoc blue or indigo override instead of theme tokens"),
     ]
 
     for fpath in files:
@@ -600,6 +600,37 @@ def run_audit(target_dir, fix_mode=False):
                             ch26_details.append(f"{fname}:L{line_idx} - {reason} ({pat.pattern})")
 
     results.append(("26. Strict Line-by-Line Prohibited Color Class Scanner (STRICT-DESIGN-TOKEN-COLOR-PURGE)", ch26_pass and len(ch26_details) == 0, ch26_details))
+
+    # ---------------------------------------------------------
+    # CHECK 27: Sidebar & Navigation Active Rail Token Guard
+    # ---------------------------------------------------------
+    ch27_pass = True
+    ch27_details = []
+    for fpath in files:
+        if "Sidebar" in os.path.basename(fpath):
+            with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+                if "bg-white" in content or "bg-slate-100" in content:
+                    ch27_pass = False
+                    ch27_details.append(f"{os.path.basename(fpath)}: Active navigation rail item contains solid light background fill instead of translucent theme token.")
+
+    results.append(("27. Sidebar & Navigation Active Rail Token Guard (SIDEBAR-RAIL-ACTIVE-TOKEN-GUARD)", ch27_pass and len(ch27_details) == 0, ch27_details))
+
+    # ---------------------------------------------------------
+    # CHECK 28: Form Input Focus Ring Token Guard
+    # ---------------------------------------------------------
+    ch28_pass = True
+    ch28_details = []
+    for fpath in files:
+        if fpath.endswith((".tsx", ".jsx")):
+            fname = os.path.basename(fpath)
+            with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+                if "<input" in content and ("focus:ring-indigo-" in content or "focus:ring-blue-" in content):
+                    ch28_pass = False
+                    ch28_details.append(f"{fname}: Form input contains ad-hoc indigo/blue focus ring override instead of design token focus ring.")
+
+    results.append(("28. Form Input Focus Ring Token Guard (FORM-FOCUS-RING-TOKEN-GUARD)", ch28_pass and len(ch28_details) == 0, ch28_details))
 
     # ---------------------------------------------------------
     # PHASE 2: SCORECARD & REPORT EVALUATION GENERATION
@@ -633,6 +664,18 @@ if __name__ == "__main__":
     args = sys.argv[1:]
     fix_mode = "--fix" in args
     clean_args = [a for a in args if a != "--fix"]
-    target = clean_args[0] if clean_args else "omnistock/src"
-    success = run_audit(target, fix_mode=fix_mode)
-    sys.exit(0 if success else 1)
+    
+    # Auto-detect target directories
+    if clean_args:
+        targets = [clean_args[0]]
+    else:
+        targets = ["EMS/src", "omnistock/src"]
+        
+    all_success = True
+    for target in targets:
+        if os.path.exists(target):
+            success = run_audit(target, fix_mode=fix_mode)
+            if not success:
+                all_success = False
+                
+    sys.exit(0 if all_success else 1)
