@@ -604,12 +604,15 @@
 62. **EMS Productivity Trends Chart Bar Color Theme Alignment (`EMS-DEFECT-14`)**: Identified stark bright blue bars (`#2563EB`) in `ProductivityTrendLine.tsx` / `Dashboard.tsx` charts. Pending replacement with Muichiro Seafoam Mint (`#7FD8D7`) and Turquoise (`#46C3C3`).
 63. **EMS View Toggle Pill Light Mode Override (`EMS-DEFECT-15`)**: Identified stark white pill button background on `Weekly Trends` / `Resource Allocation` view toggle in `Dashboard.tsx`. Pending remediation to dark active pill (`bg-[#7FD8D7] text-[#0D1117]`).
 64. **EMS Sidebar User Profile Card Contrast (`EMS-DEFECT-16`)**: Identified washed-out slate box background on `Alex Sterling` operator profile card in `Sidebar.tsx`. Pending remediation to dark charcoal surface (`bg-[#12161D] border border-slate-800`).
+65. **EMS Sidebar Rail Active Item Blinding White Fill (`EMS-DEFECT-17`)**: Identified stark solid white background fill (`bg-white` / stark white pill) on active/hovered sidebar navigation rail item in `Sidebar.tsx`. Pending remediation to dark seafoam translucent surface (`bg-[#7FD8D7]/15 text-[#7FD8D7] border border-[#7FD8D7]/30 shadow-[0_0_12px_rgba(127,216,215,0.2)]`).
+66. **EMS Header Export Report Button Unreadable Contrast (`EMS-DEFECT-18`)**: Identified low-contrast slate button styling on `EXPORT REPORT` in `Header.tsx`. Pending remediation to `DESIGN_TOKENS.buttons.secondary` (`bg-slate-900/90 text-slate-200 border border-slate-700/80 hover:bg-slate-800`).
+67. **EMS Floating Action Button Ad-Hoc Blue Clashes (`EMS-DEFECT-19`)**: Identified ad-hoc `bg-blue-600` floating quick-action button with stark red badge in lower right corner of viewport (`App.tsx` / `Header.tsx`). Pending remediation to Muichiro Seafoam Mint FAB (`bg-[#7FD8D7] text-[#0D1117] hover:bg-[#46C3C3] shadow-[0_0_20px_rgba(127,216,215,0.4)]`).
 
 ---
 
-## 🏆 ALL 64 MASTER SOFTWARE GOVERNANCE ISSUES LOGGED (56 REMEDIATED, 8 ACTIVE REMEDIATION PENDING)
+## 🏆 ALL 67 MASTER SOFTWARE GOVERNANCE ISSUES LOGGED (56 REMEDIATED, 11 ACTIVE REMEDIATION PENDING)
 
 - **OmniStock POS Status**: `🎉 25/25 CHECKS PASSED (100% SCORE) & CODEBASE LOCKED`.
-- **EMS Standalone Status**: `⚠️ 8 ACTIVE DEFECTS LOGGED FROM USER SCREENSHOT AUDIT (ISSUES 57-64)`.
+- **EMS Standalone Status**: `⚠️ 11 ACTIVE DEFECTS LOGGED FROM USER SCREENSHOT AUDIT (ISSUES 57-67)`.
 - **Master Tokens Spec**: [company_master_design_tokens_spec.md](file:///c:/Users/Admin/.antigravity-ide/company_master_design_tokens_spec.md)
 
