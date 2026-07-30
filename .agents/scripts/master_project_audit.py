@@ -536,6 +536,24 @@ def run_audit(target_dir, fix_mode=False):
     results.append(("23. 20-Issue Milestone Preventive Audit Script Expansion (LEDGER-20-MILESTONE-THRESHOLD)", ch23_pass and len(ch23_details) == 0, ch23_details))
 
     # ---------------------------------------------------------
+    # CHECK 24: Autonomous Sentinel Verification Council Directive
+    # ---------------------------------------------------------
+    ch24_pass = True
+    ch24_details = []
+    sentinel_script_path = os.path.join(os.path.dirname(__file__), "sentinel_checklist.py")
+    if os.path.exists(agents_rulebook_path) and os.path.exists(sentinel_script_path):
+        with open(agents_rulebook_path, 'r', encoding='utf-8', errors='ignore') as f:
+            a_text = f.read()
+            if "AUTONOMOUS-SENTINEL-VERIFICATION-COUNCIL" not in a_text:
+                ch24_pass = False
+                ch24_details.append(f"{agents_rulebook_path}: System rulebook missing AUTONOMOUS-SENTINEL-VERIFICATION-COUNCIL directive.")
+    else:
+        ch24_pass = False
+        ch24_details.append("sentinel_checklist.py or AGENTS.md not found in workspace.")
+
+    results.append(("24. Autonomous Sentinel Verification Council Directive (AUTONOMOUS-SENTINEL-VERIFICATION-COUNCIL)", ch24_pass and len(ch24_details) == 0, ch24_details))
+
+    # ---------------------------------------------------------
     # PHASE 2: SCORECARD & REPORT EVALUATION GENERATION
     # ---------------------------------------------------------
     passed_count = sum(1 for _, passed, _ in results if passed)
