@@ -40,43 +40,44 @@ for idx, b in enumerate(buyers, 1):
             msg = MIMEMultipart('alternative')
             msg['From'] = f"Gatz Systems Studio <{sender_email}>"
             msg['To'] = target_email
-            msg['Subject'] = f"🚨 OmniStock POS: Automated Ingredient Recipe Tracking & Sub-Second Checkout for {b['company']}"
+            msg['Subject'] = f"🚨 OmniStock POS: Automated Ingredient Portion Tracking & Instant Profit Reporting for {b['company']}"
 
-            body_text = f"""Dear Executive Leadership & Operations Team ({b['company']}),
+            body_text = f"""Dear Executive Leadership & Store Operations Team ({b['company']}),
 
-We noticed your active coffee shop, milk tea, restaurant, or retail store operations on domain ({b['domain']}). We pre-built a 100% production-ready Web Application: OmniStock POS — live and interactive right now on the web:
+We noticed your active retail, coffee shop, milk tea, or restaurant operations on domain ({b['domain']}). We pre-built a 100% production-ready Web Application: OmniStock POS — live and interactive right now on the web:
 
 👉 Live App: https://omnistock-pos.surge.sh
 👉 Studio Hub: https://gatzdevs.surge.sh
 
 ---
 
-### ☕ 1. PAANO NAKAKATULONG ANG PROPER INGREDIENT RECIPE & PORTION TRACKING SA NEGOSYO?
+### ☕ 1. HOW PROPER INGREDIENT RECIPE & PORTION TRACKING EMPOWERS YOUR BUSINESS:
 
-1. 🥛 Automated Ingredient Portion Deduction:
-   - Bawat order ng kape o milk tea (hal. Espresso, Pearl Milk Tea) ay awtomatikong nagkakaltas ng eksaktong gramo ng beans (18g), ml ng gatas (150ml), at shots ng syrup.
-   
-2. 🛡️ Iwas-Tapon at Iwas-Kupit (Waste & Theft Prevention):
-   - Pinipigilan ang sobra-sobrang pagbuhos ng sangkap at hindi naitalang libreng inumin, na nagpapataas ng inyong Profit Margin nang hanggang +25% to 30%!
+1. 📊 Automated Daily Reporting & Instant Profit Calculation:
+   - Effortless Inventory & Sales Audits: Regardless of how many hundreds or thousands of drinks and orders are sold daily, OmniStock automatically calculates your exact gross revenue, net margins, and Cost of Goods Sold (COGS) in real time!
 
-3. 🚨 Real-Time Low Ingredient Alert:
-   - Awtomatikong nagbibigay ng babala kapag ang coffee beans, pearls, gatas, o packaging cups ay malapit nang maubos upang hindi maudlot ang benta.
+2. 🥛 Precision Ingredient Portion Deduction:
+   - Every single beverage or meal order (e.g., Espresso, Pearl Milk Tea) automatically deducts exact ingredient portions (18g coffee beans, 150ml milk, syrup shots, cups/lids) directly from your live inventory database.
+
+3. 🚨 Low Stock Threshold Management & Theft/Anomalous Discrepancy Detection:
+   - Real-Time Replenishment Alerts: Sends instant notifications when critical ingredients (coffee beans, pearls, milk, cups) hit low safety thresholds.
+   - Pilferage & Discrepancy Flagging: If physical ingredients deplete faster than recorded sales data, OmniStock immediately flags an audit anomaly — exposing unrecorded giveaways, improper portioning, or employee theft!
 
 ---
 
-### 🛒 2. PAANO MAKAKATULONG SA INYONG RETAIL STORES & BRANCHES ANG OMNISTOCK POS?
+### 🛒 2. HOW OMNISTOCK POS REVOLUTIONIZES YOUR RETAIL STORES & BRANCHES:
 
 1. ⚡ Sub-10ms Barcode Telemetry & Sub-Second Checkout:
-   - Mabilis na pag-scan ng SKU barcodes upang maiwasan ang mahabang pila sa cashier counter.
+   - Instant GTIN/EAN SKU scanning to eliminate long customer queues during peak operating hours.
 
 2. 📄 Interactive 80mm Thermal Receipt Printing:
-   - Mabilis na pag-print ng resibo na may malinaw na itemized breakdown para sa customer.
+   - High-speed itemized receipt generation with store branding and custom order notes.
 
 3. 🔌 100% Offline-Ready Store Register (Dexie.js DB):
-   - Patuloy ang benta at cashier checkout kahit mawalan ng koneksyon sa internet.
+   - Uninterrupted sales and cashier checkouts even during complete internet or network outages.
 
-4. 💰 Transparent Commercial Pricing:
-   - Available via Hosted Cloud ($299/mo) or Enterprise Self-Hosted ($4,999 One-Time Perpetual License with 100% Source Code Ownership).
+4. 💰 Transparent Commercial Licensing:
+   - Available via Hosted Cloud ($299/mo) or Enterprise Self-Hosted ($4,999 One-Time Perpetual License with 100% Full Source Code Ownership).
 
 ---
 
