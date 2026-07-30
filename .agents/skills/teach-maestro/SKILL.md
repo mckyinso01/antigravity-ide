@@ -53,29 +53,22 @@ Ask these questions one section at a time. Wait for answers before proceeding.
 After gathering all answers, generate a `.maestro.md` file:
 
 ```markdown
-
 # Maestro Workflow Context
-
 Generated: [date]
 
 ## Models & Providers
-
 [answers from section 1]
 
 ## Workflow Architecture
-
 [answers from section 2]
 
 ## Quality & Evaluation
-
 [answers from section 3]
 
 ## Constraints
-
 [answers from section 4]
 
 ## Priorities
-
 [answers from section 5, with ranked priorities]
 ```
 
@@ -84,7 +77,7 @@ Save this file to the project root as `.maestro.md`.
 ### Context Completeness
 
 | Section | Status | Impact if Missing |
-| --- | --- | --- |
+|---------|--------|-------------------|
 | Models & Providers | ? | Commands can't tailor advice to your stack |
 | Workflow Architecture | ? | Commands can't assess complexity |
 | Quality & Evaluation | ? | `/iterate` and `/evaluate` less effective |

@@ -18,28 +18,22 @@ Bootstrap a new agent workflow from scratch, or add a new agent to an existing s
 ### Step 1: Establish Conventions
 
 ```markdown
-
 ## Workflow Conventions
-
 ### Prompt Format
-
 - Delimiter style: [XML tags / markdown headers / triple-dash]
 - Section order: [System → Context → Instructions → Input]
 - Output format: [JSON with schema / markdown template]
 
 ### Tool Conventions
-
 - Naming: [verb_noun / noun.verb / camelCase]
 - Description template: [What → When → When Not → Returns]
 - Error format: [{ code, message, details }]
 
 ### Logging
-
 - Format: [JSON structured]
 - Required fields: [workflow_id, step, timestamp, level]
 
 ### File Structure
-
 - Prompts: [prompts/workflow-name/v1.md]
 - Tools: [tools/tool-name.{ext}]
 - Config: [config/environment.yaml]

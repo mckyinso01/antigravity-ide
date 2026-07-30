@@ -12,6 +12,7 @@ argument-hint: "[target area]"
 Invoke /agent-workflow — it contains workflow principles, anti-patterns, and the **Context Gathering Protocol**. Follow the protocol before proceeding — if no workflow context exists yet, you MUST run /teach-maestro first.
 Consult the agent-architecture reference in the agent-workflow skill for complexity assessment and topology simplification.
 
+
 ---
 
 Reduce complexity without reducing capability. Every component should earn its place.
@@ -62,7 +63,7 @@ For each recommendation:
 ### Complexity Score
 
 | Component | Current | Minimal Viable | Action |
-| --- | --- | --- | --- |
+|-----------|---------|---------------|--------|
 | Pipeline steps | ? | ? | Remove/merge ? |
 | Tools | ? | ? | Consolidate ? |
 | Config params | ? | ? | Remove ? |

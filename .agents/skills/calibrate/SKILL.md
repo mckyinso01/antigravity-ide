@@ -12,6 +12,7 @@ argument-hint: "[target area]"
 Invoke /agent-workflow — it contains workflow principles, anti-patterns, and the **Context Gathering Protocol**. Follow the protocol before proceeding — if no workflow context exists yet, you MUST run /teach-maestro first.
 Consult the prompt-engineering reference in the agent-workflow skill for naming and style consistency patterns.
 
+
 ---
 
 Ensure consistency across all workflow components. Inconsistency creates confusion — for the model, for developers, and for users.
@@ -57,7 +58,7 @@ Ensure consistency across all workflow components. Inconsistency creates confusi
 ### Consistency Audit Table
 
 | Dimension | Standard | Deviations Found | Priority |
-| --- | --- | --- | --- |
+|-----------|----------|------------------|----------|
 | Tool naming | ? | ? of ? tools | High/Med/Low |
 | Prompt structure | ? | ? of ? prompts | High/Med/Low |
 | Error format | ? | ? of ? tools | High/Med/Low |

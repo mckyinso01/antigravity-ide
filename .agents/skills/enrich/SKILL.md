@@ -21,7 +21,7 @@ Add knowledge sources to ground the workflow in facts. Without grounding, agents
 Identify what knowledge the workflow needs:
 
 | Knowledge Type | Source | Update Frequency | Access Pattern |
-| --- | --- | --- | --- |
+|---------------|--------|-----------------|----------------|
 | Domain docs | Internal docs, specs | Monthly | Semantic search |
 | Code context | Codebase | Real-time | Code search |
 | User data | Database, CRM | Real-time | Structured query |

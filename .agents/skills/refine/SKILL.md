@@ -68,7 +68,7 @@ For each checklist item that fails, provide:
 ### Priority Matrix
 
 | Priority | Criteria | Maestro Action |
-| --- | --- | --- |
+|----------|---------|----------------|
 | Critical | Affects correctness or safety | `/fortify` or `/guard` before shipping |
 | Important | Affects quality or maintainability | `/calibrate` in current cycle |
 | Nice-to-have | Cosmetic or minor inconsistency | Note for next `/refine` pass |

@@ -22,7 +22,7 @@ Add safety boundaries to a workflow. Guards protect against malicious inputs, un
 Before adding guards, understand what you're protecting against:
 
 | Threat | Risk Level | Guard Type |
-| --- | --- | --- |
+|--------|-----------|-----------|
 | Prompt injection | High | Input sanitization, instruction hierarchy |
 | PII leakage | High | Output filtering, data masking |
 | Cost explosion | High | Token budgets, rate limits |

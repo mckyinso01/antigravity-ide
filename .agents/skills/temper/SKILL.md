@@ -12,6 +12,7 @@ argument-hint: "[target]"
 Invoke /agent-workflow — it contains workflow principles, anti-patterns, and the **Context Gathering Protocol**. Follow the protocol before proceeding — if no workflow context exists yet, you MUST run /teach-maestro first.
 Consult the agent-architecture reference in the agent-workflow skill for topology patterns and when multi-agent is justified.
 
+
 ---
 
 Pull back from over-engineering. The most common mistake isn't building too little — it's building too much.

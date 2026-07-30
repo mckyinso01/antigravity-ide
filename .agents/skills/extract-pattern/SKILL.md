@@ -31,9 +31,7 @@ Transform the specific solution into a reusable template:
 **From specific** → **To general pattern**:
 
 ```markdown
-
 ## Pattern: [Name]
-
 **Problem**: What recurring problem does this solve?
 **When to use**: When is this pattern appropriate?
 **When NOT to use**: When is this pattern inappropriate?
@@ -50,7 +48,7 @@ Transform the specific solution into a reusable template:
 - Verify the documentation is clear enough for someone unfamiliar with the original
 
 | Workflow Element | Extract As |
-| --- | --- |
+|-----------------|-----------|
 | Effective prompt structure | Prompt template with customization points |
 | Tool chain that works well | Pipeline pattern with data flow diagram |
 | Error handling strategy | Resilience pattern with implementation guide |

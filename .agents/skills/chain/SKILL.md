@@ -12,6 +12,7 @@ argument-hint: "[pipeline description]"
 Invoke /agent-workflow — it contains workflow principles, anti-patterns, and the **Context Gathering Protocol**. Follow the protocol before proceeding — if no workflow context exists yet, you MUST run /teach-maestro first.
 Consult the tool-orchestration reference in the agent-workflow skill for composition patterns and error handling.
 
+
 ---
 
 Design tool chains that do complex work reliably. A chain is only as strong as its weakest link.
@@ -28,28 +29,23 @@ Design tool chains that do complex work reliably. A chain is only as strong as i
 For each chain, define:
 
 ```markdown
-
 ## Chain: [Name]
 
 ### Steps
-
 1. [Tool A] — [what it does] — Input: [schema] — Output: [schema]
 2. [Tool B] — [what it does] — Input: [output of step 1] — Output: [schema]
 3. [Tool C] — [what it does] — Input: [output of step 2] — Output: [schema]
 
 ### Data Flow
-
 Step 1 output.field_a → Step 2 input.source_data
 Step 2 output.results → Step 3 input.items
 
 ### Error Handling
-
 Step 1 failure → [retry 3x, then return error]
 Step 2 failure → [return partial results from step 1]
 Step 3 failure → [retry with simplified input]
 
 ### Constraints
-
 Max total execution time: 60s
 Max retries per step: 3
 ```

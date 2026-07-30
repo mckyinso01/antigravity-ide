@@ -32,14 +32,14 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen flex flex-col transition-colors duration-300 ${isDarkMode ? 'bg-[#0F1419] text-slate-100' : 'bg-slate-50 text-slate-900'}`}>
+    <div className={`min-h-screen flex flex-col transition-colors duration-300 ${isDarkMode ? 'bg-[#0F1419] text-slate-100' : 'bg-slate-50 text-white'}`}>
       
       {/* Top Telemetry Header */}
-      <header className={`border-b px-6 py-3.5 flex items-center justify-between sticky top-0 z-30 backdrop-blur-md ${isDarkMode ? 'bg-[#0F1419]/90 border-[#2D3748]' : 'bg-white/90 border-slate-200'}`}>
+      <header className={`border-b px-6 py-3.5 flex items-center justify-between sticky top-0 z-30 backdrop-blur-md ${isDarkMode ? 'bg-[#0F1419]/90 border-[#2D3748]' : 'bg-[#0B1C30]/90 border-slate-200'}`}>
         <div className="flex items-center space-x-4">
           <button
             onClick={() => setIsLeftRailCollapsed(!isLeftRailCollapsed)}
-            className={`p-2 rounded-xl border transition-all ${isDarkMode ? 'bg-[#1A1F26] border-[#2D3748] hover:bg-slate-800 text-slate-300' : 'bg-slate-100 border-slate-300 text-slate-700'}`}
+            className={`p-2 rounded-xl border transition-all ${isDarkMode ? 'bg-[#1A1F26] border-[#2D3748] hover:bg-slate-800 text-slate-300' : 'bg-slate-100 border-slate-300 text-slate-300'}`}
             title="Toggle Left Rail Collapse"
           >
             {isLeftRailCollapsed ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
@@ -65,7 +65,7 @@ export default function App() {
         <div className="flex items-center space-x-3">
           <button
             onClick={() => setIsCommandPaletteOpen(true)}
-            className={`flex items-center space-x-3 px-4 py-2 rounded-xl border text-xs font-mono transition-all ${isDarkMode ? 'bg-[#1A1F26] border-[#2D3748] text-slate-400 hover:border-[#FF4500] hover:text-white' : 'bg-slate-100 border-slate-300 text-slate-600'}`}
+            className={`flex items-center space-x-3 px-4 py-2 rounded-xl border text-xs font-mono transition-all ${isDarkMode ? 'bg-[#1A1F26] border-[#2D3748] text-slate-400 hover:border-[#FF4500] hover:text-white' : 'bg-slate-100 border-slate-300 text-slate-400'}`}
           >
             <Search className="w-3.5 h-3.5" />
             <span>Search or type command...</span>
@@ -74,7 +74,7 @@ export default function App() {
 
           <button
             onClick={() => setIsDarkMode(!isDarkMode)}
-            className={`p-2.5 rounded-xl border transition-all ${isDarkMode ? 'bg-[#1A1F26] border-[#2D3748] text-amber-400 hover:bg-slate-800' : 'bg-slate-100 border-slate-300 text-slate-700 hover:bg-slate-200'}`}
+            className={`p-2.5 rounded-xl border transition-all ${isDarkMode ? 'bg-[#1A1F26] border-[#2D3748] text-amber-400 hover:bg-slate-800' : 'bg-slate-100 border-slate-300 text-slate-300 hover:bg-slate-200'}`}
             title="Toggle Light / Dark Mode"
           >
             {isDarkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
