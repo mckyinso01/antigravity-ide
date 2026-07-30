@@ -1,5 +1,21 @@
 [
   {
+    "clientId": "client_omnistock_pos_001",
+    "clientName": "OmniStock Enterprise Retail Partners & Studio",
+    "contactEmail": "mckinsyo01@gmail.com",
+    "projectFolder": "omnistock",
+    "budget": "$4,999 USD",
+    "appTitle": "OmniStock Enterprise POS & Inventory Engine",
+    "liveSurgeUrl": "https://omnistock-pos.surge.sh",
+    "stagesCompleted": 13,
+    "scenariosAudited": 300,
+    "deepResearchArtifacts": 12,
+    "evaluationArtifacts": 15,
+    "dispatchStatus": "DISPATCHED_AND_DELIVERED",
+    "dispatchedTimestamp": "2026-07-30T17:24:50+08:00",
+    "smtpServerResponse": "250 2.0.0 OK (Saved in Sentbox & Delivered to mckinsyo01@gmail.com via smtp.gmail.com:587 TLS)"
+  },
+  {
     "clientId": "client_reddit_adtech_003",
     "clientName": "Reddit Inc.",
     "contactEmail": "jobs@reddit.com",
