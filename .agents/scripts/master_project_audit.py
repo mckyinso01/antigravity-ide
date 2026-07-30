@@ -633,6 +633,58 @@ def run_audit(target_dir, fix_mode=False):
     results.append(("28. Form Input Focus Ring Token Guard (FORM-FOCUS-RING-TOKEN-GUARD)", ch28_pass and len(ch28_details) == 0, ch28_details))
 
     # ---------------------------------------------------------
+    # CHECK 29: Screenshot 1 Integration Bento & Scrollbar Alignment Guard
+    # ---------------------------------------------------------
+    ch29_pass = True
+    ch29_details = []
+    
+    # Verify EcosystemIntegrationsHub category filter styling
+    for fpath in files:
+        if "EcosystemIntegrationsHub.tsx" in os.path.basename(fpath):
+            with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+                if "filterCategory === cat" in content and "font-mono" not in content:
+                    ch29_pass = False
+                    ch29_details.append("EcosystemIntegrationsHub.tsx: Category filter pills missing font-mono token styling.")
+
+    # Verify index.css root dark scrollbar declaration
+    index_css_path = os.path.join(target_dir, "index.css")
+    if os.path.exists(index_css_path):
+        with open(index_css_path, 'r', encoding='utf-8', errors='ignore') as f:
+            css_text = f.read()
+            if "scrollbar-color" not in css_text or ("background-color: #0D1117" not in css_text and "background-color: #050811" not in css_text):
+                ch29_pass = False
+                ch29_details.append("index.css: Root html/body missing explicit dark background-color and scrollbar-color token declaration.")
+
+    results.append(("29. Screenshot 1 Integration Bento & Scrollbar Alignment Guard (SCREENSHOT-1-INTEGRATION-SCROLLBAR-GUARD)", ch29_pass and len(ch29_details) == 0, ch29_details))
+
+    # ---------------------------------------------------------
+    # CHECK 30: Engine Card Compact Ergonomic Resizing & Height Guard
+    # ---------------------------------------------------------
+    ch30_pass = True
+    ch30_details = []
+    
+    target_engine_files = [
+        "SkillsMobilityGraphEngine.tsx",
+        "WasmWorkforceAnalyticsEngine.tsx",
+        "SpatialWorkforceCommandCenter.tsx",
+        "AirGappedDisasterRecoveryVault.tsx",
+        "HumanInTheLoopGovernanceShield.tsx",
+        "AutonomousPayrollEscrowEngine.tsx"
+    ]
+    
+    for fpath in files:
+        fname = os.path.basename(fpath)
+        if fname in target_engine_files:
+            with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+                if "p-5 md:p-6 shadow-lg relative overflow-hidden animate-fade-in" in content or "p-6 md:p-8" in content:
+                    ch30_pass = False
+                    ch30_details.append(f"{fname}: Container retains oversized padding (p-5 md:p-6 or p-6 md:p-8) instead of compact ergonomic padding (p-4 md:p-5).")
+
+    results.append(("30. Engine Card Compact Ergonomic Resizing & Height Guard (COMPACT-CONTAINER-HEIGHT-GUARD)", ch30_pass and len(ch30_details) == 0, ch30_details))
+
+    # ---------------------------------------------------------
     # PHASE 2: SCORECARD & REPORT EVALUATION GENERATION
     # ---------------------------------------------------------
     passed_count = sum(1 for _, passed, _ in results if passed)

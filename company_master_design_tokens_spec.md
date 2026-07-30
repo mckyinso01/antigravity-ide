@@ -492,7 +492,58 @@ Upang maging **100% FAANG-grade at kumpleto sa lahat ng anggulo**, itinatakda ri
 
 ---
 
-## 📁 12. File References & Deployment
+## 📐 13. Card & Widget Container Dimension & Sizing Specification (Compact Ergonomic Standard)
+
+Upang maiwasan ang malalim na scrolling at oversized elements, ang lahat ng card at widget containers ay DAPAT sumunod sa **Compact Ergonomic Dimension Guidelines**:
+
+### 13.1. Standard Container Padding & Spacing Scale
+- **Primary Page Wrapper**: `space-y-4 md:space-y-5` (Maximum `space-y-6`). Huwag gumamit ng `space-y-8` o `space-y-12` na lumilikha ng sobrang layong agwat.
+- **Master Engine & Section Containers**: `p-4 md:p-5` rounded-2xl (`rounded-2xl bg-[#1B1E23] border border-slate-800 shadow-lg`).
+- **Inner Stat & Metric Cards**: `p-3 md:p-3.5` rounded-xl (`rounded-xl bg-[#12161D] border border-slate-800 shadow-md`).
+- **Bento Analytics Tiles**: `p-3.5 md:p-4` rounded-xl (`rounded-xl bg-[#1B1E23] border border-slate-800`).
+
+### 13.2. Container Height Clamping Standards
+- **Subagent Engine Cards Grid**: Mapipinto sa uniform `h-full flex flex-col justify-between` na may target container height na `~280px` hanggang `320px`.
+- **Department Cluster Cards**: Target height na `h-[125px]` hanggang `h-[140px]`.
+- **SVG & Canvas Analytics Viewports**: Max height `130px` - `140px` (min-h `120px`). Huwag lumampas sa `220px`.
+- **Global Map & Schematic Containers**: Aspect ratio na `aspect-[28/9]` o `aspect-[21/9]`.
+
+### 13.3. Text Truncation & Badge Overflow Guards
+- **Card Badges**: Lahat ng status badges sa narrow 4-column cards ay DAPAT may `shrink-0` at font size na `text-[9px]` hanggang `text-[10px]` para hindi umapaw lampas sa border line ng card.
+- **Metric Labels**: Ang mga text label tulad ng *Parity Ratio*, *Net Pay*, at *Sample Records* ay DAPAT may `truncate` at `min-w-0` sa flex layout parent (`flex items-baseline justify-between min-w-0 gap-1`).
+
+### 13.4. Dashboard Breakthrough Suite Modules Inventory (100% Token Compliant)
+Lahat ng 12 Breakthrough Subagent Modules sa `Dashboard.tsx` na ipinapakita sa mga screenshots ay ganap na nakasama at sumusunod sa ating Master Specification:
+1. **EcosystemIntegrationsHub**: 8 Connectors Bento grid (`p-4 md:p-5 rounded-2xl bg-[#1B1E23] border border-slate-800`), inner connector tiles (`bg-[#12161D] border border-slate-800 p-3`).
+2. **DesktopAppInstallShowcase**: Native Desktop installer showcase card (`bg-[#1B1E23] border border-slate-800 p-4 md:p-5`).
+3. **EnterprisePriceComparisonMatrix**: Interactive 3-Option Pricing Matrix (`Option A`, `Option B`, `Option C - EMS Turnkey`) na may interactive slider (`bg-[#12161D] border border-slate-800`).
+4. **AgenticHrSwarmOrchestrator**: 4 Swarm Module Tiles (`Audit & Escrow`, `Mobility & Burnout`, `Autonomous Sourcing`, `Regulatory Governance`) sa `bg-[#12161D] border border-slate-800` surfaces.
+5. **SkillsMobilityGraphEngine**: Graph neural inference card (`bg-[#1B1E23] border border-slate-800 p-4 md:p-5`).
+6. **WasmWorkforceAnalyticsEngine**: WebAssembly SIMD 128-bit worker engine (`bg-[#1B1E23] border border-slate-800 p-4 md:p-5`).
+7. **AutonomousPayrollEscrowEngine**: ZKP salary privacy & tax vault (`bg-[#1B1E23] border border-slate-800 p-4 md:p-5`).
+8. **SpatialWorkforceCommandCenter**: 3D spatial presence matrix card (`bg-[#1B1E23] border border-slate-800 p-4 md:p-5`).
+9. **AirGappedDisasterRecoveryVault**: Air-gapped DR vault card (`bg-[#1B1E23] border border-slate-800 p-4 md:p-5`).
+10. **HumanInTheLoopGovernanceShield**: Governance shield card (`bg-[#1B1E23] border border-slate-800 p-4 md:p-5`).
+11. **VoiceBiometricAssistCopilot**: Voice copilot card (`bg-[#1B1E23] border border-slate-800 p-4 md:p-5`).
+12. **QuantumMonteCarloBudgetSimulator**: Monte Carlo risk simulator card (`bg-[#1B1E23] border border-slate-800 p-4 md:p-5`).
+13. **FairnessAlgorithmicBiasAuditor**: EEOC 4/5ths parity auditor (`bg-[#1B1E23] border border-slate-800 p-4 md:p-5`).
+14. **RealTimePayrollEngine**: Zero-Lag WebWorker tax withholding engine (`bg-[#1B1E23] border border-slate-800 p-4 md:p-5`).
+16. **GamifiedMicroLearningEngine**, **ErgonomicWorkplaceSynthesizer**, & **SelfHealingDatabaseEngine**: Triple bento analytics grid.
+
+### 13.5. Component Category Classification Table (`CRD-SUBAGENT` / `CRD-HUB` / `CRD-MATRIX`)
+Lahat ng Dashboard Breakthrough components ay nakagrupo sa mga sumusunod na official component token categories:
+
+| Component Identifier | Component Category Name | Subagent / Module Name | Container Sizing Token Rules |
+| :--- | :--- | :--- | :--- |
+| `CRD-HUB` | Ecosystem Integration Hub | `EcosystemIntegrationsHub` | `p-4 md:p-5 rounded-2xl bg-[#1B1E23] border border-slate-800` |
+| `CRD-SHOWCASE` | Desktop Installer Showcase | `DesktopAppInstallShowcase` | `p-4 md:p-5 rounded-2xl bg-[#1B1E23] border border-slate-800` |
+| `CRD-MATRIX` | Enterprise ROI Pricing Matrix | `EnterprisePriceComparisonMatrix` | `p-4 md:p-5 rounded-2xl bg-[#1B1E23] border border-slate-800` |
+| `CRD-SWARM` | Agentic Swarm Network | `AgenticHrSwarmOrchestrator` | `p-4 md:p-5 rounded-2xl bg-[#1B1E23] border border-slate-800`, 4 tiles `p-3` |
+| `CRD-SUBAGENT` | Autonomous AI Engine Cards | `SkillsMobilityGraphEngine`, `WasmWorkforceAnalyticsEngine`, `AutonomousPayrollEscrowEngine`, `SpatialWorkforceCommandCenter`, `AirGappedDisasterRecoveryVault`, `HumanInTheLoopGovernanceShield`, `VoiceBiometricAssistCopilot`, `QuantumMonteCarloBudgetSimulator`, `FairnessAlgorithmicBiasAuditor`, `RealTimePayrollEngine` | `p-4 md:p-5 rounded-2xl bg-[#1B1E23] border border-slate-800 h-full flex flex-col justify-between` (`max-h-[320px]`) |
+
+---
+
+## 📁 14. File References & Deployment
 
 - **Master Specification Path**: [company_master_design_tokens_spec.md](file:///c:/Users/Admin/.antigravity-ide/company_master_design_tokens_spec.md)
 - **JavaScript Export Module**: [designSystem.js](file:///c:/Users/Admin/.antigravity-ide/omnistock/src/lib/designSystem.js)
