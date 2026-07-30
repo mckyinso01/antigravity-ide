@@ -519,6 +519,23 @@ def run_audit(target_dir, fix_mode=False):
     results.append(("22. Mandatory Immediate Ledger Recording Directive (PASSIVE-AUTOMATIC-LEDGER-LOCK)", ch22_pass and len(ch22_details) == 0, ch22_details))
 
     # ---------------------------------------------------------
+    # CHECK 23: 20-Issue Milestone Preventive Audit Expansion Directive
+    # ---------------------------------------------------------
+    ch23_pass = True
+    ch23_details = []
+    if os.path.exists(agents_rulebook_path):
+        with open(agents_rulebook_path, 'r', encoding='utf-8', errors='ignore') as f:
+            a_text = f.read()
+            if "LEDGER-20-MILESTONE-THRESHOLD" not in a_text:
+                ch23_pass = False
+                ch23_details.append(f"{agents_rulebook_path}: System rulebook missing LEDGER-20-MILESTONE-THRESHOLD directive.")
+    else:
+        ch23_pass = False
+        ch23_details.append(f"{agents_rulebook_path} not found in workspace root.")
+
+    results.append(("23. 20-Issue Milestone Preventive Audit Script Expansion (LEDGER-20-MILESTONE-THRESHOLD)", ch23_pass and len(ch23_details) == 0, ch23_details))
+
+    # ---------------------------------------------------------
     # PHASE 2: SCORECARD & REPORT EVALUATION GENERATION
     # ---------------------------------------------------------
     passed_count = sum(1 for _, passed, _ in results if passed)
