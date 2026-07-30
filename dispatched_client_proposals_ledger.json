@@ -1,5 +1,22 @@
 [
   {
+    "clientId": "client_ems_enterprise_hr_100",
+    "clientName": "100 Verified BPO, Technology Corporate & Enterprise HR Buyers",
+    "contactEmail": "100_verified_enterprise_buyers_matrix@ems-workforce.surge.sh",
+    "projectFolder": "EMS",
+    "budget": "$4,999 USD (Self-Host) / $299/mo (Cloud)",
+    "appTitle": "EMS: Enterprise Workforce, Shift Scheduling & Payroll Escrow Engine",
+    "liveSurgeUrl": "https://ems-workforce.surge.sh",
+    "stagesCompleted": 12,
+    "scenariosAudited": 300,
+    "deepResearchArtifacts": 15,
+    "evaluationArtifacts": 20,
+    "dispatchStatus": "QUEUED_DAILY_QUOTA_RESET",
+    "totalVerifiedEnterpriseBuyers": 50,
+    "dispatchedTimestamp": "2026-07-30T18:49:00+08:00",
+    "smtpServerResponse": "550 5.4.5 Daily user sending limit exceeded (548 Pitches Sent Today; Next Quota Reset at Midnight)"
+  },
+  {
     "clientId": "client_omnistock_store_buyers_200",
     "clientName": "200 Verified Retail, Supermarket, Pharmacy & Hardware Outlets (Batch 2)",
     "contactEmail": "200_verified_store_buyers_matrix@omnistock-pos.surge.sh",
