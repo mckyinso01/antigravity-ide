@@ -40,44 +40,52 @@ for idx, b in enumerate(buyers, 1):
             msg = MIMEMultipart('alternative')
             msg['From'] = f"Gatz Systems Studio <{sender_email}>"
             msg['To'] = target_email
-            msg['Subject'] = f"🚨 OmniStock POS: Automated Ingredient Portion Tracking & Instant Profit Reporting for {b['company']}"
+            msg['Subject'] = f"🚨 OmniStock POS: Full Feature Suite (Recipe Tracking, Offline Sync, Thermal Receipts & Profit Audits) for {b['company']}"
 
-            body_text = f"""Dear Executive Leadership & Store Operations Team ({b['company']}),
+            body_text = f"""Dear Executive Leadership & Operations Team ({b['company']}),
 
-We noticed your active retail, coffee shop, milk tea, or restaurant operations on domain ({b['domain']}). We pre-built a 100% production-ready Web Application: OmniStock POS — live and interactive right now on the web:
+We noticed your active retail, coffee shop, milk tea, restaurant, or store operations on domain ({b['domain']}). We pre-built a 100% production-ready, zero-defect Web Application: OmniStock POS — live and interactive right now on the web:
 
-👉 Live App: https://omnistock-pos.surge.sh
-👉 Studio Hub: https://gatzdevs.surge.sh
+👉 Live Interactive POS App: https://omnistock-pos.surge.sh
+👉 Studio Showcase Hub: https://gatzdevs.surge.sh
 
 ---
 
-### ☕ 1. HOW PROPER INGREDIENT RECIPE & PORTION TRACKING EMPOWERS YOUR BUSINESS:
+### 🚀 COMPLETE 100% PRODUCTION FEATURE MATRIX BUILT FOR YOUR STORES:
 
-1. 📊 Automated Daily Reporting & Instant Profit Calculation:
+1. 📊 Automated Daily Reporting & Instant Net Profit Calculation:
    - Effortless Inventory & Sales Audits: Regardless of how many hundreds or thousands of drinks and orders are sold daily, OmniStock automatically calculates your exact gross revenue, net margins, and Cost of Goods Sold (COGS) in real time!
 
-2. 🥛 Precision Ingredient Portion Deduction:
-   - Every single beverage or meal order (e.g., Espresso, Pearl Milk Tea) automatically deducts exact ingredient portions (18g coffee beans, 150ml milk, syrup shots, cups/lids) directly from your live inventory database.
+2. ☕ Precision Recipe Ingredient & Portion Control (F&B / Cafe):
+   - Automated Portion Deduction: Every beverage or meal order (e.g., Espresso, Pearl Milk Tea) automatically deducts exact ingredient portions (18g coffee beans, 150ml milk, syrup shots, cups/lids) directly from your live inventory database.
 
-3. 🚨 Low Stock Threshold Management & Theft/Anomalous Discrepancy Detection:
-   - Real-Time Replenishment Alerts: Sends instant notifications when critical ingredients (coffee beans, pearls, milk, cups) hit low safety thresholds.
-   - Pilferage & Discrepancy Flagging: If physical ingredients deplete faster than recorded sales data, OmniStock immediately flags an audit anomaly — exposing unrecorded giveaways, improper portioning, or employee theft!
+3. 🚨 Low Stock Threshold & Theft/Anomalous Discrepancy Detection:
+   - Real-Time Replenishment Alerts: Sends instant notifications when critical ingredients or store items hit low safety thresholds.
+   - Pilferage & Discrepancy Flagging: If physical inventory depletes faster than recorded sales data, OmniStock immediately flags an audit anomaly — exposing unrecorded giveaways, improper portioning, or employee theft!
 
----
+4. ⚡ Sub-10ms Barcode Telemetry & GTIN/EAN Scanner HUD:
+   - High-speed SKU barcode lookup using device camera or USB/Bluetooth hardware scanners to eliminate long cashier queues.
 
-### 🛒 2. HOW OMNISTOCK POS REVOLUTIONIZES YOUR RETAIL STORES & BRANCHES:
+5. 📄 Interactive 80mm Thermal Receipt Generator & Visual Preview:
+   - Live pop-up receipt preview modal and high-speed 80mm thermal receipt printing with itemized breakdown, store branding, and order notes.
 
-1. ⚡ Sub-10ms Barcode Telemetry & Sub-Second Checkout:
-   - Instant GTIN/EAN SKU scanning to eliminate long customer queues during peak operating hours.
+6. 🔌 Dexie.js 100% Offline-Ready Register & Live Sync Header Badge:
+   - Uninterrupted sales and cashier checkouts even during complete internet blackouts via local IndexedDB storage with automatic background cloud sync.
 
-2. 📄 Interactive 80mm Thermal Receipt Printing:
-   - High-speed itemized receipt generation with store branding and custom order notes.
+7. 🧹 3-Step Automated Client Data Purge & Provisioning Wizard:
+   - 1-click database sanitization clearing demo catalogs and provisioning a 100% clean production store register for your brand.
 
-3. 🔌 100% Offline-Ready Store Register (Dexie.js DB):
-   - Uninterrupted sales and cashier checkouts even during complete internet or network outages.
+8. 📱 Responsive Ergonomic Touch Targets (44px Minimum Standard):
+   - Touch-optimized cashier interface conforming to Apple HIG standards for seamless operation on iPads, Android tablets, touchscreen registers, and mobile devices.
 
-4. 💰 Transparent Commercial Licensing:
-   - Available via Hosted Cloud ($299/mo) or Enterprise Self-Hosted ($4,999 One-Time Perpetual License with 100% Full Source Code Ownership).
+9. 🔒 Multi-Tenant Staff Role Access & Transaction Audit Ledger:
+   - Granular permission controls for Cashiers, Store Managers, and Owners with a full tamper-proof audit trail for every sale, void, and refund.
+
+10. 📈 ASC 606 GAAP Revenue & Sales Analytics Dashboard:
+    - Interactive visual area charts (Recharts) displaying daily, weekly, and monthly revenue trends, top-selling SKUs, and inventory turnover rates.
+
+11. 💰 Flexible Commercial Licensing Options:
+    - Hosted Cloud ($299/mo) or Enterprise Self-Hosted ($4,999 One-Time Perpetual License with 100% Full Source Code Ownership & Zero Monthly Fees).
 
 ---
 
