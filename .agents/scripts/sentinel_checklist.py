@@ -11,9 +11,9 @@ if hasattr(sys.stderr, 'reconfigure'):
 
 def run_sentinel_audit():
     print("=" * 75)
-    print("AUTONOMOUS SENTINEL VERIFICATION COUNCIL (`SENTINEL-SWARM`)")
+    print("🕵️ FIELD DEVOPS SENTINEL: STRICT METICULOUS GOVERNANCE OVERSEER")
     print("=" * 75)
-    print("Checking 4 Mandatory Pre-Flight & Post-Task Directives...\n")
+    print("Checking Mandatory Company Guidelines & Targeted Subproject Audits...\n")
 
     workspace_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
     ledger_path = os.path.join(workspace_root, "omnistock_master_component_checklist.md")
@@ -21,6 +21,7 @@ def run_sentinel_audit():
     audit_script = os.path.join(workspace_root, ".agents", "scripts", "master_project_audit.py")
 
     checks = []
+    subproject_failures = []
 
     # 1. Master Issue Ledger Audit
     if os.path.exists(ledger_path):
@@ -30,7 +31,7 @@ def run_sentinel_audit():
             issue_count = len(matches)
             milestone_rem = issue_count % 20
             milestone_status = f"Next 20-Issue Milestone Gate in {20 - milestone_rem} issue(s)" if milestone_rem != 0 else "20-ISSUE MILESTONE GATE TRIGGERED! Codify into master_project_audit.py!"
-            checks.append(("1. Master Issue Ledger Synchronization", True, f"{issue_count} Issues Logged & Remediated. ({milestone_status})"))
+            checks.append(("1. Master Issue Ledger Synchronization", True, f"{issue_count} Issues Logged & Tracked. ({milestone_status})"))
     else:
         checks.append(("1. Master Issue Ledger Synchronization", False, "Master Ledger file missing!"))
 
@@ -43,18 +44,29 @@ def run_sentinel_audit():
     else:
         checks.append(("2. System Governance Rulebook (AGENTS.md)", False, "AGENTS.md missing!"))
 
-    # 3. Master CLI Audit Suite
-    if os.path.exists(audit_script):
-        try:
-            res = subprocess.run([sys.executable, audit_script], capture_output=True, text=True, encoding='utf-8', errors='ignore', timeout=15)
-            if "25/25 CHECKS PASSED" in res.stdout or "100.0% SCORE" in res.stdout or "100% PASS" in res.stdout:
-                checks.append(("3. Programmatic CLI Audit Suite (master_project_audit.py)", True, "100.0% PASS Scorecard (25/25 Checks Passed)."))
-            else:
-                checks.append(("3. Programmatic CLI Audit Suite (master_project_audit.py)", False, "CLI Audit Suite failed or had failing checks!"))
-        except Exception as e:
-            checks.append(("3. Programmatic CLI Audit Suite (master_project_audit.py)", False, f"Execution error: {e}"))
-    else:
-        checks.append(("3. Programmatic CLI Audit Suite (master_project_audit.py)", False, "Audit script missing!"))
+    # 3. Targeted Subproject Audits
+    subprojects = [
+        ("OmniStock POS", os.path.join(workspace_root, "omnistock", "src")),
+        ("EMS Workforce Engine", os.path.join(workspace_root, "EMS", "src")),
+        ("GHL-PULSE Marketing", os.path.join(workspace_root, "GHL-PULSE", "src")),
+        ("LexAI Enterprise", os.path.join(workspace_root, "LexAI-Enterprise", "src"))
+    ]
+
+    for proj_name, proj_dir in subprojects:
+        if os.path.exists(proj_dir):
+            try:
+                res = subprocess.run([sys.executable, audit_script, proj_dir], capture_output=True, text=True, encoding='utf-8', errors='ignore', timeout=15)
+                if "25/25 CHECKS PASSED" in res.stdout or "100.0% SCORE" in res.stdout or "100% PASS" in res.stdout:
+                    checks.append((f"3. Targeted Audit: {proj_name}", True, "100.0% PERFECT PASS (25/25 Checks Passed)."))
+                else:
+                    # Extract score
+                    score_match = re.search(r'SCORECARD:\s*(\d+/\d+\s*CHECKS PASSED\s*\([\d\.]+% SCORE\))', res.stdout)
+                    score_str = score_match.group(1) if score_match else "Failing Checks Detected"
+                    checks.append((f"3. Targeted Audit: {proj_name}", False, f"Scorecard: {score_str}"))
+                    subproject_failures.append((proj_name, score_str))
+            except Exception as e:
+                checks.append((f"3. Targeted Audit: {proj_name}", False, f"Audit Execution Error: {e}"))
+                subproject_failures.append((proj_name, str(e)))
 
     # 4. Source Control Status
     try:
@@ -77,9 +89,13 @@ def run_sentinel_audit():
 
     print("-" * 75)
     if all_passed:
-        print("SENTINEL AUDIT VERDICT: 100% FULLY AUTONOMOUS GOVERNANCE COMPLIANT!\n")
+        print("FIELD DEVOPS SENTINEL VERDICT: 100% FULLY AUTONOMOUS GOVERNANCE COMPLIANT!\n")
     else:
-        print("SENTINEL AUDIT VERDICT: GOVERNANCE ACTION REQUIRED BEFORE PROCEEDING!\n")
+        print("🚨 HOY! NAKALIMUTAN MO 'TO!! FIELD DEVOPS SENTINEL HAS PAUSED EXECUTION!")
+        if subproject_failures:
+            for proj, sc in subproject_failures:
+                print(f"   ↳ {proj} HAS NOT ATTAINED 100% AUDIT ALIGNMENT! ({sc})")
+        print("   ↳ Immediate remediation required to satisfy company guidelines before advancing!\n")
 
 if __name__ == "__main__":
     run_sentinel_audit()
