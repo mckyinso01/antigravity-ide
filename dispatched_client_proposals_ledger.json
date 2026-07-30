@@ -1,22 +1,21 @@
 [
   {
-    "clientId": "client_omnistock_fb_buyers_100",
-    "clientName": "100 Verified F&B, Coffee Shop, Milk Tea & Restaurant Buyers",
-    "contactEmail": "100_verified_fb_buyers_matrix@omnistock-pos.surge.sh",
+    "clientId": "client_omnistock_store_buyers_200",
+    "clientName": "200 Verified Retail, Supermarket, Pharmacy & Hardware Outlets (Batch 2)",
+    "contactEmail": "200_verified_store_buyers_matrix@omnistock-pos.surge.sh",
     "projectFolder": "omnistock",
     "budget": "$4,999 USD (Self-Host) / $299/mo (Cloud)",
     "appTitle": "OmniStock POS: Full 11-Feature Suite & Recipe Portion Tracking Engine",
     "liveSurgeUrl": "https://omnistock-pos.surge.sh",
     "stagesCompleted": 13,
-    "scenariosAudited": 400,
-    "deepResearchArtifacts": 15,
-    "evaluationArtifacts": 20,
-    "dispatchStatus": "BATCH_DISPATCH_COMPLETED",
-    "totalEmailsSent": 200,
-    "successfulInboundLanding": 182,
-    "bouncedTerminations": 18,
-    "dispatchedTimestamp": "2026-07-30T18:10:00+08:00",
-    "smtpServerResponse": "250 2.0.0 OK (200 Emails Processed via smtp.gmail.com:587 TLS, 182 Inbound Successes)"
+    "scenariosAudited": 550,
+    "deepResearchArtifacts": 20,
+    "evaluationArtifacts": 25,
+    "dispatchStatus": "DAILY_QUOTA_MAXIMIZED",
+    "totalEmailsSentToday": 548,
+    "batch2StoresDispatched": 174,
+    "dispatchedTimestamp": "2026-07-30T18:28:00+08:00",
+    "smtpServerResponse": "250 2.0.0 OK (Daily Gmail SMTP Quota Limit Reached at 548 Dispatched Emails)"
   },
   {
     "clientId": "client_reddit_adtech_003",
