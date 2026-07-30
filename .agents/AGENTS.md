@@ -1,6 +1,6 @@
 ---
 type: Agentic System Rulebook & Self-Governance Specification
-title: Antigravity IDE Master Agentic Rulebook (OKF v0.2 Compliant)
+title: 🛡️ ANTIGRAVITY MASTER AGENTIC GOVERNANCE SPECIFICATION
 description: Consolidate governance specifications, zero-quota rules, and FAANG testing protocols for Antigravity Orchestrator & Subagents.
 status: stable
 stale_after: 2027-01-01
@@ -17,7 +17,7 @@ sources:
 tags: [agentic, governance, trust-signals, okf-v0.2, zero-quota, zero-defect]
 ---
 
-# 🛡️ ANTIGRAVITY MASTER AGENTIC GOVERNANCE SPECIFICATION
+## 🛡️ ANTIGRAVITY MASTER AGENTIC GOVERNANCE SPECIFICATION
 
 ## 1. Core Operating Laws & Context Budget Rules
 
