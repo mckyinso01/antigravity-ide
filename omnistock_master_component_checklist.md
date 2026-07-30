@@ -579,10 +579,12 @@
 38. **SalesReport Tab Load Failure & ReferenceError Fix (`SALES-REPORT-LOAD-FAILURE-REM-38`)**: Identified `SalesReport.jsx` tab load failure caused by missing `import DESIGN_TOKENS from "@/lib/designSystem";` header (`Uncaught ReferenceError: DESIGN_TOKENS is not defined`). Added import header and verified live tab rendering in Chrome DevTools MCP.
 39. **Form Field Accessibility & Autocomplete Remediation (`SALES-REPORT-FORM-LABEL-ACCESSIBILITY-REM-39`)**: Identified missing `htmlFor`, `id`, `name`, and `autoComplete` attributes on `Login.jsx` and `SalesReport.jsx` form fields. Added `htmlFor`, `id`, `name`, and `autoComplete` across both components. Verified 100% PASS via Chrome DevTools MCP Lighthouse Accessibility Audit (93/100 score).
 40. **Water Breathing Card Pseudo-Element Corner Bend Overflow Fix (`WATER-BREATHING-CARD-CORNER-OVERFLOW-REM-40`)**: Identified `water-breathing-card::before` 3px cyan top line overextending past 16px rounded corner bends (`rounded-2xl`). Added `overflow: hidden !important;` to container and `border-top-left-radius: inherit; border-top-right-radius: inherit;` to pseudo-element. Verified live pixel clipping in Chrome DevTools MCP.
+41. **SyncSetting & ReportSchedule Database Entity Mapping Fix (`SYNC-SETTING-ENTITY-MISSING-REM-41`)**: Identified `TypeError: Cannot read properties of undefined (reading 'list')` toast error on `/automations` page when loading sync settings. Missing `syncSettings` and `reportSchedules` tables in Dexie `db.js` schema and `entities` export map. Added tables to `db.js` and optional chaining `entities?.SyncSetting?.list?.()` in `SyncSettingsCard.jsx` and `ReportScheduleList.jsx`. Verified live toast cleanup in Chrome DevTools MCP.
+42. **Number Input Native Spin Button Dark Mode Remediation (`NUMBER-INPUT-SPINNER-DARK-MODE-FIX-REM-42`)**: Identified stark white browser-native number stepper spin buttons (`::-webkit-inner-spin-button`) appearing inside dark numeric input fields (`INP-NUM`). Added `-webkit-appearance: none` and `-moz-appearance: textfield` resets in `index.css` to eliminate the white box and preserve dark mode monospace design token compliance. Verified live cleanup in Chrome DevTools MCP.
 
 ---
 
-## 🏆 ALL 40 MASTER SOFTWARE GOVERNANCE ISSUES 100% REMEDIATED, VERIFIED, AND LOCKED
+## 🏆 ALL 42 MASTER SOFTWARE GOVERNANCE ISSUES 100% REMEDIATED, VERIFIED, AND LOCKED
 
 - **100% Universal CLI Audit Scorecard**: `python .agents/scripts/master_project_audit.py` ➔ `🎉 23/23 CHECKS PASSED (100% SCORE)`.
 - **100% Design Tokens Compliance**: `python .agents/scripts/audit_contrast_and_colors.py` ➔ `✅ 100% PASS`.
