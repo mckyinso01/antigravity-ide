@@ -22,7 +22,7 @@ graph TD
 ```
 
 | # | Domain / Category | Termination YES-Gate | Specific Verification Standard | Pass Status |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **1** | **Cognitive Engine** | **State 1 & State 2 Duality** | Executed both State 1 (Optimistic Peak Composition) and State 2 (Adversarial Critic Self-Attack)? | `[x] YES` |
 | **2** | **Peak Excellence** | **Sukdulang-Antas (Dead-End Quality)** | Output maxed out to absolute peak quality with 0 lazy shortcuts, 0 placeholders, 0 omitted cases? | `[x] YES` |
 | **3** | **User Journey** | **Full 3-Step Lifecycle Mapping** | 100% of features mapped & tested across Step 1 (Trigger), Step 2 (Feedback), and Step 3 (Outcome)? | `[x] YES` |

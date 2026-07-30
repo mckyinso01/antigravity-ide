@@ -78,4 +78,3 @@ All workflows, code synthesis engines, and subagents MUST audit and enforce the 
 13. **Dashboard & Data-Heavy Layout Patterns**: Bento Grid asymmetric card grids, responsive tables, microcharts, and sparklines.
 14. **Mobile-First & Gesture-Optimized Patterns**: 44–48px touch targets, thumb-reachable bottom drawers, and native ergonomic flows.
 15. **Observability in UX / Telemetry**: Component-level telemetry capturing user flows, render times, click events, and drop-off rates.
-

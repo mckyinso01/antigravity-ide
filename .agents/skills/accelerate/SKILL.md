@@ -12,7 +12,6 @@ argument-hint: "[target metric]"
 Invoke /agent-workflow — it contains workflow principles, anti-patterns, and the **Context Gathering Protocol**. Follow the protocol before proceeding — if no workflow context exists yet, you MUST run /teach-maestro first.
 Consult the context-management reference in the agent-workflow skill for window optimization and budget strategies.
 
-
 ---
 
 Make the workflow faster and cheaper without sacrificing quality. Measure before and after.

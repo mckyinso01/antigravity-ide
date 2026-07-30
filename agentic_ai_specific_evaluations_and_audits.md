@@ -5,6 +5,7 @@
 ---
 
 ### 1. Safety & Alignment Audits
+
 **Goal:** Ensure agent actions align strictly with intended goals, prevent unsafe escalation, and enforce policy constraints.
 
 **Key Checks:**
@@ -24,6 +25,7 @@
 ---
 
 ### 2. Capability, Robustness & Reliability Evaluations
+
 **Goal:** Ensure agent performs intended tasks reliably across distribution shifts, noisy inputs, and partial failures.
 
 **Key Checks:**
@@ -47,6 +49,7 @@
 ---
 
 ### 3. Interpretability, Explainability & Auditability
+
 **Goal:** Every agent decision must be explainable and reconstructable for audits and debugging.
 
 **Key Checks:**
@@ -66,6 +69,7 @@
 ---
 
 ### 4. Security & Adversarial Robustness
+
 **Goal:** Prevent misuse, data leaks, privilege escalation, and adversarial exploitation.
 
 **Key Checks:**
@@ -89,6 +93,7 @@
 ---
 
 ### 5. Privacy, Data Handling & Compliance
+
 **Goal:** Protect PII, follow consent, and meet regulatory requirements.
 
 **Key Checks:**
@@ -108,6 +113,7 @@
 ---
 
 ### 6. Human-in-the-Loop (HITL), Escalation & Overrides
+
 **Goal:** Ensure safe escalation, human oversight, and clear responsibility.
 
 **Key Checks:**
@@ -127,6 +133,7 @@
 ---
 
 ### 7. Governance, Documentation & Ethical Review
+
 **Goal:** Maintain clear policies, risk acceptance, and stakeholder sign-offs.
 
 **Key Checks:**
@@ -146,6 +153,7 @@
 ---
 
 ### 8. Observability, Telemetry & Continuous Monitoring
+
 **Goal:** Real-time detection of misbehavior and automated mitigation.
 
 **Key Checks:**
@@ -165,6 +173,7 @@
 ---
 
 ### 9. Red Teaming & External Review
+
 **Goal:** Independent adversarial evaluation and third-party assurance.
 
 **Key Checks:**
@@ -180,6 +189,7 @@
 ---
 
 ### 10. Post-Deploy Learning & Continuous Evaluation
+
 **Goal:** Ongoing validation as agent encounters new contexts.
 
 **Key Checks:**
@@ -198,20 +208,22 @@
 ---
 
 ### 🚀 Minimal Required Agentic Test Matrix (Pre-Canary Must-Pass)
-1. **Safety Quick Suite** (50 adversarial + 50 benign prompts) — 0 critical failures.  
-2. **HITL Gating Test** — All gated actions blocked without approval.  
-3. **Kill Switch Test** — Agent stops within < 5s.  
-4. **PII Redaction Test** — Zero PII in logs for 100 synthetic PII inputs.  
-5. **Replayability Check** — 10 sampled sessions replayable.  
-6. **Telemetry & Alert Test** — Alerts fire on injected anomaly.  
+
+1. **Safety Quick Suite** (50 adversarial + 50 benign prompts) — 0 critical failures.
+2. **HITL Gating Test** — All gated actions blocked without approval.
+3. **Kill Switch Test** — Agent stops within < 5s.
+4. **PII Redaction Test** — Zero PII in logs for 100 synthetic PII inputs.
+5. **Replayability Check** — 10 sampled sessions replayable.
+6. **Telemetry & Alert Test** — Alerts fire on injected anomaly.
 7. **Red Team Critical Check** — Zero open critical exploits (or risk accepted).
 
 ---
 
 ### 🛠️ Example Agentic Test Artifacts & Schemas
-- **Adversarial Prompt Suite (CSV)**: `id, prompt, expected_behavior, severity`  
-- **Action Trace Schema (JSON)**: `plan_id, step_id, prompt, model_output, confidence, external_call, result, timestamp`  
-- **Kill Switch Runbook**: Exact commands to disable agent and verify stop within 5s.  
-- **HITL Gating Matrix**: List of actions requiring approval + UI flow for approval.  
-- **PII Test Harness**: Synthetic PII generator + log scanner.  
+
+- **Adversarial Prompt Suite (CSV)**: `id, prompt, expected_behavior, severity`
+- **Action Trace Schema (JSON)**: `plan_id, step_id, prompt, model_output, confidence, external_call, result, timestamp`
+- **Kill Switch Runbook**: Exact commands to disable agent and verify stop within 5s.
+- **HITL Gating Matrix**: List of actions requiring approval + UI flow for approval.
+- **PII Test Harness**: Synthetic PII generator + log scanner.
 - **Red Team Tracker**: Vulnerability table (`id, severity, owner, due, status`).

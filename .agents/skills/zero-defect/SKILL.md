@@ -22,7 +22,7 @@ This is model-agnostic. It works with Claude, Gemini, GPT, Codex, or any AI agen
 Follow these for the **entire session** after this command is invoked:
 
 | # | Rule | Why |
-|---|------|-----|
+| --- | --- | --- |
 | 1 | **Read before writing** — Re-read the relevant code/context before every modification | Prevents edits based on stale mental models |
 | 2 | **Verify before claiming** — Run verification before any success claim | Prevents false completion reports |
 | 3 | **One logical change at a time** — Avoid sprawling multi-file edits that compound errors | Reduces cascading failures |
@@ -48,7 +48,7 @@ Before claiming ANY work is complete, pass every item:
 ### Anti-Pattern Table
 
 | Sloppy pattern | What to do instead |
-|---------------|-------------------|
+| --- | --- |
 | "This should work" without testing | Run the test, show the output |
 | Editing code without re-reading the file first | View the file, then edit |
 | Assuming a function exists because it sounds right | Grep the codebase to confirm |

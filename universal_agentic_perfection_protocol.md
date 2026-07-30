@@ -25,7 +25,7 @@ Every subagent (`PM-01`, `ARCH-01`, `UX-01`, `FE-01`, `BE-01`, `QA-01`, `SEC-01`
 An agentic task is NEVER complete until **ALL 15 Criteria are answered YES (100% Passed)**. If even 1 criterion is "NO", the subagent MUST iterate, refactor, and improve until all 15 are YES:
 
 | # | Termination Criterion (YES-Gate) | Verification Requirement | Pass Status |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **1** | **State 1 & State 2 Duality** | Did the subagent execute both State 1 (Composition) and State 2 (Adversarial Audit) without skipping? | `[x] YES` |
 | **2** | **Sukdulang-Antas (Maxed-Out) Quality** | Is the output maxed-out to absolute peak quality ("Dead-End Excellence") with 0 lazy shortcuts or missing cases? | `[x] YES` |
 | **3** | **Zero-Defect Code & Compilation** | Does the code compile with 0 errors (`npx tsc --noEmit` exit 0, `npm run build` exit 0)? | `[x] YES` |

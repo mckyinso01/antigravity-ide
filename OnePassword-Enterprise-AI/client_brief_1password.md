@@ -1,22 +1,25 @@
 # Stage 1: Exhaustive 360° Client Research Brief — 1Password® Enterprise
 
-> 📍 **WORKFLOW TELEMETRY**: `[STAGE 1: 360° CLIENT RESEARCH & DESIGN SCRAPING — 🟡 ACTIVE / CLEARANCE REQUIRED]`  
-> **Target Client**: `1Password® (AgileBits Inc.)`  
-> **Official Scraped Site**: `https://1password.com` & `https://1password.com/product/unified-access`  
-> **Project Budget**: `$9,500 USD`  
-> **Isolated Directory**: `c:\Users\Admin\.antigravity-ide\OnePassword-Enterprise-AI\`  
+> 📍 **WORKFLOW TELEMETRY**: `[STAGE 1: 360° CLIENT RESEARCH & DESIGN SCRAPING — 🟡 ACTIVE / CLEARANCE REQUIRED]`
+> **Target Client**: `1Password® (AgileBits Inc.)`
+> **Official Scraped Site**: `<https://1password.com`> & `<https://1password.com/product/unified-access`>
+> **Project Budget**: `$9,500 USD`
+> **Isolated Directory**: `c:\Users\Admin\.antigravity-ide\OnePassword-Enterprise-AI\`
 
 ---
 
 ## 🌐 1. Live Scraped 1Password.com Website Screenshots
 
 ### Screenshot 1: Official 1Password Homepage Hero (Dark Charcoal Canvas)
+
 ![1Password Homepage Hero](file:///C:/Users/Admin/.gemini/antigravity-ide/brain/8a514e44-fcd8-413f-96e7-764c596a3a54/1password_homepage_1785130115794.png)
 
 ### Screenshot 2: Official Enterprise Security Section (Deep Navy Container)
+
 ![1Password Enterprise Security](file:///C:/Users/Admin/.gemini/antigravity-ide/brain/8a514e44-fcd8-413f-96e7-764c596a3a54/1password_enterprise_1785130192125.png)
 
 ### Screenshot 3: Official 1Password® Unified Access Platform Features
+
 ![1Password Unified Access Features](file:///C:/Users/Admin/.gemini/antigravity-ide/brain/8a514e44-fcd8-413f-96e7-764c596a3a54/1password_features_1785130216221.png)
 
 ---
@@ -66,6 +69,7 @@ Extracted via computed DOM style tracing during live subagent traversal:
 ---
 
 ## 🛑 Stage 1 Clearance Checkpoint
+
 - [x] Live website scraped (`1password.com`)
 - [x] Official app screenshots captured & embedded
 - [x] Design tokens (colors, typography, layout) extracted

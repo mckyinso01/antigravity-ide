@@ -1,10 +1,10 @@
 # Stage 2: Solution Architecture & 72-Brain Council Debate Blueprint
 
-> 📍 **WORKFLOW TELEMETRY**: `[STAGE 2: SOLUTION ARCHITECTURE — 🟢 COMPLETED & VERIFIED BY 72-BRAIN SWARM]`  
-> **Client**: **Reddit Inc.** (Ad Engineering & ML Infrastructure Division)  
-> **Production Spec & Council Sign-Off**: [`enterprise_production_spec_and_council_review.md`](file:///c:/Users/Admin/.antigravity-ide/Reddit-AdTech-Enterprise/enterprise_production_spec_and_council_review.md)  
-> **Protobuf Schemas**: [`ad_telemetry.proto`](file:///c:/Users/Admin/.antigravity-ide/Reddit-AdTech-Enterprise/spec/schemas/ad_telemetry.proto) & [`ad_stream.proto`](file:///c:/Users/Admin/.antigravity-ide/Reddit-AdTech-Enterprise/spec/schemas/ad_stream.proto)  
-> **ClickHouse DDL**: [`clickhouse_schema.sql`](file:///c:/Users/Admin/.antigravity-ide/Reddit-AdTech-Enterprise/spec/ddl/clickhouse_schema.sql)  
+> 📍 **WORKFLOW TELEMETRY**: `[STAGE 2: SOLUTION ARCHITECTURE — 🟢 COMPLETED & VERIFIED BY 72-BRAIN SWARM]`
+> **Client**: **Reddit Inc.** (Ad Engineering & ML Infrastructure Division)
+> **Production Spec & Council Sign-Off**: [`enterprise_production_spec_and_council_review.md`](file:///c:/Users/Admin/.antigravity-ide/Reddit-AdTech-Enterprise/enterprise_production_spec_and_council_review.md)
+> **Protobuf Schemas**: [`ad_telemetry.proto`](file:///c:/Users/Admin/.antigravity-ide/Reddit-AdTech-Enterprise/spec/schemas/ad_telemetry.proto) & [`ad_stream.proto`](file:///c:/Users/Admin/.antigravity-ide/Reddit-AdTech-Enterprise/spec/schemas/ad_stream.proto)
+> **ClickHouse DDL**: [`clickhouse_schema.sql`](file:///c:/Users/Admin/.antigravity-ide/Reddit-AdTech-Enterprise/spec/ddl/clickhouse_schema.sql)
 
 ---
 
@@ -21,7 +21,7 @@ graph LR
     Auditor --> SHA256["📜 Cryptographic SHA-256 WORM Ledger"]
 ```
 
-### Key Debates & Breakthrough Agreements:
+### Key Debates & Breakthrough Agreements
 
 1. **`ARCH-01` (System Architect - DeepSeek-R1 & Qwen-Coder)**:
    - *Proposal*: Pulsar partitioned topics with 128 shards for 1.5M auctions/sec ingestion.
@@ -43,6 +43,7 @@ graph LR
 ## 2. 📄 Protobuf Schema & ClickHouse DDL Contracts
 
 ### Protobuf Telemetry Message Definition (`spec/schemas/ad_telemetry.proto`)
+
 ```proto
 syntax = "proto3";
 package reddit.adstream.v1;
@@ -68,6 +69,7 @@ message AuctionEvent {
 ```
 
 ### ClickHouse Storage DDL (`spec/ddl/clickhouse_schema.sql`)
+
 ```sql
 CREATE TABLE IF NOT EXISTS reddit_adtech.auction_events (
     auction_id UUID,

@@ -1,8 +1,8 @@
 # Implementation Plan: Pathway A — Official GitHub Copilot SDK Integration
 
-> 📍 **STAGE 2 PLAN**: `[PATHWAY A: GITHUB COPILOT SDK INTEGRATION — 🟡 CLEARANCE REQUIRED]`  
-> **Target**: `@github/copilot-sdk` programmatic integration into Antigravity IDE  
-> **Status**: Draft Plan Created — Awaiting User Approval  
+> 📍 **STAGE 2 PLAN**: `[PATHWAY A: GITHUB COPILOT SDK INTEGRATION — 🟡 CLEARANCE REQUIRED]`
+> **Target**: `@github/copilot-sdk` programmatic integration into Antigravity IDE
+> **Status**: Draft Plan Created — Awaiting User Approval
 
 ---
 
@@ -21,7 +21,7 @@ sequenceDiagram
     participant CopilotSubagent as COPILOT-01 Subagent
     participant SDKAgent as Local Copilot SDK Service (@github/copilot-sdk)
     participant GHEngine as GitHub Copilot Engine API
-    
+
     User->>Master: Send Task Request
     Master->>CopilotSubagent: Invoke COPILOT-01 Co-Auditor
     CopilotSubagent->>SDKAgent: Session Prompt + Micro/Macro Asset Context
@@ -37,17 +37,20 @@ sequenceDiagram
 ## 3. ⚙️ Component Blueprint
 
 ### Component 1: Secure Credential Management (`agent/credentials.js`)
-* Reads the GitHub OAuth Access Token (`gho_...`) securely from OS Keychain or IDE Secret Storage.
-* Guarantees **0 plaintext API keys** in the workspace codebase (enforcing 100% compliance with `AGENTS.md`).
+
+- Reads the GitHub OAuth Access Token (`gho_...`) securely from OS Keychain or IDE Secret Storage.
+- Guarantees **0 plaintext API keys** in the workspace codebase (enforcing 100% compliance with `AGENTS.md`).
 
 ### Component 2: Copilot SDK Service Engine (`agent/copilot-sdk-service.js`)
-* Initializes `@github/copilot-sdk` client instance.
-* Manages multi-turn conversational state, model parameter tuning, and token streaming.
-* Registers workspace tools for `COPILOT-01` to inspect files, run `npx tsc` compiler checks, and evaluate micro-to-macro assets.
+
+- Initializes `@github/copilot-sdk` client instance.
+- Manages multi-turn conversational state, model parameter tuning, and token streaming.
+- Registers workspace tools for `COPILOT-01` to inspect files, run `npx tsc` compiler checks, and evaluate micro-to-macro assets.
 
 ### Component 3: `COPILOT-01` Universal Inspector Bridge (`agent/copilot-bridge.js`)
-* Connects the local Copilot SDK service directly to the Master Orchestrator.
-* Formally executes the 5 Final Production Clearance Roles audit and 7 Production-Readiness Dimensions checklist before any stage sign-off.
+
+- Connects the local Copilot SDK service directly to the Master Orchestrator.
+- Formally executes the 5 Final Production Clearance Roles audit and 7 Production-Readiness Dimensions checklist before any stage sign-off.
 
 ---
 
@@ -62,8 +65,8 @@ sequenceDiagram
 
 ## 5. 🔬 Verification & Audit Plan
 
-* **Automated Auth Handshake Test**: Run `node test_copilot_connection.js` to confirm HTTP 200 connection to GitHub Copilot API endpoints.
-* **Micro-to-Macro Asset Audit Verification**: Run a test prompt through `COPILOT-01` inspecting a sample TSX file for period (`.`) syntax, pixel sizes, and fluid edge-to-edge responsiveness.
+- **Automated Auth Handshake Test**: Run `node test_copilot_connection.js` to confirm HTTP 200 connection to GitHub Copilot API endpoints.
+- **Micro-to-Macro Asset Audit Verification**: Run a test prompt through `COPILOT-01` inspecting a sample TSX file for period (`.`) syntax, pixel sizes, and fluid edge-to-edge responsiveness.
 
 ---
 

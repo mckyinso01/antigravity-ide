@@ -18,7 +18,7 @@ Adapt a working workflow for a different context.
 ### Adaptation Assessment
 
 | Dimension | Current | Target | Impact |
-|-----------|---------|--------|--------|
+| --- | --- | --- | --- |
 | Model provider | ? | ? | Prompt format, capabilities, pricing |
 | Model tier | ? | ? | Context window, reasoning ability |
 | Deployment env | ? | ? | Latency, availability, compliance |

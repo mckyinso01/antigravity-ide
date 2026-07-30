@@ -1,16 +1,16 @@
 # Stage 4: 200 Micro-to-Macro Asset & UI Element Scenarios — Reddit Enterprise AdTech Platform
 
-> 📍 **WORKFLOW TELEMETRY**: `[STAGE 4: 200 MICRO-TO-MACRO ELEMENT SCENARIOS — 🟢 COMPLETED & VERIFIED BY 72-BRAIN SWARM]`  
-> **Client**: **Reddit Inc.** (Ad Engineering & ML Infrastructure Division)  
-> **Coverage Matrix**: Buttons, Textareas, Search Tools, Filters, Dropdowns, Views, Modals, Tooltips, Toast Messages, Badges, Sliders, Keyboards, & Crypto Ledgers  
-> **Audited By**: **`COPILOT-01` Universal Inspector & 72-Brain AI Swarm Platform**  
+> 📍 **WORKFLOW TELEMETRY**: `[STAGE 4: 200 MICRO-TO-MACRO ELEMENT SCENARIOS — 🟢 COMPLETED & VERIFIED BY 72-BRAIN SWARM]`
+> **Client**: **Reddit Inc.** (Ad Engineering & ML Infrastructure Division)
+> **Coverage Matrix**: Buttons, Textareas, Search Tools, Filters, Dropdowns, Views, Modals, Tooltips, Toast Messages, Badges, Sliders, Keyboards, & Crypto Ledgers
+> **Audited By**: **`COPILOT-01` Universal Inspector & 72-Brain AI Swarm Platform**
 
 ---
 
 ## 🔘 Category A: Buttons & Action Triggers (Scenarios 001 – 030)
 
 | Scenario # | Element / Asset Target | Micro-to-Macro User Scenario | Expected System Outcome & Feedback | 72-Brain Audit |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **SCN-001** | Primary Action Button | Click "Run Policy Scan" in `<AdPolicyComplianceAuditor />` | Displays spinning refresh icon and 1.42ms scan banner (`100% PASSED`). | `VERIFIED` |
 | **SCN-002** | Redact Action Button | Click "Auto-Redact Violations & Secrets" | Instantly replaces exposed AWS key with `[REDACTED_AWS_ACCESS_KEY]` (`100% PASSED`). | `VERIFIED` |
 | **SCN-003** | Row Action Button | Click "Optimize Budget" on stream row | Highlighted row border & smooth slide-over drawer opening (`100% PASSED`). | `VERIFIED` |
@@ -23,7 +23,7 @@
 ## 📝 Category B: Textareas, Input Fields & Keyboards (Scenarios 031 – 060)
 
 | Scenario # | Element / Asset Target | Micro-to-Macro User Scenario | Expected System Outcome & Feedback | 72-Brain Audit |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **SCN-031** | Ad Copy Textarea | User types ad copy text into textarea | Preserves monospace font styling and auto-updates state (`100% PASSED`). | `VERIFIED` |
 | **SCN-032** | Backspace Clearability | User selects text & hits `Backspace` | Input text clears cleanly without leaving ghost strings (`100% PASSED`). | `VERIFIED` |
 | **SCN-033** | PII / AWS Secret Input | Paste string containing `AKIAIOSFODNN7EXAMPLE` | Sub-1.5ms regex interceptor triggers red warning box (`100% PASSED`). | `VERIFIED` |
@@ -36,7 +36,7 @@
 ## 🔍 Category C: Search Tools, Filter Tools & Dropdowns (Scenarios 061 – 090)
 
 | Scenario # | Element / Asset Target | Micro-to-Macro User Scenario | Expected System Outcome & Feedback | 72-Brain Audit |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **SCN-061** | Command Palette Search | Press `Ctrl+K` and type "Latency" | Filters command list to "View Sub-Millisecond ML Latency Histogram" (`100% PASSED`). | `VERIFIED` |
 | **SCN-062** | Subreddit Dropdown Filter | Select `r/wallstreetbets` from filter | Filters auction stream strictly to targeted subreddit posts (`100% PASSED`). | `VERIFIED` |
 | **SCN-063** | Node Pool Toggle Filter | Click "Triton A100 GPU" tab | Isolates latency histogram strictly to GPU node metrics (`100% PASSED`). | `VERIFIED` |
@@ -48,7 +48,7 @@
 ## 🏛️ Category D: Views, Modals & Slide-Over Drawers (Scenarios 091 – 120)
 
 | Scenario # | Element / Asset Target | Micro-to-Macro User Scenario | Expected System Outcome & Feedback | 72-Brain Audit |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **SCN-091** | Left Rail View Switch | Click "Policy Auditor" in left rail | Switches active canvas cleanly to `<AdPolicyComplianceAuditor />` (`100% PASSED`). | `VERIFIED` |
 | **SCN-092** | Collapsible Left Rail | Click rail collapse icon (`<ChevronLeft />`) | Collapses left rail smoothly from 256px to 64px (`100% PASSED`). | `VERIFIED` |
 | **SCN-093** | Slide-Over Modal Drawer | Trigger `<CampaignBudgetOptimizerModal />` | Smooth right-to-left drawer slide animation without backdrop blur bugs (`100% PASSED`). | `VERIFIED` |
@@ -60,7 +60,7 @@
 ## 🏷️ Category E: Tooltips, Badges & Status Pills (Scenarios 121 – 150)
 
 | Scenario # | Element / Asset Target | Micro-to-Macro User Scenario | Expected System Outcome & Feedback | 72-Brain Audit |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **SCN-121** | Status Pill: Auction Win | Winning bid displayed in stream table | Renders green `AUCTION_WIN` status pill (`100% PASSED`). | `VERIFIED` |
 | **SCN-122** | Status Pill: Zero-Bid Fallback | Feed request receives 0 valid bids | Renders grey `FALLBACK_NON_PERSONALIZED` status pill (`100% PASSED`). | `VERIFIED` |
 | **SCN-123** | SLA Latency Badge | Inference latency under 1.5ms | Displays green `p99 < 1.5ms SLA` status badge (`100% PASSED`). | `VERIFIED` |
@@ -72,7 +72,7 @@
 ## 🔔 Category F: Toast Messages & Feedback Banners (Scenarios 151 – 180)
 
 | Scenario # | Element / Asset Target | Micro-to-Macro User Scenario | Expected System Outcome & Feedback | 72-Brain Audit |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **SCN-151** | Clean Policy Banner | Policy scan finds 0 violations | Displays green glowing "100% Policy Compliant" banner (`100% PASSED`). | `VERIFIED` |
 | **SCN-152** | Violation Alert Banner | Policy scan finds exposed secret key | Displays rose glowing alert banner with violation line number (`100% PASSED`). | `VERIFIED` |
 | **SCN-153** | Ledger Chain Alert | Tamper simulation triggered | Displays amber warning box "CHAIN TAMPERED AT BLOCK #002" (`100% PASSED`). | `VERIFIED` |
@@ -83,7 +83,7 @@
 ## 💾 Category G: Backend Persistence & Crypto Ledgers (Scenarios 181 – 200)
 
 | Scenario # | Element / Asset Target | Micro-to-Macro User Scenario | Expected System Outcome & Feedback | 72-Brain Audit |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **SCN-181** | LocalState Persistence | User adjusts budget slider & reloads page | Restores last configured budget pacing state from `LocalStorage` (`100% PASSED`). | `VERIFIED` |
 | **SCN-182** | SHA-256 Ledger Append | Redaction executed | Computes SHA-256 block hash and links to previous block (`100% PASSED`). | `VERIFIED` |
 | **SCN-183** | ClickHouse DDL Sync | Ingest 1.5M QPS auction events | Deduplicates events by `auction_id` using `ReplacingMergeTree` (`100% PASSED`). | `VERIFIED` |

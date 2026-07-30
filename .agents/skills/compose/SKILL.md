@@ -33,7 +33,9 @@ Choose the right architecture pattern (consult the agent-architecture reference 
 For each agent in the system, define:
 
 ```markdown
+
 ## Agent: [Name]
+
 Role: [One sentence]
 Responsibilities: [What it does]
 Boundaries: [What it does NOT do]
@@ -47,7 +49,9 @@ Output: [What it produces]
 For each agent-to-agent connection:
 
 ```markdown
+
 ## Handoff: [Agent A] → [Agent B]
+
 Trigger: [When does A hand off to B?]
 Payload: [What data is passed?]
 Expected response: [What does A expect back?]

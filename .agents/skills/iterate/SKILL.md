@@ -24,7 +24,7 @@ Set up feedback loops that make workflows self-correcting and continuously impro
 What does "good output" look like? Score dimensions:
 
 | Dimension | Weight | Threshold | Measurement |
-|-----------|--------|-----------|-------------|
+| --- | --- | --- | --- |
 | Accuracy | 0.4 | ≥ 0.8 | Factual correctness check |
 | Completeness | 0.3 | ≥ 0.7 | Required fields present |
 | Format | 0.2 | ≥ 0.9 | Schema compliance |

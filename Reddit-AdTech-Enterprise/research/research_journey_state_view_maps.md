@@ -1,7 +1,7 @@
 # Research Task 4: Journeys, Application States & UI Views Mapping
 
-> 📍 **WORKFLOW TELEMETRY**: `[STAGE 11 DEEP RESEARCH: JOURNEYS, STATES & VIEWS — 🟢 COMPLETED]`  
-> **Client**: **Reddit Inc.** (Ad Engineering & ML Infrastructure Division)  
+> 📍 **WORKFLOW TELEMETRY**: `[STAGE 11 DEEP RESEARCH: JOURNEYS, STATES & VIEWS — 🟢 COMPLETED]`
+> **Client**: **Reddit Inc.** (Ad Engineering & ML Infrastructure Division)
 
 ---
 
@@ -13,7 +13,7 @@ graph TD
     NavRail --> View1["💻 Console View (<AdRankingStreamConsole />)"]
     NavRail --> View2["📈 Analytics View (<MLLatencyHistogram />)"]
     NavRail --> View3["🛡️ Auditor View (<AdPolicyComplianceAuditor />)"]
-    
+
     View1 -->|Click 'Optimize Budget'| Drawer1["🎛️ Slide-Over Modal (<CampaignBudgetOptimizerModal />)"]
     View3 -->|Click 'Run Policy Scan'| ScanProcess["🔍 Sub-1.5ms Scan Engine"]
     ScanProcess -->|Violation Detected| RedactAction["🧹 Auto-Redact Button"]

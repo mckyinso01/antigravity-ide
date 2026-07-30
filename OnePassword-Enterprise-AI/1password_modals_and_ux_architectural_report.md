@@ -1,9 +1,9 @@
 # Stage 5: Modals & UX Architectural Report — 1Password® Enterprise
 
-> 📍 **WORKFLOW TELEMETRY**: `[STAGE 5: MODALS & UX ARCHITECTURAL REPORT — 🟡 ACTIVE / CLEARANCE REQUIRED]`  
-> **Isolated Project Directory**: `c:\Users\Admin\.antigravity-ide\OnePassword-Enterprise-AI\`  
-> **StitchMCP Design System Asset**: `assets/1060452157345996019`  
-> **Council & MCP Invocation**: 18 Domain Council Subagents + StitchMCP UI/UX Engine + Chrome DevTools Audit  
+> 📍 **WORKFLOW TELEMETRY**: `[STAGE 5: MODALS & UX ARCHITECTURAL REPORT — 🟡 ACTIVE / CLEARANCE REQUIRED]`
+> **Isolated Project Directory**: `c:\Users\Admin\.antigravity-ide\OnePassword-Enterprise-AI\`
+> **StitchMCP Design System Asset**: `assets/1060452157345996019`
+> **Council & MCP Invocation**: 18 Domain Council Subagents + StitchMCP UI/UX Engine + Chrome DevTools Audit
 
 ---
 
@@ -12,7 +12,7 @@
 To maintain a clutter-free, high-performance workspace, secondary tools (AI assistants, debuggers, evidence certificates, search overlays) MUST NOT permanently occupy primary screen real estate. They are rendered via **Floating Portals, Modals, and Slide-Over Right Drawers**:
 
 | Component Name | Type / UX Pattern | Mount Location | Trigger Event & Z-Index | Behavior & Dismissal |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | `<TransactionEvidenceModal />` | Centered Modal | React Portal (`body`) | Click "Decrypt & View Proof" (`z-50`) | Esc key / Backdrop click dismiss; RSA signature display |
 | `<PayloadDebuggerDrawer />` | Slide-Over Right Drawer | React Portal (`body`) | Click "Inspect Block JSON" (`z-40`) | Slide-in from right (300ms transition); raw JSON tree |
 | `<ExportReportWizardModal />` | Multi-Step Wizard Modal | React Portal (`body`) | Click "Export Report" (`z-50`) | Step 1: Format -> Step 2: Date -> Step 3: Download |
@@ -42,6 +42,7 @@ To maintain a clutter-free, high-performance workspace, secondary tools (AI assi
 ---
 
 ## 📋 3. Stage 5 Execution Checkpoint
+
 - [x] Modals, Drawers & Layering Architecture finalized
 - [x] Z-Index layering & WCAG AAA keyboard accessibility rules defined
 - [x] Stage 5 artifact persisted (`1password_modals_and_ux_architectural_report.md`)

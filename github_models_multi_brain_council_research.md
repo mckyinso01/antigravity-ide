@@ -1,14 +1,14 @@
 # Deep Research Report: GitHub Models API & Quad-Brain Subagent Swarm Architecture
 
-> 📍 **RESEARCH ARTIFACT**: `[GITHUB MODELS API & QUAD-BRAIN COUNCIL SWARM ARCHITECTURE 🟢]`  
-> **Target**: Empowering every Council Subagent with 4 Flagship AI Brain Engines via GitHub Models (`models.github.ai`) & Copilot SDK  
-> **Status**: Research Completed — Pending User Approval  
+> 📍 **RESEARCH ARTIFACT**: `[GITHUB MODELS API & QUAD-BRAIN COUNCIL SWARM ARCHITECTURE 🟢]`
+> **Target**: Empowering every Council Subagent with 4 Flagship AI Brain Engines via GitHub Models (`models.github.ai`) & Copilot SDK
+> **Status**: Research Completed — Pending User Approval
 
 ---
 
 ## Executive Summary
 
-Through GitHub's official **GitHub Models API (`https://models.github.ai`)** and **`@github/models` SDK**, we can provide every single Council Subagent role with **4 Dedicated Flagship AI Brain Engines** (Quad-Brain Architecture). 
+Through GitHub's official **GitHub Models API ([https://models.github.ai](https://models.github.ai))** and **`@github/models` SDK**, we can provide every single Council Subagent role with **4 Dedicated Flagship AI Brain Engines** (Quad-Brain Architecture).
 
 Using a standard GitHub Personal Access Token (PAT) with `models:read` scope, we unlock direct, zero-quota access to elite AI models (`DeepSeek-R1`, `Qwen-2.5-Coder-32B`, `GPT-4o`, `Llama-3.3-70B`) running on GitHub's infrastructure.
 
@@ -27,20 +27,24 @@ graph TD
 ```
 
 ### 1. 🧠 Brain 1: DeepSeek-R1 (`deepseek-ai/DeepSeek-R1`)
-* **Specialization**: Deep reasoning, mathematical derivations, security vulnerability diagnosis, and architectural logic.
-* **Usage**: Step-by-step logic verification before code drafting.
+
+- **Specialization**: Deep reasoning, mathematical derivations, security vulnerability diagnosis, and architectural logic.
+- **Usage**: Step-by-step logic verification before code drafting.
 
 ### 2. 🧠 Brain 2: Qwen 2.5 Coder 32B (`Qwen/Qwen2.5-Coder-32B-Instruct`)
-* **Specialization**: Specialized React/TSX/CSS layout synthesis, Protobuf schemas, and ClickHouse DDLs.
-* **Usage**: Zero-defect code generation.
+
+- **Specialization**: Specialized React/TSX/CSS layout synthesis, Protobuf schemas, and ClickHouse DDLs.
+- **Usage**: Zero-defect code generation.
 
 ### 3. 🧠 Brain 3: OpenAI GPT-4o (`openai/gpt-4o`)
-* **Specialization**: Visual screenshot auditing, multimodal layout analysis, and 360° product discovery.
-* **Usage**: Chrome DevTools screenshot verification and UI ergonomics audit.
+
+- **Specialization**: Visual screenshot auditing, multimodal layout analysis, and 360° product discovery.
+- **Usage**: Chrome DevTools screenshot verification and UI ergonomics audit.
 
 ### 4. 🧠 Brain 4: Meta Llama 3.3 70B (`meta/meta-llama-3.3-70b-instruct`)
-* **Specialization**: Ultra-fast sub-100ms task routing, payload validation, and prompt telemetry.
-* **Usage**: Real-time telemetry routing and instant validation checks.
+
+- **Specialization**: Ultra-fast sub-100ms task routing, payload validation, and prompt telemetry.
+- **Usage**: Real-time telemetry routing and instant validation checks.
 
 ---
 
@@ -58,7 +62,6 @@ Each Quad-Brain Council Subagent is mandated to execute **Painpoints Discovery &
 
 3. **Scenario-Based Audit Enforcement (`COPILOT-01`)**:
    - Cross-examines 100% of discovered painpoints against the **120 Exhaustive User Journey Scenarios** and the **7 Enterprise Production-Readiness Dimensions**.
-
 
 ---
 

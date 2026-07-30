@@ -1,16 +1,16 @@
 # Stage 3: 120 Exhaustive User Journey Scenarios — 1Password® Enterprise
 
-> 📍 **WORKFLOW TELEMETRY**: `[STAGE 3: 120 EXHAUSTIVE USER JOURNEY SCENARIOS — 🟡 ACTIVE / CLEARANCE REQUIRED]`  
-> **Isolated Project Directory**: `c:\Users\Admin\.antigravity-ide\OnePassword-Enterprise-AI\`  
-> **Council & MCP Invocation**: 18 Council Subagents + StitchMCP Design System (`assets/1060452157345996019`) + Chrome DevTools Audit  
-> **Total Scenarios Mapped**: **120 Scenarios (30 Per Component Across 4 Core Components)**  
+> 📍 **WORKFLOW TELEMETRY**: `[STAGE 3: 120 EXHAUSTIVE USER JOURNEY SCENARIOS — 🟡 ACTIVE / CLEARANCE REQUIRED]`
+> **Isolated Project Directory**: `c:\Users\Admin\.antigravity-ide\OnePassword-Enterprise-AI\`
+> **Council & MCP Invocation**: 18 Council Subagents + StitchMCP Design System (`assets/1060452157345996019`) + Chrome DevTools Audit
+> **Total Scenarios Mapped**: **120 Scenarios (30 Per Component Across 4 Core Components)**
 
 ---
 
 ## 🛡️ SECTION 1: ZeroKnowledgeVaultConsole (Scenarios 1 to 30)
 
 | Scenario ID | User Persona & Intent | Trigger (Step 1) | Processing & Visual Feedback (Step 2) | Outcome & Actionable Exit (Step 3) |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **SC-001** | CISO unlocks vault | Enters `MasterKey2026!` in passphrase input | PBKDF2 derives key (100k iterations) with visual spinner | Vault status switches to `Unlocked (Emerald Badge)` |
 | **SC-002** | DevOps adds AWS Secret | Inputs `AWS_SECRET_KEY` and raw key value | AES-256-GCM derives 12-byte IV & encrypts payload | Ciphertext `AES256GCM:v1:...` saved to registry; success toast shown |
 | **SC-003** | Auditor inspects ciphertext | Clicks "Decrypt & View Proof" on secret row | Web Crypto decrypts payload client-side | Modal opens displaying decrypted plaintext & RSA signature proof |
@@ -47,7 +47,7 @@
 ## 📋 SECTION 2: SOC2ComplianceAuditor (Scenarios 31 to 60)
 
 | Scenario ID | User Persona & Intent | Trigger (Step 1) | Processing & Visual Feedback (Step 2) | Outcome & Actionable Exit (Step 3) |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **SC-031** | Auditor runs 10-point audit | Clicks "Run 10-Point SOC2 & ISO Audit" | Animated progress bar scans controls 1 to 10 | Audit score reaches `100% (10/10 Passed)`; green badge shown |
 | **SC-032** | Download legal evidence | Clicks "Download Legal Evidence (.txt)" | Generates RSA-signed text certificate blob | File `evidence_certificate_soc2_type2.txt` downloaded |
 | **SC-033** | Filter audit by SOC2 Type II | Selects "SOC2 Type II" filter tab | Filters control cards to SOC2 criteria | 10 control cards display matching SOC2 Trust Principles |
@@ -84,7 +84,7 @@
 ## 🔍 SECTION 3: SecretLeakageScanner (Scenarios 61 to 90)
 
 | Scenario ID | User Persona & Intent | Trigger (Step 1) | Processing & Visual Feedback (Step 2) | Outcome & Actionable Exit (Step 3) |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **SC-061** | Dev scans clean code snippet | Pastes 50 lines of clean React code | Sub-10ms regex scanner checks code | Green badge `0 Secrets Detected (Clean Code)`; 100% safe |
 | **SC-062** | Dev scans AWS Secret Key | Pastes code containing `AKIAIOSFODNN7EXAMPLE` | Regex matches `AWS Access Key ID` pattern | Red alert card highlights line 12 with exposed AWS key |
 | **SC-063** | Dev clicks Auto-Redact | Clicks "Auto-Redact Exposed Secrets" | Replaces secret with `[REDACTED_AWS_KEY]` | Code textarea updates with redacted text; badge turns green |
@@ -95,7 +95,7 @@
 | **SC-068** | Scan speed benchmark | Scanner executes on 5,000 lines | High-performance regex engine benchmarks time | Execution badge displays `Scan Completed in 4.2ms` |
 | **SC-069** | Custom regex pattern adder | Inputs regex `sk_custom_[a-zA-Z0-9]{32}` | Adds rule to active scanner pattern array | Custom rule #51 active for scanning |
 | **SC-070** | Clear scanner input | Clicks "Clear Code Textarea" | Clears textarea state & reset alerts | Textarea reset to empty placeholder state |
-| **SC-071** | Dev scans Slack Webhook URL | Pastes `https://hooks.slack.com/services/T00/B00/X00` | Regex matches `Slack Incoming Webhook` | Alert card highlights line 2 with severity `MEDIUM` |
+| **SC-071** | Dev scans Slack Webhook URL | Pastes `<https://hooks.slack.com/services/T00/B00/X00`> | Regex matches `Slack Incoming Webhook` | Alert card highlights line 2 with severity `MEDIUM` |
 | **SC-072** | Dev scans Private RSA Key | Pastes `-----BEGIN RSA PRIVATE KEY-----` | Regex matches `RSA Private Key Header` | Red alert card displays severity `CRITICAL (IMMEDIATE REVOCATION)` |
 | **SC-073** | Dev scans Database Connection URI | Pastes `postgres://user:pass@db.example.com:5432` | Regex matches `Postgres URI Password` | Alert card highlights line 15 with exposed password |
 | **SC-074** | Dev scans OpenAI API Key | Pastes `sk-proj-881920391823901823` | Regex matches `OpenAI Secret Key` | Alert card highlights line 1 with severity `HIGH` |
@@ -121,7 +121,7 @@
 ## 🔐 SECTION 4: SecurityAuditTrailLedger (Scenarios 91 to 120)
 
 | Scenario ID | User Persona & Intent | Trigger (Step 1) | Processing & Visual Feedback (Step 2) | Outcome & Actionable Exit (Step 3) |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **SC-091** | Analyst views audit chain | Opens `/ledger` view | Fetches SHA-256 audit log blocks | Ledger table displays log blocks with green chain icons |
 | **SC-092** | Verify SHA-256 chain integrity | Clicks "Verify Cryptographic Chain" | Re-computes SHA-256 hashes sequentially | Status badge confirms `SHA-256 Log Chain Verified 100% Intact` |
 | **SC-093** | Filter logs by event type | Selects `VAULT_DECRYPT` filter | Filters log list by `action === 'VAULT_DECRYPT'` | Table updates showing only vault decryption events |
@@ -156,6 +156,7 @@
 ---
 
 ## 📋 Stage 3 Deliverables Clearance Checkpoint
+
 - [x] 120 Exhaustive User Journey Scenarios mapped (30 per component across 4 core components)
 - [x] 18 Council Members & MCP Tools (`StitchMCP`, `chrome-devtools-mcp`) cross-examined
 - [x] Stage 3 artifact persisted (`1password_120_user_journey_scenarios.md`)

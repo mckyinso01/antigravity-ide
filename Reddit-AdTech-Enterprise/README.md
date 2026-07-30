@@ -1,9 +1,9 @@
 # Reddit Enterprise Ad Ranking & MLOps Infrastructure Repository
 
-> 📍 **WORKFLOW TELEMETRY**: `[MILESTONE 1 (DAY 0–3): SKELETON & DRAFTS PUSHED 🟢]`  
-> **Client**: **Reddit Inc.** (Ad Engineering & ML Infrastructure Division)  
-> **Fixed Fee Contract**: `$8,800 USD` (One-Time)  
-> **Target Deployment**: `https://gatzdevs.surge.sh`  
+> 📍 **WORKFLOW TELEMETRY**: `[MILESTONE 1 (DAY 0–3): SKELETON & DRAFTS PUSHED 🟢]`
+> **Client**: **Reddit Inc.** (Ad Engineering & ML Infrastructure Division)
+> **Fixed Fee Contract**: `$8,800 USD` (One-Time)
+> **Target Deployment**: `<https://gatzdevs.surge.sh`>
 
 ---
 

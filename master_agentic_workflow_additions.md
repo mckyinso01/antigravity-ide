@@ -54,16 +54,20 @@ graph TD
 ```
 
 ### 1. Tier 1: Transparent API Key Rotator (`ApiKeyRotator`)
+
 - Automatically rotates API keys upon detecting HTTP 429 (Rate Limit), 403 (Quota Exceeded), or 5xx errors across key pools declared in `config/api_keys.json`.
 
 ### 2. Tier 2: Multi-Provider Round-Robin Fallback Matrix
+
 - **Geocoding / Location Services**: LocationIQ (Primary) ➔ OpenCage (Secondary) ➔ Photon/Komoot (Free Public) ➔ Self-Hosted OpenStreetMap.
 - **AI Text / Code Inference**: Gemini 2.0 Flash (Primary) ➔ Hugging Face Free Serverless API (`Qwen/Qwen2.5-7B-Instruct`) ➔ Groq Llama 3.3.
 
 ### 3. Tier 3: Circuit Breaker & Stale Cache Defense (RFC 5861)
+
 - Serves cached responses (`Stale-While-Revalidate`) when external APIs experience network outages, preventing cascading backend failures.
 
 ### 4. Tier 4: Local Self-Healing Database & Mock Persistence
+
 - Automatic fallback to local IndexedDB / SQLite / `local_db.json` persistence to guarantee 0ms crash rate and 100% demo uptime when completely offline.
 
 ---

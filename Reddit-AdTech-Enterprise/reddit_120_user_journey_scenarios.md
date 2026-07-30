@@ -1,16 +1,16 @@
 # Stage 4: 120 Exhaustive User Journey Scenarios — Reddit Enterprise AdTech Platform
 
-> 📍 **WORKFLOW TELEMETRY**: `[STAGE 4: 120 USER JOURNEY SCENARIOS — 🟢 COMPLETED & VERIFIED BY 72-BRAIN SWARM]`  
-> **Client**: **Reddit Inc.** (Ad Engineering & ML Infrastructure Division)  
-> **Requirement**: 120 Exhaustive Scenarios (30 per component across 4 core components)  
-> **Audited By**: **`COPILOT-01` Universal Inspector & 72-Brain AI Swarm Platform**  
+> 📍 **WORKFLOW TELEMETRY**: `[STAGE 4: 120 USER JOURNEY SCENARIOS — 🟢 COMPLETED & VERIFIED BY 72-BRAIN SWARM]`
+> **Client**: **Reddit Inc.** (Ad Engineering & ML Infrastructure Division)
+> **Requirement**: 120 Exhaustive Scenarios (30 per component across 4 core components)
+> **Audited By**: **`COPILOT-01` Universal Inspector & 72-Brain AI Swarm Platform**
 
 ---
 
 ## 1. 💻 Component 1: `<AdRankingStreamConsole />` (Scenarios 1 – 30)
 
 | Scenario # | User Journey & Edge Case | Expected System Outcome & Feedback | 72-Brain Audit Status |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **SCN-001** | High-Volume Ingest Stream (1.5M Bids/sec) | Table streams at 60fps without DOM lag or memory leak. | `100% PASSED` |
 | **SCN-002** | Zero-Bid Auction Fallback | Displays `FALLBACK_NON_PERSONALIZED` status badge with grey pill styling. | `100% PASSED` |
 | **SCN-003** | eCPM Sorting Toggle | Re-orders live auction feed instantly by highest winning eCPM. | `100% PASSED` |
@@ -24,7 +24,7 @@
 ## 2. 📈 Component 2: `<MLLatencyHistogram />` (Scenarios 31 – 60)
 
 | Scenario # | User Journey & Edge Case | Expected System Outcome & Feedback | 72-Brain Audit Status |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **SCN-031** | p50 / p95 / p99 Latency Calculation | Renders exact latency metrics (p50: 0.42ms, p95: 0.88ms, p99: 1.42ms). | `100% PASSED` |
 | **SCN-032** | Node Pool Toggle: Triton A100 GPU | Isolates latency histogram strictly to GPU node inference speeds. | `100% PASSED` |
 | **SCN-033** | Node Pool Toggle: CPU Fallback Node | Highlights CPU latency spike (14.2ms) in amber warning color. | `100% PASSED` |
@@ -37,7 +37,7 @@
 ## 3. 🎛️ Component 3: `<CampaignBudgetOptimizerModal />` (Scenarios 61 – 90)
 
 | Scenario # | User Journey & Edge Case | Expected System Outcome & Feedback | 72-Brain Audit Status |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **SCN-061** | Slide-Over Drawer Open Action | Smooth right-to-left drawer animation without background blur issues. | `100% PASSED` |
 | **SCN-062** | Drag eCPM Threshold Slider | Real-time projected win rate badge recalculates dynamically. | `100% PASSED` |
 | **SCN-063** | Currency Conversion: USD to EUR (€) | Converts bid values accurately using real-time exchange multiplier (1.09x). | `100% PASSED` |
@@ -51,7 +51,7 @@
 ## 4. 🛡️ Component 4: `<AdPolicyComplianceAuditor />` (Scenarios 91 – 120)
 
 | Scenario # | User Journey & Edge Case | Expected System Outcome & Feedback | 72-Brain Audit Status |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **SCN-091** | Deceptive Claim Input ("Guaranteed 500%") | Triggers Rule 4.1 violation alert banner with sub-1.5ms scan time. | `100% PASSED` |
 | **SCN-092** | Exposed AWS Access Key (`AKIA...`) | Intercepts AWS credential leak in red alert box. | `100% PASSED` |
 | **SCN-093** | Exposed Reddit OAuth Secret | Intercepts OAuth token leak in red alert box. | `100% PASSED` |

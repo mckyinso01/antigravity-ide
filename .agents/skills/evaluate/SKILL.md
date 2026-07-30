@@ -55,7 +55,7 @@ Evaluate the workflow's actual interaction quality by testing it against scenari
 Create and run test scenarios:
 
 | Scenario | Input | Expected | Actual | Grade |
-|----------|-------|----------|--------|-------|
+| --- | --- | --- | --- | --- |
 | Happy path | Normal input | Correct output | ? | A-F |
 | Edge case | Unusual input | Graceful handling | ? | A-F |
 | Error case | Bad input | Helpful error | ? | A-F |

@@ -97,7 +97,7 @@ RECOMMENDED ACTIONS:
 Every recommended action MUST reference the specific Maestro command that addresses it. Use this mapping:
 
 | Dimension Gap | Maestro Command | When to Recommend |
-|---------------|-----------------|-------------------|
+| --- | --- | --- |
 | Prompt structure, clarity, output schema | `/refine` | Score ≤ 4 on Prompt Quality |
 | Context budget, attention gradient, memory | `/streamline` | Score ≤ 3 on Context Efficiency |
 | Tool errors, missing tools, redundant tools | `/fortify` | Score ≤ 3 on Tool Health |
@@ -112,7 +112,7 @@ Every recommended action MUST reference the specific Maestro command that addres
 ### Scoring Guide
 
 | Score | Meaning | Maestro Action |
-|-------|---------|----------------|
+| --- | --- | --- |
 | 5 | Production-excellent | No action needed |
 | 4 | Good with minor gaps | `/refine` for polish |
 | 3 | Functional but risky | `/fortify` or `/streamline` for targeted fix |

@@ -12,7 +12,6 @@ argument-hint: "[target area]"
 Invoke /agent-workflow — it contains workflow principles, anti-patterns, and the **Context Gathering Protocol**. Follow the protocol before proceeding — if no workflow context exists yet, you MUST run /teach-maestro first.
 Consult the tool-orchestration reference in the agent-workflow skill for adding tools effectively.
 
-
 ---
 
 Take a working workflow and make it more capable. Amplification adds new abilities without breaking existing functionality.
@@ -57,7 +56,7 @@ Take a working workflow and make it more capable. Amplification adds new abiliti
 ### Impact Assessment
 
 | Strategy | Cost Impact | Latency Impact | Quality Impact |
-|----------|-----------|---------------|----------------|
+| --- | --- | --- | --- |
 | Better prompts | None | None | Medium-High |
 | Better tools | Low | Low-Medium | High |
 | Better context (RAG) | Medium | Medium | High |

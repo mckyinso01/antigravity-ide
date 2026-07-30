@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Gatz | DevPortfolio — Solo Software Engineer & Systems Architect</title>
+
+  <!-- Tailwind CSS CDN with plugins -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Google Fonts & Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "secondary": "#b4c5ff",
+            "on-primary-fixed-variant": "#003ea8",
+            "outline": "#8d90a0",
+            "surface-container-lowest": "#0a0e17",
+            "surface-deep": "#050811",
+            "on-primary-fixed": "#00174b",
+            "secondary-container": "#004ac6",
+            "secondary-fixed-dim": "#b4c5ff",
+            "surface-bright": "#353944",
+            "tertiary-container": "#bc4800",
+            "on-secondary-fixed-variant": "#003ea8",
+            "outline-variant": "#434655",
+            "on-primary": "#002a78",
+            "secondary-fixed": "#dbe1ff",
+            "on-background": "#dfe2f0",
+            "surface-variant": "#31353f",
+            "background": "#0f131d",
+            "on-secondary-container": "#b8c8ff",
+            "primary": "#b4c5ff",
+            "on-tertiary": "#581e00",
+            "inverse-surface": "#dfe2f0",
+            "on-secondary-fixed": "#00174b",
+            "surface-tint": "#b4c5ff",
+            "inverse-on-surface": "#2d303b",
+            "on-primary-container": "#eeefff",
+            "primary-fixed": "#dbe1ff",
+            "surface-container-low": "#181b25",
+            "surface-container-high": "#262a34",
+            "inverse-primary": "#0053db",
+            "surface-container": "#1c1f29",
+            "accent-electric": "#2563EB",
+            "tertiary-fixed-dim": "#ffb596",
+            "on-error": "#690005",
+            "on-tertiary-fixed-variant": "#7d2d00",
+            "surface": "#0f131d",
+            "tertiary-fixed": "#ffdbcd",
+            "tertiary": "#ffb596",
+            "surface-card": "#0B1C30",
+            "on-tertiary-fixed": "#360f00",
+            "text-primary": "#FFFFFF",
+            "on-error-container": "#ffdad6",
+            "on-secondary": "#002a78",
+            "primary-container": "#2563eb",
+            "text-muted": "#94A3B8",
+            "error-container": "#93000a",
+            "error": "#ffb4ab",
+            "primary-fixed-dim": "#b4c5ff",
+            "on-surface-variant": "#c3c6d7",
+            "surface-dim": "#0f131d",
+            "on-tertiary-container": "#ffede6",
+            "surface-container-highest": "#31353f",
+            "on-surface": "#dfe2f0"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          spacing: {
+            "margin-mobile": "16px",
+            "max-width": "1280px",
+            "base": "8px",
+            "margin-desktop": "64px",
+            "gutter": "24px"
+          },
+          fontFamily: {
+            "headline-md": ["Inter", "sans-serif"],
+            "label-caps": ["Inter", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "code-sm": ["JetBrains Mono", "monospace"],
+            "code-xs": ["JetBrains Mono", "monospace"],
+            "headline-lg": ["Inter", "sans-serif"],
+            "headline-lg-mobile": ["Inter", "sans-serif"]
+          },
+          fontSize: {
+            "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+            "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "code-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+            "code-xs": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500" }],
+            "headline-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        },
+      },
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #050811;
+      color: #dfe2f0;
+      overflow-x: hidden;
+    }
+    .glass-card {
+      background: rgba(11, 28, 48, 0.8);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      border: 1px solid #1E293B;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+<body class="font-body-md text-body-md">
+
+  <!-- TopNavBar -->
+  <header class="fixed top-0 w-full bg-background/80 backdrop-blur-xl border-b border-outline-variant z-50">
+    <nav class="flex justify-between items-center h-16 px-margin-desktop max-w-max-width mx-auto">
+      <div class="text-headline-md font-headline-md text-primary tracking-tight">
+        DevPortfolio
+      </div>
+      <div class="hidden md:flex gap-8 items-center font-code-sm text-code-sm">
+        <a class="text-on-surface-variant hover:text-primary transition-colors" href="#apps">Apps</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors" href="#mission-vision">Mission & Vision</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors" href="#capabilities">Capabilities</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors" href="#contact">Contact</a>
+        
+        <!-- Multi-Language Selector Badge -->
+        <div class="flex items-center gap-1 bg-surface-container-high px-3 py-1 rounded-full border border-outline-variant text-xs text-on-surface-variant">
+          <span class="material-symbols-outlined text-sm text-accent-electric">language</span>
+          <span class="font-bold text-white">EN</span>
+          <span class="opacity-40">|</span>
+          <span class="opacity-60 cursor-not-allowed" title="Multi-language support ready">PH</span>
+        </div>
+
+        <button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-bold active:scale-95 duration-100">
+          Resume
+        </button>
+      </div>
+      <button class="md:hidden text-primary">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="pt-32">
+
+    <!-- Hero Section -->
+    <section class="max-w-max-width mx-auto px-margin-desktop mb-24 relative">
+      <div class="absolute -top-40 -left-40 w-96 h-96 bg-accent-electric/10 rounded-full blur-[120px]"></div>
+      <div class="max-w-3xl relative z-10">
+        <div class="inline-block py-1.5 px-3.5 border border-primary/30 rounded mb-6 bg-primary/5">
+          <span class="font-code-xs text-code-xs text-primary uppercase tracking-widest font-semibold">Available for Hire & Contract</span>
+        </div>
+        <h1 class="font-headline-lg text-headline-lg md:text-headline-lg text-white mb-6 leading-tight">
+          Building <span class="text-accent-electric">Digital Solutions</span> with Architectural Precision.
+        </h1>
+        <p class="text-on-surface-variant text-lg mb-10 leading-relaxed">
+          I'm <strong class="text-white font-semibold">Gatz</strong>, a full-stack engineer and solo software developer dedicated to crafting high-performance, enterprise-grade applications. I thrive on empowering entrepreneurs, founders, and growing businesses to build world-class software—even when operating with limited or short resources.
+        </p>
+        <div class="flex gap-4">
+          <a class="bg-accent-electric text-white px-8 py-4 rounded font-bold hover:bg-blue-700 transition-all flex items-center gap-2" href="#apps">
+            <span>View Featured Apps</span>
+            <span class="material-symbols-outlined text-sm">arrow_downward</span>
+          </a>
+          <a class="border border-outline-variant px-8 py-4 rounded font-bold hover:bg-white/5 transition-all" href="#contact">
+            Get In Touch
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="max-w-max-width mx-auto px-margin-desktop mb-32" id="mission-vision">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+        
+        <!-- Mission Card -->
+        <div class="glass-card p-8 rounded-2xl border border-outline-variant hover:border-accent-electric transition-colors relative overflow-hidden group">
+          <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+            <span class="material-symbols-outlined text-7xl text-accent-electric">rocket_launch</span>
+          </div>
+          <div class="font-code-xs text-code-xs text-accent-electric uppercase tracking-widest mb-3">Our Core Mission</div>
+          <h2 class="font-headline-md text-headline-md text-white mb-4">Autonomous Growth & Agentic Excellence</h2>
+          <p class="text-on-surface-variant leading-relaxed mb-6">
+            To architect and engineer agentic, zero-defect, world-class software solutions that eliminate operational friction, automate complex business workflows, and drive extreme, exponential growth for our clients—regardless of budget constraints.
+          </p>
+          <div class="flex items-center gap-2 text-xs font-mono text-primary">
+            <span class="material-symbols-outlined text-sm">check_circle</span>
+            <span>Sub-Second Latency • Zero-Quota Efficiency • Extreme Client Growth</span>
+          </div>
+        </div>
+
+        <!-- Vision Card -->
+        <div class="glass-card p-8 rounded-2xl border border-outline-variant hover:border-accent-electric transition-colors relative overflow-hidden group">
+          <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+            <span class="material-symbols-outlined text-7xl text-primary">visibility</span>
+          </div>
+          <div class="font-code-xs text-code-xs text-primary uppercase tracking-widest mb-3">Our Future Vision</div>
+          <h2 class="font-headline-md text-headline-md text-white mb-4">Empowering Solopreneurs & Global Enterprise</h2>
+          <p class="text-on-surface-variant leading-relaxed mb-6">
+            To revolutionize the global software landscape by proving that an autonomous, AI-augmented solo engineer can design, scale, and maintain mission-critical enterprise systems faster, safer, and with higher precision than traditional 50-person engineering teams.
+          </p>
+          <div class="flex items-center gap-2 text-xs font-mono text-primary">
+            <span class="material-symbols-outlined text-sm">auto_awesome</span>
+            <span>AI-Augmented Architecture • 100% Reliability • World-Class Systems</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Featured Apps Bento/Grid -->
+    <section class="max-w-max-width mx-auto px-margin-desktop mb-32" id="apps">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+        <div>
+          <h2 class="font-headline-md text-headline-md text-white mb-2 underline decoration-accent-electric decoration-4 underline-offset-8">Featured Software Applications</h2>
+          <p class="text-on-surface-variant">Standalone enterprise systems built with zero-defect engineering.</p>
+        </div>
+        <div class="font-code-sm text-code-sm text-primary">
+          [04] ACTIVE_PROJECTS
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+        
+        <!-- App Card 1: OmniStock -->
+        <div class="glass-card p-6 rounded-xl flex flex-col group hover:border-accent-electric transition-colors duration-300">
+          <div class="w-full aspect-video rounded bg-surface-container mb-6 overflow-hidden relative flex items-center justify-center bg-emerald-950/20 border border-emerald-500/20">
+            <span class="material-symbols-outlined text-5xl text-emerald-400">inventory_2</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-white mb-3">OmniStock (StockMate)</h3>
+          <p class="text-on-surface-variant text-sm mb-6 flex-grow">
+            Autonomous Inventory & Point-of-Sale Engine with real-time barcode telemetry and stock adjustments.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="font-code-xs text-code-xs bg-surface-container-high px-2 py-1 rounded text-emerald-400">React</span>
+            <span class="font-code-xs text-code-xs bg-surface-container-high px-2 py-1 rounded text-emerald-400">Vite</span>
+            <span class="font-code-xs text-code-xs bg-surface-container-high px-2 py-1 rounded text-emerald-400">POS Engine</span>
+          </div>
+          <a href="http://localhost:5173" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-transparent border border-outline-variant text-white font-bold group-hover:bg-accent-electric group-hover:border-accent-electric transition-all flex items-center justify-center gap-2 rounded">
+            Launch <span class="material-symbols-outlined text-sm">open_in_new</span>
+          </a>
+        </div>
+
+        <!-- App Card 2: EMS Enterprise -->
+        <div class="glass-card p-6 rounded-xl flex flex-col group hover:border-accent-electric transition-colors duration-300">
+          <div class="w-full aspect-video rounded bg-surface-container mb-6 overflow-hidden relative flex items-center justify-center bg-indigo-950/20 border border-indigo-500/20">
+            <span class="material-symbols-outlined text-5xl text-indigo-400">medical_services</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-white mb-3">EMS Enterprise</h3>
+          <p class="text-on-surface-variant text-sm mb-6 flex-grow">
+            Workforce & Emergency Medical Services Dispatch Command Suite with biometrics and real-time payroll.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="font-code-xs text-code-xs bg-surface-container-high px-2 py-1 rounded text-indigo-400">React</span>
+            <span class="font-code-xs text-code-xs bg-surface-container-high px-2 py-1 rounded text-indigo-400">Express</span>
+            <span class="font-code-xs text-code-xs bg-surface-container-high px-2 py-1 rounded text-indigo-400">Zero-Trust</span>
+          </div>
+          <a href="http://localhost:3000" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-transparent border border-outline-variant text-white font-bold group-hover:bg-accent-electric group-hover:border-accent-electric transition-all flex items-center justify-center gap-2 rounded">
+            Launch <span class="material-symbols-outlined text-sm">open_in_new</span>
+          </a>
+        </div>
+
+        <!-- App Card 3: GHL-PULSE -->
+        <div class="glass-card p-6 rounded-xl flex flex-col group hover:border-accent-electric transition-colors duration-300">
+          <div class="w-full aspect-video rounded bg-surface-container mb-6 overflow-hidden relative flex items-center justify-center bg-cyan-950/20 border border-cyan-500/20">
+            <span class="material-symbols-outlined text-5xl text-cyan-400">analytics</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-white mb-3">GHL-PULSE</h3>
+          <p class="text-on-surface-variant text-sm mb-6 flex-grow">
+            Autonomous CRM & High-Throughput Lead Pipeline Engine with real-time analytics and automated messaging.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="font-code-xs text-code-xs bg-surface-container-high px-2 py-1 rounded text-cyan-400">React</span>
+            <span class="font-code-xs text-code-xs bg-surface-container-high px-2 py-1 rounded text-cyan-400">CRM</span>
+            <span class="font-code-xs text-code-xs bg-surface-container-high px-2 py-1 rounded text-cyan-400">Base44</span>
+          </div>
+          <a href="http://localhost:5174" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-transparent border border-outline-variant text-white font-bold group-hover:bg-accent-electric group-hover:border-accent-electric transition-all flex items-center justify-center gap-2 rounded">
+            Launch <span class="material-symbols-outlined text-sm">open_in_new</span>
+          </a>
+        </div>
+
+        <!-- App Card 4: LexAI Enterprise -->
+        <div class="glass-card p-6 rounded-xl flex flex-col group hover:border-accent-electric transition-colors duration-300">
+          <div class="w-full aspect-video rounded bg-surface-container mb-6 overflow-hidden relative flex items-center justify-center bg-amber-950/20 border border-amber-500/20">
+            <span class="material-symbols-outlined text-5xl text-amber-400">gavel</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-white mb-3">LexAI Enterprise</h3>
+          <p class="text-on-surface-variant text-sm mb-6 flex-grow">
+            AI Legal Discovery & Contract Risk Audit Suite with OCR contract scanning and precedent search.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="font-code-xs text-code-xs bg-surface-container-high px-2 py-1 rounded text-amber-400">React</span>
+            <span class="font-code-xs text-code-xs bg-surface-container-high px-2 py-1 rounded text-amber-400">Legal AI</span>
+            <span class="font-code-xs text-code-xs bg-surface-container-high px-2 py-1 rounded text-amber-400">OCR</span>
+          </div>
+          <a href="http://localhost:5174" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-transparent border border-outline-variant text-white font-bold group-hover:bg-accent-electric group-hover:border-accent-electric transition-all flex items-center justify-center gap-2 rounded">
+            Launch <span class="material-symbols-outlined text-sm">open_in_new</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- App Details & Capabilities Section -->
+    <section class="max-w-max-width mx-auto px-margin-desktop mb-32" id="capabilities">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+        <!-- Left Side: Section Intro -->
+        <div class="lg:col-span-4 sticky top-24">
+          <div class="font-code-xs text-code-xs text-accent-electric uppercase tracking-widest mb-4">Core Capabilities</div>
+          <h2 class="font-headline-lg text-white mb-6 leading-tight">Technical Excellence & System Integration.</h2>
+          <p class="text-on-surface-variant leading-relaxed">
+            Every application is built upon a robust foundation engineered for long-term reliability and enterprise scalability in modern digital environments.
+          </p>
+          <div class="mt-12 flex flex-col gap-6">
+            <div class="flex gap-4 items-start">
+              <div class="p-2 bg-accent-electric/10 rounded">
+                <span class="material-symbols-outlined text-accent-electric">trending_up</span>
+              </div>
+              <div>
+                <h4 class="text-white font-bold">High ROI & Automation</h4>
+                <p class="text-sm text-on-surface-variant">Rapid return on investment achieved through intelligent, automated workflow orchestration.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="p-2 bg-accent-electric/10 rounded">
+                <span class="material-symbols-outlined text-accent-electric">group</span>
+              </div>
+              <div>
+                <h4 class="text-white font-bold">User-Centric Architecture</h4>
+                <p class="text-sm text-on-surface-variant">Focused on intuitive user experiences driving maximum productivity and engagement.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right Side: Detailed Grid -->
+        <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-gutter">
+          <!-- 1. Technical Specs -->
+          <div class="bg-surface-container-low border border-outline-variant p-8 rounded-xl">
+            <div class="text-primary font-code-sm mb-4">01 / SPECIFICATIONS</div>
+            <h3 class="text-xl font-bold text-white mb-4">Technical Capabilities</h3>
+            <ul class="space-y-4 text-on-surface-variant text-sm">
+              <li class="flex gap-3">
+                <span class="text-accent-electric">●</span>
+                <span><strong>Scalability:</strong> Microservices architecture designed to handle over 1,000,000 concurrent requests with sub-second latency.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-accent-electric">●</span>
+                <span><strong>Performance:</strong> Ultra-fast sub-second latency powered by edge computing and distributed Redis caching.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-accent-electric">●</span>
+                <span><strong>Security:</strong> Enterprise-grade AES-256 encryption and automated security auditing embedded directly in the CI/CD pipeline.</span>
+              </li>
+            </ul>
+          </div>
+          <!-- 2. Integrations -->
+          <div class="bg-surface-container-low border border-outline-variant p-8 rounded-xl">
+            <div class="text-primary font-code-sm mb-4">02 / CONNECTORS</div>
+            <h3 class="text-xl font-bold text-white mb-4">System Integrations</h3>
+            <ul class="space-y-4 text-on-surface-variant text-sm">
+              <li class="flex gap-3">
+                <span class="text-accent-electric">●</span>
+                <span><strong>Third-Party APIs:</strong> Native integrations with Stripe, Twilio, AWS, and enterprise SaaS platforms.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-accent-electric">●</span>
+                <span><strong>Data Flow:</strong> High-throughput real-time event synchronization powered by Kafka and WebSockets.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-accent-electric">●</span>
+                <span><strong>Custom Adapters:</strong> Seamless connectivity to legacy systems via tailored high-performance middleware.</span>
+              </li>
+            </ul>
+          </div>
+          <!-- 3. Competitive Advantage -->
+          <div class="bg-surface-container-low border border-outline-variant p-8 rounded-xl">
+            <div class="text-primary font-code-sm mb-4">03 / ADVANTAGE</div>
+            <h3 class="text-xl font-bold text-white mb-4">Competitive Advantage</h3>
+            <ul class="space-y-4 text-on-surface-variant text-sm">
+              <li class="flex gap-3">
+                <span class="text-accent-electric">●</span>
+                <span><strong>Innovation:</strong> Leveraging cutting-edge technologies including Rust, WebAssembly, and modern AI engines.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-accent-electric">●</span>
+                <span><strong>Zero-Downtime Maintenance:</strong> Highly modular codebase engineered for continuous zero-downtime updates.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-accent-electric">●</span>
+                <span><strong>System Reliability:</strong> Guaranteed 99.99% operational uptime via autonomous self-healing microservices.</span>
+              </li>
+            </ul>
+          </div>
+          <!-- 4. Business Value -->
+          <div class="bg-surface-container-low border border-outline-variant p-8 rounded-xl">
+            <div class="text-primary font-code-sm mb-4">04 / BUSINESS VALUE</div>
+            <h3 class="text-xl font-bold text-white mb-4">Business Value</h3>
+            <ul class="space-y-4 text-on-surface-variant text-sm">
+              <li class="flex gap-3">
+                <span class="text-accent-electric">●</span>
+                <span><strong>Efficiency Gains:</strong> Reduces manual operational workloads by up to 70% using intelligent automation.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-accent-electric">●</span>
+                <span><strong>Complex Problem Solving:</strong> Direct, high-impact solutions for intricate data engineering and workflow bottlenecks.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-accent-electric">●</span>
+                <span><strong>Scalable Growth:</strong> Elastic architecture that expands alongside your business without requiring costly rewrites.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Foundation / About Section -->
+    <section class="bg-surface-container-low py-24" id="about">
+      <div class="max-w-max-width mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="font-headline-md text-headline-md text-white mb-8">Technical Foundation</h2>
+          <p class="text-on-surface-variant mb-8">
+            I believe in building software that is not only functional but resilient. My approach combines rigorous testing, efficient data structures, and a clean codebase to ensure long-term scalability.
+          </p>
+          <div class="grid grid-cols-2 gap-4 font-code-sm">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-sm">terminal</span>
+              <span>System Architecture</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-sm">database</span>
+              <span>Distributed Systems</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-sm">shield</span>
+              <span>Cloud Security</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-sm">speed</span>
+              <span>Performance Optimization</span>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="aspect-square bg-surface-card rounded-2xl border border-outline-variant p-8 flex flex-col justify-center gap-4 group">
+            <div class="flex justify-between items-center mb-4">
+              <span class="font-code-xs text-code-xs text-primary uppercase tracking-widest">Skill Inventory</span>
+              <span class="material-symbols-outlined text-on-surface-variant">info</span>
+            </div>
+            <div class="space-y-6">
+              <div>
+                <div class="flex justify-between text-sm mb-2">
+                  <span>Frontend (React/Next)</span>
+                  <span>95%</span>
+                </div>
+                <div class="h-1 w-full bg-surface-container-high rounded-full">
+                  <div class="h-full bg-accent-electric w-[95%]"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-2">
+                  <span>Backend (Node/Go/Python)</span>
+                  <span>90%</span>
+                </div>
+                <div class="h-1 w-full bg-surface-container-high rounded-full">
+                  <div class="h-full bg-accent-electric w-[90%]"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-2">
+                  <span>DevOps (K8s/AWS)</span>
+                  <span>82%</span>
+                </div>
+                <div class="h-1 w-full bg-surface-container-high rounded-full">
+                  <div class="h-full bg-accent-electric w-[82%]"></div>
+                </div>
+              </div>
+            </div>
+            <div class="absolute -bottom-4 -right-4 bg-primary text-on-primary p-4 rounded-xl shadow-xl hidden md:block">
+              <div class="text-xs font-bold uppercase tracking-tighter">Experience</div>
+              <div class="text-3xl font-bold">5+ Yrs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="max-w-max-width mx-auto px-margin-desktop py-32 text-center" id="contact">
+      <h2 class="font-headline-lg text-headline-lg text-white mb-6">Ready to start a project?</h2>
+      <p class="text-on-surface-variant mb-10 max-w-xl mx-auto">
+        Currently accepting freelance opportunities, enterprise consulting, and full-time collaborations. Let's build something exceptional.
+      </p>
+      <a class="inline-flex items-center gap-3 bg-white text-background px-10 py-5 rounded-full font-bold hover:bg-primary transition-colors cursor-pointer" href="mailto:gatz@example.com">
+        Contact Me <span class="material-symbols-outlined">alternate_email</span>
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface-deep border-t border-outline-variant py-12">
+    <div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-max-width mx-auto gap-gutter font-body-md text-body-md">
+      <div class="text-headline-md font-headline-md text-primary">
+        Gatz.
+      </div>
+      <div class="text-on-surface-variant text-sm">
+        © 2026 Developer Portfolio. Built with precision.
+      </div>
+      <div class="flex gap-8">
+        <a class="text-on-surface-variant hover:text-accent-electric transition-colors flex items-center gap-2" href="#">
+          <span class="material-symbols-outlined text-lg">code</span> GitHub
+        </a>
+        <a class="text-on-surface-variant hover:text-accent-electric transition-colors flex items-center gap-2" href="#">
+          <span class="material-symbols-outlined text-lg">link</span> LinkedIn
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll implementation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Glass-card subtle mouse-follow tilt effect
+    const cards = document.querySelectorAll('.glass-card');
+    cards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+  </script>
+</body>
+</html>

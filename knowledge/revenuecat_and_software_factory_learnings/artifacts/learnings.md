@@ -1,8 +1,8 @@
 # Authoritative Project Learnings, User Findings & Preventative Directives
 
-> 📍 **OKF V0.2 KNOWLEDGE BASE ITEM**: `revenuecat_and_software_factory_learnings`  
-> **Persisted Date**: `2026-07-27T04:26:00.462314+00:00`  
-> **Status**: `Permanent Knowledge Base Artifact & Core Brain Rule`  
+> 📍 **OKF V0.2 KNOWLEDGE BASE ITEM**: `revenuecat_and_software_factory_learnings`
+> **Persisted Date**: `2026-07-27T04:26:00.462314+00:00`
+> **Status**: `Permanent Knowledge Base Artifact & Core Brain Rule`
 
 ---
 

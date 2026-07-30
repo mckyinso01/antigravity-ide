@@ -1,16 +1,17 @@
 # Stage 1: 360° Client Brief & Deep Research — Reddit Enterprise Ad Ranking & MLOps Platform
 
-> 📍 **WORKFLOW TELEMETRY**: `[STAGE 1: 360° CLIENT RESEARCH & DISCOVERY — 🟢 RE-COMPLETED & VERIFIED BY 72-BRAIN SWARM]`  
-> **Client**: **Reddit Inc.** (Ad Engineering & ML Infrastructure Division)  
-> **Contact Email**: `jobs@reddit.com` | **Stated Budget**: `$8,800 USD` (Fixed Fee POC) / `$120k–$250k` (Enterprise Production)  
-> **Production Spec & Council Report**: [`enterprise_production_spec_and_council_review.md`](file:///c:/Users/Admin/.antigravity-ide/Reddit-AdTech-Enterprise/enterprise_production_spec_and_council_review.md)  
-> **Target Deployment**: **`https://gatzdevs.surge.sh`**  
+> 📍 **WORKFLOW TELEMETRY**: `[STAGE 1: 360° CLIENT RESEARCH & DISCOVERY — 🟢 RE-COMPLETED & VERIFIED BY 72-BRAIN SWARM]`
+> **Client**: **Reddit Inc.** (Ad Engineering & ML Infrastructure Division)
+> **Contact Email**: `jobs@reddit.com` | **Stated Budget**: `$8,800 USD` (Fixed Fee POC) / `$120k–$250k` (Enterprise Production)
+> **Production Spec & Council Report**: [`enterprise_production_spec_and_council_review.md`](file:///c:/Users/Admin/.antigravity-ide/Reddit-AdTech-Enterprise/enterprise_production_spec_and_council_review.md)
+> **Target Deployment**: **`<https://gatzdevs.surge.sh`**>
 
 ---
 
 ## 1. 360° Deep Company & Industry Infrastructure Study
 
 ### Company Profile & Infrastructure Footprint
+
 - **Target Enterprise**: Reddit Inc. (NASDAQ: RDDT)
 - **Primary Business**: Global Community Platform, Content Recommendation Engine, & Real-Time Sponsored Ad Placement
 - **Scale Metrics**: 70M+ Daily Active Uniques (DAU), 100,000+ Active Subreddits, 1.5M Ad Auctions per second peak traffic
@@ -37,7 +38,7 @@
 ## 2. 🎯 1-to-1 Authorized Module Requirements Mapping
 
 | Module Name | Component Target | 1-to-1 Technical Scope |
-|---|---|---|
+| --- | --- | --- |
 | **`<AdRankingStreamConsole />`** | Core Auction Telemetry Stream | Real-time high-throughput feed monitoring post auction bids, eCPM rates, relevance scores, and win/loss status. |
 | **`<MLLatencyHistogram />`** | Inference Speed Analytics | Sub-millisecond latency distribution chart tracking p50, p95, and p99 inference speeds across GPU/CPU node pools. |
 | **`<CampaignBudgetOptimizerModal />`** | Budget & eCPM Slide-Over Drawer | Interactive controls for eCPM threshold tuning, pacing adjustments, and multi-currency conversion ($/€/£/¥). |

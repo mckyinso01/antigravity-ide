@@ -26,8 +26,11 @@ Transform a general-purpose workflow into a domain expert.
 ### Step 2: Specialize Prompts
 
 ```markdown
+
 ## Generic: You are an assistant that analyzes documents.
+
 ## Specialized (legal): You are a senior legal analyst specializing in contract review.
+
    You understand common law jurisdictions, standard contract clauses, and the
    difference between representations and warranties. Always caveat that this
    is not legal advice.
@@ -36,7 +39,7 @@ Transform a general-purpose workflow into a domain expert.
 ### Step 3: Specialized Evaluation
 
 | Domain | Evaluation Criteria |
-|--------|-------------------|
+| --- | --- |
 | Legal | Clause completeness, regulatory compliance, jurisdiction accuracy |
 | Medical | Clinical accuracy, guideline adherence, contraindication checks |
 | Financial | Calculation accuracy, regulatory disclosure, risk assessment |

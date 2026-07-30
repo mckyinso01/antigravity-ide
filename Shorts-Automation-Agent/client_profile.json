@@ -1,0 +1,46 @@
+{
+  "client_name": "Antigravity Autonomous Content Engine Owner",
+  "project_title": "Antigravity Autonomous Short-Form Video Automation Platform",
+  "target_niche": "Daily Filipino Tech Shorts & Multi-Platform Trending Content",
+  "supported_platforms": ["YouTube Shorts", "TikTok", "Facebook Reels"],
+  "campaign_parameters": {
+    "budget_mode": "100% Zero Budget ($0.00 Operational Cost)",
+    "script_engine": "Free Hugging Face Serverless API + Local Templates",
+    "voice_engine": "Free Edge-TTS (Neural Microsoft Edge Voices) / Piper",
+    "visual_engine": "Pexels/Pixabay CC0 API + FFmpeg Parametric Canvas Generator",
+    "audio_engine": "YouTube Audio Library (CC0) + Free Sound Archive",
+    "volume_per_week": 5,
+    "max_posts_per_day_per_account": 3,
+    "max_posts_per_week_per_account": 10,
+    "discovery_cadence": "30 minutes (aggregated hourly)",
+    "auto_approve_enabled": true,
+    "auto_approve_thresholds": {
+      "predicted_engagement_score_min": 0.8,
+      "copyright_similarity_max": 0.05,
+      "toxicity_score_max": 0.05,
+      "topic_safety_score_min": 0.7
+    },
+    "flag_thresholds": {
+      "copyright_similarity_flag_min": 0.05,
+      "copyright_similarity_flag_max": 0.2,
+      "copyright_similarity_block_min": 0.2
+    },
+    "asset_policy": "100% Free CC0 ApprovedAssetDB Only",
+    "storage_retention_days": 180,
+    "cost_ceiling_ratio": 0.0
+  },
+  "core_functional_modules": [
+    "Trending Signals Aggregator (Google Trends, Platform Trending Pages, RSS, News)",
+    "Topic Scoring & Safety Gate Engine",
+    "Approved Asset DB & Provenance Tracker",
+    "Parameterized Video Generator & Template Engine",
+    "Automated Dual-Fingerprint Copyright Scanner (Audio + Visual)",
+    "Lightweight A/B Variant Generator (2 Variants for Top 20%)",
+    "Multi-Platform Cadence Scheduler & API Dispatcher",
+    "Human Micro-Review Queue & SLA Priority Router",
+    "48-Hour Realtime Post Monitoring & Unpublish Rollback System",
+    "Cost Analytics & Auto-Throttle System",
+    "SHA-256 WORM Audit Logger & Takedown Appeals Manager"
+  ],
+  "verified_at": "2026-07-28T13:50:00+08:00"
+}

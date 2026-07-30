@@ -30,27 +30,34 @@ Read the conversation history and identify:
 Generate a session summary file at `.maestro/sessions/{date}_{topic}.md`:
 
 ```markdown
+
 # Session: {topic}
+
 Date: {YYYY-MM-DD}
 
 ## Commands Run
+
 - /diagnose → Score: 18/25
 - /fortify → Added retry logic to API handlers
 - /evaluate → Verified with 3 test scenarios
 
 ## Decisions
+
 - Chose retry-with-backoff over circuit breaker (simpler, sufficient for current load)
 - Kept synchronous error handling (async not justified yet)
 
 ## Files Changed
+
 - `src/api/handler.ts` — added retry wrapper
 - `src/middleware/auth.ts` — added input validation
 - `tests/api.test.ts` — new test file
 
 ## Open Issues
+
 - Rate limiting not yet implemented (deferred to next session)
 
 ## Next Steps
+
 1. Run `/guard` to add rate limiting
 2. Run `/evaluate` with adversarial test cases
 ```

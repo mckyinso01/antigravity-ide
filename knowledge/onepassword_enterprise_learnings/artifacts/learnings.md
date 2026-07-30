@@ -1,7 +1,7 @@
 # 1Password® Enterprise AI Platform — Retrospective System Learnings
 
-> 📍 **AUTHORITATIVE KNOWLEDGE ITEM**: `onepassword_enterprise_learnings`  
-> **Status**: STABLE  
+> 📍 **AUTHORITATIVE KNOWLEDGE ITEM**: `onepassword_enterprise_learnings`
+> **Status**: STABLE
 
 ---
 
@@ -21,5 +21,5 @@
 4. **Authenticated Gmail SMTP Dispatch Protocol**:
    - When a live email dispatch is requested, execute an authenticated Python SMTP script utilizing `smtp.gmail.com:587` with TLS and 16-character App Password to guarantee 100% actual delivery into the recipient's Inbox and Sentbox.
 
-5. **Single Live Deployment Target (`https://gatzdevs.surge.sh`)**:
-   - All production builds MUST deploy cleanly to `https://gatzdevs.surge.sh` with 0 `localhost` URLs in public proposals or communications.
+5. **Single Live Deployment Target (`<https://gatzdevs.surge.sh`>)**:
+   - All production builds MUST deploy cleanly to `<https://gatzdevs.surge.sh`> with 0 `localhost` URLs in public proposals or communications.

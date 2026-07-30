@@ -1,10 +1,10 @@
 # Official Production Contract & Milestone Schedule — Reddit AdTech & MLOps
 
-> 📍 **WORKFLOW TELEMETRY**: `[STAGE 1–2: PRODUCTION CONTRACT & MILESTONE AGREEMENT — 🟢 SIGNED]`  
-> **Client**: **Reddit Inc.** (Ad Engineering & ML Infrastructure Division)  
-> **Target Contact**: `jobs@reddit.com` | **Fixed Fee**: `$8,800 USD` (One-Time)  
-> **Package Scope**: **A + B + C Production Package**  
-> **Delivery Target**: `https://gatzdevs.surge.sh`  
+> 📍 **WORKFLOW TELEMETRY**: `[STAGE 1–2: PRODUCTION CONTRACT & MILESTONE AGREEMENT — 🟢 SIGNED]`
+> **Client**: **Reddit Inc.** (Ad Engineering & ML Infrastructure Division)
+> **Target Contact**: `jobs@reddit.com` | **Fixed Fee**: `$8,800 USD` (One-Time)
+> **Package Scope**: **A + B + C Production Package**
+> **Delivery Target**: `<https://gatzdevs.surge.sh`>
 
 ---
 
@@ -21,6 +21,7 @@ The project encompasses 100% of Reddit's four authorized core modules:
 ## 2. 📦 Delivered Package Breakdown
 
 ### Package A: Production Spec Pack (10–12 pages)
+
 - High-res SVG/PNG Architecture Diagrams (Ingest ➔ Stream Processing ➔ Storage ➔ Policy Gate ➔ UI)
 - Protobuf / Avro Data Contracts and Schema Registry rules
 - ClickHouse DDLs, Materialized Views, and Recommended Indices
@@ -30,6 +31,7 @@ The project encompasses 100% of Reddit's four authorized core modules:
 - Rollout Checklist and Progressive Canary Strategy
 
 ### Package B: Implementation Playbook (Developer-Ready)
+
 - Step-by-Step Prioritized Backlog for 4–5 Month Production Program
 - CI/CD Pipeline Outlines, Helm Chart Snippets, KEDA Autoscaling Rules
 - OpenTelemetry Tracing, Prometheus Recording Rules, Grafana Panel Specs
@@ -37,6 +39,7 @@ The project encompasses 100% of Reddit's four authorized core modules:
 - Managed Service Infrastructure Templates & Sizing Guidance (Confluent Kafka, ClickHouse Cloud)
 
 ### Package C: Synthetic Load Test Harness
+
 - Configurable Protobuf Payload Generator (Up to Millions QPS in Distributed Mode)
 - Load Scripts (k6 + Go Producer + K8s Job Orchestration)
 - Test Plans: Soak, Spike, Chaos (LitmusChaos), and Latency Validation
@@ -48,7 +51,7 @@ The project encompasses 100% of Reddit's four authorized core modules:
 ## 3. 🗓️ 3-Week Milestone Schedule & Timeline
 
 | Milestone | Window | Deliverable Focus | Status |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Milestone 1** | **Day 0–3** | Kickoff, Final Assumptions, Directory Structure & Schema Drafts | **IN PROGRESS** 🟡 |
 | **Milestone 2** | **Day 4–10** | Production Spec Pack Draft (Architecture, DDLs, SLOs) | **PENDING** ⏳ |
 | **Milestone 3** | **Day 11–17** | Implementation Playbook Draft (CI/CD, Code Snippets, Helm) | **PENDING** ⏳ |
