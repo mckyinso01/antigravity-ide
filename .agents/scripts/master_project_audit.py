@@ -502,6 +502,23 @@ def run_audit(target_dir, fix_mode=False):
     results.append(("21. Google Cloud Data Agent Kit & Security Safeguards (DATA-AGENT-KIT-HARMONIZATION)", ch21_pass and len(ch21_details) == 0, ch21_details))
 
     # ---------------------------------------------------------
+    # CHECK 22: Mandatory Immediate Ledger Recording Directive
+    # ---------------------------------------------------------
+    ch22_pass = True
+    ch22_details = []
+    if os.path.exists(agents_rulebook_path):
+        with open(agents_rulebook_path, 'r', encoding='utf-8', errors='ignore') as f:
+            a_text = f.read()
+            if "PASSIVE-AUTOMATIC-LEDGER-LOCK" not in a_text:
+                ch22_pass = False
+                ch22_details.append(f"{agents_rulebook_path}: System rulebook missing PASSIVE-AUTOMATIC-LEDGER-LOCK directive.")
+    else:
+        ch22_pass = False
+        ch22_details.append(f"{agents_rulebook_path} not found in workspace root.")
+
+    results.append(("22. Mandatory Immediate Ledger Recording Directive (PASSIVE-AUTOMATIC-LEDGER-LOCK)", ch22_pass and len(ch22_details) == 0, ch22_details))
+
+    # ---------------------------------------------------------
     # PHASE 2: SCORECARD & REPORT EVALUATION GENERATION
     # ---------------------------------------------------------
     passed_count = sum(1 for _, passed, _ in results if passed)
