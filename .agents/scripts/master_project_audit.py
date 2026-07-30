@@ -554,6 +554,18 @@ def run_audit(target_dir, fix_mode=False):
     results.append(("24. Autonomous Sentinel Verification Council Directive (AUTONOMOUS-SENTINEL-VERIFICATION-COUNCIL)", ch24_pass and len(ch24_details) == 0, ch24_details))
 
     # ---------------------------------------------------------
+    # CHECK 25: 80-Issue Milestone Ledger Gate & Thermal Receipt Verification
+    # ---------------------------------------------------------
+    ch25_pass = True
+    ch25_details = []
+    thermal_modal_path = os.path.join(target_dir, "components", "pos", "ThermalReceiptModal.jsx")
+    if not os.path.exists(thermal_modal_path):
+        ch25_pass = False
+        ch25_details.append(f"{thermal_modal_path}: ThermalReceiptModal.jsx missing from POS components.")
+
+    results.append(("25. 80-Issue Milestone Ledger Gate & Thermal Receipt Verification (LEDGER-80-MILESTONE-GATE-AUDIT)", ch25_pass and len(ch25_details) == 0, ch25_details))
+
+    # ---------------------------------------------------------
     # PHASE 2: SCORECARD & REPORT EVALUATION GENERATION
     # ---------------------------------------------------------
     passed_count = sum(1 for _, passed, _ in results if passed)

@@ -47,8 +47,8 @@ def run_sentinel_audit():
     if os.path.exists(audit_script):
         try:
             res = subprocess.run([sys.executable, audit_script], capture_output=True, text=True, encoding='utf-8', errors='ignore', timeout=15)
-            if "24/24 CHECKS PASSED" in res.stdout or "100.0% SCORE" in res.stdout or "100% PASS" in res.stdout:
-                checks.append(("3. Programmatic CLI Audit Suite (master_project_audit.py)", True, "100.0% PASS Scorecard (24/24 Checks Passed)."))
+            if "25/25 CHECKS PASSED" in res.stdout or "100.0% SCORE" in res.stdout or "100% PASS" in res.stdout:
+                checks.append(("3. Programmatic CLI Audit Suite (master_project_audit.py)", True, "100.0% PASS Scorecard (25/25 Checks Passed)."))
             else:
                 checks.append(("3. Programmatic CLI Audit Suite (master_project_audit.py)", False, "CLI Audit Suite failed or had failing checks!"))
         except Exception as e:
