@@ -556,14 +556,22 @@ def run_audit(target_dir, fix_mode=False):
     results.append(("24. Autonomous Sentinel Verification Council Directive (AUTONOMOUS-SENTINEL-VERIFICATION-COUNCIL)", ch24_pass and len(ch24_details) == 0, ch24_details))
 
     # ---------------------------------------------------------
-    # CHECK 25: 80-Issue Milestone Ledger Gate & Thermal Receipt Verification
+    # CHECK 25: 80-Issue Milestone Ledger Gate & Thermal Receipt / System Specs Verification
     # ---------------------------------------------------------
     ch25_pass = True
     ch25_details = []
     thermal_modal_path = os.path.join(target_dir, "components", "pos", "ThermalReceiptModal.jsx")
-    if not os.path.exists(thermal_modal_path):
-        ch25_pass = False
-        ch25_details.append(f"{thermal_modal_path}: ThermalReceiptModal.jsx missing from POS components.")
+    specs_md_path = os.path.abspath(os.path.join(target_dir, "..", "specs.md"))
+    
+    # Check if this is a POS app or general standalone product
+    if "omnistock" in target_dir.lower():
+        if not os.path.exists(thermal_modal_path):
+            ch25_pass = False
+            ch25_details.append(f"{thermal_modal_path}: ThermalReceiptModal.jsx missing from POS components.")
+    else:
+        if not os.path.exists(specs_md_path) and not os.path.exists(thermal_modal_path):
+            ch25_pass = False
+            ch25_details.append(f"{specs_md_path}: specs.md missing from product root directory.")
 
     results.append(("25. 80-Issue Milestone Ledger Gate & Thermal Receipt Verification (LEDGER-80-MILESTONE-GATE-AUDIT)", ch25_pass and len(ch25_details) == 0, ch25_details))
 
