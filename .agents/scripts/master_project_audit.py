@@ -485,6 +485,23 @@ def run_audit(target_dir, fix_mode=False):
     results.append(("20. Autonomous Agentic Maestro Routing Law (AUTONOMOUS-MAESTRO-ORCHESTRATION)", ch20_pass and len(ch20_details) == 0, ch20_details))
 
     # ---------------------------------------------------------
+    # CHECK 21: Google Cloud Data Agent Kit & Security Safeguards
+    # ---------------------------------------------------------
+    ch21_pass = True
+    ch21_details = []
+    if os.path.exists(agents_rulebook_path):
+        with open(agents_rulebook_path, 'r', encoding='utf-8', errors='ignore') as f:
+            a_text = f.read()
+            if "DATA-AGENT-KIT-HARMONIZATION" not in a_text:
+                ch21_pass = False
+                ch21_details.append(f"{agents_rulebook_path}: System rulebook missing DATA-AGENT-KIT-HARMONIZATION directive.")
+    else:
+        ch21_pass = False
+        ch21_details.append(f"{agents_rulebook_path} not found in workspace root.")
+
+    results.append(("21. Google Cloud Data Agent Kit & Security Safeguards (DATA-AGENT-KIT-HARMONIZATION)", ch21_pass and len(ch21_details) == 0, ch21_details))
+
+    # ---------------------------------------------------------
     # PHASE 2: SCORECARD & REPORT EVALUATION GENERATION
     # ---------------------------------------------------------
     passed_count = sum(1 for _, passed, _ in results if passed)
