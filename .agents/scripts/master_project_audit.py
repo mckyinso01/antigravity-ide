@@ -544,9 +544,11 @@ def run_audit(target_dir, fix_mode=False):
     if os.path.exists(agents_rulebook_path) and os.path.exists(sentinel_script_path):
         with open(agents_rulebook_path, 'r', encoding='utf-8', errors='ignore') as f:
             a_text = f.read()
-            if "AUTONOMOUS-SENTINEL-VERIFICATION-COUNCIL" not in a_text:
+            if "AUTONOMOUS-SENTINEL-FIELD-DEVOPS" in a_text or "AUTONOMOUS-SENTINEL-VERIFICATION-COUNCIL" in a_text:
+                pass
+            else:
                 ch24_pass = False
-                ch24_details.append(f"{agents_rulebook_path}: System rulebook missing AUTONOMOUS-SENTINEL-VERIFICATION-COUNCIL directive.")
+                ch24_details.append(f"{agents_rulebook_path}: System rulebook missing AUTONOMOUS-SENTINEL-FIELD-DEVOPS directive.")
     else:
         ch24_pass = False
         ch24_details.append("sentinel_checklist.py or AGENTS.md not found in workspace.")
