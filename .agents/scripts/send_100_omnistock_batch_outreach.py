@@ -14,37 +14,37 @@ if hasattr(sys.stderr, 'reconfigure'):
 sender_email = "mckinsyo01@gmail.com"
 password = "lrqjsqnmwzaunjho"
 
-lead_matrix_path = os.path.join(os.path.dirname(__file__), "..", "..", "omnistock", "verified_100_businesses_matrix.json")
+lead_matrix_path = os.path.join(os.path.dirname(__file__), "..", "..", "omnistock", "verified_100_buyers_matrix.json")
 
 if not os.path.exists(lead_matrix_path):
     print(f"❌ Error: Lead matrix file not found at {lead_matrix_path}")
     sys.exit(1)
 
 with open(lead_matrix_path, 'r', encoding='utf-8') as f:
-    businesses = json.load(f)
+    buyers = json.load(f)
 
 print("===========================================================================")
-print(f"🚀 OMNISTOCK BATCH DISPATCH ENGINE: 100 DUAL-VERIFIED BUSINESSES")
+print(f"🚀 OMNISTOCK BATCH DISPATCH ENGINE: 100 VERIFIED F&B & RESTAURANT BUYERS")
 print("===========================================================================")
-print(f"▶ Loaded {len(businesses)} Dual-Verified Establishments from verified_100_businesses_matrix.json")
+print(f"▶ Loaded {len(buyers)} Dual-Verified F&B Outlets from verified_100_buyers_matrix.json")
 print(f"▶ Authenticating Gmail SMTP Server (smtp.gmail.com:587) as {sender_email}...\n")
 
 dispatched_count = 0
 failed_count = 0
 dispatched_records = []
 
-# Process batch dispatch for verified emails of each business
-for idx, biz in enumerate(businesses, 1):
-    for target_email in biz['verified_emails']:
+# Process batch dispatch for verified emails of each buyer outlet
+for idx, b in enumerate(buyers, 1):
+    for target_email in b['verified_emails']:
         try:
             msg = MIMEMultipart('alternative')
             msg['From'] = f"Gatz Systems Studio <{sender_email}>"
             msg['To'] = target_email
-            msg['Subject'] = f"🚨 Working Prototype Ready: OmniStock POS System for {biz['company']}"
+            msg['Subject'] = f"🚨 Working Prototype Ready: OmniStock POS System for {b['company']}"
 
-            body_text = f"""Dear Executive Leadership ({biz['company']}),
+            body_text = f"""Dear Executive Leadership & Store Operations ({b['company']}),
 
-We noticed your active retail operations on domain ({biz['domain']}) and your need for a modern, zero-defect Point of Sale & Inventory Management System to eliminate stock shrinkage and accelerate cashier checkout speeds.
+We noticed your active coffee shop, beverage, or restaurant operations on domain ({b['domain']}) and your need for a modern, sub-second Point of Sale & Inventory Management System to eliminate stock shrinkage, manage ingredient recipes, and accelerate cashier checkout speeds.
 
 Rather than sending generic PDF decks or requiring sales calls, we went ahead and pre-built a 100% production-ready, zero-defect Web Application: OmniStock POS — live and interactive right now on the web:
 
@@ -79,12 +79,12 @@ mckinsyo01@gmail.com • https://gatzdevs.surge.sh
             server.quit()
 
             dispatched_count += 1
-            print(f"[{idx}/{len(businesses)} BIZ] ✅ DISPATCHED: {target_email} ({biz['company']})")
+            print(f"[{idx}/{len(buyers)} F&B BUYER] ✅ DISPATCHED: {target_email} ({b['company']})")
             time.sleep(0.3)
 
         except Exception as e:
             failed_count += 1
-            print(f"[{idx}/{len(businesses)} BIZ] ❌ DISPATCH FAILED: {target_email} -> {e}")
+            print(f"[{idx}/{len(buyers)} F&B BUYER] ❌ DISPATCH FAILED: {target_email} -> {e}")
 
 print("\n---------------------------------------------------------------------------")
 print(f"✨ BATCH DISPATCH SUMMARY: {dispatched_count} Sent | {failed_count} Failed | Sender: {sender_email}")

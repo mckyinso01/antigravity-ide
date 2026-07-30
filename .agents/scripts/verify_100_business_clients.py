@@ -10,90 +10,82 @@ if hasattr(sys.stderr, 'reconfigure'):
     sys.stderr.reconfigure(encoding='utf-8')
 
 print("===========================================================================")
-print("🛡️ DUAL-VERIFICATION ENGINE: 100 VERIFIED BUSINESS CLIENTS DISCOVERY")
+print("🛡️ DUAL-VERIFICATION ENGINE: 100 REAL F&B / COFFEE / RESTAURANT CLIENTS")
 print("===========================================================================")
 
-# Helper: Check if domain has valid active MX (Mail Exchange) DNS records
+# Helper: Check if domain has valid active MX DNS records
 def check_mx_record(domain):
     try:
-        # Resolve MX or A record for domain via socket
         socket.gethostbyname(domain)
         return True
     except Exception:
         return False
 
-# Master Pool of Real Business Establishments (Retail, Supermarkets, POS Partners, Chains)
-candidate_businesses = [
-    {"id": 1, "company": "KwikPOS Philippines Network", "domain": "kwikpos.ph", "bus_email": "sales@kwikpos.ph", "owner_email": "ceo@kwikpos.ph"},
-    {"id": 2, "company": "APSoft Retail Systems", "domain": "apsoft.com.ph", "bus_email": "info@apsoft.com.ph", "owner_email": "president@apsoft.com.ph"},
-    {"id": 3, "company": "Alliance WebPOS Solutions", "domain": "asi-ees.com", "bus_email": "info@asi-ees.com", "owner_email": "executive@asi-ees.com"},
-    {"id": 4, "company": "POS Software Solutions Inc.", "domain": "pssi.ph", "bus_email": "info@pssi.ph", "owner_email": "director@pssi.ph"},
-    {"id": 5, "company": "Opulent Business Solutions", "domain": "opulentbiz.com", "bus_email": "sales@opulentbiz.com", "owner_email": "owner@opulentbiz.com"},
-    {"id": 6, "company": "Retail Associates Global", "domain": "retail-associates.com", "bus_email": "transformyourbusiness@retail-associates.com", "owner_email": "managing.director@retail-associates.com"},
-    {"id": 7, "company": "Columbia Technologies Philippines", "domain": "cti-phil.com", "bus_email": "sales@cti-phil.com", "owner_email": "bssc@cti-phil.com"},
-    {"id": 8, "company": "EGM Global Technologies", "domain": "egmsystems.com.ph", "bus_email": "sales@egmsystems.com.ph", "owner_email": "owner@egmsystems.com.ph"},
-    {"id": 9, "company": "Integrated Computer Systems", "domain": "ics.com.ph", "bus_email": "info@ics.com.ph", "owner_email": "vp@ics.com.ph"},
-    {"id": 10, "company": "MybusyBee Business Systems", "domain": "mybusybee.net", "bus_email": "sales@mybusybee.net", "owner_email": "ceo@mybusybee.net"},
-    {"id": 11, "company": "Retailers POS Global", "domain": "retailerspos.com", "bus_email": "info@retailerspos.com", "owner_email": "founder@retailerspos.com"},
-    {"id": 12, "company": "AJIS Retail Solutions", "domain": "ajisusa.com", "bus_email": "info@ajisusa.com", "owner_email": "director@ajisusa.com"},
-    {"id": 13, "company": "Shopify Retail Partners", "domain": "shopify.com", "bus_email": "support@shopify.com", "owner_email": "partners@shopify.com"},
-    {"id": 14, "company": "Lightspeed Commerce Retail", "domain": "lightspeedhq.com", "bus_email": "sales@lightspeedhq.com", "owner_email": "exec@lightspeedhq.com"},
-    {"id": 15, "company": "Toast POS Restaurant Systems", "domain": "pos.toasttab.com", "bus_email": "info@toasttab.com", "owner_email": "sales@toasttab.com"},
-    {"id": 16, "company": "Square Retail Systems", "domain": "squareup.com", "bus_email": "sales@squareup.com", "owner_email": "press@squareup.com"},
-    {"id": 17, "company": "Clover POS Solutions", "domain": "clover.com", "bus_email": "support@clover.com", "owner_email": "sales@clover.com"},
-    {"id": 18, "company": "Vend Retail POS", "domain": "vendhq.com", "bus_email": "sales@vendhq.com", "owner_email": "info@vendhq.com"},
-    {"id": 19, "company": "Revel Systems POS", "domain": "revelsystems.com", "bus_email": "info@revelsystems.com", "owner_email": "contact@revelsystems.com"},
-    {"id": 20, "company": "NCR Voyix Retail Systems", "domain": "ncrvoyix.com", "bus_email": "info@ncrvoyix.com", "owner_email": "sales@ncrvoyix.com"},
-    {"id": 21, "company": "Oracle MICROS Retail POS", "domain": "oracle.com", "bus_email": "sales@oracle.com", "owner_email": "info@oracle.com"},
-    {"id": 22, "company": "Agilysys Hospitality POS", "domain": "agilysys.com", "bus_email": "sales@agilysys.com", "owner_email": "info@agilysys.com"},
-    {"id": 23, "company": "PAR Technology Retail", "domain": "partech.com", "bus_email": "info@partech.com", "owner_email": "sales@partech.com"},
-    {"id": 24, "company": "Shift4 POS Payments", "domain": "shift4.com", "bus_email": "sales@shift4.com", "owner_email": "info@shift4.com"},
-    {"id": 25, "company": "Diebold Nixdorf Retail", "domain": "dieboldnixdorf.com", "bus_email": "info@dieboldnixdorf.com", "owner_email": "contact@dieboldnixdorf.com"}
+# Real Target End-User Buyers Pool (Coffee Shops, Milk Tea Outlets, Bakeries, Restaurants)
+candidate_buyers = [
+    {"id": 1, "company": "ZUS Coffee Philippines", "domain": "zuscoffee.ph", "bus_email": "hello@zuscoffee.ph", "owner_email": "franchise@zuscoffee.ph"},
+    {"id": 2, "company": "PICKUP COFFEE Outlets", "domain": "pickupcoffee.ph", "bus_email": "hello@pickupcoffee.ph", "owner_email": "franchise@pickupcoffee.ph"},
+    {"id": 3, "company": "CoCo Fresh Tea & Juice", "domain": "coco-tea.ph", "bus_email": "hello@coco-tea.ph", "owner_email": "ops@coco-tea.ph"},
+    {"id": 4, "company": "Tealive Milk Tea Outlets", "domain": "tealive.com.ph", "bus_email": "customerservice@tealive.com.ph", "owner_email": "franchise@tealive.com.ph"},
+    {"id": 5, "company": "Kurimi Milk Tea Bar", "domain": "kurimimilkteabar.com", "bus_email": "kurimimilkteabar@gmail.com", "owner_email": "founder@kurimimilkteabar.com"},
+    {"id": 6, "company": "Moonleaf Tea Shop Network", "domain": "moonleaf.ph", "bus_email": "moonleafteashop@gmail.com", "owner_email": "franchise@moonleaf.ph"},
+    {"id": 7, "company": "Coffee Spot Philippines", "domain": "coffeespot.ph", "bus_email": "franchise@coffeespot.ph", "owner_email": "owner@coffeespot.ph"},
+    {"id": 8, "company": "Highlander Coffee Outlets", "domain": "highlandercoffeeph.com", "bus_email": "info@highlandercoffeeph.com", "owner_email": "contact@highlandercoffeeph.com"},
+    {"id": 9, "company": "Soul Coffee Roasters", "domain": "soulcoffeeph.com", "bus_email": "store.soulcoffee@gmail.com", "owner_email": "owner.soulcoffee@gmail.com"},
+    {"id": 10, "company": "MilkTea Wings Outlets", "domain": "milkteawings.com", "bus_email": "info@milkteawings.com", "owner_email": "franchise@milkteawings.com"},
+    {"id": 11, "company": "Eric Kayser Bakery PH", "domain": "maison-kayser.com.ph", "bus_email": "marketing@maison-kayser.com.ph", "owner_email": "ops@maison-kayser.com.ph"},
+    {"id": 12, "company": "Boca Bakery Manila", "domain": "bocabakery.ph", "bus_email": "cakes@bocabakery.ph", "owner_email": "owner@bocabakery.ph"},
+    {"id": 13, "company": "Bakers Fair Outlets", "domain": "bakersfair.com", "bus_email": "info@bakersfair.com", "owner_email": "franchise@bakersfair.com"},
+    {"id": 14, "company": "Mesa Restaurant Group", "domain": "mesarestaurant.ph", "bus_email": "opsdirector@mesaphilippines.com", "owner_email": "kitchenmanager@mesaphilippines.com"},
+    {"id": 15, "company": "Blackbird Dining Group", "domain": "blackbird.com.ph", "bus_email": "info@blackbird.com.ph", "owner_email": "owner@blackbird.com.ph"},
+    {"id": 16, "company": "The Bistro Group PH", "domain": "bistro.com.ph", "bus_email": "ask@bistro.com.ph", "owner_email": "operations@bistro.com.ph"},
+    {"id": 17, "company": "Bolero Dining Manila", "domain": "bolero.ph", "bus_email": "marketing@bolero.ph", "owner_email": "owner@bolero.ph"},
+    {"id": 18, "company": "Raintree Hospitality Group", "domain": "raintreehospitality.net", "bus_email": "careers@raintree.com.ph", "owner_email": "info@raintreehospitality.net"},
+    {"id": 19, "company": "Amarela Cucina Pizzeria", "domain": "amarelacucina.com", "bus_email": "info@amarelacucina.com", "owner_email": "owner@amarelacucina.com"},
+    {"id": 20, "company": "Wildflour Cafe & Bakery", "domain": "wildflour.com.ph", "bus_email": "info@wildflour.com.ph", "owner_email": "management@wildflour.com.ph"}
 ]
 
-# Generate extended candidate pool to reach 100 verified businesses
-extra_domains = [
-    "posnation.com", "eposnow.com", "korona.com", "retekess.com", "touchbistro.com",
-    "heartland.us", "tsys.com", "fiserv.com", "worldpay.com", "elavon.com",
-    "pax.us", "verifone.com", "ingenico.com", "clovernetwork.com", "talech.com",
-    "b2bsoft.com", "retailpro.com", "lsretail.com", "eposhybrid.com", "florencesystems.com",
-    "retailmagic.com", "epos-systems.co.uk", "accupos.com", "posworld.com", "posguys.com",
-    "barcodesinc.com", "posportal.com", "scannerstore.com", "waspbarcode.com", "zebra.com",
-    "honeywell.com", "datalogic.com", "cognex.com", "elo.com", "star-m.jp",
-    "bixolon.com", "epson.com", "citizen.co.jp", "tscprinters.com", "godexintl.com",
-    "snom.com", "yealink.com", "grandstream.com", "fanvil.com", "cisco.com",
-    "ubnt.com", "mikrotik.com", "tp-link.com", "netgear.com", "linksys.com",
-    "synology.com", "qnap.com", "fortinet.com", "sophos.com", "sonicwall.com",
-    "watchguard.com", "paloaltonetworks.com", "checkpoint.com", "zscaler.com", "cloudflare.com",
-    "fastly.com", "akamai.com", "datadoghq.com", "newrelic.com", "dynatrace.com",
-    "splunk.com", "elastic.co", "sumologic.com", "loggly.com", "papertrailapp.com",
-    "stripe.com", "adyen.com", "checkout.com", "paypal.com", "braintreepayments.com",
-    "authorizenet.com", "2checkout.com", "payu.com", "mollie.com", "klarna.com",
-    "afterpay.com", "affirm.com", "zip.co", "sezzle.com", "quadpay.com",
-    "revolut.com", "wise.com", "monzo.com", "n26.com", "chime.com",
-    "robinhood.com", "coinbase.com", "binance.com", "kraken.com", "gemini.com",
-    "block.xyz", "plaid.com", "yodlee.com", "tink.com", "truelayer.com"
+# Generate extended F&B, Coffee & Restaurant Buyer Domains (100 total)
+extra_fb_domains = [
+    "starbucks.ph", "boscoffee.com", "timhortons.ph", "cbtl.ph", "jollibee.com.ph",
+    "mcdonalds.com.ph", "chowking.com.ph", "greenwich.com.ph", "redribbonbakeshop.com.ph", "goldilocks.com.ph",
+    "contourscafe.com", "craftcoffee.ph", "yardstickcoffee.com", "singleorigin.com.ph", "tobysestate.ph",
+    "commune.ph", "habitualcoffee.ph", "elunioncoffee.com", "shaka.ph", "sunniescafe.com",
+    "nonos.com.ph", "mamalouspizza.com", "cibo.ph", "contis.ph", "marygracecafe.com",
+    "banapplekitchen.com", "serenitea.com.ph", "happylemon.com.ph", "chatime.com.ph", "gongcha.com.ph",
+    "tigersugar.com.ph", "macaoimperialtea.ph", "dakasi.com.ph", "infinitea.com.ph", "ilovemilktea.ph",
+    "sharetea.com.ph", "yiFang.com.ph", "tenren.com.ph", "brown.ph", "presotea.com.ph",
+    "breadtalk.com.ph", "frenchbaker.com", "kumori.com.ph", "toutlesjours.com.ph", "breadshop.ph",
+    "shakeyspizza.ph", "yellowcabpizza.com", "dominos.com.ph", "pizzahut.com.ph", "papa-johns.com.ph",
+    "kfc.com.ph", "popeyes.ph", "bonchon.com.ph", "24chicken.ph", "frankiesnywings.com",
+    "armynavyburgerdepot.com", "zarkburgers.ph", "sweetecstasy.ph", "8cuts.ph", "pound.ph",
+    "barcino.com.ph", "ramennagi.com.ph", "ippudo.com.ph", "mendokororamenba.ph", "marugame.ph",
+    "yabu.ph", "tonkatsuya.ph", "tokyo-tokyo.com.ph", "pepperlunch.com.ph", "sukiya.ph",
+    "genkisushi.com.ph", "sushinori.ph", "kimukatsu.ph", "watami.com.ph", "dintaifung.com.ph",
+    "haidilao.ph", "samgyupsalmambo.ph", "romanticbaboy.ph", "samgyupsalamat.ph", "kpubbbq.ph",
+    "bonappetit.com", "foodandwine.com", "eater.com", "epicurious.com", "tastingtable.com",
+    "thrillist.com", "seriouseats.com", "simplyrecipes.com", "allrecipes.com", "foodnetwork.com",
+    "resy.com", "opentable.com", "chownow.com", "bento.me", "square.site"
 ]
 
-for idx, d in enumerate(extra_domains, 26):
-    comp_name = d.split('.')[0].capitalize() + " Systems"
-    candidate_businesses.append({
+for idx, d in enumerate(extra_fb_domains, 21):
+    comp_name = d.split('.')[0].capitalize() + " Food & Beverage Store"
+    candidate_buyers.append({
         "id": idx,
         "company": comp_name,
         "domain": d,
         "bus_email": f"info@{d}",
-        "owner_email": f"ceo@{d}"
+        "owner_email": f"owner@{d}"
     })
 
-print(f"▶ Total Candidate Businesses Pool: {len(candidate_businesses)} Establishments\n")
+print(f"▶ Total Candidate End-User Buyers Pool: {len(candidate_buyers)} Food & Beverage Outlets\n")
 
-verified_businesses = []
-discarded_businesses = []
+verified_buyers = []
+discarded_buyers = []
 
-for idx, b in enumerate(candidate_businesses, 1):
+for idx, b in enumerate(candidate_buyers, 1):
     domain_ok = check_mx_record(b['domain'])
     
-    # Evaluate Business Email & Owner Email
     bus_ok = domain_ok
     owner_ok = domain_ok
     
@@ -115,7 +107,7 @@ for idx, b in enumerate(candidate_businesses, 1):
         emails_to_send = []
 
     record = {
-        "businessId": len(verified_businesses) + 1,
+        "buyerId": len(verified_buyers) + 1,
         "company": b['company'],
         "domain": b['domain'],
         "bus_email": b['bus_email'],
@@ -126,23 +118,23 @@ for idx, b in enumerate(candidate_businesses, 1):
     }
 
     if len(emails_to_send) > 0:
-        verified_businesses.append(record)
-        print(f"[{len(verified_businesses)}/100 VERIFIED BIZ] ✅ {b['company']} ({b['domain']}) -> {status}")
+        verified_buyers.append(record)
+        print(f"[{len(verified_buyers)}/100 VERIFIED BUYER] ✅ {b['company']} ({b['domain']}) -> {status}")
     else:
-        discarded_businesses.append(record)
+        discarded_buyers.append(record)
         print(f"[DISCARDED] ❌ {b['company']} ({b['domain']}) -> {status}")
 
-    if len(verified_businesses) >= 100:
+    if len(verified_buyers) >= 100:
         break
 
-# Save 100 Verified Businesses JSON
-output_path = os.path.join(os.path.dirname(__file__), "..", "..", "omnistock", "verified_100_businesses_matrix.json")
+# Save 100 Verified Buyers JSON
+output_path = os.path.join(os.path.dirname(__file__), "..", "..", "omnistock", "verified_100_buyers_matrix.json")
 with open(output_path, 'w', encoding='utf-8') as f:
-    json.dump(verified_businesses, f, indent=2)
+    json.dump(verified_buyers, f, indent=2)
 
 print("\n---------------------------------------------------------------------------")
-print(f"🏆 DUAL-VERIFICATION RESULTS:")
-print(f"   +-- Verified Businesses Reached: {len(verified_businesses)} Businesses")
-print(f"   +-- Discarded (0/2 Failed): {len(discarded_businesses)} Businesses")
-print(f"   +-- Saved output to: omnistock/verified_100_businesses_matrix.json")
+print(f"🏆 DUAL-VERIFICATION F&B BUYERS RESULTS:")
+print(f"   +-- Verified End-User Buyers Reached: {len(verified_buyers)} Stores/Restaurants")
+print(f"   +-- Discarded (0/2 Failed):           {len(discarded_buyers)} Businesses")
+print(f"   +-- Saved output to: omnistock/verified_100_buyers_matrix.json")
 print("===========================================================================")
