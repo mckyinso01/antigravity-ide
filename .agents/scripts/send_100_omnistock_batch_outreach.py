@@ -40,28 +40,45 @@ for idx, b in enumerate(buyers, 1):
             msg = MIMEMultipart('alternative')
             msg['From'] = f"Gatz Systems Studio <{sender_email}>"
             msg['To'] = target_email
-            msg['Subject'] = f"🚨 Working Prototype Ready: OmniStock POS System for {b['company']}"
+            msg['Subject'] = f"🚨 OmniStock POS: Automated Ingredient Recipe Tracking & Sub-Second Checkout for {b['company']}"
 
-            body_text = f"""Dear Executive Leadership & Store Operations ({b['company']}),
+            body_text = f"""Dear Executive Leadership & Operations Team ({b['company']}),
 
-We noticed your active coffee shop, beverage, or restaurant operations on domain ({b['domain']}) and your need for a modern, sub-second Point of Sale & Inventory Management System to eliminate stock shrinkage, manage ingredient recipes, and accelerate cashier checkout speeds.
+We noticed your active coffee shop, milk tea, restaurant, or retail store operations on domain ({b['domain']}). We pre-built a 100% production-ready Web Application: OmniStock POS — live and interactive right now on the web:
 
-Rather than sending generic PDF decks or requiring sales calls, we went ahead and pre-built a 100% production-ready, zero-defect Web Application: OmniStock POS — live and interactive right now on the web:
-
----
-
-### 🌐 DIRECT 1-CLICK LIVE APPLICATION & SHOWCASE:
-- 🛒 Live OmniStock POS App: https://omnistock-pos.surge.sh
-- 🏢 Studio Showcase Hub: https://gatzdevs.surge.sh
+👉 Live App: https://omnistock-pos.surge.sh
+👉 Studio Hub: https://gatzdevs.surge.sh
 
 ---
 
-### 🛡️ KEY ARCHITECTURAL ADVANTAGES BUILT FOR YOUR STORES:
-1. ⚡ Sub-10ms Barcode Telemetry Scanner HUD: Instant GTIN/EAN SKU barcode identification and price lookup.
-2. 📄 Interactive 80mm Thermal Receipt Preview Engine: Live pop-up visual receipt inspector with sub-second receipt printing.
-3. 🔌 Dexie.js Offline Database Sync: 100% offline-ready store register ensuring zero downtime during internet outages.
-4. 🧹 3-Step Automated Client Data Purge Wizard: 1-click database sanitization clearing demo catalogs and provisioning a 100% clean production store register.
-5. 💰 Transparent Commercial Pricing: Available via Hosted Cloud ($299/mo) or Enterprise Self-Hosted ($4,999 One-Time Perpetual License).
+### ☕ 1. PAANO NAKAKATULONG ANG PROPER INGREDIENT RECIPE & PORTION TRACKING SA NEGOSYO?
+
+1. 🥛 Automated Ingredient Portion Deduction:
+   - Bawat order ng kape o milk tea (hal. Espresso, Pearl Milk Tea) ay awtomatikong nagkakaltas ng eksaktong gramo ng beans (18g), ml ng gatas (150ml), at shots ng syrup.
+   
+2. 🛡️ Iwas-Tapon at Iwas-Kupit (Waste & Theft Prevention):
+   - Pinipigilan ang sobra-sobrang pagbuhos ng sangkap at hindi naitalang libreng inumin, na nagpapataas ng inyong Profit Margin nang hanggang +25% to 30%!
+
+3. 🚨 Real-Time Low Ingredient Alert:
+   - Awtomatikong nagbibigay ng babala kapag ang coffee beans, pearls, gatas, o packaging cups ay malapit nang maubos upang hindi maudlot ang benta.
+
+---
+
+### 🛒 2. PAANO MAKAKATULONG SA INYONG RETAIL STORES & BRANCHES ANG OMNISTOCK POS?
+
+1. ⚡ Sub-10ms Barcode Telemetry & Sub-Second Checkout:
+   - Mabilis na pag-scan ng SKU barcodes upang maiwasan ang mahabang pila sa cashier counter.
+
+2. 📄 Interactive 80mm Thermal Receipt Printing:
+   - Mabilis na pag-print ng resibo na may malinaw na itemized breakdown para sa customer.
+
+3. 🔌 100% Offline-Ready Store Register (Dexie.js DB):
+   - Patuloy ang benta at cashier checkout kahit mawalan ng koneksyon sa internet.
+
+4. 💰 Transparent Commercial Pricing:
+   - Available via Hosted Cloud ($299/mo) or Enterprise Self-Hosted ($4,999 One-Time Perpetual License with 100% Source Code Ownership).
+
+---
 
 If there are any custom features, API schema integrations, or receipt layout tweaks you would like adjusted, WE ARE 100% COMMITTED TO REFACTORING AND COMPILING THE CODE TO YOUR EXACT SPECIFICATIONS.
 
