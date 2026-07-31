@@ -652,7 +652,7 @@ def run_audit(target_dir, fix_mode=False):
     if os.path.exists(index_css_path):
         with open(index_css_path, 'r', encoding='utf-8', errors='ignore') as f:
             css_text = f.read()
-            if "scrollbar-color" not in css_text or ("background-color: #0D1117" not in css_text and "background-color: #050811" not in css_text):
+            if "scrollbar-color" not in css_text or ("background-color: #0D1117" not in css_text and "background-color: #050811" not in css_text and "background-color: #0A0A0C" not in css_text):
                 ch29_pass = False
                 ch29_details.append("index.css: Root html/body missing explicit dark background-color and scrollbar-color token declaration.")
 
@@ -683,6 +683,66 @@ def run_audit(target_dir, fix_mode=False):
                     ch30_details.append(f"{fname}: Container retains oversized padding (p-5 md:p-6 or p-6 md:p-8) instead of compact ergonomic padding (p-4 md:p-5).")
 
     results.append(("30. Engine Card Compact Ergonomic Resizing & Height Guard (COMPACT-CONTAINER-HEIGHT-GUARD)", ch30_pass and len(ch30_details) == 0, ch30_details))
+
+    # ---------------------------------------------------------
+    # CHECK 31: Light Theme Document & Printable Surface Standard Guard
+    # ---------------------------------------------------------
+    ch31_pass = True
+    ch31_details = []
+    for fpath in files:
+        if "PayslipCreator" in os.path.basename(fpath):
+            with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+                if "id=\"printable-payslip\"" in content and "bg-[#F0FDFD]" not in content and "bg-[#E6F7F7]" not in content:
+                    ch31_pass = False
+                    ch31_details.append(f"{os.path.basename(fpath)}: Printable document sheet missing Aquamarine Tinted Paper fill (#F0FDFD / #E6F7F7).")
+
+    results.append(("31. Light Theme Document & Printable Surface Guard (LIGHT-THEME-DOCUMENT-SPEC-CHECK)", ch31_pass and len(ch31_details) == 0, ch31_details))
+
+    # ---------------------------------------------------------
+    # CHECK 32: View Print Interactive Zoom & Barcode Scanner Guard
+    # ---------------------------------------------------------
+    ch32_pass = True
+    ch32_details = []
+    for fpath in files:
+        if "PayslipCreator" in os.path.basename(fpath):
+            with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+                if "isViewPrintOpen" not in content or "zoomLevel" not in content or "Barcode" not in content or "QrCode" not in content:
+                    ch32_pass = False
+                    ch32_details.append(f"{os.path.basename(fpath)}: Missing View Print modal state, zoom controls, or Barcode/QR Code generator.")
+
+    results.append(("32. View Print Interactive Zoom & Barcode Scanner Guard (VIEW-PRINT-ZOOM-BARCODE-CHECK)", ch32_pass and len(ch32_details) == 0, ch32_details))
+
+    # ---------------------------------------------------------
+    # CHECK 33: Payslip Creator Ergonomic Compact Container Guard
+    # ---------------------------------------------------------
+    ch33_pass = True
+    ch33_details = []
+    for fpath in files:
+        if "PayslipCreator" in os.path.basename(fpath):
+            with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+                if "space-y-6 animate-fade-in" in content or "sticky top-6 space-y-4" in content:
+                    ch33_pass = False
+                    ch33_details.append(f"{os.path.basename(fpath)}: Retains oversized spacing (space-y-6 or sticky top-6) instead of compact layout (space-y-3.5 or sticky top-2).")
+
+    results.append(("33. Payslip Creator Ergonomic Compact Container Guard (PAYSLIP-COMPACT-LAYOUT-CHECK)", ch33_pass and len(ch33_details) == 0, ch33_details))
+
+    # ---------------------------------------------------------
+    # CHECK 34: Mandated Philippine Deductions High-Contrast Surface Guard
+    # ---------------------------------------------------------
+    ch34_pass = True
+    ch34_details = []
+    for fpath in files:
+        if "PayslipCreator" in os.path.basename(fpath) or "RealTimePayroll" in os.path.basename(fpath):
+            with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+                if "bg-slate-50/50" in content or "text-slate-400/60" in content or "text-cyan-600/40" in content or "border-slate-200/40" in content:
+                    ch34_pass = False
+                    ch34_details.append(f"{os.path.basename(fpath)}: Contains low-contrast opacity text or grey fill in statutory deduction boxes.")
+
+    results.append(("34. Mandated Philippine Deductions High-Contrast Surface Guard (MANDATED-DEDUCTIONS-CONTRAST-CHECK)", ch34_pass and len(ch34_details) == 0, ch34_details))
 
     # ---------------------------------------------------------
     # PHASE 2: SCORECARD & REPORT EVALUATION GENERATION

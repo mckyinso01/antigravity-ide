@@ -490,6 +490,19 @@ Upang maging **100% FAANG-grade at kumpleto sa lahat ng anggulo**, itinatakda ri
   9. `4-TIER-LICENSING-BAR`: Verifies layout renders 4-Tier Commercial Licensing Footer Bar (`SOFTWARE FACTORY`, `Self-Host`, `White-Label`, `Source Code IP`, `Hosted Cloud SaaS`).
   10. `ZERO-BYPASS-AUTH-GUARD`: Verifies defensive auth initialization guards preventing white-screen crashes when unconfigured offline.
 
+### 📄 11.20. Light Theme Document & Printable Surface Standard (`LIGHT-THEME-DOCUMENT-SPEC`)
+
+- **Prohibition of Pure Stark White Fills**: Pure 100% stark white (`#FFFFFF`) background fills are STRICTLY FORBIDDEN for printable documents, financial vouchers, payslips, and light theme paper previews to eliminate visual glare and preserve brand identity continuity.
+- **Aquamarine Mist Tint Specification**:
+  - **Surface Fill**: White tinted with a subtle touch of Muichiro Aquamarine Blue accent (`#F0FDFD` or `linear-gradient(180deg, #F0FDFD 0%, #E6F7F7 100%)`).
+  - **Border Spec**: Translucent Aquamarine Teal border (`border border-[#7FD8D7]/40` or `#2DD4BF/40`).
+- **Monochromatic Typography & Contrast Audit**:
+  - **Primary Headers & Text**: High-Contrast Deep Void Navy (`#0F172A` / `#0B1C30`) for 100% crisp legibility (contrast ratio >= 12:1).
+  - **Subtitles & Section Badges**: Deep Aquamarine Teal (`#0F766E` / `#0D9488`).
+  - **Net Income & Received Box**: Fresh Emerald Green surface (`#DCFCE7` / `#CCFBF1`) with Deep Emerald text (`#15803D`).
+  - **Deductions & Taxes**: Deep Crimson Red text (`#BE123C`).
+- **View Print Modal & Zoom Suite Standard**: All document creation engines MUST incorporate an interactive **View Print (Print Preview)** Modal featuring `Zoom In (+)` (up to 200%), `Zoom Out (-)` (down to 50%), `Reset Zoom (100%)`, `Fit Page`, and `1D/2D Barcode & QR Code Scan-to-Fetch Generator`.
+
 ---
 
 ## 📐 13. Card & Widget Container Dimension & Sizing Specification (Compact Ergonomic Standard)
@@ -509,8 +522,10 @@ Upang maiwasan ang malalim na scrolling at oversized elements, ang lahat ng card
 - **Global Map & Schematic Containers**: Aspect ratio na `aspect-[28/9]` o `aspect-[21/9]`.
 
 ### 13.3. Text Truncation & Badge Overflow Guards
-- **Card Badges**: Lahat ng status badges sa narrow 4-column cards ay DAPAT may `shrink-0` at font size na `text-[9px]` hanggang `text-[10px]` para hindi umapaw lampas sa border line ng card.
-- **Metric Labels**: Ang mga text label tulad ng *Parity Ratio*, *Net Pay*, at *Sample Records* ay DAPAT may `truncate` at `min-w-0` sa flex layout parent (`flex items-baseline justify-between min-w-0 gap-1`).
+- **Zero Critical Data Truncation Law (`ZERO-DATA-TRUNCATION-LAW`)**: Financial metrics (`Net Pay`, `Gross Disbursement`, `Tax Withheld`, `Revenue`), currency values, and statutory titles MUST NEVER use `truncate` or `text-overflow: ellipsis`. Sub-cards rendering financial metrics MUST be allocated a minimum horizontal width of 350-400px (`grid-cols-1 sm:grid-cols-2`) to guarantee 100% full text exposure!
+- **Header Pill Badge Architecture (`HEADER-PILL-BADGE-ARCH`)**: Pill badges (`ZERO KNOWLEDGE PRIVACY`, `NETFLIX CHAOS GRADE`, `EU AI ACT GUARDRAILS`, `COGNITIVE WAVE`) MUST sit inside dedicated right-aligned flex containers (`flex items-center gap-2 shrink-0`), NOT inside `<h1>`, `<h2>`, or `<h3>` title text tags.
+- **Flexible Zero-Scroll Architecture (`FLEXIBLE-ZERO-SCROLL-ARCH`)**: Ergonomic height reduction is a FLEXIBLE guideline, NOT a rigid hard-clamp! When dealing with data-dense enterprise views, use high-density layout techniques (Sub-tabs, Segmented Controls, Collapsible Bento Drawers, Horizontal Scroll Carousels) to organize heavy content cleanly without suffocating typography or sacrificing legibility.
+- **Zero-Learning-Curve UX Standard (`ZERO-LEARNING-CURVE-UX`)**: All interface layouts, interactive triggers, and telemetry metrics MUST be immediately self-explanatory ("zero-to-no-learn"). Users must be able to navigate, inspect, and execute primary workflows instantly without reading a manual or experiencing cognitive confusion!
 
 ### 13.4. Dashboard Breakthrough Suite Modules Inventory (100% Token Compliant)
 Lahat ng 12 Breakthrough Subagent Modules sa `Dashboard.tsx` na ipinapakita sa mga screenshots ay ganap na nakasama at sumusunod sa ating Master Specification:
@@ -543,8 +558,46 @@ Lahat ng Dashboard Breakthrough components ay nakagrupo sa mga sumusunod na offi
 
 ---
 
-## 📁 14. File References & Deployment
+## 🏛️ 14. UI/UX Organizational Guidelines & Navigation Restructuring Specification (`UIUX-ORGANIZATION-SPEC`)
+
+Upang maiwasan ang malaking halaga ng scrolling at ang pagkakahiwa-hiwalay ng 15+ standalone tabs sa sidebar, ang buong Information Architecture ay DAPAT sumunod sa **5 Master Command Core Domains**:
+
+### 14.1. Tab Consolidation Decision Matrix & Decision Rules
+1. **Rule of Functional Cohesion**: Anumang tab o view na ginagamit para sa sub-task ng isang pangunahing domain (hal. `Directory`, `Timeline`, `Employee Bios`) ay HINDI DAPAT magkaroon ng hiwalay na sidebar rail tab. Ito ay DAPAT isama bilang **Segmented Top Sub-Tab** o **Bento Drawer** sa loob ng parent Master Command Hub nito.
+2. **Rule of Zero-Scrolling Fit**: Ang bawat consolidated view ay gagamit ng top segmented sub-tab control (`Global Connectivity | Directory Roster | Shift Timeline | Talent Bios`) upang ang buong page height ay manatiling 100% kasya sa viewport nang walang habang scrolling!
+3. **Rule of "Zero-to-No-Learn" UX**: Lahat ng consolidated views ay may 1-click top navigation pills na may active indicator glow (`#7FD8D7`), kaya agad na nauunawaan ng user ang buong organisasyon sa 1 tingin.
+
+### 14.2. The 5 Master Command Core Domains
+- **Domain 1: 🎛️ `Command Center` (`Dashboard.tsx`)**: Main KPI metrics, 12 Breakthrough Engine Cards, ROI Price Matrix, and Native Desktop Installer.
+- **Domain 2: 👥 `Workforce & Operations` (`WorkforceHub.tsx`)**: Consolidated Master View featuring 4 Segmented Sub-Tabs:
+  - `Global Connectivity Map` (Bezier Arc schematic & Department Clusters)
+  - `Employee Roster Directory` (Search filters & Roster Drawer)
+  - `Shift Scheduling & Timeline` (Conflict detection & Drag-and-Drop)
+  - `Talent Bios & Skill Matrix` (30-day productivity waves & Skill badges)
+- **Domain 3: 💰 `Payroll & Escrow Command` (`PayrollCommandHub.tsx`)**: Consolidated Master View featuring 2 Segmented Sub-Tabs:
+  - `Interactive Payslip Creator` (Statutory BIR/PH withholding & View Print Modal)
+  - `Real-Time Escrow & ZKP Tax Vault` (Automated payroll journal entries & ledger sync)
+- **Domain 4: 🧠 `AI Intelligence & Analytics` (`IntelligenceHub.tsx`)**: Consolidated Master View featuring 4 Sub-Hubs:
+  - `Productivity & Focus Wave` (SVG trendline & 7x24 heatmap grid)
+  - `Agentic Swarm Dispatcher` (Subagent workload orchestrator)
+  - `Predictive Burnout & Bias Radar` (Turnover radar & EEOC 4/5ths auditor)
+  - `Quantum Monte Carlo Simulator` (Financial runway & headcount delta predictor)
+- **Domain 5: ⚙️ `Workspace & System Settings` (`SystemSettingsHub.tsx`)**: Consolidated Master View featuring 3 Sub-Tabs:
+  - `Ecosystem Integration Connectors` (Slack, Teams, QuickBooks, Google Workspace, Zapier, Stripe, GitHub, BigQuery)
+  - `Workspace Team Chat & Storage` (Cross-department channels & file vault)
+  - `System Specs & Commercial Provisioning` (4-Tier Licensing bar & Self-Host wizard)
+
+### 14.3. Visual Shine & Vibrancy Architecture (`VISUAL-SHINE-VIBRANCY-ARCH`)
+Upang magkaroon ng kinang, buhay, at premium Muichiro Seafoam Mint aesthetic ang buong app:
+- **Ethereal Seafoam Mist Keyframe Pulse (`@keyframes seafoamGlowPulse`)**: Ambient glowing cyan-mint keyframe pulse around active rail tabs and header cards (`box-shadow: 0 0 25px rgba(127, 216, 215, 0.35)`).
+- **Dynamic Spotlight Cursor Tracking (`spotlight-card`)**: Mouse movement tracking engine (`mousemove` X, Y) emitting a translucent cyan spotlight fill (`rgba(127, 216, 215, 0.08)`) on hover across all bento cards.
+- **Kinetic Radar Rings & Live Telemetry Glow**: Micro-animations on status badges (`animate-ping`), live pulse dots, glowing SVG Bezier signal flow lines, and dynamic HSL color accents on scanned icons.
+
+---
+
+## 📁 15. File References & Deployment
 
 - **Master Specification Path**: [company_master_design_tokens_spec.md](file:///c:/Users/Admin/.antigravity-ide/company_master_design_tokens_spec.md)
 - **JavaScript Export Module**: [designSystem.js](file:///c:/Users/Admin/.antigravity-ide/omnistock/src/lib/designSystem.js)
 - **Universal Audit Script**: [master_project_audit.py](file:///c:/Users/Admin/.antigravity-ide/.agents/scripts/master_project_audit.py)
+
