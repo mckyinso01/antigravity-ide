@@ -20,6 +20,8 @@ Usage:
 import os
 import sys
 import re
+import json
+from datetime import datetime
 
 # Enforce UTF-8 stdout encoding for Windows console compatibility
 if hasattr(sys.stdout, 'reconfigure'):
@@ -107,7 +109,7 @@ def run_audit(target_dir, fix_mode=False):
         return False
 
     print(f"🔍 Scanned {len(files)} source files in target directory.")
-    print(f"{CYAN}{BOLD}⚙️  PHASE 1: DEEP COMPLIANCE AUDIT SCAN (Checking 19 Rules across codebase...){RESET}\n")
+    print(f"{CYAN}{BOLD}⚙️  PHASE 1: DEEP COMPLIANCE AUDIT SCAN (Checking 43 Rules across codebase...){RESET}\n")
 
     results = []
     
@@ -745,6 +747,167 @@ def run_audit(target_dir, fix_mode=False):
     results.append(("34. Mandated Philippine Deductions High-Contrast Surface Guard (MANDATED-DEDUCTIONS-CONTRAST-CHECK)", ch34_pass and len(ch34_details) == 0, ch34_details))
 
     # ---------------------------------------------------------
+    # CHECK 35: Console.log Production Leak Scanner
+    # ---------------------------------------------------------
+    ch35_pass = True
+    ch35_details = []
+    console_log_pat = re.compile(r'\bconsole\.(log|debug)\b')
+    for fpath in files:
+        if "components/ui" in fpath.replace("\\", "/") or "test" in fpath.lower():
+            continue
+        with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+            content = f.read()
+            for match in console_log_pat.finditer(content):
+                line_no = content[:match.start()].count('\n') + 1
+                ch35_pass = False
+                ch35_details.append(f"{os.path.basename(fpath)}:{line_no} Production console.log/debug statement found.")
+
+    results.append(("35. Console.log Production Leak Scanner (CONSOLE-LOG-LEAK-GUARD)", ch35_pass and len(ch35_details) == 0, ch35_details))
+
+    # ---------------------------------------------------------
+    # CHECK 36: useEffect Event Listener Cleanup Guard
+    # ---------------------------------------------------------
+    ch36_pass = True
+    ch36_details = []
+    for fpath in files:
+        if fpath.endswith((".jsx", ".tsx")):
+            with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+                if "addEventListener(" in content and "removeEventListener(" not in content:
+                    ch36_pass = False
+                    ch36_details.append(f"{os.path.basename(fpath)}: addEventListener found without removeEventListener cleanup in component.")
+
+    results.append(("36. useEffect Event Listener Cleanup Guard (USEEFFECT-CLEANUP-GUARD)", ch36_pass and len(ch36_details) == 0, ch36_details))
+
+    # ---------------------------------------------------------
+    # CHECK 37: Inline Style Anti-Pattern Scanner
+    # ---------------------------------------------------------
+    ch37_pass = True
+    ch37_details = []
+    inline_color_pat = re.compile(r'style=\{\{[^}]*(color|backgroundColor|background)\s*:\s*["\'][^"\']+["\'][^}]*\}\}')
+    for fpath in files:
+        if "components/ui" in fpath.replace("\\", "/"):
+            continue
+        with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+            content = f.read()
+            for match in inline_color_pat.finditer(content):
+                line_no = content[:match.start()].count('\n') + 1
+                ch37_pass = False
+                ch37_details.append(f"{os.path.basename(fpath)}:{line_no} Inline style color/bg object found instead of design token CSS class.")
+
+    results.append(("37. Inline Style Anti-Pattern Scanner (INLINE-STYLE-GUARD)", ch37_pass and len(ch37_details) == 0, ch37_details))
+
+    # ---------------------------------------------------------
+    # CHECK 38: Unused Component Import Heuristic
+    # ---------------------------------------------------------
+    ch38_pass = True
+    ch38_details = []
+    named_import_pat = re.compile(r'import\s+\{([^}]+)\}\s+from\s+["\'][^"\']+["\']')
+    for fpath in files:
+        if fpath.endswith((".jsx", ".tsx")):
+            with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+                imports = named_import_pat.findall(content)
+                for imp_group in imports:
+                    symbols = [s.strip().split(' as ')[-1] for s in imp_group.split(',') if s.strip()]
+                    for sym in symbols:
+                        if sym and not sym.startswith("type ") and not sym.startswith("Types"):
+                            occurrences = len(re.findall(r'\b' + re.escape(sym) + r'\b', content))
+                            if occurrences <= 1:
+                                ch38_pass = False
+                                ch38_details.append(f"{os.path.basename(fpath)}: Unused imported symbol '{sym}'.")
+
+    results.append(("38. Unused Component Import Heuristic (UNUSED-IMPORT-GUARD)", ch38_pass and len(ch38_details) == 0, ch38_details))
+
+    # ---------------------------------------------------------
+    # CHECK 39: Icon-Only Button Accessibility Guard
+    # ---------------------------------------------------------
+    ch39_pass = True
+    ch39_details = []
+    icon_only_btn_pat = re.compile(r'<button[^>]*>(?:\s*<[A-Z]\w+Icon[^/>]*/?>|\s*<[A-Z]\w+[^/>]*size=[^/>]*/?>)\s*</button>', re.IGNORECASE)
+    for fpath in files:
+        if fpath.endswith((".jsx", ".tsx")):
+            with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+                for match in icon_only_btn_pat.finditer(content):
+                    tag_str = match.group(0)
+                    if "aria-label" not in tag_str and "title=" not in tag_str:
+                        line_no = content[:match.start()].count('\n') + 1
+                        ch39_pass = False
+                        ch39_details.append(f"{os.path.basename(fpath)}:{line_no} Icon-only button missing aria-label or title attribute for screen readers.")
+
+    results.append(("39. Icon-Only Button Accessibility Guard (ICON-BUTTON-A11Y-GUARD)", ch39_pass and len(ch39_details) == 0, ch39_details))
+
+    # ---------------------------------------------------------
+    # CHECK 40: Image Alt Text Accessibility Guard
+    # ---------------------------------------------------------
+    ch40_pass = True
+    ch40_details = []
+    img_tag_pat = re.compile(r'<img[^>]*>', re.IGNORECASE)
+    for fpath in files:
+        if fpath.endswith((".jsx", ".tsx", ".html")):
+            with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+                for match in img_tag_pat.finditer(content):
+                    tag_str = match.group(0)
+                    if 'alt=""' in tag_str or 'alt=' not in tag_str:
+                        line_no = content[:match.start()].count('\n') + 1
+                        ch40_pass = False
+                        ch40_details.append(f"{os.path.basename(fpath)}:{line_no} <img> tag missing meaningful alt text attribute.")
+
+    results.append(("40. Image Alt Text Accessibility Guard (IMAGE-ALT-TEXT-GUARD)", ch40_pass and len(ch40_details) == 0, ch40_details))
+
+    # ---------------------------------------------------------
+    # CHECK 41: Hardcoded API URL Guard
+    # ---------------------------------------------------------
+    ch41_pass = True
+    ch41_details = []
+    hardcoded_url_pat = re.compile(r'fetch\(["\']http://localhost:5000')
+    for fpath in files:
+        if fpath.endswith((".jsx", ".tsx", ".js", ".ts")):
+            with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+                for match in hardcoded_url_pat.finditer(content):
+                    line_no = content[:match.start()].count('\n') + 1
+                    ch41_pass = False
+                    ch41_details.append(f"{os.path.basename(fpath)}:{line_no} Hardcoded localhost API URL instead of import/env configuration.")
+
+    results.append(("41. Hardcoded API URL Guard (HARDCODED-URL-GUARD)", ch41_pass and len(ch41_details) == 0, ch41_details))
+
+    # ---------------------------------------------------------
+    # CHECK 42: Error Boundary Route Wrapping Guard
+    # ---------------------------------------------------------
+    ch42_pass = True
+    ch42_details = []
+    for fpath in files:
+        if os.path.basename(fpath) in ["App.jsx", "App.tsx", "main.jsx", "main.tsx"]:
+            with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+                if "ErrorBoundary" not in content and "error" not in content.lower():
+                    ch42_pass = False
+                    ch42_details.append(f"{os.path.basename(fpath)}: Application root missing ErrorBoundary route protection.")
+
+    results.append(("42. Error Boundary Route Wrapping Guard (ERROR-BOUNDARY-ROUTE-GUARD)", ch42_pass and len(ch42_details) == 0, ch42_details))
+
+    # ---------------------------------------------------------
+    # CHECK 43: z-index Scale Collision Scanner
+    # ---------------------------------------------------------
+    ch43_pass = True
+    ch43_details = []
+    z_index_pat = re.compile(r'\bz-\[?(9999|999|1000)\]?\b')
+    for fpath in files:
+        if "components/ui" in fpath.replace("\\", "/"):
+            continue
+        with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+            content = f.read()
+            for match in z_index_pat.finditer(content):
+                line_no = content[:match.start()].count('\n') + 1
+                ch43_pass = False
+                ch43_details.append(f"{os.path.basename(fpath)}:{line_no} Excessive z-index '{match.group(0)}' found (use z-50 for modals, z-40 for tooltips).")
+
+    results.append(("43. z-index Scale Collision Scanner (ZINDEX-COLLISION-GUARD)", ch43_pass and len(ch43_details) == 0, ch43_details))
+
+    # ---------------------------------------------------------
     # PHASE 2: SCORECARD & REPORT EVALUATION GENERATION
     # ---------------------------------------------------------
     passed_count = sum(1 for _, passed, _ in results if passed)
@@ -761,6 +924,23 @@ def run_audit(target_dir, fix_mode=False):
             for detail in details[:3]: # limit output
                 print(f"      {YELLOW}↳ {detail}{RESET}")
 
+    # Top Violation Files Summary
+    file_violations = {}
+    for title, passed, details in results:
+        if not passed and details:
+            for detail in details:
+                fname = detail.split(":")[0].strip()
+                file_violations[fname] = file_violations.get(fname, 0) + 1
+
+    print("-" * 75)
+    print(f"{CYAN}{BOLD}📁 TOP VIOLATION FILES (Worst Offenders):{RESET}")
+    if file_violations:
+        sorted_violations = sorted(file_violations.items(), key=lambda x: x[1], reverse=True)[:5]
+        for idx, (fname, count) in enumerate(sorted_violations, 1):
+            print(f"  {idx}. {YELLOW}{fname}{RESET} — {count} violation{'s' if count > 1 else ''}")
+    else:
+        print(f"  {GREEN}None — Zero defects! 🎉{RESET}")
+
     print("-" * 75)
     score_color = GREEN if pass_rate == 100 else YELLOW if pass_rate >= 80 else RED
     print(f"{BOLD}FINAL VERDICT:{RESET} {score_color}{BOLD}{passed_count}/{total_count} CHECKS PASSED ({pass_rate:.1f}% SCORE){RESET}")
@@ -770,24 +950,102 @@ def run_audit(target_dir, fix_mode=False):
     else:
         print(f"\n{YELLOW}{BOLD}⚠️ REVISE: Please address highlighted remediation items before build clearance.{RESET}\n")
 
-    return pass_rate == 100
+    return {
+        "passed_count": passed_count,
+        "total_count": total_count,
+        "pass_rate": pass_rate,
+        "is_100_percent": pass_rate == 100,
+        "results": [{"name": title, "passed": passed, "details": details} for title, passed, details in results]
+    }
+
+def discover_standalone_products(workspace_root):
+    ignored = {
+        "node_modules", ".git", ".venv", ".agents", ".gemini", ".vscode",
+        ".cursor", ".claude", ".maestro", "scratch", "docs", "extensions",
+        "knowledge", "skills", "social_launch", "huggingface-hub",
+        "quad-brain-council-service", "copilot-agent-service", "antigravity-clean"
+    }
+    products = []
+    if not os.path.exists(workspace_root):
+        return products
+        
+    for item in os.listdir(workspace_root):
+        full_path = os.path.join(workspace_root, item)
+        if os.path.isdir(full_path) and item not in ignored and not item.startswith('.'):
+            src_dir = os.path.join(full_path, "src")
+            if os.path.exists(src_dir) and os.path.isdir(src_dir):
+                src_files = scan_files(src_dir)
+                if src_files:
+                    products.append((item, src_dir))
+    return sorted(products, key=lambda x: x[0])
 
 if __name__ == "__main__":
     args = sys.argv[1:]
     fix_mode = "--fix" in args
-    clean_args = [a for a in args if a != "--fix"]
+    all_mode = "--all" in args
+    json_mode = "--json" in args
     
-    # Auto-detect target directories
-    if clean_args:
+    clean_args = [a for a in args if a not in ["--fix", "--all", "--json"]]
+    
+    workspace_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+    
+    if all_mode:
+        discovered = discover_standalone_products(workspace_root)
+        print(f"{CYAN}{BOLD}🔍 Auto-discovered {len(discovered)} standalone products in workspace:{RESET}")
+        for p_name, p_dir in discovered:
+            print(f"   • {BOLD}{p_name}{RESET} -> {p_dir}")
+        targets = [p_dir for _, p_dir in discovered]
+    elif clean_args:
         targets = [clean_args[0]]
     else:
         targets = ["EMS/src", "omnistock/src"]
+
+    all_results_report = {
+        "timestamp": datetime.now().isoformat(),
+        "mode": "all" if all_mode else "single",
+        "products": [],
+        "combined_total": 0,
+        "combined_passed": 0,
+        "combined_score": 0.0
+    }
         
     all_success = True
     for target in targets:
         if os.path.exists(target):
-            success = run_audit(target, fix_mode=fix_mode)
-            if not success:
+            audit_dict = run_audit(target, fix_mode=fix_mode)
+            p_name = os.path.basename(os.path.dirname(os.path.abspath(target)))
+            all_results_report["products"].append({
+                "name": p_name,
+                "target": target,
+                "total_checks": audit_dict["total_count"],
+                "passed": audit_dict["passed_count"],
+                "score": audit_dict["pass_rate"],
+                "results": audit_dict["results"]
+            })
+            all_results_report["combined_total"] += audit_dict["total_count"]
+            all_results_report["combined_passed"] += audit_dict["passed_count"]
+            if not audit_dict["is_100_percent"]:
                 all_success = False
-                
+
+    if all_results_report["combined_total"] > 0:
+        all_results_report["combined_score"] = (all_results_report["combined_passed"] / all_results_report["combined_total"]) * 100
+
+    if all_mode and len(all_results_report["products"]) > 1:
+        print(f"\n{CYAN}{BOLD}{'='*75}{RESET}")
+        print(f"{CYAN}{BOLD}🏆 COMBINED MULTI-PRODUCT AUDIT SCORECARD ({len(all_results_report['products'])} Products Audited){RESET}")
+        print(f"{CYAN}{BOLD}{'='*75}{RESET}")
+        for p in all_results_report["products"]:
+            p_color = GREEN if p["score"] == 100 else YELLOW if p["score"] >= 80 else RED
+            print(f" {p['name']:<25}: {p_color}{BOLD}{p['passed']}/{p['total_checks']} PASS ({p['score']:.1f}%){RESET}")
+        print(f"{CYAN}{BOLD}{'-'*75}{RESET}")
+        c_color = GREEN if all_results_report["combined_score"] == 100 else YELLOW
+        print(f" {BOLD}TOTAL WORKSPACE SCORE{RESET}      : {c_color}{BOLD}{all_results_report['combined_passed']}/{all_results_report['combined_total']} PASS ({all_results_report['combined_score']:.1f}%){RESET}\n")
+
+    if json_mode:
+        report_file = "audit_report.json"
+        with open(report_file, "w", encoding="utf-8") as f:
+            json.dump(all_results_report, f, indent=2)
+        print(f"{GREEN}📄 Audit report written to '{os.path.abspath(report_file)}'.{RESET}\n")
+
     sys.exit(0 if all_success else 1)
+

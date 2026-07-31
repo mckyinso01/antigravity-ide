@@ -16,7 +16,7 @@
 
 ---
 
-## 🚀 3. 5-Phase Blueprint for New Project Provisioning & Design Token Execution
+## 🚀 2. 5-Phase Blueprint for New Project Provisioning & Design Token Execution
 
 Kapag may pumasok na **bagong proyekto** (halimbawa: panibagong SaaS app o client request), sundin nang eksakto ang 5-Phase Execution Blueprint na ito mula Day 1:
 
@@ -59,7 +59,7 @@ Siguraduhing nakakakuha ng `✅ 100% PASS: All components comply with Demon Slay
 
 ---
 
-## 🏛️ 4. Domain-Role Adaptation & High-Readability Rules
+## 🏛️ 3. Domain-Role Adaptation & High-Readability Rules
 
 Hindi lahat ng software natin ay pareho ang role. Upang maging **100% readable at tugma sa kailangang role ng bawat software**, iniaangkop ang ating Master Design Tokens batay sa **Domain Role ng App**:
 
@@ -105,7 +105,7 @@ Hindi lahat ng software natin ay pareho ang role. Upang maging **100% readable a
 
 ---
 
-## ⚔️ 2. Demon Slayer (Kimetsu no Yaiba) Character Theme Variations Matrix
+## ⚔️ 4. Demon Slayer (Kimetsu no Yaiba) Character Theme Variations Matrix
 
 | Theme Variation Name | Character & Elemental Breathing | Ideal App Domain / Use-Case | Primary Color Tokens (Hex) | Typography Tokens | Signature Visual Feature |
 | --- | --- | --- | --- | --- | --- |
@@ -117,7 +117,7 @@ Hindi lahat ng software natin ay pareho ang role. Upang maging **100% readable a
 
 ---
 
-## 💎 3. Master Component Design Tokens & Criteria Hierarchy
+## 💎 5. Master Component Design Tokens & Criteria Hierarchy
 
 ### 3.1. Surface & Background Tokens
 
@@ -204,9 +204,136 @@ export const ICON_TOKENS = {
 };
 ```
 
+### 3.8. Loading State & Skeleton Shimmer Tokens (`LOADING_TOKENS`)
+
+Upang magkaroon ng uniform at premium loading experience sa lahat ng apps, ang sumusunod na Loading State tokens ang gagamitin kapag kumukuha ng data o naghihintay ng async operations. PROHIBIT: Bare spinners na walang shimmer, blank white screens habang loading, o inconsistent loading patterns across products.
+
+```javascript
+export const LOADING_TOKENS = {
+  // Skeleton shimmer base — generic placeholder block
+  skeletonBase: "animate-pulse bg-slate-800/60 rounded-lg",
+  // Full card skeleton placeholder
+  skeletonCard: "animate-pulse bg-[#0B1C30]/60 rounded-2xl h-[200px] border border-slate-800/40",
+  // Text line skeleton (single line placeholder)
+  skeletonText: "animate-pulse bg-slate-700/50 rounded h-4 w-3/4",
+  // Text line skeleton (short — for labels)
+  skeletonTextShort: "animate-pulse bg-slate-700/50 rounded h-3 w-1/3",
+  // Circular avatar skeleton
+  skeletonAvatar: "animate-pulse bg-slate-700/50 rounded-full w-10 h-10",
+  // Cyan loading spinner (primary)
+  spinnerCyan: "animate-spin text-[#00E5FF] w-5 h-5",
+  // Amber loading spinner (warning/processing)
+  spinnerAmber: "animate-spin text-[#F59E0B] w-5 h-5",
+  // Full-page centered loading container
+  pageLoader: "flex items-center justify-center min-h-[60vh]",
+};
+```
+
+### 3.9. Toast Notification Tokens (`TOAST_TOKENS`)
+
+Para sa uniform user feedback notifications (success, error, warning, info) across ALL products. Lahat ng toast ay DAPAT animated (slide-in from right) at auto-dismiss after 4 seconds. PROHIBIT: Browser native alert() dialogs, unstyled toast libraries, o inconsistent notification styling across products.
+
+```javascript
+export const TOAST_TOKENS = {
+  // ✅ Success toast — transaction complete, item saved, etc.
+  success: "bg-emerald-950/90 border border-emerald-500/50 text-emerald-300 shadow-[0_0_20px_rgba(16,185,129,0.3)] backdrop-blur-xl",
+  // ❌ Error toast — save failed, network error, validation error
+  error: "bg-rose-950/90 border border-rose-500/50 text-rose-300 shadow-[0_0_20px_rgba(225,29,72,0.3)] backdrop-blur-xl",
+  // ⚠️ Warning toast — low stock, expiring session, etc.
+  warning: "bg-amber-950/90 border border-amber-500/50 text-amber-300 shadow-[0_0_20px_rgba(245,158,11,0.3)] backdrop-blur-xl",
+  // ℹ️ Info toast — tips, status updates, sync notifications
+  info: "bg-cyan-950/90 border border-cyan-500/50 text-cyan-300 shadow-[0_0_20px_rgba(0,229,255,0.3)] backdrop-blur-xl",
+  // Fixed container for stacking toasts (top-right corner)
+  container: "fixed top-4 right-4 z-[9999] flex flex-col gap-2 max-w-sm pointer-events-none",
+  // Individual toast wrapper
+  wrapper: "pointer-events-auto rounded-xl px-4 py-3 flex items-start gap-3 min-w-[300px]",
+};
+```
+
+### 3.10. Modal & Dialog System Tokens (`MODAL_TOKENS`)
+
+Para sa uniform modal/dialog styling across ALL products. Lahat ng modals ay DAPAT may backdrop blur overlay, constrained max-height (90vh), at flex scroll architecture para hindi lumabas ng screen ang footer buttons. PROHIBIT: Modals na walang close button, walang Escape key handler, o nag-a-overflow sa mobile screens.
+
+```javascript
+export const MODAL_TOKENS = {
+  // Dark blurred overlay backdrop
+  overlay: "fixed inset-0 z-50 bg-black/60 backdrop-blur-sm",
+  // Centering container
+  container: "fixed inset-0 z-50 flex items-center justify-center p-4",
+  // Standard width modal content (forms, confirmations)
+  content: "bg-[#0B1C30] border border-slate-800/80 rounded-2xl shadow-2xl max-h-[90vh] flex flex-col w-full max-w-lg",
+  // Wide modal content (data tables, detail views, specs)
+  contentWide: "bg-[#0B1C30] border border-slate-800/80 rounded-2xl shadow-2xl max-h-[90vh] flex flex-col w-full max-w-3xl",
+  // Full-screen modal content (print preview, image viewer)
+  contentFullScreen: "bg-[#0B1C30] border border-slate-800/80 rounded-2xl shadow-2xl h-[95vh] flex flex-col w-full max-w-6xl",
+  // Modal header with title and close button
+  header: "p-5 border-b border-slate-800/80 flex items-center justify-between shrink-0",
+  // Scrollable body section
+  body: "p-5 overflow-y-auto flex-1",
+  // Fixed footer with action buttons (never pushed off-screen)
+  footer: "p-4 border-t border-slate-800/80 flex items-center justify-end gap-3 shrink-0",
+  // Modal title typography
+  title: "text-lg font-bold text-white tracking-tight",
+};
+```
+
+### 3.11. Enterprise Data Table & Grid Tokens (`TABLE_TOKENS`)
+
+Para sa uniform data table styling across ALL products — inventory lists, sales reports, customer CRM grids, employee rosters, at payroll ledgers. PROHIBIT: Tables na walang header styling, walang hover state sa rows, o gumagamit ng raw HTML table defaults.
+
+```javascript
+export const TABLE_TOKENS = {
+  // Outer scrollable container with rounded border
+  container: "overflow-x-auto rounded-xl border border-slate-800/80",
+  // Table header row background
+  header: "bg-[#071322] text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider",
+  // Individual header cell
+  headerCell: "px-4 py-3 text-left whitespace-nowrap",
+  // Standard data row with hover
+  row: "bg-[#071322] border-b border-slate-800/50 hover:bg-[#0E1E36] transition-colors cursor-pointer",
+  // Alternating row for zebra striping
+  rowAlternate: "bg-[#0B1C30]/50 border-b border-slate-800/50 hover:bg-[#0E1E36] transition-colors cursor-pointer",
+  // Selected/active row highlight
+  rowSelected: "bg-[#00E5FF]/10 border-b border-[#00E5FF]/30 hover:bg-[#00E5FF]/15",
+  // Standard text cell
+  cell: "px-4 py-3 text-sm text-slate-200 whitespace-nowrap",
+  // Monospace numeric cell (currencies, quantities, IDs)
+  cellMono: "px-4 py-3 text-sm text-[#00E5FF] font-mono font-bold whitespace-nowrap",
+  // Empty table state
+  emptyState: "py-12 text-center text-slate-500 font-mono text-sm",
+  // Pagination footer bar
+  pagination: "flex items-center justify-between px-4 py-3 border-t border-slate-800/80 bg-[#071322]",
+};
+```
+
+### 3.12. Empty State & Zero Data Tokens (`EMPTY_STATE_TOKENS`)
+
+Para sa uniform at branded empty state screens kapag walang data pa ang isang view — bagong account, walang products, walang transactions, etc. Ang empty states ay DAPAT encouraging at may clear call-to-action button. PROHIBIT: Blank white screens, bare "No data" text, o missing empty states sa any data-driven view.
+
+```javascript
+export const EMPTY_STATE_TOKENS = {
+  // Centered vertical container
+  container: "flex flex-col items-center justify-center py-16 text-center px-6",
+  // Large muted icon placeholder
+  icon: "w-16 h-16 text-slate-600 mb-4",
+  // Empty state headline
+  title: "text-lg font-bold text-slate-300 mb-2",
+  // Subtitle / encouragement text
+  subtitle: "text-sm text-slate-500 max-w-md leading-relaxed",
+  // Call-to-action button container (uses BUTTON_TOKENS.primary inside)
+  action: "mt-6",
+  // Compact inline empty state (for cards, not full pages)
+  inlineContainer: "flex flex-col items-center justify-center py-8 text-center",
+  inlineIcon: "w-10 h-10 text-slate-600 mb-2",
+  inlineTitle: "text-sm font-semibold text-slate-400",
+};
+```
+
+<!-- SCALABLE-TOKENS: To add new token categories, create the next sequential subsection number (e.g., 3.13, 3.14...) following the same pattern: ### heading, Taglish explanation, JavaScript export const code block. -->
+
 ---
 
-## 📊 4. Universal Chart System Tokens (Recharts Palette Engine)
+## 📊 6. Universal Chart System Tokens (Recharts Palette Engine)
 
 | Data Stream | Demon Slayer Character Theme | Gradient IDs & Hex Stops | Stroke & Hover Effect |
 | --- | --- | --- | --- |
@@ -217,7 +344,7 @@ export const ICON_TOKENS = {
 
 ---
 
-## 🔢 5. Currency & Data Formatting Standard
+## 🔢 7. Currency & Data Formatting Standard
 
 1. **Mandatory Font Family**: All monetary numbers, totals, quantities, and telemetry stats MUST use `JetBrains Mono` (`font-mono`).
 2. **Defensive Null Guard**: `const safeValue = Number(rawVal) || 0;`
@@ -228,7 +355,7 @@ export const ICON_TOKENS = {
 
 ---
 
-## 🌟 7. Additional Enterprise Design System Pillars
+## 🌟 8. Additional Enterprise Design System Pillars
 
 Upang maging **100% FAANG-grade at kumpleto sa lahat ng anggulo**, itinatakda rin ang 6 na karagdagang haligi ng ating Design System:
 
@@ -505,7 +632,7 @@ Upang maging **100% FAANG-grade at kumpleto sa lahat ng anggulo**, itinatakda ri
 
 ---
 
-## 📐 13. Card & Widget Container Dimension & Sizing Specification (Compact Ergonomic Standard)
+## 📐 12. Card & Widget Container Dimension & Sizing Specification (Compact Ergonomic Standard)
 
 Upang maiwasan ang malalim na scrolling at oversized elements, ang lahat ng card at widget containers ay DAPAT sumunod sa **Compact Ergonomic Dimension Guidelines**:
 
@@ -558,7 +685,7 @@ Lahat ng Dashboard Breakthrough components ay nakagrupo sa mga sumusunod na offi
 
 ---
 
-## 🏛️ 14. UI/UX Organizational Guidelines & Navigation Restructuring Specification (`UIUX-ORGANIZATION-SPEC`)
+## 🏛️ 13. UI/UX Organizational Guidelines & Navigation Restructuring Specification (`UIUX-ORGANIZATION-SPEC`)
 
 Upang maiwasan ang malaking halaga ng scrolling at ang pagkakahiwa-hiwalay ng 15+ standalone tabs sa sidebar, ang buong Information Architecture ay DAPAT sumunod sa **5 Master Command Core Domains**:
 
@@ -595,9 +722,110 @@ Upang magkaroon ng kinang, buhay, at premium Muichiro Seafoam Mint aesthetic ang
 
 ---
 
+## 14. Cross-Product Prevention, Quality & Uniformity Rules Registry
+
+Ang seksyon na ito ay naglalaman ng mga scalable prevention at quality rules na naka-reference sa AGENTS.md Section 9. Ang bawat rule ay may corresponding implementation guideline dito sa Design Tokens Spec para ma-enforce ng mga developers at AI agents ang uniformity across ALL standalone products.
+
+### 16.1. 5-State Screen Implementation Checklist (`5-STATE-SCREEN-RULE`)
+
+Bawat data-driven page o component ay DAPAT mag-implement ng lahat ng 5 states. Gamitin ang sumusunod na token mappings:
+
+| State | Token Reference | When to Show |
+| --- | --- | --- |
+| Loading | `LOADING_TOKENS.skeletonCard`, `LOADING_TOKENS.skeletonText` | Habang kumukuha ng data (initial fetch) |
+| Empty | `EMPTY_STATE_TOKENS.container`, `.icon`, `.title`, `.subtitle`, `.action` | Kapag successful ang fetch pero walang data |
+| Populated | Standard component tokens | Kapag may data na |
+| Error | `TOAST_TOKENS.error` + inline error card with retry button | Kapag nag-fail ang fetch |
+| Offline | Amber disconnect banner (`bg-amber-950/80 text-amber-300`) | Kapag nawala ang internet connection |
+
+### 16.2. Component Size & Complexity Budget
+
+| Metric | Maximum Limit | Remediation |
+| --- | --- | --- |
+| Lines per component file | 300 lines | Split into sub-components |
+| JSX nesting depth | 5 levels | Extract nested blocks into components |
+| Props per component | 10 props | Use composition pattern or Context |
+| useEffect hooks per component | 3 hooks | Extract into custom hooks |
+| useState declarations per component | 5 states | Consolidate into useReducer |
+
+### 16.3. Data Flow Pattern Reference Implementation
+
+```javascript
+// STANDARD DATA FLOW PATTERN — All pages MUST follow this structure
+const [data, setData] = useState([]);
+const [loading, setLoading] = useState(true);
+const [error, setError] = useState(null);
+
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const result = await api.getData();
+      setData(result);
+    } catch (err) {
+      setError(err.message || "Failed to load data");
+    } finally {
+      setLoading(false);
+    }
+  };
+  fetchData();
+  return () => { /* cleanup if needed */ };
+}, []);
+
+// RENDER CHAIN:
+if (loading) return <PageSkeleton />;
+if (error) return <ErrorState message={error} onRetry={() => window.location.reload()} />;
+if (data.length === 0) return <EmptyState title="No items yet" action="Add First Item" />;
+return <DataView data={data} />;
+```
+
+### 16.4. Folder Structure Mirror Template
+
+```
+<product-name>/
+├── src/
+│   ├── components/          # Reusable UI components
+│   │   ├── ui/              # Primitive atoms (Button, Input, Badge, Modal)
+│   │   └── <domain>/        # Domain-specific organisms (pos/, ghla/, ems/)
+│   ├── pages/               # Route-level page views (PascalCase.jsx)
+│   ├── hooks/               # Custom React hooks (useCamelCase.js)
+│   ├── lib/                 # Utilities, designSystem.js, db.js
+│   ├── api/                 # API client & route definitions
+│   ├── index.css            # Global styles, keyframes, scrollbar spec
+│   ├── App.jsx              # Root router & ErrorBoundary wrapper
+│   └── main.jsx             # Entry point with try-catch guard
+├── specs.md                 # System specification document
+├── package.json             # Dependencies & scripts
+└── README.md                # Quick start guide
+```
+
+### 16.5. Design Token Versioning & Changelog Standard
+
+Lahat ng pagbabago sa design tokens ay DAPAT naka-log sa changelog format:
+
+```markdown
+## Token Changelog
+
+### v4.0.0 (YYYY-MM-DD)
+- Added: LOADING_TOKENS (skeleton, shimmer, spinner)
+- Added: TOAST_TOKENS (success, error, warning, info)
+- Added: MODAL_TOKENS (overlay, content, header, body, footer)
+- Added: TABLE_TOKENS (container, header, row, cell, pagination)
+- Added: EMPTY_STATE_TOKENS (container, icon, title, subtitle, action)
+
+### v3.0.0 (2026-07-15)
+- Added: 1.5px Uniform Border Standard
+- Added: Frosted Glass Scrollbar Spec
+- Changed: BUTTON_TOKENS.danger shadow opacity
+```
+
+<!-- SCALABLE-RULES: To add new rule implementation details, create the next sequential subsection (16.6, 16.7...) following the pattern: ### heading, table or code block, Taglish explanation. -->
+
+---
+
 ## 📁 15. File References & Deployment
 
 - **Master Specification Path**: [company_master_design_tokens_spec.md](file:///c:/Users/Admin/.antigravity-ide/company_master_design_tokens_spec.md)
 - **JavaScript Export Module**: [designSystem.js](file:///c:/Users/Admin/.antigravity-ide/omnistock/src/lib/designSystem.js)
 - **Universal Audit Script**: [master_project_audit.py](file:///c:/Users/Admin/.antigravity-ide/.agents/scripts/master_project_audit.py)
+
 
