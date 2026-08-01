@@ -177,6 +177,23 @@ export const FORM_TOKENS = {
 ### 3.5. Card & Container Component Tokens
 
 ```javascript
+export const GLOBAL_MAP_SIZE_GUIDELINES = {
+  // SVG Viewport & Container Height Standard
+  svgViewBox: "0 0 1000 400",
+  containerHeight: "h-[290px]",
+  // Pin Radius Specifications (+10px Diameter Enlargement Standard)
+  pinOuterPulseRadius: 26,       // Diameter: 52px
+  pinBaseRadius: 20,             // Diameter: 40px (Exactly +10px larger for prominent legibility)
+  pinCenterDotRadius: 7,         // Diameter: 14px
+  pinStrokeWidth: 3,
+  // City Name Badge Standards
+  badgeFontSize: 13,             // 13px Extra-Bold Monospace
+  badgeFontWeight: "800",
+  badgeRectHeight: 26,           // 26px Pill Height
+  badgeRectCornerRadius: 6,
+  badgeBorderWidth: 1.5,
+};
+
 export const CARD_TOKENS = {
   // Tier 1: Moving Border Card (Solid Interior + Conic Rotating Outline)
   movingBorderCard: "moving-border-card bg-[#0B1C30] rounded-2xl p-6 relative overflow-hidden shadow-2xl",

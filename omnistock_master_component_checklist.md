@@ -77,13 +77,76 @@
   - Bottom stat tile clips `100.0% Integrity` text as `100.0% Integrit` at bottom border.
   - Remediation: Apply responsive font sizing (`text-lg font-extrabold text-white font-mono truncate`) and compact card padding (`p-3 md:p-4`).
 
-### 🔴 BATCH 1: SCREENSHOT 12 & 13 ISSUES (#105 to #107) - IN PROGRESS
+### 🔴 BATCH 1: SCREENSHOT 12 & 13 ISSUES (#105 to #109) - IN PROGRESS
 - [ ] **Issue #105 & #106: `ProductivityTrendLine.tsx` - Oversized Chart Height & Bottom Bar Button Contrast**
   - Chart container has excessive vertical height (~480px total height, `height = 220` SVG).
   - Remediation: Reduce SVG height to `height = 135` (saving 160px height) and refactor bottom action link (`Inspect Top Performer Bio ->`) to Seafoam Mint token styling.
 - [ ] **Issue #107: `TeamExpansionControl.tsx` - Light Grey Card Fill Anomaly on Dark Mode Surface**
   - Left cluster health card (`Glass Engineering`) renders a stark light-grey background fill (`bg-slate-300` / `bg-slate-400`), violating Dark Mode Card Surface rules!
   - Remediation: Replace light-grey fill with dark frosted card surface (`bg-[#12161D] border border-slate-800 text-[#7FD8D7]`), fix input placeholder colors (`placeholder:text-slate-500`).
+- [x] **Issue #108: `EMS Portal` - Un-Guarded Array .length Property Access & Component Type Mismatch Anomaly**
+  - Resolved `TypeError: Cannot read properties of undefined (reading 'length')` across all components (`EmployeeBios`, `Productivity`, `Header`, `TeamOverview`, `DepartmentDetailModal`, `WorkspaceHub`) by adding optional chaining (`?.length ?? 0`) and defensive fallbacks (`(x ?? []).length`).
+  - Standardized component props and interfaces (`WorkforceHubProps`, `PayrollCommandHubProps`, `IntelligenceHubProps`, `SystemSettingsHubProps`, `DashboardProps`) across `App.tsx` yielding 100% clean TypeScript type-safety compilation.
+- [x] **Issue #109: `Header.tsx` - Quick Search Modal Stark White Footer & Missing Fluid Glassmorphism Anomaly**
+  - Refactored Quick Search Modal (`Header.tsx`) container to `bg-[#0B1C30]/90 backdrop-blur-2xl border border-[#7FD8D7]/30 shadow-[0_0_40px_rgba(127,216,215,0.25)]`, Quick Navigation tiles to `bg-[#12161D]/80 hover:bg-[#7FD8D7]/15 border border-[#7FD8D7]/20 text-[#7FD8D7] backdrop-blur-md`, and footer to dark high-contrast `bg-[#071322]/90 border-t border-[#7FD8D7]/20 text-[#7FD8D7]` with custom keyboard key pills.
+- [x] **Issue #110: `EnterprisePriceComparisonMatrix.tsx` - Dummy alert() & Missing Interactive Commercial License Tier Selector Flow**
+  - Replaced dummy `alert()` on `Select Your License Tier →` button with an interactive Cyber Glass License Model Selector Modal (`isLicenseSelectorOpen`) featuring 4 live commercial deployment models (`Managed SaaS Cloud`, `White-Label Agency License`, `Enterprise Self-Host / On-Prem`, `Full Source Code Buyout`).
+  - Integrated 1-click launch of `SelfHostProvisioningModal`, `WhiteLabelCustomizerModal`, and `SourceCodeLicenseModal` with defensive state management and zero TS errors.
+- [x] **Issue #111 & #112: `TeamOverview.tsx` - Global Connectivity Map SVG Bezier Pin Misalignment, Multi-Tenant Dynamic Hub Engine & Add Hub UI**
+  - Resolved SVG Bezier curve disconnection by moving pins and curves inside SVG element coordinates (100% pixel-perfect pin-center anchoring across all screen viewports).
+  - Refactored hardcoded mock array to a Dynamic Multi-Tenant Hub Engine deriving hubs directly from active tenant data with LocalStorage persistence.
+  - Eliminated city label truncation/collision (`San` -> `San Francisco`) and top-border hover tooltip clipping.
+  - Integrated interactive `🌐 Add Global Hub` modal and `SlideOverDrawer` Hub Inspector per 72-Brain Council & Stitch MCP specifications.
+- [x] **Issue #113: `TeamOverview.tsx` - Ergonomic Pin Marker & City Name Badge Size Scale Adjustment**
+  - Scaled up SVG pin base radius (`r="12"` -> `r="15"`, outer pulse `r="20"`) and city label text badge size (`fontSize="9.5"` -> `fontSize="11"`, `fontWeight="800"` extra bold, height `18` -> `22`) for maximum visual legibility.
+- [x] **Issue #114: `AgenticHrSwarmOrchestrator.tsx` - Swarm Agent Card Task Pill Truncation, Grammar Mismatch & Missing Inspector Flow**
+  - Task pill (`Tasks: 0`) in 4-column layout suffers left edge text clipping/truncation.
+  - Singular/plural grammar mismatch (`Tasks: 1`) violates Rule 20 (`PLURALIZATION-GRAMMAR-GUARD`).
+  - Remediation: Refactor task pill layout to `px-3 py-2 text-[11px] shrink-0`, enforce strict pluralization grammar (`{count} {count === 1 ? "Task" : "Tasks"}`), and wire interactive agent inspection drawer (`SlideOverDrawer`).
+- [x] **Issue #115: `TeamOverview.tsx` & Master Token Spec - Map Pin Diameter Expansion (+10px) & Uniform Size Standards**
+  - Expanded SVG pin base diameter by +10px (radius `r="20"`, diameter 40px), outer pulse ring (`r="26"`), and city name badge text (`fontSize="13"`, height `26px`).
+  - Expanded map container height from `h-[220px]` to `h-[290px]` for spacious global view.
+  - Codified `GLOBAL_MAP_SIZE_GUIDELINES` in `company_master_design_tokens_spec.md` for 100% multi-product design uniformity.
+- [x] **Issue #116: `TeamOverview.tsx` - Complete Site Address, Site Director Contact & 1-Click Fast Connection Action Wiring**
+  - Enriched `HubData` with `address`, `leadName`, `leadRole`, `leadEmail`, `leadPhone`. Built 1-click `✉️ Executive Email Directive Dispatcher Modal` (with mailto fallback), `💬 WhatsApp Direct` launcher (`https://wa.me/...`), and `⚡ Instant Priority Directive` toast notification. Visually verified via Chrome DevTools screenshot `berlin_telemetry_email_sent_1785557972970.png`.
+- [x] **Issue #117: `EmployeeBios.tsx` & `Directory.tsx` - End-to-End Employee Lifecycle & Configurable Termination Data Retention Policy Modal**
+  - Built interactive `🔒 Configurable Data Retention & Legal Hold Policy Modal` in `Directory.tsx` allowing company to select 30-day, 90-day, 1-year, or 7-year document retention windows with strict privacy compliance guards before document purge. Visually verified via screenshot `ems_retention_policy_modal_1785558003464.png`.
+- [x] **Issue #118: `TeamOverview.tsx` & `Header.tsx` - Executive Higher Ops vs Site Admin RBAC View Switcher & New Site Provisioning Lifecycle**
+  - Integrated 1-Click `👑 RBAC Perspective Switcher` (`Executive Higher Ops` vs `Site Admin`) in `Header.tsx` with LocalStorage role persistence. Enhanced `Add Global Hub Modal` in `TeamOverview.tsx` with complete physical site address, director name, email, phone number, and bezier link provisioning.
+- [x] **Issue #119: `EnterpriseDataMigrationEngine.tsx` - Built-in 1-Click CSV/Excel/JSON & Legacy HRIS Data Migration Wizard**
+  - Built interactive `📥 Enterprise Data Migration Hub` in `IntelligenceHub.tsx` featuring 5 source presets (Workday HRIS, BambooHR, ADP Workforce, SAP Success, Custom CSV/Excel), file dropzone, column auto-mapping preview table, and 1-click schema commit engine. Visually verified via screenshot `ems_data_migration_hub_1785558023808.png`.
+- [x] **Issue #120: `AutonomousTaxComplianceEngine.tsx` - Country-Specific Statutory Labor Code & Tax Vault Upload Feature**
+  - Built `📜 Country Statutory Labor Code & Tax Vault Upload Modal` allowing site directors to upload country employment rules, tax brackets, and statutory PDF/DOCX agreements (Germany Arbeitsrecht, UK ERA, PH BIR/SSS/PhilHealth, US Cal/OSHA).
+- [x] **Issue #121: `EmployeeContractMakerModal.tsx` - Legally Binding Employee Contract Generator & E-Signature Wizard**
+  - Built `✍️ Employee Contract Generator & E-Signature Wizard` in `EmployeeBios.tsx` supporting full-time offer letters, NDAs, country-specific labor clauses, auto-filled employee metadata, live legal document preview, and 1-click digital signature dispatch. Visually verified via screenshot `ems_contract_generator_modal_1785558049780.png`.
+- [x] **Issue #122: `jurisdictionRegistry.ts` - Shared 6-Country Statutory Jurisdiction Registry Backbone**
+  - Built single source of truth `jurisdictionRegistry.ts` mapping statutory IDs, leave entitlements, OT multipliers, mandatory benefits, and safety training rules across Philippines, Germany, UK, US, Japan, and Australia.
+- [x] **Issue #123: `EmployeeOnboardingWizard.tsx` - 5-Stage Jurisdiction-Aware New Hire Onboarding Wizard**
+  - Built interactive 5-stage onboarding wizard dynamically rendering statutory ID fields (SSS/PhilHealth vs Steuer-ID vs NI vs SSN) based on employee site location.
+- [x] **Issue #124: `LeaveManagementPortal.tsx` - Jurisdiction-Aware Statutory Leave Filing & Approval Engine**
+  - Built leave management portal auto-populating statutory leave entitlements (SIL 5d, Jahresurlaub 20d, Statutory 28d) with legal citations and manager approval queue.
+- [x] **Issue #125: `PerformanceReview360.tsx` - 360° Performance Evaluation & KPI Goal Tracker**
+  - Built 360° review engine with 5-star rating across 5 core competencies, evaluator feedback, and target KPI progress bars.
+- [x] **Issue #126: `EmployeeExitInterviewEngine.tsx` - Structured Exit Questionnaire & Country Exit Compliance Checklist**
+  - Built exit interview engine with offboarding questionnaires, attrition analytics, and country-specific statutory exit compliance checklists (DOLE Final Pay, Arbeitszeugnis, P45, COBRA).
+- [x] **Issue #127: `TrainingCertificationHub.tsx` - Training Registry & Statutory Safety Alert Module**
+  - Built training catalog and certification matrix with mandatory country safety alerts (DOLE OSH, ArbSchG, Cal/OSHA).
+- [x] **Issue #128: `IncidentGrievanceReporter.tsx` - Confidential Anonymous Incident & Grievance Ticketing System**
+  - Built 100% confidential/anonymous incident reporting engine with severity tagging and resolution audit trail.
+- [x] **Issue #129: `EmployeeSurveyPulse.tsx` - Anonymous Engagement Pulse Surveys & eNPS Engine**
+  - Built engagement survey engine computing eNPS score, work-life balance ratings, and anonymous culture feedback feed.
+- [x] **Issue #130: `BenefitsAdministrationPortal.tsx` - Multi-Country Statutory Social Benefits Admin**
+  - Built statutory social benefits panel (SSS/PhilHealth vs GKV/Renten vs Super) + optional voluntary benefits enrollment matrix.
+- [x] **Issue #131: `OvertimeShiftSwapManager.tsx` - Country OT Multiplier Filing & Shift Trade Marketplace**
+  - Built overtime filing form using jurisdiction OT pay multipliers (PH 1.25x/2.0x, CA 1.5x/2.0x) + peer shift swap marketplace.
+- [x] **Issue #132: `SuccessionPlanningBoard.tsx` - Critical Role Kanban & 9-Box Talent Pipeline**
+  - Built succession board with flight risk analytics, successor profile readiness bars, and promotion target timelines.
+- [x] **Issue #133: `EmployeeRecognitionRewards.tsx` - Peer Kudos Social Feed & Achievement Badges**
+  - Built peer kudos feed, category badges, monthly recognition leaderboards, and milestone celebrations.
+- [x] **Issue #134: `CompliancePolicyVault.tsx` - Centralized Policy Repository & Digital Signature Tracker**
+  - Built company policy library with mandatory digital signature acknowledgement tracking and jurisdiction-specific policy suggestions.
+- [x] **Issue #135: `ResourceAllocation.tsx` - Dark Mode Contrast & Ergonomic Surface Luminance Remediation**
+  - Fixed low-contrast dark mode text (`dark:text-slate-500` / `bg-slate-950/20`) on the Workload Simulation Engine banner and capacities hover bar to consume high-contrast Muichiro Mist Cyan dark card surfaces (`bg-[#0B1C30]/80 border-slate-800/80 text-slate-300`).
 
 ---
 

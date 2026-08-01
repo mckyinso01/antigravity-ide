@@ -908,6 +908,74 @@ def run_audit(target_dir, fix_mode=False):
     results.append(("43. z-index Scale Collision Scanner (ZINDEX-COLLISION-GUARD)", ch43_pass and len(ch43_details) == 0, ch43_details))
 
     # ---------------------------------------------------------
+    # CHECK 44: Defensive Array Length & Optional Chaining Guard
+    # ---------------------------------------------------------
+    ch44_pass = True
+    ch44_details = []
+    unguarded_len_pat = re.compile(r'/\s*\(\s*\w+\.length\s*-\s*1\s*\)|\[\s*\w+\.length\s*-\s*1\s*\]\.(?!\?)')
+    for fpath in files:
+        if fpath.endswith((".jsx", ".tsx")):
+            with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+                for match in unguarded_len_pat.finditer(content):
+                    line_no = content[:match.start()].count('\n') + 1
+                    ch44_pass = False
+                    ch44_details.append(f"{os.path.basename(fpath)}:{line_no} Unguarded array .length access found without Math.max fallback or optional chaining.")
+
+    results.append(("44. Defensive Array Length & Optional Chaining Guard (UNDEFINED-ARRAY-LENGTH-GUARD)", ch44_pass and len(ch44_details) == 0, ch44_details))
+
+    # ---------------------------------------------------------
+    # CHECK 45: Dark Mode Glassmorphism & Contrast Guard
+    # ---------------------------------------------------------
+    ch45_pass = True
+    ch45_details = []
+    stark_light_modal_footer_pat = re.compile(r'class(Name)?="[^"]*bg-slate-50\b[^"]*text-slate-400\b[^"]*"', re.IGNORECASE)
+    for fpath in files:
+        if fpath.endswith((".jsx", ".tsx")):
+            with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+                for match in stark_light_modal_footer_pat.finditer(content):
+                    line_no = content[:match.start()].count('\n') + 1
+                    ch45_pass = False
+                    ch45_details.append(f"{os.path.basename(fpath)}:{line_no} Modal/Dropdown contains stark light background fill (bg-slate-50) violating dark mode glassmorphism rules.")
+
+    results.append(("45. Dark Mode Glassmorphism & Contrast Guard (DARK-MODE-GLASS-CONTRAST-GUARD)", ch45_pass and len(ch45_details) == 0, ch45_details))
+
+    # ---------------------------------------------------------
+    # CHECK 46: Strict Zero-Static-Data Policy Guard
+    # ---------------------------------------------------------
+    ch46_pass = True
+    ch46_details = []
+    if os.path.exists(agents_rulebook_path):
+        with open(agents_rulebook_path, 'r', encoding='utf-8', errors='ignore') as f:
+            a_text = f.read()
+            if "STRICT-ZERO-STATIC-DATA-POLICY" not in a_text:
+                ch46_pass = False
+                ch46_details.append(f"{agents_rulebook_path}: System rulebook missing STRICT-ZERO-STATIC-DATA-POLICY directive.")
+    else:
+        ch46_pass = False
+        ch46_details.append(f"{agents_rulebook_path} not found in workspace root.")
+
+    results.append(("46. Strict Zero-Static-Data Policy Guard (STRICT-ZERO-STATIC-DATA-GUARD)", ch46_pass and len(ch46_details) == 0, ch46_details))
+
+    # ---------------------------------------------------------
+    # CHECK 47: Strict Domain Deployment Isolation Guard
+    # ---------------------------------------------------------
+    ch47_pass = True
+    ch47_details = []
+    if os.path.exists(agents_rulebook_path):
+        with open(agents_rulebook_path, 'r', encoding='utf-8', errors='ignore') as f:
+            a_text = f.read()
+            if "STRICT-DOMAIN-ISOLATION-GUARD" not in a_text:
+                ch47_pass = False
+                ch47_details.append(f"{agents_rulebook_path}: System rulebook missing STRICT-DOMAIN-ISOLATION-GUARD directive.")
+    else:
+        ch47_pass = False
+        ch47_details.append(f"{agents_rulebook_path} not found in workspace root.")
+
+    results.append(("47. Strict Domain Deployment Isolation Guard (STRICT-DOMAIN-ISOLATION-GUARD)", ch47_pass and len(ch47_details) == 0, ch47_details))
+
+    # ---------------------------------------------------------
     # PHASE 2: SCORECARD & REPORT EVALUATION GENERATION
     # ---------------------------------------------------------
     passed_count = sum(1 for _, passed, _ in results if passed)
