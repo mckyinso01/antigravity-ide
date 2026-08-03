@@ -6,13 +6,14 @@
   "scripts": {
     "validate:model-output": "ts-node tools/validate_model_output.ts docs/evaluations/production_remediation_output.json",
     "audit:model-output": "ts-node scripts/audit_model_output.ts docs/evaluations/production_remediation_output.json",
-    "scan:transcript": "node scripts/scan_transcript_sanity.js",
+    "scan:transcript": "node scripts/scan_transcripts.js",
     "lint:tokens": "node tools/token_linter.js",
     "test": "vitest --run"
   },
   "dependencies": {},
   "devDependencies": {
     "@types/supertest": "^2.0.12",
+    "acorn": "^8.10.0",
     "eslint": "^8.45.0",
     "supertest": "^6.3.3",
     "ts-node": "^10.9.1",
