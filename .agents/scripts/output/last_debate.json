@@ -1,9 +1,9 @@
 {
-  "request_id": "1785768188.851413-1785768588",
+  "request_id": "1785768188.851413-1785768952",
   "task": "Test task for simulation fallback",
   "role": "FE-01",
   "mode": "single",
-  "timestamp": "2026-08-03T22:49:48.478678",
+  "timestamp": "2026-08-03T22:55:52.676956",
   "proposals": [
     {
       "provider_key": "deepseek",

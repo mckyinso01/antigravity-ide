@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /**
  * scripts/parse_code_with_acorn.js
- * Reads JS code from stdin, attempts to parse with acorn, and returns JSON:
- * { ok: true } or { ok: false, error: "message" }
- *
- * Usage: node scripts/parse_code_with_acorn.js < code.js
+ * Batch JS parse helper using acorn.
+ * Input (stdin): either a JSON array of code strings OR raw code string.
+ * Output (stdout): JSON array of results [{ ok: true } | { ok: false, error: "..." }, ...]
+ * Usage: echo '[ "code1", "code2" ]' | node scripts/parse_code_with_acorn.js
  */
 
 function readStdin() {
@@ -17,24 +17,47 @@ function readStdin() {
   });
 }
 
-readStdin().then(code => {
-  let acorn;
+(async () => {
   try {
-    acorn = require("acorn");
-  } catch (e) {
-    console.log(JSON.stringify({ ok: false, error: "acorn module not installed in node_modules" }));
-    process.exit(0);
-  }
+    const raw = (await readStdin()).trim();
+    if (!raw) {
+      console.log(JSON.stringify([]));
+      process.exit(0);
+    }
 
-  try {
-    acorn.parse(code, { ecmaVersion: 2020, sourceType: "module" });
-    console.log(JSON.stringify({ ok: true }));
+    let acorn;
+    try {
+      acorn = require("acorn");
+    } catch (e) {
+      console.log(JSON.stringify([{ ok: false, error: "acorn module not installed in node_modules" }]));
+      process.exit(0);
+    }
+
+    let inputs;
+    try {
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed)) {
+        inputs = parsed.map(s => (typeof s === "string" ? s : String(s)));
+      } else {
+        inputs = [String(parsed)];
+      }
+    } catch (e) {
+      inputs = [raw];
+    }
+
+    const results = inputs.map(code => {
+      try {
+        acorn.parse(code, { ecmaVersion: 2020, sourceType: "module" });
+        return { ok: true };
+      } catch (err) {
+        return { ok: false, error: String(err && err.message ? err.message : err) };
+      }
+    });
+
+    console.log(JSON.stringify(results));
     process.exit(0);
-  } catch (e) {
-    console.log(JSON.stringify({ ok: false, error: String(e.message || e) }));
-    process.exit(0);
+  } catch (err) {
+    console.error(JSON.stringify({ ok: false, error: String(err) }));
+    process.exit(1);
   }
-}).catch(err => {
-  console.log(JSON.stringify({ ok: false, error: String(err) }));
-  process.exit(1);
-});
+})();
