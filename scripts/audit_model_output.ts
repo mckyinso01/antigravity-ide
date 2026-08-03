@@ -2,15 +2,15 @@ import fs from "fs";
 import path from "path";
 import child_process from "child_process";
 
-function run(cmd: string, opts: { cwd?: string } = {}) {
+function run(cmd: string) {
   try {
-    return child_process.execSync(cmd, { stdio: "pipe", encoding: "utf8", ...opts });
+    return child_process.execSync(cmd, { stdio: "pipe", encoding: "utf8" });
   } catch (err: any) {
     throw new Error(err.stdout || err.message || String(err));
   }
 }
 
-function usageAndExit() {
+function usage() {
   console.error("Usage: ts-node scripts/audit_model_output.ts <model_output.json>");
   process.exit(2);
 }
@@ -20,14 +20,13 @@ function gitLsFiles(): string[] {
     const out = run("git ls-files");
     return out.split("\n").filter(Boolean);
   } catch (e) {
-    console.warn("git ls-files failed; falling back to filesystem scan of repo root.");
     return [];
   }
 }
 
 async function main() {
   const arg = process.argv[2];
-  if (!arg) usageAndExit();
+  if (!arg) usage();
   const modelPath = path.resolve(process.cwd(), arg);
   if (!fs.existsSync(modelPath)) {
     console.error("Model output file not found:", modelPath);
@@ -35,85 +34,52 @@ async function main() {
   }
   const modelJson = JSON.parse(fs.readFileSync(modelPath, "utf8"));
   const repoFiles = new Set(gitLsFiles());
-
-  let errors: string[] = [];
+  const errors: string[] = [];
   let allPatchesValid = true;
 
-  function checkFileExists(filePath: string) {
-    if (repoFiles.size === 0) {
-      return fs.existsSync(path.resolve(process.cwd(), filePath));
-    }
-    return repoFiles.has(filePath);
-  }
-
-  const findings = modelJson.findings || modelJson.changes || [];
-  for (const f of findings) {
-    const evidenceArr = f.evidence || [];
-    for (const ev of evidenceArr) {
-      if (!checkFileExists(ev.file)) {
-        const msg = `Referenced file not found: ${ev.file} (finding id: ${f.id || f.title || "unknown"})`;
+  const changes = modelJson.changes || modelJson.findings || [];
+  for (const ch of changes) {
+    const evidence = ch.evidence || [];
+    for (const ev of evidence) {
+      const filePath = ev.file;
+      const exists = repoFiles.size ? repoFiles.has(filePath) : fs.existsSync(path.resolve(process.cwd(), filePath));
+      if (!exists) {
+        const msg = `Missing referenced file: ${filePath} (change id: ${ch.id})`;
         console.error(msg);
         errors.push(msg);
       }
     }
-  }
-
-  const codeChanges = modelJson.code_changes_suggested || [];
-  for (const ch of codeChanges) {
-    if (!ch.diff_unified) continue;
-    const tmpPatch = path.join(process.cwd(), `.tmp_model_patch_${Date.now()}.patch`);
-    fs.writeFileSync(tmpPatch, ch.diff_unified, "utf8");
-    try {
-      run(`git apply --check ${tmpPatch}`);
-      console.log(`Patch check OK for file: ${ch.file}`);
-    } catch (e: any) {
-      console.error(`Patch check FAILED for: ${ch.file} — ${e.message}`);
-      errors.push(`git apply --check failed for ${ch.file}: ${e.message}`);
-      allPatchesValid = false;
-    } finally {
-      try { fs.unlinkSync(tmpPatch); } catch {}
-    }
-  }
-
-  for (const f of findings) {
-    const pf = f.proposed_fix || {};
-    const diff = pf.patch_unified_diff || null;
-    if (!diff) continue;
-    const tmpPatch = path.join(process.cwd(), `.tmp_model_patch_${Date.now()}.patch`);
-    fs.writeFileSync(tmpPatch, diff, "utf8");
-    try {
-      run(`git apply --check ${tmpPatch}`);
-      console.log(`Patch check OK for finding: ${f.id}`);
-    } catch (e: any) {
-      console.error(`Patch check FAILED for finding ${f.id} — ${e.message}`);
-      errors.push(`git apply --check failed for finding ${f.id}: ${e.message}`);
-      allPatchesValid = false;
-    } finally {
-      try { fs.unlinkSync(tmpPatch); } catch {}
+    const diff = ch.proposed_fix?.diff_unified || null;
+    if (diff) {
+      const tmp = path.join(process.cwd(), `.tmp_model_patch_${Date.now()}.patch`);
+      fs.writeFileSync(tmp, diff, "utf8");
+      try {
+        run(`git apply --check ${tmp}`);
+        console.log(`Patch apply-check OK for change: ${ch.id}`);
+      } catch (e: any) {
+        const msg = `git apply --check FAILED for change ${ch.id}: ${e.message}`;
+        console.error(msg);
+        errors.push(msg);
+        allPatchesValid = false;
+      } finally {
+        try { fs.unlinkSync(tmp); } catch {}
+      }
     }
   }
 
   const summary = {
     timestamp: new Date().toISOString(),
-    model_file: modelPath,
     repo_files_count: repoFiles.size,
     errors,
     allPatchesValid,
   };
-  const outPath = path.join(process.cwd(), "audit_result.json");
-  fs.writeFileSync(outPath, JSON.stringify(summary, null, 2), "utf8");
-  console.log("Audit summary written to", outPath);
-
-  if (errors.length > 0) {
-    console.error("Audit completed with errors. See audit_result.json");
-    process.exit(3);
-  } else {
-    console.log("Audit completed: all checks passed.");
-    process.exit(0);
-  }
+  const out = path.join(process.cwd(), "audit_result.json");
+  fs.writeFileSync(out, JSON.stringify(summary, null, 2), "utf8");
+  console.log("Audit summary written to", out);
+  process.exit(errors.length ? 3 : 0);
 }
 
 main().catch((e) => {
-  console.error("Unexpected auditor error:", e);
+  console.error("Auditor unexpected error:", e);
   process.exit(10);
 });

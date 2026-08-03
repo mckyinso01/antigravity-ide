@@ -18,8 +18,7 @@ function createApp() {
 
 describe("Stripe webhook raw-body handling", () => {
   const app = createApp();
-
-  it("accepts raw JSON body with stripe-signature header (simulation)", async () => {
+  it("accepts raw JSON body", async () => {
     const payload = Buffer.from(JSON.stringify({ id: "evt_test", data: "x" }), "utf8");
     const resp = await request(app)
       .post("/api/stripe/webhook")

@@ -1,7 +1,7 @@
 {
-    "github_pat": "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",
-    "groq_api_key": "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",
-    "google_ai_key": "AQ.Ab8RN6Ldz8RShTdQZS9-Rzw2J0sfEkblbU-6cX3TYp_ibO7iNg",
+    "github_pat": "",
+    "groq_api_key": "",
+    "google_ai_key": "",
     "huggingface_token": "",
     "default_mode": "debate",
     "default_judge": "groq_llama",
@@ -9,5 +9,6 @@
     "quick_mode_models": ["qwen", "groq_llama"],
     "timeout_seconds": 45,
     "max_tokens": 4096,
-    "save_transcripts": true
+    "save_transcripts": true,
+    "note": "Secrets were redacted from this file for safety. Create a local_config.json (see local_config_template.json) or use environment variables and do NOT commit secrets to the repo."
 }
