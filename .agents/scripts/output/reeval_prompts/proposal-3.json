@@ -1,0 +1,20 @@
+{
+  "proposal_id": "proposal-3",
+  "title": "## Proposal 2: Groq Llama 3.3 70B",
+  "simulated": true,
+  "repo_files": [],
+  "FILES": {},
+  "excerpt_issues": [
+    {
+      "type": "simulation",
+      "msg": "Proposal originated from fallback simulation engine."
+    },
+    {
+      "type": "business",
+      "msg": "Pricing / commercial claims detected",
+      "matches": [
+        "$299/mo"
+      ]
+    }
+  ]
+}

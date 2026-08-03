@@ -1,0 +1,56 @@
+{
+  "timestamp": "2026-08-03T14:33:17.610Z",
+  "total_sections_scanned": 3,
+  "simulated_sections_found": 2,
+  "total_issues_found": 4,
+  "results": [
+    {
+      "id": "proposal-1",
+      "title": "Intro & Executive Summary",
+      "simulated": false,
+      "imports": [],
+      "issues": [],
+      "codeBlocksCount": 0
+    },
+    {
+      "id": "proposal-2",
+      "title": "## Proposal 1: Qwen 2.5 Coder 32B",
+      "simulated": true,
+      "imports": [],
+      "issues": [
+        {
+          "type": "simulation",
+          "msg": "Proposal originated from fallback simulation engine."
+        },
+        {
+          "type": "business",
+          "msg": "Pricing / commercial claims detected",
+          "matches": [
+            "$299/mo"
+          ]
+        }
+      ],
+      "codeBlocksCount": 0
+    },
+    {
+      "id": "proposal-3",
+      "title": "## Proposal 2: Groq Llama 3.3 70B",
+      "simulated": true,
+      "imports": [],
+      "issues": [
+        {
+          "type": "simulation",
+          "msg": "Proposal originated from fallback simulation engine."
+        },
+        {
+          "type": "business",
+          "msg": "Pricing / commercial claims detected",
+          "matches": [
+            "$299/mo"
+          ]
+        }
+      ],
+      "codeBlocksCount": 0
+    }
+  ]
+}

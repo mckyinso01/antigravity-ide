@@ -1,0 +1,20 @@
+{
+  "proposal_id": "proposal-2",
+  "title": "## Proposal 1: Qwen 2.5 Coder 32B",
+  "simulated": true,
+  "repo_files": [],
+  "FILES": {},
+  "excerpt_issues": [
+    {
+      "type": "simulation",
+      "msg": "Proposal originated from fallback simulation engine."
+    },
+    {
+      "type": "business",
+      "msg": "Pricing / commercial claims detected",
+      "matches": [
+        "$299/mo"
+      ]
+    }
+  ]
+}
