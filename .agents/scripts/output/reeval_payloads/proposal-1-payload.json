@@ -1,0 +1,56 @@
+{
+  "transcript_excerpt": {
+    "id": "proposal-1",
+    "title": "Proposal 1: Qwen 2.5 Coder 32B",
+    "text": "[🤖 Hugging Face Multi-Agent Specialist (Local Simulation - Substituted due to: HTTP Error 401: Unauthorized)]\n\n1. **Store Readiness & HIG Alignment**: Ensure 44x44pt touch targets, 4.5:1 dark mode text contrast, and safe-area notch padding.\n2. **Zero-Defect Defensive Guard**: Wrap auth init & API calls in try-catch guards to eliminate white-screen crashes.\n3. **Store Privacy & Account Deletion**: Implement self-service `purgeClientState` wizard in settings for Apple 5.1.1(v) & Google Play compliance.\n4. **Monetization Transparency**: Render 4-tier commercial pricing ($4,999 Self-Host ➔ $299/mo Cloud) with zero hidden fees."
+  },
+  "repo_files_list": [
+    ".agents/scripts/council_debate.py",
+    ".agents/scripts/config.json",
+    "docs/company_rules.md",
+    "package.json"
+  ],
+  "FILES": {
+    ".agents/scripts/config.json": "{\n    \"github_pat\": \"\",\n    \"groq_api_key\": \"\",\n    \"google_ai_key\": \"\",\n    \"huggingface_token\": \"\",\n    \"default_mode\": \"debate\",\n    \"default_judge\": \"groq_llama\",\n    \"default_debate_models\": [\"groq_llama\", \"gemini_flash\", \"deepseek\", \"qwen\"],\n    \"quick_mode_models\": [\"qwen\", \"groq_llama\"],\n    \"timeout_seconds\": 45,\n    \"max_tokens\": 4096,\n    \"save_transcripts\": true\n}",
+    "package.json": "{\n  \"name\": \"antigravity-ide-workspace\",\n  \"version\": \"1.0.0\",\n  \"private\": true,\n  \"description\": \"Antigravity IDE Master Governance Suite & Automation Engine\"\n}",
+    "docs/company_rules.md": "# 🏢 Antigravity IDE Company Rules & Production Workflow Policy"
+  },
+  "output_schema": {
+    "proposal_id": "string",
+    "title": "string",
+    "simulated": "true|false",
+    "claims": [
+      {
+        "id": "c1",
+        "text": "string",
+        "supported": "true|false",
+        "evidence_files": ["path"],
+        "reason_if_unsupported": "string|null",
+        "confidence": "0.0-1.0"
+      }
+    ],
+    "code_snippets": [
+      {
+        "id": "s1",
+        "lang": "string",
+        "parseable": "true|false",
+        "parse_error": "string|null",
+        "imports": ["..."],
+        "missing_deps": ["..."]
+      }
+    ],
+    "business_claims": [
+      {
+        "text": "string",
+        "type": "pricing|commercial",
+        "action": "require_PO_approval"
+      }
+    ],
+    "recommended_actions": ["string"],
+    "metadata": {
+      "generated_at": "ISO8601",
+      "model": "gemini-3.6-flash",
+      "temperature": 0.0
+    }
+  }
+}
