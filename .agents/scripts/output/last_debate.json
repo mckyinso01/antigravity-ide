@@ -1,0 +1,21 @@
+{
+  "request_id": "1785768188.851413-1785768287",
+  "task": "Test JSON Metadata Export",
+  "role": "FE-01",
+  "mode": "quick",
+  "timestamp": "2026-08-03T22:44:47.989401",
+  "proposals": [
+    {
+      "provider_key": "qwen",
+      "name": "Qwen 2.5 Coder 32B",
+      "simulated": true,
+      "response_text": "[🤖 Hugging Face Multi-Agent Specialist (Local Simulation - Substituted due to: Network calls disabled by ALLOW_AGENT_NETWORK gate)]\n\n### 🛡️ Specialist Analysis (qwen):\n1. **Store Readiness & HIG Alignment**: Ensure 44x44pt touch targets, 4.5:1 dark mode text contrast, and safe-area notch padding.\n2. **Zero-Defect Defensive Guard**: Wrap auth init & API calls in try-catch guards to eliminate white-screen crashes.\n3. **Store Privacy & Account Deletion**: Implement self-service `purgeClientState` wizard in settings for Apple 5.1.1(v) & Google Play compliance.\n4. **Monetization Transparency**: Render 4-tier commercial pricing ($4,999 Self-Host ➔ $299/mo Cloud) with zero hidden fees."
+    },
+    {
+      "provider_key": "groq_llama",
+      "name": "Groq Llama 3.3 70B",
+      "simulated": true,
+      "response_text": "[🤖 Hugging Face Multi-Agent Specialist (Local Simulation - Substituted due to: Network calls disabled by ALLOW_AGENT_NETWORK gate)]\n\n### 🛡️ Specialist Analysis (groq_llama):\n1. **Store Readiness & HIG Alignment**: Ensure 44x44pt touch targets, 4.5:1 dark mode text contrast, and safe-area notch padding.\n2. **Zero-Defect Defensive Guard**: Wrap auth init & API calls in try-catch guards to eliminate white-screen crashes.\n3. **Store Privacy & Account Deletion**: Implement self-service `purgeClientState` wizard in settings for Apple 5.1.1(v) & Google Play compliance.\n4. **Monetization Transparency**: Render 4-tier commercial pricing ($4,999 Self-Host ➔ $299/mo Cloud) with zero hidden fees."
+    }
+  ]
+}

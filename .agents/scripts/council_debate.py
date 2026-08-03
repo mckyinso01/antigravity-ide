@@ -363,6 +363,28 @@ def run_debate_session(task, context_file=None, role="FE-01", mode="debate", jud
     with open(debate_file, "w", encoding="utf-8") as f:
         f.write(debate_transcript)
 
+    # Save structured debate JSON metadata
+    request_id = str(pathlib.Path(__file__).stat().st_mtime) + "-" + str(int(time.time()))
+    debate_json_file = OUTPUT_DIR / "last_debate.json"
+    debate_json_data = {
+        "request_id": request_id,
+        "task": task,
+        "role": role,
+        "mode": mode,
+        "timestamp": datetime.datetime.now().isoformat(),
+        "proposals": [
+            {
+                "provider_key": k,
+                "name": PROVIDERS[k]["name"],
+                "simulated": "Local Simulation" in resp,
+                "response_text": resp
+            }
+            for k, resp in model_responses.items()
+        ]
+    }
+    with open(debate_json_file, "w", encoding="utf-8") as f:
+        json.dump(debate_json_data, f, ensure_ascii=False, indent=2)
+
     # Phase 3: Judge & Synthesize (if not single mode)
     if mode == "single":
         verdict_content = debate_transcript
@@ -392,9 +414,25 @@ def run_debate_session(task, context_file=None, role="FE-01", mode="debate", jud
     with open(verdict_file, "w", encoding="utf-8") as f:
         f.write(verdict_content)
 
+    # Save structured verdict JSON metadata
+    verdict_json_file = OUTPUT_DIR / "last_verdict.json"
+    verdict_json_data = {
+        "request_id": request_id,
+        "task": task,
+        "judge_key": judge_key,
+        "judge_name": PROVIDERS[judge_key]["name"],
+        "simulated": "Local Simulation" in verdict_content,
+        "timestamp": datetime.datetime.now().isoformat(),
+        "verdict_text": verdict_content
+    }
+    with open(verdict_json_file, "w", encoding="utf-8") as f:
+        json.dump(verdict_json_data, f, ensure_ascii=False, indent=2)
+
     print(f"\n✨ COUNCIL DEBATE COMPLETE!")
     print(f"📄 Full Debate Transcript: {debate_file}")
-    print(f"📄 Synthesized Verdict:    {verdict_file}\n")
+    print(f"📄 Debate Metadata JSON:  {debate_json_file}")
+    print(f"📄 Synthesized Verdict:    {verdict_file}")
+    print(f"📄 Verdict Metadata JSON: {verdict_json_file}\n")
     
     return verdict_content
 
