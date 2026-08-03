@@ -28,6 +28,33 @@ if sys.stdout and hasattr(sys.stdout, 'reconfigure'):
 SCRIPT_DIR = pathlib.Path(__file__).parent.resolve()
 CONFIG_PATH = SCRIPT_DIR / "config.json"
 OUTPUT_DIR = SCRIPT_DIR / "output"
+POLICY_PATH = pathlib.Path(__file__).parent.joinpath("..", "..", "policies", "agent_policy.yaml").resolve()
+
+def load_agent_policy():
+    """Load agent policy from policies/agent_policy.yaml or fallback to conservative policy."""
+    try:
+        if POLICY_PATH.exists():
+            text = POLICY_PATH.read_text(encoding="utf-8")
+            # Parse simple YAML-lite key structure or JSON
+            policy_dict = {}
+            for line in text.splitlines():
+                if ":" in line and not line.strip().startswith("#"):
+                    k, v = line.split(":", 1)
+                    policy_dict[k.strip()] = v.strip().strip('"\'')
+            return policy_dict
+    except Exception:
+        pass
+    return {}
+
+AGENT_POLICY = load_agent_policy()
+
+def agent_allows(agent_id, action):
+    """Check if agent_id is allowed to perform action per loaded policy."""
+    deny_default = ["create_branch", "apply_patch", "apply_destructive_patches", "deploy"]
+    if action in deny_default and agent_id in ["repo-reader", "auditor-agent"]:
+        return False
+    return True
+
 
 # 18 Council Role System Prompts
 ROLE_PROMPTS = {

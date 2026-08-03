@@ -1,0 +1,27 @@
+name: Rotate leaked API keys
+about: Security incident: rotate and revoke leaked API keys and document rotation
+title: "[SECURITY] Rotate leaked keys - urgent"
+labels: ["security","urgent"]
+assignees: ["SEC-OWNER"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Summary
+        Keys exposed: (list files and variable names)
+  - type: input
+    attributes:
+      label: "Keys rotated (list)"
+      description: "Add the new key names and rotation steps performed."
+      placeholder: "GITHUB_PAT rotated -> new key created and old key revoked"
+  - type: textarea
+    attributes:
+      label: "Verification steps"
+      description: "How did you verify the keys are no longer valid?"
+      placeholder: "Attempted access with old key -> 401"
+  - type: dropdown
+    attributes:
+      label: "Post-mortem required?"
+      options:
+        - "yes"
+        - "no"

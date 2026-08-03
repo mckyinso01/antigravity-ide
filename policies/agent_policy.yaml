@@ -1,11 +1,9 @@
-version: "1.0"
-policy_id: "POL-AGENT-GOV-2026"
-title: "Antigravity Agent Capability & Permission Matrix"
-
+# Agent policy for Antigravity IDE - enforceable runtime policy
+# - store this file under policies/ and load at runtime for enforcement
+# - Changes to this file itself must require human approval
 agents:
-  repo_reader:
-    role: "Read-Only Repository Inspector"
-    description: "Performs file discovery, code inspection, and issue reporting without code write access."
+  repo-reader:
+    role: "Read-only inspection agent"
     allowed_actions:
       - "read_repo"
       - "list_files"
@@ -16,24 +14,24 @@ agents:
       - "open_pr"
       - "run_tests"
       - "deploy"
-    review_requirements: "Autonomous execution permitted for read operations."
-
-  auditor_agent:
-    role: "Deterministic Audit & Schema Validator"
-    description: "Validates model outputs against Zod schemas and executes git apply --check diff verification."
+    token_ttl_seconds: 300
+    audit_logging: true
+    review_requirements: "None (read-only). Logs must be retained."
+  auditor-agent:
+    role: "Validator & Auditor"
     allowed_actions:
       - "read_repo"
-      - "run_tests"
       - "run_auditor"
-      - "validate_schema"
+      - "open_issues"
+      - "run_tests"
     deny_actions:
       - "apply_patch"
       - "deploy"
-    review_requirements: "Must flag findings with requires_human_review=true if severity >= high."
-
-  remediation_agent:
-    role: "Automated Patch Engineering Agent"
-    description: "Creates non-destructive unified diff patches and opens Pull Requests."
+    token_ttl_seconds: 300
+    audit_logging: true
+    review_requirements: "Escalate findings with requires_human_review=true to security-officer."
+  remediation-agent:
+    role: "Create safe branch & open PR for low-risk fixes"
     allowed_actions:
       - "read_repo"
       - "create_branch"
@@ -43,24 +41,34 @@ agents:
     deny_actions:
       - "apply_destructive_patches"
       - "deploy_without_approval"
-    review_requirements: "Human Security Officer sign-off required for patches touching auth, secrets, or infrastructure."
-
-  deploy_agent:
-    role: "Controlled Deployment Trigger Agent"
-    description: "Triggers staging and production container deployments."
+    token_ttl_seconds: 120
+    audit_logging: true
+    review_requirements: "Any patch with severity >= high or requires_human_review=true requires explicit human approval before merge."
+  deploy-agent:
+    role: "Deploy approved code"
     allowed_actions:
-      - "deploy"
+      - "read_repo"
+      - "deploy_canary"
       - "read_logs"
     deny_actions:
-      - "modify_repo"
+      - "apply_patch"
       - "merge_pr"
-    review_requirements: "Deployments require 100% green CI and explicit human sign-off token."
-
-gating_rules:
-  confidence_threshold: 0.90
-  requires_human_review_triggers:
-    - "severity == critical"
-    - "severity == high"
-    - "touches_secrets == true"
-    - "touches_infra == true"
-    - "touches_auth == true"
+    token_ttl_seconds: 60
+    audit_logging: true
+    review_requirements: "Only deploy after CI green, canary health checks pass, and human approval recorded."
+humans:
+  security-officer:
+    role: "Human approver for security/infra changes"
+    contact: "SEC-OWNER (replace with actual alias)"
+policy:
+  severity_thresholds:
+    critical: 0.95
+    high: 0.9
+  destructive_action_guard:
+    - reasons_require_human: ["secrets", "db_migration", "data_purge", "infra_change"]
+  logging:
+    require_request_id: true
+    retention_days: 180
+  approval:
+    required_for: ["any change touching policies/", ".agents/", "infrastructure/"]
+    human_approvers: ["security-officer"]
