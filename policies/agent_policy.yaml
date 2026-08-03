@@ -1,0 +1,66 @@
+version: "1.0"
+policy_id: "POL-AGENT-GOV-2026"
+title: "Antigravity Agent Capability & Permission Matrix"
+
+agents:
+  repo_reader:
+    role: "Read-Only Repository Inspector"
+    description: "Performs file discovery, code inspection, and issue reporting without code write access."
+    allowed_actions:
+      - "read_repo"
+      - "list_files"
+      - "open_issues"
+    deny_actions:
+      - "create_branch"
+      - "apply_patch"
+      - "open_pr"
+      - "run_tests"
+      - "deploy"
+    review_requirements: "Autonomous execution permitted for read operations."
+
+  auditor_agent:
+    role: "Deterministic Audit & Schema Validator"
+    description: "Validates model outputs against Zod schemas and executes git apply --check diff verification."
+    allowed_actions:
+      - "read_repo"
+      - "run_tests"
+      - "run_auditor"
+      - "validate_schema"
+    deny_actions:
+      - "apply_patch"
+      - "deploy"
+    review_requirements: "Must flag findings with requires_human_review=true if severity >= high."
+
+  remediation_agent:
+    role: "Automated Patch Engineering Agent"
+    description: "Creates non-destructive unified diff patches and opens Pull Requests."
+    allowed_actions:
+      - "read_repo"
+      - "create_branch"
+      - "apply_patch"
+      - "open_pr"
+      - "run_tests"
+    deny_actions:
+      - "apply_destructive_patches"
+      - "deploy_without_approval"
+    review_requirements: "Human Security Officer sign-off required for patches touching auth, secrets, or infrastructure."
+
+  deploy_agent:
+    role: "Controlled Deployment Trigger Agent"
+    description: "Triggers staging and production container deployments."
+    allowed_actions:
+      - "deploy"
+      - "read_logs"
+    deny_actions:
+      - "modify_repo"
+      - "merge_pr"
+    review_requirements: "Deployments require 100% green CI and explicit human sign-off token."
+
+gating_rules:
+  confidence_threshold: 0.90
+  requires_human_review_triggers:
+    - "severity == critical"
+    - "severity == high"
+    - "touches_secrets == true"
+    - "touches_infra == true"
+    - "touches_auth == true"
