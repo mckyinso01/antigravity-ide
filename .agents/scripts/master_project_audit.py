@@ -439,7 +439,7 @@ def run_audit(target_dir, fix_mode=False):
     ch19_pass = True
     ch19_details = []
     
-    checklist_path = "omnistock_master_component_checklist.md"
+    checklist_path = "master_component_checklist.md" if os.path.exists("master_component_checklist.md") else "omnistock_master_component_checklist.md"
     tokens_path = "company_master_design_tokens_spec.md"
     agents_rulebook_path = ".agents/AGENTS.md"
 
@@ -453,9 +453,10 @@ def run_audit(target_dir, fix_mode=False):
         ch19_pass = False
         ch19_details.append(f"{checklist_path} not found in workspace root.")
 
-    if not os.path.exists(tokens_path):
+    tokens_in_docs = os.path.join("docs", "governance", tokens_path)
+    if not os.path.exists(tokens_path) and not os.path.exists(tokens_in_docs):
         ch19_pass = False
-        ch19_details.append(f"{tokens_path} not found in workspace root.")
+        ch19_details.append(f"{tokens_path} not found in workspace root or docs/governance/.")
 
     if os.path.exists(agents_rulebook_path):
         with open(agents_rulebook_path, 'r', encoding='utf-8', errors='ignore') as f:

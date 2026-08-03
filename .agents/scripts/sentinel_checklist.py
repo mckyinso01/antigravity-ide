@@ -16,7 +16,7 @@ def run_sentinel_audit():
     print("Checking Mandatory Company Guidelines & Targeted Subproject Audits...\n")
 
     workspace_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-    ledger_path = os.path.join(workspace_root, "omnistock_master_component_checklist.md")
+    ledger_path = os.path.join(workspace_root, "master_component_checklist.md") if os.path.exists(os.path.join(workspace_root, "master_component_checklist.md")) else os.path.join(workspace_root, "omnistock_master_component_checklist.md")
     agents_path = os.path.join(workspace_root, ".agents", "AGENTS.md")
     audit_script = os.path.join(workspace_root, ".agents", "scripts", "master_project_audit.py")
 
