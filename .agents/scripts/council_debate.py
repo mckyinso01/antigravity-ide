@@ -201,6 +201,11 @@ def call_api(provider_key, system_prompt, user_prompt, config):
     provider = PROVIDERS[provider_key]
     token = get_auth_token(provider["auth_type"], config)
     
+    # Safety gate: require explicit environment opt-in to allow outbound network calls by agents.
+    # Set ALLOW_AGENT_NETWORK=1 in a controlled environment to permit networked model calls.
+    if os.environ.get("ALLOW_AGENT_NETWORK", "0") != "1":
+        return call_hf_fallback(provider_key, system_prompt, user_prompt, config, "Network calls disabled by ALLOW_AGENT_NETWORK gate")
+
     if not token:
         # Fallback to Hugging Face Free API Subagent if primary key is unconfigured
         return call_hf_fallback(provider_key, system_prompt, user_prompt, config, "Missing/Unconfigured Primary API Token")
