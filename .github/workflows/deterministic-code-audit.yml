@@ -1,0 +1,27 @@
+name: Gemini 3.6 Flash Deterministic Code Audit
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  audit-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Deterministic Audit Output Validator
+        run: |
+          node scripts/validate_code_quality_schema.js docs/evaluations/deterministic_audit_report.json .
+
+      - name: Run Master Project Audit
+        run: |
+          python .agents/scripts/master_project_audit.py
