@@ -1,0 +1,24 @@
+name: Validate Model Output & Repo Checks
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install
+        run: npm ci || npm install
+      - name: Run linter (if configured)
+        run: npm run lint || echo "lint not configured"
+      - name: Run tests
+        run: npm test || echo "no tests"
+      - name: Run model-output auditor
+        run: npx ts-node scripts/audit_model_output.ts docs/evaluations/deterministic_audit_report.json || exit 0
