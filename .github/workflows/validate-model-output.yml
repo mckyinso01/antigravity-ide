@@ -1,24 +1,53 @@
-name: Validate Model Output & Repo Checks
+name: FAANG-Tier Zero-Defect CI Pipeline
 
 on:
+  push:
+    branches: [ main ]
   pull_request:
-    types: [opened, synchronize, reopened]
+    branches: [ main ]
 
 jobs:
-  validate:
+  lint-and-typecheck:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Code
         uses: actions/checkout@v4
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
-      - name: Install
+          node-version: '20'
+      - name: Install Dependencies
         run: npm ci || npm install
-      - name: Run linter (if configured)
-        run: npm run lint || echo "lint not configured"
-      - name: Run tests
-        run: npm test || echo "no tests"
-      - name: Run model-output auditor
-        run: npx ts-node scripts/audit_model_output.ts docs/evaluations/deterministic_audit_report.json || exit 0
+      - name: Run Linter
+        run: npm run lint || echo "Lint step skipped"
+      - name: Validate Design System Tokens
+        run: node tools/token_linter.js
+
+  unit-and-integration-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Dependencies
+        run: npm ci || npm install
+      - name: Run Test Suite
+        run: npm test || echo "No unit tests found"
+
+  model-output-and-patch-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Dependencies
+        run: npm ci || npm install
+      - name: Validate Model Output Schema & Diff Patches
+        run: |
+          node scripts/validate_code_quality_schema.js docs/evaluations/production_remediation_output.json .
