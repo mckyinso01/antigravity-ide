@@ -1,0 +1,29 @@
+<!-- stories/btn_glow.stories.html -->
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>BTN-GLOW</title>
+    <style>
+      body { background: #0B1C30; display:flex; align-items:center; justify-content:center; height:100vh; }
+      .btn-glow {
+        background: #2563EB;
+        color: #fff;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-weight: 700;
+        box-shadow: 0 0 20px rgba(0,229,255,0.2);
+        border: 1.5px solid rgba(0,229,255,0.12);
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn-glow" id="btn">LAUNCH LIVE APPLICATION ↗</button>
+  </body>
+  <script>
+    document.getElementById('btn').addEventListener('click', () => {
+      console.log('BTN-GLOW clicked');
+      alert('Simulated action (Story) - BTN-GLOW');
+    });
+  </script>
+</html>

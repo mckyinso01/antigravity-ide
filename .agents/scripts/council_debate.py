@@ -48,11 +48,28 @@ def load_agent_policy():
 
 AGENT_POLICY = load_agent_policy()
 
-def agent_allows(agent_id, action):
-    """Check if agent_id is allowed to perform action per loaded policy."""
-    deny_default = ["create_branch", "apply_patch", "apply_destructive_patches", "deploy"]
-    if action in deny_default and agent_id in ["repo-reader", "auditor-agent"]:
-        return False
+# Import agent_auth if available
+TOOLS_DIR = pathlib.Path(__file__).parent.joinpath("..", "..", "tools").resolve()
+if str(TOOLS_DIR) not in sys.path:
+    sys.path.insert(0, str(TOOLS_DIR))
+
+try:
+    import agent_auth
+except ImportError:
+    agent_auth = None
+
+def agent_allows(agent_id, action, token=None):
+    """Check if agent_id is allowed to perform action per loaded policy and enforce token if mutating."""
+    mutating_actions = ["create_branch", "apply_patch", "open_pr", "deploy"]
+    if action in mutating_actions:
+        jwt_token = token or os.environ.get("AGENT_JWT")
+        if agent_auth and jwt_token:
+            res = agent_auth.enforce(jwt_token, action)
+            return res.get("allowed", False)
+        # Fallback static check if token engine not loaded
+        deny_default = ["create_branch", "apply_patch", "apply_destructive_patches", "deploy"]
+        if action in deny_default and agent_id in ["repo-reader", "auditor-agent"]:
+            return False
     return True
 
 

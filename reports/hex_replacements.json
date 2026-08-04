@@ -1,0 +1,4145 @@
+{
+  "occurrences_count": 690,
+  "occurrences": [
+    {
+      "file": "omnistock\\src\\App.jsx",
+      "line": 59,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\analytics\\TopCustomersAnalysis.jsx",
+      "line": 87,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\analytics\\TopCustomersAnalysis.jsx",
+      "line": 101,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\analytics\\TopCustomersAnalysis.jsx",
+      "line": 113,
+      "hex": "#f59e0b",
+      "suggested_token": "action.amber"
+    },
+    {
+      "file": "omnistock\\src\\components\\analytics\\TopCustomersAnalysis.jsx",
+      "line": 114,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\components\\analytics\\TopCustomersAnalysis.jsx",
+      "line": 115,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\analytics\\TopCustomersAnalysis.jsx",
+      "line": 118,
+      "hex": "#1e293b",
+      "suggested_token": "border.subtle"
+    },
+    {
+      "file": "omnistock\\src\\components\\analytics\\TopCustomersAnalysis.jsx",
+      "line": 119,
+      "hex": "#94a3b8",
+      "suggested_token": "text.slateMuted"
+    },
+    {
+      "file": "omnistock\\src\\components\\analytics\\TopCustomersAnalysis.jsx",
+      "line": 120,
+      "hex": "#94a3b8",
+      "suggested_token": "text.slateMuted"
+    },
+    {
+      "file": "omnistock\\src\\components\\analytics\\TopCustomersAnalysis.jsx",
+      "line": 125,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\analytics\\TopCustomersAnalysis.jsx",
+      "line": 125,
+      "hex": "#334155",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\analytics\\TopCustomersAnalysis.jsx",
+      "line": 127,
+      "hex": "#f59e0b",
+      "suggested_token": "action.amber"
+    },
+    {
+      "file": "omnistock\\src\\components\\analytics\\TopCustomersAnalysis.jsx",
+      "line": 134,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\analytics\\TopCustomersAnalysis.jsx",
+      "line": 141,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\automations\\ReportScheduleFormModal.jsx",
+      "line": 65,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\automations\\ReportScheduleFormModal.jsx",
+      "line": 66,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\automations\\ReportScheduleFormModal.jsx",
+      "line": 75,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\automations\\ReportScheduleFormModal.jsx",
+      "line": 80,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\automations\\ReportScheduleFormModal.jsx",
+      "line": 81,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\automations\\ReportScheduleFormModal.jsx",
+      "line": 89,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\automations\\ReportScheduleFormModal.jsx",
+      "line": 90,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\automations\\ReportScheduleFormModal.jsx",
+      "line": 99,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\automations\\ReportScheduleFormModal.jsx",
+      "line": 100,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\automations\\ReportScheduleFormModal.jsx",
+      "line": 113,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\automations\\ReportScheduleFormModal.jsx",
+      "line": 121,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\automations\\ReportScheduleFormModal.jsx",
+      "line": 128,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\automations\\ReportScheduleList.jsx",
+      "line": 84,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\automations\\ReportScheduleList.jsx",
+      "line": 98,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\automations\\SyncSettingsCard.jsx",
+      "line": 107,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\automations\\SyncSettingsCard.jsx",
+      "line": 115,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\automations\\SyncSettingsCard.jsx",
+      "line": 121,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\automations\\SyncSettingsCard.jsx",
+      "line": 131,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\dashboard\\LowStockBanner.jsx",
+      "line": 65,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\dashboard\\LowStockWidget.jsx",
+      "line": 66,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\dashboard\\LowStockWidget.jsx",
+      "line": 81,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\dashboard\\LowStockWidget.jsx",
+      "line": 81,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\dashboard\\LowStockWidget.jsx",
+      "line": 81,
+      "hex": "#0e1e36",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\inventory\\CatalogueReviewTable.jsx",
+      "line": 77,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\inventory\\CatalogueUploaderModal.jsx",
+      "line": 70,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\inventory\\CatalogueUploaderModal.jsx",
+      "line": 71,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\inventory\\ProductCard.jsx",
+      "line": 27,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\inventory\\ProductCard.jsx",
+      "line": 27,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\inventory\\ProductCard.jsx",
+      "line": 74,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\inventory\\ProductFormModal.jsx",
+      "line": 95,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\inventory\\ProductFormModal.jsx",
+      "line": 96,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\inventory\\ProductFormModal.jsx",
+      "line": 198,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\inventory\\RecipeIngredientModal.jsx",
+      "line": 35,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\inventory\\RecipeIngredientModal.jsx",
+      "line": 81,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\inventory\\RecipeIngredientModal.jsx",
+      "line": 127,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\components\\inventory\\RecipeIngredientModal.jsx",
+      "line": 127,
+      "hex": "#1d4ed8",
+      "suggested_token": "action.primaryHover"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\AppLayout.jsx",
+      "line": 45,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\AppLayout.jsx",
+      "line": 47,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\AppLayout.jsx",
+      "line": 50,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\BottomNav.jsx",
+      "line": 17,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\LicensingDeploymentTierBar.jsx",
+      "line": 55,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\LicensingDeploymentTierBar.jsx",
+      "line": 125,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\LicensingDeploymentTierBar.jsx",
+      "line": 143,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\LicensingDeploymentTierBar.jsx",
+      "line": 179,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\LicensingDeploymentTierBar.jsx",
+      "line": 197,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\LicensingDeploymentTierBar.jsx",
+      "line": 223,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\LicensingDeploymentTierBar.jsx",
+      "line": 241,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\LicensingDeploymentTierBar.jsx",
+      "line": 267,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\LicensingDeploymentTierBar.jsx",
+      "line": 285,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\LicensingDeploymentTierBar.jsx",
+      "line": 311,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\LicensingDeploymentTierBar.jsx",
+      "line": 328,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\LicensingDeploymentTierBar.jsx",
+      "line": 330,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\LicensingDeploymentTierBar.jsx",
+      "line": 330,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\LicensingDeploymentTierBar.jsx",
+      "line": 330,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\LicensingDeploymentTierBar.jsx",
+      "line": 330,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\LicensingDeploymentTierBar.jsx",
+      "line": 374,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\LicensingDeploymentTierBar.jsx",
+      "line": 391,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\LicensingDeploymentTierBar.jsx",
+      "line": 396,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\LicensingDeploymentTierBar.jsx",
+      "line": 401,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\LicensingDeploymentTierBar.jsx",
+      "line": 408,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\LicensingDeploymentTierBar.jsx",
+      "line": 420,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\Sidebar.jsx",
+      "line": 72,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\Sidebar.jsx",
+      "line": 80,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\Sidebar.jsx",
+      "line": 94,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\Sidebar.jsx",
+      "line": 107,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\Sidebar.jsx",
+      "line": 107,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\Sidebar.jsx",
+      "line": 107,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\Sidebar.jsx",
+      "line": 111,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\TopBar.jsx",
+      "line": 39,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\TopBar.jsx",
+      "line": 72,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\TopBar.jsx",
+      "line": 80,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\components\\layout\\TopBar.jsx",
+      "line": 80,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\monetization\\EnterprisePriceComparisonMatrix.jsx",
+      "line": 17,
+      "hex": "#131316",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\monetization\\ReferralCard.jsx",
+      "line": 36,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\monetization\\ReferralCard.jsx",
+      "line": 51,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\monetization\\ReferralCard.jsx",
+      "line": 58,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\monetization\\ReferralCard.jsx",
+      "line": 71,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\monetization\\ReferralCard.jsx",
+      "line": 74,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\monetization\\ReferralCard.jsx",
+      "line": 87,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\monetization\\ReferralCard.jsx",
+      "line": 96,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\monetization\\ReferralCard.jsx",
+      "line": 116,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\monetization\\TrialStatusBanner.jsx",
+      "line": 25,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\monetization\\TrialStatusBanner.jsx",
+      "line": 28,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\monetization\\TrialStatusBanner.jsx",
+      "line": 28,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\monetization\\TrialStatusBanner.jsx",
+      "line": 39,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\monetization\\TrialStatusBanner.jsx",
+      "line": 47,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\monetization\\TrialStatusBanner.jsx",
+      "line": 49,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\pos\\ReceiptModal.jsx",
+      "line": 14,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\pos\\ReceiptModal.jsx",
+      "line": 27,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\pos\\ReceiptModal.jsx",
+      "line": 75,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\pos\\RefundModal.jsx",
+      "line": 80,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\pos\\RefundModal.jsx",
+      "line": 92,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\pos\\RefundModal.jsx",
+      "line": 93,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\pos\\RefundModal.jsx",
+      "line": 110,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\pos\\RefundModal.jsx",
+      "line": 119,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\pos\\RefundModal.jsx",
+      "line": 136,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\pos\\RefundModal.jsx",
+      "line": 147,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\pos\\RefundModal.jsx",
+      "line": 160,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\pos\\RefundModal.jsx",
+      "line": 172,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\pos\\RefundModal.jsx",
+      "line": 174,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\pos\\RefundModal.jsx",
+      "line": 175,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\pos\\RefundModal.jsx",
+      "line": 176,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\pos\\RefundModal.jsx",
+      "line": 177,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\pos\\RefundModal.jsx",
+      "line": 181,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\pos\\RefundModal.jsx",
+      "line": 190,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\pos\\ThermalReceiptModal.jsx",
+      "line": 12,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\pos\\ThermalReceiptModal.jsx",
+      "line": 17,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\pos\\ThermalReceiptModal.jsx",
+      "line": 66,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\pos\\ThermalReceiptModal.jsx",
+      "line": 80,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\pos\\ThermalReceiptModal.jsx",
+      "line": 86,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\components\\pos\\ThermalReceiptModal.jsx",
+      "line": 86,
+      "hex": "#1d4ed8",
+      "suggested_token": "action.primaryHover"
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeDetailModal.jsx",
+      "line": 11,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeDetailModal.jsx",
+      "line": 12,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeDetailModal.jsx",
+      "line": 58,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeDetailModal.jsx",
+      "line": 84,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeDetailModal.jsx",
+      "line": 84,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeDetailModal.jsx",
+      "line": 90,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeDetailModal.jsx",
+      "line": 94,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeDetailModal.jsx",
+      "line": 98,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeDetailModal.jsx",
+      "line": 104,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeDetailModal.jsx",
+      "line": 112,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeDetailModal.jsx",
+      "line": 131,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeDetailModal.jsx",
+      "line": 136,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeDetailModal.jsx",
+      "line": 137,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 116,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 117,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 133,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 142,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 144,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 146,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 156,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 158,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 159,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 171,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 180,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 183,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 195,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 201,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 201,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 232,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 239,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 245,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 251,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 253,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 255,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 269,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 277,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 279,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 299,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 304,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\RecipeFormModal.jsx",
+      "line": 305,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\YieldCalculatorPanel.jsx",
+      "line": 49,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\YieldCalculatorPanel.jsx",
+      "line": 72,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\YieldCalculatorPanel.jsx",
+      "line": 86,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\YieldCalculatorPanel.jsx",
+      "line": 113,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\YieldCalculatorPanel.jsx",
+      "line": 136,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\recipes\\YieldCalculatorPanel.jsx",
+      "line": 139,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\sales\\TopProductsAnalytics.jsx",
+      "line": 33,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\sales\\TopProductsAnalytics.jsx",
+      "line": 35,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\sales\\TopProductsAnalytics.jsx",
+      "line": 48,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\sales\\TopProductsAnalytics.jsx",
+      "line": 64,
+      "hex": "#1e293b",
+      "suggested_token": "border.subtle"
+    },
+    {
+      "file": "omnistock\\src\\components\\sales\\TopProductsAnalytics.jsx",
+      "line": 65,
+      "hex": "#94a3b8",
+      "suggested_token": "text.slateMuted"
+    },
+    {
+      "file": "omnistock\\src\\components\\sales\\TopProductsAnalytics.jsx",
+      "line": 66,
+      "hex": "#94a3b8",
+      "suggested_token": "text.slateMuted"
+    },
+    {
+      "file": "omnistock\\src\\components\\sales\\TopProductsAnalytics.jsx",
+      "line": 70,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\sales\\TopProductsAnalytics.jsx",
+      "line": 70,
+      "hex": "#1e293b",
+      "suggested_token": "border.subtle"
+    },
+    {
+      "file": "omnistock\\src\\components\\sales\\TopProductsAnalytics.jsx",
+      "line": 70,
+      "hex": "#f8fafc",
+      "suggested_token": "text.iceWhite"
+    },
+    {
+      "file": "omnistock\\src\\components\\sales\\TopProductsAnalytics.jsx",
+      "line": 74,
+      "hex": "#10b981",
+      "suggested_token": "action.emerald"
+    },
+    {
+      "file": "omnistock\\src\\components\\sales\\TopProductsAnalytics.jsx",
+      "line": 74,
+      "hex": "#8b5cf6",
+      "suggested_token": "action.violet"
+    },
+    {
+      "file": "omnistock\\src\\components\\sales\\TopProductsAnalytics.jsx",
+      "line": 74,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\sales\\TopProductsAnalytics.jsx",
+      "line": 85,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\sales\\TopProductsAnalytics.jsx",
+      "line": 97,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\shared\\BarcodeScanner.jsx",
+      "line": 46,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\shared\\BarcodeScanner.jsx",
+      "line": 47,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\shared\\BarcodeScanner.jsx",
+      "line": 62,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\shared\\BarcodeScanner.jsx",
+      "line": 68,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\shared\\BarcodeScanner.jsx",
+      "line": 79,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\shared\\InteractiveVideoPlayer.jsx",
+      "line": 32,
+      "hex": "#0f172a",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\shared\\InteractiveVideoPlayer.jsx",
+      "line": 52,
+      "hex": "#ffffff",
+      "suggested_token": "text.crystalWhite"
+    },
+    {
+      "file": "omnistock\\src\\components\\shared\\InteractiveVideoPlayer.jsx",
+      "line": 61,
+      "hex": "#ef4444",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\shared\\InteractiveVideoPlayer.jsx",
+      "line": 63,
+      "hex": "#ef4444",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\shared\\InteractiveVideoPlayer.jsx",
+      "line": 73,
+      "hex": "#1e293b",
+      "suggested_token": "border.subtle"
+    },
+    {
+      "file": "omnistock\\src\\components\\shared\\InteractiveVideoPlayer.jsx",
+      "line": 74,
+      "hex": "#38bdf8",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\shared\\InteractiveVideoPlayer.jsx",
+      "line": 81,
+      "hex": "#38bdf8",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\shared\\InteractiveVideoPlayer.jsx",
+      "line": 86,
+      "hex": "#94a3b8",
+      "suggested_token": "text.slateMuted"
+    },
+    {
+      "file": "omnistock\\src\\components\\shared\\InteractiveVideoPlayer.jsx",
+      "line": 92,
+      "hex": "#22c55e",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\shared\\LicensingDeploymentTierBar.jsx",
+      "line": 57,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\components\\shared\\SelfHostProvisioningModal.jsx",
+      "line": 128,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\shared\\WhiteLabelCustomizerModal.jsx",
+      "line": 12,
+      "hex": "#10b981",
+      "suggested_token": "action.emerald"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 7,
+      "hex": "#10b981",
+      "suggested_token": "action.emerald"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 7,
+      "hex": "#f59e0b",
+      "suggested_token": "action.amber"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 7,
+      "hex": "#e11d48",
+      "suggested_token": "action.rose"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 7,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 7,
+      "hex": "#c084fc",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 10,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 16,
+      "hex": "#10b981",
+      "suggested_token": "action.emerald"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 16,
+      "hex": "#10b981",
+      "suggested_token": "action.emerald"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 16,
+      "hex": "#10b981",
+      "suggested_token": "action.emerald"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 18,
+      "hex": "#10b981",
+      "suggested_token": "action.emerald"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 18,
+      "hex": "#10b981",
+      "suggested_token": "action.emerald"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 18,
+      "hex": "#10b981",
+      "suggested_token": "action.emerald"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 22,
+      "hex": "#f59e0b",
+      "suggested_token": "action.amber"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 22,
+      "hex": "#f59e0b",
+      "suggested_token": "action.amber"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 22,
+      "hex": "#f59e0b",
+      "suggested_token": "action.amber"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 24,
+      "hex": "#f59e0b",
+      "suggested_token": "action.amber"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 24,
+      "hex": "#f59e0b",
+      "suggested_token": "action.amber"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 24,
+      "hex": "#f59e0b",
+      "suggested_token": "action.amber"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 28,
+      "hex": "#e11d48",
+      "suggested_token": "action.rose"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 28,
+      "hex": "#e11d48",
+      "suggested_token": "action.rose"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 28,
+      "hex": "#e11d48",
+      "suggested_token": "action.rose"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 32,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 32,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 32,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 36,
+      "hex": "#c084fc",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 36,
+      "hex": "#c084fc",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 36,
+      "hex": "#c084fc",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\badge.jsx",
+      "line": 40,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\button.jsx",
+      "line": 15,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\button.jsx",
+      "line": 21,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\button.jsx",
+      "line": 21,
+      "hex": "#1d4ed8",
+      "suggested_token": "action.primaryHover"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\button.jsx",
+      "line": 25,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\button.jsx",
+      "line": 29,
+      "hex": "#e11d48",
+      "suggested_token": "action.rose"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\button.jsx",
+      "line": 29,
+      "hex": "#be123c",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\button.jsx",
+      "line": 33,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\button.jsx",
+      "line": 33,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\button.jsx",
+      "line": 33,
+      "hex": "#0e1e36",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\button.jsx",
+      "line": 37,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\button.jsx",
+      "line": 37,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\button.jsx",
+      "line": 37,
+      "hex": "#0e1e36",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\button.jsx",
+      "line": 41,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\button.jsx",
+      "line": 45,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\card.jsx",
+      "line": 6,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\card.jsx",
+      "line": 12,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\dialog.jsx",
+      "line": 10,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\dialog.jsx",
+      "line": 38,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\dialog.jsx",
+      "line": 44,
+      "hex": "#0e1e36",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\dialog.jsx",
+      "line": 44,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\input.jsx",
+      "line": 15,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\input.jsx",
+      "line": 15,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\input.jsx",
+      "line": 15,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\input.jsx",
+      "line": 16,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\select.jsx",
+      "line": 10,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\select.jsx",
+      "line": 10,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\select.jsx",
+      "line": 22,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\select.jsx",
+      "line": 22,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\select.jsx",
+      "line": 22,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\select.jsx",
+      "line": 60,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\select.jsx",
+      "line": 91,
+      "hex": "#0e1e36",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\select.jsx",
+      "line": 91,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\select.jsx",
+      "line": 97,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\table.jsx",
+      "line": 6,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\table.jsx",
+      "line": 6,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\table.jsx",
+      "line": 9,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\table.jsx",
+      "line": 20,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\table.jsx",
+      "line": 27,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\table.jsx",
+      "line": 36,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\table.jsx",
+      "line": 46,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\table.jsx",
+      "line": 46,
+      "hex": "#0e1e36",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\ui\\table.jsx",
+      "line": 46,
+      "hex": "#0e1e36",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\components\\UserNotRegisteredError.jsx",
+      "line": 5,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\components\\UserNotRegisteredError.jsx",
+      "line": 6,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\components\\UserNotRegisteredError.jsx",
+      "line": 17,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\index.css",
+      "line": 8,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\index.css",
+      "line": 9,
+      "hex": "#f8fafc",
+      "suggested_token": "text.iceWhite"
+    },
+    {
+      "file": "omnistock\\src\\index.css",
+      "line": 11,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\index.css",
+      "line": 100,
+      "hex": "#e11d48",
+      "suggested_token": "action.rose"
+    },
+    {
+      "file": "omnistock\\src\\index.css",
+      "line": 100,
+      "hex": "#f59e0b",
+      "suggested_token": "action.amber"
+    },
+    {
+      "file": "omnistock\\src\\index.css",
+      "line": 100,
+      "hex": "#f9e006",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\index.css",
+      "line": 100,
+      "hex": "#f59e0b",
+      "suggested_token": "action.amber"
+    },
+    {
+      "file": "omnistock\\src\\index.css",
+      "line": 100,
+      "hex": "#e11d48",
+      "suggested_token": "action.rose"
+    },
+    {
+      "file": "omnistock\\src\\index.css",
+      "line": 115,
+      "hex": "#e11d48",
+      "suggested_token": "action.rose"
+    },
+    {
+      "file": "omnistock\\src\\index.css",
+      "line": 115,
+      "hex": "#f59e0b",
+      "suggested_token": "action.amber"
+    },
+    {
+      "file": "omnistock\\src\\index.css",
+      "line": 115,
+      "hex": "#f9e006",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\index.css",
+      "line": 115,
+      "hex": "#f59e0b",
+      "suggested_token": "action.amber"
+    },
+    {
+      "file": "omnistock\\src\\index.css",
+      "line": 115,
+      "hex": "#e11d48",
+      "suggested_token": "action.rose"
+    },
+    {
+      "file": "omnistock\\src\\index.css",
+      "line": 314,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\index.css",
+      "line": 314,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\index.css",
+      "line": 314,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\index.css",
+      "line": 343,
+      "hex": "#f59e0b",
+      "suggested_token": "action.amber"
+    },
+    {
+      "file": "omnistock\\src\\index.css",
+      "line": 343,
+      "hex": "#e11d48",
+      "suggested_token": "action.rose"
+    },
+    {
+      "file": "omnistock\\src\\index.css",
+      "line": 343,
+      "hex": "#f9e006",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\index.css",
+      "line": 343,
+      "hex": "#f59e0b",
+      "suggested_token": "action.amber"
+    },
+    {
+      "file": "omnistock\\src\\index.css",
+      "line": 357,
+      "hex": "#f9e006",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\index.css",
+      "line": 546,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\index.css",
+      "line": 547,
+      "hex": "#f8fafc",
+      "suggested_token": "text.iceWhite"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 11,
+      "hex": "#f9e006",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 12,
+      "hex": "#f59e0b",
+      "suggested_token": "action.amber"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 13,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 20,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 21,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 22,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 23,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 31,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 32,
+      "hex": "#10b981",
+      "suggested_token": "action.emerald"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 33,
+      "hex": "#080c14",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 40,
+      "hex": "#e11d48",
+      "suggested_token": "action.rose"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 41,
+      "hex": "#f59e0b",
+      "suggested_token": "action.amber"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 42,
+      "hex": "#0a0a0c",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 49,
+      "hex": "#c084fc",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 50,
+      "hex": "#8b5cf6",
+      "suggested_token": "action.violet"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 51,
+      "hex": "#090514",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 62,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 63,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 64,
+      "hex": "#0f243f",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 66,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 67,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 68,
+      "hex": "#0e1e36",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 69,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 74,
+      "hex": "#f9e006",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 75,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 76,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 77,
+      "hex": "#10b981",
+      "suggested_token": "action.emerald"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 78,
+      "hex": "#e11d48",
+      "suggested_token": "action.rose"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 79,
+      "hex": "#f59e0b",
+      "suggested_token": "action.amber"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 80,
+      "hex": "#c084fc",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 85,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 86,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 86,
+      "hex": "#1d4ed8",
+      "suggested_token": "action.primaryHover"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 87,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 87,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 87,
+      "hex": "#0e1e36",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 88,
+      "hex": "#e11d48",
+      "suggested_token": "action.rose"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 88,
+      "hex": "#be123c",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 89,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 94,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 95,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 96,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 97,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 98,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 98,
+      "hex": "#0e1e36",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 103,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 103,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 103,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 104,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 104,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 104,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 104,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 105,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 105,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 107,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 107,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 107,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 112,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 123,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 124,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 125,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 125,
+      "hex": "#0e1e36",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 135,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 136,
+      "hex": "#10b981",
+      "suggested_token": "action.emerald"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 138,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 143,
+      "hex": "#10b981",
+      "suggested_token": "action.emerald"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 144,
+      "hex": "#14b8a6",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 146,
+      "hex": "#10b981",
+      "suggested_token": "action.emerald"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 151,
+      "hex": "#f59e0b",
+      "suggested_token": "action.amber"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 152,
+      "hex": "#e11d48",
+      "suggested_token": "action.rose"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 154,
+      "hex": "#e11d48",
+      "suggested_token": "action.rose"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 159,
+      "hex": "#c084fc",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 160,
+      "hex": "#e11d48",
+      "suggested_token": "action.rose"
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 162,
+      "hex": "#c084fc",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 165,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 166,
+      "hex": "#334155",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\designSystem.js",
+      "line": 167,
+      "hex": "#f8fafc",
+      "suggested_token": "text.iceWhite"
+    },
+    {
+      "file": "omnistock\\src\\lib\\PageNotFound.jsx",
+      "line": 23,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\lib\\PageNotFound.jsx",
+      "line": 24,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\lib\\PageNotFound.jsx",
+      "line": 44,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\lib\\PageNotFound.jsx",
+      "line": 63,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Alerts.jsx",
+      "line": 83,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Alerts.jsx",
+      "line": 89,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Alerts.jsx",
+      "line": 95,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Alerts.jsx",
+      "line": 101,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Alerts.jsx",
+      "line": 114,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Alerts.jsx",
+      "line": 127,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Alerts.jsx",
+      "line": 178,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 16,
+      "hex": "#10b981",
+      "suggested_token": "action.emerald"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 16,
+      "hex": "#3b82f6",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 16,
+      "hex": "#8b5cf6",
+      "suggested_token": "action.violet"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 16,
+      "hex": "#f59e0b",
+      "suggested_token": "action.amber"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 16,
+      "hex": "#ef4444",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 16,
+      "hex": "#06b6d4",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 154,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 156,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 165,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 168,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 175,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 191,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 192,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 200,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 204,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 206,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 206,
+      "hex": "#1d4ed8",
+      "suggested_token": "action.primaryHover"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 219,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 229,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 241,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 258,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 270,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 296,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 297,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 298,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 299,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 321,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 330,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 338,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 339,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 340,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 343,
+      "hex": "#1e293b",
+      "suggested_token": "border.subtle"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 344,
+      "hex": "#94a3b8",
+      "suggested_token": "text.slateMuted"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 345,
+      "hex": "#94a3b8",
+      "suggested_token": "text.slateMuted"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 346,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 346,
+      "hex": "#334155",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 347,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 355,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 365,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 366,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 367,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 368,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 390,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 399,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 407,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 408,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 409,
+      "hex": "#10b981",
+      "suggested_token": "action.emerald"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 412,
+      "hex": "#c084fc",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 413,
+      "hex": "#e11d48",
+      "suggested_token": "action.rose"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 416,
+      "hex": "#1e293b",
+      "suggested_token": "border.subtle"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 417,
+      "hex": "#94a3b8",
+      "suggested_token": "text.slateMuted"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 418,
+      "hex": "#94a3b8",
+      "suggested_token": "text.slateMuted"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 419,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 419,
+      "hex": "#334155",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 420,
+      "hex": "#64748b",
+      "suggested_token": "text.slateDim"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 420,
+      "hex": "#64748b",
+      "suggested_token": "text.slateDim"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 421,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 421,
+      "hex": "#10b981",
+      "suggested_token": "action.emerald"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 422,
+      "hex": "#c084fc",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 422,
+      "hex": "#e11d48",
+      "suggested_token": "action.rose"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 435,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 444,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 455,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 456,
+      "hex": "#10b981",
+      "suggested_token": "action.emerald"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 459,
+      "hex": "#3b82f6",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 460,
+      "hex": "#8b5cf6",
+      "suggested_token": "action.violet"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 463,
+      "hex": "#f59e0b",
+      "suggested_token": "action.amber"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 464,
+      "hex": "#ef4444",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 470,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 473,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 473,
+      "hex": "#334155",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 503,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 514,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Analytics.jsx",
+      "line": 521,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Automations.jsx",
+      "line": 8,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Automations.jsx",
+      "line": 9,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Categories.jsx",
+      "line": 11,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Categories.jsx",
+      "line": 11,
+      "hex": "#10b981",
+      "suggested_token": "action.emerald"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Categories.jsx",
+      "line": 11,
+      "hex": "#c084fc",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Categories.jsx",
+      "line": 11,
+      "hex": "#f59e0b",
+      "suggested_token": "action.amber"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Categories.jsx",
+      "line": 12,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Categories.jsx",
+      "line": 12,
+      "hex": "#e11d48",
+      "suggested_token": "action.rose"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Categories.jsx",
+      "line": 12,
+      "hex": "#f97316",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Categories.jsx",
+      "line": 12,
+      "hex": "#84cc16",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Categories.jsx",
+      "line": 13,
+      "hex": "#06b6d4",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Categories.jsx",
+      "line": 13,
+      "hex": "#ec4899",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Categories.jsx",
+      "line": 17,
+      "hex": "#10b981",
+      "suggested_token": "action.emerald"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Categories.jsx",
+      "line": 32,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Categories.jsx",
+      "line": 82,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Categories.jsx",
+      "line": 84,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Categories.jsx",
+      "line": 100,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Categories.jsx",
+      "line": 115,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Categories.jsx",
+      "line": 115,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Categories.jsx",
+      "line": 124,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Categories.jsx",
+      "line": 124,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Categories.jsx",
+      "line": 158,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Categories.jsx",
+      "line": 162,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Categories.jsx",
+      "line": 172,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Customers.jsx",
+      "line": 94,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Customers.jsx",
+      "line": 96,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Customers.jsx",
+      "line": 124,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Customers.jsx",
+      "line": 124,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Customers.jsx",
+      "line": 124,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Customers.jsx",
+      "line": 131,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Customers.jsx",
+      "line": 140,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Customers.jsx",
+      "line": 140,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Customers.jsx",
+      "line": 144,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Customers.jsx",
+      "line": 144,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Customers.jsx",
+      "line": 148,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Customers.jsx",
+      "line": 148,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Customers.jsx",
+      "line": 152,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Customers.jsx",
+      "line": 152,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Customers.jsx",
+      "line": 156,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Customers.jsx",
+      "line": 156,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Customers.jsx",
+      "line": 160,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Customers.jsx",
+      "line": 160,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Customers.jsx",
+      "line": 180,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Customers.jsx",
+      "line": 182,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Customers.jsx",
+      "line": 197,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Customers.jsx",
+      "line": 200,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Customers.jsx",
+      "line": 210,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Dashboard.jsx",
+      "line": 191,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Dashboard.jsx",
+      "line": 194,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Dashboard.jsx",
+      "line": 200,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Dashboard.jsx",
+      "line": 206,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Dashboard.jsx",
+      "line": 212,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Dashboard.jsx",
+      "line": 220,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Dashboard.jsx",
+      "line": 228,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Dashboard.jsx",
+      "line": 229,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Dashboard.jsx",
+      "line": 232,
+      "hex": "#1e293b",
+      "suggested_token": "border.subtle"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Dashboard.jsx",
+      "line": 233,
+      "hex": "#94a3b8",
+      "suggested_token": "text.slateMuted"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Dashboard.jsx",
+      "line": 234,
+      "hex": "#94a3b8",
+      "suggested_token": "text.slateMuted"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Dashboard.jsx",
+      "line": 239,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Dashboard.jsx",
+      "line": 274,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Inventory.jsx",
+      "line": 147,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Inventory.jsx",
+      "line": 150,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Inventory.jsx",
+      "line": 203,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Inventory.jsx",
+      "line": 203,
+      "hex": "#0e1e36",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Inventory.jsx",
+      "line": 211,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Inventory.jsx",
+      "line": 211,
+      "hex": "#0e1e36",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Inventory.jsx",
+      "line": 230,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Inventory.jsx",
+      "line": 238,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Inventory.jsx",
+      "line": 238,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Inventory.jsx",
+      "line": 238,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Inventory.jsx",
+      "line": 242,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Inventory.jsx",
+      "line": 242,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Inventory.jsx",
+      "line": 246,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Inventory.jsx",
+      "line": 254,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Inventory.jsx",
+      "line": 254,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Inventory.jsx",
+      "line": 257,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Inventory.jsx",
+      "line": 269,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Inventory.jsx",
+      "line": 273,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Landing.jsx",
+      "line": 60,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Landing.jsx",
+      "line": 62,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Landing.jsx",
+      "line": 82,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Landing.jsx",
+      "line": 82,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Landing.jsx",
+      "line": 82,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Landing.jsx",
+      "line": 98,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Landing.jsx",
+      "line": 104,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Landing.jsx",
+      "line": 112,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Landing.jsx",
+      "line": 113,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Landing.jsx",
+      "line": 124,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Landing.jsx",
+      "line": 129,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Landing.jsx",
+      "line": 142,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Landing.jsx",
+      "line": 144,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Landing.jsx",
+      "line": 158,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Landing.jsx",
+      "line": 166,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Landing.jsx",
+      "line": 178,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Landing.jsx",
+      "line": 188,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Landing.jsx",
+      "line": 189,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Landing.jsx",
+      "line": 204,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Landing.jsx",
+      "line": 214,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Landing.jsx",
+      "line": 215,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Landing.jsx",
+      "line": 240,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Landing.jsx",
+      "line": 256,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Login.jsx",
+      "line": 53,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Login.jsx",
+      "line": 55,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Login.jsx",
+      "line": 60,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Login.jsx",
+      "line": 61,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Login.jsx",
+      "line": 65,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Login.jsx",
+      "line": 96,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Login.jsx",
+      "line": 96,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Login.jsx",
+      "line": 96,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Login.jsx",
+      "line": 114,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Login.jsx",
+      "line": 114,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Login.jsx",
+      "line": 114,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Login.jsx",
+      "line": 130,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Login.jsx",
+      "line": 130,
+      "hex": "#1d4ed8",
+      "suggested_token": "action.primaryHover"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Login.jsx",
+      "line": 151,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Login.jsx",
+      "line": 151,
+      "hex": "#0e1e36",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Login.jsx",
+      "line": 151,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Monetization.jsx",
+      "line": 85,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Monetization.jsx",
+      "line": 92,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Monetization.jsx",
+      "line": 94,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Monetization.jsx",
+      "line": 121,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Monetization.jsx",
+      "line": 124,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 264,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 268,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 290,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 290,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 290,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 299,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 299,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 300,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 311,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 323,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 329,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 329,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 338,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 349,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 360,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 361,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 382,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 407,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 424,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 428,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 447,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 448,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 454,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 469,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 481,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 488,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 514,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 520,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 521,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 528,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\POS.jsx",
+      "line": 549,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Pricing.jsx",
+      "line": 201,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Pricing.jsx",
+      "line": 203,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Pricing.jsx",
+      "line": 220,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Pricing.jsx",
+      "line": 244,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Pricing.jsx",
+      "line": 244,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Pricing.jsx",
+      "line": 257,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Pricing.jsx",
+      "line": 257,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Pricing.jsx",
+      "line": 280,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Pricing.jsx",
+      "line": 318,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Pricing.jsx",
+      "line": 318,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Pricing.jsx",
+      "line": 323,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Pricing.jsx",
+      "line": 326,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Pricing.jsx",
+      "line": 379,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Pricing.jsx",
+      "line": 387,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Pricing.jsx",
+      "line": 431,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\PurchaseOrders.jsx",
+      "line": 293,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\PurchaseOrders.jsx",
+      "line": 305,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\pages\\PurchaseOrders.jsx",
+      "line": 305,
+      "hex": "#1d4ed8",
+      "suggested_token": "action.primaryHover"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Recipes.jsx",
+      "line": 65,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Recipes.jsx",
+      "line": 67,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Recipes.jsx",
+      "line": 100,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Recipes.jsx",
+      "line": 183,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Recipes.jsx",
+      "line": 213,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Recipes.jsx",
+      "line": 256,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\SalesReport.jsx",
+      "line": 234,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\SalesReport.jsx",
+      "line": 236,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\SalesReport.jsx",
+      "line": 251,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\SalesReport.jsx",
+      "line": 254,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\SalesReport.jsx",
+      "line": 281,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\SalesReport.jsx",
+      "line": 283,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\SalesReport.jsx",
+      "line": 298,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\SalesReport.jsx",
+      "line": 310,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\SalesReport.jsx",
+      "line": 324,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\SalesReport.jsx",
+      "line": 357,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\SalesReport.jsx",
+      "line": 371,
+      "hex": "#2563eb",
+      "suggested_token": "action.primary"
+    },
+    {
+      "file": "omnistock\\src\\pages\\SalesReport.jsx",
+      "line": 371,
+      "hex": "#1d4ed8",
+      "suggested_token": "action.primaryHover"
+    },
+    {
+      "file": "omnistock\\src\\pages\\SalesReport.jsx",
+      "line": 380,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\SalesReport.jsx",
+      "line": 398,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\SalesReport.jsx",
+      "line": 398,
+      "hex": "#00e5ff",
+      "suggested_token": "action.cyan"
+    },
+    {
+      "file": "omnistock\\src\\pages\\SalesReport.jsx",
+      "line": 423,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\SalesReport.jsx",
+      "line": 425,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\SalesReport.jsx",
+      "line": 433,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\SalesReport.jsx",
+      "line": 436,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Settings.jsx",
+      "line": 27,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Settings.jsx",
+      "line": 29,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Settings.jsx",
+      "line": 46,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Settings.jsx",
+      "line": 57,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Settings.jsx",
+      "line": 64,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Settings.jsx",
+      "line": 75,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Settings.jsx",
+      "line": 86,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Settings.jsx",
+      "line": 132,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Settings.jsx",
+      "line": 146,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\StockAdjustments.jsx",
+      "line": 111,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\StockAdjustments.jsx",
+      "line": 113,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\StockAdjustments.jsx",
+      "line": 133,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\StockAdjustments.jsx",
+      "line": 143,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\StockAdjustments.jsx",
+      "line": 144,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\StockAdjustments.jsx",
+      "line": 157,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\StockAdjustments.jsx",
+      "line": 158,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\StockAdjustments.jsx",
+      "line": 172,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\StockAdjustments.jsx",
+      "line": 178,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\StockAdjustments.jsx",
+      "line": 179,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\StockAdjustments.jsx",
+      "line": 191,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\StockAdjustments.jsx",
+      "line": 196,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\StockAdjustments.jsx",
+      "line": 204,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\StockAdjustments.jsx",
+      "line": 225,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Suppliers.jsx",
+      "line": 83,
+      "hex": "#050811",
+      "suggested_token": "surface.dark"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Suppliers.jsx",
+      "line": 85,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Suppliers.jsx",
+      "line": 106,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Suppliers.jsx",
+      "line": 115,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Suppliers.jsx",
+      "line": 119,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Suppliers.jsx",
+      "line": 123,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Suppliers.jsx",
+      "line": 127,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Suppliers.jsx",
+      "line": 131,
+      "hex": "#071322",
+      "suggested_token": null
+    },
+    {
+      "file": "omnistock\\src\\pages\\Suppliers.jsx",
+      "line": 147,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Suppliers.jsx",
+      "line": 150,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    },
+    {
+      "file": "omnistock\\src\\pages\\Suppliers.jsx",
+      "line": 158,
+      "hex": "#0b1c30",
+      "suggested_token": "surface.card"
+    }
+  ]
+}

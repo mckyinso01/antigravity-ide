@@ -1,0 +1,28 @@
+/* design/global.css
+   Global styles and accessibility fallbacks (reduced-motion handlers)
+*/
+
+:root {
+  /* token aliases (optional, used by authors) */
+  --surface-dark: #0B1C30;
+  --action-primary: #2563EB;
+  --accent-cyan: #00E5FF;
+}
+
+/* Reduced motion: disable heavy animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .moving-border-card,
+  .moving-border-btn,
+  .moving-border {
+    animation: none !important;
+    transition: none !important;
+    will-change: auto !important;
+  }
+}
+
+/* Lightweight fallback for moving-border: use subtle border effect when JS/CSS animation not allowed */
+.moving-border-card {
+  border-width: 1.5px;
+  border-style: solid;
+  border-color: rgba(127,216,215,0.12);
+}

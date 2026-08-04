@@ -1,0 +1,115 @@
+{
+  "$schema": "./tokens.schema.json",
+  "name": "Demon Slayer Cyber Glass Master Design Tokens",
+  "version": "3.5.0",
+  "description": "Authoritative canonical design tokens specification for OmniStock POS and ecosystem apps.",
+  "colors": {
+    "surface": {
+      "dark": "#050811",
+      "card": "#0B1C30",
+      "cardFrosted": "rgba(11, 28, 48, 0.8)",
+      "overlay": "rgba(5, 8, 17, 0.85)"
+    },
+    "action": {
+      "primary": "#2563EB",
+      "primaryHover": "#1D4ED8",
+      "cyan": "#00E5FF",
+      "emerald": "#10B981",
+      "amber": "#F59E0B",
+      "rose": "#E11D48",
+      "violet": "#8B5CF6"
+    },
+    "text": {
+      "crystalWhite": "#FFFFFF",
+      "iceWhite": "#F8FAFC",
+      "slateMuted": "#94A3B8",
+      "slateDim": "#64748B"
+    },
+    "border": {
+      "subtle": "#1E293B",
+      "standard": "rgba(30, 41, 59, 0.8)",
+      "highlight": "rgba(37, 99, 235, 0.5)",
+      "cyanGlow": "rgba(0, 229, 255, 0.4)",
+      "amberGlow": "rgba(245, 158, 11, 0.4)"
+    }
+  },
+  "typography": {
+    "fontHeader": "Inter, Space Grotesk, sans-serif",
+    "fontBody": "Inter, Plus Jakarta Sans, sans-serif",
+    "fontMono": "JetBrains Mono, monospace",
+    "sizes": {
+      "xs": "0.75rem",
+      "sm": "0.875rem",
+      "base": "1rem",
+      "lg": "1.125rem",
+      "xl": "1.25rem",
+      "2xl": "1.5rem",
+      "3xl": "1.875rem",
+      "4xl": "2.25rem"
+    }
+  },
+  "borders": {
+    "width": {
+      "thin": "1px",
+      "standard": "1.5px",
+      "thick": "2px"
+    },
+    "radius": {
+      "md": "0.5rem",
+      "lg": "0.75rem",
+      "xl": "1rem",
+      "2xl": "1.5rem",
+      "full": "9999px"
+    }
+  },
+  "shadows": {
+    "glowCyan": "0 0 20px rgba(0, 229, 255, 0.2)",
+    "glowBlue": "0 0 20px rgba(37, 99, 235, 0.3)",
+    "glowAmber": "0 0 20px rgba(245, 158, 11, 0.3)",
+    "glowRose": "0 0 20px rgba(225, 29, 72, 0.3)",
+    "cardElevation": "0 10px 25px -5px rgba(0, 0, 0, 0.5)"
+  },
+  "buttons": {
+    "primary": {
+      "background": "#2563EB",
+      "text": "#FFFFFF",
+      "border": "1px solid rgba(37, 99, 235, 0.5)",
+      "shadow": "0 0 16px rgba(37, 99, 235, 0.4)"
+    },
+    "glowingAction": {
+      "background": "linear-gradient(135deg, #2563EB, #00E5FF)",
+      "text": "#FFFFFF",
+      "border": "1px solid rgba(0, 229, 255, 0.6)",
+      "shadow": "0 0 20px rgba(0, 229, 255, 0.4)"
+    },
+    "secondary": {
+      "background": "#071322",
+      "text": "#F8FAFC",
+      "border": "1px solid #1E293B",
+      "shadow": "none"
+    },
+    "danger": {
+      "background": "rgba(159, 18, 57, 0.8)",
+      "text": "#FECDD3",
+      "border": "1px solid rgba(225, 29, 72, 0.5)",
+      "shadow": "0 0 16px rgba(225, 29, 72, 0.3)"
+    },
+    "ghost": {
+      "background": "transparent",
+      "text": "#94A3B8",
+      "border": "none",
+      "shadow": "none"
+    }
+  },
+  "motion": {
+    "movingBorder": {
+      "duration": "3s",
+      "borderWidth": "2px",
+      "conicGradients": {
+        "flame": "conic-gradient(#E11D48, #F59E0B, #F9E006, #F59E0B, #E11D48)",
+        "tanjiro": "conic-gradient(#2563EB, #00E5FF, #10B981, #00E5FF, #2563EB)"
+      },
+      "prefersReducedMotionFallback": true
+    }
+  }
+}

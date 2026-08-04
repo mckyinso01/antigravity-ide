@@ -1,0 +1,36 @@
+name: Token Lint & Hex Scan
+
+on:
+  pull_request:
+    paths:
+      - 'design/**'
+      - 'src/**'
+      - 'omnistock/**'
+      - 'OnePassword-Enterprise-AI/**'
+      - 'Reddit-AdTech-Enterprise/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install deps
+        run: npm ci
+      - name: Validate tokens JSON
+        run: npm run validate:tokens
+      - name: Scan for hardcoded hex colors (dry)
+        run: npm run codemod:find-hex
+      - name: Fail on hardcoded hex occurrences
+        run: |
+          if [ -f reports/hex_replacements.json ]; then
+            count=$(jq '.occurrences | length' reports/hex_replacements.json)
+            echo "Found hardcoded hex occurrences: $count"
+            if [ "$count" -gt 0 ]; then
+              echo "Please replace raw hex colors with design tokens (see design/tokens/master_tokens.json)"
+              exit 1
+            fi
+          fi

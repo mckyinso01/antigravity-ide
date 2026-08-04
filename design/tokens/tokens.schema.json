@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DesignTokensSchema",
+  "type": "object",
+  "required": ["name", "version", "colors", "typography", "borders", "shadows", "buttons", "motion"],
+  "properties": {
+    "name": { "type": "string" },
+    "version": { "type": "string" },
+    "description": { "type": "string" },
+    "colors": {
+      "type": "object",
+      "required": ["surface", "action", "text", "border"]
+    },
+    "typography": {
+      "type": "object",
+      "required": ["fontHeader", "fontBody", "fontMono"]
+    },
+    "borders": {
+      "type": "object",
+      "required": ["width", "radius"]
+    },
+    "shadows": {
+      "type": "object"
+    },
+    "buttons": {
+      "type": "object",
+      "required": ["primary", "secondary", "danger", "ghost"]
+    },
+    "motion": {
+      "type": "object"
+    }
+  }
+}

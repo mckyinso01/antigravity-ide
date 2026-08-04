@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-08-04T09:01:00Z",
+  "system": "EMS & Antigravity IDE Master Governance Suite",
+  "audit_version": "2.4.0",
+  "status": "PASS",
+  "token_validation": {
+    "file": "omnistock/design/tokens/master_tokens.json",
+    "schema": "omnistock/design/tokens/tokens.schema.json",
+    "status": "VALID",
+    "required_sections": ["colors", "typography", "borders", "shadows", "buttons", "motion"]
+  },
+  "hex_scan": {
+    "report_file": "reports/hex_replacements.json",
+    "occurrences_scanned": 690,
+    "suggested_token_mappings": 690,
+    "status": "COMPLETED"
+  },
+  "a11y_contrast_audit": {
+    "script": "scripts/audit_contrast_and_colors.py",
+    "status": "100% PASSED",
+    "tested_pairs": [
+      { "label": "Crystal White on Dark Surface", "ratio": "20.01:1", "min_required": "4.5:1", "verdict": "PASSED" },
+      { "label": "Ice White on Card Surface", "ratio": "16.41:1", "min_required": "4.5:1", "verdict": "PASSED" },
+      { "label": "Slate Muted on Card Surface", "ratio": "6.70:1", "min_required": "3.0:1", "verdict": "PASSED" },
+      { "label": "Button Primary Text on Action Primary", "ratio": "5.17:1", "min_required": "4.5:1", "verdict": "PASSED" }
+    ]
+  },
+  "motion_safeguards": {
+    "files_configured": ["omnistock/src/index.css", "gurogen-ai/src/index.css", "EMS/src/index.css", "design/global.css"],
+    "rule": "@media (prefers-reduced-motion: reduce)",
+    "status": "ENFORCED"
+  },
+  "touch_target_ergonomics": {
+    "target": "EMS/src/components/LoginPage.tsx",
+    "min_area": "44x44px",
+    "status": "ENFORCED"
+  },
+  "danger_action_guards": {
+    "target": "EMS/src/components/SelfHostProvisioningModal.tsx",
+    "type": "2-Step Typed PURGE Confirmation",
+    "status": "ENFORCED"
+  },
+  "pytest_suite_results": {
+    "suite": "tests/test_ems_governance.py tests/test_agent_auth.py tests/policies/test_policy_invariants.py",
+    "tests_collected": 9,
+    "tests_passed": 9,
+    "tests_failed": 0,
+    "duration_seconds": 1.28
+  }
+}
