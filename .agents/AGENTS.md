@@ -208,3 +208,10 @@ The 8-Stage Cycle MUST cover 100% of all assets—both visible to the eye and in
    - `GHL-PULSE` ➔ `ghl-pulse.surge.sh` (Lead CRM Pipeline Engine)
    - `LexAI-Enterprise` ➔ `lexai-enterprise.surge.sh` (Statutory AI Legal Engine)
 3. **Pre-Deployment Target Verification Protocol**: Bago mag-execute ng anumang `npx surge` deployment command, ang Master Orchestrator at Sentinel Field DevOps ay MANDATORY na suriin at i-verify muna na ang target deployment domain ay sumusunod 100% sa Standalone Subdomain Registry. PROHIBIT: Overwriting the launcher hub domain with a standalone app bundle.
+
+**D11. New Product Publishing Protocol to Master Website (`NEW-PRODUCT-PUBLISH-PROTOCOL`)**:
+Tuwing may bagong produktong ipa-publish sa ating ecosystem at sa master website (`gatzdevs.surge.sh`), ANG ATING TASK FORCE TEAM AT LAHAT NG SUBAGENTS AY MANDATORY NA SUMUNOD SA MGA SUMUSUNOD NA 4-STEP PROTOCOL:
+(1) **ISOLATED SUBDOMAIN DEPLOYMENT** — I-deploy ang bagong produkto sa kanyang sariling hiwalay na sub-domain (hal. `https://newproduct.surge.sh`). HINDING-HINDING ma-o-overwrite ang `gatzdevs.surge.sh`.
+(2) **MASTER SHOWCASE TILE ADDITION** — Buksan ang `GatzDevPortfolio/index.html` at magdagdag ng bagong Product Showcase Card / Tile na may Stitch Variation B styling, features, 4-tier pricing, at `href="https://newproduct.surge.sh"` launch button.
+(3) **SPECS & LEDGER INDEXING** — I-update ang `specs.md` at `master_component_checklist.md` para ma-index ang bagong produkto.
+(4) **MASTER WEBSITE RE-DEPLOYMENT** — I-deploy ang `GatzDevPortfolio` folder lamang sa `gatzdevs.surge.sh`. PROHIBIT: Deploying sub-app folders to root domain `gatzdevs.surge.sh`.
