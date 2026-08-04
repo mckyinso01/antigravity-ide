@@ -1,0 +1,3391 @@
+{
+  "timestamp": "2026-08-04T02:52:46.635Z",
+  "totalFilesScanned": 340,
+  "totalErrors": 19,
+  "totalWarnings": 221,
+  "manifest": [
+    {
+      "path": "GHL-PULSE/src/api/base44Client.js",
+      "sha256": "b4610f5222ee1ae589d3b135161d5b2d0382076f07ffb846c500dc96e8e958c9",
+      "sizeBytes": 351
+    },
+    {
+      "path": "GHL-PULSE/src/api/ghlApi.js",
+      "sha256": "a5312d5cc1ee44a82fe26842fd13b85e96ceee97262851ad932301f8c33038c4",
+      "sizeBytes": 3703
+    },
+    {
+      "path": "GHL-PULSE/src/api/webhookEngine.js",
+      "sha256": "b733f52ccf5122945055f1a64ca958970580d9036d5f7325a0154494776e0ffa",
+      "sizeBytes": 1804
+    },
+    {
+      "path": "GHL-PULSE/src/App.jsx",
+      "sha256": "5e047caffc5705c4ff87dd891ed89fc5521663e21f9bf43c5f8fec1b3ee36428",
+      "sizeBytes": 2692
+    },
+    {
+      "path": "GHL-PULSE/src/components/AriaXIntegrationHub.jsx",
+      "sha256": "f1167647f14c5a2b56a07513131b564cc777731d6e6fccfc989d91cc0f2d7b2d",
+      "sizeBytes": 3524
+    },
+    {
+      "path": "GHL-PULSE/src/components/AuthLayout.jsx",
+      "sha256": "6c3049c50f8d6411b7167bbb50516ab6521d3f8b30449fc96a97dee3fb4d60c8",
+      "sizeBytes": 978
+    },
+    {
+      "path": "GHL-PULSE/src/components/EnterprisePriceComparisonMatrix.tsx",
+      "sha256": "d0812fdc8ffd1781b4dc2b9a0a43abcf02b4e7cdaad6f4f73154b0e12177ea92",
+      "sizeBytes": 3697
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/AgencyMatrix.jsx",
+      "sha256": "0a523d0b6bb9c0d827926599314ea3b45676a41f20fd0c33858243ee952eadb0",
+      "sizeBytes": 10025
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/AiBlueprintModal.jsx",
+      "sha256": "b694fcb3f800eaa8d87e084051423e428cb14911404583d4184d8a8f724b0769",
+      "sizeBytes": 7732
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/AutonomousFixWorker.jsx",
+      "sha256": "366315ffb403889c6fcf0a4423124dc92d02f68c5d5b22eccea4b27758690a6f",
+      "sizeBytes": 4797
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/CircuitBreakerDashboard.jsx",
+      "sha256": "613a8466d5aa5d1d09794db2d06ac8dc1b1ba523a04fb2a823c6fc081097332c",
+      "sizeBytes": 2514
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/ComplianceAudit.jsx",
+      "sha256": "05744dcb6a7694cce9f19e0837bff701e2fea0cc6c3355b236b7e584fa7386da",
+      "sizeBytes": 7950
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/ConnectSubAccountModal.jsx",
+      "sha256": "ad410e2ae1e66d13cab70592eaca1fa4f2c6758bae3c1ceee08644323b17621f",
+      "sizeBytes": 6310
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/EnterpriseTechnicalSpecs.jsx",
+      "sha256": "f9c55d802443376266a27f5918234c1e31c954d2488088a956e142cd3178bd00",
+      "sizeBytes": 5498
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/ErrorBoundary.jsx",
+      "sha256": "6eacfd6398de76b947aac143c8f28ddf807983452f86251e283411504a4d9ec3",
+      "sizeBytes": 1769
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/FaqSection.jsx",
+      "sha256": "a9814c6810ae60c362a72437cb2385a0bc37091781384e26d818b1badaf6225d",
+      "sizeBytes": 3651
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/FixConfirmationModal.jsx",
+      "sha256": "38d17b8a4cda8059305f58edf7a03c6a48d2b9b8885c52ae8facdd20e84d0b96",
+      "sizeBytes": 8111
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/HealthScoreGauge.jsx",
+      "sha256": "13561c37b41206b6058d3a9aa84c40995948e0b6650b20cc0d38f0d28526de14",
+      "sizeBytes": 2036
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/InteractiveVideoPlayer.jsx",
+      "sha256": "3940c7dfa4a99008fa43e8075e1d1d2814ad244732bd9a3dbea6811deffd2401",
+      "sizeBytes": 7790
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/IssueCard.jsx",
+      "sha256": "081612c277fb4a92c33486e7d037d3153a231c07ec7a72e73601e48b96bd0638",
+      "sizeBytes": 3316
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/LandingPageScanner.jsx",
+      "sha256": "6b0b86dc3de5ac56d1842a7c1455876bb5028889ed3ae56147c3eb7dd2f2040e",
+      "sizeBytes": 7857
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/LicensingDeploymentTierBar.jsx",
+      "sha256": "a540df9b3537f373596c8daefd43c904973c2bbf8e1aa803c061217603f223d6",
+      "sizeBytes": 5872
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/OnboardingTourModal.jsx",
+      "sha256": "e2cd673b6b7717aa44c850a181f2184a35609d3af9abda73fcceee3de844d678",
+      "sizeBytes": 4088
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/PdfReportExporter.jsx",
+      "sha256": "0a5b009beb6b3664707a6ad58f06975fdea627fc00664fb63771a52c18a3059d",
+      "sizeBytes": 5678
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/PillarBreakdown.jsx",
+      "sha256": "25a354fb74c4e86f786fc9e2a314bd5a684bfa3e8fc91275380d004e0f93f04f",
+      "sizeBytes": 2063
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/PublicAuditPortal.jsx",
+      "sha256": "d4c60a67cd87266f08ade8b1dc7e1027955acd99274c5462fcccc6a8ac7e7f98",
+      "sizeBytes": 3513
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/PwaOfflineSync.jsx",
+      "sha256": "15ea788b6749e7ad1fb21c28ccc7469653c2cf7b477c869dc7d373436ffb0120",
+      "sizeBytes": 2162
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/RoiCalculator.jsx",
+      "sha256": "1a5197e0d85a64ae011725bb36e52dba12955f8a235d35224c38d265b08c58b7",
+      "sizeBytes": 6677
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/SelfHostProvisioningModal.jsx",
+      "sha256": "92bd68b5f2adfbe6af36b6a5472a99b3b58d03f1aafb875d8de5392a723be3d8",
+      "sizeBytes": 5203
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/SourceCodeLicenseModal.jsx",
+      "sha256": "734e715406effe24711aca3a62f2f0cb6de0dbcb46f4f22a08ab492fdfc7f3b6",
+      "sizeBytes": 4879
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/SpeedToLeadTester.jsx",
+      "sha256": "683293903e96cb3504aaf954d4ce3a44390b0730c5f10c2f1d836f18b9bb2eb7",
+      "sizeBytes": 4102
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/SubAccountSidebar.jsx",
+      "sha256": "b5823720f13746f3e5df3377830ba5eb2e6c86faa93a39f1257dc49fb638f15e",
+      "sizeBytes": 2733
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/TopBar.jsx",
+      "sha256": "7b17209b13c015f2cba93d095d850f8f1f7ed64d62175be071fb260781252a56",
+      "sizeBytes": 6788
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/TrendGraph.jsx",
+      "sha256": "ded180019929619f52406da842f4ec7f5bd852ef9a98daea76d092b82aa19a49",
+      "sizeBytes": 4793
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/UserGuide.jsx",
+      "sha256": "4ae8e20e4070b181ae84306fccbdeb63dfe32c3233cea095f5f859a5f33c4a90",
+      "sizeBytes": 15393
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/WebhookSettings.jsx",
+      "sha256": "c27c23fb4d37f99d70f6274e7abf057091e1e48beed3ace328936a53049c0253",
+      "sizeBytes": 6015
+    },
+    {
+      "path": "GHL-PULSE/src/components/ghla/WhiteLabelCustomizerModal.jsx",
+      "sha256": "b610b7a929a96f03c195da792dbca863c5c0d294fc90de83b1f1ed8b5dfe1934",
+      "sizeBytes": 6598
+    },
+    {
+      "path": "GHL-PULSE/src/components/GoogleIcon.jsx",
+      "sha256": "d495d2e51d1af99441352363106b38ea86e42de46a3891b3e2c21ce7d352eb8f",
+      "sizeBytes": 845
+    },
+    {
+      "path": "GHL-PULSE/src/components/LeadGenIntegrationHub.jsx",
+      "sha256": "70646b2e73658b34850ac1c93d1b1ce55583b1d6670cf348b02fd3340ce41b63",
+      "sizeBytes": 3188
+    },
+    {
+      "path": "GHL-PULSE/src/components/ProtectedRoute.jsx",
+      "sha256": "855de79da9a62427f15c70b2df4745da6a6f76cc2cea48cfe7d475511de755f1",
+      "sizeBytes": 1248
+    },
+    {
+      "path": "GHL-PULSE/src/components/ScrollToTop.jsx",
+      "sha256": "c4d44d3609c17beb996208db93150e09aedc6e736142d051da4cca066af16331",
+      "sizeBytes": 838
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/accordion.jsx",
+      "sha256": "478490060e2a3d511e1b5d1a7d65439bbb992e4e1e99d5f0709f325173453156",
+      "sizeBytes": 1656
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/alert-dialog.jsx",
+      "sha256": "fe21928546b77773543f93d7c4382094fd771403cf9b3d3928c572e72d9ece97",
+      "sizeBytes": 3558
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/alert.jsx",
+      "sha256": "809a0b3300cf85221cd2e667e2cd1970a138bdaa57ef512c81a39a2188dfc13d",
+      "sizeBytes": 1382
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/aspect-ratio.jsx",
+      "sha256": "62f29cd87c19f52d403dc2d17823849db2c8cbd541c9f96de20ef13e58d379db",
+      "sizeBytes": 145
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/avatar.jsx",
+      "sha256": "9439196219d33dff8562912552c59e878dbb6cf7aa32f5d17bccdb9bb90efaa5",
+      "sizeBytes": 1078
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/badge.jsx",
+      "sha256": "fc8b4e031c04004ec0b19cdb90efcadfb26f2287c8d6798523c271bf96e090cf",
+      "sizeBytes": 1024
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/breadcrumb.jsx",
+      "sha256": "51bbb35125c05ef01517d866cc9d79dfd5d63355da68d3bfb4121d97fec8ddeb",
+      "sizeBytes": 2363
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/button.jsx",
+      "sha256": "516a4f55d8aae0e6d226a0402dc06932ded402039b4acb2f71dd9c9dbeda4a0b",
+      "sizeBytes": 1727
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/calendar.jsx",
+      "sha256": "a64221b7b0b3bfd4d08cf5f9026d620cb6b4e84718ded755e67a59aa6ea0d24e",
+      "sizeBytes": 2922
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/card.jsx",
+      "sha256": "93f9674c69410d360fbba260dce1f63f987624b08a8dd39c999e4ca81740a548",
+      "sizeBytes": 1490
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/carousel.jsx",
+      "sha256": "caf08f7734405a1ab1aef53134108aea75c747c3c22c888789beeb47cd83594c",
+      "sizeBytes": 5014
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/chart.jsx",
+      "sha256": "02950e47ad8c44b41e823887774cb8088becceaf542f68965cf375dfc9eb2cce",
+      "sizeBytes": 8948
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/checkbox.jsx",
+      "sha256": "b2b6819b326af045bedca84f081de6e49c7bf086110835b5b893d903ef0ec44b",
+      "sizeBytes": 902
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/collapsible.jsx",
+      "sha256": "bc854800960ef4129d4679a7c4a6b5091e7038adc03698e4529d0c9b5af0d831",
+      "sizeBytes": 340
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/command.jsx",
+      "sha256": "85bde4762ddfcb0daef8c24bf899d3b4cb270e5a55d635a4c8852ee786bbbe2f",
+      "sizeBytes": 4013
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/context-menu.jsx",
+      "sha256": "9f2f66eea8cc632fac137b0ef47841c6fa81ebc7d7afbd8064605b444998569a",
+      "sizeBytes": 6151
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/dialog.jsx",
+      "sha256": "fdaf1e8db8cd7971d14fa9625b3123970527154dbbfbf405c1ed25e46114ec08",
+      "sizeBytes": 3324
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/drawer.jsx",
+      "sha256": "ef7864b5bef151b48d8c2a480a9dbf91a0bf0c5a9b3d29d27dd2912bf64afd12",
+      "sizeBytes": 2451
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/dropdown-menu.jsx",
+      "sha256": "5888a783e926273b78f8e69399e2b1d31d966230cafa52f21764266158d31c92",
+      "sizeBytes": 6313
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/form.jsx",
+      "sha256": "6fb5b37dd37b719ebdc7ee5d4a2b8995fe7ece1296646508ec98af0d992f3080",
+      "sizeBytes": 3275
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/hover-card.jsx",
+      "sha256": "b0b8f53c1fc20f4c410c1949b1abe612489da7b34374e7f3ec876d5285b33e33",
+      "sizeBytes": 1095
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/image.jsx",
+      "sha256": "318cb7ae266924a2ab2d33c275a86783fc0c084e485b364dbddd5e0db719b6a4",
+      "sizeBytes": 8813
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/input-otp.jsx",
+      "sha256": "9cb80ea26ca7fe046dd336b75f875b7baed2a285753f4ff18b9442ba8843ec52",
+      "sizeBytes": 1864
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/input.jsx",
+      "sha256": "02932b64ab7b05099d42aaf8a733622dfe1d3abec681a299f68fdbdf7ce09ac0",
+      "sizeBytes": 709
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/label.jsx",
+      "sha256": "6a429ead60a45fa3705de0bd705d4ca08c77009ab4fbfefbb321b40b4b7ce86d",
+      "sizeBytes": 541
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/menubar.jsx",
+      "sha256": "dd0235a15a65cc36c763e613d05ddfe26e2977bb28c84f98e90c865ca1474937",
+      "sizeBytes": 6990
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/navigation-menu.jsx",
+      "sha256": "e3ae735c975f2d046bedde7c0428fc32d8c7e7e43a8e4605e120e8ef5a6244b5",
+      "sizeBytes": 4321
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/pagination.jsx",
+      "sha256": "30c62c8579e0661792bdfec1967bd815be4a70af3d45ec5e507275f9dbe34a4e",
+      "sizeBytes": 2422
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/popover.jsx",
+      "sha256": "6da6b28bd13c1a07889320c2baf8657f2a0cb9c210851e144d4a063e4a9b6bae",
+      "sizeBytes": 1193
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/progress.jsx",
+      "sha256": "dd92e4b6189242c5bf42249e0bbe2258e3cf7f6054f732063e7deedc84ac12fd",
+      "sizeBytes": 690
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/radio-group.jsx",
+      "sha256": "58b832a7a8842ec8ec1bcd5115b4fa19487fbc1ff8a5ebd9a6c00b746668f9d2",
+      "sizeBytes": 1164
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/resizable.jsx",
+      "sha256": "329ee38682a0a54b2b2d3f50e9a5148fcaf013d6739791d27ca6bb4a04769a2a",
+      "sizeBytes": 1612
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/scroll-area.jsx",
+      "sha256": "deac8e89bafcdedeb795ed43a524e70cef654978102b0c854b75f9826f524520",
+      "sizeBytes": 1400
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/select.jsx",
+      "sha256": "0098cd61ccf4cbbf4cb95e019f8a6b6d6e737d129b97098c300c2f7418d83b08",
+      "sizeBytes": 4798
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/separator.jsx",
+      "sha256": "0e01021eb735c6f4f8c0c6b3a9f99dd8428fe837c1a12b7d8be441e5a7d53030",
+      "sizeBytes": 623
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/sheet.jsx",
+      "sha256": "7688a90ad9e29e63e7f920686616571a88abd5e84743a0182a34ec16b64447eb",
+      "sizeBytes": 3658
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/sidebar.jsx",
+      "sha256": "fbc50e3d08df813d10094953469d56acfe9608997f1520ab9fa9dec67202c948",
+      "sizeBytes": 21269
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/skeleton.jsx",
+      "sha256": "b5cbabb0e4b7c98654c527fc33ea501ecd708c9ea2079458945a85ef3416cf7c",
+      "sizeBytes": 241
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/slider.jsx",
+      "sha256": "13a9ab62370c58be57848de7100de3e5bbfcdf4a669bbfb635b7ccb11c6b1de1",
+      "sizeBytes": 935
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/sonner.jsx",
+      "sha256": "a92398f457a0e43fd3640ce72fb22f626ffc812701496bba623651333bf0f23b",
+      "sizeBytes": 828
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/switch.jsx",
+      "sha256": "d3692433ca2fcb3bd74b587cd096942c5582452a6a95ddaf1806dceda899d592",
+      "sizeBytes": 1047
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/table.jsx",
+      "sha256": "5a64292b865d5fc40675f65c5a84122f17e0719602f5737fbda01a4d529a9a2d",
+      "sizeBytes": 2317
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/tabs.jsx",
+      "sha256": "efefae7020ecab8eac458a60b684569f0b1c7adac0e8622fbe9b9cec9ef588cf",
+      "sizeBytes": 1570
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/textarea.jsx",
+      "sha256": "6f3185e51b3496a17a97a41ce577ea03e9525c3ece24a890c9f783e1c9833774",
+      "sizeBytes": 605
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/toast.jsx",
+      "sha256": "fe43f2d5ec322666b49432d4611336ede6f4276811a631faa9c63423bf2deab2",
+      "sizeBytes": 3907
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/toaster.jsx",
+      "sha256": "a00ceffa66fb276095cf6a2f5d052927e529d77b777db36d5b5703acf484146d",
+      "sizeBytes": 817
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/toggle-group.jsx",
+      "sha256": "34c31985d46f4e1c85b98d2db879f8c89c245cac7fd8e0c0030efaf769d0af0b",
+      "sizeBytes": 1328
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/toggle.jsx",
+      "sha256": "1a4d7a483e843c69a2cd65f189a66f31dfd5660846d64100ed74b78fb99d493b",
+      "sizeBytes": 1348
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/tooltip.jsx",
+      "sha256": "5c4e99fe6b80e658d165cb01e0204b67ab944ab53ce438d8b411705744bfb58f",
+      "sizeBytes": 1119
+    },
+    {
+      "path": "GHL-PULSE/src/components/ui/use-toast.jsx",
+      "sha256": "94b77bb2a4ee2d9c126f318685a3e1ab0dc746ceb568ff26a1bb57494cc62d51",
+      "sizeBytes": 3542
+    },
+    {
+      "path": "GHL-PULSE/src/components/UserNotRegisteredError.jsx",
+      "sha256": "eec64a99fb9df2bb2151b85d78dbed37e8d22e1d97776e4ac16dac62d6f19ee7",
+      "sizeBytes": 1623
+    },
+    {
+      "path": "GHL-PULSE/src/hooks/use-mobile.jsx",
+      "sha256": "45f02b034691fc6fcd9761106f521464bd81c139bc7f122811590fb22e1a3c42",
+      "sizeBytes": 564
+    },
+    {
+      "path": "GHL-PULSE/src/hooks/use-size.jsx",
+      "sha256": "d42bbf8f315f3f1fab1e196a5550e6f503089018eee42516035a09e5c21f0a5b",
+      "sizeBytes": 928
+    },
+    {
+      "path": "GHL-PULSE/src/index.css",
+      "sha256": "0833d67051b83242ad80e9471695dc91bda430ddec8ad6485bb4f4712ec21b34",
+      "sizeBytes": 3347
+    },
+    {
+      "path": "GHL-PULSE/src/integrations/ariax/components/ABTestManager.tsx",
+      "sha256": "b09aa7d1f0eee0ddd1384a2e03e3a0b6b2de3a101ed4969ec997af4176caf341",
+      "sizeBytes": 10008
+    },
+    {
+      "path": "GHL-PULSE/src/integrations/ariax/components/AutonomousAgents.tsx",
+      "sha256": "e8873b2f97c55ce9f0f6a5458687e07a68836ad9561138c5203f952e4d7fd7c3",
+      "sizeBytes": 20460
+    },
+    {
+      "path": "GHL-PULSE/src/integrations/ariax/components/DynamicCopyGenerator.tsx",
+      "sha256": "48b439eac2335b0016ce4439f5c1df0f6fb61e7b16dfb306a268c877eb79b894",
+      "sizeBytes": 6266
+    },
+    {
+      "path": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
+      "sha256": "861f2fc678a4deef5cf2451f2cc92ad96641fa93412b4ebf073cb1b675d4985c",
+      "sizeBytes": 86790
+    },
+    {
+      "path": "GHL-PULSE/src/integrations/ariax/components/GoogleMapsScraper.tsx",
+      "sha256": "b7239011e0dbed30339d3038adf1443c64d390d6e652501e182d49af3c6868d1",
+      "sizeBytes": 28775
+    },
+    {
+      "path": "GHL-PULSE/src/integrations/ariax/components/KnowledgeGraphPortal.tsx",
+      "sha256": "554d2a8356548bd59cbbbc2fb21ce837bd5010b09c75aa28052165fa3b6cc89b",
+      "sizeBytes": 13869
+    },
+    {
+      "path": "GHL-PULSE/src/integrations/ariax/components/LeadScoringWidget.tsx",
+      "sha256": "91a9a8c8e26c845e547836917d35f97943c56bc3d5b7325d27430a140cd1cec3",
+      "sizeBytes": 7425
+    },
+    {
+      "path": "GHL-PULSE/src/integrations/ariax/components/MarketingWorkflows.tsx",
+      "sha256": "d9a46850692560cc1c2df5cd727b3ee0f42a54351681dffae2ff2f53af4dc4cb",
+      "sizeBytes": 56152
+    },
+    {
+      "path": "GHL-PULSE/src/integrations/ariax/components/WorkflowCanvas.tsx",
+      "sha256": "9b910b65b90344a5a3bf7a2020bd5813770bcc1bfcaad9acb15c07c8ecd0040a",
+      "sizeBytes": 86628
+    },
+    {
+      "path": "GHL-PULSE/src/integrations/ariax/index.ts",
+      "sha256": "cd1da7f0bec669e9f46a07e392bd7b38807ef0c1ed22756f4f495862a7b5fee3",
+      "sizeBytes": 843
+    },
+    {
+      "path": "GHL-PULSE/src/integrations/ariax/utils.ts",
+      "sha256": "9da8bd52c32da23f3815f83e0914e06d269e198a79e322e5a8e0315fbf3719fe",
+      "sizeBytes": 1050
+    },
+    {
+      "path": "GHL-PULSE/src/integrations/leadgen/index.ts",
+      "sha256": "9d378df49d6b930f4ca6becd90fdaceaa64c075f4465bfe5ec7d080ad3dba2e8",
+      "sizeBytes": 756
+    },
+    {
+      "path": "GHL-PULSE/src/lib/app-params.js",
+      "sha256": "e9b0223739321705fa152fa7359f444090e385acdbd179848e56858c95d3ddb2",
+      "sizeBytes": 1845
+    },
+    {
+      "path": "GHL-PULSE/src/lib/AuthContext.jsx",
+      "sha256": "6418a687e3af8ab70e6ef5a13ac88dd0b3310682b1a091c030dddf750906676e",
+      "sizeBytes": 5062
+    },
+    {
+      "path": "GHL-PULSE/src/lib/PageNotFound.jsx",
+      "sha256": "e1f8ff723546e10f01be8def6cd3abfd58aca970905df6e80e9953ccae47c3e6",
+      "sizeBytes": 4041
+    },
+    {
+      "path": "GHL-PULSE/src/lib/query-client.js",
+      "sha256": "73c984ce07a6dec4e670302d76e00ebbd8d77ffceb58431859c5a9f64284c838",
+      "sizeBytes": 207
+    },
+    {
+      "path": "GHL-PULSE/src/lib/utils.js",
+      "sha256": "917f1465a64346f1b76178074a09ac5cd63e96fe12eb740311a73f0f27d8487e",
+      "sizeBytes": 199
+    },
+    {
+      "path": "GHL-PULSE/src/main.jsx",
+      "sha256": "2b59ec186cfc53aabfbb09e1cb59b5443516693eb69354a2bf9662adbb4daae3",
+      "sizeBytes": 288
+    },
+    {
+      "path": "GHL-PULSE/src/pages/Dashboard.jsx",
+      "sha256": "f506463fc1ce39b92e8aa9e1b034f9b3cecf2848193bcbb974bc2954e9269712",
+      "sizeBytes": 13259
+    },
+    {
+      "path": "GHL-PULSE/src/pages/ForgotPassword.jsx",
+      "sha256": "6829815269d9e4a73115f59ffcd6d1d8fa6b80b70608d7db3b5ad546dd5945a7",
+      "sizeBytes": 2510
+    },
+    {
+      "path": "GHL-PULSE/src/pages/Login.jsx",
+      "sha256": "2b210af8d15a1719b5d915435a685d4f9388e8036fc02e6be240379599da113a",
+      "sizeBytes": 5264
+    },
+    {
+      "path": "GHL-PULSE/src/pages/Register.jsx",
+      "sha256": "d8d63833eca7540073a3e5d4a4875c2f3408804be7ee33ac49feaba4f66fc740",
+      "sizeBytes": 7801
+    },
+    {
+      "path": "GHL-PULSE/src/pages/ResetPassword.jsx",
+      "sha256": "665506d507d523180e808aec7aa9f9945a86984b5d1a0fe51ad3f8be3baaa550",
+      "sizeBytes": 4399
+    },
+    {
+      "path": "GHL-PULSE/src/utils/index.ts",
+      "sha256": "c27c1dc47b24693f410767b6b99f89d544195cdd9c1d349212436476b73a3065",
+      "sizeBytes": 99
+    },
+    {
+      "path": "GHL-PULSE/src/utils/purgeClientState.js",
+      "sha256": "dc8209d22509f81fa62779dbcad804d41b83dd2115c65811532249e0238e9bfc",
+      "sizeBytes": 1210
+    },
+    {
+      "path": "EMS/src/App.tsx",
+      "sha256": "d968c6f4d0ad3fe530fc2f312daf860c72a7a0a73587cf8c7d989639fd6061a3",
+      "sizeBytes": 17704
+    },
+    {
+      "path": "EMS/src/components/AgenticHrSwarmOrchestrator.tsx",
+      "sha256": "3b02914b9e6a9e1ede9b1a9bbeb5c5d1a8b0ce030b5a6695013755491106bf5d",
+      "sizeBytes": 7994
+    },
+    {
+      "path": "EMS/src/components/AgenticWorkforceDispatcher.tsx",
+      "sha256": "048b5ac537d7d5642ef42521448001f7067c933897ce86a4e3800d43764648bb",
+      "sizeBytes": 5149
+    },
+    {
+      "path": "EMS/src/components/AirGappedDisasterRecoveryVault.tsx",
+      "sha256": "1a667cbf20472fdae507d66c0f4db58718693fccbf1ed4e6e076b17ce7acdbb0",
+      "sizeBytes": 4635
+    },
+    {
+      "path": "EMS/src/components/AutonomousContractorVendorHub.tsx",
+      "sha256": "1de9ebb6ef8957161e0f261431bc9f31c08ded061b221bff510053d37dbba245",
+      "sizeBytes": 4504
+    },
+    {
+      "path": "EMS/src/components/AutonomousPayrollEscrowEngine.tsx",
+      "sha256": "0a568e14d1c39c40ae53d00b998511196a67c99387e458042a993f8702de461f",
+      "sizeBytes": 4683
+    },
+    {
+      "path": "EMS/src/components/AutonomousTaxComplianceEngine.tsx",
+      "sha256": "1e5c5cba2e6fb7723e52a7d13137502a841f082ef5b7b8d6252d2207ff1ffd40",
+      "sizeBytes": 11188
+    },
+    {
+      "path": "EMS/src/components/BenefitsAdministrationPortal.tsx",
+      "sha256": "874460139ff81e242b823eb234e3baaab850eba8b843fd7420830e8a6c369d97",
+      "sizeBytes": 6354
+    },
+    {
+      "path": "EMS/src/components/BiometricComplianceCheckin.tsx",
+      "sha256": "8a37f0111e22dbf30b0a6683f6f815bc634670df39f65a2c70dbdc7ed5cc9a1b",
+      "sizeBytes": 1845
+    },
+    {
+      "path": "EMS/src/components/ChaosResilienceSimulator.tsx",
+      "sha256": "8d9ff1f6aed99a13d09f76a8c3ec591b008bbf463f60db6640c3cacf1febf66f",
+      "sizeBytes": 1931
+    },
+    {
+      "path": "EMS/src/components/CompliancePolicyVault.tsx",
+      "sha256": "fedc317466fcac66e1a2c5baff8dee3849d091296899acae2888b7050615e690",
+      "sizeBytes": 6659
+    },
+    {
+      "path": "EMS/src/components/Dashboard.tsx",
+      "sha256": "a9b51788b68903fd83c19179c45a5c4266b3fe866f3e370feaed5be69033828d",
+      "sizeBytes": 36201
+    },
+    {
+      "path": "EMS/src/components/DepartmentDetailModal.tsx",
+      "sha256": "f0c587c69be755f50bec6c322e5251476e57e9fb1d1cf90508e2adeb3d31ca53",
+      "sizeBytes": 6685
+    },
+    {
+      "path": "EMS/src/components/DesktopAppInstallShowcase.tsx",
+      "sha256": "dbfa9f73b63f1e6e376ebd4652fa47c7b3a4345001520c029a300944ce1c099c",
+      "sizeBytes": 3474
+    },
+    {
+      "path": "EMS/src/components/Directory.tsx",
+      "sha256": "c15f4dfd029a4d64843d6c5e24667f202ddd2b1eb7c00c3f3bbd5bca0ddf96c7",
+      "sizeBytes": 31605
+    },
+    {
+      "path": "EMS/src/components/EcosystemIntegrationsHub.tsx",
+      "sha256": "6a221dd235ca6e02d55dbdb8e72851ede50cb21f8a3d2a31b3df7834066d0377",
+      "sizeBytes": 14725
+    },
+    {
+      "path": "EMS/src/components/EmployeeBios.tsx",
+      "sha256": "172422d14219d5601bcbfc970a43074089bf83f7fc6bc6c63d5d5ae256854cf6",
+      "sizeBytes": 16177
+    },
+    {
+      "path": "EMS/src/components/EmployeeContractMakerModal.tsx",
+      "sha256": "6d7c395a9d3fad551d1a68b13a9e8ede789aeaa48e9fdd02f39d3fb35ba31c80",
+      "sizeBytes": 8987
+    },
+    {
+      "path": "EMS/src/components/EmployeeDetailDrawer.tsx",
+      "sha256": "5cb2fb446c59092b57ab2a67789c691b237b8352dbc5a42001fbd306bc94f358",
+      "sizeBytes": 6593
+    },
+    {
+      "path": "EMS/src/components/EmployeeExitInterviewEngine.tsx",
+      "sha256": "22b181aacd2df2fe26428d8dd6a50c09738eb7c53fad6c828725e4e808b8e4bd",
+      "sizeBytes": 14211
+    },
+    {
+      "path": "EMS/src/components/EmployeeOnboardingWizard.tsx",
+      "sha256": "2eee8c4cdd8859ccca3f8e4b934dcd6e853be181f43b90dc846128617cb2ff8e",
+      "sizeBytes": 20989
+    },
+    {
+      "path": "EMS/src/components/EmployeeRecognitionRewards.tsx",
+      "sha256": "613466921b98fd06acdcaa354f7ac92704472771bf7154d5f70d57b69d63ec56",
+      "sizeBytes": 8023
+    },
+    {
+      "path": "EMS/src/components/EmployeeSurveyPulse.tsx",
+      "sha256": "31aac5222ed2dff3181fafad45b6d3857308a8c270912560a608b5904b54210c",
+      "sizeBytes": 10388
+    },
+    {
+      "path": "EMS/src/components/EnterpriseDataMigrationEngine.tsx",
+      "sha256": "806200b51be48d373edd4e77aae1deb71a32d659faabae37ae6043f7bbbcd84c",
+      "sizeBytes": 10006
+    },
+    {
+      "path": "EMS/src/components/EnterprisePriceComparisonMatrix.tsx",
+      "sha256": "c0fdce3208d8ca2fff0dc7c7270075233f7115410eefac6d4ff570342f32ea34",
+      "sizeBytes": 16948
+    },
+    {
+      "path": "EMS/src/components/ErgonomicWorkplaceSynthesizer.tsx",
+      "sha256": "7c17054169b37817f694b00fdaed32b07551083cd265ff70fe4836d5953403f4",
+      "sizeBytes": 3258
+    },
+    {
+      "path": "EMS/src/components/FairnessAlgorithmicBiasAuditor.tsx",
+      "sha256": "508eb2ccaaa59b24cabbcd1305a4ba33ca0d9bccdf352d74df7f8e51c2b22144",
+      "sizeBytes": 8485
+    },
+    {
+      "path": "EMS/src/components/GamifiedMicroLearningEngine.tsx",
+      "sha256": "783221a4422072eb24ba66fc526b2b54c1a18f72a734db9d5a623ead52ef7e81",
+      "sizeBytes": 3890
+    },
+    {
+      "path": "EMS/src/components/Header.tsx",
+      "sha256": "162e49a209bc743646f641e369af1eaecf80fa3cc1c270ab05fadeae685f8112",
+      "sizeBytes": 31366
+    },
+    {
+      "path": "EMS/src/components/HumanInTheLoopGovernance.tsx",
+      "sha256": "ed55bdae0aceb2f4d46a8bf67aa38af4bb8725e61869db1dad3faf16a669cd5f",
+      "sizeBytes": 3600
+    },
+    {
+      "path": "EMS/src/components/HumanInTheLoopGovernanceShield.tsx",
+      "sha256": "a1c7c078ca693ff2a4a3bf6b53a7f5ea2b19d7c5f2096875f58741fbfab2eb6c",
+      "sizeBytes": 4870
+    },
+    {
+      "path": "EMS/src/components/HyperPersonalizedCoachingPortal.tsx",
+      "sha256": "b128f7854e9eac924c6d41918fc92e6588e9f5ee75a25c1583c129d0413dca37",
+      "sizeBytes": 1993
+    },
+    {
+      "path": "EMS/src/components/IncidentGrievanceReporter.tsx",
+      "sha256": "b3c7f0bf868ba6c9cc505c29e53d057395c880ce1c5a644c81b9aabb01b387a8",
+      "sizeBytes": 11855
+    },
+    {
+      "path": "EMS/src/components/IntelligenceHub.tsx",
+      "sha256": "643dd14a1882e950d2edbd5b34c94209e2f9c1e3df2a891e40b1843a73220525",
+      "sizeBytes": 6238
+    },
+    {
+      "path": "EMS/src/components/LeaveManagementPortal.tsx",
+      "sha256": "6704032524a2b2598ffa0f130eedc70f44fe740161b670c63f75baaf27b363df",
+      "sizeBytes": 16166
+    },
+    {
+      "path": "EMS/src/components/LicensingDeploymentTierBar.tsx",
+      "sha256": "f33f1f34c6e7e6136394eeb4f1821afabfaa0c10f4128638658fb399f8d7eb39",
+      "sizeBytes": 9820
+    },
+    {
+      "path": "EMS/src/components/LoginPage.tsx",
+      "sha256": "d7d56d9685bf90e3c2eaf9dde42e0089ce8070b37aa5090a8ce50e91a494f080",
+      "sizeBytes": 6035
+    },
+    {
+      "path": "EMS/src/components/MultiTenantInstanceIsolator.tsx",
+      "sha256": "a740b242e2774a7791ff4769f5253c475d7e7e72dbbbc8816f9920d8c71ab855",
+      "sizeBytes": 1071
+    },
+    {
+      "path": "EMS/src/components/OfflineMediaFallbackCanvas.tsx",
+      "sha256": "6d6bc79bdced97e0fe11aaef0c017b46601bb80de4ccab33ca98d711bf227634",
+      "sizeBytes": 1548
+    },
+    {
+      "path": "EMS/src/components/OfflinePwaSyncEngine.tsx",
+      "sha256": "e5793e814e12236510dcf7725925f16d8086f73f9f79cc466fa559ea95118c79",
+      "sizeBytes": 865
+    },
+    {
+      "path": "EMS/src/components/OvertimeShiftSwapManager.tsx",
+      "sha256": "60dad5695b3ab406e76e2c0e39f2b7ea38102c6889be497e3832ec8755e05a0f",
+      "sizeBytes": 12616
+    },
+    {
+      "path": "EMS/src/components/PayrollCommandHub.tsx",
+      "sha256": "8a9b12db7a5bda23d41970d0520ec11ef01133a80f1e05525401de34ba3a47d1",
+      "sizeBytes": 3962
+    },
+    {
+      "path": "EMS/src/components/PayslipCreator.tsx",
+      "sha256": "05d9fe70b4bb3bfc8668291ee8850198ee71fef050249bfef265a57ddca23823",
+      "sizeBytes": 74971
+    },
+    {
+      "path": "EMS/src/components/PerformanceReview360.tsx",
+      "sha256": "d94166d67deb17027737200730b7edad84e1b6a46886f4c18e0cbd0c697c0e21",
+      "sizeBytes": 13732
+    },
+    {
+      "path": "EMS/src/components/PostQuantumCryptoVault.tsx",
+      "sha256": "981a78cccd3f2efec7f635192eaffaa2503776e47e4eac702e282d9dface0389",
+      "sizeBytes": 2112
+    },
+    {
+      "path": "EMS/src/components/PredictiveTurnoverRadar.tsx",
+      "sha256": "e25509832fba45114d105bd6aa02b435e449dc529fa95964a7b10b81f30828e8",
+      "sizeBytes": 3345
+    },
+    {
+      "path": "EMS/src/components/Productivity.tsx",
+      "sha256": "bb514ad134547523731487c6a6a2480d2eddcaaea68a1b3c57cc6c04fde5dcd0",
+      "sizeBytes": 19508
+    },
+    {
+      "path": "EMS/src/components/ProductivityTrendLine.tsx",
+      "sha256": "b3a0cf8bb414a6a79f78f29360a87214fb28a1a5781067ba8f0d12d043cb432b",
+      "sizeBytes": 11927
+    },
+    {
+      "path": "EMS/src/components/QuantumMonteCarloBudgetSimulator.tsx",
+      "sha256": "14fcbe43c6bbf150db5edab8ed7faea70a6a92c6be172eb94b15708fc56e9846",
+      "sizeBytes": 4537
+    },
+    {
+      "path": "EMS/src/components/QuantumScenarioSimulator.tsx",
+      "sha256": "00347955fb83ebea6bb3b541bea2fcc02f49b2327238f0fe45818d56e0dff5a5",
+      "sizeBytes": 3462
+    },
+    {
+      "path": "EMS/src/components/QuickNotes.tsx",
+      "sha256": "98485c8a68abac05baca3380cb6349eb67f4bc4bc05159b50a912deb45bc118b",
+      "sizeBytes": 15800
+    },
+    {
+      "path": "EMS/src/components/RealTimePayrollEngine.tsx",
+      "sha256": "3a31b6c2fb7070926a78f8f2ecf59ff036da84d674726390d82b63725abb7100",
+      "sizeBytes": 8211
+    },
+    {
+      "path": "EMS/src/components/ResourceAllocation.tsx",
+      "sha256": "548534abd9ae94fcd13f7d4bc5acad661a273634bf87b27a78aa18873c8a4c84",
+      "sizeBytes": 14958
+    },
+    {
+      "path": "EMS/src/components/SecurityAuditVault.tsx",
+      "sha256": "19d63805b6b41dae18c4faa41ddde73649192a7c106706c7eadf2b247b136765",
+      "sizeBytes": 1854
+    },
+    {
+      "path": "EMS/src/components/SelfHealingDatabaseEngine.tsx",
+      "sha256": "8b8723f4d40c095cfb25e0bda74d610ea481a540027fabc0a22f0196285a3b40",
+      "sizeBytes": 3891
+    },
+    {
+      "path": "EMS/src/components/SelfHostProvisioningModal.tsx",
+      "sha256": "f0536c8fde0e6f4831852312afbd2f62208a97755d791e15623ee10affd753b2",
+      "sizeBytes": 11406
+    },
+    {
+      "path": "EMS/src/components/Settings.tsx",
+      "sha256": "272d7db795bfe6aa89736876acca79d5eb4598835a1f39ed8864db05a256cc52",
+      "sizeBytes": 22388
+    },
+    {
+      "path": "EMS/src/components/Sidebar.tsx",
+      "sha256": "5d219ea0aa33bb7cedf6c27ccb05d4ef729ce97c416ddbfeaab86e70ab3e78b1",
+      "sizeBytes": 5895
+    },
+    {
+      "path": "EMS/src/components/SkillsCapacityPlanner.tsx",
+      "sha256": "f09c451853ef1fb034266cd7c9ceae919a5699730ac5e38a94aa45e72adc1ab9",
+      "sizeBytes": 3283
+    },
+    {
+      "path": "EMS/src/components/SkillsMobilityGraphEngine.tsx",
+      "sha256": "70d89722ebc6e3cbb16f2c3b30d76ed46b4d3709988214c96fd04db39c3b6d3d",
+      "sizeBytes": 6716
+    },
+    {
+      "path": "EMS/src/components/SlideOverDrawer.tsx",
+      "sha256": "8f50ac2d95d2dde591085cb2a135fa1d4c6d5f8eed7bdfbee163f57833ab0f99",
+      "sizeBytes": 1682
+    },
+    {
+      "path": "EMS/src/components/SourceCodeLicenseModal.tsx",
+      "sha256": "6b0183e50be31f75e357210ccdb4419b53b142962b4cac8f1ed743646d96b941",
+      "sizeBytes": 6246
+    },
+    {
+      "path": "EMS/src/components/SpatialWorkforceCommandCenter.tsx",
+      "sha256": "d4b6f04671a1892243be97863f2c76db85d47017ed2a5a25a164eeb199ab9795",
+      "sizeBytes": 4367
+    },
+    {
+      "path": "EMS/src/components/SuccessionPlanningBoard.tsx",
+      "sha256": "ff34d7fdd896181c24cfd60ae099fa212967561359043c762bd6fc53355453fd",
+      "sizeBytes": 9596
+    },
+    {
+      "path": "EMS/src/components/SystemSettingsHub.tsx",
+      "sha256": "0d8e16b0c0f483c0fdea5683ed96bcea9273713cc703cdf0665ef80e7eb155d6",
+      "sizeBytes": 5361
+    },
+    {
+      "path": "EMS/src/components/TeamOverview.tsx",
+      "sha256": "957244c90dae24d4ba7f46a908a596cceca6cb133bf0d953cb8bdfcbdb0598d3",
+      "sizeBytes": 41098
+    },
+    {
+      "path": "EMS/src/components/Timeline.tsx",
+      "sha256": "884a81b6081a77190782aaf456bccf1aaa6bdf9049195902e1d273676a5ebca8",
+      "sizeBytes": 15195
+    },
+    {
+      "path": "EMS/src/components/TrainingCertificationHub.tsx",
+      "sha256": "730ded032bb65499a18d49f0f939a663c29e3d197e032d9500000fab916e7148",
+      "sizeBytes": 12417
+    },
+    {
+      "path": "EMS/src/components/TrueRoiWorkforceAnalytics.tsx",
+      "sha256": "248ba5bafd913f71fbc64cf0540fb0d1cac8b86583f25663b56c2dbf8e6415af",
+      "sizeBytes": 2430
+    },
+    {
+      "path": "EMS/src/components/VoiceBiometricAssistCopilot.tsx",
+      "sha256": "d74baf6f6c91f39dc205906805b99ce29bae6dbd065bb529974a710bb3fab256",
+      "sizeBytes": 4489
+    },
+    {
+      "path": "EMS/src/components/VoiceCommandAccessibilityAssistant.tsx",
+      "sha256": "2cb640ab96af86fd1181bf9401178f9cd1a967d9b3a398f4536be98fe75f80cd",
+      "sizeBytes": 1355
+    },
+    {
+      "path": "EMS/src/components/WasmWorkforceAnalyticsEngine.tsx",
+      "sha256": "a841fcc6e113b28ca3bdd41f10bef3083e708587c64ce5e16eac89613bb35ff9",
+      "sizeBytes": 4494
+    },
+    {
+      "path": "EMS/src/components/WhiteLabelCustomizerModal.tsx",
+      "sha256": "61d936d31719a292a1b77ad9890b2448ab6891925cae9c1c63b4e04ad5d1d6f4",
+      "sizeBytes": 6251
+    },
+    {
+      "path": "EMS/src/components/WorkforceHub.tsx",
+      "sha256": "56c4888e931b20ab7aacb56ca7bdd4a2ffc80e573ccb061b3864cb4847ac671e",
+      "sizeBytes": 6282
+    },
+    {
+      "path": "EMS/src/components/WorkspaceHub.tsx",
+      "sha256": "c3eb5e25291aeb2dc516a2fbd7759b498c8460c94db7801d5d5bdb5691ed8278",
+      "sizeBytes": 65061
+    },
+    {
+      "path": "EMS/src/components/ZeroTrustDeviceBindingVault.tsx",
+      "sha256": "f6071701ae4d7320f69ff2063dc8181aecf7895e50f31cded1702230b75d713f",
+      "sizeBytes": 2436
+    },
+    {
+      "path": "EMS/src/data.ts",
+      "sha256": "37838cba4f6e2436511151df8d5b3656b715b8b00b3d6b478cd113f4c0c5b9e8",
+      "sizeBytes": 16339
+    },
+    {
+      "path": "EMS/src/index.css",
+      "sha256": "060f0590004e57e191bc06e6f89c0acd9bf1af835ddc4fe13fbc86add34b25ff",
+      "sizeBytes": 6749
+    },
+    {
+      "path": "EMS/src/lib/colors.ts",
+      "sha256": "341d5014ea2d3ead13b8d00743398b73216cff9b85544d44255e0bda2d6527b9",
+      "sizeBytes": 1928
+    },
+    {
+      "path": "EMS/src/lib/designSystem.ts",
+      "sha256": "6cb17e158a4f46a5c6bffac230e2b79a56648b7a2988425b6e62cf55e497d005",
+      "sizeBytes": 3721
+    },
+    {
+      "path": "EMS/src/lib/firebase.ts",
+      "sha256": "7fc1064e6d9de08187fc31cf392876a5370d5b4519789587d62ed0670c55fd93",
+      "sizeBytes": 2308
+    },
+    {
+      "path": "EMS/src/lib/jurisdictionRegistry.ts",
+      "sha256": "e1da491253f9b66523bd51deb1816b0844c3167905bc7d98ba1a3a9634843c04",
+      "sizeBytes": 15309
+    },
+    {
+      "path": "EMS/src/main.tsx",
+      "sha256": "f10fda03ee1fe70df3c4afd5cd787715606488e205b1d427a7a055a0c16ef4de",
+      "sizeBytes": 369
+    },
+    {
+      "path": "EMS/src/presets.ts",
+      "sha256": "a65f976d572d8ddc7b139f0acfec5c04128f2ab3987b47971cdbafc1efc44847",
+      "sizeBytes": 31554
+    },
+    {
+      "path": "EMS/src/types.ts",
+      "sha256": "d213313fa3e14aaa4f0dd56c9f934772c458df870fad2720682925da40ac43fa",
+      "sizeBytes": 2660
+    },
+    {
+      "path": "EMS/src/utils/purgeClientState.ts",
+      "sha256": "266ac157e4a25f01f59dada96026e4e9b90844ca5903a393ca634c09b4d3d53f",
+      "sizeBytes": 2367
+    },
+    {
+      "path": "EMS/src/utils/WebWorkerPayrollCalculator.ts",
+      "sha256": "24711db743fd39f16b1a9a2f6b90807a1dc860077bc85a97e8eea26a2c6ee040",
+      "sizeBytes": 1165
+    },
+    {
+      "path": "omnistock/src/api/base44Client.js",
+      "sha256": "b4610f5222ee1ae589d3b135161d5b2d0382076f07ffb846c500dc96e8e958c9",
+      "sizeBytes": 351
+    },
+    {
+      "path": "omnistock/src/App.jsx",
+      "sha256": "f2a317bbd0e15ce2135e8c93fe428a7d7c4fa37e92a69e62ec8f02d230021a25",
+      "sizeBytes": 4383
+    },
+    {
+      "path": "omnistock/src/components/analytics/TopCustomersAnalysis.jsx",
+      "sha256": "06b5487ee67e76a1a04b7942ff4b4dd59cd9198287937008875c663f359aed6d",
+      "sizeBytes": 10551
+    },
+    {
+      "path": "omnistock/src/components/automations/ReportScheduleFormModal.jsx",
+      "sha256": "6569daa3f9b02b8f40caee1d9b7d03b427400e8810384c08a0950ac083fcc668",
+      "sizeBytes": 6864
+    },
+    {
+      "path": "omnistock/src/components/automations/ReportScheduleList.jsx",
+      "sha256": "fe3d8b96fdb593558b5dc9e34684dc3b4baea2f291d77aee42366f840dbe2425",
+      "sizeBytes": 5692
+    },
+    {
+      "path": "omnistock/src/components/automations/SyncSettingsCard.jsx",
+      "sha256": "32d203bf50710cd4d26a2abc14a7762b6c5cfdcbbe2d91b30bca6ebe0cb7c454",
+      "sizeBytes": 8223
+    },
+    {
+      "path": "omnistock/src/components/dashboard/LowStockBanner.jsx",
+      "sha256": "fabe1235cd14b35032a82067edb1fe0e45d00b9537e24f1e69e897df7c21209e",
+      "sizeBytes": 2943
+    },
+    {
+      "path": "omnistock/src/components/dashboard/LowStockWidget.jsx",
+      "sha256": "a4b5e560665d0beb789330064fa6b0895fc2a96a5bd32ea2f9fd6786d8fdf120",
+      "sizeBytes": 5429
+    },
+    {
+      "path": "omnistock/src/components/inventory/CatalogueReviewTable.jsx",
+      "sha256": "593150f1f8058dd3bf3f4471576e57abd3856f4fe0d60aa87a909ce9dde7d956",
+      "sizeBytes": 6621
+    },
+    {
+      "path": "omnistock/src/components/inventory/CatalogueUploaderModal.jsx",
+      "sha256": "95fbebcb545fcd7fc1e3c72600b733edcdf8cbabce9e312a54d50424f44df2d4",
+      "sizeBytes": 5804
+    },
+    {
+      "path": "omnistock/src/components/inventory/ProductCard.jsx",
+      "sha256": "6aa74dae0203aaca0eaa4a7ef994ccfdd1b571ef6325f9a225fa693c12464cc5",
+      "sizeBytes": 4079
+    },
+    {
+      "path": "omnistock/src/components/inventory/ProductFormModal.jsx",
+      "sha256": "9c658993ed2028ae31f71fb700991bb5a4d51b36fd266fc8123ba05eb216095d",
+      "sizeBytes": 10053
+    },
+    {
+      "path": "omnistock/src/components/inventory/RecipeIngredientModal.jsx",
+      "sha256": "b68fc96d5b8b183180e05caa17f5c5dbd506fb2af1713885230466fddcbbbff3",
+      "sizeBytes": 6867
+    },
+    {
+      "path": "omnistock/src/components/layout/AppLayout.jsx",
+      "sha256": "6f607733cd862793f4d79a96030ccca892af609a586f6daa259a4284d5c46c97",
+      "sizeBytes": 2163
+    },
+    {
+      "path": "omnistock/src/components/layout/BottomNav.jsx",
+      "sha256": "0efdff1ff05efe1a05ba3d46a0ba73a93b46f6037aa5ec5fcca5836b64f6da79",
+      "sizeBytes": 1445
+    },
+    {
+      "path": "omnistock/src/components/layout/LicensingDeploymentTierBar.jsx",
+      "sha256": "fae3730494d7fa4a6eb337a20a7ade08be7c49553f683d7b304b2cab6d5deb35",
+      "sizeBytes": 26844
+    },
+    {
+      "path": "omnistock/src/components/layout/Sidebar.jsx",
+      "sha256": "d3ab1eb0675d53a9a6966deea74b2fd96a3187596be1406804ca84a1cb000a5e",
+      "sizeBytes": 4497
+    },
+    {
+      "path": "omnistock/src/components/layout/TopBar.jsx",
+      "sha256": "c91fff5d582c48939bf8b4f3f498f7084b0764a5ad74626fc87205c8a98eb069",
+      "sizeBytes": 4487
+    },
+    {
+      "path": "omnistock/src/components/monetization/EnterprisePriceComparisonMatrix.jsx",
+      "sha256": "76201b0b27760d8364a265996ca28c65c0857a723965f513183d17426a0be417",
+      "sizeBytes": 4005
+    },
+    {
+      "path": "omnistock/src/components/monetization/ReferralCard.jsx",
+      "sha256": "98fc4f3f73432ae71f4bd7ed0c56fe1ff157f16deef99873f4ecbf1cd3ca50d1",
+      "sizeBytes": 6317
+    },
+    {
+      "path": "omnistock/src/components/monetization/TrialStatusBanner.jsx",
+      "sha256": "25a944c93ffee6c401e05cd73f6fc14b1938de1f503c99fc530db78fd382cb72",
+      "sizeBytes": 3427
+    },
+    {
+      "path": "omnistock/src/components/pos/ReceiptModal.jsx",
+      "sha256": "2c112292dbaa061a2d418167ef99fb0be2182a1c2b8f0492b4782b9bf104e20b",
+      "sizeBytes": 4182
+    },
+    {
+      "path": "omnistock/src/components/pos/RefundModal.jsx",
+      "sha256": "242b7f1c152018cbd53819ddfc8bc70568a0a70e12d66d208a754247761c6ad5",
+      "sizeBytes": 10168
+    },
+    {
+      "path": "omnistock/src/components/pos/ThermalReceiptModal.jsx",
+      "sha256": "7e13829346d648d50361ee6152a58e4c769f8913e6b2d759f1868db9c8dc2b19",
+      "sizeBytes": 4847
+    },
+    {
+      "path": "omnistock/src/components/ProtectedRoute.jsx",
+      "sha256": "62297a4f520110ce5e68b2ba9e6ca87c04804e0f9e0b6f740574972a2c89fa75",
+      "sizeBytes": 1237
+    },
+    {
+      "path": "omnistock/src/components/recipes/RecipeDetailModal.jsx",
+      "sha256": "85361cc76b31d6335324cb0dee738cef53f004daef0c5837c64ab51c2666e762",
+      "sizeBytes": 7802
+    },
+    {
+      "path": "omnistock/src/components/recipes/RecipeFormModal.jsx",
+      "sha256": "16d74e4f4f4ff4285772d1eed2e616fbaba8ad9bd63f5d28a8a45fddfb3a7e48",
+      "sizeBytes": 14696
+    },
+    {
+      "path": "omnistock/src/components/recipes/YieldCalculatorPanel.jsx",
+      "sha256": "ebfd53e7373f7a3c2d973864f19c526b7685a1580c9bc2c6952492e051589481",
+      "sizeBytes": 9649
+    },
+    {
+      "path": "omnistock/src/components/sales/TopProductsAnalytics.jsx",
+      "sha256": "a8148cf1ca4491450e35abc9e65e7f8a5d3c91575cc987671f5ded72f7d2434a",
+      "sizeBytes": 7437
+    },
+    {
+      "path": "omnistock/src/components/shared/BarcodeScanner.jsx",
+      "sha256": "f97235bee129b9c73eb225cf0db364bd33fc7903d8b85649e56db7d30f1c2b7e",
+      "sizeBytes": 3358
+    },
+    {
+      "path": "omnistock/src/components/shared/EnterpriseTechnicalSpecs.jsx",
+      "sha256": "12952813b1c6d20f124ab6b50b5334064f6fdc6bc54fc55f7de5fa7d8f326384",
+      "sizeBytes": 6591
+    },
+    {
+      "path": "omnistock/src/components/shared/FaqSection.jsx",
+      "sha256": "6c2e2634fd2c5867f7a56c5f2c85c87c838656a3d57cfe1df99ac11da842c10a",
+      "sizeBytes": 5920
+    },
+    {
+      "path": "omnistock/src/components/shared/InteractiveVideoPlayer.jsx",
+      "sha256": "11fb621cb222e70c3edbad4d220acfaf1a16c94d0afcfca2a7758465ef60f989",
+      "sizeBytes": 5618
+    },
+    {
+      "path": "omnistock/src/components/shared/LicensingDeploymentTierBar.jsx",
+      "sha256": "e843c47e631434c6b06c070fea9d2186b10a6dde740173c6b66e32b7effbcb5d",
+      "sizeBytes": 5826
+    },
+    {
+      "path": "omnistock/src/components/shared/PullToRefreshIndicator.jsx",
+      "sha256": "a9658f12d7b6c981c3cbfcb8f2d656f8aa908590a9c3c361988e13d40bedeaae",
+      "sizeBytes": 1161
+    },
+    {
+      "path": "omnistock/src/components/shared/RoiCalculator.jsx",
+      "sha256": "2668b9b78a9412de922260eeaf204eb7da27eaab76350dbc2487197e702ccb29",
+      "sizeBytes": 6407
+    },
+    {
+      "path": "omnistock/src/components/shared/SecurityTrustStrip.jsx",
+      "sha256": "51027edef2c28054d6d7583f1a4bfab7c3572ed605be81d2cdc4ed77c4b913e6",
+      "sizeBytes": 1764
+    },
+    {
+      "path": "omnistock/src/components/shared/SelfHostProvisioningModal.jsx",
+      "sha256": "e6e67cc26f716342dd285a780539f3743fc4572870df8a87217eabaedeb46ee5",
+      "sizeBytes": 8869
+    },
+    {
+      "path": "omnistock/src/components/shared/SourceCodeLicenseModal.jsx",
+      "sha256": "fd9a68e53e497500c4e2e9633d5bcfd93d57d7c0ff324eeb20355b59a8b4ef14",
+      "sizeBytes": 5335
+    },
+    {
+      "path": "omnistock/src/components/shared/WhiteLabelCustomizerModal.jsx",
+      "sha256": "489a5497ee0d6616d4279e48899072c610de66502d8d213f9a76c0c764806e99",
+      "sizeBytes": 6533
+    },
+    {
+      "path": "omnistock/src/components/ui/accordion.jsx",
+      "sha256": "478490060e2a3d511e1b5d1a7d65439bbb992e4e1e99d5f0709f325173453156",
+      "sizeBytes": 1656
+    },
+    {
+      "path": "omnistock/src/components/ui/alert-dialog.jsx",
+      "sha256": "fe21928546b77773543f93d7c4382094fd771403cf9b3d3928c572e72d9ece97",
+      "sizeBytes": 3558
+    },
+    {
+      "path": "omnistock/src/components/ui/alert.jsx",
+      "sha256": "809a0b3300cf85221cd2e667e2cd1970a138bdaa57ef512c81a39a2188dfc13d",
+      "sizeBytes": 1382
+    },
+    {
+      "path": "omnistock/src/components/ui/aspect-ratio.jsx",
+      "sha256": "62f29cd87c19f52d403dc2d17823849db2c8cbd541c9f96de20ef13e58d379db",
+      "sizeBytes": 145
+    },
+    {
+      "path": "omnistock/src/components/ui/avatar.jsx",
+      "sha256": "9439196219d33dff8562912552c59e878dbb6cf7aa32f5d17bccdb9bb90efaa5",
+      "sizeBytes": 1078
+    },
+    {
+      "path": "omnistock/src/components/ui/badge.jsx",
+      "sha256": "2fe58e5e5418206ac504de92caea992b085605e218f2d07ef6f63de9e8ea7b8f",
+      "sizeBytes": 2025
+    },
+    {
+      "path": "omnistock/src/components/ui/breadcrumb.jsx",
+      "sha256": "51bbb35125c05ef01517d866cc9d79dfd5d63355da68d3bfb4121d97fec8ddeb",
+      "sizeBytes": 2363
+    },
+    {
+      "path": "omnistock/src/components/ui/button.jsx",
+      "sha256": "aee2b60c25671575ada63e97ae2fa0874b617a1822126f33b29e35a848ae96b1",
+      "sizeBytes": 3221
+    },
+    {
+      "path": "omnistock/src/components/ui/calendar.jsx",
+      "sha256": "a64221b7b0b3bfd4d08cf5f9026d620cb6b4e84718ded755e67a59aa6ea0d24e",
+      "sizeBytes": 2922
+    },
+    {
+      "path": "omnistock/src/components/ui/card.jsx",
+      "sha256": "21102ff9d3199581ea17793bd3d76104d9be94b30724e9cf0051fda09a09207b",
+      "sizeBytes": 1782
+    },
+    {
+      "path": "omnistock/src/components/ui/carousel.jsx",
+      "sha256": "caf08f7734405a1ab1aef53134108aea75c747c3c22c888789beeb47cd83594c",
+      "sizeBytes": 5014
+    },
+    {
+      "path": "omnistock/src/components/ui/chart.jsx",
+      "sha256": "02950e47ad8c44b41e823887774cb8088becceaf542f68965cf375dfc9eb2cce",
+      "sizeBytes": 8948
+    },
+    {
+      "path": "omnistock/src/components/ui/checkbox.jsx",
+      "sha256": "b2b6819b326af045bedca84f081de6e49c7bf086110835b5b893d903ef0ec44b",
+      "sizeBytes": 902
+    },
+    {
+      "path": "omnistock/src/components/ui/collapsible.jsx",
+      "sha256": "bc854800960ef4129d4679a7c4a6b5091e7038adc03698e4529d0c9b5af0d831",
+      "sizeBytes": 340
+    },
+    {
+      "path": "omnistock/src/components/ui/command.jsx",
+      "sha256": "85bde4762ddfcb0daef8c24bf899d3b4cb270e5a55d635a4c8852ee786bbbe2f",
+      "sizeBytes": 4013
+    },
+    {
+      "path": "omnistock/src/components/ui/context-menu.jsx",
+      "sha256": "9f2f66eea8cc632fac137b0ef47841c6fa81ebc7d7afbd8064605b444998569a",
+      "sizeBytes": 6151
+    },
+    {
+      "path": "omnistock/src/components/ui/dialog.jsx",
+      "sha256": "48e8f62f5dcc2f6391274004b2f435acb3a6e732dabb8e5f41a8bf0415a74a5b",
+      "sizeBytes": 3477
+    },
+    {
+      "path": "omnistock/src/components/ui/drawer.jsx",
+      "sha256": "ef7864b5bef151b48d8c2a480a9dbf91a0bf0c5a9b3d29d27dd2912bf64afd12",
+      "sizeBytes": 2451
+    },
+    {
+      "path": "omnistock/src/components/ui/dropdown-menu.jsx",
+      "sha256": "5888a783e926273b78f8e69399e2b1d31d966230cafa52f21764266158d31c92",
+      "sizeBytes": 6313
+    },
+    {
+      "path": "omnistock/src/components/ui/form.jsx",
+      "sha256": "6fb5b37dd37b719ebdc7ee5d4a2b8995fe7ece1296646508ec98af0d992f3080",
+      "sizeBytes": 3275
+    },
+    {
+      "path": "omnistock/src/components/ui/HelpTip.jsx",
+      "sha256": "d894e917b1c9d889464aac660591e10c34b71ec2285c11fc892536fe4a3b7be5",
+      "sizeBytes": 982
+    },
+    {
+      "path": "omnistock/src/components/ui/hover-card.jsx",
+      "sha256": "b0b8f53c1fc20f4c410c1949b1abe612489da7b34374e7f3ec876d5285b33e33",
+      "sizeBytes": 1095
+    },
+    {
+      "path": "omnistock/src/components/ui/input-otp.jsx",
+      "sha256": "9cb80ea26ca7fe046dd336b75f875b7baed2a285753f4ff18b9442ba8843ec52",
+      "sizeBytes": 1864
+    },
+    {
+      "path": "omnistock/src/components/ui/input.jsx",
+      "sha256": "6fdea2c941850fe657121af751af76bafd1e9a2c2a028f7472faf5cc64708d72",
+      "sizeBytes": 883
+    },
+    {
+      "path": "omnistock/src/components/ui/label.jsx",
+      "sha256": "6a429ead60a45fa3705de0bd705d4ca08c77009ab4fbfefbb321b40b4b7ce86d",
+      "sizeBytes": 541
+    },
+    {
+      "path": "omnistock/src/components/ui/menubar.jsx",
+      "sha256": "dd0235a15a65cc36c763e613d05ddfe26e2977bb28c84f98e90c865ca1474937",
+      "sizeBytes": 6990
+    },
+    {
+      "path": "omnistock/src/components/ui/navigation-menu.jsx",
+      "sha256": "e3ae735c975f2d046bedde7c0428fc32d8c7e7e43a8e4605e120e8ef5a6244b5",
+      "sizeBytes": 4321
+    },
+    {
+      "path": "omnistock/src/components/ui/pagination.jsx",
+      "sha256": "30c62c8579e0661792bdfec1967bd815be4a70af3d45ec5e507275f9dbe34a4e",
+      "sizeBytes": 2422
+    },
+    {
+      "path": "omnistock/src/components/ui/popover.jsx",
+      "sha256": "6da6b28bd13c1a07889320c2baf8657f2a0cb9c210851e144d4a063e4a9b6bae",
+      "sizeBytes": 1193
+    },
+    {
+      "path": "omnistock/src/components/ui/progress.jsx",
+      "sha256": "dd92e4b6189242c5bf42249e0bbe2258e3cf7f6054f732063e7deedc84ac12fd",
+      "sizeBytes": 690
+    },
+    {
+      "path": "omnistock/src/components/ui/radio-group.jsx",
+      "sha256": "58b832a7a8842ec8ec1bcd5115b4fa19487fbc1ff8a5ebd9a6c00b746668f9d2",
+      "sizeBytes": 1164
+    },
+    {
+      "path": "omnistock/src/components/ui/resizable.jsx",
+      "sha256": "329ee38682a0a54b2b2d3f50e9a5148fcaf013d6739791d27ca6bb4a04769a2a",
+      "sizeBytes": 1612
+    },
+    {
+      "path": "omnistock/src/components/ui/scroll-area.jsx",
+      "sha256": "deac8e89bafcdedeb795ed43a524e70cef654978102b0c854b75f9826f524520",
+      "sizeBytes": 1400
+    },
+    {
+      "path": "omnistock/src/components/ui/select.jsx",
+      "sha256": "e43c58ad6ae79f3069c0a18c4160248e62ef46b9469dc5faf5a5c546104e23e1",
+      "sizeBytes": 5006
+    },
+    {
+      "path": "omnistock/src/components/ui/separator.jsx",
+      "sha256": "0e01021eb735c6f4f8c0c6b3a9f99dd8428fe837c1a12b7d8be441e5a7d53030",
+      "sizeBytes": 623
+    },
+    {
+      "path": "omnistock/src/components/ui/sheet.jsx",
+      "sha256": "7688a90ad9e29e63e7f920686616571a88abd5e84743a0182a34ec16b64447eb",
+      "sizeBytes": 3658
+    },
+    {
+      "path": "omnistock/src/components/ui/sidebar.jsx",
+      "sha256": "fbc50e3d08df813d10094953469d56acfe9608997f1520ab9fa9dec67202c948",
+      "sizeBytes": 21269
+    },
+    {
+      "path": "omnistock/src/components/ui/skeleton.jsx",
+      "sha256": "b5cbabb0e4b7c98654c527fc33ea501ecd708c9ea2079458945a85ef3416cf7c",
+      "sizeBytes": 241
+    },
+    {
+      "path": "omnistock/src/components/ui/slider.jsx",
+      "sha256": "13a9ab62370c58be57848de7100de3e5bbfcdf4a669bbfb635b7ccb11c6b1de1",
+      "sizeBytes": 935
+    },
+    {
+      "path": "omnistock/src/components/ui/sonner.jsx",
+      "sha256": "a92398f457a0e43fd3640ce72fb22f626ffc812701496bba623651333bf0f23b",
+      "sizeBytes": 828
+    },
+    {
+      "path": "omnistock/src/components/ui/switch.jsx",
+      "sha256": "d3692433ca2fcb3bd74b587cd096942c5582452a6a95ddaf1806dceda899d592",
+      "sizeBytes": 1047
+    },
+    {
+      "path": "omnistock/src/components/ui/table.jsx",
+      "sha256": "1c1ee5240f9e8f5a8f18e779638dcc48340ceb43f71880d6dfce50bcd1b53320",
+      "sizeBytes": 2701
+    },
+    {
+      "path": "omnistock/src/components/ui/tabs.jsx",
+      "sha256": "efefae7020ecab8eac458a60b684569f0b1c7adac0e8622fbe9b9cec9ef588cf",
+      "sizeBytes": 1570
+    },
+    {
+      "path": "omnistock/src/components/ui/textarea.jsx",
+      "sha256": "6f3185e51b3496a17a97a41ce577ea03e9525c3ece24a890c9f783e1c9833774",
+      "sizeBytes": 605
+    },
+    {
+      "path": "omnistock/src/components/ui/toast.jsx",
+      "sha256": "fe43f2d5ec322666b49432d4611336ede6f4276811a631faa9c63423bf2deab2",
+      "sizeBytes": 3907
+    },
+    {
+      "path": "omnistock/src/components/ui/toaster.jsx",
+      "sha256": "a00ceffa66fb276095cf6a2f5d052927e529d77b777db36d5b5703acf484146d",
+      "sizeBytes": 817
+    },
+    {
+      "path": "omnistock/src/components/ui/toggle-group.jsx",
+      "sha256": "34c31985d46f4e1c85b98d2db879f8c89c245cac7fd8e0c0030efaf769d0af0b",
+      "sizeBytes": 1328
+    },
+    {
+      "path": "omnistock/src/components/ui/toggle.jsx",
+      "sha256": "1a4d7a483e843c69a2cd65f189a66f31dfd5660846d64100ed74b78fb99d493b",
+      "sizeBytes": 1348
+    },
+    {
+      "path": "omnistock/src/components/ui/tooltip.jsx",
+      "sha256": "5c4e99fe6b80e658d165cb01e0204b67ab944ab53ce438d8b411705744bfb58f",
+      "sizeBytes": 1119
+    },
+    {
+      "path": "omnistock/src/components/ui/use-toast.jsx",
+      "sha256": "94b77bb2a4ee2d9c126f318685a3e1ab0dc746ceb568ff26a1bb57494cc62d51",
+      "sizeBytes": 3542
+    },
+    {
+      "path": "omnistock/src/components/UserNotRegisteredError.jsx",
+      "sha256": "ee739ed03d4b48d4284d56e2e49ddb36407859d3ee1436e8d75a01378627d90a",
+      "sizeBytes": 1750
+    },
+    {
+      "path": "omnistock/src/hooks/use-mobile.jsx",
+      "sha256": "45f02b034691fc6fcd9761106f521464bd81c139bc7f122811590fb22e1a3c42",
+      "sizeBytes": 564
+    },
+    {
+      "path": "omnistock/src/hooks/useApiToast.js",
+      "sha256": "b30c4ade19ea4aed7fc33d8267aa27176db6c964de76267fcb3435a0ae144c70",
+      "sizeBytes": 650
+    },
+    {
+      "path": "omnistock/src/hooks/usePullToRefresh.js",
+      "sha256": "f38fbb1e318a18cb6e206c112150c04552a6f828981f9150424735d82923c62f",
+      "sizeBytes": 1745
+    },
+    {
+      "path": "omnistock/src/hooks/useStockNotifications.js",
+      "sha256": "aa09117160948e4529fe81c1507774c2f737f61845515d6a8c6ce4429327ae33",
+      "sizeBytes": 2741
+    },
+    {
+      "path": "omnistock/src/hooks/useTrialStatus.js",
+      "sha256": "2282425380fb5fa855c136d8b54a46dfae8c592a3ae3e7db86ede2cbb6996e9b",
+      "sizeBytes": 2127
+    },
+    {
+      "path": "omnistock/src/index.css",
+      "sha256": "41808cc906b30d797706fa547f5fc6bdb35d30fccad8b8e81db959bf8699c6fe",
+      "sizeBytes": 20037
+    },
+    {
+      "path": "omnistock/src/lib/app-params.js",
+      "sha256": "e9b0223739321705fa152fa7359f444090e385acdbd179848e56858c95d3ddb2",
+      "sizeBytes": 1845
+    },
+    {
+      "path": "omnistock/src/lib/AuthContext.jsx",
+      "sha256": "79b40842556e116690e72b8ff9cc6787baefe93ac0127e8dd4792a400f31ec29",
+      "sizeBytes": 2502
+    },
+    {
+      "path": "omnistock/src/lib/csv.js",
+      "sha256": "9aa21a1081e3384afc99aba5d9ec2e17d11c1334c7468e7f7a06b8a18d7b2493",
+      "sizeBytes": 3675
+    },
+    {
+      "path": "omnistock/src/lib/db.js",
+      "sha256": "67bf22429574413ce7b397ad68a92e15bfd74f21497f77b1cd4732f8342d8232",
+      "sizeBytes": 11219
+    },
+    {
+      "path": "omnistock/src/lib/designSystem.js",
+      "sha256": "891a8e294df4b9640ded7e0cbcffd8426e28f383752fc42787baac9f20f505c9",
+      "sizeBytes": 9284
+    },
+    {
+      "path": "omnistock/src/lib/monthlyAnalysis.js",
+      "sha256": "af58f6f96c177bc3895a673337c9c7eb0a783d10e5f533c1c4addc6d46ff6ff3",
+      "sizeBytes": 4023
+    },
+    {
+      "path": "omnistock/src/lib/PageNotFound.jsx",
+      "sha256": "34ca35db0068f0d12b42f8e19bd67963b182608d41207e269085f4d7c67659d5",
+      "sizeBytes": 4047
+    },
+    {
+      "path": "omnistock/src/lib/paymongoPOS.js",
+      "sha256": "a8a3981170043b0a0f242313deb7b66ca23a3b2ce4e771e95f1aea2ca48fcc69",
+      "sizeBytes": 2074
+    },
+    {
+      "path": "omnistock/src/lib/priceChangeTracker.js",
+      "sha256": "f712c787c72c3569be524b121459e40f5bf464ba00c04ea2a38790603ab44690",
+      "sizeBytes": 3372
+    },
+    {
+      "path": "omnistock/src/lib/query-client.js",
+      "sha256": "73c984ce07a6dec4e670302d76e00ebbd8d77ffceb58431859c5a9f64284c838",
+      "sizeBytes": 207
+    },
+    {
+      "path": "omnistock/src/lib/utils.js",
+      "sha256": "917f1465a64346f1b76178074a09ac5cd63e96fe12eb740311a73f0f27d8487e",
+      "sizeBytes": 199
+    },
+    {
+      "path": "omnistock/src/lib/weeklyPOReport.js",
+      "sha256": "59e630b567b0514a3a74ada8deb443c6fc9697953d48b348ddd72125c967f0c9",
+      "sizeBytes": 3178
+    },
+    {
+      "path": "omnistock/src/main.jsx",
+      "sha256": "0c2f42a6aefe71f04ed7be827ddc1164dfaaeeee38cc2234fa68fe5a342396e1",
+      "sizeBytes": 291
+    },
+    {
+      "path": "omnistock/src/pages/Alerts.jsx",
+      "sha256": "219c339c5d3ed9ea82b5d8c599b121dc756843460ac8e2005ed0370b9a19540d",
+      "sizeBytes": 9052
+    },
+    {
+      "path": "omnistock/src/pages/Analytics.jsx",
+      "sha256": "6a589adc5fd02982f33ae3f1d5d14816410c9f9f6f70b401806023b837320085",
+      "sizeBytes": 34326
+    },
+    {
+      "path": "omnistock/src/pages/Automations.jsx",
+      "sha256": "9662fac7bcc2d3f34f24d6b30f27249150725b02ba340b959fff983436c70eb2",
+      "sizeBytes": 1339
+    },
+    {
+      "path": "omnistock/src/pages/Categories.jsx",
+      "sha256": "7a49f9f827e1ac0e15516763dc3a789e94ab023ab4cb5a94c7bd3d2d5cfd3caf",
+      "sizeBytes": 9472
+    },
+    {
+      "path": "omnistock/src/pages/Customers.jsx",
+      "sha256": "cdcd0b2909f422bffde8af288252affd4cd1a33c95cf5f339145badfdc4c5797",
+      "sizeBytes": 14835
+    },
+    {
+      "path": "omnistock/src/pages/Dashboard.jsx",
+      "sha256": "b67aed0d76ab30a4ef5c4916eef90d3ce5e2916d185229ed24c99495ec1be555",
+      "sizeBytes": 13740
+    },
+    {
+      "path": "omnistock/src/pages/Inventory.jsx",
+      "sha256": "12363b370507c46bcbba30846390455ba2a788e21783a8e1333737e022ed194b",
+      "sizeBytes": 14079
+    },
+    {
+      "path": "omnistock/src/pages/Landing.jsx",
+      "sha256": "5a4e1c960d4dfe4d8c47d432618177573a0e152e9e425463bb1455bdf8328ab7",
+      "sizeBytes": 15032
+    },
+    {
+      "path": "omnistock/src/pages/Login.jsx",
+      "sha256": "5e33d34d089a9e2e202153c5efbdc744ed737ed05e5fe9a590e6fb4ea8234f38",
+      "sizeBytes": 7579
+    },
+    {
+      "path": "omnistock/src/pages/Monetization.jsx",
+      "sha256": "7370fe7fb57351399ebf78d94f9fb30a3263d73f32fe23f4bb35f6e25bfaee5a",
+      "sizeBytes": 7157
+    },
+    {
+      "path": "omnistock/src/pages/POS.jsx",
+      "sha256": "74e3623673bbc63a0a5a9cf5ec9b7e5bb8e9810e9c1c228416d7b1b0a8b4dd60",
+      "sizeBytes": 32403
+    },
+    {
+      "path": "omnistock/src/pages/Pricing.jsx",
+      "sha256": "e2b3e0986146a3fffdfdcf9436b3250789c78b73256cc0f3699cc17632a192bf",
+      "sizeBytes": 20740
+    },
+    {
+      "path": "omnistock/src/pages/PurchaseOrders.jsx",
+      "sha256": "526fa0f1a33e31c57243d976b55ac7cb18204ece00b41c4a61b06a8c01836c64",
+      "sizeBytes": 17109
+    },
+    {
+      "path": "omnistock/src/pages/Recipes.jsx",
+      "sha256": "5e927d6613a5d6f23f3c2bdd349eae62df196c9ec092f486d10bd27c40fbf935",
+      "sizeBytes": 11625
+    },
+    {
+      "path": "omnistock/src/pages/SalesReport.jsx",
+      "sha256": "5fc9f218428467da598937667ce564c410b844fc4f7034991e48b2d5f2da5f5d",
+      "sizeBytes": 22909
+    },
+    {
+      "path": "omnistock/src/pages/Settings.jsx",
+      "sha256": "970131aa97a89dd958bb295c5856f0548734aee5a48b3089471fc23d1e61293e",
+      "sizeBytes": 8731
+    },
+    {
+      "path": "omnistock/src/pages/StockAdjustments.jsx",
+      "sha256": "1a4c8b40da4ea219a5f5e68af417ff181952a2963ed0999ed1caf4312aa36736",
+      "sizeBytes": 12677
+    },
+    {
+      "path": "omnistock/src/pages/Suppliers.jsx",
+      "sha256": "b4729300a058416cae0c744a3c22fd5e8aee494b7b4499fcd9f8ea80e3df0cab",
+      "sizeBytes": 10133
+    },
+    {
+      "path": "omnistock/src/utils/costing.js",
+      "sha256": "f712d0817ef0d4259d29edca5c249f095884fb74426663977f4e66a8bc6e7e2d",
+      "sizeBytes": 3176
+    },
+    {
+      "path": "omnistock/src/utils/index.ts",
+      "sha256": "c27c1dc47b24693f410767b6b99f89d544195cdd9c1d349212436476b73a3065",
+      "sizeBytes": 99
+    },
+    {
+      "path": "omnistock/src/utils/posthogSessionReplay.ts",
+      "sha256": "d3fabd52859de7fe186bf7ed651091ac5c723109df3b21816a8b850ae71cddc0",
+      "sizeBytes": 126
+    },
+    {
+      "path": "omnistock/src/utils/purgeClientState.js",
+      "sha256": "85cb8e7ef5bbffdd94ea28c29a8e5964d9b01bfeda741c4692de0e17777e0008",
+      "sizeBytes": 650
+    },
+    {
+      "path": "omnistock/src/utils/speculationRules.ts",
+      "sha256": "d0cc17de46beb9a9d37c86687eb030e78828389b2e010b8d0df4dad6dda7646f",
+      "sizeBytes": 587
+    }
+  ],
+  "hits": [
+    {
+      "file": "GHL-PULSE/src/api/webhookEngine.js",
+      "line": 41,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"targets.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/api/webhookEngine.js",
+      "line": 56,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"targets.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/components/ghla/AgencyMatrix.jsx",
+      "line": 11,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"subAccounts.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/components/ghla/AgencyMatrix.jsx",
+      "line": 150,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"filteredSubAccounts.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/components/ghla/OnboardingTourModal.jsx",
+      "line": 45,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"slides.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/components/ghla/OnboardingTourModal.jsx",
+      "line": 98,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"slides.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/components/ghla/TrendGraph.jsx",
+      "line": 17,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"data.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/components/ghla/TrendGraph.jsx",
+      "line": 17,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"data.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/components/ghla/TrendGraph.jsx",
+      "line": 18,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"data.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/components/ghla/TrendGraph.jsx",
+      "line": 22,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"data.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/components/ui/chart.jsx",
+      "line": 55,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"colorConfig.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/components/UserNotRegisteredError.jsx",
+      "line": 8,
+      "ruleId": "FORBIDDEN-PASTEL-CARD-FILL",
+      "severity": "ERROR",
+      "message": "Prohibited light-pastel card background fill on dark mode surface. (Found: \"bg-orange-100\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/AutonomousAgents.tsx",
+      "line": 118,
+      "ruleId": "FORBIDDEN-PASTEL-CARD-FILL",
+      "severity": "ERROR",
+      "message": "Prohibited light-pastel card background fill on dark mode surface. (Found: \"bg-slate-100\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/AutonomousAgents.tsx",
+      "line": 148,
+      "ruleId": "FORBIDDEN-PASTEL-CARD-FILL",
+      "severity": "ERROR",
+      "message": "Prohibited light-pastel card background fill on dark mode surface. (Found: \"bg-emerald-100\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/AutonomousAgents.tsx",
+      "line": 152,
+      "ruleId": "FORBIDDEN-PASTEL-CARD-FILL",
+      "severity": "ERROR",
+      "message": "Prohibited light-pastel card background fill on dark mode surface. (Found: \"bg-amber-100\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/AutonomousAgents.tsx",
+      "line": 181,
+      "ruleId": "FORBIDDEN-PASTEL-CARD-FILL",
+      "severity": "ERROR",
+      "message": "Prohibited light-pastel card background fill on dark mode surface. (Found: \"bg-amber-100\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/AutonomousAgents.tsx",
+      "line": 183,
+      "ruleId": "FORBIDDEN-PASTEL-CARD-FILL",
+      "severity": "ERROR",
+      "message": "Prohibited light-pastel card background fill on dark mode surface. (Found: \"bg-emerald-100\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/AutonomousAgents.tsx",
+      "line": 185,
+      "ruleId": "FORBIDDEN-PASTEL-CARD-FILL",
+      "severity": "ERROR",
+      "message": "Prohibited light-pastel card background fill on dark mode surface. (Found: \"bg-red-100\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
+      "line": 176,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"replacement.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
+      "line": 176,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"replacement.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
+      "line": 203,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"newAttachments.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
+      "line": 249,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"selectedEmailIdsForBulk.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
+      "line": 249,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"emails.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
+      "line": 257,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"selectedEmailIdsForBulk.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
+      "line": 259,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"selectedEmailIdsForBulk.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
+      "line": 262,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"selectedEmailIdsForBulk.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
+      "line": 266,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"selectedEmails.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
+      "line": 268,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"selectedEmails.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
+      "line": 271,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"selectedEmails.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
+      "line": 403,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"messages.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
+      "line": 442,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"cached.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
+      "line": 648,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"emails.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
+      "line": 650,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"emails.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
+      "line": 702,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"sorted.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
+      "line": 985,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"autoReplyLogs.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
+      "line": 1062,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"selectedEmailIdsForBulk.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
+      "line": 1062,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"emails.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
+      "line": 1068,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"selectedEmailIdsForBulk.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
+      "line": 1068,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"emails.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GoogleMapsScraper.tsx",
+      "line": 39,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"location.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GoogleMapsScraper.tsx",
+      "line": 99,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"rawLeads.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GoogleMapsScraper.tsx",
+      "line": 105,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"rawLeads.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GoogleMapsScraper.tsx",
+      "line": 115,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"targetLeads.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GoogleMapsScraper.tsx",
+      "line": 168,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"targetLeads.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GoogleMapsScraper.tsx",
+      "line": 172,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"enrichedResults.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GoogleMapsScraper.tsx",
+      "line": 174,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"enrichedResults.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GoogleMapsScraper.tsx",
+      "line": 207,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"rawLeads.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GoogleMapsScraper.tsx",
+      "line": 212,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"rawLeads.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GoogleMapsScraper.tsx",
+      "line": 220,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"targetLeads.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GoogleMapsScraper.tsx",
+      "line": 284,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"enrichedResults.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GoogleMapsScraper.tsx",
+      "line": 285,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"enrichedResults.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GoogleMapsScraper.tsx",
+      "line": 295,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"leads.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GoogleMapsScraper.tsx",
+      "line": 323,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"leads.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GoogleMapsScraper.tsx",
+      "line": 340,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"leads.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GoogleMapsScraper.tsx",
+      "line": 341,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"leads.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GoogleMapsScraper.tsx",
+      "line": 362,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"selectedLead.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GoogleMapsScraper.tsx",
+      "line": 508,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"logs.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/GoogleMapsScraper.tsx",
+      "line": 558,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"leads.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/KnowledgeGraphPortal.tsx",
+      "line": 76,
+      "ruleId": "FORBIDDEN-PASTEL-CARD-FILL",
+      "severity": "ERROR",
+      "message": "Prohibited light-pastel card background fill on dark mode surface. (Found: \"bg-slate-100\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/KnowledgeGraphPortal.tsx",
+      "line": 154,
+      "ruleId": "FORBIDDEN-PASTEL-CARD-FILL",
+      "severity": "ERROR",
+      "message": "Prohibited light-pastel card background fill on dark mode surface. (Found: \"bg-slate-100\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/MarketingWorkflows.tsx",
+      "line": 55,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"syncedLeads.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/MarketingWorkflows.tsx",
+      "line": 479,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"stages.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/MarketingWorkflows.tsx",
+      "line": 524,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"cards.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/MarketingWorkflows.tsx",
+      "line": 611,
+      "ruleId": "FORBIDDEN-PASTEL-CARD-FILL",
+      "severity": "ERROR",
+      "message": "Prohibited light-pastel card background fill on dark mode surface. (Found: \"bg-slate-100\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/MarketingWorkflows.tsx",
+      "line": 737,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"quotaList.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/MarketingWorkflows.tsx",
+      "line": 877,
+      "ruleId": "FORBIDDEN-PASTEL-CARD-FILL",
+      "severity": "ERROR",
+      "message": "Prohibited light-pastel card background fill on dark mode surface. (Found: \"bg-slate-100\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/MarketingWorkflows.tsx",
+      "line": 997,
+      "ruleId": "FORBIDDEN-PASTEL-CARD-FILL",
+      "severity": "ERROR",
+      "message": "Prohibited light-pastel card background fill on dark mode surface. (Found: \"bg-slate-100\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/MarketingWorkflows.tsx",
+      "line": 1015,
+      "ruleId": "FORBIDDEN-PASTEL-CARD-FILL",
+      "severity": "ERROR",
+      "message": "Prohibited light-pastel card background fill on dark mode surface. (Found: \"bg-slate-100\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/MarketingWorkflows.tsx",
+      "line": 1087,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"telemetryLogs.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/WorkflowCanvas.tsx",
+      "line": 608,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"nodes.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/WorkflowCanvas.tsx",
+      "line": 621,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"queue.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/WorkflowCanvas.tsx",
+      "line": 841,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"workflows.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/WorkflowCanvas.tsx",
+      "line": 842,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"workflows.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/WorkflowCanvas.tsx",
+      "line": 1077,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"trace.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/WorkflowCanvas.tsx",
+      "line": 1088,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"trace.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/WorkflowCanvas.tsx",
+      "line": 1108,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"queue.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/WorkflowCanvas.tsx",
+      "line": 1206,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"q.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/WorkflowCanvas.tsx",
+      "line": 1230,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"debugQueue.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/WorkflowCanvas.tsx",
+      "line": 1334,
+      "ruleId": "FORBIDDEN-PASTEL-CARD-FILL",
+      "severity": "ERROR",
+      "message": "Prohibited light-pastel card background fill on dark mode surface. (Found: \"bg-violet-100\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/WorkflowCanvas.tsx",
+      "line": 1428,
+      "ruleId": "FORBIDDEN-PASTEL-CARD-FILL",
+      "severity": "ERROR",
+      "message": "Prohibited light-pastel card background fill on dark mode surface. (Found: \"bg-slate-100\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/WorkflowCanvas.tsx",
+      "line": 1468,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"debugLogs.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/integrations/ariax/components/WorkflowCanvas.tsx",
+      "line": 1600,
+      "ruleId": "FORBIDDEN-PASTEL-CARD-FILL",
+      "severity": "ERROR",
+      "message": "Prohibited light-pastel card background fill on dark mode surface. (Found: \"bg-violet-100\")"
+    },
+    {
+      "file": "GHL-PULSE/src/pages/Dashboard.jsx",
+      "line": 263,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"openIssues.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/pages/Dashboard.jsx",
+      "line": 265,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"issues.length\")"
+    },
+    {
+      "file": "GHL-PULSE/src/pages/Register.jsx",
+      "line": 107,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"otpCode.length\")"
+    },
+    {
+      "file": "EMS/src/App.tsx",
+      "line": 281,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"teamMembers.length\")"
+    },
+    {
+      "file": "EMS/src/components/AutonomousTaxComplianceEngine.tsx",
+      "line": 106,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"vaultDocs.length\")"
+    },
+    {
+      "file": "EMS/src/components/BenefitsAdministrationPortal.tsx",
+      "line": 98,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"enrolledBenefits.length\")"
+    },
+    {
+      "file": "EMS/src/components/Dashboard.tsx",
+      "line": 212,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"unacknowledgedAlerts.length\")"
+    },
+    {
+      "file": "EMS/src/components/DepartmentDetailModal.tsx",
+      "line": 33,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"safeMembers.length\")"
+    },
+    {
+      "file": "EMS/src/components/DepartmentDetailModal.tsx",
+      "line": 79,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"rosterMembers.length\")"
+    },
+    {
+      "file": "EMS/src/components/Directory.tsx",
+      "line": 71,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"teamMembers.length\")"
+    },
+    {
+      "file": "EMS/src/components/Directory.tsx",
+      "line": 314,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"departments.length\")"
+    },
+    {
+      "file": "EMS/src/components/Directory.tsx",
+      "line": 316,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"departments.length\")"
+    },
+    {
+      "file": "EMS/src/components/EcosystemIntegrationsHub.tsx",
+      "line": 289,
+      "ruleId": "HARDCODED-SECRET-KEY",
+      "severity": "ERROR",
+      "message": "Possible hardcoded API key or token detected. (Found: \"[REDACTED_SECRET]\")"
+    },
+    {
+      "file": "EMS/src/components/EmployeeBios.tsx",
+      "line": 46,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"journeyPoints.length\")"
+    },
+    {
+      "file": "EMS/src/components/EmployeeExitInterviewEngine.tsx",
+      "line": 154,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"exitRecords.length\")"
+    },
+    {
+      "file": "EMS/src/components/EmployeeOnboardingWizard.tsx",
+      "line": 255,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"statutoryIds.length\")"
+    },
+    {
+      "file": "EMS/src/components/EmployeeOnboardingWizard.tsx",
+      "line": 372,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"sessions.length\")"
+    },
+    {
+      "file": "EMS/src/components/EmployeeRecognitionRewards.tsx",
+      "line": 83,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"kudosList.length\")"
+    },
+    {
+      "file": "EMS/src/components/EmployeeSurveyPulse.tsx",
+      "line": 54,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"responses.length\")"
+    },
+    {
+      "file": "EMS/src/components/EmployeeSurveyPulse.tsx",
+      "line": 54,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"responses.length\")"
+    },
+    {
+      "file": "EMS/src/components/EmployeeSurveyPulse.tsx",
+      "line": 94,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"responses.length\")"
+    },
+    {
+      "file": "EMS/src/components/EmployeeSurveyPulse.tsx",
+      "line": 126,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"responses.length\")"
+    },
+    {
+      "file": "EMS/src/components/Header.tsx",
+      "line": 209,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"departments.length\")"
+    },
+    {
+      "file": "EMS/src/components/Header.tsx",
+      "line": 372,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"results.length\")"
+    },
+    {
+      "file": "EMS/src/components/Header.tsx",
+      "line": 375,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"results.length\")"
+    },
+    {
+      "file": "EMS/src/components/Header.tsx",
+      "line": 375,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"results.length\")"
+    },
+    {
+      "file": "EMS/src/components/Header.tsx",
+      "line": 502,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"results.length\")"
+    },
+    {
+      "file": "EMS/src/components/Header.tsx",
+      "line": 516,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"results.length\")"
+    },
+    {
+      "file": "EMS/src/components/Header.tsx",
+      "line": 518,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"memberResults.length\")"
+    },
+    {
+      "file": "EMS/src/components/Header.tsx",
+      "line": 519,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"deptResults.length\")"
+    },
+    {
+      "file": "EMS/src/components/Header.tsx",
+      "line": 520,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"eventResults.length\")"
+    },
+    {
+      "file": "EMS/src/components/HumanInTheLoopGovernance.tsx",
+      "line": 29,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"pendingActions.length\")"
+    },
+    {
+      "file": "EMS/src/components/HumanInTheLoopGovernanceShield.tsx",
+      "line": 47,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"pendingActions.length\")"
+    },
+    {
+      "file": "EMS/src/components/IncidentGrievanceReporter.tsx",
+      "line": 108,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"tickets.length\")"
+    },
+    {
+      "file": "EMS/src/components/LeaveManagementPortal.tsx",
+      "line": 44,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"leaveEntitlements.length\")"
+    },
+    {
+      "file": "EMS/src/components/LeaveManagementPortal.tsx",
+      "line": 165,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"requests.length\")"
+    },
+    {
+      "file": "EMS/src/components/OvertimeShiftSwapManager.tsx",
+      "line": 120,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"requests.length\")"
+    },
+    {
+      "file": "EMS/src/components/PayslipCreator.tsx",
+      "line": 840,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"savedPayslips.length\")"
+    },
+    {
+      "file": "EMS/src/components/PayslipCreator.tsx",
+      "line": 856,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"filteredSlips.length\")"
+    },
+    {
+      "file": "EMS/src/components/PayslipCreator.tsx",
+      "line": 1085,
+      "ruleId": "FORBIDDEN-WHITE-CARD-FILL",
+      "severity": "WARNING",
+      "message": "Verify white surface fill does not bleed into dark Cyber Glass mode. (Found: \"bg-white\")"
+    },
+    {
+      "file": "EMS/src/components/PayslipCreator.tsx",
+      "line": 1093,
+      "ruleId": "FORBIDDEN-WHITE-CARD-FILL",
+      "severity": "WARNING",
+      "message": "Verify white surface fill does not bleed into dark Cyber Glass mode. (Found: \"bg-white\")"
+    },
+    {
+      "file": "EMS/src/components/PayslipCreator.tsx",
+      "line": 1398,
+      "ruleId": "FORBIDDEN-WHITE-CARD-FILL",
+      "severity": "WARNING",
+      "message": "Verify white surface fill does not bleed into dark Cyber Glass mode. (Found: \"bg-white\")"
+    },
+    {
+      "file": "EMS/src/components/PayslipCreator.tsx",
+      "line": 1405,
+      "ruleId": "FORBIDDEN-WHITE-CARD-FILL",
+      "severity": "WARNING",
+      "message": "Verify white surface fill does not bleed into dark Cyber Glass mode. (Found: \"bg-white\")"
+    },
+    {
+      "file": "EMS/src/components/Productivity.tsx",
+      "line": 35,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"departments.length\")"
+    },
+    {
+      "file": "EMS/src/components/ProductivityTrendLine.tsx",
+      "line": 19,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"teamMembers.length\")"
+    },
+    {
+      "file": "EMS/src/components/ProductivityTrendLine.tsx",
+      "line": 47,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"data.length\")"
+    },
+    {
+      "file": "EMS/src/components/QuickNotes.tsx",
+      "line": 210,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"noteText.length\")"
+    },
+    {
+      "file": "EMS/src/components/QuickNotes.tsx",
+      "line": 236,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"todos.length\")"
+    },
+    {
+      "file": "EMS/src/components/Settings.tsx",
+      "line": 256,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"val.length\")"
+    },
+    {
+      "file": "EMS/src/components/TeamOverview.tsx",
+      "line": 153,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"safeDepts.length\")"
+    },
+    {
+      "file": "EMS/src/components/TeamOverview.tsx",
+      "line": 160,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"hubsList.length\")"
+    },
+    {
+      "file": "EMS/src/components/TeamOverview.tsx",
+      "line": 310,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"hubsList.length\")"
+    },
+    {
+      "file": "EMS/src/components/TeamOverview.tsx",
+      "line": 315,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"hubsList.length\")"
+    },
+    {
+      "file": "EMS/src/components/TeamOverview.tsx",
+      "line": 315,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"hubsList.length\")"
+    },
+    {
+      "file": "EMS/src/components/TeamOverview.tsx",
+      "line": 396,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"shortName.length\")"
+    },
+    {
+      "file": "EMS/src/components/Timeline.tsx",
+      "line": 102,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"filteredEvents.length\")"
+    },
+    {
+      "file": "EMS/src/components/Timeline.tsx",
+      "line": 134,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"filteredEvents.length\")"
+    },
+    {
+      "file": "EMS/src/components/TrainingCertificationHub.tsx",
+      "line": 135,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"certs.length\")"
+    },
+    {
+      "file": "EMS/src/components/WorkspaceHub.tsx",
+      "line": 833,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"tasks.length\")"
+    },
+    {
+      "file": "EMS/src/components/WorkspaceHub.tsx",
+      "line": 1049,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"emails.length\")"
+    },
+    {
+      "file": "EMS/src/components/WorkspaceHub.tsx",
+      "line": 1150,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"calendarEvents.length\")"
+    },
+    {
+      "file": "EMS/src/components/WorkspaceHub.tsx",
+      "line": 1260,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"driveFiles.length\")"
+    },
+    {
+      "file": "EMS/src/components/WorkspaceHub.tsx",
+      "line": 1309,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"contacts.length\")"
+    },
+    {
+      "file": "EMS/src/components/WorkspaceHub.tsx",
+      "line": 1353,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"formsList.length\")"
+    },
+    {
+      "file": "EMS/src/lib/colors.ts",
+      "line": 7,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"cleanHex.length\")"
+    },
+    {
+      "file": "EMS/src/lib/colors.ts",
+      "line": 20,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"hex.length\")"
+    },
+    {
+      "file": "omnistock/src/components/analytics/TopCustomersAnalysis.jsx",
+      "line": 17,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"TIERS.length\")"
+    },
+    {
+      "file": "omnistock/src/components/analytics/TopCustomersAnalysis.jsx",
+      "line": 53,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"customers.length\")"
+    },
+    {
+      "file": "omnistock/src/components/analytics/TopCustomersAnalysis.jsx",
+      "line": 75,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"customers.length\")"
+    },
+    {
+      "file": "omnistock/src/components/automations/ReportScheduleList.jsx",
+      "line": 97,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"schedules.length\")"
+    },
+    {
+      "file": "omnistock/src/components/automations/SyncSettingsCard.jsx",
+      "line": 27,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"list.length\")"
+    },
+    {
+      "file": "omnistock/src/components/dashboard/LowStockBanner.jsx",
+      "line": 15,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"outOfStock.length\")"
+    },
+    {
+      "file": "omnistock/src/components/dashboard/LowStockBanner.jsx",
+      "line": 41,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"outOfStock.length\")"
+    },
+    {
+      "file": "omnistock/src/components/dashboard/LowStockBanner.jsx",
+      "line": 42,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"lowStock.length\")"
+    },
+    {
+      "file": "omnistock/src/components/dashboard/LowStockBanner.jsx",
+      "line": 48,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"lowStock.length\")"
+    },
+    {
+      "file": "omnistock/src/components/dashboard/LowStockBanner.jsx",
+      "line": 48,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"lowStock.length\")"
+    },
+    {
+      "file": "omnistock/src/components/dashboard/LowStockWidget.jsx",
+      "line": 15,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"lowStock.length\")"
+    },
+    {
+      "file": "omnistock/src/components/dashboard/LowStockWidget.jsx",
+      "line": 25,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"lowStock.length\")"
+    },
+    {
+      "file": "omnistock/src/components/dashboard/LowStockWidget.jsx",
+      "line": 37,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"outOfStock.length\")"
+    },
+    {
+      "file": "omnistock/src/components/dashboard/LowStockWidget.jsx",
+      "line": 37,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"outOfStock.length\")"
+    },
+    {
+      "file": "omnistock/src/components/dashboard/LowStockWidget.jsx",
+      "line": 93,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"lowStock.length\")"
+    },
+    {
+      "file": "omnistock/src/components/inventory/CatalogueReviewTable.jsx",
+      "line": 39,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"candidates.length\")"
+    },
+    {
+      "file": "omnistock/src/components/inventory/CatalogueReviewTable.jsx",
+      "line": 39,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"selected.length\")"
+    },
+    {
+      "file": "omnistock/src/components/inventory/CatalogueReviewTable.jsx",
+      "line": 110,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"selected.length\")"
+    },
+    {
+      "file": "omnistock/src/components/inventory/CatalogueReviewTable.jsx",
+      "line": 111,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"selected.length\")"
+    },
+    {
+      "file": "omnistock/src/components/inventory/CatalogueReviewTable.jsx",
+      "line": 111,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"selected.length\")"
+    },
+    {
+      "file": "omnistock/src/components/inventory/CatalogueUploaderModal.jsx",
+      "line": 31,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"products.length\")"
+    },
+    {
+      "file": "omnistock/src/components/layout/AppLayout.jsx",
+      "line": 38,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"alerts.length\")"
+    },
+    {
+      "file": "omnistock/src/components/layout/LicensingDeploymentTierBar.jsx",
+      "line": 10,
+      "ruleId": "HARDCODED-SECRET-KEY",
+      "severity": "ERROR",
+      "message": "Possible hardcoded API key or token detected. (Found: \"[REDACTED_SECRET]\")"
+    },
+    {
+      "file": "omnistock/src/components/pos/RefundModal.jsx",
+      "line": 41,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"itemsToRefund.length\")"
+    },
+    {
+      "file": "omnistock/src/components/recipes/RecipeDetailModal.jsx",
+      "line": 48,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"ingredients.length\")"
+    },
+    {
+      "file": "omnistock/src/components/recipes/RecipeDetailModal.jsx",
+      "line": 50,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"ingredients.length\")"
+    },
+    {
+      "file": "omnistock/src/components/recipes/RecipeFormModal.jsx",
+      "line": 238,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"ingredients.length\")"
+    },
+    {
+      "file": "omnistock/src/components/recipes/YieldCalculatorPanel.jsx",
+      "line": 36,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"ingredientStats.length\")"
+    },
+    {
+      "file": "omnistock/src/components/sales/TopProductsAnalytics.jsx",
+      "line": 21,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"name.length\")"
+    },
+    {
+      "file": "omnistock/src/components/sales/TopProductsAnalytics.jsx",
+      "line": 55,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"topProducts.length\")"
+    },
+    {
+      "file": "omnistock/src/components/sales/TopProductsAnalytics.jsx",
+      "line": 92,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"topProducts.length\")"
+    },
+    {
+      "file": "omnistock/src/components/shared/BarcodeScanner.jsx",
+      "line": 17,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"devices.length\")"
+    },
+    {
+      "file": "omnistock/src/components/ui/chart.jsx",
+      "line": 55,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"colorConfig.length\")"
+    },
+    {
+      "file": "omnistock/src/lib/csv.js",
+      "line": 54,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"line.length\")"
+    },
+    {
+      "file": "omnistock/src/lib/csv.js",
+      "line": 82,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"lines.length\")"
+    },
+    {
+      "file": "omnistock/src/lib/csv.js",
+      "line": 85,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"lines.length\")"
+    },
+    {
+      "file": "omnistock/src/lib/db.js",
+      "line": 248,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"dataArray.length\")"
+    },
+    {
+      "file": "omnistock/src/lib/monthlyAnalysis.js",
+      "line": 92,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"monthTxns.length\")"
+    },
+    {
+      "file": "omnistock/src/lib/paymongoPOS.js",
+      "line": 2,
+      "ruleId": "HARDCODED-SECRET-KEY",
+      "severity": "ERROR",
+      "message": "Possible hardcoded API key or token detected. (Found: \"[REDACTED_SECRET]\")"
+    },
+    {
+      "file": "omnistock/src/lib/weeklyPOReport.js",
+      "line": 16,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"openOrders.length\")"
+    },
+    {
+      "file": "omnistock/src/lib/weeklyPOReport.js",
+      "line": 58,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"orders.length\")"
+    },
+    {
+      "file": "omnistock/src/lib/weeklyPOReport.js",
+      "line": 77,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"orders.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Alerts.jsx",
+      "line": 63,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"newAlerts.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Alerts.jsx",
+      "line": 117,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"activeAlerts.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Alerts.jsx",
+      "line": 126,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"activeAlerts.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Analytics.jsx",
+      "line": 55,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"periodTxns.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Analytics.jsx",
+      "line": 73,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"dayTxns.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Analytics.jsx",
+      "line": 236,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"by_category.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Analytics.jsx",
+      "line": 265,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"by_recipe.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Analytics.jsx",
+      "line": 447,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"paymentData.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Analytics.jsx",
+      "line": 470,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"gradients.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Analytics.jsx",
+      "line": 490,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"badgeBgs.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Analytics.jsx",
+      "line": 517,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"topProducts.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Categories.jsx",
+      "line": 20,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"str.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Categories.jsx",
+      "line": 23,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"PRESET_COLORS.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Categories.jsx",
+      "line": 51,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"categories.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Categories.jsx",
+      "line": 51,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"PRESET_COLORS.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Categories.jsx",
+      "line": 161,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"categories.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Customers.jsx",
+      "line": 176,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"customers.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Customers.jsx",
+      "line": 199,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"filtered.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Dashboard.jsx",
+      "line": 164,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"alerts.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Dashboard.jsx",
+      "line": 168,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"alerts.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Dashboard.jsx",
+      "line": 173,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"customers.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Dashboard.jsx",
+      "line": 270,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"recentTransactions.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Inventory.jsx",
+      "line": 92,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"records.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Inventory.jsx",
+      "line": 92,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"records.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Inventory.jsx",
+      "line": 114,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"records.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Inventory.jsx",
+      "line": 120,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"toCreate.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Inventory.jsx",
+      "line": 125,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"toCreate.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Inventory.jsx",
+      "line": 125,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"records.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Inventory.jsx",
+      "line": 125,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"toCreate.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Inventory.jsx",
+      "line": 157,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"filtered.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Inventory.jsx",
+      "line": 272,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"filtered.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/POS.jsx",
+      "line": 159,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"cart.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/POS.jsx",
+      "line": 313,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"filteredProducts.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/POS.jsx",
+      "line": 364,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"cart.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/POS.jsx",
+      "line": 374,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"cart.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/POS.jsx",
+      "line": 429,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"filteredCustomers.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Pricing.jsx",
+      "line": 135,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"filtered.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/PurchaseOrders.jsx",
+      "line": 84,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"items.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/PurchaseOrders.jsx",
+      "line": 281,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"orders.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Recipes.jsx",
+      "line": 120,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"filtered.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/SalesReport.jsx",
+      "line": 78,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"periodTxns.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/SalesReport.jsx",
+      "line": 169,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"lowStockItems.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/SalesReport.jsx",
+      "line": 170,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"topProducts.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/SalesReport.jsx",
+      "line": 174,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"lowStockItems.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/SalesReport.jsx",
+      "line": 306,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"topProducts.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/SalesReport.jsx",
+      "line": 331,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"lowStockItems.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/SalesReport.jsx",
+      "line": 331,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"lowStockItems.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/SalesReport.jsx",
+      "line": 337,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"lowStockItems.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/StockAdjustments.jsx",
+      "line": 218,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"adjustments.length\")"
+    },
+    {
+      "file": "omnistock/src/pages/Suppliers.jsx",
+      "line": 149,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"suppliers.length\")"
+    }
+  ],
+  "verdict": "FAIL"
+}

@@ -1,0 +1,16 @@
+# CODEOWNERS - Code Ownership & Security Governance Boundaries
+
+# Global repository owners
+* @mckyinso01 @antigravity-orchestrator
+
+# Core Application Engines & Subprojects
+/GHL-PULSE/ @mckyinso01
+/EMS/ @mckyinso01
+/omnistock/ @mckyinso01
+/LexAI-Enterprise/ @mckyinso01
+
+# Backend & Security Critical Paths
+server.ts @mckyinso01
+/.agents/ @antigravity-orchestrator
+/scripts/ @antigravity-orchestrator
+/policies/ @antigravity-orchestrator
