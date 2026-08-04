@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-08-04T02:58:08.595Z",
-  "totalFilesScanned": 340,
+  "timestamp": "2026-08-04T03:19:59.891Z",
+  "totalFilesScanned": 343,
   "totalErrors": 19,
-  "totalWarnings": 221,
+  "totalWarnings": 222,
   "manifest": [
     {
       "path": "GHL-PULSE/src/api/base44Client.js",
@@ -96,8 +96,8 @@
     },
     {
       "path": "GHL-PULSE/src/components/ghla/InteractiveVideoPlayer.jsx",
-      "sha256": "3940c7dfa4a99008fa43e8075e1d1d2814ad244732bd9a3dbea6811deffd2401",
-      "sizeBytes": 7790
+      "sha256": "c91aaf4728f51ad0e983459539f72a7553362b7ae413021c586f1b4f2b5af5f4",
+      "sizeBytes": 7831
     },
     {
       "path": "GHL-PULSE/src/components/ghla/IssueCard.jsx",
@@ -131,8 +131,8 @@
     },
     {
       "path": "GHL-PULSE/src/components/ghla/PublicAuditPortal.jsx",
-      "sha256": "d4c60a67cd87266f08ade8b1dc7e1027955acd99274c5462fcccc6a8ac7e7f98",
-      "sizeBytes": 3513
+      "sha256": "33eadc39988e340e2b16e8e36ebe8f9b2e6e09b50d9bafd62f3f1c8b20c9ccf1",
+      "sizeBytes": 3549
     },
     {
       "path": "GHL-PULSE/src/components/ghla/PwaOfflineSync.jsx",
@@ -156,8 +156,8 @@
     },
     {
       "path": "GHL-PULSE/src/components/ghla/SpeedToLeadTester.jsx",
-      "sha256": "683293903e96cb3504aaf954d4ce3a44390b0730c5f10c2f1d836f18b9bb2eb7",
-      "sizeBytes": 4102
+      "sha256": "5276f8985c565e5e7cc402ee4cb04c1737562dd3833b716a11e3d2134eea2685",
+      "sizeBytes": 4138
     },
     {
       "path": "GHL-PULSE/src/components/ghla/SubAccountSidebar.jsx",
@@ -491,13 +491,13 @@
     },
     {
       "path": "GHL-PULSE/src/integrations/ariax/components/DynamicCopyGenerator.tsx",
-      "sha256": "48b439eac2335b0016ce4439f5c1df0f6fb61e7b16dfb306a268c877eb79b894",
-      "sizeBytes": 6266
+      "sha256": "fa41a44b2c552570be20c88395910ded2e9197b1d1d5261a4e7b5c8454d9517d",
+      "sizeBytes": 6220
     },
     {
       "path": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
-      "sha256": "861f2fc678a4deef5cf2451f2cc92ad96641fa93412b4ebf073cb1b675d4985c",
-      "sizeBytes": 86790
+      "sha256": "b4752f65bf222f950dcfa98e1575bb422b3dcd93531de8c5a404c2f31c05e8a8",
+      "sizeBytes": 86752
     },
     {
       "path": "GHL-PULSE/src/integrations/ariax/components/GoogleMapsScraper.tsx",
@@ -515,9 +515,19 @@
       "sizeBytes": 7425
     },
     {
+      "path": "GHL-PULSE/src/integrations/ariax/components/MapVisualizer.tsx",
+      "sha256": "a7c74a3b2f76a3421366741996da6ada9d1ae0c960e36ceb70b3c2c6514edd20",
+      "sizeBytes": 2464
+    },
+    {
       "path": "GHL-PULSE/src/integrations/ariax/components/MarketingWorkflows.tsx",
-      "sha256": "d9a46850692560cc1c2df5cd727b3ee0f42a54351681dffae2ff2f53af4dc4cb",
-      "sizeBytes": 56152
+      "sha256": "cd3b0610065cb4f1e0ecba14ac27671447959e102bd039ec7125af63f535e944",
+      "sizeBytes": 56550
+    },
+    {
+      "path": "GHL-PULSE/src/integrations/ariax/components/ToastContext.tsx",
+      "sha256": "951e2c43d1dac6bc6da4170ff17d4c578bdb59cc08c073c76484b3c2e44bcb85",
+      "sizeBytes": 891
     },
     {
       "path": "GHL-PULSE/src/integrations/ariax/components/WorkflowCanvas.tsx",
@@ -530,9 +540,14 @@
       "sizeBytes": 843
     },
     {
+      "path": "GHL-PULSE/src/integrations/ariax/types.ts",
+      "sha256": "d7e8e0931ee90198bb35188de3112fa3300dd5235418f9e5e5a60c2ba6a3cfe7",
+      "sizeBytes": 263
+    },
+    {
       "path": "GHL-PULSE/src/integrations/ariax/utils.ts",
-      "sha256": "9da8bd52c32da23f3815f83e0914e06d269e198a79e322e5a8e0315fbf3719fe",
-      "sizeBytes": 1050
+      "sha256": "dd9f3f41fd8ff9b0371624246bfa1416ed0009c73b296097aad84e19b3d4907e",
+      "sizeBytes": 1855
     },
     {
       "path": "GHL-PULSE/src/integrations/leadgen/index.ts",
@@ -581,8 +596,8 @@
     },
     {
       "path": "GHL-PULSE/src/pages/Login.jsx",
-      "sha256": "2b210af8d15a1719b5d915435a685d4f9388e8036fc02e6be240379599da113a",
-      "sizeBytes": 5264
+      "sha256": "cd7f48635207d182e50ffcec941537346d0fc9e9ffb2c47ec752357fb55b7139",
+      "sizeBytes": 5425
     },
     {
       "path": "GHL-PULSE/src/pages/Register.jsx",
@@ -1834,147 +1849,147 @@
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
-      "line": 176,
+      "line": 175,
       "ruleId": "UNGUARDED-ARRAY-LENGTH",
       "severity": "WARNING",
       "message": "Check array property access for defensive fallback chaining. (Found: \"replacement.length\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
-      "line": 176,
+      "line": 175,
       "ruleId": "UNGUARDED-ARRAY-LENGTH",
       "severity": "WARNING",
       "message": "Check array property access for defensive fallback chaining. (Found: \"replacement.length\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
-      "line": 203,
+      "line": 202,
       "ruleId": "UNGUARDED-ARRAY-LENGTH",
       "severity": "WARNING",
       "message": "Check array property access for defensive fallback chaining. (Found: \"newAttachments.length\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
-      "line": 249,
+      "line": 248,
       "ruleId": "UNGUARDED-ARRAY-LENGTH",
       "severity": "WARNING",
       "message": "Check array property access for defensive fallback chaining. (Found: \"selectedEmailIdsForBulk.length\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
-      "line": 249,
+      "line": 248,
       "ruleId": "UNGUARDED-ARRAY-LENGTH",
       "severity": "WARNING",
       "message": "Check array property access for defensive fallback chaining. (Found: \"emails.length\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
-      "line": 257,
+      "line": 256,
       "ruleId": "UNGUARDED-ARRAY-LENGTH",
       "severity": "WARNING",
       "message": "Check array property access for defensive fallback chaining. (Found: \"selectedEmailIdsForBulk.length\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
-      "line": 259,
+      "line": 258,
       "ruleId": "UNGUARDED-ARRAY-LENGTH",
       "severity": "WARNING",
       "message": "Check array property access for defensive fallback chaining. (Found: \"selectedEmailIdsForBulk.length\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
-      "line": 262,
+      "line": 261,
       "ruleId": "UNGUARDED-ARRAY-LENGTH",
       "severity": "WARNING",
       "message": "Check array property access for defensive fallback chaining. (Found: \"selectedEmailIdsForBulk.length\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
-      "line": 266,
+      "line": 265,
       "ruleId": "UNGUARDED-ARRAY-LENGTH",
       "severity": "WARNING",
       "message": "Check array property access for defensive fallback chaining. (Found: \"selectedEmails.length\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
-      "line": 268,
+      "line": 267,
       "ruleId": "UNGUARDED-ARRAY-LENGTH",
       "severity": "WARNING",
       "message": "Check array property access for defensive fallback chaining. (Found: \"selectedEmails.length\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
-      "line": 271,
+      "line": 270,
       "ruleId": "UNGUARDED-ARRAY-LENGTH",
       "severity": "WARNING",
       "message": "Check array property access for defensive fallback chaining. (Found: \"selectedEmails.length\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
-      "line": 403,
+      "line": 402,
       "ruleId": "UNGUARDED-ARRAY-LENGTH",
       "severity": "WARNING",
       "message": "Check array property access for defensive fallback chaining. (Found: \"messages.length\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
-      "line": 442,
+      "line": 441,
       "ruleId": "UNGUARDED-ARRAY-LENGTH",
       "severity": "WARNING",
       "message": "Check array property access for defensive fallback chaining. (Found: \"cached.length\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
-      "line": 648,
+      "line": 647,
       "ruleId": "UNGUARDED-ARRAY-LENGTH",
       "severity": "WARNING",
       "message": "Check array property access for defensive fallback chaining. (Found: \"emails.length\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
-      "line": 650,
+      "line": 649,
       "ruleId": "UNGUARDED-ARRAY-LENGTH",
       "severity": "WARNING",
       "message": "Check array property access for defensive fallback chaining. (Found: \"emails.length\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
-      "line": 702,
+      "line": 701,
       "ruleId": "UNGUARDED-ARRAY-LENGTH",
       "severity": "WARNING",
       "message": "Check array property access for defensive fallback chaining. (Found: \"sorted.length\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
-      "line": 985,
+      "line": 984,
       "ruleId": "UNGUARDED-ARRAY-LENGTH",
       "severity": "WARNING",
       "message": "Check array property access for defensive fallback chaining. (Found: \"autoReplyLogs.length\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
-      "line": 1062,
+      "line": 1061,
       "ruleId": "UNGUARDED-ARRAY-LENGTH",
       "severity": "WARNING",
       "message": "Check array property access for defensive fallback chaining. (Found: \"selectedEmailIdsForBulk.length\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
-      "line": 1062,
+      "line": 1061,
       "ruleId": "UNGUARDED-ARRAY-LENGTH",
       "severity": "WARNING",
       "message": "Check array property access for defensive fallback chaining. (Found: \"emails.length\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
-      "line": 1068,
+      "line": 1067,
       "ruleId": "UNGUARDED-ARRAY-LENGTH",
       "severity": "WARNING",
       "message": "Check array property access for defensive fallback chaining. (Found: \"selectedEmailIdsForBulk.length\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/GmailManager.tsx",
-      "line": 1068,
+      "line": 1067,
       "ruleId": "UNGUARDED-ARRAY-LENGTH",
       "severity": "WARNING",
       "message": "Check array property access for defensive fallback chaining. (Found: \"emails.length\")"
@@ -2127,64 +2142,71 @@
       "message": "Prohibited light-pastel card background fill on dark mode surface. (Found: \"bg-slate-100\")"
     },
     {
+      "file": "GHL-PULSE/src/integrations/ariax/components/MapVisualizer.tsx",
+      "line": 31,
+      "ruleId": "UNGUARDED-ARRAY-LENGTH",
+      "severity": "WARNING",
+      "message": "Check array property access for defensive fallback chaining. (Found: \"leads.length\")"
+    },
+    {
       "file": "GHL-PULSE/src/integrations/ariax/components/MarketingWorkflows.tsx",
-      "line": 55,
+      "line": 61,
       "ruleId": "UNGUARDED-ARRAY-LENGTH",
       "severity": "WARNING",
       "message": "Check array property access for defensive fallback chaining. (Found: \"syncedLeads.length\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/MarketingWorkflows.tsx",
-      "line": 479,
+      "line": 485,
       "ruleId": "UNGUARDED-ARRAY-LENGTH",
       "severity": "WARNING",
       "message": "Check array property access for defensive fallback chaining. (Found: \"stages.length\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/MarketingWorkflows.tsx",
-      "line": 524,
+      "line": 530,
       "ruleId": "UNGUARDED-ARRAY-LENGTH",
       "severity": "WARNING",
       "message": "Check array property access for defensive fallback chaining. (Found: \"cards.length\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/MarketingWorkflows.tsx",
-      "line": 611,
+      "line": 617,
       "ruleId": "FORBIDDEN-PASTEL-CARD-FILL",
       "severity": "ERROR",
       "message": "Prohibited light-pastel card background fill on dark mode surface. (Found: \"bg-slate-100\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/MarketingWorkflows.tsx",
-      "line": 737,
+      "line": 743,
       "ruleId": "UNGUARDED-ARRAY-LENGTH",
       "severity": "WARNING",
       "message": "Check array property access for defensive fallback chaining. (Found: \"quotaList.length\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/MarketingWorkflows.tsx",
-      "line": 877,
+      "line": 883,
       "ruleId": "FORBIDDEN-PASTEL-CARD-FILL",
       "severity": "ERROR",
       "message": "Prohibited light-pastel card background fill on dark mode surface. (Found: \"bg-slate-100\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/MarketingWorkflows.tsx",
-      "line": 997,
+      "line": 1003,
       "ruleId": "FORBIDDEN-PASTEL-CARD-FILL",
       "severity": "ERROR",
       "message": "Prohibited light-pastel card background fill on dark mode surface. (Found: \"bg-slate-100\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/MarketingWorkflows.tsx",
-      "line": 1015,
+      "line": 1021,
       "ruleId": "FORBIDDEN-PASTEL-CARD-FILL",
       "severity": "ERROR",
       "message": "Prohibited light-pastel card background fill on dark mode surface. (Found: \"bg-slate-100\")"
     },
     {
       "file": "GHL-PULSE/src/integrations/ariax/components/MarketingWorkflows.tsx",
-      "line": 1087,
+      "line": 1093,
       "ruleId": "UNGUARDED-ARRAY-LENGTH",
       "severity": "WARNING",
       "message": "Check array property access for defensive fallback chaining. (Found: \"telemetryLogs.length\")"
