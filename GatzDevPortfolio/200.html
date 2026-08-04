@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Gatz | Autonomous AI-Augmented Solo Developer & Systems Studio</title>
+  
+  <!-- Stitch Design Token Metadata -->
+  <meta name="stitch-design-system" content="Variation B: Midnight Logic & Ethereal Precision"/>
+  <meta name="stitch-api-key" content="AQ.Ab8RN6L50Nw4udYMY3W17UbZ3zW7h4AsJfQoPQW5F0mu-Pmy1w"/>
+
+  <!-- Tailwind CSS CDN with plugins -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Google Fonts & Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-deep": "#050811",
+            "surface-card": "#0B1C30",
+            "outline-variant": "#1E293B",
+            "accent-electric": "#2563EB",
+            "accent-cyan": "#00E5FF",
+            "accent-emerald": "#10B981",
+            "accent-amber": "#F59E0B",
+            "on-surface-variant": "#94A3B8"
+          },
+          fontFamily: {
+            "body": ["Inter", "sans-serif"],
+            "mono": ["JetBrains Mono", "monospace"],
+            "display": ["Space Grotesk", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+
+  <style>
+    @property --border-angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+
+    @keyframes rotateBorder {
+      0% { --border-angle: 0deg; }
+      100% { --border-angle: 360deg; }
+    }
+
+    body {
+      background-color: #050811;
+      color: #dfe2f0;
+      overflow-x: hidden;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Glassmorphic Cards */
+    .glass-card {
+      background: rgba(11, 28, 48, 0.85);
+      backdrop-filter: blur(16px);
+      border: 1px solid #1E293B;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card:hover {
+      border-color: #2563EB;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px -10px rgba(37, 99, 235, 0.25);
+    }
+
+    /* OFFICIAL STITCH MCP 2PX MOVING BORDER LINE ONLY (EXACT LOGIN PAGE PARITY) */
+    .moving-border-card {
+      position: relative;
+      border-radius: 1.5rem;
+      padding: 2px;
+      background: conic-gradient(from var(--border-angle, 0deg), #2563EB, #00E5FF, #10B981, #F59E0B, #E11D48, #2563EB);
+      animation: rotateBorder 4s linear infinite;
+      isolation: isolate;
+      box-shadow: 0 10px 35px -5px rgba(0, 229, 255, 0.35);
+    }
+
+    .moving-border-card::after {
+      content: "";
+      position: absolute;
+      inset: -12px;
+      border-radius: 2rem;
+      background: conic-gradient(from var(--border-angle, 0deg), #2563EB, #00E5FF, #10B981, #F59E0B, #E11D48, #2563EB);
+      animation: rotateBorder 4s linear infinite;
+      z-index: -1;
+      filter: blur(28px);
+      opacity: 1;
+      pointer-events: none;
+    }
+
+    /* STATIC CLEAN BUTTON (TEMP RESET TO ISOLATE CONFLICT) */
+    .moving-border-btn {
+      position: relative;
+      border-radius: 0.85rem;
+      background-color: #0B1C30 !important;
+      border: 1px solid #2563EB !important;
+    }
+    .moving-border-btn::before,
+    .moving-border-btn::after {
+      content: none !important;
+      display: none !important;
+    }
+
+    /* OPTION A: INTERACTIVE MOUSE SPOTLIGHT OVERLAY */
+    .spotlight-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .spotlight-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(450px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0, 229, 255, 0.14), transparent 75%);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .spotlight-card:hover::after {
+      opacity: 1;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    /* Toast animation */
+    @keyframes slideIn {
+      from { transform: translateY(100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .animate-slide-in {
+      animation: slideIn 0.3s ease-out forwards;
+    }
+
+    /* Custom scrollbar for horizontal screenshot preview rows */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="font-body text-base antialiased selection:bg-blue-500 selection:text-white">
+
+  <!-- FULL CONTAINER BACKGROUND ANIMATION: RAINDROPS OF THE SOUL CANVAS -->
+  <canvas id="soul-rain-canvas" class="fixed inset-0 pointer-events-none z-0 w-full h-full opacity-60"></canvas>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="fixed bottom-6 right-6 z-[100] flex flex-col gap-3 max-w-md pointer-events-none"></div>
+
+  <!-- Header Navigation -->
+  <header class="fixed top-0 w-full bg-[#050811]/90 backdrop-blur-xl border-b border-outline-variant z-50">
+    <nav class="flex justify-between items-center h-16 px-6 md:px-16 max-w-7xl mx-auto">
+      <div class="text-xl font-bold text-white tracking-tight flex items-center gap-2 font-display">
+        <span class="w-3 h-3 rounded-full bg-accent-electric animate-pulse"></span>
+        <span>Gatz<span class="text-accent-electric">.</span>DevPortfolio</span>
+        <span class="hidden sm:inline-block text-[10px] font-mono bg-blue-500/10 text-blue-400 border border-blue-500/30 px-2 py-0.5 rounded ml-2">SOLO STUDIO</span>
+      </div>
+
+      <div class="hidden md:flex gap-8 items-center font-mono text-sm">
+        <a class="text-on-surface-variant hover:text-white transition-colors" href="#value-prop">Value Prop</a>
+        <a class="text-on-surface-variant hover:text-white transition-colors" href="#about">Mission & Vision</a>
+        <a class="text-on-surface-variant hover:text-white transition-colors" href="#apps">Standalone Apps</a>
+        <a class="text-on-surface-variant hover:text-white transition-colors" href="#pricing">Pricing & Calculator</a>
+        <a class="text-on-surface-variant hover:text-white transition-colors" href="#contact">Contact</a>
+        
+        <button onclick="openResumeModal()" class="bg-accent-electric text-white px-5 py-2 rounded-lg font-bold hover:bg-blue-600 active:scale-95 transition-all shadow-lg shadow-blue-500/20 cursor-pointer">
+          Developer Profile
+        </button>
+      </div>
+
+      <button onclick="openContactModal()" class="md:hidden text-white p-2">
+        <span class="material-symbols-outlined">alternate_email</span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="pt-28">
+
+    <!-- HERO SECTION: SOLO COMPANY PRESENTATION & EXACT VALUE PROP -->
+    <section class="max-w-7xl mx-auto px-6 md:px-16 mb-24 relative" id="value-prop">
+      <div class="absolute -top-40 -left-40 w-96 h-96 bg-accent-electric/10 rounded-full blur-[140px]"></div>
+      <div class="absolute top-20 right-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-[120px]"></div>
+      
+      <div class="max-w-4xl relative z-10">
+        <div class="inline-flex items-center gap-2 py-1.5 px-4 border border-blue-500/30 rounded-full mb-6 bg-blue-500/10 backdrop-blur-md">
+          <span class="w-2.5 h-2.5 rounded-full bg-accent-cyan animate-ping"></span>
+          <span class="font-mono text-xs text-blue-400 uppercase tracking-widest font-bold">AUTONOMOUS AI-AUGMENTED SOLO DEVELOPER & SYSTEMS STUDIO</span>
+        </div>
+
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight font-display">
+          Building <span class="text-accent-electric underline decoration-accent-electric/30 underline-offset-8">Zero-Defect Enterprise Software</span> at Solo-Studio Economics.
+        </h1>
+
+        <!-- EXACT VALUE PROPOSITION COPY -->
+        <p class="text-on-surface-variant text-lg md:text-xl mb-8 leading-relaxed max-w-3xl font-body">
+          We engineer zero-defect, high-performance, AI-augmented enterprise software that eliminates operational friction and drives exponential client growth—delivered by an autonomous solo developer at one-tenth the cost of traditional agencies.
+        </p>
+
+        <!-- STAT CALLOUTS -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10 p-6 rounded-2xl bg-surface-card/60 border border-outline-variant font-mono spotlight-card">
+          <div>
+            <div class="text-2xl font-bold text-accent-electric">1/10th</div>
+            <div class="text-xs text-on-surface-variant">Agency Cost</div>
+          </div>
+          <div>
+            <div class="text-2xl font-bold text-accent-cyan">99.9%</div>
+            <div class="text-xs text-on-surface-variant">Uptime SLA</div>
+          </div>
+          <div>
+            <div class="text-2xl font-bold text-accent-emerald">&lt;100ms</div>
+            <div class="text-xs text-on-surface-variant">Response Latency</div>
+          </div>
+          <div>
+            <div class="text-2xl font-bold text-accent-amber">0-Quota</div>
+            <div class="text-xs text-on-surface-variant">AI Orchestration</div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-4">
+          <a class="bg-accent-electric text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition-all flex items-center gap-2 shadow-xl shadow-blue-600/30 cursor-pointer" href="#apps">
+            <span>Explore Standalone Apps</span>
+            <span class="material-symbols-outlined text-sm">arrow_downward</span>
+          </a>
+          <a class="glass-card text-white px-8 py-4 rounded-xl font-bold hover:bg-[#0B1C30]/5 transition-all flex items-center gap-2 cursor-pointer border border-outline-variant" href="#pricing">
+            <span class="material-symbols-outlined text-accent-cyan">payments</span>
+            <span>View Pricing & SLA</span>
+          </a>
+          <button onclick="openContactModal()" class="glass-card text-white px-6 py-4 rounded-xl font-bold hover:bg-[#0B1C30]/5 transition-all flex items-center gap-2 cursor-pointer border border-outline-variant">
+            <span class="material-symbols-outlined text-accent-emerald">alternate_email</span>
+            <span>Get In Touch</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY MESSAGING PILLARS SECTION -->
+    <section class="max-w-7xl mx-auto px-6 md:px-16 mb-28">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="font-mono text-xs text-accent-electric uppercase tracking-widest mb-3">Architectural Pillars</div>
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-display">Why Founders & Enterprises Partner With Gatz</h2>
+        <p class="text-on-surface-variant text-sm md:text-base">Built upon a rigid zero-defect methodology engineered to eliminate software bugs and maximize operational throughput.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Pillar 1 -->
+        <div class="glass-card spotlight-card p-6 rounded-2xl border border-outline-variant">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 text-accent-electric flex items-center justify-center mb-5">
+            <span class="material-symbols-outlined text-2xl">verified</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2 font-display">Zero-Defect Engineering</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">
+            Deterministic workflows, 3-step lifecycle (Trigger ➔ Feedback ➔ Outcome), and 19-tier quality validation before presentation.
+          </p>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="glass-card spotlight-card p-6 rounded-2xl border border-outline-variant">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-accent-cyan flex items-center justify-center mb-5">
+            <span class="material-symbols-outlined text-2xl">smart_toy</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2 font-display">AI Orchestration Engine</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">
+            Embedded 0-quota AI automation reducing manual friction, OCR scanning overhead, and operational errors in business systems.
+          </p>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="glass-card spotlight-card p-6 rounded-2xl border border-outline-variant">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-accent-emerald flex items-center justify-center mb-5">
+            <span class="material-symbols-outlined text-2xl">trending_up</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2 font-display">1/10th Agency Economics</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">
+            Agency-grade systems delivered at solo-studio pricing. Direct communication with the lead architect with 0 overhead.
+          </p>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="glass-card spotlight-card p-6 rounded-2xl border border-outline-variant">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 text-accent-amber flex items-center justify-center mb-5">
+            <span class="material-symbols-outlined text-2xl">shield</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2 font-display">Enterprise Security & SLA</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">
+            Military-grade AES-256 encryption, WORM SHA-256 auditability, and guaranteed 99.9% production availability SLA discipline.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MISSION & VISION SECTION -->
+    <section class="max-w-7xl mx-auto px-6 md:px-16 mb-28" id="about">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Mission Card -->
+        <div class="glass-card spotlight-card p-8 rounded-3xl border border-outline-variant relative overflow-hidden group">
+          <div class="font-mono text-xs text-accent-electric uppercase tracking-widest mb-3">Our Core Mission</div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-4 font-display">Autonomous Growth & Engineering Excellence</h2>
+          <p class="text-on-surface-variant leading-relaxed mb-6 text-sm md:text-base">
+            To architect and engineer agentic, zero-defect, world-class software solutions that eliminate operational friction, automate complex business workflows, and drive extreme, exponential growth for our clients—regardless of budget constraints.
+          </p>
+          <div class="flex items-center gap-2 text-xs font-mono text-emerald-400">
+            <span class="material-symbols-outlined text-sm">check_circle</span>
+            <span>Sub-Second Latency • Zero-Quota Efficiency • Extreme Client Growth</span>
+          </div>
+        </div>
+
+        <!-- Vision Card -->
+        <div class="glass-card spotlight-card p-8 rounded-3xl border border-outline-variant relative overflow-hidden group">
+          <div class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-3">Our Future Vision</div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-4 font-display">Empowering Solopreneurs & Global Enterprise</h2>
+          <p class="text-on-surface-variant leading-relaxed mb-6 text-sm md:text-base">
+            To revolutionize the global software landscape by proving that an autonomous, AI-augmented solo engineer can design, scale, and maintain mission-critical enterprise systems faster, safer, and with higher precision than traditional 50-person engineering teams.
+          </p>
+          <div class="flex items-center gap-2 text-xs font-mono text-accent-cyan">
+            <span class="material-symbols-outlined text-sm">auto_awesome</span>
+            <span>AI-Augmented Architecture • 100% Reliability • World-Class Systems</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FEATURED STANDALONE VIEW WITH FILTER RAIL & SEARCH BAR -->
+    <section class="max-w-7xl mx-auto px-6 md:px-16 mb-28" id="apps">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
+        <div>
+          <div class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-2">Standalone Codebases</div>
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-2 font-display underline decoration-accent-electric decoration-4 underline-offset-8">Featured Software Products</h2>
+          <p class="text-on-surface-variant text-sm md:text-base">Independent enterprise codebases with 3px moving color border shadow & 200px × 150px feature preview screens.</p>
+        </div>
+        <div class="font-mono text-xs text-blue-400 bg-surface-card px-4 py-2 rounded-xl border border-outline-variant flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>4 STANDALONE_APPLICATIONS</span>
+        </div>
+      </div>
+
+      <!-- FILTER RAIL & KEYWORD SEARCH BAR -->
+      <div class="glass-card spotlight-card p-4 rounded-2xl border border-outline-variant mb-10 flex flex-col md:flex-row justify-between items-center gap-4">
+        
+        <!-- Category Filter Tabs -->
+        <div class="flex flex-wrap gap-2 text-xs font-mono">
+          <button onclick="filterCategory('all')" id="filter-btn-all" class="px-4 py-2 rounded-xl border border-accent-electric bg-accent-electric text-white font-bold transition-all shadow-md">
+            All Products <span id="count-all" class="ml-1 opacity-80">[4]</span>
+          </button>
+          <button onclick="filterCategory('pos')" id="filter-btn-pos" class="px-4 py-2 rounded-xl border border-outline-variant bg-slate-950/80 text-on-surface-variant hover:text-white transition-all">
+            POS & Inventory <span id="count-pos" class="ml-1 opacity-60">[1]</span>
+          </button>
+          <button onclick="filterCategory('dispatch')" id="filter-btn-dispatch" class="px-4 py-2 rounded-xl border border-outline-variant bg-slate-950/80 text-on-surface-variant hover:text-white transition-all">
+            Medical Dispatch <span id="count-dispatch" class="ml-1 opacity-60">[1]</span>
+          </button>
+          <button onclick="filterCategory('crm')" id="filter-btn-crm" class="px-4 py-2 rounded-xl border border-outline-variant bg-slate-950/80 text-on-surface-variant hover:text-white transition-all">
+            Lead CRM <span id="count-crm" class="ml-1 opacity-60">[1]</span>
+          </button>
+          <button onclick="filterCategory('legal')" id="filter-btn-legal" class="px-4 py-2 rounded-xl border border-outline-variant bg-slate-950/80 text-on-surface-variant hover:text-white transition-all">
+            Legal AI <span id="count-legal" class="ml-1 opacity-60">[1]</span>
+          </button>
+        </div>
+
+        <!-- Keyword Search Input (Shortcut: Ctrl+K) -->
+        <div class="w-full md:w-72 relative font-mono text-xs">
+          <span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-base">search</span>
+          <input type="text" id="app-search-input" oninput="handleSearchInput()" placeholder="Search apps... (Ctrl+K)" class="w-full bg-slate-950 border border-outline-variant rounded-xl pl-9 pr-8 py-2 text-white focus:border-accent-electric outline-none transition-colors"/>
+          <kbd class="absolute right-2.5 top-2.5 bg-slate-800 text-[9px] text-on-surface-variant px-1.5 py-0.5 rounded">Ctrl+K</kbd>
+        </div>
+
+      </div> <!-- Close Filter Rail Div -->
+
+      <!-- 4 App Cards with 2PX MOVING COLOR BORDER & SOLID DARK NAVY INTERIOR (EXACT LOGIN PAGE PARITY) -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="product-cards-grid">
+        
+        <!-- App Card 1: OmniStock (StockMate) -->
+        <div data-category="pos" data-search="omnistock pos inventory stockmate barcode checkout" class="product-card-item moving-border-card rounded-3xl overflow-hidden">
+          <div class="bg-[#0B1C30] w-full h-full p-7 rounded-[1.38rem] flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center mb-4">
+                <div>
+                  <span class="text-[11px] font-mono text-emerald-400 uppercase tracking-wider bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-0.5 rounded">POS & Inventory</span>
+                  <h3 class="text-2xl font-bold text-white mt-1 font-display">OmniStock</h3>
+                </div>
+                <div class="text-xs font-mono text-on-surface-variant">[3 CORE FEATURES]</div>
+              </div>
+
+              <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">
+                Autonomous Inventory & Point-of-Sale Engine with real-time barcode telemetry, stock adjustment alerts, and checkout logic.
+              </p>
+
+              <!-- CORE FEATURE SCREENSHOTS VIEW (200px Height x 150px Width) WITH TELEMETRY STRIPS -->
+              <div class="mb-6 space-y-3">
+                <div class="flex justify-between items-center text-xs font-mono text-white font-semibold">
+                  <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-emerald-400 text-base">wallpaper</span>
+                    <span>Feature Screenshots (200px × 150px):</span>
+                  </div>
+                  <span class="text-[10px] text-on-surface-variant hidden sm:inline">← Swipe Features →</span>
+                </div>
+                
+                <div class="flex gap-4 overflow-x-auto pb-2 no-scrollbar">
+                  
+                  <!-- Screenshot 1: Barcode Scanner HUD (150px W x 200px H) -->
+                  <div onclick="openFeatureModal('OmniStock', 'Barcode Telemetry & Scanner HUD', 'Real-time laser scanning target reticle with instant GTIN/EAN SKU barcode identification and price lookup.')" class="w-[150px] h-[200px] flex-shrink-0 bg-slate-950 p-3 rounded-xl border border-emerald-500/30 hover:border-emerald-400 transition-all cursor-pointer flex flex-col justify-between group">
+                    <div class="flex justify-between items-center text-[9px] font-mono text-emerald-400 pb-1.5 border-b border-slate-900">
+                      <span>12ms</span>
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    </div>
+                    <div class="my-auto py-2 flex flex-col items-center justify-center text-center">
+                      <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-emerald-400 text-2xl">qr_code_scanner</span>
+                      </div>
+                      <div class="text-xs font-bold text-white mb-1">Barcode HUD</div>
+                      <div class="text-[9px] font-mono text-on-surface-variant">GTIN / EAN Scan</div>
+                      <div class="mt-2 text-[8px] font-mono bg-emerald-950 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/30">Sub-10ms Lookup</div>
+                    </div>
+                    <div class="text-[9px] font-mono text-emerald-400 text-center flex items-center justify-center gap-1 pt-1 border-t border-slate-900">
+                      <span>View UI</span>
+                      <span class="material-symbols-outlined text-[10px]">open_in_full</span>
+                    </div>
+                  </div>
+
+                  <!-- Screenshot 2: Stock Threshold Monitor (150px W x 200px H) -->
+                  <div onclick="openFeatureModal('OmniStock', 'Stock Threshold & Alert Monitor', 'Automated low-stock telemetry alerts, reorder triggers, and supplier inventory sync.')" class="w-[150px] h-[200px] flex-shrink-0 bg-slate-950 p-3 rounded-xl border border-emerald-500/30 hover:border-emerald-400 transition-all cursor-pointer flex flex-col justify-between group">
+                    <div class="flex justify-between items-center text-[9px] font-mono text-emerald-400 pb-1.5 border-b border-slate-900">
+                      <span>99.9%</span>
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    </div>
+                    <div class="my-auto py-2 flex flex-col items-center justify-center text-center">
+                      <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-emerald-400 text-2xl">query_stats</span>
+                      </div>
+                      <div class="text-xs font-bold text-white mb-1">Stock Monitor</div>
+                      <div class="text-[9px] font-mono text-on-surface-variant">Auto Reorder Alert</div>
+                      <div class="mt-2 text-[8px] font-mono bg-emerald-950 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/30">Telemetry Ledger</div>
+                    </div>
+                    <div class="text-[9px] font-mono text-emerald-400 text-center flex items-center justify-center gap-1 pt-1 border-t border-slate-900">
+                      <span>View UI</span>
+                      <span class="material-symbols-outlined text-[10px]">open_in_full</span>
+                    </div>
+                  </div>
+
+                  <!-- Screenshot 3: POS Terminal (150px W x 200px H) -->
+                  <div onclick="openFeatureModal('OmniStock', 'POS Instant Checkout Terminal', 'Sub-second receipt generation, split payments, and offline cache synchronization.')" class="w-[150px] h-[200px] flex-shrink-0 bg-slate-950 p-3 rounded-xl border border-emerald-500/30 hover:border-emerald-400 transition-all cursor-pointer flex flex-col justify-between group">
+                    <div class="flex justify-between items-center text-[9px] font-mono text-emerald-400 pb-1.5 border-b border-slate-900">
+                      <span>AES-256</span>
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    </div>
+                    <div class="my-auto py-2 flex flex-col items-center justify-center text-center">
+                      <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-emerald-400 text-2xl">point_of_sale</span>
+                      </div>
+                      <div class="text-xs font-bold text-white mb-1">POS Checkout</div>
+                      <div class="text-[9px] font-mono text-on-surface-variant">Instant Receipt</div>
+                      <div class="mt-2 text-[8px] font-mono bg-emerald-950 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/30">Offline Sync</div>
+                    </div>
+                    <div class="text-[9px] font-mono text-emerald-400 text-center flex items-center justify-center gap-1 pt-1 border-t border-slate-900">
+                      <span>View UI</span>
+                      <span class="material-symbols-outlined text-[10px]">open_in_full</span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="font-mono text-xs bg-slate-950 px-2.5 py-1 rounded-md text-emerald-400 border border-slate-800">React 18</span>
+                <span class="font-mono text-xs bg-slate-950 px-2.5 py-1 rounded-md text-emerald-400 border border-slate-800">Vite POS Engine</span>
+                <span class="font-mono text-xs bg-slate-950 px-2.5 py-1 rounded-md text-emerald-400 border border-slate-800">Barcode Scanner</span>
+              </div>
+            </div>
+
+            <a href="https://omnistock-pos.surge.sh" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 bg-[#0B1C30] border border-blue-500/30 text-white font-extrabold text-xs uppercase tracking-wider rounded-xl font-mono text-center block transition-all duration-300 hover:border-cyan-400 hover:text-cyan-300 hover:shadow-[0_0_25px_rgba(0,229,255,0.45)] hover:-translate-y-0.5 group/btn">
+              <span>Launch Live Application <span class="inline-block transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">↗</span></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- App Card 2: EMS Enterprise -->
+        <div data-category="dispatch" data-search="ems medical dispatch command workforce biometrics payroll emergency" class="product-card-item moving-border-card rounded-3xl overflow-hidden">
+          <div class="bg-[#0B1C30] w-full h-full p-7 rounded-[1.38rem] flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center mb-4">
+                <div>
+                  <span class="text-[11px] font-mono text-indigo-400 uppercase tracking-wider bg-indigo-500/10 border border-indigo-500/30 px-2.5 py-0.5 rounded">Medical Dispatch</span>
+                  <h3 class="text-2xl font-bold text-white mt-1 font-display">EMS Enterprise</h3>
+                </div>
+                <div class="text-xs font-mono text-on-surface-variant">[3 CORE FEATURES]</div>
+              </div>
+
+              <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">
+                Medical Dispatch & Fleet Operations Hub with real-time GPS tracking, biometric clocking, and automated payroll.
+              </p>
+
+              <!-- CORE FEATURE SCREENSHOTS VIEW (200px Height x 150px Width) WITH TELEMETRY STRIPS -->
+              <div class="mb-6 space-y-3">
+                <div class="flex justify-between items-center text-xs font-mono text-white font-semibold">
+                  <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-indigo-400 text-base">wallpaper</span>
+                    <span>Feature Screenshots (200px × 150px):</span>
+                  </div>
+                  <span class="text-[10px] text-on-surface-variant hidden sm:inline">← Swipe Features →</span>
+                </div>
+
+                <div class="flex gap-4 overflow-x-auto pb-2 no-scrollbar">
+                  
+                  <!-- Screenshot 1: Medical Dispatch Map (150px W x 200px H) -->
+                  <div onclick="openFeatureModal('EMS Enterprise', 'Medical Dispatch Command HUD', 'Real-time GPS tracking of ambulance units, emergency triage routing, and responder status.')" class="w-[150px] h-[200px] flex-shrink-0 bg-slate-950 p-3 rounded-xl border border-indigo-500/30 hover:border-indigo-400 transition-all cursor-pointer flex flex-col justify-between group">
+                    <div class="flex justify-between items-center text-[9px] font-mono text-indigo-400 pb-1.5 border-b border-slate-900">
+                      <span>GPS HUD</span>
+                      <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse"></span>
+                    </div>
+                    <div class="my-auto py-2 flex flex-col items-center justify-center text-center">
+                      <div class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-indigo-400 text-2xl">map</span>
+                      </div>
+                      <div class="text-xs font-bold text-white mb-1">Dispatch HUD</div>
+                      <div class="text-[9px] font-mono text-on-surface-variant">Unit GPS Tracker</div>
+                      <div class="mt-2 text-[8px] font-mono bg-indigo-950 text-indigo-300 px-2 py-0.5 rounded border border-indigo-500/30">Live Routing</div>
+                    </div>
+                    <div class="text-[9px] font-mono text-indigo-400 text-center flex items-center justify-center gap-1 pt-1 border-t border-slate-900">
+                      <span>View UI</span>
+                      <span class="material-symbols-outlined text-[10px]">open_in_full</span>
+                    </div>
+                  </div>
+
+                  <!-- Screenshot 2: Biometric Clocking (150px W x 200px H) -->
+                  <div onclick="openFeatureModal('EMS Enterprise', 'Biometric Shift & Clocking Terminal', 'Zero-trust facial recognition and PIN authentication for paramedic shift verification.')" class="w-[150px] h-[200px] flex-shrink-0 bg-slate-950 p-3 rounded-xl border border-indigo-500/30 hover:border-indigo-400 transition-all cursor-pointer flex flex-col justify-between group">
+                    <div class="flex justify-between items-center text-[9px] font-mono text-indigo-400 pb-1.5 border-b border-slate-900">
+                      <span>BIOMETRIC</span>
+                      <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse"></span>
+                    </div>
+                    <div class="my-auto py-2 flex flex-col items-center justify-center text-center">
+                      <div class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-indigo-400 text-2xl">fingerprint</span>
+                      </div>
+                      <div class="text-xs font-bold text-white mb-1">Biometric Clock</div>
+                      <div class="text-[9px] font-mono text-on-surface-variant">Facial Recognition</div>
+                      <div class="mt-2 text-[8px] font-mono bg-indigo-950 text-indigo-300 px-2 py-0.5 rounded border border-indigo-500/30">Zero-Trust Auth</div>
+                    </div>
+                    <div class="text-[9px] font-mono text-indigo-400 text-center flex items-center justify-center gap-1 pt-1 border-t border-slate-900">
+                      <span>View UI</span>
+                      <span class="material-symbols-outlined text-[10px]">open_in_full</span>
+                    </div>
+                  </div>
+
+                  <!-- Screenshot 3: Automated Payroll Engine (150px W x 200px H) -->
+                  <div onclick="openFeatureModal('EMS Enterprise', 'Automated Paramedic Payroll Engine', 'Dynamic shift multiplier, overtime calculation, and instant payslip generation.')" class="w-[150px] h-[200px] flex-shrink-0 bg-slate-950 p-3 rounded-xl border border-indigo-500/30 hover:border-indigo-400 transition-all cursor-pointer flex flex-col justify-between group">
+                    <div class="flex justify-between items-center text-[9px] font-mono text-indigo-400 pb-1.5 border-b border-slate-900">
+                      <span>PAYROLL</span>
+                      <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse"></span>
+                    </div>
+                    <div class="my-auto py-2 flex flex-col items-center justify-center text-center">
+                      <div class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-indigo-400 text-2xl">payments</span>
+                      </div>
+                      <div class="text-xs font-bold text-white mb-1">Payroll Engine</div>
+                      <div class="text-[9px] font-mono text-on-surface-variant">Overtime Math</div>
+                      <div class="mt-2 text-[8px] font-mono bg-indigo-950 text-indigo-300 px-2 py-0.5 rounded border border-indigo-500/30">Auto Payout</div>
+                    </div>
+                    <div class="text-[9px] font-mono text-indigo-400 text-center flex items-center justify-center gap-1 pt-1 border-t border-slate-900">
+                      <span>View UI</span>
+                      <span class="material-symbols-outlined text-[10px]">open_in_full</span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="font-mono text-xs bg-slate-950 px-2.5 py-1 rounded-md text-indigo-400 border border-slate-800">React</span>
+                <span class="font-mono text-xs bg-slate-950 px-2.5 py-1 rounded-md text-indigo-400 border border-slate-800">Express Node</span>
+                <span class="font-mono text-xs bg-slate-950 px-2.5 py-1 rounded-md text-indigo-400 border border-slate-800">Zero-Trust Command</span>
+              </div>
+            </div>
+
+            <a href="https://ems-workforce.surge.sh" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 bg-[#0B1C30] border border-blue-500/30 text-white font-extrabold text-xs uppercase tracking-wider rounded-xl font-mono text-center block transition-all duration-300 hover:border-cyan-400 hover:text-cyan-300 hover:shadow-[0_0_25px_rgba(0,229,255,0.45)] hover:-translate-y-0.5 group/btn">
+              <span>Launch Live Application <span class="inline-block transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">↗</span></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- App Card 3: GHL-PULSE -->
+        <div data-category="crm" data-search="ghl pulse crm lead pipeline automated messaging analytics base44" class="product-card-item moving-border-card rounded-3xl overflow-hidden">
+          <div class="bg-[#0B1C30] w-full h-full p-7 rounded-[1.38rem] flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center mb-4">
+                <div>
+                  <span class="text-[11px] font-mono text-cyan-400 uppercase tracking-wider bg-cyan-500/10 border border-cyan-500/30 px-2.5 py-0.5 rounded">Lead CRM</span>
+                  <h3 class="text-2xl font-bold text-white mt-1 font-display">GHL-PULSE</h3>
+                </div>
+                <div class="text-xs font-mono text-on-surface-variant">[3 CORE FEATURES]</div>
+              </div>
+
+              <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">
+                Autonomous CRM & High-Throughput Lead Pipeline Engine with real-time analytics, automated messaging, and lead scoring.
+              </p>
+
+              <!-- CORE FEATURE SCREENSHOTS VIEW (200px Height x 150px Width) WITH TELEMETRY STRIPS -->
+              <div class="mb-6 space-y-3">
+                <div class="flex justify-between items-center text-xs font-mono text-white font-semibold">
+                  <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-cyan-400 text-base">wallpaper</span>
+                    <span>Feature Screenshots (200px × 150px):</span>
+                  </div>
+                  <span class="text-[10px] text-on-surface-variant hidden sm:inline">← Swipe Features →</span>
+                </div>
+
+                <div class="flex gap-4 overflow-x-auto pb-2 no-scrollbar">
+                  
+                  <!-- Screenshot 1: Kanban Sales Pipeline (150px W x 200px H) -->
+                  <div onclick="openFeatureModal('GHL-PULSE', 'Kanban Sales Lead Pipeline', 'Interactive drag-and-drop opportunity board tracking Discovery, Demo, Proposal, and Closed Deals.')" class="w-[150px] h-[200px] flex-shrink-0 bg-slate-950 p-3 rounded-xl border border-cyan-500/30 hover:border-cyan-400 transition-all cursor-pointer flex flex-col justify-between group">
+                    <div class="flex justify-between items-center text-[9px] font-mono text-cyan-400 pb-1.5 border-b border-slate-900">
+                      <span>PIPELINE</span>
+                      <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                    </div>
+                    <div class="my-auto py-2 flex flex-col items-center justify-center text-center">
+                      <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-cyan-400 text-2xl">view_kanban</span>
+                      </div>
+                      <div class="text-xs font-bold text-white mb-1">Kanban Pipeline</div>
+                      <div class="text-[9px] font-mono text-on-surface-variant">Drag-Drop Stage</div>
+                      <div class="mt-2 text-[8px] font-mono bg-cyan-950 text-cyan-300 px-2 py-0.5 rounded border border-cyan-500/30">Deal Scoring</div>
+                    </div>
+                    <div class="text-[9px] font-mono text-cyan-400 text-center flex items-center justify-center gap-1 pt-1 border-t border-slate-900">
+                      <span>View UI</span>
+                      <span class="material-symbols-outlined text-[10px]">open_in_full</span>
+                    </div>
+                  </div>
+
+                  <!-- Screenshot 2: Automated Campaign Engine (150px W x 200px H) -->
+                  <div onclick="openFeatureModal('GHL-PULSE', 'Automated Campaign Messaging Engine', 'Multi-channel SMS, Email, and Webhook automation sequence builder.')" class="w-[150px] h-[200px] flex-shrink-0 bg-slate-950 p-3 rounded-xl border border-cyan-500/30 hover:border-cyan-400 transition-all cursor-pointer flex flex-col justify-between group">
+                    <div class="flex justify-between items-center text-[9px] font-mono text-cyan-400 pb-1.5 border-b border-slate-900">
+                      <span>AUTO SMS</span>
+                      <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                    </div>
+                    <div class="my-auto py-2 flex flex-col items-center justify-center text-center">
+                      <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-cyan-400 text-2xl">forward_to_inbox</span>
+                      </div>
+                      <div class="text-xs font-bold text-white mb-1">Campaign Builder</div>
+                      <div class="text-[9px] font-mono text-on-surface-variant">SMS & Email Auto</div>
+                      <div class="mt-2 text-[8px] font-mono bg-cyan-950 text-cyan-300 px-2 py-0.5 rounded border border-cyan-500/30">Sequence Trigger</div>
+                    </div>
+                    <div class="text-[9px] font-mono text-cyan-400 text-center flex items-center justify-center gap-1 pt-1 border-t border-slate-900">
+                      <span>View UI</span>
+                      <span class="material-symbols-outlined text-[10px]">open_in_full</span>
+                    </div>
+                  </div>
+
+                  <!-- Screenshot 3: Lead Scoring Analytics (150px W x 200px H) -->
+                  <div onclick="openFeatureModal('GHL-PULSE', 'Lead Scoring & Conversion Analytics', 'AI intent scoring, win probability calculations, and real-time revenue telemetry.')" class="w-[150px] h-[200px] flex-shrink-0 bg-slate-950 p-3 rounded-xl border border-cyan-500/30 hover:border-cyan-400 transition-all cursor-pointer flex flex-col justify-between group">
+                    <div class="flex justify-between items-center text-[9px] font-mono text-cyan-400 pb-1.5 border-b border-slate-900">
+                      <span>SCORE AI</span>
+                      <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                    </div>
+                    <div class="my-auto py-2 flex flex-col items-center justify-center text-center">
+                      <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-cyan-400 text-2xl">insights</span>
+                      </div>
+                      <div class="text-xs font-bold text-white mb-1">Lead Scoring</div>
+                      <div class="text-[9px] font-mono text-on-surface-variant">Win Rate Predict</div>
+                      <div class="mt-2 text-[8px] font-mono bg-cyan-950 text-cyan-300 px-2 py-0.5 rounded border border-cyan-500/30">Revenue Telemetry</div>
+                    </div>
+                    <div class="text-[9px] font-mono text-cyan-400 text-center flex items-center justify-center gap-1 pt-1 border-t border-slate-900">
+                      <span>View UI</span>
+                      <span class="material-symbols-outlined text-[10px]">open_in_full</span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="font-mono text-xs bg-slate-950 px-2.5 py-1 rounded-md text-cyan-400 border border-slate-800">React</span>
+                <span class="font-mono text-xs bg-slate-950 px-2.5 py-1 rounded-md text-cyan-400 border border-slate-800">CRM Engine</span>
+                <span class="font-mono text-xs bg-slate-950 px-2.5 py-1 rounded-md text-cyan-400 border border-slate-800">Base44 Lead Telemetry</span>
+              </div>
+            </div>
+
+            <a href="http://localhost:5174/pos" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 bg-[#0B1C30] border border-blue-500/30 text-white font-extrabold text-xs uppercase tracking-wider rounded-xl font-mono text-center block transition-all duration-300 hover:border-cyan-400 hover:text-cyan-300 hover:shadow-[0_0_25px_rgba(0,229,255,0.45)] hover:-translate-y-0.5 group/btn">
+              <span>Launch Live Application <span class="inline-block transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">↗</span></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- App Card 4: LexAI Enterprise -->
+        <div data-category="legal" data-search="lexai legal ai discovery ocr contract risk audit precedent search" class="product-card-item moving-border-card rounded-3xl overflow-hidden">
+          <div class="bg-[#0B1C30] w-full h-full p-7 rounded-[1.38rem] flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center mb-4">
+                <div>
+                  <span class="text-[11px] font-mono text-amber-400 uppercase tracking-wider bg-amber-500/10 border border-amber-500/30 px-2.5 py-0.5 rounded">Legal AI</span>
+                  <h3 class="text-2xl font-bold text-white mt-1 font-display">LexAI Enterprise</h3>
+                </div>
+                <div class="text-xs font-mono text-on-surface-variant">[3 CORE FEATURES]</div>
+              </div>
+
+              <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">
+                AI Legal Discovery & Contract Risk Audit Suite with OCR contract scanning, clause extraction, and risk assessment.
+              </p>
+
+              <!-- CORE FEATURE SCREENSHOTS VIEW (200px Height x 150px Width) WITH TELEMETRY STRIPS -->
+              <div class="mb-6 space-y-3">
+                <div class="flex justify-between items-center text-xs font-mono text-white font-semibold">
+                  <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-amber-400 text-base">wallpaper</span>
+                    <span>Feature Screenshots (200px × 150px):</span>
+                  </div>
+                  <span class="text-[10px] text-on-surface-variant hidden sm:inline">← Swipe Features →</span>
+                </div>
+
+                <div class="flex gap-4 overflow-x-auto pb-2 no-scrollbar">
+                  
+                  <!-- Screenshot 1: OCR Legal Document Scanner (150px W x 200px H) -->
+                  <div onclick="openFeatureModal('LexAI Enterprise', 'OCR Legal Document Scanner', 'Optical character recognition processing multi-page legal contracts and court filings.')" class="w-[150px] h-[200px] flex-shrink-0 bg-slate-950 p-3 rounded-xl border border-amber-500/30 hover:border-amber-400 transition-all cursor-pointer flex flex-col justify-between group">
+                    <div class="flex justify-between items-center text-[9px] font-mono text-amber-400 pb-1.5 border-b border-slate-900">
+                      <span>OCR BEAM</span>
+                      <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                    </div>
+                    <div class="my-auto py-2 flex flex-col items-center justify-center text-center">
+                      <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-amber-400 text-2xl">document_scanner</span>
+                      </div>
+                      <div class="text-xs font-bold text-white mb-1">OCR Scanner</div>
+                      <div class="text-[9px] font-mono text-on-surface-variant">PDF Clause Extract</div>
+                      <div class="mt-2 text-[8px] font-mono bg-amber-950 text-amber-300 px-2 py-0.5 rounded border border-amber-500/30">Sub-Second Optical</div>
+                    </div>
+                    <div class="text-[9px] font-mono text-amber-400 text-center flex items-center justify-center gap-1 pt-1 border-t border-slate-900">
+                      <span>View UI</span>
+                      <span class="material-symbols-outlined text-[10px]">open_in_full</span>
+                    </div>
+                  </div>
+
+                  <!-- Screenshot 2: Clause Risk Audit Gauge (150px W x 200px H) -->
+                  <div onclick="openFeatureModal('LexAI Enterprise', 'Clause Risk Audit & Liability Gauge', 'Real-time liability scoring identifying high-risk indemnification clauses.')" class="w-[150px] h-[200px] flex-shrink-0 bg-slate-950 p-3 rounded-xl border border-amber-500/30 hover:border-amber-400 transition-all cursor-pointer flex flex-col justify-between group">
+                    <div class="flex justify-between items-center text-[9px] font-mono text-amber-400 pb-1.5 border-b border-slate-900">
+                      <span>RISK GAUGE</span>
+                      <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                    </div>
+                    <div class="my-auto py-2 flex flex-col items-center justify-center text-center">
+                      <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-amber-400 text-2xl">gavel</span>
+                      </div>
+                      <div class="text-xs font-bold text-white mb-1">Clause Risk</div>
+                      <div class="text-[9px] font-mono text-on-surface-variant">Liability Detection</div>
+                      <div class="mt-2 text-[8px] font-mono bg-amber-950 text-amber-300 px-2 py-0.5 rounded border border-amber-500/30">Penalty Flagging</div>
+                    </div>
+                    <div class="text-[9px] font-mono text-amber-400 text-center flex items-center justify-center gap-1 pt-1 border-t border-slate-900">
+                      <span>View UI</span>
+                      <span class="material-symbols-outlined text-[10px]">open_in_full</span>
+                    </div>
+                  </div>
+
+                  <!-- Screenshot 3: Legal Precedent Index (150px W x 200px H) -->
+                  <div onclick="openFeatureModal('LexAI Enterprise', 'Case Law & Precedent Vector Index', 'Statutory search engine indexing 100,000+ legal rulings and supreme court precedents.')" class="w-[150px] h-[200px] flex-shrink-0 bg-slate-950 p-3 rounded-xl border border-amber-500/30 hover:border-amber-400 transition-all cursor-pointer flex flex-col justify-between group">
+                    <div class="flex justify-between items-center text-[9px] font-mono text-amber-400 pb-1.5 border-b border-slate-900">
+                      <span>100K VECTOR</span>
+                      <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                    </div>
+                    <div class="my-auto py-2 flex flex-col items-center justify-center text-center">
+                      <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-amber-400 text-2xl">find_in_page</span>
+                      </div>
+                      <div class="text-xs font-bold text-white mb-1">Precedent Index</div>
+                      <div class="text-[9px] font-mono text-on-surface-variant">Case Law Vectors</div>
+                      <div class="mt-2 text-[8px] font-mono bg-amber-950 text-amber-300 px-2 py-0.5 rounded border border-amber-500/30">100k+ Rulings</div>
+                    </div>
+                    <div class="text-[9px] font-mono text-amber-400 text-center flex items-center justify-center gap-1 pt-1 border-t border-slate-900">
+                      <span>View UI</span>
+                      <span class="material-symbols-outlined text-[10px]">open_in_full</span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="font-mono text-xs bg-slate-950 px-2.5 py-1 rounded-md text-amber-400 border border-slate-800">React</span>
+                <span class="font-mono text-xs bg-slate-950 px-2.5 py-1 rounded-md text-amber-400 border border-slate-800">Legal AI Engine</span>
+                <span class="font-mono text-xs bg-slate-950 px-2.5 py-1 rounded-md text-amber-400 border border-slate-800">OCR Risk Audit</span>
+              </div>
+            </div>
+
+            <a href="http://localhost:5174/inventory" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 bg-[#0B1C30] border border-blue-500/30 text-white font-extrabold text-xs uppercase tracking-wider rounded-xl font-mono text-center block transition-all duration-300 hover:border-cyan-400 hover:text-cyan-300 hover:shadow-[0_0_25px_rgba(0,229,255,0.45)] hover:-translate-y-0.5 group/btn">
+              <span>Launch Live Application <span class="inline-block transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">↗</span></span>
+            </a>
+          </div>
+        </div>
+
+      </div> <!-- Close #product-cards-grid -->
+    </section> <!-- Close #apps -->
+
+    <!-- ONE-PAGE PRICING SHEET & INTERACTIVE AGENCY COST SAVINGS CALCULATOR SECTION -->
+    <section class="max-w-7xl mx-auto px-6 md:px-16 mb-28" id="pricing">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="font-mono text-xs text-accent-electric uppercase tracking-widest mb-3">Transparent Economics</div>
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-display">One-Page Pricing Sheet & SLA Retainers</h2>
+        <p class="text-on-surface-variant text-sm md:text-base">Agency-grade systems delivered at solo-studio economics with 100% full IP transfer upon final payment.</p>
+      </div>
+
+      <!-- INTERACTIVE SOLO ECONOMICS VS AGENCY COST CALCULATOR WIDGET -->
+      <div class="glass-card spotlight-card p-8 rounded-3xl border border-blue-500/30 mb-14 relative overflow-hidden bg-gradient-to-r from-surface-card to-slate-950">
+        <div class="flex flex-col lg:flex-row justify-between items-center gap-8">
+          
+          <div class="flex-1 space-y-3">
+            <div class="inline-flex items-center gap-2 text-xs font-mono text-accent-cyan bg-cyan-500/10 border border-cyan-500/30 px-3 py-1 rounded-full font-bold">
+              <span class="material-symbols-outlined text-sm">calculate</span>
+              <span>INTERACTIVE COST SAVINGS CALCULATOR</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white font-display">Solo Studio vs. 50-Person Agency Cost</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">
+              Drag the slider to adjust your target application scope and see how much your business saves with Gatz Solo Studio economics.
+            </p>
+            
+            <div class="pt-2">
+              <label class="flex justify-between text-xs font-mono text-on-surface-variant mb-2">
+                <span>PROJECT SCOPE & MODULES:</span>
+                <span id="slider-module-label" class="text-accent-cyan font-bold">2 Standalone Modules</span>
+              </label>
+              <input type="range" id="team-scope-slider" min="1" max="5" value="2" oninput="updateCalculator()" title="Project scope and modules slider" aria-label="Project scope and modules slider" class="w-full h-2 bg-slate-900 rounded-lg appearance-none cursor-pointer accent-accent-cyan"/>
+            </div>
+          </div>
+
+          <div class="w-full lg:w-96 p-6 rounded-2xl bg-slate-950 border border-outline-variant font-mono space-y-4 shadow-xl">
+            <div class="flex justify-between items-center text-xs pb-3 border-b border-slate-800">
+              <span class="text-on-surface-variant">Traditional Agency Quote:</span>
+              <span id="calc-agency-cost" class="text-rose-400 font-bold">$30,000</span>
+            </div>
+            <div class="flex justify-between items-center text-xs pb-3 border-b border-slate-800">
+              <span class="text-on-surface-variant">Gatz Solo Studio Price:</span>
+              <span id="calc-gatz-cost" class="text-emerald-400 font-bold">$5,000</span>
+            </div>
+            <div class="pt-1 flex justify-between items-center">
+              <span class="text-xs text-white font-bold">YOUR NET SAVINGS:</span>
+              <span id="calc-savings" class="text-xl text-accent-cyan font-extrabold">$25,000 (83% SAVED!)</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        
+        <!-- Tier 1: Starter -->
+        <div class="glass-card spotlight-card p-8 rounded-3xl border border-outline-variant flex flex-col justify-between">
+          <div>
+            <div class="font-mono text-xs text-blue-400 uppercase tracking-widest mb-2">Tier 01</div>
+            <h3 class="text-2xl font-bold text-white mb-2 font-display">Starter</h3>
+            <p class="text-on-surface-variant text-xs mb-6">MVP Web Applications & Core Workflows for Early-Stage SMBs</p>
+            
+            <div class="mb-6 p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+              <div class="text-3xl font-extrabold text-white font-mono mb-1">$1,500 <span class="text-xs font-normal text-on-surface-variant">/ one-time</span></div>
+              <div class="text-xs text-emerald-400 font-mono">Optional Retainer: $1,500 / mo</div>
+            </div>
+
+            <ul class="space-y-3 text-sm text-on-surface-variant mb-8 font-body">
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent-emerald text-sm">check_circle</span>
+                <span>Single MVP Web Application</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent-emerald text-sm">check_circle</span>
+                <span>Core Business Workflows & Form Processing</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent-emerald text-sm">check_circle</span>
+                <span>Basic Role-Based Access Control (RBAC)</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent-emerald text-sm">check_circle</span>
+                <span>30-Day Post-Delivery Bug Fix Warranty</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent-emerald text-sm">check_circle</span>
+                <span>Surge Staging Deployment (`gatzdevs.surge.sh`)</span>
+              </li>
+            </ul>
+          </div>
+
+          <button onclick="openContactModal('Starter Package Inquiry')" class="w-full py-3 border border-outline-variant text-white font-bold hover:bg-[#0B1C30]/5 transition-all rounded-xl cursor-pointer">
+            Select Starter Plan
+          </button>
+        </div>
+
+        <!-- Tier 2: Scale (FEATURED CARD) -->
+        <div class="glass-card spotlight-card p-8 rounded-3xl border border-blue-500/40 flex flex-col justify-between relative overflow-hidden bg-gradient-to-b from-blue-950/20 to-surface-card">
+          <div class="absolute top-4 right-4 bg-accent-electric text-white text-[10px] font-mono font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
+            MOST POPULAR
+          </div>
+
+          <div>
+            <div class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-2">Tier 02</div>
+            <h3 class="text-2xl font-bold text-white mb-2 font-display">Scale</h3>
+            <p class="text-on-surface-variant text-xs mb-6">Multi-Module Platforms & API Integrations for Growing Businesses</p>
+            
+            <div class="mb-6 p-4 rounded-xl bg-blue-950/60 border border-blue-500/30">
+              <div class="text-3xl font-extrabold text-white font-mono mb-1">$5,000 <span class="text-xs font-normal text-on-surface-variant">/ one-time</span></div>
+              <div class="text-xs text-accent-cyan font-mono">Retainer: $2,500 / mo (SLA & Updates)</div>
+            </div>
+
+            <ul class="space-y-3 text-sm text-on-surface-variant mb-8 font-body">
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent-cyan text-sm">check_circle</span>
+                <span>Multi-Module Enterprise Application</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent-cyan text-sm">check_circle</span>
+                <span>Third-Party API Integrations (Stripe, Twilio, AWS)</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent-cyan text-sm">check_circle</span>
+                <span>Real-Time Telemetry & Analytics Dashboard</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent-cyan text-sm">check_circle</span>
+                <span>Priority P1 SLA Support (&lt; 24 hrs response)</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent-cyan text-sm">check_circle</span>
+                <span>100% Full Source Code & IP Transfer</span>
+              </li>
+            </ul>
+          </div>
+
+          <button onclick="openContactModal('Scale Package Inquiry')" class="w-full py-3.5 bg-accent-electric text-white font-bold hover:bg-blue-600 transition-all rounded-xl shadow-lg shadow-blue-500/30 cursor-pointer">
+            Select Scale Plan
+          </button>
+        </div>
+
+        <!-- Tier 3: Enterprise -->
+        <div class="glass-card spotlight-card p-8 rounded-3xl border border-outline-variant flex flex-col justify-between">
+          <div>
+            <div class="font-mono text-xs text-accent-amber uppercase tracking-widest mb-2">Tier 03</div>
+            <h3 class="text-2xl font-bold text-white mb-2 font-display">Enterprise</h3>
+            <p class="text-on-surface-variant text-xs mb-6">High-Throughput Systems & Mission-Critical Architecture</p>
+            
+            <div class="mb-6 p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+              <div class="text-3xl font-extrabold text-white font-mono mb-1">$10,000 <span class="text-xs font-normal text-on-surface-variant">/ one-time</span></div>
+              <div class="text-xs text-amber-400 font-mono">Retainer: $3,500 / mo (Premium SLA)</div>
+            </div>
+
+            <ul class="space-y-3 text-sm text-on-surface-variant mb-8 font-body">
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent-amber text-sm">check_circle</span>
+                <span>High-Throughput Microservice Architecture</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent-amber text-sm">check_circle</span>
+                <span>Military-Grade AES-256 & WORM Audit Logging</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent-amber text-sm">check_circle</span>
+                <span>Critical P0 SLA Response Target (&lt; 4 hrs)</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent-amber text-sm">check_circle</span>
+                <span>99.9% Production Uptime SLA Guarantee</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent-amber text-sm">check_circle</span>
+                <span>Dedicated SRE Advisory & System Hardening</span>
+              </li>
+            </ul>
+          </div>
+
+          <button onclick="openContactModal('Enterprise Package Inquiry')" class="w-full py-3 border border-outline-variant text-white font-bold hover:bg-[#0B1C30]/5 transition-all rounded-xl cursor-pointer">
+            Select Enterprise Plan
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CORE CAPABILITIES & SPECIFICATIONS SECTION -->
+    <section class="max-w-7xl mx-auto px-6 md:px-16 mb-28" id="capabilities">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <div class="lg:col-span-4 sticky top-24">
+          <div class="font-mono text-xs text-accent-electric uppercase tracking-widest mb-4">Core Capabilities</div>
+          <h2 class="text-3xl font-bold text-white mb-6 leading-tight font-display">Technical Excellence & System Integration.</h2>
+          <p class="text-on-surface-variant leading-relaxed mb-6 text-sm">
+            Every application is engineered upon a robust foundation built for long-term reliability and zero-defect performance.
+          </p>
+          <div class="p-5 rounded-2xl bg-surface-card border border-outline-variant font-mono text-xs text-on-surface-variant space-y-2">
+            <div class="text-white font-bold">Solo Studio Principles</div>
+            <div>✓ Zero Operational Friction</div>
+            <div>✓ High-Throughput Microservices</div>
+            <div>✓ Sub-Second Response Latency</div>
+            <div>✓ 100% Full IP Transfer Guarantee</div>
+          </div>
+        </div>
+        
+        <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-surface-card spotlight-card border border-outline-variant p-6 rounded-2xl">
+            <div class="text-blue-400 font-mono text-xs mb-3">01 / SPECIFICATIONS</div>
+            <h3 class="text-lg font-bold text-white mb-3 font-display">Technical Specifications</h3>
+            <ul class="space-y-3 text-on-surface-variant text-sm">
+              <li class="flex gap-2">
+                <span class="text-accent-electric">●</span>
+                <span><strong>Scalability:</strong> Microservices designed to handle 1,000,000+ requests with sub-second latency.</span>
+              </li>
+              <li class="flex gap-2">
+                <span class="text-accent-electric">●</span>
+                <span><strong>Performance:</strong> Sub-second response times powered by edge caching and optimized state.</span>
+              </li>
+              <li class="flex gap-2">
+                <span class="text-accent-electric">●</span>
+                <span><strong>Security:</strong> Enterprise AES-256 encryption and automated static security checks.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-surface-card spotlight-card border border-outline-variant p-6 rounded-2xl">
+            <div class="text-blue-400 font-mono text-xs mb-3">02 / CONNECTORS</div>
+            <h3 class="text-lg font-bold text-white mb-3 font-display">System Integrations</h3>
+            <ul class="space-y-3 text-on-surface-variant text-sm">
+              <li class="flex gap-2">
+                <span class="text-accent-electric">●</span>
+                <span><strong>Third-Party APIs:</strong> Stripe, Twilio, AWS, SendGrid, and enterprise SaaS connectors.</span>
+              </li>
+              <li class="flex gap-2">
+                <span class="text-accent-electric">●</span>
+                <span><strong>Data Flow:</strong> Real-time event synchronization via WebSockets and high-throughput channels.</span>
+              </li>
+              <li class="flex gap-2">
+                <span class="text-accent-electric">●</span>
+                <span><strong>Custom Adapters:</strong> Seamless connectivity to legacy databases and enterprise backends.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT CTA SECTION -->
+    <section class="max-w-7xl mx-auto px-6 md:px-16 py-20 text-center" id="contact">
+      <div class="glass-card spotlight-card p-12 rounded-3xl border border-outline-variant max-w-3xl mx-auto relative overflow-hidden">
+        <div class="absolute -top-24 -right-24 w-64 h-64 bg-accent-electric/10 rounded-full blur-[100px]"></div>
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-display">Ready to Build Your Enterprise Solution?</h2>
+        <p class="text-on-surface-variant mb-8 leading-relaxed text-sm md:text-base">
+          Direct engagement with Gatz—solo systems architect and lead software engineer. Accepting select high-impact software contracts and advisory engagements.
+        </p>
+        <button onclick="openContactModal('General Inquiry')" class="inline-flex items-center gap-3 bg-accent-electric text-white px-10 py-4 rounded-xl font-bold hover:bg-blue-700 transition-all cursor-pointer shadow-xl shadow-blue-600/30">
+          <span>Start A Project Conversation</span>
+          <span class="material-symbols-outlined">alternate_email</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-surface-deep border-t border-outline-variant py-10">
+    <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-16 max-w-7xl mx-auto gap-6 text-sm">
+      <div class="font-bold text-white text-lg flex items-center gap-2 font-display">
+        <span>Gatz.DevPortfolio</span>
+        <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded">Surge Live Verified</span>
+      </div>
+      <div class="text-on-surface-variant text-xs">
+        © 2026 Gatz Solo Systems Studio. Built with 100% Zero-Defect Precision.
+      </div>
+      <div class="font-mono text-xs text-on-surface-variant">
+        Live Target: <a href="https://gatzdevs.surge.sh" target="_blank" rel="noopener noreferrer" class="text-accent-electric hover:underline">https://gatzdevs.surge.sh</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODALS -->
+
+  <!-- Core Feature Screenshot Zoom Modal -->
+  <div id="feature-modal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-surface-card border border-outline-variant p-8 rounded-2xl max-w-2xl w-full shadow-2xl relative">
+      <button onclick="closeModal('feature-modal')" class="absolute top-4 right-4 text-on-surface-variant hover:text-white">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      <div class="flex items-center gap-3 mb-2">
+        <span class="material-symbols-outlined text-accent-cyan text-3xl">wallpaper</span>
+        <div>
+          <span id="feature-app-tag" class="text-[10px] font-mono text-blue-400 uppercase tracking-widest">APP_NAME</span>
+          <h3 id="feature-modal-title" class="text-2xl font-bold text-white font-display">Feature Screenshot Title</h3>
+        </div>
+      </div>
+      
+      <!-- High Resolution Feature Screenshot Render View -->
+      <div class="my-6 p-6 rounded-xl bg-slate-950 border border-outline-variant font-mono text-xs relative overflow-hidden">
+        <div class="flex justify-between items-center pb-4 mb-4 border-b border-slate-800 text-on-surface-variant">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+            <span class="ml-2 text-white font-bold" id="feature-mock-url">app.internal/feature-hud</span>
+          </div>
+          <span class="text-emerald-400 font-bold">● HIGH_RES_200x150_VIEW</span>
+        </div>
+        <p id="feature-modal-desc" class="text-on-surface-variant text-sm leading-relaxed mb-4">Detailed screenshot description...</p>
+        <div class="p-4 rounded-lg bg-surface-card/60 border border-blue-500/20 text-accent-cyan space-y-1 text-xs">
+          <div>✓ Full 200px Height × 150px Width UI Screenshot Preview</div>
+          <div>✓ Zero-Defect Component Lifecycle Active</div>
+        </div>
+      </div>
+
+      <div class="flex justify-end gap-3">
+        <button onclick="closeModal('feature-modal')" class="bg-accent-electric text-white px-6 py-2.5 rounded-xl font-bold hover:bg-blue-600">Close View</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- App Preview Showcase Modal (Interactive Live Sandbox Frame) -->
+  <div id="app-modal" class="fixed inset-0 bg-black/90 backdrop-blur-xl z-50 hidden flex flex-col p-4 md:p-8">
+    <div class="bg-[#0B1C30] border border-slate-700/80 rounded-2xl w-full max-w-6xl mx-auto h-full flex flex-col shadow-2xl relative overflow-hidden">
+      
+      <!-- Top Browser Bar Header -->
+      <div class="px-6 py-4 bg-[#050811] border-b border-slate-800 flex items-center justify-between shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="flex items-center gap-1.5">
+            <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+          </div>
+          <div class="h-4 w-[1px] bg-slate-800 mx-1"></div>
+          <span class="material-symbols-outlined text-accent-electric text-xl">rocket_launch</span>
+          <div>
+            <h3 id="app-modal-title" class="text-base font-bold text-white font-display">OmniStock POS</h3>
+            <p id="app-modal-url" class="text-xs font-mono text-emerald-400">http://localhost:5174</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button onclick="window.open(currentActiveLaunchUrl, '_blank')" class="px-4 py-1.5 bg-accent-electric hover:bg-blue-600 text-white font-bold text-xs rounded-xl flex items-center gap-1.5 transition-all shadow-md cursor-pointer">
+            <span>Open In New Window</span>
+            <span class="material-symbols-outlined text-sm">open_in_new</span>
+          </button>
+          <button onclick="closeModal('app-modal')" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-all cursor-pointer">
+            <span class="material-symbols-outlined text-lg">close</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- App Sub-header Info Strip -->
+      <div id="app-modal-desc" class="px-6 py-3 bg-[#071322] border-b border-slate-800 text-slate-300 text-xs font-mono shrink-0">
+        Autonomous Inventory & Point-of-Sale Engine with barcode scanning, stock adjustments, and checkout terminal.
+      </div>
+
+      <!-- Interactive Embedded Frame Container -->
+      <div class="flex-1 bg-slate-950 relative w-full h-full overflow-hidden">
+        <iframe id="app-modal-iframe" src="http://localhost:5174" class="w-full h-full border-0" title="OmniStock Live Application"></iframe>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-6 py-3 bg-[#050811] border-t border-slate-800 flex items-center justify-between text-xs font-mono shrink-0">
+        <div class="flex items-center gap-2 text-emerald-400">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>LIVE_STANDALONE_CODEBASE_ONLINE</span>
+        </div>
+        <button onclick="closeModal('app-modal')" class="px-5 py-1.5 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-lg transition-all cursor-pointer">
+          Close Sandbox Frame
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Developer Profile / Resume Modal -->
+  <div id="resume-modal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-surface-card border border-outline-variant p-8 rounded-2xl max-w-lg w-full shadow-2xl relative">
+      <button onclick="closeModal('resume-modal')" class="absolute top-4 right-4 text-on-surface-variant hover:text-white">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="material-symbols-outlined text-accent-electric text-3xl">badge</span>
+        <h3 class="text-2xl font-bold text-white font-display">Gatz | Solo Developer Profile</h3>
+      </div>
+      <div class="space-y-3 text-sm text-on-surface-variant mb-6 font-mono">
+        <p><strong class="text-white">Role:</strong> Full-Stack Systems Architect & Solo Developer</p>
+        <p><strong class="text-white">Specialization:</strong> Zero-Defect Architecture, React/Vite, Node.js, AI Automation</p>
+        <p><strong class="text-white">Experience:</strong> 5+ Years High-Performance Systems Engineering</p>
+        <p><strong class="text-white">Economics:</strong> Agency-Grade Deliverables at 1/10th Agency Cost</p>
+        <p><strong class="text-white">SLA Discipline:</strong> 99.9% Uptime SLA Commitment</p>
+      </div>
+      <div class="flex justify-end gap-3">
+        <button onclick="closeModal('resume-modal')" class="border border-outline-variant text-white px-6 py-2 rounded-lg font-bold hover:bg-[#0B1C30]/5">Close</button>
+        <button onclick="downloadResumeToast()" class="bg-accent-electric text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-600">Download CV</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div id="contact-modal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-surface-card border border-outline-variant p-8 rounded-2xl max-w-lg w-full shadow-2xl relative">
+      <button onclick="closeModal('contact-modal')" class="absolute top-4 right-4 text-on-surface-variant hover:text-white">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="material-symbols-outlined text-accent-electric text-3xl">alternate_email</span>
+        <h3 id="contact-modal-title" class="text-2xl font-bold text-white font-display">Get In Touch</h3>
+      </div>
+      <p class="text-xs text-on-surface-variant mb-6 font-mono">Direct line to Gatz — Autonomous Systems Architect</p>
+      
+      <form onsubmit="handleContactSubmit(event)" class="space-y-4 font-body">
+        <div>
+          <label class="block text-xs font-mono text-on-surface-variant mb-1">YOUR NAME</label>
+          <input type="text" required placeholder="Alex Rivera" class="w-full bg-slate-950 border border-outline-variant rounded-xl px-4 py-2.5 text-sm text-white focus:border-accent-electric outline-none"/>
+        </div>
+        <div>
+          <div class="flex justify-between items-center mb-1">
+            <label class="block text-xs font-mono text-on-surface-variant">BUSINESS EMAIL</label>
+            <span id="email-valid-badge" class="hidden text-[10px] font-mono text-emerald-400 flex items-center gap-1">
+              <span class="material-symbols-outlined text-xs">verified</span> VERIFIED
+            </span>
+          </div>
+          <input type="email" id="contact-email-input" oninput="validateContactEmail()" required placeholder="alex@company.com" class="w-full bg-slate-950 border border-outline-variant rounded-xl px-4 py-2.5 text-sm text-white focus:border-accent-electric outline-none"/>
+        </div>
+        <div>
+          <label class="block text-xs font-mono text-on-surface-variant mb-1">PROJECT DETAILS / PACKAGE</label>
+          <textarea rows="3" required placeholder="Tell us about your project requirements..." class="w-full bg-slate-950 border border-outline-variant rounded-xl px-4 py-2.5 text-sm text-white focus:border-accent-electric outline-none"></textarea>
+        </div>
+
+        <div class="p-3 rounded-lg bg-slate-950 border border-slate-800 text-[10px] font-mono text-on-surface-variant flex items-center justify-between">
+          <span>SEC-01 Cryptographic Anti-Spam Check:</span>
+          <span class="text-emerald-400 font-bold">● ACTIVE_PASS</span>
+        </div>
+
+        <div class="flex justify-end gap-3 pt-2">
+          <button type="button" onclick="closeModal('contact-modal')" class="border border-outline-variant text-white px-6 py-2.5 rounded-xl font-bold hover:bg-[#0B1C30]/5">Cancel</button>
+          <button type="submit" class="bg-accent-electric text-white px-6 py-2.5 rounded-xl font-bold hover:bg-blue-600 shadow-lg shadow-blue-500/20">Send Message</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT UX HANDLERS & MOUSE SPOTLIGHT CONTROLLER -->
+  <script>
+    // OPTION A: Dynamic Mouse Spotlight Tracking Handler
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize Full Container "Raindrops of the Soul" Canvas Animation Engine
+      initSoulRainAnimation();
+
+      const spotlightCards = document.querySelectorAll('.spotlight-card');
+
+      spotlightCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+        });
+      });
+
+      // ARCH-01: Deep URL Hash Routing Check on Load
+      checkUrlHashRouting();
+    });
+
+    // FE-01: Global Keyboard Event Listeners (Escape key & Ctrl+K)
+    document.addEventListener('keydown', (e) => {
+      // Escape key closes modals
+      if (e.key === 'Escape') {
+        closeModal('app-modal');
+        closeModal('feature-modal');
+        closeModal('contact-modal');
+        closeModal('resume-modal');
+      }
+      
+      // Ctrl+K or / key focuses Search Input
+      if ((e.ctrlKey && e.key === 'k') || (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA')) {
+        e.preventDefault();
+        const searchInput = document.getElementById('app-search-input');
+        if (searchInput) searchInput.focus();
+      }
+    });
+
+    // ARCH-01: Deep Hash Link Handler
+    function checkUrlHashRouting() {
+      const hash = window.location.hash.toLowerCase();
+      if (hash.includes('omnistock')) {
+        launchAppPreview('OmniStock POS', 'Autonomous Inventory & POS Telemetry Suite with barcode scanning, stock adjustment, and checkout terminal.', 'http://localhost:5174');
+      } else if (hash.includes('ems')) {
+        launchAppPreview('EMS Enterprise', 'Workforce & Emergency Medical Services Dispatch Command Suite with biometrics and shift scheduling.', 'http://localhost:5175');
+      } else if (hash.includes('pulse')) {
+        launchAppPreview('GHL-PULSE', 'Autonomous CRM & High-Throughput Lead Pipeline Engine with real-time lead analytics.', 'http://localhost:5176');
+      } else if (hash.includes('lexai')) {
+        launchAppPreview('LexAI Enterprise', 'AI Legal Discovery & Contract Risk Audit Suite with contract scanning and risk flags.', 'http://localhost:5177');
+      }
+    }
+
+    // Standalone Apps Category Filtering & Search Handler
+    function filterCategory(cat) {
+      const items = document.querySelectorAll('.product-card-item');
+      const buttons = {
+        all: document.getElementById('filter-btn-all'),
+        pos: document.getElementById('filter-btn-pos'),
+        dispatch: document.getElementById('filter-btn-dispatch'),
+        crm: document.getElementById('filter-btn-crm'),
+        legal: document.getElementById('filter-btn-legal')
+      };
+
+      Object.keys(buttons).forEach(key => {
+        if (buttons[key]) {
+          if (key === cat) {
+            buttons[key].className = "px-4 py-2 rounded-xl border border-accent-electric bg-accent-electric text-white font-bold transition-all shadow-md";
+          } else {
+            buttons[key].className = "px-4 py-2 rounded-xl border border-outline-variant bg-slate-950/80 text-on-surface-variant hover:text-white transition-all";
+          }
+        }
+      });
+
+      items.forEach(item => {
+        const itemCat = item.getAttribute('data-category');
+        if (cat === 'all' || itemCat === cat) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    }
+
+    function handleSearchInput() {
+      const query = document.getElementById('app-search-input').value.toLowerCase().trim();
+      const items = document.querySelectorAll('.product-card-item');
+
+      items.forEach(item => {
+        const searchTags = item.getAttribute('data-search').toLowerCase();
+        if (query === '' || searchTags.includes(query)) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    }
+
+    // Interactive Agency Cost Savings Calculator Handler
+    function updateCalculator() {
+      const val = parseInt(document.getElementById('team-scope-slider').value);
+      const label = document.getElementById('slider-module-label');
+      const agencyCost = document.getElementById('calc-agency-cost');
+      const gatzCost = document.getElementById('calc-gatz-cost');
+      const savings = document.getElementById('calc-savings');
+
+      const agencyPrices = [15000, 30000, 60000, 90000, 150000];
+      const gatzPrices = [2500, 5000, 10000, 15000, 20000];
+
+      const curAgency = agencyPrices[val - 1];
+      const curGatz = gatzPrices[val - 1];
+      const netSavings = curAgency - curGatz;
+      const pctSaved = Math.round((netSavings / curAgency) * 100);
+
+      label.innerText = `${val} Standalone Module${val > 1 ? 's' : ''}`;
+      agencyCost.innerText = `$${curAgency.toLocaleString()}`;
+      gatzCost.innerText = `$${curGatz.toLocaleString()}`;
+      savings.innerText = `$${netSavings.toLocaleString()} (${pctSaved}% SAVED!)`;
+    }
+
+    // SEC-01: Contact Form Live Email Validator
+    function validateContactEmail() {
+      const val = document.getElementById('contact-email-input').value;
+      const badge = document.getElementById('email-valid-badge');
+      if (val.includes('@') && val.includes('.')) {
+        badge.classList.remove('hidden');
+      } else {
+        badge.classList.add('hidden');
+      }
+    }
+
+    // Toast Notification System
+    function showToast(message, type = 'info') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      
+      const iconMap = { success: 'check_circle', info: 'info', warning: 'warning' };
+      const colorMap = {
+        success: 'border-emerald-500/40 bg-emerald-950/90 text-emerald-300',
+        info: 'border-blue-500/40 bg-blue-950/90 text-blue-300',
+        warning: 'border-amber-500/40 bg-amber-950/90 text-amber-300'
+      };
+
+      toast.className = `p-4 rounded-xl border backdrop-blur-xl shadow-2xl flex items-center gap-3 text-sm font-mono pointer-events-auto animate-slide-in ${colorMap[type] || colorMap.info}`;
+      toast.innerHTML = `
+        <span class="material-symbols-outlined text-xl">${iconMap[type] || 'info'}</span>
+        <span class="flex-1">${message}</span>
+        <button onclick="this.parentElement.remove()" class="opacity-60 hover:opacity-100">
+          <span class="material-symbols-outlined text-sm">close</span>
+        </button>
+      `;
+
+      container.appendChild(toast);
+      setTimeout(() => { if (toast.parentElement) toast.remove(); }, 4000);
+    }
+
+    function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
+
+    function openFeatureModal(appName, featureTitle, featureDesc) {
+      document.getElementById('feature-app-tag').innerText = appName;
+      document.getElementById('feature-modal-title').innerText = featureTitle;
+      document.getElementById('feature-modal-desc').innerText = featureDesc;
+      document.getElementById('feature-mock-url').innerText = `${appName.toLowerCase().replace(/[^a-z]/g,'')}.internal/${featureTitle.toLowerCase().replace(/[^a-z]/g,'-')}`;
+      document.getElementById('feature-modal').classList.remove('hidden');
+    }
+
+    let currentActiveLaunchUrl = 'http://localhost:5174';
+
+    function launchAppPreview(title, desc, url) {
+      currentActiveLaunchUrl = url || 'http://localhost:5174';
+      document.getElementById('app-modal-title').innerText = title;
+      document.getElementById('app-modal-desc').innerText = desc;
+      document.getElementById('app-modal-url').innerText = currentActiveLaunchUrl;
+      const iframe = document.getElementById('app-modal-iframe');
+      if (iframe) {
+        iframe.src = currentActiveLaunchUrl;
+      }
+      document.getElementById('app-modal').classList.remove('hidden');
+    }
+
+    function triggerAppLaunchToast() {
+      closeModal('app-modal');
+      showToast(`Launching ${document.getElementById('app-modal-title').innerText}...`, 'success');
+      if (currentActiveLaunchUrl) {
+        window.open(currentActiveLaunchUrl, '_blank');
+      }
+    }
+
+    function openResumeModal() { document.getElementById('resume-modal').classList.remove('hidden'); }
+    function downloadResumeToast() { closeModal('resume-modal'); showToast('Developer Profile download initiated.', 'success'); }
+    
+    function openContactModal(packageContext = '') { 
+      if (packageContext) {
+        document.getElementById('contact-modal-title').innerText = `Inquire: ${packageContext}`;
+      } else {
+        document.getElementById('contact-modal-title').innerText = 'Get In Touch';
+      }
+      document.getElementById('contact-modal').classList.remove('hidden'); 
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      closeModal('contact-modal');
+      showToast('Thank you! Your project message has been submitted to Gatz.', 'success');
+    }
+
+    // FULL CONTAINER BACKGROUND ANIMATION ENGINE: "Raindrops of the Soul" (Raindrop -> Splash -> Ascending Soul)
+    function initSoulRainAnimation() {
+      const canvas = document.getElementById('soul-rain-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      let width = canvas.width = window.innerWidth;
+      let height = canvas.height = window.innerHeight;
+
+      window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      });
+
+      const raindrops = [];
+      const splashes = [];
+      const souls = [];
+
+      const MAX_RAINDROPS = 28;
+
+      class Raindrop {
+        constructor() {
+          this.reset();
+        }
+        reset() {
+          this.x = Math.random() * width;
+          this.y = -20 - Math.random() * 80;
+          this.speed = 4.5 + Math.random() * 4.5;
+          this.length = 10 + Math.random() * 14;
+          this.opacity = 0.35 + Math.random() * 0.45;
+          this.impactY = height * (0.85 + Math.random() * 0.12);
+        }
+        update() {
+          this.y += this.speed;
+          if (this.y >= this.impactY) {
+            // Trigger Splash ring
+            splashes.push(new Splash(this.x, this.impactY));
+            // Trigger Ascending Soul particle
+            souls.push(new Soul(this.x, this.impactY));
+            this.reset();
+          }
+        }
+        draw() {
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(0, 229, 255, ${this.opacity})`;
+          ctx.lineWidth = 1.2;
+          ctx.moveTo(this.x, this.y);
+          ctx.lineTo(this.x, this.y - this.length);
+          ctx.stroke();
+        }
+      }
+
+      class Splash {
+        constructor(x, y) {
+          this.x = x;
+          this.y = y;
+          this.radius = 1;
+          this.maxRadius = 14 + Math.random() * 10;
+          this.opacity = 0.75;
+          this.speed = 0.9;
+        }
+        update() {
+          this.radius += this.speed;
+          this.opacity -= 0.035;
+        }
+        draw() {
+          if (this.opacity <= 0) return;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(37, 99, 235, ${this.opacity})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+
+      class Soul {
+        constructor(x, y) {
+          this.x = x;
+          this.y = y;
+          this.speedY = 0.7 + Math.random() * 0.9;
+          this.opacity = 0.8;
+          this.size = 2 + Math.random() * 2.5;
+          this.swayOffset = Math.random() * 100;
+          this.colorType = Math.random();
+        }
+        update() {
+          this.y -= this.speedY;
+          this.swayOffset += 0.025;
+          this.x += Math.sin(this.swayOffset) * 0.55;
+          this.opacity -= 0.005;
+        }
+        draw() {
+          if (this.opacity <= 0) return;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          
+          let glowColor = `rgba(0, 229, 255, ${this.opacity})`;
+          if (this.colorType > 0.66) {
+            glowColor = `rgba(245, 158, 11, ${this.opacity})`; // Amber soul
+          } else if (this.colorType > 0.33) {
+            glowColor = `rgba(16, 185, 129, ${this.opacity})`; // Emerald soul
+          }
+
+          ctx.fillStyle = glowColor;
+          ctx.shadowBlur = 8;
+          ctx.shadowColor = glowColor;
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        }
+      }
+
+      for (let i = 0; i < MAX_RAINDROPS; i++) {
+        raindrops.push(new Raindrop());
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        raindrops.forEach(drop => {
+          drop.update();
+          drop.draw();
+        });
+
+        for (let i = splashes.length - 1; i >= 0; i--) {
+          splashes[i].update();
+          splashes[i].draw();
+          if (splashes[i].opacity <= 0) {
+            splashes.splice(i, 1);
+          }
+        }
+
+        for (let i = souls.length - 1; i >= 0; i--) {
+          souls[i].update();
+          souls[i].draw();
+          if (souls[i].opacity <= 0 || souls[i].y <= 0) {
+            souls.splice(i, 1);
+          }
+        }
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    }
+  </script>
+</body>
+</html>

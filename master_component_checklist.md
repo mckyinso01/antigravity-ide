@@ -821,7 +821,23 @@
 
 ---
 
-## 🏆 ALL 95 MASTER SOFTWARE GOVERNANCE ISSUES RECORDED IN MASTER LEDGER
+### 🟡 BATCH 5: LOGIN PAGE DEEP 360 DEVTOOLS AUDIT (#97 to #100) - STAGE 1 LEDGER LOCK
+- [ ] **Issue #97: `gurogen-ai/src/pages/Login.jsx` - Static Auto-Redirect Timeout Bypass Anomaly**
+  - Problem: `useEffect` in `Login.jsx` contains a 100ms `setTimeout` redirecting `window.location.href = "/new"`, bypassing login form interaction and error state testing.
+  - Remediation: Remove forced 100ms auto-redirect from `useEffect` and enforce authentic credentials verification.
+- [ ] **Issue #98: `gurogen-ai/src/pages/Login.jsx` - Missing Password Visibility Eye Toggle Button**
+  - Problem: Password input in `Login.jsx` lacks a toggle button to reveal/hide characters (`Eye` / `EyeOff`), causing blind typing errors on mobile views.
+  - Remediation: Add eye toggle button with `aria-label="Toggle password visibility"` inside password input container.
+- [ ] **Issue #99: `gurogen-ai/src/pages/Login.jsx` - Hardcoded Hex Color Strings Outside Master Design Tokens**
+  - Problem: `Login.jsx` uses hardcoded hex colors (`#FF9F43`, `#EDE4D3`, `#d97706`) instead of consuming `DESIGN_TOKENS`.
+  - Remediation: Refactor color references to consume `DESIGN_TOKENS` palette or Tailwind utility tokens.
+- [ ] **Issue #100: `gurogen-ai/src/pages/Login.jsx` - Sub-44x44px Touch Target Container Padding on Auth Links**
+  - Problem: "Forgot password?" link and "Create one" link lack minimum 44x44px touch container padding.
+  - Remediation: Add `inline-flex items-center min-h-[44px]` touch target padding for 100% HIG/WCAG compliance.
+
+---
+
+## 🏆 ALL 100 MASTER SOFTWARE GOVERNANCE ISSUES RECORDED IN MASTER LEDGER
 
 - **OmniStock POS Status**: `🎉 25/25 CHECKS PASSED (100% SCORE) & CODEBASE LOCKED`.
 - **EMS Standalone Status**: `🎉 33/33 CHECKS PASSED (100% SCORE) & LIVE DEPLOYED (https://ems-workforce.surge.sh)`.
