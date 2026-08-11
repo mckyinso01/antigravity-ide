@@ -1,0 +1,7 @@
+{
+  "episodic_memory": {
+    "limit_gb": 10,
+    "warning_threshold": 9.5,
+    "bugs_resolved": []
+  }
+}

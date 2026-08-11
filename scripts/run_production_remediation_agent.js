@@ -7,7 +7,7 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 function runRemediationAgent(repoRootDir) {
-  console.log(`\n🚀 Starting Production Remediation Agent Execution on: ${repoRootDir}`);
+  // console.log(`\n🚀 Starting Production Remediation Agent Execution on: ${repoRootDir}`);
 
   // 1. Gather repo_files
   const targetFiles = [
@@ -25,7 +25,7 @@ function runRemediationAgent(repoRootDir) {
     FILES[f] = fs.readFileSync(path.join(repoRootDir, f), 'utf8');
   });
 
-  console.log(`📦 Loaded ${repo_files.length} repo_files into FILES mapping.`);
+  // console.log(`📦 Loaded ${repo_files.length} repo_files into FILES mapping.`);
 
   // 2. Generate Schema-Compliant Remediation JSON
   const outputJson = {
@@ -113,12 +113,12 @@ function runRemediationAgent(repoRootDir) {
 
   const outputPath = path.join(repoRootDir, 'docs', 'evaluations', 'production_remediation_output.json');
   fs.writeFileSync(outputPath, JSON.stringify(outputJson, null, 2), 'utf8');
-  console.log(`✅ Saved Output JSON to: ${outputPath}`);
+  // console.log(`✅ Saved Output JSON to: ${outputPath}`);
 
   // 3. Run validation check
   const validatorScript = path.join(repoRootDir, 'scripts', 'validate_code_quality_schema.js');
   if (fs.existsSync(validatorScript)) {
-    console.log(`\n🧪 Running Auditor Script Validation:`);
+    // console.log(`\n🧪 Running Auditor Script Validation:`);
     try {
       execSync(`node "${validatorScript}" "${outputPath}" "${repoRootDir}"`, { stdio: 'inherit' });
     } catch (err) {
@@ -129,3 +129,4 @@ function runRemediationAgent(repoRootDir) {
 
 const targetDir = process.argv[2] || path.join(__dirname, '..');
 runRemediationAgent(targetDir);
+

@@ -6,7 +6,7 @@
  *   import { tokens, cssVariables, variableMap } from './design/designSystem';
  *   
  *   // 1. Access JS/TS Token object directly:
- *   console.log(tokens.colors.surface.dark); // "#050811"
+ *   // console.log(tokens.colors.surface.dark); // "#050811"
  *   
  *   // 2. Inject CSS variables into :root at app initialization:
  *   const cssStr = cssVariables();
@@ -176,3 +176,4 @@ export function applyCssVariablesToFile(outputPath: string): void {
 }
 
 export default tokens;
+

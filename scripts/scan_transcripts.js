@@ -114,7 +114,7 @@ function analyzeSection(sec, idx) {
   };
 }
 
-console.log(`\n🔍 Deep Scanning Council Transcripts...`);
+// console.log(`\n🔍 Deep Scanning Council Transcripts...`);
 const combinedText = debateText + '\n' + verdictText;
 const sections = extractProposals(combinedText);
 const results = sections.map((s, i) => analyzeSection(s, i + 1));
@@ -145,6 +145,7 @@ const report = {
 
 fs.writeFileSync(OUT_REPORT, JSON.stringify(report, null, 2), 'utf8');
 
-console.log(`✅ Scan Complete: ${results.length} sections analyzed.`);
+// console.log(`✅ Scan Complete: ${results.length} sections analyzed.`);
 console.log(`📊 Scan Report Written to: ${OUT_REPORT}`);
-console.log(`📂 Generated ${results.length} Re-eval Prompts in: ${REVAL_DIR}\n`);
+// console.log(`📂 Generated ${results.length} Re-eval Prompts in: ${REVAL_DIR}\n`);
+

@@ -122,7 +122,7 @@ export default function SecretLeakageScanner() {
             <button
               type="submit"
               disabled={isScanning || !codeInput.trim()}
-              className="px-6 py-2.5 bg-[#145FE4] hover:bg-blue-600 disabled:opacity-50 text-white font-bold text-xs rounded-xl shadow-md transition-all flex items-center gap-2"
+              className="px-6 py-2.5 bg-[#145FE4] hover:bg-[#2563EB] disabled:opacity-50 text-white font-bold text-xs rounded-xl shadow-md transition-all flex items-center gap-2"
             >
               {isScanning ? (
                 <>
@@ -170,3 +170,4 @@ export default function SecretLeakageScanner() {
     </div>
   );
 }
+

@@ -49,7 +49,7 @@ export default function SecurityAuditTrailLedger() {
         <div className="flex items-center gap-2">
           <button
             onClick={handleSimulateNewBlock}
-            className="px-3.5 py-2 bg-[#145FE4] hover:bg-blue-600 text-white font-bold text-xs rounded-xl transition-all flex items-center gap-1.5"
+            className="px-3.5 py-2 bg-[#145FE4] hover:bg-[#2563EB] text-white font-bold text-xs rounded-xl transition-all flex items-center gap-1.5"
           >
             <span>➕ Generate Real SHA-256 Block</span>
           </button>
@@ -135,3 +135,4 @@ export default function SecurityAuditTrailLedger() {
     </div>
   );
 }
+

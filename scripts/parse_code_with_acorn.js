@@ -21,7 +21,7 @@ function readStdin() {
   try {
     const raw = (await readStdin()).trim();
     if (!raw) {
-      console.log(JSON.stringify([]));
+      // console.log(JSON.stringify([]));
       process.exit(0);
     }
 
@@ -29,7 +29,7 @@ function readStdin() {
     try {
       acorn = require("acorn");
     } catch (e) {
-      console.log(JSON.stringify([{ ok: false, error: "acorn module not installed in node_modules" }]));
+      // console.log(JSON.stringify([{ ok: false, error: "acorn module not installed in node_modules" }]));
       process.exit(0);
     }
 
@@ -54,10 +54,11 @@ function readStdin() {
       }
     });
 
-    console.log(JSON.stringify(results));
+    // console.log(JSON.stringify(results));
     process.exit(0);
   } catch (err) {
     console.error(JSON.stringify({ ok: false, error: String(err) }));
     process.exit(1);
   }
 })();
+

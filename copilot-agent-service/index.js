@@ -44,7 +44,8 @@ export class CopilotSDKService {
   }
 }
 
-console.log("=================================================================");
+// console.log("=================================================================");
 console.log("OFFICIAL GITHUB COPILOT SDK SERVICE ENGINE INITIALIZED");
-console.log("Status: Ready | Token Configured:", CredentialsManager.isTokenConfigured());
-console.log("=================================================================");
+// console.log("Status: Ready | Token Configured:", CredentialsManager.isTokenConfigured());
+// console.log("=================================================================");
+

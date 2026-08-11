@@ -32,7 +32,7 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen flex flex-col transition-colors duration-300 ${isDarkMode ? 'bg-[#0F1419] text-slate-100' : 'bg-slate-50 text-white'}`}>
+    <div className={`min-h-screen flex flex-col transition-colors duration-300 ${isDarkMode ? 'bg-[#0F1419] text-slate-100' : 'bg-[#0B1C30] text-white'}`}>
       
       {/* Top Telemetry Header */}
       <header className={`border-b px-6 py-3.5 flex items-center justify-between sticky top-0 z-30 backdrop-blur-md ${isDarkMode ? 'bg-[#0F1419]/90 border-[#2D3748]' : 'bg-[#0B1C30]/90 border-slate-200'}`}>
@@ -167,3 +167,4 @@ export default function App() {
     </div>
   );
 }
+

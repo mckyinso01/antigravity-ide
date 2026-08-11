@@ -55,7 +55,7 @@ async function main() {
       fs.writeFileSync(tmp, diff, "utf8");
       try {
         run(`git apply --check ${tmp}`);
-        console.log(`Patch apply-check OK for change: ${ch.id}`);
+        // console.log(`Patch apply-check OK for change: ${ch.id}`);
       } catch (e: any) {
         const msg = `git apply --check FAILED for change ${ch.id}: ${e.message}`;
         console.error(msg);
@@ -75,7 +75,7 @@ async function main() {
   };
   const out = path.join(process.cwd(), "audit_result.json");
   fs.writeFileSync(out, JSON.stringify(summary, null, 2), "utf8");
-  console.log("Audit summary written to", out);
+  // console.log("Audit summary written to", out);
   process.exit(errors.length ? 3 : 0);
 }
 
@@ -83,3 +83,4 @@ main().catch((e) => {
   console.error("Auditor unexpected error:", e);
   process.exit(10);
 });
+

@@ -839,10 +839,49 @@ Lahat ng pagbabago sa design tokens ay DAPAT naka-log sa changelog format:
 
 ---
 
-## 📁 15. File References & Deployment
+## 🎨 16. Theme-Agnostic Dual State (Light & Dark Mode) & Ergonomic Application Layouts
+
+Ang Antigravity 2.0 Software Factory ay pormal nang nagta-transition tungo sa **Theme-Agnostic Architecture** upang masuportahan ang parehong Dark at Light modes nang may premium "Wow Factor", kasabay ng **Zero-Scrolling Ergonomic Framework**.
+
+### 16.1. Ergonomic Zero-Scrolling Framework (`ZERO-SCROLL-FRAMEWORK`)
+1. **Viewport Lockdown:** Lahat ng main layout containers ay DAPAT gumamit ng `h-screen w-screen overflow-hidden flex flex-col` upang pigilan ang native browser scrollbar na lumabas sa main window.
+2. **Right-Sized Bento Grids:** Bawasan ang padding sa mga main containers (from `p-8` to `p-4` o `p-5`) upang mapagkasya ang data sa viewable space nang hindi kailangang mag-scroll.
+3. **Internal Scrolling Only:** Kung talagang mahaba ang content (halimbawa, mahabang table o article), ang *specific inner container lang* ang lalagyan ng `overflow-y-auto`. 
+4. **Progressive Disclosure:** Imbis na mag-load ng panibagong mahabang pahina para sa forms o details, gumamit ng **Sliding Drawers** (`fixed inset-y-0 right-0 w-96`) o **Floating Modals**.
+
+### 16.2. Dual-State Master Tokens (Theme Toggle Requirement)
+Bawat application na pino-produce ng factory ay nag-o-obliga ng `<ThemeProvider>` component na kayang mag-toggle ng themes via React Context o `dark:` Tailwind class pattern.
+
+**Base State Tokens (Light Mode - Primary):**
+- **Backgrounds:** `bg-slate-50` (soft off-white) or `bg-[#F8FAFC]`.
+- **Card Surfaces:** Frosted Light Glassmorphism (`bg-white/80 backdrop-blur-xl border border-slate-200/80 shadow-lg`).
+- **Typography:** `text-slate-800` (High contrast text), `text-slate-500` (muted labels).
+
+**Dark State Tokens (Dark Mode - Activated via `dark:` class):**
+- **Backgrounds:** `dark:bg-[#050811]`.
+- **Card Surfaces:** Demon Slayer Cyber Glass (`dark:bg-[#0B1C30]/80 dark:border-slate-800/80`).
+- **Typography:** `dark:text-slate-100`, `dark:text-slate-400`.
+
+*Lahat ng bagong UI code ay DAPAT isulat with both base classes (Light) at `dark:` classes.*
+
+---
+
+## 🎨 17. Stitch-First UI External Handoff & Validation Protocol
+
+Whenever the User drafts UI in Stitch MCP Native Platform or Google AI Playground and hands over the raw React/Tailwind code, the AI Orchestrator MUST treat it as the **Aesthetic Gold Standard** (as LLMs often struggle with pure UX Wow Factor).
+
+However, the AI MUST strictly validate and bridge this external code using the following checklist before finalizing:
+
+### Stitch Handoff & Review Checklist:
+1. **Edge Case Coverage**: external UI generators often only build the "Happy Path". The AI MUST wrap arrays and data points with Loading Skeletons (`<Skeleton className="h-4 w-20" />`), Empty State Graphics, and Error Boundaries.
+2. **Codebase Isolation Verification**: Ensure the pasted code belongs 100% to the target project (e.g., `Lead-suite-Pro`) and DOES NOT import, reference, or cross-contaminate logic from locked projects like `omnistock/` or `EMS/`.
+3. **Dual-State Bridging**: Raw external designs are often single-themed. The AI must non-destructively parse the provided custom classes and bridge them to the `DESIGN_TOKENS` dual-state architecture (e.g., converting a hardcoded `#0f172a` background to `bg-slate-50 dark:bg-[#050811]`).
+4. **Interaction Wiring**: Wire up the visual buttons and forms to actual state variables (`useState`), form handlers (`onSubmit`), and backend logic without disrupting the layout dimensions.
+
+---
+
+## 📁 18. File References & Deployment
 
 - **Master Specification Path**: [company_master_design_tokens_spec.md](file:///c:/Users/Admin/.antigravity-ide/company_master_design_tokens_spec.md)
 - **JavaScript Export Module**: [designSystem.js](file:///c:/Users/Admin/.antigravity-ide/omnistock/src/lib/designSystem.js)
 - **Universal Audit Script**: [master_project_audit.py](file:///c:/Users/Admin/.antigravity-ide/.agents/scripts/master_project_audit.py)
-
-

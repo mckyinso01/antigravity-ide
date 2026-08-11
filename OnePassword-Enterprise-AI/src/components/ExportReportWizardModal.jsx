@@ -76,7 +76,7 @@ export default function ExportReportWizardModal({ isOpen, onClose, onShowToast }
           </button>
           <button
             onClick={handleExecuteExport}
-            className="px-5 py-2 bg-[#145FE4] hover:bg-blue-600 text-white font-bold text-xs rounded-xl shadow-md transition-colors flex items-center gap-2"
+            className="px-5 py-2 bg-[#145FE4] hover:bg-[#2563EB] text-white font-bold text-xs rounded-xl shadow-md transition-colors flex items-center gap-2"
           >
             <span>⚡ Execute Export Dispatch</span>
           </button>
@@ -86,3 +86,4 @@ export default function ExportReportWizardModal({ isOpen, onClose, onShowToast }
     </div>
   );
 }
+

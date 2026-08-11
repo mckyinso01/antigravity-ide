@@ -39,8 +39,9 @@ function main() {
     }
   }
 
-  console.log('Design tokens validation: OK');
+  // console.log('Design tokens validation: OK');
   process.exit(0);
 }
 
 if (require.main === module) main();
+

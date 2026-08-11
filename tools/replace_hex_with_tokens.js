@@ -76,6 +76,7 @@ for (const d of searchDirs) {
 
 const outPath = path.join(OUT_DIR, 'hex_replacements.json');
 fs.writeFileSync(outPath, JSON.stringify({ occurrences_count: occurrences.length, occurrences }, null, 2), 'utf8');
-console.log(`Hex scan complete. Found ${occurrences.length} hardcoded hex occurrences.`);
-console.log('Results written to:', outPath);
+// console.log(`Hex scan complete. Found ${occurrences.length} hardcoded hex occurrences.`);
+// console.log('Results written to:', outPath);
 process.exit(0);
+

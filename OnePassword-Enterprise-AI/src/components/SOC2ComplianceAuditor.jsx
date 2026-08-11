@@ -87,7 +87,7 @@ SHA-256 Proof Hash: 88f12a3918239018239018239018239018239018`;
           <button
             onClick={handleRunAuditScan}
             disabled={isScanning}
-            className="px-3.5 py-2 bg-[#145FE4] hover:bg-blue-600 disabled:opacity-50 text-white font-bold text-xs rounded-xl shadow-sm transition-all flex items-center gap-2"
+            className="px-3.5 py-2 bg-[#145FE4] hover:bg-[#2563EB] disabled:opacity-50 text-white font-bold text-xs rounded-xl shadow-sm transition-all flex items-center gap-2"
           >
             {isScanning ? (
               <>
@@ -160,3 +160,4 @@ SHA-256 Proof Hash: 88f12a3918239018239018239018239018239018`;
     </div>
   );
 }
+

@@ -9,7 +9,7 @@ const path = require('path');
 const schemaPath = path.join(__dirname, '../tokens/tokens.schema.json');
 const masterPath = path.join(__dirname, '../tokens/master_tokens.json');
 
-console.log('🔍 Validating master_tokens.json structure...');
+// console.log('🔍 Validating master_tokens.json structure...');
 
 if (!fs.existsSync(schemaPath) || !fs.existsSync(masterPath)) {
   console.error('❌ Schema or master_tokens.json missing!');
@@ -34,9 +34,10 @@ try {
     process.exit(1);
   }
 
-  console.log('✓ master_tokens.json strictly matches tokens.schema.json!');
+  // console.log('✓ master_tokens.json strictly matches tokens.schema.json!');
   process.exit(0);
 } catch (err) {
   console.error('❌ JSON Parsing Error:', err.message);
   process.exit(1);
 }
+

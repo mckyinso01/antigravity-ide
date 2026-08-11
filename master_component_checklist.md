@@ -5,8 +5,28 @@
 > **Master Tokens Spec**: [company_master_design_tokens_spec.md](file:///c:/Users/Admin/.antigravity-ide/company_master_design_tokens_spec.md)
 > **Export Module**: [designSystem.js](file:///c:/Users/Admin/.antigravity-ide/omnistock/src/lib/designSystem.js)
 > **StitchMCP Master Asset ID**: `assets/1640102745724511064`
+> **Phase 4 Mandate**: 100% Theme-Agnostic Dual State (Light/Dark Toggle) & Zero-Scroll Bento Grid Layouts
 
 ## 📋 Active Batch Audit & Remediation Ledger (User Screenshots & Visual Audits)
+
+### 🔴 BATCH 3: TEXT OVERFLOW & TYPOGRAPHY PRECISION (PHASE 8 REMEDIATION)
+- [x] **Issue #138: Text Overflow & Typography Precision (`min-w-0` Injection)**
+  - **Identified:** 38+ instances of `truncate` or `line-clamp` missing `min-w-0` in Flexbox containers causing horizontal overflow layout breaks. 15 instances of dark text (`text-slate-950`) lacking dark mode overrides.
+  - **Plan:** Execute precision Node script to inject `min-w-0` into affected Flexbox items and map `dark:text-white` to un-guarded dark text classes.
+- [x] **Issue #139: Forecast Sensitivity & What-If Sliders - Dark Text Contrast Anomaly**
+  - **Identified:** `text-slate-700` rendering on dark frosted surface (`bg-[#0B1C30]/80`) causing invisible text in light mode.
+  - **Plan:** Refactor header text color to `text-slate-200 dark:text-slate-300` ensuring high contrast legibility against dark navy background.
+- [x] **Issue #140: AI Outreach Assistant Matrix - Shattered Flex Layout & Text Collision**
+  - **Identified:** Missing `min-w-0`, `flex-1`, and `shrink-0` bounds on recommendation card header resulting in multi-line collision between Executive Title, Avatar, and Company Name.
+  - **Plan:** Inject `min-w-0` and `truncate` into flex children ensuring defensive text wrapping and layout stability.
+
+### 🔴 BATCH 2: LEAD-SUITE-PRO UI/UX SWEEP & LOGIN GATEWAY (PENDING EXECUTION)
+- [x] **Issue #136: Global Typography Contrast Anomaly & Un-guarded Base Colors**
+  - **Identified:** 369+ instances of `text-slate-900`, `text-slate-800`, `text-slate-700` and `bg-white` missing Dual-State (`dark:`) overrides. Causes invisible text on Dark Cyber Glass surfaces.
+  - **Plan:** Execute sweeping regex to map all missing `dark:text-white`, `dark:text-slate-200`, `dark:text-slate-300`, and `dark:bg-[#0B1C30]` across all 47 components.
+- [x] **Issue #137: Missing Initial Auth/Login Gateway (`PAG-LGN`)**
+  - **Identified:** Application routes directly to `DashboardView` without authentication.
+  - **Plan:** Construct `LoginView.tsx` with Master Tokens (`CRD-TIER1`, `BTN-GLOW`) and wire mock state to `App.tsx`.
 
 ### 🟢 BATCH 1: SCREENSHOT 1 ISSUES (#81 to #87) - 100% RESOLVED & VERIFIED
 - [x] **Issue #81: `EcosystemIntegrationsHub.tsx` - Category Filter Pills Formatting & Contrast**
@@ -837,7 +857,17 @@
 
 ---
 
-## 🏆 ALL 100 MASTER SOFTWARE GOVERNANCE ISSUES RECORDED IN MASTER LEDGER
+### 🟣 PHASE 4: PRODUCTION PLANT UPGRADE (THEME-AGNOSTIC & ZERO-SCROLL)
+- [x] **Issue #101: `company_master_design_tokens_spec.md` - Integration of Section 16 (Theme-Agnostic & Zero Scroll Framework)**
+  - Problem: Master Design Tokens strictly enforced Dark Mode only and allowed scrolling containers.
+  - Remediation: Drafted Section 16 to mandate Light/Dark Mode toggle via `<ThemeProvider>` and `h-screen overflow-hidden flex flex-col` zero-scroll layouts.
+- [x] **Issue #102: `omnistock/src/lib/designSystem.js` - Dual-State Token Support**
+  - Problem: `designSystem.js` has hardcoded `#0B1C30` dark mode tokens.
+  - Remediation: Implement dual-state Tailwind classes (e.g. `bg-slate-50 dark:bg-[#0B1C30]`) to support both light and dark themes.
+
+---
+
+## 🏆 ALL MASTER SOFTWARE GOVERNANCE ISSUES RECORDED IN MASTER LEDGER
 
 - **OmniStock POS Status**: `🎉 25/25 CHECKS PASSED (100% SCORE) & CODEBASE LOCKED`.
 - **EMS Standalone Status**: `🎉 33/33 CHECKS PASSED (100% SCORE) & LIVE DEPLOYED (https://ems-workforce.surge.sh)`.

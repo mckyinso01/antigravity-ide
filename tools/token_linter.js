@@ -49,7 +49,7 @@ function scanDir(dirPath) {
           matches.forEach(match => {
             // Allow standard theme constants in specific files
             if (line.includes('DESIGN_TOKENS') || line.includes('DEMON_SLAYER')) return;
-            console.log(`⚠️ Token Linter Warning: ${path.relative(process.cwd(), fullPath)}:${idx + 1} - Raw hex color "${match}" detected.`);
+            // console.log(`⚠️ Token Linter Warning: ${path.relative(process.cwd(), fullPath)}:${idx + 1} - Raw hex color "${match}" detected.`);
             totalViolations++;
           });
         }
@@ -58,13 +58,14 @@ function scanDir(dirPath) {
   }
 }
 
-console.log('🔍 Running Antigravity IDE Design Token Linter Audit...');
+// console.log('🔍 Running Antigravity IDE Design Token Linter Audit...');
 SCAN_DIRS.forEach(dir => scanDir(dir));
 
 if (totalViolations > 50) {
-  console.log(`\n❌ Token Linter Failed: Found ${totalViolations} raw hex color instances requiring tokenization.`);
+  // console.log(`\n❌ Token Linter Failed: Found ${totalViolations} raw hex color instances requiring tokenization.`);
   process.exit(1);
 } else {
-  console.log(`\n✅ Token Linter Passed! Total un-tokenized instances within acceptable threshold (${totalViolations} warnings).`);
+  // console.log(`\n✅ Token Linter Passed! Total un-tokenized instances within acceptable threshold (${totalViolations} warnings).`);
   process.exit(0);
 }
+

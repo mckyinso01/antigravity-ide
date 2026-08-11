@@ -87,7 +87,7 @@ function getAllFiles(dir: string): string[] {
 }
 
 function runASTScan(): ASTAuditReport {
-  console.log('🔍 Starting Deterministic AST & Token Compliance Sweep...');
+  // console.log('🔍 Starting Deterministic AST & Token Compliance Sweep...');
   const allFiles: string[] = [];
 
   SEARCH_DIRS.forEach((sDir) => {
@@ -151,8 +151,8 @@ function runASTScan(): ASTAuditReport {
 
   const reportPath = path.join(outputDir, 'ast-report.json');
   fs.writeFileSync(reportPath, JSON.stringify(report, null, 2), 'utf-8');
-  console.log(`✅ AST Sweep complete. Scanned ${allFiles.length} files. Verdict: ${verdict}`);
-  console.log(`📄 Report saved to: ${reportPath}`);
+  // console.log(`✅ AST Sweep complete. Scanned ${allFiles.length} files. Verdict: ${verdict}`);
+  // console.log(`📄 Report saved to: ${reportPath}`);
 
   return report;
 }
@@ -165,3 +165,4 @@ if (require.main === module) {
 }
 
 export { runASTScan };
+

@@ -29,7 +29,8 @@ function validateDesignTokens() {
     process.exit(1);
   }
 
-  console.log(`✅ Token Schema Validation Passed! Token file "${tokens.name}" (v${tokens.version}) satisfies all schema requirements.`);
+  // console.log(`✅ Token Schema Validation Passed! Token file "${tokens.name}" (v${tokens.version}) satisfies all schema requirements.`);
 }
 
 validateDesignTokens();
+

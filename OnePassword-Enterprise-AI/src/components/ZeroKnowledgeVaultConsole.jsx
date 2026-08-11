@@ -85,7 +85,7 @@ export default function ZeroKnowledgeVaultConsole({ onInspectSecret }) {
           <button
             type="submit"
             disabled={!masterPassword.trim()}
-            className="w-full py-3 bg-[#145FE4] hover:bg-blue-600 disabled:opacity-50 text-white text-xs font-bold rounded-xl shadow-lg transition-all"
+            className="w-full py-3 bg-[#145FE4] hover:bg-[#2563EB] disabled:opacity-50 text-white text-xs font-bold rounded-xl shadow-lg transition-all"
           >
             🔓 Unlock Zero-Knowledge Vault
           </button>
@@ -123,7 +123,7 @@ export default function ZeroKnowledgeVaultConsole({ onInspectSecret }) {
               <button
                 type="submit"
                 disabled={isEncrypting || !newSecretName.trim() || !newSecretValue.trim()}
-                className="px-6 py-2.5 bg-[#145FE4] hover:bg-blue-600 disabled:opacity-50 text-white font-bold text-xs rounded-xl shadow-md transition-all flex items-center gap-2"
+                className="px-6 py-2.5 bg-[#145FE4] hover:bg-[#2563EB] disabled:opacity-50 text-white font-bold text-xs rounded-xl shadow-md transition-all flex items-center gap-2"
               >
                 {isEncrypting ? (
                   <>
@@ -205,3 +205,4 @@ export default function ZeroKnowledgeVaultConsole({ onInspectSecret }) {
     </div>
   );
 }
+

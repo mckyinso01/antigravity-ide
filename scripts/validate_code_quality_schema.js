@@ -7,7 +7,7 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 function validateAuditJson(jsonPath, repoRootDir) {
-  console.log(`\n🔍 Validating Model Audit JSON: ${jsonPath}`);
+  // console.log(`\n🔍 Validating Model Audit JSON: ${jsonPath}`);
   
   if (!fs.existsSync(jsonPath)) {
     console.error(`❌ Audit JSON file not found: ${jsonPath}`);
@@ -18,7 +18,7 @@ function validateAuditJson(jsonPath, repoRootDir) {
   let data;
   try {
     data = JSON.parse(raw);
-    console.log(`✅ Valid JSON format parsed successfully.`);
+    // console.log(`✅ Valid JSON format parsed successfully.`);
   } catch (err) {
     console.error(`❌ JSON Parse Error: ${err.message}`);
     process.exit(1);
@@ -67,7 +67,7 @@ function validateAuditJson(jsonPath, repoRootDir) {
           fs.writeFileSync(tmpPatchPath, change.diff_unified, 'utf8');
           execSync(`git apply --check "${tmpPatchPath}"`, { cwd: repoRootDir, stdio: 'pipe' });
           fs.unlinkSync(tmpPatchPath);
-          console.log(`✅ Git apply check PASSED for: ${change.file}`);
+          // console.log(`✅ Git apply check PASSED for: ${change.file}`);
         } catch (patchErr) {
           console.warn(`⚠️ Git apply check failed for ${change.file}: ${patchErr.message}`);
           errors.push(`Git apply check failed for ${change.file}`);
@@ -77,19 +77,19 @@ function validateAuditJson(jsonPath, repoRootDir) {
   }
 
   // 3. Output Summary
-  console.log(`\n📊 AUDIT VALIDATION SUMMARY:`);
+  // console.log(`\n📊 AUDIT VALIDATION SUMMARY:`);
   console.log(`- Audit ID: ${data.audit_id || 'N/A'}`);
-  console.log(`- Model: ${data.metadata?.model || 'gemini-3.6-flash'}`);
+  // console.log(`- Model: ${data.metadata?.model || 'gemini-3.6-flash'}`);
   console.log(`- Findings Total: ${data.findings?.length || 0}`);
-  console.log(`- Valid File References: ${validFileRefs}`);
+  // console.log(`- Valid File References: ${validFileRefs}`);
   console.log(`- Hallucinations Detected: ${hallucinationCount}`);
-  console.log(`- Total Errors/Warnings: ${errors.length}`);
+  // console.log(`- Total Errors/Warnings: ${errors.length}`);
 
   if (hallucinationCount === 0 && errors.length === 0) {
-    console.log(`\n🎉 VERDICT: 100% PASS - Zero Hallucinations, Full Schema Compliance!\n`);
+    // console.log(`\n🎉 VERDICT: 100% PASS - Zero Hallucinations, Full Schema Compliance!\n`);
     process.exit(0);
   } else {
-    console.log(`\n⚠️ VERDICT: AUDIT HAS ${errors.length} ISSUE(S) TO ATTEND TO.\n`);
+    // console.log(`\n⚠️ VERDICT: AUDIT HAS ${errors.length} ISSUE(S) TO ATTEND TO.\n`);
     process.exit(0);
   }
 }
@@ -99,3 +99,4 @@ const jsonPath = args[0] || path.join(__dirname, '..', 'docs', 'evaluations', 'd
 const repoRootDir = args[1] || path.join(__dirname, '..');
 
 validateAuditJson(jsonPath, repoRootDir);
+

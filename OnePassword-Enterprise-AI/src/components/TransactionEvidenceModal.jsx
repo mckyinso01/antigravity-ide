@@ -69,7 +69,7 @@ export default function TransactionEvidenceModal({ item, onClose, onShowToast })
           </button>
           <button
             onClick={onClose}
-            className="px-5 py-2 bg-[#145FE4] hover:bg-blue-600 text-white font-bold text-xs rounded-xl shadow-md transition-colors"
+            className="px-5 py-2 bg-[#145FE4] hover:bg-[#2563EB] text-white font-bold text-xs rounded-xl shadow-md transition-colors"
           >
             Close Inspector
           </button>
@@ -79,3 +79,4 @@ export default function TransactionEvidenceModal({ item, onClose, onShowToast })
     </div>
   );
 }
+

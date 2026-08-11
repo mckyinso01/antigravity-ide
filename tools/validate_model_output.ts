@@ -87,7 +87,7 @@ async function main() {
   }
   try {
     OutputSchema.parse(parsed);
-    console.log("✅ Model output VALID against schema.");
+    // console.log("✅ Model output VALID against schema.");
     process.exit(0);
   } catch (e: any) {
     console.error("❌ Validation errors:", e.errors || e.message || e);
@@ -99,3 +99,4 @@ main().catch((e) => {
   console.error("Unexpected error:", e);
   process.exit(10);
 });
+

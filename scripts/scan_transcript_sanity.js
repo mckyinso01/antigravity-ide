@@ -7,10 +7,10 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 function scanTranscript(transcriptPath, repoRootDir) {
-  console.log(`\n🔍 Scanning Council Transcript: ${transcriptPath}`);
+  // console.log(`\n🔍 Scanning Council Transcript: ${transcriptPath}`);
 
   if (!fs.existsSync(transcriptPath)) {
-    console.log(`⚠️ Transcript file not found: ${transcriptPath} (skipping scan).`);
+    // console.log(`⚠️ Transcript file not found: ${transcriptPath} (skipping scan).`);
     process.exit(0);
   }
 
@@ -21,7 +21,7 @@ function scanTranscript(transcriptPath, repoRootDir) {
   // Rule 1: Simulation Flagging (IsSimulated)
   if (content.includes('Local Simulation') || content.includes('Substituted due to:')) {
     isSimulated = true;
-    console.log(`ℹ️ [SIMULATION DETECTED] Transcript originated from fallback simulation engine.`);
+    // console.log(`ℹ️ [SIMULATION DETECTED] Transcript originated from fallback simulation engine.`);
   }
 
   // Rule 2: Secret Scanner (SecretScan)
@@ -43,7 +43,7 @@ function scanTranscript(transcriptPath, repoRootDir) {
   const priceRegex = /\$\d{2,}(?:,\d{3})*(?:\/mo|\/one-time)?/g;
   const pricesFound = content.match(priceRegex);
   if (pricesFound) {
-    console.log(`💡 [BUSINESS DECISION FLAGGED] Unverified pricing assertions detected: ${pricesFound.join(', ')}`);
+    // console.log(`💡 [BUSINESS DECISION FLAGGED] Unverified pricing assertions detected: ${pricesFound.join(', ')}`);
   }
 
   // Rule 4: Library Existence Checks (LibExistence)
@@ -64,16 +64,16 @@ function scanTranscript(transcriptPath, repoRootDir) {
     }
   }
 
-  console.log(`\n📊 TRANSCRIPT SANITY REPORT:`);
+  // console.log(`\n📊 TRANSCRIPT SANITY REPORT:`);
   console.log(`- Simulated Run: ${isSimulated ? 'YES (Auto-patches restricted)' : 'NO (Live model output)'}`);
-  console.log(`- Secret Violations: ${issues.length}`);
+  // console.log(`- Secret Violations: ${issues.length}`);
 
   if (issues.length > 0) {
     console.error(`❌ SANITY SCAN FAILED with ${issues.length} critical issue(s):`);
     issues.forEach(i => console.error(`  - ${i}`));
     process.exit(1);
   } else {
-    console.log(`✅ SANITY SCAN PASSED: Zero secret leaks, full transcript compliance!\n`);
+    // console.log(`✅ SANITY SCAN PASSED: Zero secret leaks, full transcript compliance!\n`);
     process.exit(0);
   }
 }
@@ -82,3 +82,4 @@ const repoRoot = process.argv[3] || path.join(__dirname, '..');
 const targetFile = process.argv[2] || path.join(repoRoot, '.agents', 'scripts', 'output', 'last_verdict.md');
 
 scanTranscript(targetFile, repoRoot);
+

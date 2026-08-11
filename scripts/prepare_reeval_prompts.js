@@ -9,7 +9,7 @@ const REEVAL_DIR = path.join(__dirname, '..', '.agents', 'scripts', 'output', 'r
 const PAYLOADS_DIR = path.join(__dirname, '..', '.agents', 'scripts', 'output', 'reeval_payloads');
 const REPO_ROOT = path.join(__dirname, '..');
 
-console.log(`\n📦 Preparing Re-evaluation Prompt Payloads for Gemini...`);
+// console.log(`\n📦 Preparing Re-evaluation Prompt Payloads for Gemini...`);
 
 if (!fs.existsSync(REEVAL_DIR)) {
   console.error(`❌ Reeval prompts directory missing. Run 'node scripts/scan_transcripts.js' first.`);
@@ -43,4 +43,5 @@ promptFiles.forEach((file) => {
   fs.writeFileSync(payloadPath, JSON.stringify(data, null, 2), 'utf8');
 });
 
-console.log(`✅ Prepared ${promptFiles.length} prompt payload(s) in: ${PAYLOADS_DIR}\n`);
+// console.log(`✅ Prepared ${promptFiles.length} prompt payload(s) in: ${PAYLOADS_DIR}\n`);
+

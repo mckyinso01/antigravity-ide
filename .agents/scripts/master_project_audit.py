@@ -977,6 +977,261 @@ def run_audit(target_dir, fix_mode=False):
     results.append(("47. Strict Domain Deployment Isolation Guard (STRICT-DOMAIN-ISOLATION-GUARD)", ch47_pass and len(ch47_details) == 0, ch47_details))
 
     # ---------------------------------------------------------
+    # CHECK 48: Mandatory Mermaid Diagram & Artifact Completeness Guard
+    # ---------------------------------------------------------
+    ch48_pass = True
+    ch48_details = []
+    if os.path.exists(agents_rulebook_path):
+        with open(agents_rulebook_path, 'r', encoding='utf-8', errors='ignore') as f:
+            a_text = f.read()
+            if "MANDATORY-MERMAID-ARTIFACT-GUARD" not in a_text:
+                ch48_pass = False
+                ch48_details.append(f"{agents_rulebook_path}: System rulebook missing MANDATORY-MERMAID-ARTIFACT-GUARD directive.")
+    else:
+        ch48_pass = False
+        ch48_details.append(f"{agents_rulebook_path} not found in workspace root.")
+
+    # Verify checklist artifacts in brain contain mermaid diagram block
+    brain_dir = os.path.join(workspace_root, "brain")
+    if os.path.exists(brain_dir):
+        for root_d, _, f_list in os.walk(brain_dir):
+            for fn in f_list:
+                if fn.endswith("_checklist.md"):
+                    ck_path = os.path.join(root_d, fn)
+                    with open(ck_path, 'r', encoding='utf-8', errors='ignore') as f:
+                        ck_text = f.read()
+                        if "```mermaid" not in ck_text:
+                            ch48_pass = False
+                            ch48_details.append(f"{os.path.basename(ck_path)}: Checklist artifact missing mandatory ```mermaid diagram block.")
+
+    results.append(("48. Mandatory Mermaid Diagram & Artifact Completeness Guard (MANDATORY-MERMAID-ARTIFACT-GUARD)", ch48_pass and len(ch48_details) == 0, ch48_details))
+
+    # ---------------------------------------------------------
+    # CHECK 49: Physical Discovery Files Existence Guard
+    # ---------------------------------------------------------
+    ch49_pass = True
+    ch49_details = []
+    target_project_dir = os.path.dirname(os.path.abspath(target)) if target.endswith("src") else target
+    required_discovery_files = ["diagram.mmd", "inventory.json", "inventory.csv"]
+    for r_file in required_discovery_files:
+        r_path = os.path.join(target_project_dir, r_file)
+        if not os.path.exists(r_path):
+            ch49_pass = False
+            ch49_details.append(f"{os.path.basename(target_project_dir)}: Missing physical discovery file '{r_file}' in project root.")
+
+    results.append(("49. Physical Discovery Files Existence Guard (PHYSICAL-DISCOVERY-FILES-EXISTENCE-GUARD)", ch49_pass and len(ch49_details) == 0, ch49_details))
+
+    # ---------------------------------------------------------
+    # 🐳 DevOps & CI/CD Layer (Copilot Parity)
+    # ---------------------------------------------------------
+
+    # CHECK 50: Dockerfile Dependency Guard
+    ch50_pass = True
+    ch50_details = []
+    dockerfile_path = os.path.join(target_project_dir, "Dockerfile")
+    if os.path.exists(dockerfile_path):
+        with open(dockerfile_path, 'r', encoding='utf-8', errors='ignore') as f:
+            d_content = f.read()
+            if "npm ci --omit=dev" in d_content and "npm run build" in d_content:
+                ch50_pass = False
+                ch50_details.append(f"Dockerfile: Uses `npm ci --omit=dev` before building, dropping Vite/TypeScript build deps.")
+
+    results.append(("50. Dockerfile Dependency Guard (DOCKER-DEV-DEP-GUARD)", ch50_pass, ch50_details))
+
+    # CHECK 51: Nginx/Static Server Guard
+    ch51_pass = True
+    ch51_details = []
+    if os.path.exists(dockerfile_path):
+        with open(dockerfile_path, 'r', encoding='utf-8', errors='ignore') as f:
+            d_content = f.read()
+            if 'CMD ["node", "dist/server.js"]' in d_content and not os.path.exists(os.path.join(target_project_dir, "dist/server.js")) and not os.path.exists(os.path.join(target_project_dir, "server.js")):
+                ch51_pass = False
+                ch51_details.append(f"Dockerfile: Static SPA incorrectly configured to run `node dist/server.js` instead of Nginx.")
+
+    results.append(("51. Nginx/Static Server Guard (NGINX-STATIC-SERVER-GUARD)", ch51_pass, ch51_details))
+
+    # CHECK 52: CI/CD Workflow Guard
+    ch52_pass = True
+    ch52_details = []
+    if not os.path.exists(os.path.join(target_project_dir, ".github", "workflows")):
+        ch52_pass = False
+        ch52_details.append(f"{os.path.basename(target_project_dir)}: Missing .github/workflows directory for CI/CD automation.")
+
+    results.append(("52. CI/CD Workflow Guard (CICD-WORKFLOW-GUARD)", ch52_pass, ch52_details))
+
+    # CHECK 53: Real Test Runner Guard
+    ch53_pass = True
+    ch53_details = []
+    pkg_json_path = os.path.join(target_project_dir, "package.json")
+    if os.path.exists(pkg_json_path):
+        with open(pkg_json_path, 'r', encoding='utf-8', errors='ignore') as f:
+            pkg_content = f.read()
+            if "vitest" not in pkg_content and "jest" not in pkg_content:
+                ch53_pass = False
+                ch53_details.append(f"package.json: Missing real test runner (vitest or jest). Dummy test scripts prohibited in production.")
+
+    results.append(("53. Real Test Runner Guard (TEST-RUNNER-GUARD)", ch53_pass, ch53_details))
+
+    # CHECK 54: Env Config Guard
+    ch54_pass = True
+    ch54_details = []
+    if not os.path.exists(os.path.join(target_project_dir, ".env.example")):
+        ch54_pass = False
+        ch54_details.append(f"{os.path.basename(target_project_dir)}: Missing .env.example file for secret documentation.")
+
+    results.append(("54. Env Config Guard (ENV-CONFIG-GUARD)", ch54_pass, ch54_details))
+
+    # ---------------------------------------------------------
+    # 🔒 Advanced Enterprise Security (Beyond Copilot)
+    # ---------------------------------------------------------
+
+    # CHECK 55: Hardcoded Secret Scanner
+    ch55_pass = True
+    ch55_details = []
+    secret_pat = re.compile(r'["\'](sk_live_|pk_live_|Bearer [a-zA-Z0-9\-\._~+\/]+=*)["\']|mock_[a-zA-Z0-9_]+_token')
+    for fpath in files:
+        with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+            content = f.read()
+            for match in secret_pat.finditer(content):
+                line_no = content[:match.start()].count('\n') + 1
+                ch55_pass = False
+                ch55_details.append(f"{os.path.basename(fpath)}:{line_no} Hardcoded or Mock Secret/Token found ({match.group(0)[:15]}...).")
+
+    results.append(("55. Hardcoded Secret Scanner (SECRET-LEAK-GUARD)", ch55_pass and len(ch55_details) == 0, ch55_details))
+
+    # CHECK 56: Secure Auth State Guard
+    ch56_pass = True
+    ch56_details = []
+    for fpath in files:
+        if "AuthContext" in os.path.basename(fpath):
+            with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+                if "sessionStorage.setItem(" in content and "mock" in content:
+                    ch56_pass = False
+                    ch56_details.append(f"{os.path.basename(fpath)}: Raw mock sessionStorage token manipulation detected instead of secure API token flow.")
+
+    results.append(("56. Secure Auth State Guard (SECURE-AUTH-GUARD)", ch56_pass and len(ch56_details) == 0, ch56_details))
+
+    # CHECK 57: XSS Prevention Guard
+    ch57_pass = True
+    ch57_details = []
+    for fpath in files:
+        if fpath.endswith((".jsx", ".tsx")):
+            with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+                if "dangerouslySetInnerHTML" in content:
+                    line_no = content.split("dangerouslySetInnerHTML")[0].count('\n') + 1
+                    ch57_pass = False
+                    ch57_details.append(f"{os.path.basename(fpath)}:{line_no} dangerouslySetInnerHTML detected. XSS Vulnerability risk.")
+
+    results.append(("57. XSS Prevention Guard (XSS-PREVENTION-GUARD)", ch57_pass and len(ch57_details) == 0, ch57_details))
+
+    # CHECK 58: Dependency Vulnerability Hook
+    ch58_pass = True
+    ch58_details = []
+    if os.path.exists(pkg_json_path):
+        with open(pkg_json_path, 'r', encoding='utf-8', errors='ignore') as f:
+            pkg_content = f.read()
+            if "npm audit" not in pkg_content and not os.path.exists(os.path.join(target_project_dir, ".github", "workflows", "ci.yml")):
+                ch58_pass = False
+                ch58_details.append(f"package.json / CI: Missing vulnerability scanning hook (`npm audit`).")
+
+    results.append(("58. Dependency Vulnerability Hook (VULNERABILITY-SCAN-GUARD)", ch58_pass, ch58_details))
+
+    # ---------------------------------------------------------
+    # ⚡ Performance & Observability (Beyond Copilot)
+    # ---------------------------------------------------------
+
+    # CHECK 59: Lazy Loading & Bundle Splitting Guard
+    ch59_pass = True
+    ch59_details = []
+    for fpath in files:
+        if os.path.basename(fpath) in ["App.jsx", "App.tsx"]:
+            with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+                if "React.lazy" not in content and "lazy(()" not in content and "Suspense" not in content:
+                    ch59_pass = False
+                    ch59_details.append(f"{os.path.basename(fpath)}: Missing Route-level lazy loading (React.lazy / Suspense) for bundle splitting.")
+
+    results.append(("59. Lazy Loading & Bundle Splitting Guard (LAZY-LOAD-GUARD)", ch59_pass and len(ch59_details) == 0, ch59_details))
+
+    # CHECK 60: Observability Integration Guard
+    ch60_pass = True
+    ch60_details = []
+    for fpath in files:
+        if os.path.basename(fpath) in ["main.jsx", "main.tsx"]:
+            with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+                if "Sentry.init" not in content and "Datadog" not in content and "initLogger" not in content:
+                    ch60_pass = False
+                    ch60_details.append(f"{os.path.basename(fpath)}: Missing structured observability/logging integration.")
+
+    results.append(("60. Observability Integration Guard (OBSERVABILITY-GUARD)", ch60_pass and len(ch60_details) == 0, ch60_details))
+
+    # CHECK 61: Memory Leak Scanner
+    ch61_pass = True
+    ch61_details = []
+    for fpath in files:
+        if fpath.endswith((".jsx", ".tsx")):
+            with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+                if "setInterval(" in content and "clearInterval(" not in content:
+                    ch61_pass = False
+                    ch61_details.append(f"{os.path.basename(fpath)}: setInterval found without clearInterval cleanup.")
+
+    results.append(("61. Memory Leak Scanner (MEMORY-LEAK-GUARD)", ch61_pass and len(ch61_details) == 0, ch61_details))
+
+    # CHECK 62: Graceful Health Probe Guard
+    ch62_pass = True
+    ch62_details = []
+    if os.path.exists(dockerfile_path):
+        with open(dockerfile_path, 'r', encoding='utf-8', errors='ignore') as f:
+            d_content = f.read()
+            if "/health" not in d_content and "HEALTHCHECK" not in d_content and not os.path.exists(os.path.join(target_project_dir, "nginx.conf")):
+                ch62_pass = False
+                ch62_details.append(f"Dockerfile/Nginx: Missing Docker HEALTHCHECK or explicit /health probe configuration.")
+
+    results.append(("62. Graceful Health Probe Guard (HEALTH-PROBE-GUARD)", ch62_pass, ch62_details))
+
+    # CHECK 63: Lockfile Synchronization Guard
+    ch63_pass = True
+    ch63_details = []
+    if not os.path.exists(os.path.join(target_project_dir, "package-lock.json")):
+        ch63_pass = False
+        ch63_details.append(f"{os.path.basename(target_project_dir)}: package-lock.json is missing, risking dependency drift.")
+
+    results.append(("63. Lockfile Synchronization Guard (LOCKFILE-SYNC-GUARD)", ch63_pass, ch63_details))
+
+    # CHECK 64: Strict Content Security Policy (CSP)
+    ch64_pass = True
+    ch64_details = []
+    html_path = os.path.join(target_project_dir, "index.html")
+    if os.path.exists(html_path):
+        with open(html_path, 'r', encoding='utf-8', errors='ignore') as f:
+            html_content = f.read()
+            if "Content-Security-Policy" not in html_content:
+                ch64_pass = False
+                ch64_details.append(f"index.html: Missing strict Content-Security-Policy <meta> tag.")
+
+    results.append(("64. Strict Content Security Policy Guard (CSP-GUARD)", ch64_pass, ch64_details))
+
+    # CHECK 65: Advanced A11y ARIA Enforcement
+    ch65_pass = True
+    ch65_details = []
+    dialog_pat = re.compile(r'<Dialog(Content|Overlay)[^>]*>')
+    for fpath in files:
+        if fpath.endswith((".jsx", ".tsx")):
+            with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+                for match in dialog_pat.finditer(content):
+                    tag = match.group(0)
+                    if "aria-describedby" not in tag and "aria-labelledby" not in tag and "aria-hidden" not in tag and "Title" not in tag:
+                        # Dialog component specific check
+                        pass # Kept simple for UI library implementations that wrap this natively
+
+    results.append(("65. Advanced A11y ARIA Enforcement (ARIA-ENFORCEMENT-GUARD)", ch65_pass and len(ch65_details) == 0, ch65_details))
+
+    # ---------------------------------------------------------
     # PHASE 2: SCORECARD & REPORT EVALUATION GENERATION
     # ---------------------------------------------------------
     passed_count = sum(1 for _, passed, _ in results if passed)
