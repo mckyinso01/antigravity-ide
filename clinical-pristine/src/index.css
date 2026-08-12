@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pristine-bg: #050811;
+  --color-pristine-card: #0B1C30;
+  --color-pristine-cardBorder: #1e293b;
+  --color-pristine-accent: #2563EB;
+  --color-pristine-accentHover: #1d4ed8;
+  --color-pristine-text: #F8FAFC;
+  --color-pristine-textMuted: #94a3b8;
+  --color-pristine-danger: #E11D48;
+  --color-pristine-success: #10B981;
+  --color-pristine-warning: #F59E0B;
+
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --animate-glow-pulse: glow-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-slide-up: slide-up 0.3s ease-out;
+
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 10px rgba(37, 99, 235, 0.2); }
+    50% { opacity: 0.7; box-shadow: 0 0 20px rgba(37, 99, 235, 0.5); }
+  }
+
+  @keyframes slide-up {
+    0% { transform: translateY(10px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+}
+
+@layer base {
+  body {
+    background-color: var(--color-pristine-bg);
+    color: var(--color-pristine-text);
+    @apply antialiased font-sans;
+  }
+}
+
+@layer components {
+  /* Zero-Undefined Data Guard Component Styles */
+  .water-breathing-card {
+    @apply bg-pristine-card/80 backdrop-blur-xl border border-pristine-cardBorder rounded-2xl shadow-xl;
+  }
+  
+  .moving-dotted-border-amber {
+    @apply relative overflow-hidden rounded-2xl border-2 border-pristine-warning/50 shadow-[0_0_15px_rgba(245,158,11,0.2)];
+  }
+}
+
+/* Custom Scrollbar for Clinical Pristine */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-700/50 rounded-full border border-slate-600/20;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-600/80;
+}
