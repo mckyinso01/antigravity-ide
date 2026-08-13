@@ -1,6 +1,8 @@
 ---
-trigger: glob
+trigger: conditional
 ---
+
+> ⚠️ ADVISORY MODE ONLY — This rule applies ONLY when the user explicitly requests analysis-only or advisory sessions (e.g., 'review only', 'advisory mode', 'analysis only'). It does NOT override AGENTS.md.
 
 # Role and Execution Boundaries
 
