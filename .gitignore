@@ -67,6 +67,9 @@ Lead-gen/
 RaketMate/
 Saccade-UI-evaluator/
 Fleet-core/
-LexAI-Enterprise/
 
-
+# Secrets and Local Configs
+local_config.json
+*.pem
+private.pem
+agent_token.jwt
