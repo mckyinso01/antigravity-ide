@@ -56,6 +56,24 @@ agents:
     token_ttl_seconds: 60
     audit_logging: true
     review_requirements: "Only deploy after CI green, canary health checks pass, and human approval recorded."
+  orchestrator:
+    role: "Master coordinator — delegates to subagents. Cannot directly deploy or apply destructive patches without human clearance."
+    allowed_actions:
+      - "read_repo"
+      - "list_files"
+      - "open_issues"
+      - "delegate_to_subagents"
+      - "read_logs"
+      - "run_auditor"
+    deny_actions:
+      - "apply_destructive_patches"
+      - "deploy_without_approval"
+      - "bypass_human_review"
+      - "delete_files"
+      - "modify_policy_files_without_approval"
+    token_ttl_seconds: 600
+    audit_logging: true
+    review_requirements: "All orchestration decisions involving code changes must be logged to .agents/audit/audit.log. Delegation to deploy-agent requires explicit human clearance."
 humans:
   security-officer:
     role: "Human approver for security/infra changes"
@@ -70,5 +88,5 @@ policy:
     require_request_id: true
     retention_days: 180
   approval:
-    required_for: ["any change touching policies/", ".agents/", "infrastructure/"]
+    required_for: ["any change touching policies/", ".agents/", "infrastructure/", "any orchestrator action touching secrets, infrastructure, or database schemas."]
     human_approvers: ["security-officer"]
