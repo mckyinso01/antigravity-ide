@@ -78,22 +78,49 @@ tags: [agentic, governance, trust-signals, okf-v0.2, zero-quota, zero-defect]
 
 ---
 
-## 3. UI/UX Design System, Stitch MCP & Layout Directives
+## 3. Universal UX Standards & Layout Architecture (`UX-STANDARD-SUPREME`)
 
-- **Stitch MCP Design System**: Mandatory call to `StitchMCP` before drafting UI code. Asset ID: `assets/1640102745724511064` (`Demon Slayer Ukiyo-e Cyber Glass Design System`).
-  - *⚡ Zenitsu Thunder Gold (Legal AI / HUD)*: `#F9E006` (Vivid Cyber Yellow), `#050811`, `Space Grotesk`
-  - *🌊 Tanjiro Midnight Blue (Enterprise POS / OmniStock)*: `#050811` (Deep Void), `#0B1C30` (Solid Card), `#2563EB` (Electric Blue), `Inter`, `backdrop-blur-xl bg-[#0B1C30]/80`
-  - *🌫️ Muichiro Mist Cyan (DevOps / Infrastructure)*: `#00E5FF` (Cyan), `#10B981` (Beast Emerald), `#080C14`, `JetBrains Mono`
-  - *🔥 Rengoku Flame Crimson (Media / Creative AI)*: `#E11D48` (Flame Crimson), `#F59E0B` (Solar Amber), `#0A0A0C`, `Outfit`
-  - *🦋 Shinobu Wisteria Violet (Security / Vaults)*: `#C084FC` (Wisteria Violet), `#8B5CF6` (Deep Purple), `#090514`
-- **Styling Engine Standard**: Use Vanilla CSS by default for all new projects. If TailwindCSS is needed, use the CDN approach (`<script src="https://cdn.tailwindcss.com"></script>`) for rapid prototyping. Always confirm with user.
-- **Fluid Layouts**: 100% Edge-to-edge viewports (`w-screen min-h-screen`), collapsible sidebars (`isLeftRailCollapsed`), zero fake navigation buttons (every rail button maps to an active view component).
+> ⚠️ **RETIRED**: Stitch MCP and Demon Slayer Cyber Glass design system are DEPRECATED. All Stitch MCP calls and Demon Slayer token references are PROHIBITED in new projects. The standard below is the sole replacement.
+
+### 3A. Zero-Friction UX Law (`ZERO-FRICTION-UX`)
+The single most important design mandate: **the user must NEVER need to think, hunt, or scroll far to find what they need.** Every layout decision MUST be evaluated against this rule first.
+
+- **Right-side Slide Drawers over blocking modals**: When a user clicks a row, item, or detail trigger, a panel MUST slide in from the right WITHOUT replacing or covering the main view. The main view MUST stay visible and interactive.
+- **Do NOT blur or dim the main view** for detail panels: Blocking overlays that obscure main content are PROHIBITED for contextual tasks. Reserve full-blocking modals ONLY for critical destructive confirmations (delete, purge, reset) where losing context is intentional.
+- **Iconized toolbars** (Canva/Replit pattern): Frequently used tools MUST be icon-only in sidebars or toolbars. On hover, a tooltip MUST show the icon name and its purpose. No unlabeled mystery icons allowed.
+- **Zero-scroll access to primary actions**: Primary CTAs, submit buttons, and key controls MUST be visible within the initial viewport. NEVER hide the most important action at the bottom of a long page requiring heavy scroll.
+- **Sequential and logical app flow**: User journey must follow a natural progression. Disjointed flows, dead-ends, and counterintuitive navigation are STRICTLY PROHIBITED.
+- **Minimize tab switching**: Prefer in-context panels, inline editing, and split views over navigating to entirely new pages for simple tasks.
+
+### 3B. Layout Architecture Rules (`LAYOUT-ARCHITECTURE`)
+- **Fluid edge-to-edge viewports**: `w-screen min-h-screen`. Zero wasted whitespace on desktop.
+- **Collapsible sidebars**: Auto-collapse below 1024px. Every sidebar/rail button MUST map to a real, active component — no fake nav.
+- **Tri-panel for data-heavy apps** (CRM, dashboards): Left nav rail → Center list/table → Right detail slide drawer. This eliminates tab-switching for record inspection.
+- **Sticky headers with floating action buttons**: Search, filter, and primary CTA MUST remain visible during scroll.
+- **Progressive disclosure**: Show only what the user needs for their current task. Hide advanced options behind an expand/chevron — never dump everything at once.
+
+### 3C. Color, Typography & Readability Law (`READABILITY-FIRST-LAW`)
+- **Per-project custom color palette** — Each app has its own color identity. No universal theme is forced.
+- **STRICTLY PROHIBITED — Hardcoded colors**: No raw hex values in component files. ALL colors MUST be exported from the project's `designSystem.js` or equivalent token file. No exceptions.
+- **STRICTLY PROHIBITED — Readability violations**:
+  - Text and background color contrast ratio below 4.5:1 (WCAG AA minimum)
+  - Body text font size below 14px; label font size below 12px
+  - Typography mismatched to the app's role (e.g., decorative display font on a dense data table)
+  - ALL-CAPS for body text blocks
+- **Styling Engine Standard**: Vanilla CSS by default. TailwindCSS via CDN is allowed for prototyping — always confirm with user before using.
+
+### 3D. Interaction Feedback Standards (`INTERACTION-FEEDBACK`)
+- Every clickable element MUST have a visible hover state (color change, scale, underline — never invisible).
+- Slide drawers MUST animate smoothly: `transform: translateX(100%)` → `translateX(0)`, 250–300ms ease-out.
+- `Escape` key MUST close any open drawer, dropdown, or modal.
+- Every destructive action MUST show a confirmation dialog before executing.
+- Slide drawer open/close MUST not cause layout reflow or shift on the main view.
 
 ---
 
 ## 4. Standalone Codebase Isolation, Licensing Bar Parity & Brand Standards
 
-- **Physical Codebase Isolation**: Standalone apps (`omnistock`, `EMS`, `GHL-PULSE`, `LexAI-Enterprise`) live in 100% physically separate directories. NEVER merge code, state, or routes. `EMS` (Workforce & Enterprise Synergy) and `GHL-PULSE` (GoHighLevel Lead & Marketing Engine) are TWO DISTINCT PRODUCTS and MUST remain in separate physical repositories.
+ Standalone apps (`omnistock`, `EMS`, `GHL-PULSE`, `LexAI-Enterprise`) live in 100% physically separate directories. NEVER merge code, state, or routes. `EMS` (Workforce & Enterprise Synergy) and `GHL-PULSE` (GoHighLevel Lead & Marketing Engine) are TWO DISTINCT PRODUCTS and MUST remain in separate physical repositories.
 - **Mandatory 4-Tier Commercial Licensing Bar**: EVERY standalone product MUST render the interactive 4-Tier Commercial Licensing Bar at the bottom of its primary layout (`SOFTWARE FACTORY`, `Self-Host`, `White-Label`, `Source Code IP`, `Hosted Cloud SaaS`).
 - **Zero-Mock Data**: 100% real network scraping for client leads. Persist immediately to `client_profile.json`.
 - **Pre-Dispatch Research**: Conduct 360° client research and present brief before pitch drafting.
