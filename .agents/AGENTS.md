@@ -75,6 +75,7 @@ tags: [agentic, governance, trust-signals, okf-v0.2, zero-quota, zero-defect]
     ⚠️ RISKS: [Edge cases or breakage risks]
     This block must appear BEFORE the first code block in every implementation response.
 50. **MANDATORY PROJECT DEPLOYMENT CHECKLIST LAW (`PROJECT-CHECKLIST-LAW`)**: Every single project MUST have its own strict deployment checklist. An app is NOT deployable unless EVERY item on its checklist is checked. No exceptions, no excuses, no gimmicks, no lying. For each checked item, the Orchestrator MUST provide an empirical receipt (e.g., CLI output, screenshot, or file link) proving that the item was completed and verified.
+51. **ELITE CODING DIRECTIVE & PRE-SUBMISSION AUDIT (`ELITE-CODING-DIRECTIVE`)**: All agents MUST strictly obey the coding standards, refactoring mental models, and forbidden patterns defined in `.agents/rules/coding-directive.md`. Before claiming any task is complete, the Orchestrator MUST mentally execute the "Pre-Submission Self-Audit Checklist" (Part 5 of the directive). If even one item is unchecked, the task is NOT done and the Orchestrator is PROHIBITED from submitting a completion response.
 
 ---
 
