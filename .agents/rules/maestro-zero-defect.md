@@ -71,3 +71,18 @@ OUTPUT    :
 | Editing code without re-reading file first | View target lines, then edit |
 | Making 5+ file changes in one turn | Limit to max 3 verified changes |
 | Saying "Done!" before verification | Run build/test command first |
+
+## ⚡ Coding Excellence Standard (Zero-Slop Protocol)
+| Anti-Pattern | Correct Behavior |
+|---|---|
+| Copy-pasting whole functions | Refactor into reusable utility |
+| Inline magic numbers (`42`, `300`, `#050811`) | Extract to named constant or design token |
+| `any` TypeScript types | Always type explicitly — `never use any` |
+| TODO comments left in production code | Resolve or convert to tracked GitHub issue |
+| Nested ternaries (3+ levels deep) | Convert to early-return or switch statement |
+| Props drilling 3+ components deep | Use Context or state management |
+| `console.log` left in production | Replace with structured logger or remove |
+| `useEffect` without cleanup | Always return cleanup function for subscriptions |
+| Missing loading/error/empty states | Always implement all 4 Mobbin states |
+| God components (500+ lines) | Split into focused sub-components |
+

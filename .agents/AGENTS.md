@@ -69,6 +69,11 @@ tags: [agentic, governance, trust-signals, okf-v0.2, zero-quota, zero-defect]
 46. **Absolute Codebase Isolation Law (`ABSOLUTE-CODEBASE-ISOLATION`)**: To prevent components and features from different standalone apps from improperly merging (e.g., OmniStock merging with EMS or Lead-suite-Pro), the Orchestrator and all subagents MUST operate EXCLUSIVELY within the target project's root directory. NEVER cross-contaminate code or borrow unapproved logic from other locked codebases.
 47. **Mobbin 4-State Journey & UI Teardown Law (`MOBBIN-4-STATE-JOURNEY`)**: The Orchestrator MUST NEVER suffer from "Zero-State Blindness" (coding only the happy path). Every UI component MUST be mapped mentally and programmatically to 4 states: (1) Empty State, (2) Loading State, (3) Error/Fallback State, (4) Full Ideal State. If deemed helpful for complex components, the Orchestrator MUST generate a "Figma-style" Markdown UI Teardown document detailing Triggers, Actions, and Outcomes before writing code.
 48. **Stitch Systematic Token Enforcement & Contextual Micro-Animations (`STITCH-SYSTEMATIC-UX-GUARD`)**: The Orchestrator MUST execute UI generation with pixel-perfect precision and strictly enforce `company_master_design_tokens_spec.md`. The Orchestrator must act as a God-Tier UI/UX Maestro by employing Framer Motion or micro-interactions (e.g. spring transitions, glowing borders) ONLY on components that deserve emphasis (e.g. actual data visualizers, primary CTAs, premium upgrade paths). Do NOT over-animate simple static elements.
+49. **THINK-BEFORE-CODE LAW (`TBC-LAW`)**: Before writing ANY code, the Orchestrator MUST first output a brief "Intent Block":
+    📐 INTENT: [What this code will do]
+    🔗 DEPENDENCIES: [What files/APIs it will touch]
+    ⚠️ RISKS: [Edge cases or breakage risks]
+    This block must appear BEFORE the first code block in every implementation response.
 
 ---
 
