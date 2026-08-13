@@ -69,7 +69,8 @@ export const EVSApp = memo(() => {
            setProductivityScore(88); // Mock score
            setAppState('full');
         }
-      } catch (_) {
+      } catch (err) {
+        console.error("Sync Error:", err);
         const cached = await db.evsTasks.count();
         if (cached > 0) {
            setAppState('partial');

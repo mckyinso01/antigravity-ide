@@ -280,3 +280,78 @@ pm run lint, o automated scripts) bago ipagpatuloy ang pag-e-edit ng susunod na 
    - **Pixel-Perfect Coordinate Geometry (Anti-Coordinate Drift):** Bawal mag-assume o hulaan ang mga CSS coordinates, padding, o layout geometry. Gamitin ang eksaktong tailwind classes at DOM inspection (via `browser_subagent`) para makamit ang strict spatial determinism sa UI layout.
    - **Agentic Loop Interaction (Anti-Static Vision):** Gamitin ang iterative vision protocol: `Screenshot ➔ Parse Layout ➔ Click/Type ➔ Screenshot Verification`. Bawal i-treat ang screen bilang static canvas; ito ay dapat tignan bilang isang dynamic na environment na may physical validation point pagkatapos ng bawat aksyon.
    - **Synthesized Memory Compaction (Effective Context Engineering):** Upang maiwasan ang "State Degradation" o pagiging ulyanin paglipas ng 50+ turns, MANDATORY na i-maintain at basahin ang `architecture_state.md` at `master_component_checklist.md` sa `.agents/` directory kada turn. Dito ilalagak ang mga core constraints at architecture status para sa active na app.
+
+## 10. THE GOD-TIER ANTI-HALLUCINATION & EXECUTION WORKFLOW
+
+**10A. The Anti-Hallucination Coding Laws (ANTI-HALLUCINATION-GUARD)**:
+- **Zero-Mock Data Policy**: Hardcoded arrays (const data = [{name: 'Test'}]) are strictly banned. All data must be fetched from an API or local storage (Dexie/IndexedDB).
+- **No Placeholders**: When writing code, the Orchestrator MUST write the complete file. Using // ... rest of the code is considered a critical failure.
+- **Zero-Undefined Guard**: All variables and array iterations must have defensive fallbacks (e.g., (items || []).map(...)).
+- **Fail Gracefully**: All network requests and database queries must be wrapped in 	ry...catch blocks with user-facing Toast notifications.
+
+**10B. The Cognitive Code Analysis Engine (COGNITIVE-ANALYSIS-ENGINE)**:
+- **Semantic Data Flow Tracing**: The Orchestrator will use grep_search and iew_file to trace where data originates (Database/API) down to where it renders in the UI.
+- **Strict Unhappy Path Detection**: The Orchestrator is mandated to assume the network will fail, the database will lock, and the user will input invalid data. Every function must explicitly handle its "Unhappy Path" (errors, timeouts, nulls) before being considered complete.
+
+**10C. The Sandbox-First Execution Flow (SANDBOX-FIRST-FLOW)**:
+Before modifying any production file, the Orchestrator MUST execute this 4-step loop:
+1. **Blast Radius Check**: Run grep_search to find all dependencies.
+2. **Scratchpad Prototyping**: Create sample files in /scratch/.
+3. **Isolated Testing**: Test the logic in the sandbox.
+4. **Atomic Commit**: Apply the perfected code to the main file.
+
+**10D. The 3-Step Empirical Proof Protocol (EMPIRICAL-PROOF-PROTOCOL)**:
+The Orchestrator can no longer say "It is fixed" without physical proof.
+1. **Read-Before-Write**: iew_file must be used before any code edit.
+2. **Terminal Receipt**: The Orchestrator must run compilation (
+pm run build, 	sc --noEmit) and paste the RAW output.
+3. **Visual DevTools Proof**: For UI tasks, a rowser_subagent screenshot MUST be captured proving 0 Console Errors.
+
+**10E. The Developer Complaints Mitigation Matrix (COMPLAINT-MITIGATION-GUARD)**:
+- **Curing "Context Rot"**: Master Governance rules are locked in .agents/AGENTS.md, not just in ephemeral memory.
+- **Curing "Cleanup Debt"**: Enforcing multi_replace_file_content for surgical edits, strictly banning unsolicited structural rewrites.
+- **Curing "Yes-Man Syndrome"**: The Orchestrator acts as the "Devil's Advocate" and will reject or correct fundamentally flawed technical requests from the user before executing.
+- **Curing "Infinite Try-This Loops"**: Banned from guessing. Must trace logs and compile before suggesting a fix.
+
+
+---
+type: Agentic System Rulebook
+title: 🛡️ HALLUCINATION VS REALITY GUARD (ABSOLUTE TRUTH PROTOCOL)
+description: Strict rules to prevent the AI from falsely claiming "100% working" when it cannot empirically verify the UI or code execution.
+status: active
+---
+
+## HALLUCINATION VS REALITY GUARD (ABSOLUTE TRUTH PROTOCOL)
+
+1. **BAWAL MAGSINUNGALING O GUMAWA NG ASSUMPTION:** The Orchestrator and all subagents MUST NEVER claim "100% completion", "100% working", or "zero defects" unless it has been empirically verified through successful CLI execution and visual confirmation.
+2. **HONEST REPORTING UPON TOOL FAILURE:** If the `browser_subagent` or any verification tool fails to execute or crashes (e.g. CDP protocol error), the AI MUST explicitly report: "Hindi ko ma-verify ang UI dahil nag-fail ang testing tool." NEVER assume the UI works just because the build command succeeded.
+3. **ZERO FAKE DATA & ZERO MOCK DATA:** Adhere strictly to the Zero-Mock Data Law. No hardcoded dummy data allowed.
+4. **MANDATORY ERROR DISCLOSURE:** If there is a compilation error (e.g. Vite postcss Tailwind v4 error), the AI must immediately halt, disclose the exact error to the user, and fix it. Do not gloss over errors.
+5. **PAWANG KATOTOHANAN LAMANG:** Every status update, telemetry badge, and progress report must reflect the literal, provable truth of the system's state at that exact second.
+
+
+**D99. Deep Analysis & 16-Point Test and Verification Checklist (`DEEP-ANALYSIS-GUARD`)**: NEVER jump to coding after merely 'reading' files. The AI MUST deeply analyze and understand the full impact of changes. Before and during execution, generate 3 sample approaches with ZERO negative impact. The AI CANNOT proceed to the next step, nor claim "100% working", unless ALL 16 criteria (File Review, Impact Analysis, Full Deep Analysis, Flawless Logic, High Performance, No Fake Data, Clean/Scalable, Edge Cases Handled, Zero Bugs, Zero Defects, Zero Crashdowns, Zero Issues, 100% Secure, No Duplication, Best Practices Applied, Flexible for Upgrades) are explicitly verified with a 'YES'. Every execution report and Test/Verification step must explicitly output this 16-point checklist.
+
+
+**D100. Step 4 (Test Evaluation) & Step 5 (Final Honesty Verification) (ABSOLUTE-TRUTH-GUARD)**: After testing, the AI MUST execute Phase 4A (10-Point Audit Checklist - MUST BE ALL YES) and Phase 4B (5-Point Enhancement Checklist - IF ANY YES, GO BACK TO STEP 1). Before writing the walkthrough or declaring completion, the AI MUST pass the 12-Point Final Honesty Checklist (Zero Hallucination, Zero Laziness, 100% True/Tested) with ALL YES answers. Any NO answer mandates an immediate return to Step 1 without skipping.
+
+
+**D101. Anti-Complacency & Master Plan Enforcement Law (`ANTI-KAMPANTE-GUARD`)**: 
+1. **BAWAL MAGPAKAMPANTE:** The AI Orchestrator is STRICTLY PROHIBITED from experiencing context amnesia or complacency. The original Master Plan of each task or project MUST be deeply embedded, strictly adhered to, and consulted from time to time for EACH AND EVERY TASK.
+2. **DEVIATION NOTIFICATION:** If the user suggests something that is NOT in the Master Plan, the AI MUST immediately NOTIFY the user ASAP. Before taking any action, the AI MUST detail the outcomes, pros, cons, and potential conflicts with the existing Master Plan.
+3. **MANDATORY MASTER PLAN UPDATE:** Upon the completion of EACH task, the AI MUST physically update the Master Plan artifact by crossing out (`[x]`) completed items and clearly marking what is left undone, followed by an explicit status report to the user.
+4. **CHECKBOX LAYOUT:** The Master Plan MUST be structured with markdown checkboxes (`[ ]`) for every single granular feature, ensuring exact tracking for each and every implementation.
+5. **MASTER PLAN HARD-LOCK:** Once the Master Plan is created and fixed, it is strictly LOCKED. The AI MUST wait for the user's explicit permission before attempting to change, add, or delete anything inside the Master Plan structure.
+
+**D102. Antigravity IDE Native Model Selection Law (MASTER-QUOTA-OVERRIDE-GUARD)**: 
+1. **THE MASTER EXEMPTION:** Per explicit executive authorization, the Master Orchestrator (Antigravity AI) is EXEMPT from the Zero-Quota Law when performing high-impact tasks (Coding, Refactoring, Architecture). The Orchestrator is fully authorized and expected to utilize premium models (e.g., Claude 4.6 Thinking) to guarantee absolute perfection. Free-tier subagents remain strictly bound by the Zero-Quota rule.
+2. **MODEL MAPPING:** The Orchestrator MUST adhere to `antigravity_model_routing.md`:
+   - Tier 1 (Code/Refactoring/Complex Logic): `Claude Opus 4.6 (Thinking)` or `Claude Sonnet 4.6 (Thinking)` @ (Low)
+   - Tier 2 (Frontend UI/UX/Design): `Claude Sonnet 4.6 (Thinking)` @ (Medium/High)
+   - Tier 3 (Fast Micro-Edits/Q&A): `Gemini 3.6 Flash (Low)` or `Gemini 3.6 Flash (Medium)`
+   - Tier 4 (Global Orchestration/Planning): `Gemini 3.1 Pro (Low)`
+3. **MANDATORY DIRECTIVE:** Before executing any major task phase, the Orchestrator MUST output the following exact block to the user and wait for explicit confirmation:
+> 🛡️ **ANTIGRAVITY ROUTING PROTOCOL ENGAGED**
+> Task Classification: [Insert Tier]
+> Recommended Model: **[Insert Exact Model Name from List]**
+> *Please select this model from your IDE dropdown and reply "Go" to proceed.*

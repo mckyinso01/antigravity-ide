@@ -1,7 +1,24 @@
 {
-  "episodic_memory": {
-    "limit_gb": 10,
-    "warning_threshold": 9.5,
-    "bugs_resolved": []
-  }
+  "episodic_memory": [
+    {
+      "conversation_id": "44dd545a-d138-48ed-a695-264aa9325c85",
+      "topic": "God-Tier Cognitive Engine & Sentinel Activation",
+      "learnings": [
+        "The User demands ZERO STATIC DATA, NO HARDCODING, and NO FAKE PLACEHOLDERS. Real data persistence or API fetching is mandatory.",
+        "The User enforces the 'Sandbox-First Execution Flow': Before making changes to a live codebase, changes must be prototyped in the /scratch/ folder first.",
+        "The User mandates the Cognitive Engine to act as a 'Devil's Advocate', performing Semantic Data Flow Tracing and Unhappy Path Detection before writing code.",
+        "Level 3 (Council Swarm) is active: The Orchestrator must run council_debate.py for major architectural planning.",
+        "Level 4 (Sentinel DevOps) is active: The Orchestrator must run sentinel_checklist.py continuously during tasks to enforce company guidelines.",
+        "Level 5 (Vision-First) is active: Browser UI screenshots are required to verify pixel-perfect design."
+      ]
+    },
+    {
+      "conversation_id": "44dd545a-d138-48ed-a695-264aa9325c85",
+      "topic": "Level 6 Software Factory & MCP Integration",
+      "learnings": [
+        "The User has granted full MCP Authorization: The Master Orchestrator is permitted to deploy live code to CloudRun/AlloyDB/Firebase automatically after Council approval.",
+        "Retrofit Protocol is on STANDBY: Do not force the 12-Stage workflow to refactor existing apps (like GHL-PULSE) yet. We must monitor for conflicts first (e.g., flexible design tokens vs mandatory tokens). The 12-Stage workflow will primarily apply to new projects for now."
+      ]
+    }
+  ]
 }

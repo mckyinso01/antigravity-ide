@@ -48,7 +48,8 @@ export const BedManagement = memo(() => {
         } else {
            setAppState('full');
         }
-      } catch (_) {
+      } catch (err) {
+        console.error("Sync Error:", err);
         const cached = await db.beds.count();
         if (cached > 0) {
            setAppState('partial');

@@ -35,7 +35,8 @@ export const AlertsApp = memo(() => {
         } else {
            setAppState('full');
         }
-      } catch (_) {
+      } catch (err) {
+        console.error("Sync Error:", err);
         const cached = await db.alerts.count();
         if (cached > 0) {
            setAppState('partial');
