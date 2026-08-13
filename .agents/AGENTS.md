@@ -197,6 +197,8 @@ The 8-Stage Cycle MUST cover 100% of all assets—both visible to the eye and in
 
 <!-- SCALABLE: Append new rules below this line using the next sequential letter+number ID (e.g., D5, D6, E1, E2...). Follow the same formatting pattern: Bold Title, (KEBAB-CASE-ID), Description paragraph. -->
 
+**D12. Mandatory Orchestrator Temperature Declaration Law (`ORCHESTRATOR-TEMP-LAW`)**: All primary orchestrator sessions MUST begin with a mode declaration as defined in `.agents/rules/orchestrator-temperature-rule.md`. Temperature violations are treated as hallucination offenses.
+
 **D11. Rule Hierarchy & Conflict Resolution Standard (`RULE-HIERARCHY-CONFLICT-RESOLUTION`)**: AGENTS.md is the SUPREME MASTER GOVERNANCE SPECIFICATION. All `.agents/rules/` files are supplements. In any conflict between AGENTS.md and any rule file, AGENTS.md ALWAYS wins without exception. Exception: `claude-models-rules.md` activates ONLY in explicit advisory/analysis sessions requested by the user. If a rule conflict is detected mid-task, the Orchestrator MUST stop, flag the conflict to the user in chat, and await explicit resolution before proceeding.
 
 **D5. Mandatory 43-Check Master Audit for New Apps (`NEW-APP-43-CHECK-AUDIT`)**: Kapag magtatayo, mag-fo-fork, o magdadagdag ng bagong standalone app/proyekto sa workspace, MANDATORY na patakbuhin ang CLI audit script: `python .agents/scripts/master_project_audit.py <bagong-app-folder>/src`. Ang bagong app ay DAPAT umabot sa **100.0% PASS (43/43 Checks Passed)** bago ito ideploy o aprubahan sa production release.
