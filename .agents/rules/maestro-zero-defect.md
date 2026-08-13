@@ -38,6 +38,31 @@ Before claiming ANY work is complete, verify:
 
 ---
 
+## 🧾 Mandatory Verification Receipt Format Standard
+
+**RULE: VALID-RECEIPT-FORMAT** — A valid verification receipt MUST contain ALL of the following fields in this exact format:
+
+✅ VERIFICATION RECEIPT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+COMMAND   : [the exact command that was run, copy-paste ready]
+EXIT CODE : [0 = PASS / non-zero = FAIL — show the actual number]
+TIMESTAMP : [ISO8601 timestamp — e.g., 2026-08-13T15:32:00Z]
+SCOPE     : [list the files or components verified]
+OUTPUT    :
+[verbatim raw output — no paraphrasing, no summarizing, no trimming of errors]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+**RULE: INVALID-RECEIPT-PROHIBITION** — The following are explicitly PROHIBITED as receipts:
+- Saying "the build succeeded" without showing the command and full output
+- Paraphrasing or summarizing the output instead of showing it verbatim
+- Showing only the success line while hiding warnings or errors above it
+- Claiming a receipt was generated without displaying it in the response
+- Showing a receipt from a PREVIOUS session and presenting it as current
+
+**RULE: INVALID-RECEIPT-CONSEQUENCE** — Any completion claim made WITHOUT a valid receipt is automatically INVALID. The user must be notified: "⚠️ UNVERIFIED CLAIM — No valid receipt was produced. Task status: NOT COMPLETE."
+
+---
+
 ## Anti-Pattern Quick-Reference
 
 | Sloppy Pattern | Correct Protocol |
