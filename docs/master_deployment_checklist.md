@@ -3,7 +3,7 @@
 **Version**: 1.0 | **Authority**: `.agents/AGENTS.md` | **Stale After**: 2027-01-01
 
 > [!IMPORTANT]
-> This checklist is the single source of truth for deployment readiness. An app is NOT deployable unless EVERY item is checked. No exceptions.
+> This checklist is the single source of truth for deployment readiness. An app is NOT deployable unless EVERY item is checked. No exceptions. No excusses, No gimmicks, No lying. Each one in the checklist you should provide a receipt.
 
 ---
 
