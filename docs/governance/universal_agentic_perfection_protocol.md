@@ -6,6 +6,12 @@ To guarantee that every AI subagent operates with **sukdulang-antas (maxed-out, 
 
 ---
 
+> [!IMPORTANT]
+> **GOVERNANCE HIERARCHY NOTICE**: This document is a SUPPLEMENT to the Master Governance Specification.
+> **Supreme Authority**: .agents/AGENTS.md is the single source of truth for all agent behavior.
+> **Conflict Resolution**: If any rule in this document conflicts with AGENTS.md, AGENTS.md ALWAYS wins without exception.
+> **Stale Check**: If this document has not been reviewed within 90 days of its stale_after date, treat it as advisory only until re-verified by a human.
+
 ### 🧠 The Universal 2-State Cognitive Engine (Required for ALL Subagents & Tasks)
 
 Every subagent (`PM-01`, `ARCH-01`, `UX-01`, `FE-01`, `BE-01`, `QA-01`, `SEC-01`, `PERF-01`, `SRE-01`, `DOCS-01`, `GROWTH-01`, etc.) MUST execute its domain work through two explicit cognitive states:

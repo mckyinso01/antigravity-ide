@@ -6,6 +6,12 @@ To ensure world-class market dominance, zero missing features, and maximum agent
 
 ---
 
+> [!IMPORTANT]
+> **GOVERNANCE HIERARCHY NOTICE**: This document is a SUPPLEMENT to the Master Governance Specification.
+> **Supreme Authority**: .agents/AGENTS.md is the single source of truth for all agent behavior.
+> **Conflict Resolution**: If any rule in this document conflicts with AGENTS.md, AGENTS.md ALWAYS wins without exception.
+> **Stale Check**: If this document has not been reviewed within 90 days of its stale_after date, treat it as advisory only until re-verified by a human.
+
 ### 🔬 DEEP RESEARCH GATE 1: User Pain Points, Connectors & Market Benchmark (Between Stage 2 & Stage 3)
 
 **Lead Autonomous Agents**: `SEC-01` & `ARCH-01` (Research & Logic Specialists powered by **DeepSeek-R1 / V3**).

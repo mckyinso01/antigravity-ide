@@ -32,6 +32,12 @@ To ensure 100% Agentic execution across all 12 stages and 181 frameworks without
 
 ---
 
+> [!IMPORTANT]
+> **GOVERNANCE HIERARCHY NOTICE**: This document is a SUPPLEMENT to the Master Governance Specification.
+> **Supreme Authority**: .agents/AGENTS.md is the single source of truth for all agent behavior.
+> **Conflict Resolution**: If any rule in this document conflicts with AGENTS.md, AGENTS.md ALWAYS wins without exception.
+> **Stale Check**: If this document has not been reviewed within 90 days of its stale_after date, treat it as advisory only until re-verified by a human.
+
 ## 🛡️ MULTI-TIER RESILIENT API & SUBAGENT FAILOVER MATRIX
 
 To guarantee 100% uptime, zero blank-screen crashes, and zero unexpected quota exhaustion, all application services and subagents enforce a 4-tier fault-tolerant failover matrix:
