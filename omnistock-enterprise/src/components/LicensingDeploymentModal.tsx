@@ -36,26 +36,25 @@ export const LicensingDeploymentModal: React.FC<LicensingDeploymentModalProps> =
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 font-sans">
-      <div className="bg-[#070B14] border border-[#2A4374] rounded-2xl w-full max-w-3xl overflow-hidden shadow-2xl flex flex-col glow-mint max-h-[90vh]">
-        {/* Header */}
-        <div className="h-16 border-b border-[#1E2D4D] bg-[#0D1527] px-6 flex items-center justify-between shrink-0">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#5BC0BE] to-[#3A86FF] flex items-center justify-center text-[#070B14] shadow-lg">
-              <ShieldCheck size={22} className="stroke-[2.5]" />
-            </div>
-            <div>
-              <h3 className="font-mono font-bold text-base text-white">Enterprise Licensing & Architecture Buyout</h3>
-              <span className="text-xs text-slate-400 font-mono">Zero Per-User SaaS Tax • Transparent Commercial Deployment</span>
-            </div>
+    <div className="fixed inset-y-0 right-0 w-[580px] max-w-full z-50 bg-[#070B14]/98 border-l border-[#2A4374] shadow-[0_0_60px_rgba(0,0,0,0.9)] flex flex-col h-full overflow-y-auto animate-slideLeft font-sans">
+      {/* Header */}
+      <div className="h-16 border-b border-[#1E2D4D] bg-[#0D1527] px-6 flex items-center justify-between shrink-0">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#5BC0BE] to-[#3A86FF] flex items-center justify-center text-[#070B14] shadow-lg">
+            <ShieldCheck size={22} className="stroke-[2.5]" />
           </div>
-          <button 
-            onClick={onClose}
-            className="p-2 text-slate-400 hover:text-white rounded-xl hover:bg-[#121D36] transition-all cursor-pointer"
-          >
-            <X size={18} />
-          </button>
+          <div>
+            <h3 className="font-mono font-bold text-base text-white">Commercial Licensing & Buyout</h3>
+            <span className="text-xs text-slate-400 font-mono">Zero Per-User SaaS Tax • Direct Deployment</span>
+          </div>
         </div>
+        <button 
+          onClick={onClose}
+          className="p-2 text-slate-400 hover:text-white rounded-xl hover:bg-[#121D36] transition-all cursor-pointer"
+        >
+          <X size={18} />
+        </button>
+      </div>
 
         {/* Pricing Tiers Grid */}
         <div className="p-6 overflow-y-auto space-y-6">
@@ -167,7 +166,6 @@ export const LicensingDeploymentModal: React.FC<LicensingDeploymentModalProps> =
             </button>
           </div>
         </div>
-      </div>
     </div>
   );
 };

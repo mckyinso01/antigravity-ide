@@ -3,7 +3,8 @@ import type { SkuItem, BinSlot } from '../types';
 import { 
   Package, 
   Search, 
-  Plus
+  Plus,
+  X
 } from 'lucide-react';
 import { HelpTooltip } from '../components/HelpTooltip';
 
@@ -191,12 +192,29 @@ export const InventoryCatalogView: React.FC<InventoryCatalogViewProps> = ({
         </div>
       </div>
 
-      {/* Add SKU Modal */}
+      {/* Add SKU Right-Side Slide Drawer */}
       {isAddModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-[#070B14] border border-[#2A4374] rounded-2xl w-full max-w-md p-6 space-y-4 shadow-2xl font-mono text-xs glow-mint">
-            <h3 className="text-white font-bold text-sm">Register New Enterprise SKU</h3>
-            <form onSubmit={handleCreateSku} className="space-y-3">
+        <div className="fixed inset-y-0 right-0 w-[440px] max-w-full z-50 bg-[#070B14]/98 border-l border-[#2A4374] shadow-[0_0_60px_rgba(0,0,0,0.9)] flex flex-col h-full overflow-y-auto animate-slideLeft font-sans">
+          <div className="h-14 border-b border-[#1E2D4D] bg-[#0D1527] px-5 flex items-center justify-between shrink-0">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-lg bg-[#5BC0BE]/20 border border-[#5BC0BE]/40 flex items-center justify-center text-[#5BC0BE]">
+                <Package size={16} />
+              </div>
+              <div>
+                <h3 className="font-mono font-bold text-sm text-white">Register Enterprise SKU</h3>
+                <span className="text-[10px] text-[#5BC0BE] font-mono">Catalog & Slotting Onboarding</span>
+              </div>
+            </div>
+            <button 
+              onClick={() => setIsAddModalOpen(false)}
+              className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-[#121D36] transition-all cursor-pointer"
+            >
+              <X size={16} />
+            </button>
+          </div>
+
+          <form onSubmit={handleCreateSku} className="p-5 space-y-4 font-mono text-xs flex-1 flex flex-col justify-between">
+            <div className="space-y-4">
               <div>
                 <label className="text-slate-400 block mb-1">SKU Code</label>
                 <input
@@ -205,7 +223,7 @@ export const InventoryCatalogView: React.FC<InventoryCatalogViewProps> = ({
                   placeholder="e.g. ELEC-SENS-4K"
                   value={newCode}
                   onChange={(e) => setNewCode(e.target.value)}
-                  className="w-full bg-[#0D1527] border border-[#1E2D4D] text-white p-2 rounded-lg outline-none font-bold"
+                  className="w-full bg-[#0D1527] border border-[#1E2D4D] text-white p-2.5 rounded-xl outline-none font-bold focus:border-[#5BC0BE]"
                 />
               </div>
               <div>
@@ -216,17 +234,17 @@ export const InventoryCatalogView: React.FC<InventoryCatalogViewProps> = ({
                   placeholder="e.g. 4K Infrared Proximity Sensor"
                   value={newName}
                   onChange={(e) => setNewName(e.target.value)}
-                  className="w-full bg-[#0D1527] border border-[#1E2D4D] text-white p-2 rounded-lg outline-none"
+                  className="w-full bg-[#0D1527] border border-[#1E2D4D] text-white p-2.5 rounded-xl outline-none focus:border-[#5BC0BE]"
                 />
               </div>
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-2 gap-3">
                 <div>
                   <label className="text-slate-400 block mb-1">Initial Qty</label>
                   <input
                     type="number"
                     value={newQty}
                     onChange={(e) => setNewQty(Number(e.target.value))}
-                    className="w-full bg-[#0D1527] border border-[#1E2D4D] text-white p-2 rounded-lg outline-none"
+                    className="w-full bg-[#0D1527] border border-[#1E2D4D] text-white p-2.5 rounded-xl outline-none focus:border-[#5BC0BE]"
                   />
                 </div>
                 <div>
@@ -235,28 +253,28 @@ export const InventoryCatalogView: React.FC<InventoryCatalogViewProps> = ({
                     type="text"
                     value={newBin}
                     onChange={(e) => setNewBin(e.target.value)}
-                    className="w-full bg-[#0D1527] border border-[#1E2D4D] text-white p-2 rounded-lg outline-none font-bold"
+                    className="w-full bg-[#0D1527] border border-[#1E2D4D] text-white p-2.5 rounded-xl outline-none font-bold focus:border-[#5BC0BE]"
                   />
                 </div>
               </div>
+            </div>
 
-              <div className="flex gap-2 pt-2">
-                <button
-                  type="button"
-                  onClick={() => setIsAddModalOpen(false)}
-                  className="flex-1 bg-[#0D1527] text-slate-300 py-2.5 rounded-xl border border-[#1E2D4D] cursor-pointer"
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  className="flex-1 bg-[#5BC0BE] text-[#070B14] font-bold py-2.5 rounded-xl cursor-pointer glow-mint"
-                >
-                  Save & Slot SKU
-                </button>
-              </div>
-            </form>
-          </div>
+            <div className="flex gap-2 pt-4 border-t border-[#1E2D4D]">
+              <button
+                type="button"
+                onClick={() => setIsAddModalOpen(false)}
+                className="flex-1 bg-[#0D1527] hover:bg-[#121D36] text-slate-300 py-2.5 rounded-xl border border-[#1E2D4D] cursor-pointer"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                className="flex-1 bg-[#5BC0BE] hover:bg-[#6FFFE9] text-[#070B14] font-bold py-2.5 rounded-xl cursor-pointer glow-mint"
+              >
+                Save & Slot SKU
+              </button>
+            </div>
+          </form>
         </div>
       )}
     </div>

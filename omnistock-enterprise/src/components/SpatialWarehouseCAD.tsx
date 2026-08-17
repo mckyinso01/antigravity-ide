@@ -822,31 +822,36 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
         )}
       </div>
 
-      {/* AISLE SIGNAGE CUSTOMIZER MODAL */}
+      {/* AISLE SIGNAGE CUSTOMIZER DRAWER SLIDE */}
       {editingAisle && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="w-full max-w-md bg-[#0D1527] border border-[#2A4374] rounded-2xl p-6 shadow-2xl space-y-4 font-sans text-xs">
-            <div className="flex items-center justify-between border-b border-[#1E2D4D] pb-3">
-              <h3 className="font-mono font-bold text-sm text-white flex items-center gap-2">
-                <Tag size={16} className="text-[#5BC0BE]" />
-                <span>Customize Aisle {editingAisle.aisle} Signage</span>
-              </h3>
-              <button 
-                onClick={() => setEditingAisle(null)}
-                className="text-slate-400 hover:text-white"
-              >
-                <X size={16} />
-              </button>
+        <div className="fixed inset-y-0 right-0 w-[420px] max-w-full z-[100] pointer-events-auto bg-[#070B14]/98 border-l border-[#2A4374] shadow-[0_0_60px_rgba(0,0,0,0.9)] flex flex-col h-full overflow-y-auto animate-slideLeft font-sans">
+          <div className="h-14 border-b border-[#1E2D4D] bg-[#0D1527] px-5 flex items-center justify-between shrink-0">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-lg bg-[#5BC0BE]/20 border border-[#5BC0BE]/40 flex items-center justify-center text-[#5BC0BE]">
+                <Tag size={16} />
+              </div>
+              <div>
+                <h3 className="font-mono font-bold text-sm text-white">Customize Aisle {editingAisle.aisle} Signage</h3>
+                <span className="text-[10px] text-[#5BC0BE] font-mono">Overhead Wayfinding Designer</span>
+              </div>
             </div>
+            <button 
+              onClick={() => setEditingAisle(null)}
+              className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-[#121D36] transition-all cursor-pointer"
+            >
+              <X size={16} />
+            </button>
+          </div>
 
-            <form onSubmit={handleSaveAisleSign} className="space-y-3.5 font-mono">
+          <form onSubmit={handleSaveAisleSign} className="p-5 space-y-4 font-mono text-xs flex-1 flex flex-col justify-between">
+            <div className="space-y-4">
               <div>
                 <label className="text-slate-400 block mb-1">Aisle Category Name (e.g. Canned Goods, Pharma)</label>
                 <input
                   type="text"
                   value={editingAisle.name}
                   onChange={(e) => setEditingAisle({ ...editingAisle, name: e.target.value })}
-                  className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2.5 rounded-xl font-bold"
+                  className="w-full bg-[#0D1527] border border-[#1E2D4D] text-white p-2.5 rounded-xl font-bold focus:border-[#5BC0BE] outline-none"
                   placeholder="e.g. Noodles, Milk & Canned Goods"
                   required
                 />
@@ -858,7 +863,7 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
                   <select
                     value={editingAisle.icon}
                     onChange={(e) => setEditingAisle({ ...editingAisle, icon: e.target.value })}
-                    className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2.5 rounded-xl"
+                    className="w-full bg-[#0D1527] border border-[#1E2D4D] text-white p-2.5 rounded-xl"
                   >
                     <option value="💊">💊 Pharmaceuticals</option>
                     <option value="🥫">🥫 Food & Canned Goods</option>
@@ -878,7 +883,7 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
                   <select
                     value={editingAisle.color}
                     onChange={(e) => setEditingAisle({ ...editingAisle, color: e.target.value })}
-                    className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2.5 rounded-xl"
+                    className="w-full bg-[#0D1527] border border-[#1E2D4D] text-white p-2.5 rounded-xl"
                   >
                     <option value="#06B6D4">Cyan (#06B6D4)</option>
                     <option value="#3B82F6">Blue (#3B82F6)</option>
@@ -897,56 +902,72 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
                   type="text"
                   value={editingAisle.department}
                   onChange={(e) => setEditingAisle({ ...editingAisle, department: e.target.value })}
-                  className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2.5 rounded-xl"
+                  className="w-full bg-[#0D1527] border border-[#1E2D4D] text-white p-2.5 rounded-xl focus:border-[#5BC0BE] outline-none"
                   placeholder="e.g. Healthcare & Safety"
                 />
               </div>
 
-              <div className="flex justify-end gap-2 pt-2 border-t border-[#1E2D4D]">
-                <button
-                  type="button"
-                  onClick={() => setEditingAisle(null)}
-                  className="px-4 py-2 bg-[#121D36] text-slate-300 rounded-xl"
+              <div className="p-3 rounded-xl bg-[#0D1527] border border-[#1E2D4D] space-y-1">
+                <span className="text-[10px] text-slate-400 block uppercase font-bold">Signage Preview</span>
+                <div 
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-lg border text-white font-bold text-xs"
+                  style={{ backgroundColor: `${editingAisle.color}20`, borderColor: editingAisle.color }}
                 >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  className="px-5 py-2 bg-[#5BC0BE] hover:bg-[#6FFFE9] text-[#070B14] font-bold rounded-xl shadow-md glow-mint"
-                >
-                  Save Signage
-                </button>
+                  <span className="text-sm">{editingAisle.icon}</span>
+                  <span>AISLE {editingAisle.aisle}: {editingAisle.name || 'Category'}</span>
+                </div>
               </div>
-            </form>
-          </div>
+            </div>
+
+            <div className="flex justify-end gap-2 pt-4 border-t border-[#1E2D4D]">
+              <button
+                type="button"
+                onClick={() => setEditingAisle(null)}
+                className="px-4 py-2.5 bg-[#121D36] hover:bg-[#1E2D4D] text-slate-300 rounded-xl transition-all cursor-pointer font-sans text-xs"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                className="px-5 py-2.5 bg-[#5BC0BE] hover:bg-[#6FFFE9] text-[#070B14] font-bold rounded-xl shadow-md glow-mint transition-all cursor-pointer font-sans text-xs"
+              >
+                Save Signage
+              </button>
+            </div>
+          </form>
         </div>
       )}
 
-      {/* ADD CUSTOM RACK / BAY MODAL */}
+      {/* ADD CUSTOM RACK / BAY DRAWER SLIDE */}
       {isAddRackOpen && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="w-full max-w-md bg-[#0D1527] border border-[#2A4374] rounded-2xl p-6 shadow-2xl space-y-4 font-sans text-xs">
-            <div className="flex items-center justify-between border-b border-[#1E2D4D] pb-3">
-              <h3 className="font-mono font-bold text-sm text-white flex items-center gap-2">
-                <Plus size={16} className="text-[#5BC0BE]" />
-                <span>Add Custom Racking Bay</span>
-              </h3>
-              <button 
-                onClick={() => setIsAddRackOpen(false)}
-                className="text-slate-400 hover:text-white"
-              >
-                <X size={16} />
-              </button>
+        <div className="fixed inset-y-0 right-0 w-[420px] max-w-full z-[100] pointer-events-auto bg-[#070B14]/98 border-l border-[#2A4374] shadow-[0_0_60px_rgba(0,0,0,0.9)] flex flex-col h-full overflow-y-auto animate-slideLeft font-sans">
+          <div className="h-14 border-b border-[#1E2D4D] bg-[#0D1527] px-5 flex items-center justify-between shrink-0">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-lg bg-[#5BC0BE]/20 border border-[#5BC0BE]/40 flex items-center justify-center text-[#5BC0BE]">
+                <Plus size={16} />
+              </div>
+              <div>
+                <h3 className="font-mono font-bold text-sm text-white">Add Custom Racking Bay</h3>
+                <span className="text-[10px] text-[#5BC0BE] font-mono">Floorplan Topology Builder</span>
+              </div>
             </div>
+            <button 
+              onClick={() => setIsAddRackOpen(false)}
+              className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-[#121D36] transition-all cursor-pointer"
+            >
+              <X size={16} />
+            </button>
+          </div>
 
-            <form onSubmit={handleAddNewRack} className="space-y-3.5 font-mono">
+          <form onSubmit={handleAddNewRack} className="p-5 space-y-4 font-mono text-xs flex-1 flex flex-col justify-between">
+            <div className="space-y-4">
               <div className="grid grid-cols-2 gap-3">
                 <div>
                   <label className="text-slate-400 block mb-1">Aisle</label>
                   <select
                     value={newRackAisle}
                     onChange={(e) => setNewRackAisle(e.target.value)}
-                    className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2.5 rounded-xl font-bold"
+                    className="w-full bg-[#0D1527] border border-[#1E2D4D] text-white p-2.5 rounded-xl font-bold"
                   >
                     {['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'].map(a => (
                       <option key={a} value={a}>Aisle {a}</option>
@@ -962,7 +983,7 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
                     max="20"
                     value={newRackBay}
                     onChange={(e) => setNewRackBay(Number(e.target.value))}
-                    className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2.5 rounded-xl font-bold"
+                    className="w-full bg-[#0D1527] border border-[#1E2D4D] text-white p-2.5 rounded-xl font-bold"
                   />
                 </div>
               </div>
@@ -974,7 +995,7 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
                     type="number"
                     value={newRackX}
                     onChange={(e) => setNewRackX(Number(e.target.value))}
-                    className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2.5 rounded-xl"
+                    className="w-full bg-[#0D1527] border border-[#1E2D4D] text-white p-2.5 rounded-xl"
                   />
                 </div>
                 <div>
@@ -983,7 +1004,7 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
                     type="number"
                     value={newRackY}
                     onChange={(e) => setNewRackY(Number(e.target.value))}
-                    className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2.5 rounded-xl"
+                    className="w-full bg-[#0D1527] border border-[#1E2D4D] text-white p-2.5 rounded-xl"
                   />
                 </div>
               </div>
@@ -995,55 +1016,67 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
                   value={newRackSku}
                   onChange={(e) => setNewRackSku(e.target.value)}
                   placeholder="e.g. FOOD-NOODLE-RAMEN-100"
-                  className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2.5 rounded-xl"
+                  className="w-full bg-[#0D1527] border border-[#1E2D4D] text-white p-2.5 rounded-xl focus:border-[#5BC0BE] outline-none"
                 />
               </div>
 
-              <div className="flex justify-end gap-2 pt-2 border-t border-[#1E2D4D]">
-                <button
-                  type="button"
-                  onClick={() => setIsAddRackOpen(false)}
-                  className="px-4 py-2 bg-[#121D36] text-slate-300 rounded-xl"
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  className="px-5 py-2 bg-[#5BC0BE] hover:bg-[#6FFFE9] text-[#070B14] font-bold rounded-xl shadow-md glow-mint"
-                >
-                  Create Rack
-                </button>
+              <div className="p-3 rounded-xl bg-[#0D1527] border border-[#1E2D4D] text-[11px] text-slate-300">
+                <span className="text-emerald-400 font-bold block mb-1">📍 Generated Slot Code:</span>
+                <span className="font-mono text-white text-xs bg-[#070B14] px-2 py-1 rounded border border-[#1E2D4D]">
+                  {newRackAisle}-{String(newRackBay).padStart(2, '0')}-L{selectedLevel}
+                </span>
               </div>
-            </form>
-          </div>
+            </div>
+
+            <div className="flex justify-end gap-2 pt-4 border-t border-[#1E2D4D]">
+              <button
+                type="button"
+                onClick={() => setIsAddRackOpen(false)}
+                className="px-4 py-2.5 bg-[#121D36] hover:bg-[#1E2D4D] text-slate-300 rounded-xl transition-all cursor-pointer font-sans text-xs"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                className="px-5 py-2.5 bg-[#5BC0BE] hover:bg-[#6FFFE9] text-[#070B14] font-bold rounded-xl shadow-md glow-mint transition-all cursor-pointer font-sans text-xs"
+              >
+                Create Rack
+              </button>
+            </div>
+          </form>
         </div>
       )}
 
-      {/* ADD STORAGE ZONE MODAL */}
+      {/* ADD STORAGE ZONE DRAWER SLIDE */}
       {isAddZoneOpen && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="w-full max-w-md bg-[#0D1527] border border-[#2A4374] rounded-2xl p-6 shadow-2xl space-y-4 font-sans text-xs">
-            <div className="flex items-center justify-between border-b border-[#1E2D4D] pb-3">
-              <h3 className="font-mono font-bold text-sm text-white flex items-center gap-2">
-                <Square size={16} className="text-pink-400" />
-                <span>Add Custom Facility Zone</span>
-              </h3>
-              <button 
-                onClick={() => setIsAddZoneOpen(false)}
-                className="text-slate-400 hover:text-white"
-              >
-                <X size={16} />
-              </button>
+        <div className="fixed inset-y-0 right-0 w-[420px] max-w-full z-[100] pointer-events-auto bg-[#070B14]/98 border-l border-[#2A4374] shadow-[0_0_60px_rgba(0,0,0,0.9)] flex flex-col h-full overflow-y-auto animate-slideLeft font-sans">
+          <div className="h-14 border-b border-[#1E2D4D] bg-[#0D1527] px-5 flex items-center justify-between shrink-0">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-lg bg-pink-500/20 border border-pink-500/40 flex items-center justify-center text-pink-400">
+                <Square size={16} />
+              </div>
+              <div>
+                <h3 className="font-mono font-bold text-sm text-white">Add Custom Facility Zone</h3>
+                <span className="text-[10px] text-pink-400 font-mono">Spatial Boundary Designer</span>
+              </div>
             </div>
+            <button 
+              onClick={() => setIsAddZoneOpen(false)}
+              className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-[#121D36] transition-all cursor-pointer"
+            >
+              <X size={16} />
+            </button>
+          </div>
 
-            <form onSubmit={handleAddNewZone} className="space-y-3.5 font-mono">
+          <form onSubmit={handleAddNewZone} className="p-5 space-y-4 font-mono text-xs flex-1 flex flex-col justify-between">
+            <div className="space-y-4">
               <div>
                 <label className="text-slate-400 block mb-1">Zone Name</label>
                 <input
                   type="text"
                   value={newZoneName}
                   onChange={(e) => setNewZoneName(e.target.value)}
-                  className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2.5 rounded-xl font-bold"
+                  className="w-full bg-[#0D1527] border border-[#1E2D4D] text-white p-2.5 rounded-xl font-bold focus:border-pink-500 outline-none"
                   placeholder="e.g. DRY PROVISIONS & BULK"
                   required
                 />
@@ -1056,7 +1089,7 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
                     type="text"
                     value={newZoneCode}
                     onChange={(e) => setNewZoneCode(e.target.value)}
-                    className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2.5 rounded-xl"
+                    className="w-full bg-[#0D1527] border border-[#1E2D4D] text-white p-2.5 rounded-xl"
                   />
                 </div>
                 <div>
@@ -1068,7 +1101,7 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
                       setNewZoneStroke(e.target.value);
                       setNewZoneColor(`${e.target.value}15`);
                     }}
-                    className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2.5 rounded-xl"
+                    className="w-full bg-[#0D1527] border border-[#1E2D4D] text-white p-2.5 rounded-xl"
                   />
                 </div>
               </div>
@@ -1080,7 +1113,7 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
                     type="number"
                     value={newZoneX}
                     onChange={(e) => setNewZoneX(Number(e.target.value))}
-                    className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2 rounded-lg"
+                    className="w-full bg-[#0D1527] border border-[#1E2D4D] text-white p-2 rounded-lg"
                   />
                 </div>
                 <div>
@@ -1089,7 +1122,7 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
                     type="number"
                     value={newZoneY}
                     onChange={(e) => setNewZoneY(Number(e.target.value))}
-                    className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2 rounded-lg"
+                    className="w-full bg-[#0D1527] border border-[#1E2D4D] text-white p-2 rounded-lg"
                   />
                 </div>
                 <div>
@@ -1098,7 +1131,7 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
                     type="number"
                     value={newZoneW}
                     onChange={(e) => setNewZoneW(Number(e.target.value))}
-                    className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2 rounded-lg"
+                    className="w-full bg-[#0D1527] border border-[#1E2D4D] text-white p-2 rounded-lg"
                   />
                 </div>
                 <div>
@@ -1107,28 +1140,28 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
                     type="number"
                     value={newZoneH}
                     onChange={(e) => setNewZoneH(Number(e.target.value))}
-                    className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2 rounded-lg"
+                    className="w-full bg-[#0D1527] border border-[#1E2D4D] text-white p-2 rounded-lg"
                   />
                 </div>
               </div>
+            </div>
 
-              <div className="flex justify-end gap-2 pt-2 border-t border-[#1E2D4D]">
-                <button
-                  type="button"
-                  onClick={() => setIsAddZoneOpen(false)}
-                  className="px-4 py-2 bg-[#121D36] text-slate-300 rounded-xl"
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  className="px-5 py-2 bg-pink-500 hover:bg-pink-400 text-white font-bold rounded-xl shadow-md"
-                >
-                  Add Zone
-                </button>
-              </div>
-            </form>
-          </div>
+            <div className="flex justify-end gap-2 pt-4 border-t border-[#1E2D4D]">
+              <button
+                type="button"
+                onClick={() => setIsAddZoneOpen(false)}
+                className="px-4 py-2.5 bg-[#121D36] hover:bg-[#1E2D4D] text-slate-300 rounded-xl transition-all cursor-pointer font-sans text-xs"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                className="px-5 py-2.5 bg-pink-500 hover:bg-pink-400 text-white font-bold rounded-xl shadow-md transition-all cursor-pointer font-sans text-xs"
+              >
+                Add Zone
+              </button>
+            </div>
+          </form>
         </div>
       )}
     </div>

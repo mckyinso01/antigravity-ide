@@ -16,23 +16,28 @@ export const CleanSweepModal: React.FC<CleanSweepModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 font-sans">
-      <div className="bg-[#070B14] border border-rose-800/80 rounded-2xl w-full max-w-md overflow-hidden shadow-2xl p-6 space-y-4 glow-danger">
-        <div className="flex items-center justify-between border-b border-[#1E2D4D] pb-3">
-          <div className="flex items-center gap-2 text-rose-400 font-mono font-bold text-sm">
-            <AlertTriangle size={18} />
-            <span>Warehouse Clean Sweep & Factory Reset</span>
+    <div className="fixed inset-y-0 right-0 w-[420px] max-w-full z-50 bg-[#070B14]/98 border-l border-rose-800/80 shadow-[0_0_60px_rgba(0,0,0,0.9)] flex flex-col h-full overflow-y-auto animate-slideLeft font-sans">
+      <div className="h-14 border-b border-[#1E2D4D] bg-[#0D1527] px-5 flex items-center justify-between shrink-0">
+        <div className="flex items-center gap-2 text-rose-400 font-mono font-bold text-sm">
+          <AlertTriangle size={18} />
+          <span>Warehouse Clean Sweep</span>
+        </div>
+        <button onClick={onClose} className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-[#121D36] transition-all cursor-pointer">
+          <X size={16} />
+        </button>
+      </div>
+
+      <div className="p-5 space-y-4 font-mono text-xs flex-1 flex flex-col justify-between">
+        <div className="space-y-3">
+          <div className="p-3.5 rounded-xl bg-rose-950/30 border border-rose-800/50 text-rose-200 text-xs leading-relaxed">
+            ⚠️ <strong>FACTORY PURGE WARNING:</strong> This will purge all custom inventory transfers, reset floorplan rack coordinates back to default Northeast Hub topology, and reload factory 3PL client test ledgers.
           </div>
-          <button onClick={onClose} className="text-slate-400 hover:text-white cursor-pointer">
-            <X size={16} />
-          </button>
+          <p className="text-xs text-slate-300 font-sans leading-relaxed">
+            Use this when you want a clean slate for demonstrating warehouse configuration, wave pick optimization, or multi-aisle grocery wayfinding.
+          </p>
         </div>
 
-        <p className="text-xs text-slate-300 font-sans leading-relaxed">
-          This will purge all custom inventory adjustments, reset racking bays to default Northeast Hub layout, and reload factory 3PL client test ledgers.
-        </p>
-
-        <div className="flex gap-2 pt-2">
+        <div className="flex gap-2 pt-4 border-t border-[#1E2D4D]">
           <button
             onClick={onClose}
             className="flex-1 bg-[#0D1527] hover:bg-[#121D36] border border-[#1E2D4D] text-slate-300 py-2.5 rounded-xl text-xs font-mono font-bold cursor-pointer"
