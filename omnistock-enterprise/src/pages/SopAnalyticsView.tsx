@@ -102,8 +102,8 @@ export const SopAnalyticsView: React.FC<SopAnalyticsViewProps> = ({
                     <td className="p-3 text-right">
                       <HelpTooltip
                         title="Autonomous Purchase Order Generator"
-                        purpose="Awtomatikong bumubuo ng vendor restock Purchase Order batay sa lead time at daily burn rate upang maiwasan ang stockout."
-                        howTo="I-click upang buksan at i-transmit ang replenishment order sa accredited manufacturer."
+                        purpose="Automatically generates vendor restock Purchase Orders based on lead time and daily burn rate to prevent stockouts."
+                        howTo="Click to generate and transmit the replenishment order to the accredited manufacturer."
                         position="left"
                       >
                         <button 

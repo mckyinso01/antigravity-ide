@@ -217,8 +217,8 @@ export const BinDetailDrawer: React.FC<BinDetailDrawerProps> = ({
       <div className="flex border-b border-[#1E2D4D] bg-[#0A1124] text-[11px] font-mono">
         <HelpTooltip
           title="Rack Overview Tab"
-          purpose="Ipinapakita ang kasalukuyang SKU, on-hand units, lot expiration date, at physical photo proof."
-          howTo="I-click upang makita ang buong detalye ng slot."
+          purpose="Displays active SKU assignment, on-hand units, lot expiry date, and visual photographic proof."
+          howTo="Click to view comprehensive slot telemetry."
           position="bottom"
         >
           <button
@@ -233,8 +233,8 @@ export const BinDetailDrawer: React.FC<BinDetailDrawerProps> = ({
 
         <HelpTooltip
           title="Slot / Add SKU Tool"
-          purpose="Direktang mag-assign ng item mula sa catalog o mag-register ng bagong SKU sa mismong rack na ito."
-          howTo="I-click upang buksan ang in-rack SKU assignment form."
+          purpose="Directly assign an item from the master catalog or onboard a new SKU into this rack."
+          howTo="Click to open the in-rack SKU allocation form."
           position="bottom"
         >
           <button
@@ -250,8 +250,8 @@ export const BinDetailDrawer: React.FC<BinDetailDrawerProps> = ({
 
         <HelpTooltip
           title="Shelf Photo Audit Tool"
-          purpose="Kumuha ng aktwal na litrato ng shelf gamit ang camera para sa permanent visual proof ng physical inventory."
-          howTo="I-click upang buksan ang live camera viewfinder at mag-log ng cycle count audit."
+          purpose="Capture live shelf photo proof using the camera for permanent cycle count verification."
+          howTo="Click to open the camera viewfinder and log physical audit proof."
           position="bottom"
         >
           <button
@@ -267,8 +267,8 @@ export const BinDetailDrawer: React.FC<BinDetailDrawerProps> = ({
 
         <HelpTooltip
           title="Forklift Inter-Bay Transfer"
-          purpose="Maglipat ng ilang piraso o buong pallet mula sa rack na ito papunta sa ibang target bin (hal. B-04-L2)."
-          howTo="I-click upang itakda ang target destination bay at dami ng ililipat."
+          purpose="Transfer partial or full pallet quantities from this bay to a destination bin (e.g. B-04-L2)."
+          howTo="Click to select the target bay destination and transfer quantity."
           position="bottom"
         >
           <button

@@ -62,8 +62,8 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
         {/* Warehouse Selector Dropdown with HelpTooltip */}
         <HelpTooltip
           title="Multi-Warehouse Switcher"
-          purpose="Nagpapalit ng active facility floorplan sa pagitan ng Alpha (Northeast Hub) at Beta (West Coast Gateway)."
-          howTo="I-click ang button upang lumipat ng distribution center at makita ang specific CAD racking layout nito."
+          purpose="Switches the active distribution center between Alpha (Northeast Hub) and Beta (West Coast Gateway)."
+          howTo="Click to switch facilities and load its dedicated CAD racking topology and stock ledger."
           position="bottom"
         >
           <div 
@@ -87,8 +87,8 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
       <div className="flex-1 max-w-md mx-4 hidden md:block">
         <HelpTooltip
           title="Global SKU & Barcode Finder"
-          purpose="Naghahanap ng anumang gamot, spare part, GS1 barcode, o bay coordinate sa buong bodega at agarang tinutukoy ang kinalalagyan nito sa CAD map."
-          howTo="Mag-type ng SKU (hal. MED-N95) o Barcode (051131497118) upang mag-highlight ang target bin."
+          purpose="Finds any SKU, spare part, GS1 barcode, or bay coordinate across the warehouse and pinpoints its location on the CAD map."
+          howTo="Type a SKU (e.g. MED-N95) or Barcode (051131497118) to highlight the target bin."
           shortcut="Ctrl + K"
           position="bottom"
         >
@@ -113,8 +113,8 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
         {/* P2P Cluster Online Sync Badge */}
         <HelpTooltip
           title="P2P Mesh Cluster Telemetry"
-          purpose="Tinitiyak na 100% synchronized ang lahat ng handheld scanner kahit mag-deadzone ang Wi-Fi sa loob ng bodega."
-          howTo="Awtomatikong gumagana sa background gamit ang local IndexedDB buffer."
+          purpose="Ensures 100% data consistency across all mobile scanners even during warehouse Wi-Fi deadzones."
+          howTo="Runs automatically in the background using local IndexedDB offline storage buffers."
           position="bottom"
         >
           <div className="flex items-center gap-2 bg-[#0D1527] border border-emerald-900/60 px-2.5 py-1 rounded-lg text-[11px] font-mono text-emerald-400 cursor-help">
@@ -127,8 +127,8 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
         {/* Quick Camera Barcode Scanner Trigger */}
         <HelpTooltip
           title="BYOD Camera & RFID Scanner"
-          purpose="Binubuksan ang high-speed WASM camera barcode scanner upang mag-decode ng GS1-128, QR code, o RFID tags gamit ang camera ng smartphone o laptop."
-          howTo="I-click ang button, itutok ang camera sa barcode, at makinig sa instant verification audio beep."
+          purpose="Opens the high-speed WASM camera barcode scanner to decode GS1-128, QR codes, or RFID tags using any device camera."
+          howTo="Click the button, aim camera at the barcode, and listen for instant audio verification."
           position="bottom"
         >
           <button
@@ -143,8 +143,8 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
         {/* System Specs & Licensing */}
         <HelpTooltip
           title="Enterprise Licensing & Buyout"
-          purpose="Ipinapakita ang mga transparent commercial buyout packages: Tier 1 ($18.5k On-Prem), Tier 2 ($35k White-Label), at Tier 3 ($65k Full IP Ownership)."
-          howTo="I-click upang makita ang buong arkitektura, Docker container deployment specs, at direct engineer hotline."
+          purpose="Displays commercial deployment tiers: Tier 1 ($18.5k On-Prem), Tier 2 ($35k White-Label), and Tier 3 ($65k Full IP Buyout)."
+          howTo="Click to view system architecture, Docker container specs, and engineering consultation."
           position="bottom"
         >
           <button
@@ -159,8 +159,8 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
         {/* Clean Sweep / Reset */}
         <HelpTooltip
           title="Warehouse Clean Sweep / Reset"
-          purpose="Ibinabalik ang buong database, SKU catalog, at 192 racking slots sa malinis na calibrated default state."
-          howTo="Gamitin kapag nais magsimula ng sariwang demonstration o linisin ang test cycle count data."
+          purpose="Resets the database, SKU catalog, and 192 racking slots back to default calibrated state."
+          howTo="Use to begin a fresh demonstration or clear testing cycle count data."
           position="bottom"
         >
           <button

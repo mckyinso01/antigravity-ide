@@ -115,8 +115,8 @@ export const ThreePlBillingView: React.FC<ThreePlBillingViewProps> = ({
             </div>
             <HelpTooltip
               title="Automated 3PL Invoicing Dispatch"
-              purpose="Awtomatikong bumubuo ng itemized PDF invoice na naglalaman ng pallet-day storage fees, handling picks, at cold vault environmental surcharge."
-              howTo="I-click upang i-dispatch ang formal invoice sa email ng kliyente at i-sync sa billing ledger."
+              purpose="Automatically generates itemized commercial invoices containing pallet-day storage fees, handling picks, and cold vault surcharges."
+              howTo="Click to dispatch the formal invoice to the client and sync to the billing ledger."
               position="left"
             >
               <button

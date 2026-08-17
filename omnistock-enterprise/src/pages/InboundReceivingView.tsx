@@ -62,8 +62,8 @@ export const InboundReceivingView: React.FC<InboundReceivingViewProps> = ({
 
         <HelpTooltip
           title="Inbound Barcode Decoupler"
-          purpose="Awtomatikong bina-basa ang GS1-128 shipping labels sa papasok na mga pallet upang auto-fill ang PO at SKU manifest."
-          howTo="I-click upang buksan ang camera scanner at i-scan ang shipping container label."
+          purpose="Automatically decodes GS1-128 shipping container labels on incoming pallets to populate the PO and SKU manifest."
+          howTo="Click to open the camera scanner and capture the shipping container barcode."
           position="bottom"
         >
           <button

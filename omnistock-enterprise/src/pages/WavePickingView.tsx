@@ -49,8 +49,8 @@ export const WavePickingView: React.FC<WavePickingViewProps> = ({
 
         <HelpTooltip
           title="Wave Batching Engine"
-          purpose="Awtomatikong pinu-pangkat ang mga active orders batay sa SKU proximity upang mabawasan ang oras ng pagpapatakbo ng forklift."
-          howTo="I-click upang buksan ang batch wave modal at i-dispatch ang bagong wave sequence."
+          purpose="Automatically consolidates active customer orders based on SKU proximity to minimize forklift transit time."
+          howTo="Click to open the batch wave modal and dispatch a new Eulerian pick sequence."
           position="bottom"
         >
           <button

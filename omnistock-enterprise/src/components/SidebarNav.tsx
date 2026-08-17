@@ -39,8 +39,8 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
       id: 'cad', 
       label: 'Spatial CAD Blueprint', 
       icon: Map,
-      purpose: 'Digital twin ng buong bodega na nagpapakita ng 192 racking slots, vertical tiers L1-L4, at Eulerian shortest pick path.',
-      howTo: 'I-click upang buksan ang CAD map, mag-switch ng levels, o i-click ang kahit anong bin slot para makita ang laman.'
+      purpose: 'Digital twin of the entire facility showing 192 racking slots, vertical tiers L1-L4, and the Eulerian shortest pick path.',
+      howTo: 'Click to open the CAD map, switch racking levels, or click any bin slot to inspect stored inventory.'
     },
     { 
       id: 'inventory', 
@@ -48,8 +48,8 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
       icon: Package, 
       badge: stockoutAlertsCount > 0 ? stockoutAlertsCount : undefined, 
       badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
-      purpose: 'Master catalog ng lahat ng mga nakaimbak na produkto, on-hand stocks, safety thresholds, at GS1 barcodes.',
-      howTo: 'I-click upang maghanap ng SKU, mag-filter ayon sa kategorya, o magrehistro ng bagong produkto gamit ang + Add New SKU.'
+      purpose: 'Master catalog of all stored enterprise inventory, on-hand counts, safety thresholds, and GS1 barcodes.',
+      howTo: 'Search SKUs, filter by sector, or register new product lines using + Add New SKU.'
     },
     { 
       id: 'picking', 
@@ -57,36 +57,36 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
       icon: Zap, 
       badge: pendingPicksCount > 0 ? pendingPicksCount : undefined, 
       badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40',
-      purpose: 'Eulerian Shortest-Path Execution Engine para sa batch order picking na nagtitipid ng 38.4% sa oras ng paglalakad.',
-      howTo: 'I-click upang tingnan ang active wave orders, sundan ang pick sequence, at pindutin ang Confirm Pick sa bawat item.'
+      purpose: 'Eulerian Shortest-Path Execution Engine for multi-order batch picking, slashing walking transit by 38.4%.',
+      howTo: 'Inspect active wave batches, follow the guided pick sequence, and click Confirm Pick for each bin.'
     },
     { 
       id: 'receiving', 
       label: 'Inbound Dock', 
       icon: ArrowDownToLine,
-      purpose: 'Staging dock para sa mga dumarating na kargamento at AI Smart Put-Away Slotting recommender.',
-      howTo: 'I-click upang mag-inbound ng bagong Purchase Order (PO) at hayaan ang AI na magmungkahi ng pinaka-angkop na racking bay.'
+      purpose: 'Inbound shipment staging dock with AI-powered Smart Put-Away slotting recommendations.',
+      howTo: 'Receive new Purchase Orders (PO) and review AI-suggested rack allocations based on velocity and hazmat rules.'
     },
     { 
       id: 'clients', 
       label: '3PL Client Billing', 
       icon: Building2,
-      purpose: 'Multi-client automated pallet-day storage calculation at itemized pick-handling invoice generator.',
-      howTo: 'I-click upang suriin ang billing status ng bawat kliyente at mag-export ng live PDF invoice sa 1-click.'
+      purpose: 'Automated multi-client pallet-day storage calculation and itemized pick-handling invoice generator.',
+      howTo: 'Review accrued billing balances per 3PL tenant and generate exportable commercial invoices in 1 click.'
     },
     { 
       id: 'analytics', 
       label: 'S&OP & Velocity', 
       icon: TrendingUp,
-      purpose: 'Inventory velocity analytics, Gross Margin ROI (GMROI), at Predictive Stockout Early Warning Radar.',
-      howTo: 'I-click upang masubaybayan ang stockout risks at mag-auto generate ng replenishment purchase orders.'
+      purpose: 'Inventory velocity classification, Gross Margin ROI (GMROI), and Predictive Stockout Early Warning Radar.',
+      howTo: 'Monitor stockout risk factors and generate automated vendor replenishment orders.'
     },
     { 
       id: 'settings', 
       label: 'Warehouse Config', 
       icon: Settings,
-      purpose: 'No-Code visual racking topology builder, facility metadata customizer, at JSON database snapshot export.',
-      howTo: 'I-click upang baguhin ang bilang ng Aisles/Bays/Tiers o mag-download ng complete database backup.'
+      purpose: 'Visual racking topology builder, facility metadata customizer, and JSON database backup manager.',
+      howTo: 'Adjust facility Aisles/Bays/Tiers or download complete offline database snapshots.'
     },
   ];
 
@@ -137,8 +137,8 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
       <div className="p-3 border-t border-[#1E2D4D]/80 bg-[#0D1527]/50 space-y-2.5">
         <HelpTooltip
           title="Inbound Dock Bay 04 Telemetry"
-          purpose="Real-time ETA at manifest tracker para sa mga paparating na freight truck at container pallets."
-          howTo="Nagbibigay ng maagang abiso 18 minuto bago dumating ang kargamento upang maihanda ang mga forklift."
+          purpose="Real-time ETA and manifest tracker for inbound freight trucks and container pallets."
+          howTo="Provides 18-minute advance arrival alerts to dispatch forklift crews and stage dock doors."
           position="right"
         >
           <div className="p-2.5 rounded-xl bg-[#121D36] border border-[#1E2D4D] cursor-help">

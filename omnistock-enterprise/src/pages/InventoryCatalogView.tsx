@@ -89,8 +89,8 @@ export const InventoryCatalogView: React.FC<InventoryCatalogViewProps> = ({
         <div className="flex items-center gap-2 font-mono text-xs">
           <HelpTooltip
             title="Create New Master SKU"
-            purpose="Magrehistro ng bagong produkto sa master catalog na may kasamang GS1 barcode, RFID tag, safety stock threshold, at unit cost."
-            howTo="I-click ang button upang buksan ang modal at punan ang mga detalye ng bagong SKU."
+            purpose="Register a new product in the master catalog with GS1 barcode, RFID tag, safety stock threshold, and unit cost."
+            howTo="Click the button to open the drawer and input SKU specifications."
             position="bottom"
           >
             <button

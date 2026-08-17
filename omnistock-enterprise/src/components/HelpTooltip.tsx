@@ -69,11 +69,11 @@ export const HelpTooltip: React.FC<HelpTooltipProps> = ({
           {/* Purpose & How To */}
           <div className="space-y-1 text-[11px] leading-relaxed">
             <p className="text-slate-200">
-              <strong className="text-[#5BC0BE] font-semibold">Para saan ito:</strong> {purpose}
+              <strong className="text-[#5BC0BE] font-semibold">Purpose:</strong> {purpose}
             </p>
             {howTo && (
               <p className="text-slate-400 text-[10px]">
-                <strong className="text-slate-300 font-semibold">Paano gamitin:</strong> {howTo}
+                <strong className="text-slate-300 font-semibold">How to Use:</strong> {howTo}
               </p>
             )}
           </div>

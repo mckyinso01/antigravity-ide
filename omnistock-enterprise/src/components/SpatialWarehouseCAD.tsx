@@ -4,22 +4,28 @@ import { db } from '../services/db';
 import { 
   ZoomIn, 
   ZoomOut, 
+  Maximize2, 
+  Minimize2, 
+  RotateCcw, 
+  Hand, 
+  Move, 
+  Compass, 
+  Layers, 
   Zap, 
   Navigation, 
   Flame, 
   Search, 
-  Layers, 
-  ChevronRight,
-  Edit3,
-  Check,
-  Plus,
-  Trash2,
-  Tag,
-  Square,
-  Save,
-  CheckCircle2,
-  X,
-  Move
+  ChevronRight, 
+  ChevronLeft,
+  Edit3, 
+  Check, 
+  Plus, 
+  Trash2, 
+  Tag, 
+  Square, 
+  Save, 
+  CheckCircle2, 
+  X
 } from 'lucide-react';
 import { HelpTooltip } from './HelpTooltip';
 
@@ -44,6 +50,12 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
   const [showHeatmap, setShowHeatmap] = useState<boolean>(false);
   const [showPickPath, setShowPickPath] = useState<boolean>(true);
   const [zoomLevel, setZoomLevel] = useState<number>(1);
+  const [panOffset, setPanOffset] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const [isPanMode, setIsPanMode] = useState<boolean>(false);
+  const [isDraggingCanvas, setIsDraggingCanvas] = useState<boolean>(false);
+  const [dragStartPos, setDragStartPos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
+  const [isMaximizedFit, setIsMaximizedFit] = useState<boolean>(false);
   const [hoveredBin, setHoveredBin] = useState<BinSlot | null>(null);
   const [showManifestHUD, setShowManifestHUD] = useState<boolean>(true);
   const [manifestSearch, setManifestSearch] = useState<string>('');
@@ -210,6 +222,17 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
     setTimeout(() => setStatusMessage(null), 3000);
   };
 
+  // Save Aisle Sign handler
+  const handleSaveAisleSign = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editingAisle) return;
+    const updatedSigns = db.updateAisleSign(editingAisle.aisle, editingAisle);
+    setAisleSigns(updatedSigns);
+    setEditingAisle(null);
+    setStatusMessage(`✨ Aisle ${editingAisle.aisle} overhead signage updated!`);
+    setTimeout(() => setStatusMessage(null), 3000);
+  };
+
   // Delete selected rack handler
   const handleDeleteSelectedRack = () => {
     if (!selectedBin) return;
@@ -242,19 +265,51 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
     setTimeout(() => setStatusMessage(null), 3000);
   };
 
-  // Save Aisle Sign update
-  const handleSaveAisleSign = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!editingAisle) return;
-    const updated = db.updateAisleSign(editingAisle.aisle, editingAisle);
-    setAisleSigns(updated);
-    setEditingAisle(null);
-    setStatusMessage(`🏷️ Aisle ${editingAisle.aisle} signage updated to '${editingAisle.name}'!`);
-    setTimeout(() => setStatusMessage(null), 3000);
+  // Viewport Zoom & Pan Handlers
+  const handleWheel = (e: React.WheelEvent) => {
+    if (isEditorMode && draggingBinId) return;
+    const delta = e.deltaY * -0.0012;
+    setZoomLevel((prev) => Math.min(2.5, Math.max(0.4, Number((prev + delta).toFixed(2)))));
+  };
+
+  const handleResetView = () => {
+    setZoomLevel(1);
+    setPanOffset({ x: 0, y: 0 });
+    setIsMaximizedFit(false);
+    setStatusMessage('↺ Viewport reset to 100%');
+    setTimeout(() => setStatusMessage(null), 2000);
+  };
+
+  const handleFitToScreen = () => {
+    setIsMaximizedFit(true);
+    setZoomLevel(1.2);
+    setPanOffset({ x: 0, y: 0 });
+    setStatusMessage('🔍 Blueprint maximized to optimal viewport');
+    setTimeout(() => setStatusMessage(null), 2000);
+  };
+
+  const handleCanvasMouseDown = (e: React.MouseEvent) => {
+    if (isPanMode || e.button === 1 || e.altKey) {
+      setIsDraggingCanvas(true);
+      setDragStartPos({ x: e.clientX - panOffset.x, y: e.clientY - panOffset.y });
+    }
+  };
+
+  const handleCanvasMouseMove = (e: React.MouseEvent) => {
+    if (isDraggingCanvas) {
+      setPanOffset({
+        x: e.clientX - dragStartPos.x,
+        y: e.clientY - dragStartPos.y
+      });
+    }
+  };
+
+  const handleCanvasMouseUp = () => {
+    setIsDraggingCanvas(false);
   };
 
   return (
-    <div className="flex-1 flex flex-col h-full bg-[#070B14] overflow-hidden relative font-sans">
+    <div className={`flex-1 flex flex-col h-full bg-[#070B14] overflow-hidden relative font-sans ${isFullscreen ? 'fixed inset-0 z-[120] w-screen h-screen' : ''}`}>
       {/* Top HUD Controls Bar */}
       <div className="h-12 border-b border-[#1E2D4D] bg-[#0D1527]/90 backdrop-blur-md px-4 flex items-center justify-between shrink-0 z-10">
         <div className="flex items-center gap-3">
@@ -266,8 +321,8 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
           {/* Level Switcher (1 to 4) with HelpTooltip */}
           <HelpTooltip
             title="Vertical Tier Switcher"
-            purpose="Nagpapalit ng tinitingnang palapag (L1 hanggang L4) ng mga high-bay storage racks."
-            howTo="Pindutin ang L1 para sa ground floor picking o L2–L4 para sa matataas na forklift bays."
+            purpose="Switches the active high-bay vertical racking tier (Level 1 to Level 4)."
+            howTo="Click L1 for ground floor picking or L2–L4 for upper forklift bays."
             position="bottom"
           >
             <div className="flex items-center bg-[#070B14] border border-[#1E2D4D] rounded-lg p-0.5">
@@ -290,8 +345,8 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
           {/* Toggle Level Manifest HUD with HelpTooltip */}
           <HelpTooltip
             title="Level Items Manifest Drawer"
-            purpose="Ipinapakita ang searchable side list ng lahat ng naka-imbak na gamot, baterya, at parts sa kasalukuyang palapag."
-            howTo="I-click ang button upang buksan/isara ang manifest list at mag-locate ng item sa mapa."
+            purpose="Displays searchable manifest drawer of all items stored on current level."
+            howTo="Click to toggle drawer and locate items directly on map."
             position="bottom"
           >
             <button
@@ -314,8 +369,8 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
           {!isEditorMode && (
             <HelpTooltip
               title="Velocity Heatmap Toggle"
-              purpose="Kinukulayan ang racks ayon sa demand velocity: Berde (Class A Fast-Movers) vs Asul (Class B) vs Dilaw (Class C)."
-              howTo="I-click upang makita kung saang racks pinakamadalas mag-pull ng inventory."
+              purpose="Color-codes racking bays by demand velocity: Green (Class A Fast-Movers), Blue (Class B Medium), Yellow (Class C Slow)."
+              howTo="Click to identify high-traffic pick corridors."
               position="bottom"
             >
               <button
@@ -327,7 +382,7 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
                 }`}
               >
                 <Flame size={13} className={showHeatmap ? 'text-amber-400' : 'text-slate-400'} />
-                <span>Velocity Heatmap</span>
+                <span className="hidden sm:inline">Velocity Heatmap</span>
               </button>
             </HelpTooltip>
           )}
@@ -336,8 +391,8 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
           {!isEditorMode && (
             <HelpTooltip
               title="Eulerian Pick Path Router"
-              purpose="Ipinapakita ang neon shortest-path trail na nag-uugnay sa Dock Inbound, Pick Bins, at Pack & Ship."
-              howTo="I-click upang ipakita o itago ang optimized forklift route guide."
+              purpose="Displays shortest-path Eulerian route connecting Inbound Dock, Pick Bins, and Pack & Ship."
+              howTo="Click to toggle visual guided routing trail."
               position="bottom"
             >
               <button
@@ -349,7 +404,7 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
                 }`}
               >
                 <Navigation size={13} className="text-emerald-400" />
-                <span>Eulerian Pick Route</span>
+                <span className="hidden sm:inline">Eulerian Pick Route</span>
               </button>
             </HelpTooltip>
           )}
@@ -357,8 +412,8 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
           {/* EDIT MODE TOGGLE BUTTON */}
           <HelpTooltip
             title="CAD Floorplan Studio Editor"
-            purpose="Binubuksan ang interactive layout builder kung saan maaari kang mag-drag at mag-usod ng racks, magdagdag ng bagong shelf, magbura, at mag-rename ng mga aisle signage."
-            howTo="I-click upang lumipat sa pagitan ng View Mode at Drag-and-Drop Studio Mode."
+            purpose="Opens interactive layout builder to drag racks, add shelves, create zones, and edit aisle signs."
+            howTo="Click to switch between Live Telemetry View and Interactive Studio Mode."
             position="bottom"
           >
             <button
@@ -387,8 +442,8 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
           {!isEditorMode && (
             <HelpTooltip
               title="Wave Batch Optimizer"
-              purpose="Binubuksan ang multi-order batching algorithm upang pagsamahin ang mga customer orders sa iisang mabilis na pick wave."
-              howTo="I-click upang kalkulahin ang sabay-sabay na pick schedule."
+              purpose="Runs multi-order batching algorithm to combine customer orders into an optimized pick wave."
+              howTo="Click to calculate Eulerian pick wave dispatch."
               position="bottom"
             >
               <button
@@ -396,34 +451,10 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
                 className="flex items-center gap-1.5 bg-gradient-to-r from-[#3A86FF] to-[#5BC0BE] hover:opacity-95 text-[#070B14] font-bold text-xs px-3 py-1 rounded-lg shadow-sm cursor-pointer font-mono"
               >
                 <Zap size={13} className="fill-current stroke-[2]" />
-                <span>Optimize Wave</span>
+                <span className="hidden sm:inline">Optimize Wave</span>
               </button>
             </HelpTooltip>
           )}
-
-          {/* Zoom controls */}
-          <HelpTooltip
-            title="CAD Blueprint Zoom Controls"
-            purpose="Pinalalaki o pinaliliit ang SVG floorplan resolution para sa mas malinaw na pag-inspeksyon."
-            howTo="I-click ang (+) upang mag-zoom in sa mga racks o (-) upang lumayo."
-            position="bottom"
-          >
-            <div className="flex items-center bg-[#070B14] border border-[#1E2D4D] rounded-lg p-0.5 ml-1">
-              <button 
-                onClick={() => setZoomLevel(Math.max(0.7, zoomLevel - 0.1))} 
-                className="p-1 text-slate-400 hover:text-slate-200 cursor-pointer"
-              >
-                <ZoomOut size={14} />
-              </button>
-              <span className="px-1.5 text-[10px] font-mono text-slate-300">{Math.round(zoomLevel * 100)}%</span>
-              <button 
-                onClick={() => setZoomLevel(Math.min(1.4, zoomLevel + 0.1))} 
-                className="p-1 text-slate-400 hover:text-slate-200 cursor-pointer"
-              >
-                <ZoomIn size={14} />
-              </button>
-            </div>
-          </HelpTooltip>
         </div>
       </div>
 
@@ -435,8 +466,8 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
               <Move size={13} />
               <span>DRAG RACKS TO REPOSITION</span>
             </span>
-            <span className="text-slate-400 text-[11px] border-l border-slate-700 pl-2">
-              Click any Aisle Banner to rename tags (e.g. Noodles, Shampoos, Pharma)
+            <span className="text-slate-400 text-[11px] border-l border-slate-700 pl-2 hidden md:inline">
+              Click any Aisle Banner to customize names (e.g. Noodles, Shampoos, Pharma)
             </span>
           </div>
 
@@ -473,7 +504,7 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
             {/* Save Button */}
             <button
               onClick={() => {
-                setStatusMessage('💾 Floorplan Layout & Signage synced to IndexedDB!');
+                setStatusMessage('💾 Floorplan Layout & Signage synced to database!');
                 setTimeout(() => setStatusMessage(null), 2500);
               }}
               className="flex items-center gap-1 px-3 py-1 rounded bg-emerald-500 hover:bg-emerald-400 text-[#070B14] font-bold cursor-pointer"
@@ -488,24 +519,37 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
       {/* Main Workspace Area (CAD Floorplan + Level Manifest HUD) */}
       <div className="flex-1 flex overflow-hidden relative">
         {/* Left Interactive CAD Canvas Area */}
-        <div className="flex-1 relative overflow-auto flex items-center justify-center p-4">
-          <div 
-            style={{ transform: `scale(${zoomLevel})`, transformOrigin: 'center center' }}
-            className="transition-transform duration-200 bg-[#0D1527] border border-[#1E2D4D] rounded-2xl p-6 shadow-2xl relative w-[860px] h-[520px]"
-          >
-            {/* Status Toast */}
-            {statusMessage && (
-              <div className="absolute top-2 left-1/2 -translate-x-1/2 z-40 bg-emerald-950 border border-emerald-500 text-emerald-300 px-4 py-1.5 rounded-xl shadow-xl text-xs font-mono font-bold flex items-center gap-2 animate-fadeIn">
-                <CheckCircle2 size={14} className="text-emerald-400" />
-                <span>{statusMessage}</span>
-              </div>
-            )}
+        <div 
+          className={`flex-1 relative overflow-hidden flex items-center justify-center p-3 lg:p-6 select-none ${
+            isPanMode ? (isDraggingCanvas ? 'cursor-grabbing' : 'cursor-grab') : 'cursor-default'
+          }`}
+          onWheel={handleWheel}
+          onMouseDown={handleCanvasMouseDown}
+          onMouseMove={handleCanvasMouseMove}
+          onMouseUp={handleCanvasMouseUp}
+        >
+          {/* Status Toast */}
+          {statusMessage && (
+            <div className="absolute top-4 left-1/2 -translate-x-1/2 z-40 bg-emerald-950/95 border border-emerald-500 text-emerald-300 px-4 py-1.5 rounded-xl shadow-2xl text-xs font-mono font-bold flex items-center gap-2 animate-fadeIn backdrop-blur-md">
+              <CheckCircle2 size={14} className="text-emerald-400" />
+              <span>{statusMessage}</span>
+            </div>
+          )}
 
+          {/* Scalable & Pannable CAD Blueprint Container */}
+          <div 
+            style={{ 
+              transform: `translate(${panOffset.x}px, ${panOffset.y}px) scale(${zoomLevel})`, 
+              transformOrigin: 'center center' 
+            }}
+            className="transition-transform duration-100 ease-out bg-[#0D1527] border border-[#1E2D4D] rounded-2xl p-4 lg:p-6 shadow-[0_20px_60px_rgba(0,0,0,0.8)] relative w-full h-full max-w-[1280px] max-h-[780px] flex items-center justify-center"
+          >
             {/* Warehouse CAD Grid Canvas (SVG) */}
             <svg 
               ref={svgRef}
               className="w-full h-full select-none" 
               viewBox="0 0 800 460"
+              preserveAspectRatio="xMidYMid meet"
               onMouseMove={handleMouseMoveSVG}
               onMouseUp={handleMouseUpSVG}
             >
@@ -722,7 +766,7 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
             )}
 
             {/* CAD Legend Box */}
-            <div className="absolute bottom-3 left-3 bg-[#070B14]/90 border border-[#1E2D4D] p-2 rounded-xl text-[10px] font-mono flex items-center gap-3 backdrop-blur-sm">
+            <div className="absolute top-3 right-3 bg-[#070B14]/90 border border-[#1E2D4D] p-2 rounded-xl text-[10px] font-mono flex items-center gap-3 backdrop-blur-sm shadow-md">
               <span className="flex items-center gap-1 text-emerald-400">
                 <span className="w-2.5 h-2.5 rounded-sm bg-[#10B981]"></span> Class A Fast
               </span>
@@ -740,10 +784,123 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
               </span>
             </div>
           </div>
+
+          {/* Floating Glassmorphic Viewport Zoom & Maximize HUD */}
+          <div className="absolute bottom-4 left-4 z-30 bg-[#070B14]/95 border border-[#2A4374] p-1.5 rounded-2xl shadow-[0_10px_35px_rgba(0,0,0,0.8)] backdrop-blur-xl flex flex-wrap items-center gap-2 font-mono text-xs text-slate-300">
+            {/* Zoom Controls */}
+            <div className="flex items-center bg-[#0D1527] border border-[#1E2D4D] rounded-xl p-0.5">
+              <HelpTooltip title="Zoom Out" purpose="Reduces blueprint magnification." shortcut="Scroll Down" position="top">
+                <button 
+                  onClick={() => setZoomLevel(prev => Math.max(0.4, Number((prev - 0.1).toFixed(2))))}
+                  className="p-1.5 hover:bg-[#1C2D52] hover:text-[#6FFFE9] rounded-lg transition-all cursor-pointer"
+                >
+                  <ZoomOut size={15} />
+                </button>
+              </HelpTooltip>
+
+              {/* Quick Zoom Presets Slider & Percentage */}
+              <div className="flex items-center gap-1.5 px-2">
+                <input 
+                  type="range" 
+                  min="0.4" 
+                  max="2.5" 
+                  step="0.05" 
+                  value={zoomLevel} 
+                  onChange={(e) => setZoomLevel(Number(e.target.value))}
+                  className="w-20 sm:w-24 h-1.5 bg-[#1E2D4D] rounded-lg appearance-none cursor-pointer accent-[#5BC0BE]"
+                />
+                <span className="w-11 text-center text-[11px] font-bold text-[#6FFFE9]">
+                  {Math.round(zoomLevel * 100)}%
+                </span>
+              </div>
+
+              <HelpTooltip title="Zoom In" purpose="Enlarges blueprint magnification to inspect dense bay slots." shortcut="Scroll Up" position="top">
+                <button 
+                  onClick={() => setZoomLevel(prev => Math.min(2.5, Number((prev + 0.1).toFixed(2))))}
+                  className="p-1.5 hover:bg-[#1C2D52] hover:text-[#6FFFE9] rounded-lg transition-all cursor-pointer"
+                >
+                  <ZoomIn size={15} />
+                </button>
+              </HelpTooltip>
+            </div>
+
+            {/* Preset Scaling Chips */}
+            <div className="hidden md:flex items-center gap-1 bg-[#0D1527] border border-[#1E2D4D] rounded-xl p-0.5">
+              {[0.75, 1.0, 1.25, 1.5, 2.0].map((preset) => (
+                <button
+                  key={preset}
+                  onClick={() => setZoomLevel(preset)}
+                  className={`px-2 py-1 rounded-lg text-[10px] font-bold transition-all cursor-pointer ${
+                    Math.abs(zoomLevel - preset) < 0.05 
+                      ? 'bg-[#5BC0BE] text-[#070B14] shadow-sm' 
+                      : 'text-slate-400 hover:text-slate-200 hover:bg-[#121D36]'
+                  }`}
+                >
+                  {Math.round(preset * 100)}%
+                </button>
+              ))}
+            </div>
+
+            {/* Actions Divider */}
+            <div className="h-5 w-px bg-[#1E2D4D] hidden sm:block"></div>
+
+            {/* Fit to View / Maximize Blueprint */}
+            <HelpTooltip title="Fit to Screen / Maximize" purpose="Scales the CAD floorplan to fill the maximum available viewport area." position="top">
+              <button 
+                onClick={handleFitToScreen}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border font-bold transition-all cursor-pointer text-xs ${
+                  isMaximizedFit 
+                    ? 'bg-gradient-to-r from-[#5BC0BE] to-[#3A86FF] text-[#070B14] border-transparent shadow-md glow-mint' 
+                    : 'bg-[#0D1527] border-[#1E2D4D] hover:border-[#5BC0BE] hover:text-[#6FFFE9] text-slate-300'
+                }`}
+              >
+                <Maximize2 size={13} />
+                <span className="hidden sm:inline">Fit View</span>
+              </button>
+            </HelpTooltip>
+
+            {/* Pan Tool Toggle */}
+            <HelpTooltip title="Pan Canvas Tool" purpose="Click and drag anywhere on the canvas to explore large blueprints." shortcut="Spacebar / Drag" position="top">
+              <button 
+                onClick={() => setIsPanMode(!isPanMode)}
+                className={`p-1.5 rounded-xl border transition-all cursor-pointer ${
+                  isPanMode 
+                    ? 'bg-amber-500/20 text-amber-300 border-amber-500/50 glow-amber' 
+                    : 'bg-[#0D1527] border-[#1E2D4D] hover:border-slate-500 text-slate-400 hover:text-slate-200'
+                }`}
+              >
+                <Hand size={14} />
+              </button>
+            </HelpTooltip>
+
+            {/* Reset View Button */}
+            <HelpTooltip title="Reset Viewport" purpose="Recenter blueprint position and restore zoom scale to 100%." position="top">
+              <button 
+                onClick={handleResetView}
+                className="p-1.5 bg-[#0D1527] hover:bg-[#121D36] border border-[#1E2D4D] hover:border-slate-500 text-slate-400 hover:text-slate-200 rounded-xl transition-all cursor-pointer"
+              >
+                <RotateCcw size={14} />
+              </button>
+            </HelpTooltip>
+
+            {/* Fullscreen Edge-to-Edge Toggle */}
+            <HelpTooltip title="Edge-to-Edge Fullscreen" purpose="Toggles full edge-to-edge expanded CAD blueprint display." position="top">
+              <button 
+                onClick={() => setIsFullscreen(!isFullscreen)}
+                className={`p-1.5 rounded-xl border transition-all cursor-pointer ${
+                  isFullscreen 
+                    ? 'bg-purple-500/20 text-purple-300 border-purple-500/50 glow-mint' 
+                    : 'bg-[#0D1527] border-[#1E2D4D] hover:border-purple-500 text-slate-400 hover:text-purple-300'
+                }`}
+              >
+                {isFullscreen ? <Minimize2 size={14} /> : <Compass size={14} />}
+              </button>
+            </HelpTooltip>
+          </div>
         </div>
 
         {/* Right Collapsible "Level Stock Manifest HUD" Panel */}
-        {showManifestHUD && (
+        {showManifestHUD ? (
           <div className="w-72 border-l border-[#1E2D4D] bg-[#0A1124]/95 backdrop-blur-xl flex flex-col h-full shrink-0 z-10 font-sans shadow-xl">
             {/* HUD Header */}
             <div className="p-3 border-b border-[#1E2D4D] bg-[#0D1527] flex items-center justify-between">
@@ -818,6 +975,20 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
                 ))
               )}
             </div>
+          </div>
+        ) : (
+          /* Collapsed Manifest Strip */
+          <div className="w-10 border-l border-[#1E2D4D] bg-[#0A1124] flex flex-col items-center py-4 shrink-0 z-10 font-mono">
+            <button
+              onClick={() => setShowManifestHUD(true)}
+              className="p-2 text-slate-400 hover:text-[#6FFFE9] rounded-lg hover:bg-[#121D36] transition-all cursor-pointer flex flex-col items-center gap-3"
+              title="Expand Manifest HUD"
+            >
+              <ChevronLeft size={16} />
+              <span className="text-[10px] [writing-mode:vertical-lr] rotate-180 font-bold text-slate-400 tracking-wider">
+                STOCK MANIFEST ({occupiedLevelBins.length})
+              </span>
+            </button>
           </div>
         )}
       </div>
