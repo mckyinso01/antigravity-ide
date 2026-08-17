@@ -22,7 +22,10 @@ import {
   HelpCircle,
   EyeOff,
   CheckCircle2,
-  DollarSign
+  DollarSign,
+  FileText,
+  Scale,
+  AlertCircle
 } from 'lucide-react';
 import { trackHighIntentAction } from '../utils/visitorEmailBeacon';
 
@@ -31,7 +34,7 @@ interface LicensingDeploymentModalProps {
   onClose: () => void;
 }
 
-type TabType = 'scenarios' | 'security' | 'ergonomics' | 'pricing';
+type TabType = 'scenarios' | 'security' | 'ergonomics' | 'pricing' | 'terms';
 
 interface PitchScenario {
   id: string;
@@ -257,6 +260,18 @@ export const LicensingDeploymentModal: React.FC<LicensingDeploymentModalProps> =
         >
           <Crown size={14} />
           <span>Commercial Buyout Tiers</span>
+        </button>
+
+        <button
+          onClick={() => setActiveTab('terms')}
+          className={`flex items-center gap-2 px-3.5 py-2 rounded-xl font-bold transition-all cursor-pointer ${
+            activeTab === 'terms'
+              ? 'bg-[#5BC0BE] text-[#070B14] shadow-md glow-mint'
+              : 'text-slate-400 hover:text-slate-200 hover:bg-[#121D36]'
+          }`}
+        >
+          <FileText size={14} />
+          <span>SLA, Legal & Guidelines</span>
         </button>
       </div>
 
@@ -572,6 +587,110 @@ export const LicensingDeploymentModal: React.FC<LicensingDeploymentModalProps> =
                 <span>Contact Lead Architect</span>
                 <ExternalLink size={13} />
               </button>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 5: ENTERPRISE SLA, TERMS & LEGAL GUIDELINES */}
+        {activeTab === 'terms' && (
+          <div className="space-y-6 font-sans text-xs">
+            <div className="p-5 rounded-2xl bg-gradient-to-r from-emerald-950/30 to-[#0D1527] border border-emerald-800/50 space-y-2">
+              <h4 className="text-base font-bold text-emerald-300 flex items-center gap-2 font-mono">
+                <Scale size={18} />
+                Master Licensing Agreement & Operational Guidelines
+              </h4>
+              <p className="text-slate-300 leading-relaxed">
+                Clear contractual boundaries, infrastructure responsibilities, 72-hour onboarding commitments, and liability protections for both the enterprise client and the software vendor.
+              </p>
+            </div>
+
+            {/* Responsibility Matrix */}
+            <div className="p-5 rounded-2xl bg-[#0D1527] border border-[#1E2D4D] space-y-4">
+              <h5 className="font-mono font-bold text-white text-sm flex items-center gap-2">
+                <CheckCircle2 size={16} className="text-[#5BC0BE]" />
+                Division of Responsibility Matrix (Vendor vs. Client)
+              </h5>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans">
+                {/* Vendor Responsibility */}
+                <div className="p-4 rounded-xl bg-[#070B14] border border-[#1E2D4D] space-y-2">
+                  <span className="font-mono font-bold text-[#5BC0BE] block">VENDOR OBLIGATIONS (OmniStock Team)</span>
+                  <ul className="space-y-1.5 text-slate-300 text-[11px]">
+                    <li className="flex items-start gap-1.5">
+                      <Check size={13} className="text-emerald-400 shrink-0 mt-0.5" />
+                      <span>Delivery of pre-compiled, tested Docker container & source code.</span>
+                    </li>
+                    <li className="flex items-start gap-1.5">
+                      <Check size={13} className="text-emerald-400 shrink-0 mt-0.5" />
+                      <span>72-Hour Rapid Onboarding: Lead engineer assistance for Master SKU import and spatial CAD mapping.</span>
+                    </li>
+                    <li className="flex items-start gap-1.5">
+                      <Check size={13} className="text-emerald-400 shrink-0 mt-0.5" />
+                      <span>1-Year Core Maintenance & Security Patches against critical vulnerabilities.</span>
+                    </li>
+                    <li className="flex items-start gap-1.5">
+                      <Check size={13} className="text-emerald-400 shrink-0 mt-0.5" />
+                      <span>Zero recurring per-user fees or unexpected license lockouts.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Client Responsibility */}
+                <div className="p-4 rounded-xl bg-[#070B14] border border-[#1E2D4D] space-y-2">
+                  <span className="font-mono font-bold text-amber-400 block">CLIENT OBLIGATIONS (Warehouse Owner)</span>
+                  <ul className="space-y-1.5 text-slate-300 text-[11px]">
+                    <li className="flex items-start gap-1.5">
+                      <AlertCircle size={13} className="text-amber-400 shrink-0 mt-0.5" />
+                      <span>Physical Infrastructure: Wi-Fi network coverage and local server hardware upkeep.</span>
+                    </li>
+                    <li className="flex items-start gap-1.5">
+                      <AlertCircle size={13} className="text-amber-400 shrink-0 mt-0.5" />
+                      <span>Hardware Maintenance: Provisioning of handheld barcode guns and barcode label stock.</span>
+                    </li>
+                    <li className="flex items-start gap-1.5">
+                      <AlertCircle size={13} className="text-amber-400 shrink-0 mt-0.5" />
+                      <span>Physical Safety & Operations: Forklift traffic management and OSHA compliance on the floor.</span>
+                    </li>
+                    <li className="flex items-start gap-1.5">
+                      <AlertCircle size={13} className="text-amber-400 shrink-0 mt-0.5" />
+                      <span>Data Backup: Routine local database snapshots on on-premise deployments.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Legal Liability & Safety Disclaimers */}
+            <div className="space-y-3 font-sans">
+              <div className="p-4 rounded-xl bg-rose-950/20 border border-rose-900/40 space-y-1.5">
+                <div className="flex items-center gap-2 font-mono font-bold text-rose-400">
+                  <ShieldAlert size={16} />
+                  <span>Limitation of Liability & Physical Inventory Disclaimer</span>
+                </div>
+                <p className="text-slate-300 leading-relaxed text-[11px]">
+                  OmniStock provides digital spatial tracking, ledger calculations, and route optimization. Physical inventory accuracy, shrinkage prevention, and onsite physical security remain the operational responsibility of the client's certified inventory managers. The software vendor is not liable for physical goods damage, forklift collisions, or physical theft outside digital audit controls.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-xl bg-[#0D1527] border border-[#1E2D4D] space-y-1.5">
+                <div className="flex items-center gap-2 font-mono font-bold text-[#6FFFE9]">
+                  <Lock size={16} />
+                  <span>100% Client Data Ownership & Anti-Telemetry Guarantee</span>
+                </div>
+                <p className="text-slate-300 leading-relaxed text-[11px]">
+                  All inventory balances, SKU costs, lot numbers, customer orders, and 3PL client rates belong exclusively to the purchasing enterprise. On-premise installations run 100% air-gapped with zero telemetry data transmitted to external third-party advertisers.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-xl bg-[#0D1527] border border-[#1E2D4D] space-y-1.5">
+                <div className="flex items-center gap-2 font-mono font-bold text-purple-400">
+                  <Code2 size={16} />
+                  <span>IP Buyout & Sub-Licensing Rights (Tier 3)</span>
+                </div>
+                <p className="text-slate-300 leading-relaxed text-[11px]">
+                  Upon full settlement of the Tier 3 Commercial Buyout ($65,000), full copyright and source code intellectual property are assigned to the buyer with unrestricted rights to modify, white-label, embed, and resell to third-party commercial clients globally without royalty encumbrances.
+                </p>
+              </div>
             </div>
           </div>
         )}
