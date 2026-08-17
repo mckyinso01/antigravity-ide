@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "company": "Robinsons Supermarket",
+    "email": "robsupermarket@rsc.com.ph",
+    "sector": "Supermarkets & Grocery",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Robinsons Supermarket",
+    "messageId": "<2ecc7f18-8b6b-0c8c-296d-ccf05d8ca19f@gmail.com>",
+    "timestamp": "2026-08-17T16:28:06.103Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 2,
+    "company": "Robinsons Retail Holdings",
+    "email": "customer.care@robinsonsretail.com.ph",
+    "sector": "Supermarkets & Grocery",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Robinsons Retail Holdings",
+    "messageId": "<aeec9766-f8c5-4f40-dbb1-df00668114d9@gmail.com>",
+    "timestamp": "2026-08-17T16:28:17.848Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 3,
+    "company": "Puregold Price Club",
+    "email": "customercare@puregold.com.ph",
+    "sector": "Supermarkets & Grocery",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Puregold Price Club",
+    "messageId": "<02a1e116-4b54-58b4-4075-1223cac9cc05@gmail.com>",
+    "timestamp": "2026-08-17T16:28:24.649Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 4,
+    "company": "SM Markets / SM Supermarket",
+    "email": "customercare@smmarkets.ph",
+    "sector": "Supermarkets & Grocery",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for SM Markets / SM Supermarket",
+    "messageId": "<639960f6-20d6-0fcf-6f23-c1ee99744308@gmail.com>",
+    "timestamp": "2026-08-17T16:28:31.381Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 5,
+    "company": "Metro Retail Stores Group",
+    "email": "customer.care@metroretail.com.ph",
+    "sector": "Supermarkets & Grocery",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Metro Retail Stores Group",
+    "messageId": "<1d13067b-bba0-81da-be65-897ab5e2d97a@gmail.com>",
+    "timestamp": "2026-08-17T16:28:38.177Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 6,
+    "company": "AllDay Supermarket",
+    "email": "info@allday.com.ph",
+    "sector": "Supermarkets & Grocery",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for AllDay Supermarket",
+    "messageId": "<a045338c-d81c-14e4-aa6a-2df80548ebe1@gmail.com>",
+    "timestamp": "2026-08-17T16:28:45.214Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 7,
+    "company": "Landers Superstore",
+    "email": "help@landers.ph",
+    "sector": "Supermarkets & Grocery",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Landers Superstore",
+    "messageId": "<5ba92d01-4794-4c46-2805-87b1f3558714@gmail.com>",
+    "timestamp": "2026-08-17T16:28:51.794Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 8,
+    "company": "S&R Membership Shopping (Puregold Group)",
+    "email": "customercare@puregold.com.ph",
+    "sector": "Supermarkets & Grocery",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for S&R Membership Shopping (Puregold Group)",
+    "messageId": "<28e5dd69-38f1-f2e0-ad9e-f304ac38e5a4@gmail.com>",
+    "timestamp": "2026-08-17T16:28:58.432Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 9,
+    "company": "WalterMart Supermarket",
+    "email": "waltermartinfo@waltermart.com.ph",
+    "sector": "Supermarkets & Grocery",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for WalterMart Supermarket",
+    "messageId": "<95bdb66c-a51b-fb77-4747-b41022b1c1f3@gmail.com>",
+    "timestamp": "2026-08-17T16:29:05.508Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 10,
+    "company": "Fisher Supermarket",
+    "email": "customercare@fishermall.com.ph",
+    "sector": "Supermarkets & Grocery",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Fisher Supermarket",
+    "messageId": "<4930abbe-6e80-8281-c386-1a47ba5b9f5b@gmail.com>",
+    "timestamp": "2026-08-17T16:29:12.586Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 11,
+    "company": "Super8 Grocery Warehouse",
+    "email": "customercare@super8.ph",
+    "sector": "Supermarkets & Grocery",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Super8 Grocery Warehouse",
+    "messageId": "<eaa857d7-2ca2-7a3e-abfe-75679470a266@gmail.com>",
+    "timestamp": "2026-08-17T16:29:18.771Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 12,
+    "company": "LCC Supermarket",
+    "email": "customer_service@lcc.com.ph",
+    "sector": "Supermarkets & Grocery",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for LCC Supermarket",
+    "messageId": "<e506385c-6700-0650-cd38-00c76c0cb270@gmail.com>",
+    "timestamp": "2026-08-17T16:29:25.657Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 13,
+    "company": "San Roque Supermarket Group",
+    "email": "info@sanroquesupermarket.com.ph",
+    "sector": "Supermarkets & Grocery",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for San Roque Supermarket Group",
+    "messageId": "<387406f0-febf-6359-70f9-a5db0816e649@gmail.com>",
+    "timestamp": "2026-08-17T16:29:32.064Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 14,
+    "company": "NCCC Supermarket",
+    "email": "customercare@nccc.com.ph",
+    "sector": "Supermarkets & Grocery",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for NCCC Supermarket",
+    "messageId": "<788ce70a-5ccc-8510-c837-3a54f5bf9f1c@gmail.com>",
+    "timestamp": "2026-08-17T16:29:39.107Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 15,
+    "company": "KCC Malls & Supermarket",
+    "email": "customercare@kccmalls.com",
+    "sector": "Supermarkets & Grocery",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for KCC Malls & Supermarket",
+    "messageId": "<89fc1764-2ba0-88aa-fb79-e3ffdeb63851@gmail.com>",
+    "timestamp": "2026-08-17T16:29:45.987Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 16,
+    "company": "Prince Retail Group",
+    "email": "customercare@princeretail.com",
+    "sector": "Supermarkets & Grocery",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Prince Retail Group",
+    "messageId": "<f8cd8fd7-4b37-426e-7649-cb0554bf5144@gmail.com>",
+    "timestamp": "2026-08-17T16:29:52.276Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 17,
+    "company": "Pioneer Centre Supermarket",
+    "email": "info@pioneercentre.com",
+    "sector": "Supermarkets & Grocery",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Pioneer Centre Supermarket",
+    "messageId": "<e401c278-d8e9-14bb-1b39-9f96e70a94fe@gmail.com>",
+    "timestamp": "2026-08-17T16:29:58.558Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 18,
+    "company": "Ever Supermarket",
+    "email": "info@eversupermarket.com",
+    "sector": "Supermarkets & Grocery",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Ever Supermarket",
+    "messageId": "<2762c24f-814b-53e4-e320-3839ed0405cf@gmail.com>",
+    "timestamp": "2026-08-17T16:30:05.570Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 19,
+    "company": "Isetann Supermarket",
+    "email": "customercare@isetann.com.ph",
+    "sector": "Supermarkets & Grocery",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Isetann Supermarket",
+    "messageId": "<d011e4b5-845d-18a3-b3d3-a527ef0ed347@gmail.com>",
+    "timestamp": "2026-08-17T16:30:12.339Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 20,
+    "company": "San Roque Supermarket",
+    "email": "info@sanroquesupermarket.com.ph",
+    "sector": "Supermarkets & Grocery",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for San Roque Supermarket",
+    "messageId": "<a2f056b3-93a5-26f5-0800-bdce2671db73@gmail.com>",
+    "timestamp": "2026-08-17T16:30:18.596Z",
+    "status": "DELIVERED"
+  }
+]
