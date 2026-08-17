@@ -348,6 +348,7 @@ export function App() {
               warehouseName={warehouseName}
               onUpdateWarehouseName={(name) => setWarehouseName(name)}
               onExportJson={handleExportJson}
+              onTopologyChanged={refreshAllData}
             />
           )}
 
@@ -358,6 +359,7 @@ export function App() {
               onClose={() => setSelectedBin(null)}
               onUpdateQuantity={handleUpdateBinQuantity}
               onTransfer={handleTransferBin}
+              onRefreshBins={refreshAllData}
             />
           )}
         </main>

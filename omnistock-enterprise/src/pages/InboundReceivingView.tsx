@@ -7,6 +7,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { HelpTooltip } from '../components/HelpTooltip';
 
 interface InboundReceivingViewProps {
   skus: SkuItem[];
@@ -59,13 +60,20 @@ export const InboundReceivingView: React.FC<InboundReceivingViewProps> = ({
           </div>
         </div>
 
-        <button
-          onClick={onOpenScanner}
-          className="flex items-center gap-1.5 bg-[#121D36] hover:bg-[#1E2D4D] border border-[#2A4374] text-slate-200 text-xs px-3 py-1.5 rounded-lg transition-all cursor-pointer font-mono"
+        <HelpTooltip
+          title="Inbound Barcode Decoupler"
+          purpose="Awtomatikong bina-basa ang GS1-128 shipping labels sa papasok na mga pallet upang auto-fill ang PO at SKU manifest."
+          howTo="I-click upang buksan ang camera scanner at i-scan ang shipping container label."
+          position="bottom"
         >
-          <Barcode size={15} className="text-[#5BC0BE]" />
-          <span>Scan Inbound Barcode</span>
-        </button>
+          <button
+            onClick={onOpenScanner}
+            className="flex items-center gap-1.5 bg-[#121D36] hover:bg-[#1E2D4D] border border-[#2A4374] text-slate-200 text-xs px-3 py-1.5 rounded-lg transition-all cursor-pointer font-mono"
+          >
+            <Barcode size={15} className="text-[#5BC0BE]" />
+            <span>Scan Inbound Barcode</span>
+          </button>
+        </HelpTooltip>
       </div>
 
       {/* Main Grid */}

@@ -4,12 +4,22 @@ export type OrderPriority = 'STAT' | 'RUSH' | 'STANDARD';
 export type OrderStatus = 'PENDING' | 'OPTIMIZED' | 'IN_PICK' | 'PACKED' | 'SHIPPED';
 export type MovementType = 'RECEIVING' | 'PICK' | 'TRANSFER' | 'CYCLE_COUNT' | 'QUARANTINE_LOCK';
 
+export interface AuditLog {
+  id: string;
+  timestamp: string;
+  auditorName: string;
+  previousQty: number;
+  newQty: number;
+  notes: string;
+  photoUrl?: string;
+}
+
 export interface BinSlot {
   id: string;
   code: string; // e.g. A-01-L3 (Aisle A, Bay 1, Level 3)
   aisle: string;
   bay: number;
-  level: number; // 1 to 5
+  level: number; // 1 to 8
   zone: string;
   x: number;
   y: number;
@@ -19,11 +29,14 @@ export interface BinSlot {
   skuId?: string;
   skuCode?: string;
   skuName?: string;
+  skuCategory?: string;
   quantity: number;
   batchLot?: string;
   expiryDate?: string;
   velocityClass: VelocityClass;
   lastAudited: string;
+  shelfPhotoUrl?: string;
+  auditLogs?: AuditLog[];
 }
 
 export interface SkuItem {
@@ -45,6 +58,16 @@ export interface SkuItem {
   weightKg: number;
   turnoverRate: number; // Annual Turns
   stockoutRisk: 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL';
+  imageUrl?: string;
+}
+
+export interface WarehouseTopology {
+  aisles: string[]; // e.g. ['A', 'B', 'C', 'D', 'E', 'F']
+  baysPerAisle: number; // e.g. 8
+  tiersCount: number; // e.g. 4
+  facilityName: string;
+  gridWidthMeters: number;
+  gridLengthMeters: number;
 }
 
 export interface OrderItem {

@@ -5,6 +5,7 @@ import {
   Search, 
   Plus
 } from 'lucide-react';
+import { HelpTooltip } from '../components/HelpTooltip';
 
 interface InventoryCatalogViewProps {
   skus: SkuItem[];
@@ -85,13 +86,20 @@ export const InventoryCatalogView: React.FC<InventoryCatalogViewProps> = ({
         </div>
 
         <div className="flex items-center gap-2 font-mono text-xs">
-          <button
-            onClick={() => setIsAddModalOpen(true)}
-            className="flex items-center gap-1.5 bg-[#5BC0BE] hover:bg-[#6FFFE9] text-[#070B14] font-bold px-3 py-1.5 rounded-lg transition-all cursor-pointer shadow-sm glow-mint"
+          <HelpTooltip
+            title="Create New Master SKU"
+            purpose="Magrehistro ng bagong produkto sa master catalog na may kasamang GS1 barcode, RFID tag, safety stock threshold, at unit cost."
+            howTo="I-click ang button upang buksan ang modal at punan ang mga detalye ng bagong SKU."
+            position="bottom"
           >
-            <Plus size={15} />
-            <span>Add New SKU</span>
-          </button>
+            <button
+              onClick={() => setIsAddModalOpen(true)}
+              className="flex items-center gap-1.5 bg-[#5BC0BE] hover:bg-[#6FFFE9] text-[#070B14] font-bold px-3 py-1.5 rounded-lg transition-all cursor-pointer shadow-sm glow-mint"
+            >
+              <Plus size={15} />
+              <span>Add New SKU</span>
+            </button>
+          </HelpTooltip>
         </div>
       </div>
 

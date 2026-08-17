@@ -6,6 +6,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { HelpTooltip } from '../components/HelpTooltip';
 
 
 interface WavePickingViewProps {
@@ -46,13 +47,20 @@ export const WavePickingView: React.FC<WavePickingViewProps> = ({
           </div>
         </div>
 
-        <button
-          onClick={onDispatchWaveModal}
-          className="flex items-center gap-1.5 bg-gradient-to-r from-[#3A86FF] to-[#5BC0BE] text-[#070B14] font-bold text-xs px-3.5 py-1.5 rounded-lg transition-all cursor-pointer font-mono shadow-sm"
+        <HelpTooltip
+          title="Wave Batching Engine"
+          purpose="Awtomatikong pinu-pangkat ang mga active orders batay sa SKU proximity upang mabawasan ang oras ng pagpapatakbo ng forklift."
+          howTo="I-click upang buksan ang batch wave modal at i-dispatch ang bagong wave sequence."
+          position="bottom"
         >
-          <Zap size={14} className="fill-current" />
-          <span>Batch New Wave</span>
-        </button>
+          <button
+            onClick={onDispatchWaveModal}
+            className="flex items-center gap-1.5 bg-gradient-to-r from-[#3A86FF] to-[#5BC0BE] text-[#070B14] font-bold text-xs px-3.5 py-1.5 rounded-lg transition-all cursor-pointer font-mono shadow-sm"
+          >
+            <Zap size={14} className="fill-current" />
+            <span>Batch New Wave</span>
+          </button>
+        </HelpTooltip>
       </div>
 
       {/* Main Pick Execution Console */}

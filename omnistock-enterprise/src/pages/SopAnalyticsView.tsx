@@ -5,6 +5,7 @@ import {
   AlertTriangle, 
   ArrowUpRight
 } from 'lucide-react';
+import { HelpTooltip } from '../components/HelpTooltip';
 
 interface SopAnalyticsViewProps {
   skus: SkuItem[];
@@ -99,9 +100,19 @@ export const SopAnalyticsView: React.FC<SopAnalyticsViewProps> = ({
                     <td className="p-3 text-right text-amber-300 font-bold">{sku.reorderPoint}</td>
                     <td className="p-3 text-right text-rose-400 font-bold">2.4 Days</td>
                     <td className="p-3 text-right">
-                      <button className="px-3 py-1 bg-[#5BC0BE] hover:bg-[#6FFFE9] text-[#070B14] font-bold rounded-lg transition-all cursor-pointer text-[10px]">
-                        Auto-Generate PO
-                      </button>
+                      <HelpTooltip
+                        title="Autonomous Purchase Order Generator"
+                        purpose="Awtomatikong bumubuo ng vendor restock Purchase Order batay sa lead time at daily burn rate upang maiwasan ang stockout."
+                        howTo="I-click upang buksan at i-transmit ang replenishment order sa accredited manufacturer."
+                        position="left"
+                      >
+                        <button 
+                          onClick={() => alert(`📦 Autonomous EDI PO dispatched for SKU ${sku.skuCode} (Qty: 250 units)!`)}
+                          className="px-3 py-1 bg-[#5BC0BE] hover:bg-[#6FFFE9] text-[#070B14] font-bold rounded-lg transition-all cursor-pointer text-[10px]"
+                        >
+                          Auto-Generate PO
+                        </button>
+                      </HelpTooltip>
                     </td>
                   </tr>
                 ))}

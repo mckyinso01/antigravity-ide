@@ -14,7 +14,6 @@ function generateInitialBins(): BinSlot[] {
   const bins: BinSlot[] = [];
   const aisles = ['A', 'B', 'C', 'D', 'E', 'F'];
 
-
   let idCounter = 1;
   aisles.forEach((aisle, aisleIdx) => {
     for (let bay = 1; bay <= 8; bay++) {
@@ -32,6 +31,68 @@ function generateInitialBins(): BinSlot[] {
         const x = 80 + (aisleIdx * 110) + (bay % 2 === 0 ? 30 : 0);
         const y = 60 + (bay * 45);
 
+        let skuId: string | undefined;
+        let skuCode: string | undefined;
+        let skuName: string | undefined;
+        let skuCategory: string | undefined;
+        let batchLot: string | undefined;
+        let expiryDate: string | undefined;
+        let quantity = 0;
+        let shelfPhotoUrl: string | undefined;
+
+        if (status === 'OCCUPIED' || status === 'RESERVED' || status === 'QUARANTINE') {
+          if (isCold) {
+            skuId = 'sku-3';
+            skuCode = 'PHARM-VACC-ULTRA-20';
+            skuName = 'Pfizer-BioNTech COVID Vaccine Vials (-80°C Storage)';
+            skuCategory = 'Cold Chain Pharma';
+            batchLot = `LOT-2026-COV-E${bay}`;
+            expiryDate = '2027-06-30';
+            quantity = Math.floor(Math.random() * 60 + 20);
+          } else if (isHazmat) {
+            skuId = 'sku-5';
+            skuCode = 'CHEM-ISOPROP-99-DRUM';
+            skuName = 'Isopropanol 99.8% Electronic Grade (55 Gal Drum)';
+            skuCategory = 'Hazmat & Solvents';
+            batchLot = `HAZ-2026-ISO-F${bay}`;
+            expiryDate = '2029-12-31';
+            quantity = Math.floor(Math.random() * 8 + 2);
+          } else if (aisle === 'A') {
+            skuId = 'sku-1';
+            skuCode = 'MED-N95-3M-2000';
+            skuName = '3M Aura N95 Particulate Respirator (Case of 240)';
+            skuCategory = 'PPE & Infection Control';
+            batchLot = `LOT-2026-N95-A${bay}`;
+            expiryDate = '2028-12-31';
+            quantity = Math.floor(Math.random() * 100 + 40);
+          } else if (aisle === 'B') {
+            skuId = 'sku-2';
+            skuCode = 'ELEC-LITH-48V-BAT';
+            skuName = '48V 100Ah Lithium Iron Phosphate Battery Pack';
+            skuCategory = 'Industrial Electronics';
+            batchLot = `BAT-48V-LFP-B${bay}`;
+            expiryDate = '2031-01-01';
+            quantity = Math.floor(Math.random() * 12 + 4);
+          } else if (aisle === 'C') {
+            skuId = 'sku-4';
+            skuCode = 'AUTO-HYDR-CYL-500';
+            skuName = 'Parker Hannifin Heavy Duty Hydraulic Cylinder 500bar';
+            skuCategory = 'Heavy Machinery & Parts';
+            batchLot = `HYD-500-PARK-C${bay}`;
+            expiryDate = '2035-12-31';
+            quantity = Math.floor(Math.random() * 6 + 2);
+          } else {
+            // Aisle D - Standard Fasteners & Parts
+            skuId = 'sku-6';
+            skuCode = 'IND-BEAR-SKF-6205';
+            skuName = 'SKF Explorer High-Speed Deep Groove Ball Bearings';
+            skuCategory = 'Heavy Machinery & Parts';
+            batchLot = `SKF-6205-D${bay}`;
+            expiryDate = '2033-08-15';
+            quantity = Math.floor(Math.random() * 80 + 30);
+          }
+        }
+
         bins.push({
           id: `bin-${idCounter++}`,
           code,
@@ -44,9 +105,17 @@ function generateInitialBins(): BinSlot[] {
           status,
           capacityKg: 1200,
           currentWeightKg: status === 'OCCUPIED' ? Math.floor(Math.random() * 600 + 300) : 0,
-          quantity: status === 'OCCUPIED' ? Math.floor(Math.random() * 120 + 24) : 0,
+          skuId,
+          skuCode,
+          skuName,
+          skuCategory,
+          quantity,
+          batchLot,
+          expiryDate,
           velocityClass: isAisleFast ? 'A' : aisle === 'C' || aisle === 'D' ? 'B' : 'C',
-          lastAudited: new Date(Date.now() - Math.random() * 864000000).toISOString().split('T')[0]
+          lastAudited: new Date(Date.now() - Math.random() * 864000000).toISOString().split('T')[0],
+          shelfPhotoUrl,
+          auditLogs: []
         });
       }
     }
@@ -154,6 +223,26 @@ const INITIAL_SKUS: SkuItem[] = [
     clientId: 'client-2',
     weightKg: 185.0,
     turnoverRate: 12.0,
+    stockoutRisk: 'LOW'
+  },
+  {
+    id: 'sku-6',
+    skuCode: 'IND-BEAR-SKF-6205',
+    name: 'SKF Explorer High-Speed Deep Groove Ball Bearings',
+    category: 'Heavy Machinery & Parts',
+    barcode: '731657051892',
+    rfidTag: 'E28011606000020478B40F11',
+    unitCost: 38.50,
+    retailPrice: 65.00,
+    stockQty: 540,
+    allocatedQty: 40,
+    safetyStock: 80,
+    reorderPoint: 120,
+    leadTimeDays: 7,
+    primaryBin: 'D-02-L1',
+    clientId: 'client-3',
+    weightKg: 0.85,
+    turnoverRate: 15.2,
     stockoutRisk: 'LOW'
   }
 ];
@@ -346,6 +435,253 @@ class WarehouseDB {
       ...entry
     });
     this.saveLogs(logs);
+  }
+
+  updateBin(updatedBin: BinSlot) {
+    const bins = this.getBins();
+    const idx = bins.findIndex(b => b.id === updatedBin.id || b.code === updatedBin.code);
+    if (idx !== -1) {
+      bins[idx] = updatedBin;
+      this.saveBins(bins);
+    }
+  }
+
+  addOrUpdateSkuToBin(binCode: string, data: {
+    skuCode: string;
+    skuName: string;
+    category: string;
+    quantity: number;
+    batchLot: string;
+    expiryDate: string;
+    photoUrl?: string;
+  }) {
+    const bins = this.getBins();
+    const bin = bins.find(b => b.code === binCode);
+    if (bin) {
+      bin.skuCode = data.skuCode;
+      bin.skuName = data.skuName;
+      bin.skuCategory = data.category;
+      bin.quantity = data.quantity;
+      bin.batchLot = data.batchLot;
+      bin.expiryDate = data.expiryDate;
+      bin.status = data.quantity > 0 ? 'OCCUPIED' : 'EMPTY';
+      bin.lastAudited = new Date().toISOString().split('T')[0];
+      if (data.photoUrl) {
+        bin.shelfPhotoUrl = data.photoUrl;
+      }
+      this.saveBins(bins);
+
+      // Also ensure SKU exists or is updated in master SKUs list
+      const skus = this.getSkus();
+      const existingSku = skus.find(s => s.skuCode === data.skuCode);
+      if (existingSku) {
+        existingSku.stockQty = Math.max(existingSku.stockQty, data.quantity);
+        if (data.photoUrl) existingSku.imageUrl = data.photoUrl;
+        this.saveSkus(skus);
+      } else {
+        skus.push({
+          id: `sku-${Date.now()}`,
+          skuCode: data.skuCode,
+          name: data.skuName,
+          category: data.category,
+          barcode: Math.floor(Math.random() * 900000000000 + 100000000000).toString(),
+          rfidTag: `E28011606000020478B40${Math.floor(Math.random() * 900 + 100)}`,
+          unitCost: 45.0,
+          retailPrice: 75.0,
+          stockQty: data.quantity,
+          allocatedQty: 0,
+          safetyStock: 20,
+          reorderPoint: 40,
+          leadTimeDays: 7,
+          primaryBin: binCode,
+          clientId: 'client-1',
+          weightKg: 5.0,
+          turnoverRate: 12.0,
+          stockoutRisk: 'LOW',
+          imageUrl: data.photoUrl
+        });
+        this.saveSkus(skus);
+      }
+
+      this.addLog({
+        type: 'RECEIVING',
+        skuCode: data.skuCode,
+        skuName: data.skuName,
+        toBin: binCode,
+        quantity: data.quantity,
+        operator: 'Active Operator',
+        notes: `Direct shelf slotting & physical photo verification at ${binCode}`
+      });
+    }
+  }
+
+  recordShelfAudit(binCode: string, newQty: number, auditorName: string, notes: string, photoUrl?: string) {
+    const bins = this.getBins();
+    const bin = bins.find(b => b.code === binCode);
+    if (bin) {
+      const prevQty = bin.quantity;
+      bin.quantity = newQty;
+      bin.status = newQty > 0 ? 'OCCUPIED' : 'EMPTY';
+      bin.lastAudited = new Date().toISOString().split('T')[0];
+      if (photoUrl) {
+        bin.shelfPhotoUrl = photoUrl;
+      }
+      if (!bin.auditLogs) bin.auditLogs = [];
+      bin.auditLogs.unshift({
+        id: `audit-${Date.now()}`,
+        timestamp: new Date().toISOString(),
+        auditorName,
+        previousQty: prevQty,
+        newQty,
+        notes,
+        photoUrl
+      });
+      this.saveBins(bins);
+
+      this.addLog({
+        type: 'CYCLE_COUNT',
+        skuCode: bin.skuCode || 'GENERIC-ITEM',
+        skuName: bin.skuName || 'Rack Item',
+        toBin: binCode,
+        quantity: newQty - prevQty,
+        operator: auditorName,
+        notes: `Physical Shelf Audit & Photo Verification: ${notes || 'Cycle count verified'}`
+      });
+    }
+  }
+
+  getTopology(): { aisles: string[]; baysPerAisle: number; tiersCount: number; facilityName: string } {
+    const raw = localStorage.getItem(STORAGE_KEYS.ACTIVE_WAREHOUSE);
+    if (raw) {
+      return JSON.parse(raw);
+    }
+    return {
+      aisles: ['A', 'B', 'C', 'D', 'E', 'F'],
+      baysPerAisle: 8,
+      tiersCount: 4,
+      facilityName: 'Warehouse Alpha • Northeast Logistics Hub'
+    };
+  }
+
+  saveTopology(topology: { aisles: string[]; baysPerAisle: number; tiersCount: number; facilityName: string }) {
+    localStorage.setItem(STORAGE_KEYS.ACTIVE_WAREHOUSE, JSON.stringify(topology));
+  }
+
+  regenerateTopology(aisles: string[], baysPerAisle: number, tiersCount: number) {
+    this.saveTopology({
+      aisles,
+      baysPerAisle,
+      tiersCount,
+      facilityName: 'Warehouse Alpha • Northeast Logistics Hub'
+    });
+    
+    // Regenerate bins
+    const bins: BinSlot[] = [];
+    let idCounter = 1;
+    aisles.forEach((aisle, aisleIdx) => {
+      for (let bay = 1; bay <= baysPerAisle; bay++) {
+        for (let level = 1; level <= tiersCount; level++) {
+          const isAisleFast = aisle === 'A' || aisle === 'B';
+          const isCold = aisle === 'E';
+          const isHazmat = aisle === 'F';
+          
+          let status: BinSlot['status'] = 'OCCUPIED';
+          if (bay > Math.floor(baysPerAisle * 0.75) && level > 2) status = 'EMPTY';
+          if (bay === 4 && level === tiersCount) status = 'RESERVED';
+
+          const code = `${aisle}-${String(bay).padStart(2, '0')}-L${level}`;
+          const x = 80 + (aisleIdx * 110) + (bay % 2 === 0 ? 30 : 0);
+          const y = 60 + (bay * 45);
+
+          let skuId: string | undefined;
+          let skuCode: string | undefined;
+          let skuName: string | undefined;
+          let skuCategory: string | undefined;
+          let batchLot: string | undefined;
+          let expiryDate: string | undefined;
+          let quantity = 0;
+
+          if (status === 'OCCUPIED' || status === 'RESERVED') {
+            if (isCold) {
+              skuId = 'sku-3';
+              skuCode = 'PHARM-VACC-ULTRA-20';
+              skuName = 'Pfizer-BioNTech COVID Vaccine Vials (-80°C Storage)';
+              skuCategory = 'Cold Chain Pharma';
+              batchLot = `LOT-2026-COV-E${bay}`;
+              expiryDate = '2027-06-30';
+              quantity = Math.floor(Math.random() * 60 + 20);
+            } else if (isHazmat) {
+              skuId = 'sku-5';
+              skuCode = 'CHEM-ISOPROP-99-DRUM';
+              skuName = 'Isopropanol 99.8% Electronic Grade (55 Gal Drum)';
+              skuCategory = 'Hazmat & Solvents';
+              batchLot = `HAZ-2026-ISO-F${bay}`;
+              expiryDate = '2029-12-31';
+              quantity = Math.floor(Math.random() * 8 + 2);
+            } else if (aisle === 'A') {
+              skuId = 'sku-1';
+              skuCode = 'MED-N95-3M-2000';
+              skuName = '3M Aura N95 Particulate Respirator (Case of 240)';
+              skuCategory = 'PPE & Infection Control';
+              batchLot = `LOT-2026-N95-A${bay}`;
+              expiryDate = '2028-12-31';
+              quantity = Math.floor(Math.random() * 100 + 40);
+            } else if (aisle === 'B') {
+              skuId = 'sku-2';
+              skuCode = 'ELEC-LITH-48V-BAT';
+              skuName = '48V 100Ah Lithium Iron Phosphate Battery Pack';
+              skuCategory = 'Industrial Electronics';
+              batchLot = `BAT-48V-LFP-B${bay}`;
+              expiryDate = '2031-01-01';
+              quantity = Math.floor(Math.random() * 12 + 4);
+            } else if (aisle === 'C') {
+              skuId = 'sku-4';
+              skuCode = 'AUTO-HYDR-CYL-500';
+              skuName = 'Parker Hannifin Heavy Duty Hydraulic Cylinder 500bar';
+              skuCategory = 'Heavy Machinery & Parts';
+              batchLot = `HYD-500-PARK-C${bay}`;
+              expiryDate = '2035-12-31';
+              quantity = Math.floor(Math.random() * 6 + 2);
+            } else {
+              skuId = 'sku-6';
+              skuCode = 'IND-BEAR-SKF-6205';
+              skuName = 'SKF Explorer High-Speed Deep Groove Ball Bearings';
+              skuCategory = 'Heavy Machinery & Parts';
+              batchLot = `SKF-6205-D${bay}`;
+              expiryDate = '2033-08-15';
+              quantity = Math.floor(Math.random() * 80 + 30);
+            }
+          }
+
+          bins.push({
+            id: `bin-${idCounter++}`,
+            code,
+            aisle,
+            bay,
+            level,
+            zone: isHazmat ? 'Hazmat Cage' : isCold ? 'Cold Vault' : isAisleFast ? 'Fast-Mover High Bay' : 'Standard Pallet Racks',
+            x,
+            y,
+            status,
+            capacityKg: 1200,
+            currentWeightKg: status === 'OCCUPIED' ? Math.floor(Math.random() * 600 + 300) : 0,
+            skuId,
+            skuCode,
+            skuName,
+            skuCategory,
+            quantity,
+            batchLot,
+            expiryDate,
+            velocityClass: isAisleFast ? 'A' : aisle === 'C' || aisle === 'D' ? 'B' : 'C',
+            lastAudited: new Date().toISOString().split('T')[0],
+            auditLogs: []
+          });
+        }
+      }
+    });
+
+    this.saveBins(bins);
+    return bins;
   }
 
   getStats(): WarehouseStats {

@@ -8,7 +8,7 @@ import {
   Terminal,
   RotateCcw
 } from 'lucide-react';
-
+import { HelpTooltip } from './HelpTooltip';
 
 interface NavigationHeaderProps {
   onOpenScanner: () => void;
@@ -59,77 +59,117 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
           </div>
         </div>
 
-        {/* Warehouse Selector Dropdown */}
-        <div 
-          onClick={() => {
-            const next = activeWarehouseName.includes('Alpha') 
-              ? 'Warehouse Beta • West Coast Gateway' 
-              : 'Warehouse Alpha • Northeast Logistics Hub';
-            onChangeWarehouse(next);
-          }}
-          className="hidden lg:flex items-center gap-2 bg-[#0D1527] hover:bg-[#121D36] border border-[#1E2D4D] px-3 py-1.5 rounded-lg text-xs cursor-pointer transition-all"
+        {/* Warehouse Selector Dropdown with HelpTooltip */}
+        <HelpTooltip
+          title="Multi-Warehouse Switcher"
+          purpose="Nagpapalit ng active facility floorplan sa pagitan ng Alpha (Northeast Hub) at Beta (West Coast Gateway)."
+          howTo="I-click ang button upang lumipat ng distribution center at makita ang specific CAD racking layout nito."
+          position="bottom"
         >
-          <Layers size={14} className="text-[#5BC0BE]" />
-          <span className="text-slate-300 font-medium">{activeWarehouseName}</span>
-          <span className="text-[10px] text-emerald-400 font-mono bg-emerald-950/80 px-1.5 py-0.2 rounded border border-emerald-800">5 ZONES</span>
-          <ChevronDown size={12} className="text-slate-400" />
-        </div>
+          <div 
+            onClick={() => {
+              const next = activeWarehouseName.includes('Alpha') 
+                ? 'Warehouse Beta • West Coast Gateway' 
+                : 'Warehouse Alpha • Northeast Logistics Hub';
+              onChangeWarehouse(next);
+            }}
+            className="hidden lg:flex items-center gap-2 bg-[#0D1527] hover:bg-[#121D36] border border-[#1E2D4D] px-3 py-1.5 rounded-lg text-xs cursor-pointer transition-all"
+          >
+            <Layers size={14} className="text-[#5BC0BE]" />
+            <span className="text-slate-300 font-medium">{activeWarehouseName}</span>
+            <span className="text-[10px] text-emerald-400 font-mono bg-emerald-950/80 px-1.5 py-0.2 rounded border border-emerald-800">5 ZONES</span>
+            <ChevronDown size={12} className="text-slate-400" />
+          </div>
+        </HelpTooltip>
       </div>
 
-
-      {/* Center: Real-time Barcode / SKU Search Bar */}
+      {/* Center: Real-time Barcode / SKU Search Bar with HelpTooltip */}
       <div className="flex-1 max-w-md mx-4 hidden md:block">
-        <div className="relative">
-          <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={handleSearchChange}
-            placeholder="Scan / Search SKU, GS1 Barcode, Bin Code (e.g. A-01-L1)..."
-            className="w-full bg-[#0D1527] border border-[#1E2D4D] focus:border-[#5BC0BE] text-slate-100 text-xs rounded-xl pl-9 pr-16 py-2 outline-none transition-all placeholder:text-slate-500 font-mono"
-          />
-          <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] font-mono text-slate-500 bg-[#1E2D4D] px-1.5 py-0.5 rounded border border-slate-700">
-            Ctrl+K
-          </span>
-        </div>
+        <HelpTooltip
+          title="Global SKU & Barcode Finder"
+          purpose="Naghahanap ng anumang gamot, spare part, GS1 barcode, o bay coordinate sa buong bodega at agarang tinutukoy ang kinalalagyan nito sa CAD map."
+          howTo="Mag-type ng SKU (hal. MED-N95) o Barcode (051131497118) upang mag-highlight ang target bin."
+          shortcut="Ctrl + K"
+          position="bottom"
+        >
+          <div className="relative w-full">
+            <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={handleSearchChange}
+              placeholder="Scan / Search SKU, GS1 Barcode, Bin Code (e.g. A-01-L1)..."
+              className="w-full bg-[#0D1527] border border-[#1E2D4D] focus:border-[#5BC0BE] text-slate-100 text-xs rounded-xl pl-9 pr-16 py-2 outline-none transition-all placeholder:text-slate-500 font-mono"
+            />
+            <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] font-mono text-slate-500 bg-[#1E2D4D] px-1.5 py-0.5 rounded border border-slate-700">
+              Ctrl+K
+            </span>
+          </div>
+        </HelpTooltip>
       </div>
 
       {/* Right: Telemetry Controls & Status Badges */}
       <div className="flex items-center gap-2.5">
-        {/* P2P Cluster Online Sync Badge & Clock */}
-        <div className="flex items-center gap-2 bg-[#0D1527] border border-emerald-900/60 px-2.5 py-1 rounded-lg text-[11px] font-mono text-emerald-400">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span className="hidden sm:inline font-bold">CLUSTER SYNC</span>
-          <span className="text-slate-400 text-[10px] border-l border-[#1E2D4D] pl-2">{time}</span>
-        </div>
-
+        {/* P2P Cluster Online Sync Badge */}
+        <HelpTooltip
+          title="P2P Mesh Cluster Telemetry"
+          purpose="Tinitiyak na 100% synchronized ang lahat ng handheld scanner kahit mag-deadzone ang Wi-Fi sa loob ng bodega."
+          howTo="Awtomatikong gumagana sa background gamit ang local IndexedDB buffer."
+          position="bottom"
+        >
+          <div className="flex items-center gap-2 bg-[#0D1527] border border-emerald-900/60 px-2.5 py-1 rounded-lg text-[11px] font-mono text-emerald-400 cursor-help">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span className="hidden sm:inline font-bold">CLUSTER SYNC</span>
+            <span className="text-slate-400 text-[10px] border-l border-[#1E2D4D] pl-2">{time}</span>
+          </div>
+        </HelpTooltip>
 
         {/* Quick Camera Barcode Scanner Trigger */}
-        <button
-          onClick={onOpenScanner}
-          className="flex items-center gap-1.5 bg-gradient-to-r from-[#5BC0BE] to-[#3A86FF] hover:opacity-90 text-[#070B14] font-bold text-xs px-3 py-1.5 rounded-lg shadow-md transition-all cursor-pointer glow-mint shrink-0"
+        <HelpTooltip
+          title="BYOD Camera & RFID Scanner"
+          purpose="Binubuksan ang high-speed WASM camera barcode scanner upang mag-decode ng GS1-128, QR code, o RFID tags gamit ang camera ng smartphone o laptop."
+          howTo="I-click ang button, itutok ang camera sa barcode, at makinig sa instant verification audio beep."
+          position="bottom"
         >
-          <ScanLine size={15} className="stroke-[2.5]" />
-          <span className="hidden sm:inline">Camera/RFID Scanner</span>
-        </button>
+          <button
+            onClick={onOpenScanner}
+            className="flex items-center gap-1.5 bg-gradient-to-r from-[#5BC0BE] to-[#3A86FF] hover:opacity-90 text-[#070B14] font-bold text-xs px-3 py-1.5 rounded-lg shadow-md transition-all cursor-pointer glow-mint shrink-0"
+          >
+            <ScanLine size={15} className="stroke-[2.5]" />
+            <span className="hidden sm:inline">Camera/RFID Scanner</span>
+          </button>
+        </HelpTooltip>
 
         {/* System Specs & Licensing */}
-        <button
-          onClick={onOpenSpecs}
-          className="flex items-center gap-1.5 bg-[#0D1527] hover:bg-[#121D36] border border-[#1E2D4D] hover:border-[#5BC0BE] text-slate-300 text-xs px-2.5 py-1.5 rounded-lg transition-all cursor-pointer shrink-0 font-mono"
+        <HelpTooltip
+          title="Enterprise Licensing & Buyout"
+          purpose="Ipinapakita ang mga transparent commercial buyout packages: Tier 1 ($18.5k On-Prem), Tier 2 ($35k White-Label), at Tier 3 ($65k Full IP Ownership)."
+          howTo="I-click upang makita ang buong arkitektura, Docker container deployment specs, at direct engineer hotline."
+          position="bottom"
         >
-          <Terminal size={14} className="text-[#5BC0BE]" />
-          <span className="hidden sm:inline">Specs & Pricing</span>
-        </button>
+          <button
+            onClick={onOpenSpecs}
+            className="flex items-center gap-1.5 bg-[#0D1527] hover:bg-[#121D36] border border-[#1E2D4D] hover:border-[#5BC0BE] text-slate-300 text-xs px-2.5 py-1.5 rounded-lg transition-all cursor-pointer shrink-0 font-mono"
+          >
+            <Terminal size={14} className="text-[#5BC0BE]" />
+            <span className="hidden sm:inline">Specs & Pricing</span>
+          </button>
+        </HelpTooltip>
 
         {/* Clean Sweep / Reset */}
-        <button
-          onClick={onOpenCleanSweep}
+        <HelpTooltip
           title="Warehouse Clean Sweep / Reset"
-          className="p-1.5 bg-[#0D1527] hover:bg-rose-950/40 border border-[#1E2D4D] hover:border-rose-800 text-slate-400 hover:text-rose-400 rounded-lg transition-all cursor-pointer shrink-0"
+          purpose="Ibinabalik ang buong database, SKU catalog, at 192 racking slots sa malinis na calibrated default state."
+          howTo="Gamitin kapag nais magsimula ng sariwang demonstration o linisin ang test cycle count data."
+          position="bottom"
         >
-          <RotateCcw size={15} />
-        </button>
+          <button
+            onClick={onOpenCleanSweep}
+            className="p-1.5 bg-[#0D1527] hover:bg-rose-950/40 border border-[#1E2D4D] hover:border-rose-800 text-slate-400 hover:text-rose-400 rounded-lg transition-all cursor-pointer shrink-0"
+          >
+            <RotateCcw size={15} />
+          </button>
+        </HelpTooltip>
       </div>
     </header>
   );

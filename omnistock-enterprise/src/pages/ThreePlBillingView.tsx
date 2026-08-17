@@ -6,6 +6,7 @@ import {
   CheckCircle2
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { HelpTooltip } from '../components/HelpTooltip';
 
 interface ThreePlBillingViewProps {
   clients: ClientAccount[];
@@ -112,13 +113,20 @@ export const ThreePlBillingView: React.FC<ThreePlBillingViewProps> = ({
               <h3 className="text-white text-lg font-bold font-sans">{selectedClient.companyName}</h3>
               <span className="text-slate-400">{selectedClient.email}</span>
             </div>
-            <button
-              onClick={handleSendInvoice}
-              className="flex items-center gap-1.5 bg-gradient-to-r from-[#5BC0BE] to-[#3A86FF] text-[#070B14] font-bold px-4 py-2 rounded-xl transition-all cursor-pointer shadow-lg glow-mint text-xs"
+            <HelpTooltip
+              title="Automated 3PL Invoicing Dispatch"
+              purpose="Awtomatikong bumubuo ng itemized PDF invoice na naglalaman ng pallet-day storage fees, handling picks, at cold vault environmental surcharge."
+              howTo="I-click upang i-dispatch ang formal invoice sa email ng kliyente at i-sync sa billing ledger."
+              position="left"
             >
-              <Send size={14} />
-              <span>Dispatch Invoice PDF</span>
-            </button>
+              <button
+                onClick={handleSendInvoice}
+                className="flex items-center gap-1.5 bg-gradient-to-r from-[#5BC0BE] to-[#3A86FF] text-[#070B14] font-bold px-4 py-2 rounded-xl transition-all cursor-pointer shadow-lg glow-mint text-xs"
+              >
+                <Send size={14} />
+                <span>Dispatch Invoice PDF</span>
+              </button>
+            </HelpTooltip>
           </div>
 
           {/* Invoice Itemized Table */}
