@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html class="dark" lang="en">
 <head>
@@ -58,6 +58,29 @@
     /* Glassmorphic Cards */
     .glass-card {
       background: rgba(11, 28, 48, 0.85);
+    }
+
+    /* Anti-Screenshot, Screen Capture & Print Defense */
+    @media print {
+      body {
+        display: none !important;
+        visibility: hidden !important;
+      }
+    }
+
+    .secure-vault-container {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-touch-callout: none;
+    }
+
+    .secure-banking-blur {
+      filter: blur(14px) grayscale(80%) !important;
+      pointer-events: none !important;
+      transition: filter 0.25s ease;
+    }
       backdrop-filter: blur(16px);
       border: 1px solid #1E293B;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -716,21 +739,27 @@
 </li>
 </ul>
 </div>
-<button class="w-full py-3 border border-outline-variant text-white font-bold hover:bg-[#0B1C30]/5 transition-all rounded-xl cursor-pointer" onclick="openContactModal('Starter Package Inquiry')">
-            Select Starter Plan
-          </button>
+<div class="space-y-2">
+<button class="w-full py-3 bg-accent-electric text-white font-bold hover:bg-blue-600 transition-all rounded-xl shadow-lg shadow-blue-500/20 cursor-pointer flex items-center justify-center gap-2" onclick="openPayMongoCheckout('Starter Plan', 1500, 85000)">
+<span class="material-symbols-outlined text-sm">payments</span>
+<span>Pay via PayMongo (₱85k / $1.5k)</span>
+</button>
+<button class="w-full py-2.5 border border-outline-variant text-on-surface-variant hover:text-white text-xs font-mono hover:bg-[#0B1C30]/5 transition-all rounded-xl cursor-pointer" onclick="openContactModal('Starter Package Inquiry')">
+Inquire / Custom Proposal
+</button>
+</div>
 </div>
 <!-- Tier 2: Scale (FEATURED CARD) -->
 <div class="glass-card spotlight-card p-8 rounded-3xl border border-blue-500/40 flex flex-col justify-between relative overflow-hidden bg-gradient-to-b from-blue-950/20 to-surface-card">
 <div class="absolute top-4 right-4 bg-accent-electric text-white text-[10px] font-mono font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
-            MOST POPULAR
-          </div>
+MOST POPULAR
+</div>
 <div>
 <div class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-2">Tier 02</div>
 <h3 class="text-2xl font-bold text-white mb-2 font-display">Scale</h3>
 <p class="text-on-surface-variant text-xs mb-6">Multi-Module Platforms &amp; API Integrations for Growing Businesses</p>
 <div class="mb-6 p-4 rounded-xl bg-blue-950/60 border border-blue-500/30">
-<div class="text-3xl font-extrabold text-white font-mono mb-1">$5,000 <span class="text-xs font-normal text-on-surface-variant">/ one-time</span></div>
+<div class="text-3xl font-extrabold text-white font-mono mb-1">$5,000 <span class="text-xs font-normal text-on-surface-variant">/ one-time (~₱280k)</span></div>
 <div class="text-xs text-accent-cyan font-mono">Retainer: $2,500 / mo (SLA &amp; Updates)</div>
 </div>
 <ul class="space-y-3 text-sm text-on-surface-variant mb-8 font-body">
@@ -740,7 +769,7 @@
 </li>
 <li class="flex items-center gap-2">
 <span class="material-symbols-outlined text-accent-cyan text-sm">check_circle</span>
-<span>Third-Party API Integrations (Stripe, Twilio, AWS)</span>
+<span>Third-Party API Integrations (PayMongo, Twilio, AWS)</span>
 </li>
 <li class="flex items-center gap-2">
 <span class="material-symbols-outlined text-accent-cyan text-sm">check_circle</span>
@@ -756,9 +785,15 @@
 </li>
 </ul>
 </div>
-<button class="w-full py-3.5 bg-accent-electric text-white font-bold hover:bg-blue-600 transition-all rounded-xl shadow-lg shadow-blue-500/30 cursor-pointer" onclick="openContactModal('Scale Package Inquiry')">
-            Select Scale Plan
-          </button>
+<div class="space-y-2">
+<button class="w-full py-3.5 bg-gradient-to-r from-accent-electric to-cyan-500 text-white font-bold hover:opacity-95 transition-all rounded-xl shadow-lg shadow-blue-500/30 cursor-pointer flex items-center justify-center gap-2" onclick="openPayMongoCheckout('Scale Plan', 5000, 280000)">
+<span class="material-symbols-outlined text-sm">payments</span>
+<span>Pay via PayMongo (₱280k / $5k)</span>
+</button>
+<button class="w-full py-2.5 border border-outline-variant text-on-surface-variant hover:text-white text-xs font-mono hover:bg-[#0B1C30]/5 transition-all rounded-xl cursor-pointer" onclick="openContactModal('Scale Package Inquiry')">
+Inquire / Custom Proposal
+</button>
+</div>
 </div>
 <!-- Tier 3: Enterprise -->
 <div class="glass-card spotlight-card p-8 rounded-3xl border border-outline-variant flex flex-col justify-between">
@@ -767,7 +802,7 @@
 <h3 class="text-2xl font-bold text-white mb-2 font-display">Enterprise</h3>
 <p class="text-on-surface-variant text-xs mb-6">High-Throughput Systems &amp; Mission-Critical Architecture</p>
 <div class="mb-6 p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-<div class="text-3xl font-extrabold text-white font-mono mb-1">$10,000 <span class="text-xs font-normal text-on-surface-variant">/ one-time</span></div>
+<div class="text-3xl font-extrabold text-white font-mono mb-1">$10,000 <span class="text-xs font-normal text-on-surface-variant">/ one-time (~₱560k)</span></div>
 <div class="text-xs text-amber-400 font-mono">Retainer: $3,500 / mo (Premium SLA)</div>
 </div>
 <ul class="space-y-3 text-sm text-on-surface-variant mb-8 font-body">
@@ -793,9 +828,29 @@
 </li>
 </ul>
 </div>
-<button class="w-full py-3 border border-outline-variant text-white font-bold hover:bg-[#0B1C30]/5 transition-all rounded-xl cursor-pointer" onclick="openContactModal('Enterprise Package Inquiry')">
-            Select Enterprise Plan
-          </button>
+<div class="space-y-2">
+<button class="w-full py-3 bg-accent-amber text-slate-950 font-bold hover:bg-amber-400 transition-all rounded-xl shadow-lg shadow-amber-500/20 cursor-pointer flex items-center justify-center gap-2" onclick="openPayMongoCheckout('Enterprise Plan', 10000, 560000)">
+<span class="material-symbols-outlined text-sm">payments</span>
+<span>Pay via PayMongo (₱560k / $10k)</span>
+</button>
+<button class="w-full py-2.5 border border-outline-variant text-on-surface-variant hover:text-white text-xs font-mono hover:bg-[#0B1C30]/5 transition-all rounded-xl cursor-pointer" onclick="openContactModal('Enterprise Package Inquiry')">
+Inquire / Custom Proposal
+</button>
+</div>
+</div>
+</div>
+<!-- Supported Payment Gateways Strip -->
+<div class="mt-8 p-4 rounded-2xl bg-surface-card/60 border border-outline-variant flex flex-wrap items-center justify-between gap-4 font-mono text-xs text-on-surface-variant">
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-emerald-400 text-base">verified_user</span>
+<span>SECURED BY PAYMONGO PHILIPPINES</span>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<span class="px-2.5 py-1 rounded bg-blue-500/10 text-blue-400 border border-blue-500/30">GCash</span>
+<span class="px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Maya</span>
+<span class="px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">QR Ph</span>
+<span class="px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/30">Visa / Mastercard</span>
+<span class="px-2.5 py-1 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30">BPI / UnionBank</span>
 </div>
 </div>
 </section>
@@ -824,8 +879,13 @@
 </div>
 <div class="bg-surface-card spotlight-card border border-outline-variant p-6 rounded-2xl transition-transform hover:-translate-y-1 hover:border-accent-electric">
 <div class="text-accent-amber mb-3"><span class="material-symbols-outlined text-3xl">payments</span></div>
-<h3 class="text-lg font-bold text-white mb-2">Integrated Payments (Stripe)</h3>
-<p class="text-on-surface-variant text-sm">Easily accept payments via credit cards through secure Stripe checkout integration directly embedded into your software.</p>
+<h3 class="text-lg font-bold text-white mb-2">Integrated Payments (PayMongo)</h3>
+<p class="text-on-surface-variant text-sm">Accept payments seamlessly via GCash, Maya, QR Ph, GrabPay, and Credit/Debit cards through secure PayMongo checkout integration directly embedded into your software.</p>
+</div>
+<div class="bg-surface-card spotlight-card border border-outline-variant p-6 rounded-2xl transition-transform hover:-translate-y-1 hover:border-accent-electric">
+<div class="text-indigo-400 mb-3"><span class="material-symbols-outlined text-3xl">sync</span></div>
+<h3 class="text-lg font-bold text-white mb-2">Real-Time Data Sync</h3>
+<p class="text-on-surface-variant text-sm">Connects seamlessly with your existing tools like Google Sheets, Slack, and AirTable. If a client signs up, you instantly get a notification on your phone.</p>
 </div>
 <div class="bg-surface-card spotlight-card border border-outline-variant p-6 rounded-2xl transition-transform hover:-translate-y-1 hover:border-accent-electric">
 <div class="text-indigo-400 mb-3"><span class="material-symbols-outlined text-3xl">sync</span></div>
@@ -1061,6 +1121,160 @@
 </form>
 </div>
 </div>
+<!-- Secure Bank Direct Deposit & PayMongo Vault Modal (With Anti-Screenshot & Screen Capture DRM) -->
+<div class="fixed inset-0 bg-black/90 backdrop-blur-xl z-50 hidden flex items-center justify-center p-4" id="paymongo-modal">
+  <div class="bg-surface-card border border-blue-500/50 p-8 rounded-3xl max-w-lg w-full shadow-2xl relative overflow-hidden bg-gradient-to-b from-blue-950/40 to-surface-card secure-vault-container select-none" id="secure-banking-vault">
+    
+    <!-- Dynamic DRM Watermark Security Grid -->
+    <div class="absolute inset-0 pointer-events-none opacity-5 flex flex-wrap gap-12 font-mono text-[9px] text-accent-cyan select-none -rotate-12 z-0">
+      <span>GATZ SECURE DEPOSIT</span>
+      <span>ANTI-CAPTURE DRM ACTIVE</span>
+      <span>CONFIDENTIAL TELEMETRY</span>
+      <span>DO NOT SCREENSHOT</span>
+      <span>GATZ SECURE DEPOSIT</span>
+      <span>ANTI-CAPTURE DRM ACTIVE</span>
+    </div>
+
+    <!-- Security Blackout Banner (Appears during PrintScreen / Screen Capture Attempt) -->
+    <div class="absolute inset-0 bg-slate-950/95 z-50 hidden flex flex-col items-center justify-center text-center p-6" id="drm-blackout-shield">
+      <span class="material-symbols-outlined text-rose-500 text-5xl mb-2 animate-bounce">security</span>
+      <h4 class="text-lg font-bold text-white font-display mb-1">SCREENSHOT / RECORDING PROTECTED</h4>
+      <p class="text-xs font-mono text-on-surface-variant max-w-xs">
+        Capture detected. Direct banking credentials are confidential and protected by Gatz Security DRM.
+      </p>
+      <button class="mt-4 px-4 py-1.5 bg-slate-800 text-xs font-mono text-white rounded-lg" onclick="dismissDrmShield()">Dismiss Shield</button>
+    </div>
+
+    <button class="absolute top-4 right-4 text-on-surface-variant hover:text-white transition-colors z-10" onclick="closeModal('paymongo-modal')">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    
+    <div class="flex items-center gap-3 mb-4 relative z-10">
+      <div class="w-11 h-11 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-accent-cyan">
+        <span class="material-symbols-outlined text-2xl">shield_lock</span>
+      </div>
+      <div>
+        <span class="text-[10px] font-mono text-emerald-400 uppercase tracking-widest flex items-center gap-1">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          DIRECT SECURE DEPOSIT &amp; WIRE VAULT
+        </span>
+        <h3 class="text-2xl font-bold text-white font-display" id="paymongo-plan-title">Starter Plan Deposit</h3>
+      </div>
+    </div>
+
+    <!-- Amount Display Card -->
+    <div class="mb-4 p-4 rounded-2xl bg-slate-950/90 border border-outline-variant flex justify-between items-center font-mono relative z-10">
+      <div>
+        <div class="text-[10px] text-on-surface-variant uppercase tracking-wider">Target Deposit Amount</div>
+        <div class="text-2xl font-extrabold text-accent-cyan" id="paymongo-amount-php">₱85,000 PHP</div>
+      </div>
+      <div class="text-right">
+        <div class="text-[10px] text-on-surface-variant uppercase tracking-wider">USD Value</div>
+        <div class="text-sm font-bold text-white" id="paymongo-amount-usd">$1,500 USD</div>
+      </div>
+    </div>
+
+    <!-- PAYMENT CHANNEL SELECTOR TABS -->
+    <div class="mb-4 flex gap-2 relative z-10 font-mono text-xs">
+      <button type="button" id="tab-gcash-btn" onclick="switchPaymentTab('gcash')" class="flex-1 py-2 rounded-xl bg-blue-600 text-white font-bold border border-blue-500 flex items-center justify-center gap-1.5 transition-all">
+        <span class="material-symbols-outlined text-sm">qr_code_scanner</span>
+        <span>GCash InstaPay QR</span>
+      </button>
+      <button type="button" id="tab-bank-btn" onclick="switchPaymentTab('bank')" class="flex-1 py-2 rounded-xl bg-slate-900 text-on-surface-variant hover:text-white border border-slate-800 flex items-center justify-center gap-1.5 transition-all">
+        <span class="material-symbols-outlined text-sm">account_balance</span>
+        <span>Direct Bank Wire</span>
+      </button>
+    </div>
+
+    <!-- TAB 1: GCASH INSTAPAY QR CODE (ANTI-SCREENSHOT ENCRYPTED) -->
+    <div class="mb-4 p-4 rounded-2xl bg-slate-950 border border-blue-500/40 relative z-10 overflow-hidden text-center" id="gcash-qr-card">
+      <div class="text-[10px] font-mono text-blue-400 uppercase tracking-widest mb-2 flex items-center justify-center gap-1">
+        <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-ping"></span>
+        SCAN VIA GCASH / MAYA / ANY BANKING APP
+      </div>
+      <div class="mx-auto w-48 h-64 bg-white p-2 rounded-2xl shadow-xl flex flex-col items-center justify-between border-2 border-blue-500/60 relative">
+        <img src="assets/gcash_qr.png" alt="GCash InstaPay Official QR" class="w-full h-auto object-contain rounded-xl select-none pointer-events-none" id="gcash-qr-img"/>
+      </div>
+      <div class="mt-2 text-xs font-mono text-slate-300">
+        Account: <span class="font-bold text-white">MH**C CH******N G.</span> | <span class="text-blue-400">+63 962 281 ••••</span>
+      </div>
+    </div>
+
+    <!-- TAB 2: DIRECT BANK WIRE CREDENTIALS CARD (ANTI-SCREENSHOT ENCRYPTED) -->
+    <div class="mb-4 p-4 rounded-2xl bg-slate-950 border border-blue-500/40 relative z-10 overflow-hidden hidden" id="bank-credentials-card">
+      <div class="flex justify-between items-center pb-2 mb-3 border-b border-slate-800 text-xs font-mono">
+        <span class="text-accent-electric font-bold flex items-center gap-1">
+          <span class="material-symbols-outlined text-sm">account_balance</span>
+          DIRECT BANK WIRE ACCOUNT
+        </span>
+        <span class="text-[9px] text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-500/30">VERIFIED PRIMARY</span>
+      </div>
+
+      <div class="space-y-2.5 font-mono text-xs">
+        <div>
+          <div class="text-[10px] text-on-surface-variant mb-0.5">BENEFICIARY ACCOUNT NUMBER:</div>
+          <div class="flex items-center justify-between bg-slate-900/90 px-3.5 py-2.5 rounded-xl border border-slate-800">
+            <span class="text-base font-bold text-white tracking-widest" id="bank-acc-display">•••• •••• 6533</span>
+            <div class="flex items-center gap-2">
+              <button class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-[10px] text-accent-cyan border border-slate-700 transition-all cursor-pointer flex items-center gap-1" id="reveal-btn" onclick="toggleRevealAccount()" type="button">
+                <span class="material-symbols-outlined text-xs">visibility</span>
+                <span id="reveal-btn-text">Reveal</span>
+              </button>
+              <button class="px-2.5 py-1 rounded bg-blue-600 hover:bg-blue-500 text-[10px] text-white font-bold transition-all cursor-pointer flex items-center gap-1" onclick="copyBankAccountSecurely()" type="button">
+                <span class="material-symbols-outlined text-xs">content_copy</span>
+                <span>Copy</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2 text-[11px] pt-1">
+          <div class="bg-slate-900/60 p-2 rounded-xl border border-slate-800/80">
+            <div class="text-[9px] text-on-surface-variant">SUPPORTED RAILS:</div>
+            <div class="text-slate-200 font-semibold mt-0.5">BDO / BPI / UB / InstaPay</div>
+          </div>
+          <div class="bg-slate-900/60 p-2 rounded-xl border border-slate-800/80">
+            <div class="text-[9px] text-on-surface-variant">TRANSFER PURPOSE:</div>
+            <div class="text-slate-200 font-semibold mt-0.5">Software Studio Retainer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transaction Confirmation Dispatch Form -->
+    <form class="space-y-3 font-body relative z-10" onsubmit="handlePayMongoSubmit(event)">
+      <div>
+        <label class="block text-xs font-mono text-on-surface-variant mb-1">CLIENT NAME / COMPANY</label>
+        <input class="w-full bg-slate-950 border border-outline-variant rounded-xl px-4 py-2 text-sm text-white focus:border-accent-electric outline-none" id="paymongo-name" placeholder="Alex Rivera" required="" type="text"/>
+      </div>
+      <div>
+        <label class="block text-xs font-mono text-on-surface-variant mb-1">RECEIPT &amp; PROPOSAL NOTIFICATION EMAIL</label>
+        <input class="w-full bg-slate-950 border border-outline-variant rounded-xl px-4 py-2 text-sm text-white focus:border-accent-electric outline-none" id="paymongo-email" placeholder="alex@company.com" required="" type="email"/>
+      </div>
+      <div>
+        <label class="block text-xs font-mono text-on-surface-variant mb-1">REFERENCE NO. / MOBILE PHONE (FOR DEPOSIT CONFIRMATION)</label>
+        <input class="w-full bg-slate-950 border border-outline-variant rounded-xl px-4 py-2 text-sm text-white focus:border-accent-electric outline-none" id="paymongo-phone" placeholder="e.g. 0917 123 4567 or Ref #98214" required="" type="text"/>
+      </div>
+
+      <!-- Anti-Capture Security Trust Indicator -->
+      <div class="p-2.5 rounded-xl bg-slate-950 border border-slate-800 text-[10px] font-mono text-on-surface-variant flex items-center justify-between">
+        <span class="flex items-center gap-1.5 text-emerald-400">
+          <span class="material-symbols-outlined text-xs">verified_user</span>
+          DRM Anti-Capture Active
+        </span>
+        <span class="text-accent-cyan font-bold">256-BIT SSL ENCRYPTION</span>
+      </div>
+
+      <div class="flex justify-end gap-3 pt-1">
+        <button class="border border-outline-variant text-white px-5 py-2.5 rounded-xl font-bold hover:bg-[#0B1C30]/5 text-sm" onclick="closeModal('paymongo-modal')" type="button">Cancel</button>
+        <button class="bg-gradient-to-r from-accent-electric to-cyan-500 text-white px-6 py-2.5 rounded-xl font-bold hover:opacity-95 shadow-lg shadow-blue-500/20 text-sm flex items-center gap-2 cursor-pointer" type="submit">
+          <span>Confirm Wire &amp; Dispatch Receipt</span>
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
 <!-- JAVASCRIPT UX HANDLERS & MOUSE SPOTLIGHT CONTROLLER -->
 <script>
     // OPTION A: Dynamic Mouse Spotlight Tracking Handler
@@ -1092,6 +1306,7 @@
         closeModal('feature-modal');
         closeModal('contact-modal');
         closeModal('resume-modal');
+        closeModal('paymongo-modal');
       }
       
       // Ctrl+K or / key focuses Search Input
@@ -1269,6 +1484,162 @@
       showToast('Thank you! Your project message has been submitted to Gatz.', 'success');
     }
 
+    // PayMongo & Direct Wire Checkout Integration Handlers
+    let currentSelectedPlan = { name: 'Starter Plan', usd: 1500, php: 85000 };
+    const SENSITIVE_BANK_ACC = '005790246533';
+    let isBankRevealed = false;
+    let revealTimer = null;
+    let clipboardPurgeTimer = null;
+
+    function switchPaymentTab(tab) {
+      const gcashCard = document.getElementById('gcash-qr-card');
+      const bankCard = document.getElementById('bank-credentials-card');
+      const gcashBtn = document.getElementById('tab-gcash-btn');
+      const bankBtn = document.getElementById('tab-bank-btn');
+
+      if (tab === 'gcash') {
+        gcashCard.classList.remove('hidden');
+        bankCard.classList.add('hidden');
+        gcashBtn.className = 'flex-1 py-2 rounded-xl bg-blue-600 text-white font-bold border border-blue-500 flex items-center justify-center gap-1.5 transition-all';
+        bankBtn.className = 'flex-1 py-2 rounded-xl bg-slate-900 text-on-surface-variant hover:text-white border border-slate-800 flex items-center justify-center gap-1.5 transition-all';
+      } else {
+        gcashCard.classList.add('hidden');
+        bankCard.classList.remove('hidden');
+        bankBtn.className = 'flex-1 py-2 rounded-xl bg-blue-600 text-white font-bold border border-blue-500 flex items-center justify-center gap-1.5 transition-all';
+        gcashBtn.className = 'flex-1 py-2 rounded-xl bg-slate-900 text-on-surface-variant hover:text-white border border-slate-800 flex items-center justify-center gap-1.5 transition-all';
+      }
+    }
+
+    function openPayMongoCheckout(planName, priceUsd, pricePhp) {
+      currentSelectedPlan = { name: planName, usd: priceUsd, php: pricePhp };
+      document.getElementById('paymongo-plan-title').innerText = `${planName} Deposit`;
+      document.getElementById('paymongo-amount-php').innerText = `₱${pricePhp.toLocaleString()} PHP`;
+      document.getElementById('paymongo-amount-usd').innerText = `$${priceUsd.toLocaleString()} USD`;
+      
+      // Default to GCash tab and ensure masked on open
+      switchPaymentTab('gcash');
+      maskBankAccount();
+      document.getElementById('paymongo-modal').classList.remove('hidden');
+    }
+
+    function toggleRevealAccount() {
+      if (isBankRevealed) {
+        maskBankAccount();
+      } else {
+        revealBankAccount();
+      }
+    }
+
+    function revealBankAccount() {
+      isBankRevealed = true;
+      document.getElementById('bank-acc-display').innerText = SENSITIVE_BANK_ACC;
+      document.getElementById('reveal-btn-text').innerText = 'Hide';
+      showToast('Account number revealed (Auto-hides in 10s for screen security)', 'warning');
+
+      if (revealTimer) clearTimeout(revealTimer);
+      revealTimer = setTimeout(() => {
+        maskBankAccount();
+      }, 10000);
+    }
+
+    function maskBankAccount() {
+      isBankRevealed = false;
+      document.getElementById('bank-acc-display').innerText = '•••• •••• 6533';
+      const btnText = document.getElementById('reveal-btn-text');
+      if (btnText) btnText.innerText = 'Reveal';
+    }
+
+    function copyBankAccountSecurely() {
+      navigator.clipboard.writeText(SENSITIVE_BANK_ACC).then(() => {
+        showToast('Account Number copied! (Clipboard auto-purges in 30s for safety)', 'success');
+        
+        // Auto-purge clipboard after 30 seconds
+        if (clipboardPurgeTimer) clearTimeout(clipboardPurgeTimer);
+        clipboardPurgeTimer = setTimeout(() => {
+          navigator.clipboard.writeText(' ').catch(() => {});
+        }, 30000);
+      }).catch(() => {
+        showToast('Direct Copy failed. Please hold to reveal and note down manually.', 'warning');
+      });
+    }
+
+    function handlePayMongoSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('paymongo-name').value;
+      const email = document.getElementById('paymongo-email').value;
+      const ref = document.getElementById('paymongo-phone').value;
+
+      closeModal('paymongo-modal');
+      showToast(`Verifying wire details for ${currentSelectedPlan.name}...`, 'info');
+      
+      setTimeout(() => {
+        showToast(`Deposit confirmation dispatched for ${name}! Receipt & Onboarding packet sent to ${email}.`, 'success');
+      }, 1200);
+    }
+
+    // ANTI-SCREENSHOT & SCREEN CAPTURE DEFENSE ENGINE
+    function triggerDrmShield(e) {
+      if (e) e.preventDefault();
+      const modal = document.getElementById('paymongo-modal');
+      if (!modal.classList.contains('hidden')) {
+        const shield = document.getElementById('drm-blackout-shield');
+        if (shield) shield.classList.remove('hidden');
+        maskBankAccount();
+        showToast('Screenshot / recording prohibited on confidential payment surface.', 'warning');
+      }
+    }
+
+    function dismissDrmShield() {
+      const shield = document.getElementById('drm-blackout-shield');
+      if (shield) shield.classList.add('hidden');
+    }
+
+    // Global Key Interceptors for PrintScreen and Screenshot Hotkeys
+    window.addEventListener('keyup', (e) => {
+      if (e.key === 'PrintScreen') {
+        triggerDrmShield(e);
+        navigator.clipboard.writeText('').catch(() => {});
+      }
+    });
+
+    window.addEventListener('keydown', (e) => {
+      // Intercept PrintScreen
+      if (e.key === 'PrintScreen') {
+        triggerDrmShield(e);
+      }
+      // Intercept Ctrl+P (Print)
+      if ((e.ctrlKey || e.metaKey) && (e.key === 'p' || e.key === 'P')) {
+        triggerDrmShield(e);
+      }
+      // Intercept Win+Shift+S or Ctrl+Shift+S (Snipping tool)
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 's' || e.key === 'S')) {
+        triggerDrmShield(e);
+      }
+    });
+
+    // Window Blur (Switching Apps / Screen Recorders Focus Loss) Protection
+    window.addEventListener('blur', () => {
+      const bankCard = document.getElementById('bank-credentials-card');
+      if (bankCard) {
+        bankCard.classList.add('secure-banking-blur');
+      }
+    });
+
+    window.addEventListener('focus', () => {
+      const bankCard = document.getElementById('bank-credentials-card');
+      if (bankCard) {
+        bankCard.classList.remove('secure-banking-blur');
+      }
+    });
+
+    // Context Menu Disable on Secure Banking Vault
+    document.addEventListener('contextmenu', (e) => {
+      if (e.target.closest('#secure-banking-vault')) {
+        e.preventDefault();
+        showToast('Right-click & context capture disabled for banking security.', 'warning');
+      }
+    });
+
     // FULL CONTAINER BACKGROUND ANIMATION ENGINE: "Raindrops of the Soul" (Raindrop -> Splash -> Ascending Soul)
     function initSoulRainAnimation() {
       const canvas = document.getElementById('soul-rain-canvas');
@@ -1414,5 +1785,7 @@
       animate();
     }
   </script>
+  <!-- Gatz 48-Hour Full-Access Sandbox Trial Engine -->
+  <script src="assets/gatz_trial_engine.js"></script>
 </body>
 </html>

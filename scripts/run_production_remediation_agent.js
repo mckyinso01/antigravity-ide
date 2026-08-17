@@ -7,7 +7,7 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 function runRemediationAgent(repoRootDir) {
-  // console.log(`\n🚀 Starting Production Remediation Agent Execution on: ${repoRootDir}`);
+  console.log(`\n🚀 Starting Production Remediation Agent Execution on: ${repoRootDir}`);
 
   // 1. Gather repo_files
   const targetFiles = [
@@ -25,100 +25,141 @@ function runRemediationAgent(repoRootDir) {
     FILES[f] = fs.readFileSync(path.join(repoRootDir, f), 'utf8');
   });
 
-  // console.log(`📦 Loaded ${repo_files.length} repo_files into FILES mapping.`);
+  console.log(`📦 Loaded ${repo_files.length} repo_files into FILES mapping.`);
 
   // 2. Generate Schema-Compliant Remediation JSON
+  const MOCK_PATTERNS = [
+    /MOCK_/i,
+    /mockData/i,
+    /fakeData/i,
+    /hardcoded/i,
+    /staticData/i,
+    /dummy/i,
+    /John Doe/i,
+    /test@test\.com/i,
+    /lorem ipsum/i,
+    /placeholder/i,
+    /TODO/i,
+    /FIXME/i
+  ];
+
+  function collectSourceFiles(dir, extensions) {
+    let results = [];
+    const skipDirs = ['node_modules', '.git', 'dist', 'build', '.next', 'coverage'];
+    const list = fs.readdirSync(dir);
+    list.forEach(file => {
+      file = path.join(dir, file);
+      const stat = fs.statSync(file);
+      if (stat && stat.isDirectory()) {
+        const dirName = path.basename(file);
+        if (!skipDirs.includes(dirName)) {
+          results = results.concat(collectSourceFiles(file, extensions));
+        }
+      } else {
+        const ext = path.extname(file).toLowerCase();
+        if (extensions.includes(ext)) {
+          results.push(file);
+        }
+      }
+    });
+    return results;
+  }
+
+  function scanFileForMockViolations(filePath, repoRootDir) {
+    const violations = [];
+    const content = fs.readFileSync(filePath, 'utf8');
+    const lines = content.split('\n');
+    const relativePath = path.relative(repoRootDir, filePath).replace(/\\/g, '/');
+
+    lines.forEach((line, index) => {
+      for (const pattern of MOCK_PATTERNS) {
+        if (pattern.test(line)) {
+          violations.push({
+            file: relativePath,
+            line: index + 1,
+            content: line.trim(),
+            pattern: pattern.source
+          });
+          break;
+        }
+      }
+    });
+    return violations;
+  }
+
+  const allSourceFiles = collectSourceFiles(repoRootDir, ['.js', '.jsx', '.ts', '.tsx', '.vue']);
+  const allViolations = [];
+
+  allSourceFiles.forEach(file => {
+    allViolations.push(...scanFileForMockViolations(file, repoRootDir));
+  });
+
   const outputJson = {
-    "audit_id": "REMED-2026-0803-PROD-SAFE",
-    summary: "Production-safe code remediation and auditor suite implementation for Antigravity IDE and GuroGen AI.",
+    audit_id: `REMED-${new Date().toISOString().slice(0,10)}-DYN`,
+    summary: `Dynamic mock data scan completed on ${new Date().toISOString()}`,
     errors: [],
-    changes: [
-      {
-        id: "CHG-ADMIN-GUARD",
-        title: "Add Admin API Key Authentication Guard Middleware",
-        severity: "critical",
-        description: "Protect sensitive admin endpoints with an ADMIN_API_KEY authorization header check middleware.",
-        evidence: [
-          {
-            file: "src/lib/AuthContext.jsx",
-            startLine: 1,
-            endLine: 25,
-            snippet: "export const AuthProvider = ({ children }) => {"
-          }
-        ],
-        proposed_fix: {
-          type: "config",
-          diff_unified: null,
-          explanation: "Middleware specification defined. Explicit human review required for admin routing changes.",
-          tests_added: ["tests/admin_auth.spec.js"],
-          requires_human_review: true
-        },
-        confidence: 0.95
-      },
-      {
-        id: "CHG-MODEL-VALIDATOR",
-        title: "Server-side Zod Model Output Validator",
-        severity: "high",
-        description: "Validation harness for AI model audit outputs successfully implemented and verified against repository file trees.",
-        evidence: [
-          {
-            file: "scripts/validate_code_quality_schema.js",
-            startLine: 1,
-            endLine: 20,
-            snippet: "function validateAuditJson(jsonPath, repoRootDir) {"
-          }
-        ],
-        proposed_fix: {
-          type: "patch",
-          diff_unified: null,
-          explanation: "Server-side Node.js validator script available and verified against Zod schema.",
-          tests_added: ["scripts/validate_code_quality_schema.js"],
-          requires_human_review: false
-        },
-        confidence: 1.0
-      }
-    ],
-    ci_workflows: [
-      {
-        file: ".github/workflows/validate-model-output.yml",
-        explanation: "Runs Node.js model output validator and test commands on PRs.",
-        workflow_snippet: "name: Validate Model Output\non: [push, pull_request]"
-      }
-    ],
-    agent_policy_changes: [
-      {
-        agent_id: "remediation-agent",
-        role: "Production Code Remediation Agent",
-        allowed_actions: ["read_repo", "create_branch", "apply_patch", "open_pr", "run_tests"],
-        deny_actions: ["apply_destructive_patches", "deploy_without_approval"],
-        review_requirements: "Human sign-off required for critical severity findings or destructive patches."
-      }
-    ],
+    findings: [],
+    code_changes_suggested: [],
     metadata: {
       generated_at: new Date().toISOString(),
-      model: "gemini-3.6-flash",
-      temperature: 0.0
+      model: "dynamic-scanner-v1",
+      temperature: 0.0,
+      files_scanned: allSourceFiles.length,
+      total_violations: allViolations.length
     },
     post_checks: {
-      patchs_apply_check: true,
-      lint_passed: true,
-      tests_passed: true,
-      notes: [
-        "All file path references verified against repo_files tree.",
-        "Zero hallucinations detected.",
-        "Diffs validated via git apply --check."
-      ]
+      patchs_apply_check: false,
+      lint_passed: null,
+      tests_passed: null,
+      notes: []
     }
   };
 
+  allViolations.forEach((violation, index) => {
+    outputJson.findings.push({
+      id: `MOCK-VIOLATION-${index + 1}`,
+      title: `Mock/Static Data Detected`,
+      severity: "high",
+      description: `Pattern "${violation.pattern}" found in ${violation.file} at line ${violation.line}`,
+      evidence: [{
+        file: violation.file,
+        startLine: violation.line,
+        endLine: violation.line,
+        snippet: violation.content
+      }],
+      proposed_fix: {
+        type: "refactor",
+        diff_unified: null,
+        explanation: `Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.`,
+        tests_added: [],
+        requires_human_review: true
+      },
+      confidence: 0.95
+    });
+
+    outputJson.code_changes_suggested.push({
+      file: violation.file,
+      change_type: "modify",
+      diff_unified: null,
+      explanation: `Line ${violation.line}: Remove mock pattern "${violation.pattern}" and wire to real data source.`
+    });
+  });
+
+  outputJson.post_checks.notes.push(`Scanned ${allSourceFiles.length} source files`);
+  outputJson.post_checks.notes.push(`Found ${allViolations.length} mock/static data violations`);
+  if (allViolations.length === 0) {
+    outputJson.post_checks.notes.push("PASS: Zero mock data violations detected. All source files are clean.");
+  }
+
   const outputPath = path.join(repoRootDir, 'docs', 'evaluations', 'production_remediation_output.json');
+  fs.mkdirSync(path.dirname(outputPath), { recursive: true });
   fs.writeFileSync(outputPath, JSON.stringify(outputJson, null, 2), 'utf8');
-  // console.log(`✅ Saved Output JSON to: ${outputPath}`);
+  console.log(`✅ Saved Output JSON to: ${outputPath}`);
 
   // 3. Run validation check
   const validatorScript = path.join(repoRootDir, 'scripts', 'validate_code_quality_schema.js');
   if (fs.existsSync(validatorScript)) {
-    // console.log(`\n🧪 Running Auditor Script Validation:`);
+    console.log(`\n🧪 Running Auditor Script Validation:`);
     try {
       execSync(`node "${validatorScript}" "${outputPath}" "${repoRootDir}"`, { stdio: 'inherit' });
     } catch (err) {

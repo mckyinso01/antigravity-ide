@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "hospital": "Salem Health",
+    "recipient": "bob.macdonald@salemhealth.org",
+    "status": "SUCCESS",
+    "messageId": "<fded13d9-25ab-fb64-3c50-067a211cf2cb@gmail.com>",
+    "timestamp": "2026-08-17T14:15:23.098Z"
+  },
+  {
+    "id": 2,
+    "hospital": "Asante Health System",
+    "recipient": "mike.adams@asante.org",
+    "status": "SUCCESS",
+    "messageId": "<61167abf-258f-146d-e458-b3aa959efab1@gmail.com>",
+    "timestamp": "2026-08-17T14:16:18.961Z"
+  }
+]

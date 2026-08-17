@@ -1,0 +1,9 @@
+{
+  "nextLeadId": 1,
+  "totalSent": 0,
+  "dailyBatchSize": 5,
+  "delaySecondsMin": 35,
+  "delaySecondsMax": 55,
+  "lastRun": null,
+  "history": []
+}

@@ -168,6 +168,22 @@
 
 ---
 
+## 💳 PHASE 9 — Commercial Readiness & Payment Gateway Compliance
+
+### 9.1 Legal & Merchant Verification Gate
+- [ ] DTI Certificate of Registration (Sole Proprietorship) or SEC Registration (Corporation) verified on file
+- [ ] BIR Certificate of Registration (Form 2303 / COR) on file and verified
+- [ ] Merchant Account activated & KYC approved (PayMongo / Stripe / Merchant Acquirer)
+- [ ] Verified Bank Account linked for automated merchant payouts and disbursements
+
+### 9.2 Payment & Transaction Infrastructure
+- [ ] Live Payment Link / Checkout Webhook tested with real test transaction (GCash, Maya, QR Ph, Credit Card)
+- [ ] Automated payment receipt dispatch configured (SMS & Email alerts to customer and admin)
+- [ ] Fallback Payment Mechanism active: Direct QR Ph / Bank Transfer invoice option for non-KYC interim stages
+- [ ] Terms of Service & Refund/Cancellation Policy clearly linked on all checkout surfaces
+
+---
+
 ## 🧠 Agent Behavior Compliance During Development
 
 > These apply to ALL AI agents (Gemini, Claude, etc.) working on this codebase.

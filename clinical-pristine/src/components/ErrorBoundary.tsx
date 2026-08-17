@@ -29,7 +29,7 @@ export class ErrorBoundary extends Component<Props, State> {
       return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-[#050811] text-slate-200 p-6 text-center">
           <div className="relative mb-8">
-            <div className="absolute inset-0 bg-[#E11D48]/20 blur-2xl rounded-full animate-pulse"></div>
+            <div className="absolute inset-0 bg-rose-500/20 rounded-full animate-pulse"></div>
             <div className="w-24 h-24 bg-[#E11D48]/10 border border-[#E11D48]/50 rounded-full flex items-center justify-center relative z-10 shadow-[0_0_50px_rgba(225,29,72,0.4)]">
               <AlertTriangle size={48} className="text-[#E11D48] drop-shadow-[0_0_15px_rgba(225,29,72,0.8)]" />
             </div>

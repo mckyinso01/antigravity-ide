@@ -1,148 +1,232 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import { 
-  Activity, 
-  BedDouble, 
-  ClipboardList, 
+  LayoutGrid, 
+  Map, 
+  Contact2, 
+  Users2, 
+  AlertTriangle, 
+  FileBarChart, 
   Settings, 
-  ShieldAlert, 
-  Menu,
-  Stethoscope,
-  Terminal
+  Terminal,
+  FileCode2,
+  Server
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { useEmergency } from './contexts/EmergencyContext';
 import { Login } from './pages/Login';
 import { CommandCenter } from './pages/CommandCenter';
+import { DashboardView } from './pages/DashboardView';
 import { BedManagement } from './pages/BedManagement';
 import { EVSApp } from './pages/EVSApp';
 import { AlertsApp } from './pages/AlertsApp';
+import { ReportsApp } from './pages/ReportsApp';
 import { NotFound } from './pages/NotFound';
 import { SystemSpecsModal } from './components/SystemSpecsModal';
 import { SettingsPanel } from './components/SettingsPanel';
+import { ProductionCleanSweepModal } from './components/ProductionCleanSweepModal';
+import { HospitalClusterStatus } from './components/HospitalClusterStatus';
+import { Hl7InterfaceConsoleModal } from './components/Hl7InterfaceConsoleModal';
+import { HipaaInactivityLock } from './components/HipaaInactivityLock';
+import { initClinicalVisitorBeacon } from './utils/visitorEmailBeacon';
 
-const LicensingBar = ({ onOpenSpecs }: { onOpenSpecs: () => void }) => (
-  <div className="fixed bottom-0 left-0 w-full bg-pristine-bg border-t border-pristine-cardBorder z-50 px-4 py-2 flex items-center justify-between text-xs text-pristine-textMuted">
-    <div className="flex items-center space-x-2">
-      <Terminal size={14} className="text-pristine-accent" />
-      <span className="font-mono font-bold tracking-widest text-pristine-text">CLINICAL PRISTINE OS</span>
-      <span>|</span>
-      <span>v1.0.0-zero-defect</span>
-    </div>
-    <div className="flex space-x-6">
-      <button className="hover:text-pristine-accent transition-colors">SOFTWARE FACTORY</button>
-      <button className="hover:text-pristine-accent transition-colors">Self-Host ($4,999)</button>
-      <button className="hover:text-pristine-accent transition-colors">White-Label</button>
-      <button className="hover:text-pristine-accent transition-colors">Hosted Cloud SaaS ($299/mo)</button>
-      <button onClick={onOpenSpecs} className="hover:text-pristine-accent transition-colors">📋 System Specs</button>
-    </div>
-  </div>
-);
+const LicensingBar = ({ 
+  onOpenSpecs, 
+  onOpenCleanSweep,
+  onOpenHl7Console 
+}: { 
+  onOpenSpecs: () => void; 
+  onOpenCleanSweep: () => void; 
+  onOpenHl7Console: () => void;
+}) => {
+  const isProduction = localStorage.getItem('clinical_pristine_production_mode') === 'true';
+  const hospitalName = localStorage.getItem('clinical_pristine_hospital_name') || 'Pristine General Hospital';
 
-const Sidebar = ({ isCollapsed, toggle, onOpenSettings }: { isCollapsed: boolean, toggle: () => void, onOpenSettings: () => void }) => {
+  return (
+    <div className="fixed bottom-1.5 left-2.5 right-2.5 rounded-xl bg-white border border-slate-300 z-50 px-3 md:px-4 py-1.5 flex items-center justify-between text-xs text-slate-600 font-sans shadow-2xs overflow-x-auto gap-3">
+      <div className="flex items-center space-x-2.5 shrink-0">
+        <Terminal size={14} className="text-blue-700 font-bold" />
+        <span className="font-bold tracking-wide text-slate-900 hidden sm:inline">CLINICAL PRISTINE OS</span>
+        <span className="text-slate-300 hidden sm:inline">|</span>
+        {isProduction ? (
+          <span className="font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-300">
+            🟢 PRODUCTION: {hospitalName}
+          </span>
+        ) : (
+          <span className="font-medium text-slate-600 hidden md:inline">v1.0.0-hospital-workstation</span>
+        )}
+
+        {/* Live Enterprise Cluster Status & HL7 Gateway Telemetry */}
+        <HospitalClusterStatus onOpenHl7Console={onOpenHl7Console} />
+      </div>
+
+      <div className="flex items-center space-x-2 sm:space-x-3 text-xs font-semibold text-slate-700 shrink-0">
+        <button 
+          onClick={onOpenHl7Console}
+          className="hover:text-blue-700 text-slate-900 font-bold flex items-center gap-1 cursor-pointer bg-blue-50 px-2.5 py-0.5 rounded-md border border-blue-300 shadow-2xs transition-all shrink-0"
+          title="Open Epic / Cerner HL7 & FHIR Live Stream Ingestion Gateway"
+        >
+          <Server size={13} className="text-blue-700" />
+          <span>HL7/FHIR Gateway</span>
+        </button>
+
+        <button 
+          onClick={onOpenCleanSweep}
+          className="hover:bg-rose-100 text-rose-700 font-bold flex items-center gap-1 cursor-pointer bg-rose-50 px-2.5 py-0.5 rounded-md border border-rose-300 shadow-2xs transition-all shrink-0"
+          title="Factory clean sweep to blank production hospital state"
+        >
+          <span>🧹 Clean Sweep</span>
+        </button>
+
+        <button onClick={onOpenSpecs} className="hover:text-blue-700 transition-colors font-bold text-slate-900 flex items-center gap-1.5 cursor-pointer bg-slate-50 px-2.5 py-0.5 rounded-md border border-slate-300 shadow-2xs hover:border-slate-400 shrink-0">
+          <FileCode2 size={13} className="text-blue-700" /> <span className="hidden sm:inline">System</span> Specs
+        </button>
+      </div>
+    </div>
+  );
+};
+
+const Sidebar = ({ onOpenSettings }: { onOpenSettings: () => void }) => {
   const location = useLocation();
   const navItems = [
-    { path: '/', icon: <Activity size={20} />, label: 'Command Center' },
-    { path: '/beds', icon: <BedDouble size={20} />, label: 'Bed Management' },
-    { path: '/evs', icon: <ClipboardList size={20} />, label: 'EVS Field App' },
-    { path: '/alerts', icon: <ShieldAlert size={20} />, label: 'Security & Alerts' },
+    { path: '/dashboard', icon: <LayoutGrid size={18} />, label: 'Dashboard' },
+    { path: '/', icon: <Map size={18} />, label: 'Hospital Map' },
+    { path: '/beds', icon: <Contact2 size={18} />, label: 'Patient Directory' },
+    { path: '/evs', icon: <Users2 size={18} />, label: 'Staffing' },
+    { path: '/alerts', icon: <AlertTriangle size={18} />, label: 'Alerts' },
+    { path: '/reports', icon: <FileBarChart size={18} />, label: 'Reports' },
   ];
 
-  const { isCodeBlue } = useEmergency();
-  
   return (
-    <motion.div 
-      animate={{ width: isCollapsed ? 70 : 250 }}
-      className={`h-full backdrop-blur-xl border-r flex flex-col transition-all duration-300 ${isCodeBlue ? 'bg-rose-950/40 border-rose-900' : 'bg-pristine-card/90 border-pristine-cardBorder'}`}
-    >
-      <div className="p-4 flex items-center justify-between border-b border-pristine-cardBorder">
-        {!isCollapsed && (
-          <div className="flex items-center space-x-2 text-pristine-accent">
-            <Stethoscope size={24} className={isCodeBlue ? 'text-rose-500' : ''} />
-            <span className={`font-bold text-lg ${isCodeBlue ? 'text-rose-100' : 'text-pristine-text'}`}>Pristine OS</span>
+    <aside className="w-16 md:w-56 bg-white border-r border-slate-300 flex flex-col justify-between p-3 font-sans shrink-0 z-30 shadow-xs">
+      <div className="space-y-6">
+        <div className="flex items-center space-x-3 px-2 py-1">
+          <div className="w-8 h-8 rounded-xl bg-blue-600 border border-blue-700 flex items-center justify-center text-white font-black text-base shadow-xs shrink-0">
+            +
           </div>
-        )}
-        <button onClick={toggle} className="p-2 hover:bg-white/5 rounded-lg text-pristine-textMuted hover:text-white transition-colors">
-          <Menu size={20} />
-        </button>
+          <div className="hidden md:block">
+            <span className="font-bold text-sm text-slate-950 block leading-tight">Pristine OS</span>
+            <span className="text-[10px] text-slate-500 font-mono font-bold block">Hospital Workstation</span>
+          </div>
+        </div>
+
+        <nav className="space-y-1">
+          {navItems.map((item) => {
+            const isActive = location.pathname === item.path;
+            return (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`flex items-center space-x-3 px-3 py-2.5 rounded-xl font-bold text-xs transition-all ${
+                  isActive
+                    ? 'bg-blue-50 text-blue-700 border border-blue-200 shadow-2xs font-black'
+                    : 'text-slate-700 hover:bg-slate-50 hover:text-slate-950 border border-transparent'
+                }`}
+              >
+                <div className={`shrink-0 ${isActive ? 'text-blue-700' : 'text-slate-500'}`}>
+                  {item.icon}
+                </div>
+                <span className="hidden md:inline">{item.label}</span>
+              </Link>
+            );
+          })}
+        </nav>
       </div>
 
-      <div className="flex-1 py-4 flex flex-col gap-2 px-2">
-        {navItems.map((item) => {
-          const isActive = location.pathname === item.path;
-          return (
-            <Link 
-              key={item.path} 
-              to={item.path}
-              className={`flex items-center space-x-3 p-3 rounded-xl transition-all ${
-                isActive 
-                  ? (isCodeBlue ? 'bg-rose-500/20 text-rose-400 border border-rose-500/30 shadow-[0_0_15px_rgba(225,29,72,0.2)]' : 'bg-pristine-accent/10 text-pristine-accent border border-pristine-accent/20') 
-                  : (isCodeBlue ? 'text-rose-200/50 hover:bg-rose-500/10 hover:text-rose-200 border border-transparent' : 'text-pristine-textMuted hover:bg-white/5 hover:text-pristine-text border border-transparent')
-              }`}
-            >
-              {item.icon}
-              {!isCollapsed && <span className="font-medium whitespace-nowrap">{item.label}</span>}
-            </Link>
-          );
-        })}
-      </div>
-
-      <div className={`p-4 border-t ${isCodeBlue ? 'border-rose-900' : 'border-pristine-cardBorder'}`}>
-        <button onClick={onOpenSettings} className="flex items-center space-x-3 text-pristine-textMuted hover:text-white transition-colors w-full p-2">
-          <Settings size={20} />
-          {!isCollapsed && <span>Settings</span>}
+      <div className="space-y-2 border-t border-slate-200 pt-3">
+        <button
+          onClick={onOpenSettings}
+          className="w-full flex items-center space-x-3 px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50 hover:text-slate-950 transition-colors cursor-pointer border border-transparent hover:border-slate-200"
+        >
+          <Settings size={18} className="text-slate-700 shrink-0" />
+          <span className="hidden md:inline">Settings</span>
         </button>
       </div>
-    </motion.div>
+    </aside>
   );
 };
 
 function App() {
-  const [isSidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [isSpecsOpen, setIsSpecsOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [isCleanSweepOpen, setIsCleanSweepOpen] = useState(false);
+  const [isHl7ConsoleOpen, setIsHl7ConsoleOpen] = useState(false);
   const location = useLocation();
   const isLoginPage = location.pathname === '/login';
-
   const { isCodeBlue } = useEmergency();
 
-  return (
-    <div className={`w-screen h-screen overflow-hidden flex font-sans pb-[40px] transition-colors duration-500 ${isCodeBlue ? 'bg-[#1a0505]' : 'bg-[#050811]'}`}>
-      {!isLoginPage && <Sidebar isCollapsed={isSidebarCollapsed} toggle={() => setSidebarCollapsed(!isSidebarCollapsed)} onOpenSettings={() => setIsSettingsOpen(true)} />}
-      
-      <main className="flex-1 relative h-full overflow-hidden flex flex-col">
-        <AnimatePresence>
-          {isCodeBlue && !isLoginPage && (
-            <motion.div 
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              className="bg-rose-600 text-white px-4 py-2 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(225,29,72,0.4)] z-40 shrink-0"
-            >
-              <ShieldAlert size={18} className="animate-pulse" />
-              <span className="font-bold tracking-widest text-sm">CODE BLUE: GLOBAL OVERRIDE ACTIVE</span>
-            </motion.div>
-          )}
-        </AnimatePresence>
-        
-        <div className="flex-1 relative overflow-hidden">
-          <ErrorBoundary>
-          <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/" element={<CommandCenter />} />
-            <Route path="/beds" element={<BedManagement />} />
-            <Route path="/evs" element={<EVSApp />} />
-            <Route path="/alerts" element={<AlertsApp />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </ErrorBoundary>
-        </div>
-      </main>
+  useEffect(() => {
+    initClinicalVisitorBeacon('Clinical Pristine OS');
+  }, []);
 
-      <LicensingBar onOpenSpecs={() => setIsSpecsOpen(true)} />
+  return (
+    <div className={`w-screen h-screen overflow-hidden flex flex-col font-sans pb-[38px] transition-colors duration-300 ${isCodeBlue ? 'bg-rose-100' : 'bg-[#F4F5F7]'}`}>
+      <div className="flex-1 flex overflow-hidden w-full h-full">
+        {!isLoginPage && <Sidebar onOpenSettings={() => setIsSettingsOpen(true)} />}
+        
+        <main className="flex-1 relative h-full flex flex-col overflow-hidden bg-[#F4F5F7]">
+          <AnimatePresence>
+            {isCodeBlue && !isLoginPage && (
+              <motion.div 
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="bg-rose-600 text-white px-4 py-2 flex items-center justify-center gap-2 shadow-md z-40 shrink-0 font-mono text-xs font-bold border-b-2 border-rose-800"
+              >
+                <span>CODE BLUE: GLOBAL RESUSCITATION OVERRIDE ACTIVE</span>
+              </motion.div>
+            )}
+          </AnimatePresence>
+          
+          <div className="flex-1 relative overflow-hidden flex flex-col">
+            <ErrorBoundary>
+              <Routes>
+                <Route path="/login" element={<Login />} />
+                <Route path="/" element={<CommandCenter />} />
+                <Route path="/dashboard" element={<DashboardView />} />
+                <Route path="/beds" element={<BedManagement />} />
+                <Route path="/evs" element={<EVSApp />} />
+                <Route path="/alerts" element={<AlertsApp />} />
+                <Route path="/reports" element={<ReportsApp />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </ErrorBoundary>
+          </div>
+        </main>
+      </div>
+
+      <LicensingBar 
+        onOpenSpecs={() => setIsSpecsOpen(true)} 
+        onOpenCleanSweep={() => setIsCleanSweepOpen(true)}
+        onOpenHl7Console={() => setIsHl7ConsoleOpen(true)}
+      />
+      
       <SystemSpecsModal isOpen={isSpecsOpen} onClose={() => setIsSpecsOpen(false)} />
-      <SettingsPanel isOpen={isSettingsOpen} onClose={() => setIsSettingsOpen(false)} />
+      <SettingsPanel 
+        isOpen={isSettingsOpen} 
+        onClose={() => setIsSettingsOpen(false)} 
+        onOpenCleanSweep={() => setIsCleanSweepOpen(true)}
+      />
+      <ProductionCleanSweepModal 
+        isOpen={isCleanSweepOpen}
+        onClose={() => setIsCleanSweepOpen(false)}
+        onSuccess={() => {
+          setTimeout(() => {
+            window.location.reload();
+          }, 300);
+        }}
+      />
+      
+      {/* Enterprise Epic & Cerner HL7 v2.5.1 / FHIR Ingestion Gateway Console */}
+      <Hl7InterfaceConsoleModal
+        isOpen={isHl7ConsoleOpen}
+        onClose={() => setIsHl7ConsoleOpen(false)}
+      />
+
+      {/* Automatic 5-Minute Inactivity Screen Privacy Shield */}
+      <HipaaInactivityLock timeoutSeconds={300} />
     </div>
   );
 }

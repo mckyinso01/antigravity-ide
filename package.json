@@ -13,7 +13,11 @@
     "storybook": "start-storybook -p 6006 -s .",
     "build-storybook": "build-storybook -s .",
     "test:playwright": "playwright test",
-    "test": "vitest --run"
+    "test": "vitest --run",
+    "guard": "node scripts/pre_deploy_guardian.js",
+    "guard:mid": "node scripts/pre_deploy_guardian.js && echo '\n✅ Mid-point check passed.'",
+    "remediate": "node scripts/run_production_remediation_agent.js",
+    "preflight": "node scripts/run_production_remediation_agent.js && node scripts/pre_deploy_guardian.js"
   },
   "dependencies": {},
   "devDependencies": {

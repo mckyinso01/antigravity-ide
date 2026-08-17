@@ -1,468 +1,437 @@
-import { useState, useEffect, useCallback, memo } from 'react';
+import { useState, memo } from 'react';
 import { useToast } from '../contexts/ToastContext';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Clock, Users, AlertTriangle, BedDouble, ChevronRight, Loader2, RefreshCw, X, Stethoscope, Sparkles, Search, XCircle, Info, WifiOff } from 'lucide-react';
+import { 
+  Search, 
+  UserPlus, 
+  BedDouble, 
+  Activity, 
+  Filter, 
+  Sparkles, 
+  MoreHorizontal,
+  Bell,
+  Settings
+} from 'lucide-react';
 import { useLiveQuery } from 'dexie-react-hooks';
-import { db, type BedData } from '../db';
-
-
-
-const MOCK_BEDS: BedData[] = Array.from({ length: 12 }, (_, i) => {
-  const statusRnd = Math.random();
-  const status = statusRnd > 0.6 ? 'occupied' : statusRnd > 0.3 ? 'cleaning' : 'empty';
-  return {
-    id: `B-${1000 + i}`,
-    room: `Room ${101 + i}`,
-    status,
-    acuity: status === 'occupied' ? (Math.random() > 0.7 ? 'critical' : 'stable') : 'none',
-    patientName: status === 'occupied' ? `Patient ${Math.floor(Math.random() * 900) + 100}` : undefined,
-    evsStatus: status === 'cleaning' ? (Math.random() > 0.5 ? 'in-progress' : 'pending') : undefined,
-    tat: status === 'cleaning' ? Math.floor(Math.random() * 45) + 10 : undefined,
-  };
-});
+import { db, type BedData, type RoomData } from '../db';
+import { PatientAdmissionModal } from '../components/PatientAdmissionModal';
+import { PatientDrawerInspector } from '../components/PatientDrawerInspector';
+import { DynamicPatientAvatar } from '../components/DynamicPatientAvatar';
 
 export const BedManagement = memo(() => {
   const { showToast } = useToast();
   const beds = useLiveQuery(() => db.beds.toArray(), []) || [];
+  const rooms = useLiveQuery(() => db.rooms.toArray(), []) || [];
+
   const [searchQuery, setSearchQuery] = useState('');
-  const [showTooltip, setShowTooltip] = useState(false);
-  const [selectedBed, setSelectedBed] = useState<BedData | null>(null);
-  const [appState, setAppState] = useState<'loading' | 'error' | 'empty' | 'full' | 'partial'>('loading');
-  const [isScanning, setIsScanning] = useState(false);
+  const [selectedFilter, setSelectedFilter] = useState<'all' | 'critical' | 'stable' | 'isolation' | 'empty' | 'cleaning'>('all');
+  const [selectedRoom, setSelectedRoom] = useState<RoomData | null>(null);
+  const [selectedBedId, setSelectedBedId] = useState<string | null>(null);
+  const [showAdmissionModal, setShowAdmissionModal] = useState(false);
+  const [preselectedBedForAdmission, setPreselectedBedForAdmission] = useState<string | undefined>(undefined);
 
-  useEffect(() => {
-    const fetchBeds = async () => {
-      try {
-        setAppState('loading');
-        await new Promise(resolve => setTimeout(resolve, 800));
-        // Mock error condition for testing (20% chance to fail)
-        if (Math.random() > 0.8) throw new Error("Sync Failed");
-        
-        await db.transaction('rw', db.beds, async () => {
-           await db.beds.clear();
-           await db.beds.bulkAdd(MOCK_BEDS);
-        });
+  const totalBeds = beds.length || 13;
+  const occupiedBeds = beds.filter(b => b.status === 'occupied').length;
+  const availableBeds = beds.filter(b => b.status === 'empty').length;
+  const criticalBeds = beds.filter(b => b.acuity === 'critical').length;
+  const cleaningBeds = beds.filter(b => b.status === 'cleaning').length;
 
-        if (MOCK_BEDS.length === 0) {
-           setAppState('empty');
-        } else {
-           setAppState('full');
-        }
-      } catch (err) {
-        console.error("Sync Error:", err);
-        const cached = await db.beds.count();
-        if (cached > 0) {
-           setAppState('partial');
-           showToast('Offline Mode: Displaying cached telemetry.', 'warn');
-        } else {
-           setAppState('error');
-        }
-      }
+  const filteredBeds = beds.filter(b => {
+    const matchesSearch = 
+      (b.patientName && b.patientName.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      b.id.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      b.room.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (b.patientSafety?.mrn && b.patientSafety.mrn.toLowerCase().includes(searchQuery.toLowerCase()));
+
+    if (!matchesSearch) return false;
+
+    if (selectedFilter === 'critical') return b.acuity === 'critical';
+    if (selectedFilter === 'stable') return b.acuity === 'stable' && b.status === 'occupied';
+    if (selectedFilter === 'isolation') return b.patientSafety?.isolation && b.patientSafety.isolation !== 'none';
+    if (selectedFilter === 'empty') return b.status === 'empty';
+    if (selectedFilter === 'cleaning') return b.status === 'cleaning';
+    return true;
+  });
+
+  const handleOpenBed = (bed: BedData) => {
+    setSelectedBedId(bed.id);
+    const room = rooms.find(r => r.id === bed.room) || {
+      id: bed.room,
+      name: bed.room,
+      floorNumber: bed.floorNumber || 1,
+      department: 'Emergency',
+      status: bed.status,
+      acuity: bed.acuity,
+      x: 0,
+      y: 0,
+      w: 100,
+      h: 100
     };
-    fetchBeds();
-  }, [showToast]);
+    setSelectedRoom(room);
+  };
 
-  const zeroClickAdmit = useCallback(async () => {
-    if (appState !== 'full' && appState !== 'partial') return;
-    setIsScanning(true);
-    
-    // Simulate AI scanning delay
-    await new Promise(r => setTimeout(r, 1500));
-
+  const handleAutoTriage = async () => {
     const emptyBeds = await db.beds.where('status').equals('empty').toArray();
     if (emptyBeds.length === 0) {
-      showToast('No empty beds available for handoff.', 'error');
-      setIsScanning(false);
+      showToast('No empty beds available for auto-triage.', 'error');
       return;
     }
 
-    const optimalBed = emptyBeds[0];
-    await db.beds.update(optimalBed.id, {
+    const targetBed = emptyBeds[0];
+    await db.beds.update(targetBed.id, {
       status: 'occupied',
-      patientName: `Auto Admit ${Math.floor(Math.random() * 900) + 100}`,
-      acuity: 'stable'
+      patientName: `ER Surge Patient ${Math.floor(Math.random() * 900) + 100}`,
+      acuity: 'stable',
+      patientSafety: {
+        mrn: `MRN-${Math.floor(100000 + Math.random() * 900000)}`,
+        age: 48,
+        gender: 'Female',
+        chiefComplaint: 'Acute Observation & Cardiac Telemetry',
+        triageLevel: 3,
+        allergies: [],
+        fallRisk: false,
+        npo: false,
+        dnr: false,
+        isolation: 'none',
+        admittedAt: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        assignedDoctor: 'Dr. Gregory House, MD',
+        activeApparatus: ['Standard IV Normal Saline'],
+        pendingDoctorOrders: ['Electrolytes & CBC'],
+        vitals: { bp: '122/82', hr: 74, spo2: 99, temp: 36.8, lastRecorded: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }
+      }
     });
 
-    showToast(`Zero-Click Handoff: Patient intelligently assigned to ${optimalBed.room}`, 'success');
-    setSelectedBed(optimalBed);
-    setIsScanning(false);
-  }, [appState, showToast]);
-
-  // Aggregated KPIs (Zero-Undefined Defensive Logic)
-  const filteredBeds = beds.filter(b => b.room.toLowerCase().includes(searchQuery.toLowerCase()) || b.id.toLowerCase().includes(searchQuery.toLowerCase()));
-  const totalBeds = filteredBeds.length || 1; 
-  const occupiedBeds = filteredBeds.filter(b => b.status === 'occupied').length;
-  const occupancyRate = Math.round((occupiedBeds / totalBeds) * 100) || 0;
-  const criticalAlerts = filteredBeds.filter(b => b.acuity === 'critical').length || 0;
-  const cleaningBeds = filteredBeds.filter(b => b.status === 'cleaning');
-  const avgTat = cleaningBeds.length > 0 
-    ? Math.round(cleaningBeds.reduce((acc, b) => acc + (b.tat || 0), 0) / cleaningBeds.length) 
-    : 0;
+    showToast(`AI Auto-Triage: Admitted surge patient into ${targetBed.id}`, 'success');
+  };
 
   return (
-    <div className="flex h-full w-full bg-[#050811] text-slate-200 overflow-hidden font-sans">
-      
-      {/* Main Body: Triple Metric Layout */}
-      <div className="flex-1 p-6 flex flex-col h-full overflow-hidden relative">
-        
-        {/* Header */}
-        <div className="flex justify-between items-center mb-6 shrink-0">
-          <div>
-            <h1 className="text-2xl font-bold text-white flex items-center gap-3">
-              <BedDouble className="text-[#2563EB]" />
-              Unified Bed Orchestration
-            </h1>
-            <p className="text-slate-400 text-sm mt-1">Real-time facility occupancy and EVS turnaround</p>
-          </div>
-          <div className="flex items-center gap-4">
-             <div className="relative group">
-                <div 
-                   className="relative flex items-center bg-black/40 border border-slate-700 rounded-lg overflow-hidden focus-within:border-[#2563EB]/50 focus-within:ring-1 focus-within:ring-[#2563EB]/50 transition-all"
-                   onMouseEnter={() => setShowTooltip(true)}
-                   onMouseLeave={() => setShowTooltip(false)}
-                >
-                   <div className="pl-3 text-slate-500"><Search size={16} /></div>
-                   <input 
-                     type="text" 
-                     value={searchQuery}
-                     onChange={(e) => setSearchQuery(e.target.value)}
-                     onKeyDown={(e) => {
-                       if (e.key === 'Enter') {
-                          e.preventDefault();
-                          showToast(`Search executed for: ${searchQuery}`, 'info');
-                       }
-                     }}
-                     placeholder="Search Room or ID..."
-                     className="w-48 bg-transparent text-sm text-white px-3 py-2 outline-none placeholder:text-slate-600"
-                   />
-                   {searchQuery && (
-                     <button 
-                       onClick={() => setSearchQuery('')}
-                       className="pr-3 text-slate-500 hover:text-slate-300 transition-colors"
-                     >
-                        <XCircle size={16} />
-                     </button>
-                   )}
-                </div>
-                
-                {/* Form Tooltip */}
-                <AnimatePresence>
-                  {showTooltip && (
-                    <motion.div 
-                      initial={{ opacity: 0, y: 5 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 5 }}
-                      className="absolute top-full right-0 mt-2 w-64 bg-[#0B1C30]/95 backdrop-blur-md border border-slate-700/80 p-3 rounded-xl shadow-xl z-50 pointer-events-none"
-                    >
-                       <div className="flex gap-2">
-                          <Info size={16} className="text-[#2563EB] shrink-0 mt-0.5" />
-                          <div>
-                            <p className="text-xs font-bold text-white mb-1">Search Parameters</p>
-                            <p className="text-xs text-slate-400">Accepts Room Number (e.g., "101") or Bed ID (e.g., "B-1002"). Press Enter to submit or Backspace to clear.</p>
-                          </div>
-                       </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-             </div>
-             <button 
-               onClick={() => setAppState('loading')}
-               className="flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 active:scale-95 rounded-lg text-sm text-white transition-all"
-             >
-               <RefreshCw size={16} className={appState === 'loading' ? 'animate-spin' : ''} />
-               Force Sync
-             </button>
-             <button
-               onClick={zeroClickAdmit}
-               disabled={isScanning}
-               className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-bold uppercase tracking-widest transition-all ${
-                 isScanning 
-                   ? 'bg-[#2563EB]/20 text-[#2563EB] border border-[#2563EB]/50'
-                   : 'bg-emerald-500 hover:bg-emerald-400 text-[#050811] shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] active:scale-95'
-               }`}
-             >
-               {isScanning ? (
-                 <>
-                   <Search size={16} className="animate-ping" />
-                   Scanning...
-                 </>
-               ) : (
-                 <>
-                   <Stethoscope size={16} />
-                   Zero-Click Admit
-                 </>
-               )}
-             </button>
-          </div>
+    <div className="flex-1 flex flex-col h-full overflow-hidden bg-[#F4F5F7]">
+      {/* TOP HEADER */}
+      <header className="h-14 bg-white border-b border-slate-200 px-6 flex items-center justify-between shrink-0 select-none">
+        <div className="flex items-center gap-3">
+          <h1 className="text-base font-bold text-slate-900 tracking-tight">Patient Directory &amp; Bed Census</h1>
+          <span className="text-xs px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600 font-medium border border-slate-200">
+            {occupiedBeds} Hospitalized Patients
+          </span>
         </div>
 
-        {/* 4-State Journey Handling */}
-        {appState === 'loading' && (
-          <div className="flex-1 flex flex-col items-center justify-center space-y-4">
-             <div className="relative">
-                <div className="absolute inset-0 bg-[#2563EB]/20 rounded-full blur-xl animate-pulse"></div>
-                <Loader2 size={40} className="text-[#2563EB] animate-spin relative z-10" />
-             </div>
-             <p className="text-slate-400 font-mono text-sm tracking-widest uppercase">Syncing Bed Telemetry...</p>
+        <div className="flex items-center gap-3">
+          {/* SEARCH */}
+          <div className="relative">
+            <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+            <input 
+              type="text"
+              placeholder="Search patient name, MRN, bed..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-8 pr-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:bg-white w-56 transition-all"
+            />
           </div>
-        )}
 
-        {appState === 'error' && (
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="flex-1 flex flex-col items-center justify-center text-center max-w-md mx-auto"
+          <div className="h-4 w-px bg-slate-200"></div>
+
+          <button 
+            onClick={handleAutoTriage}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold shadow-2xs transition-all cursor-pointer border border-slate-300"
           >
-             <div className="relative mb-6">
-               <div className="absolute inset-0 bg-rose-500/20 blur-2xl animate-pulse rounded-full"></div>
-               <div className="w-20 h-20 bg-rose-950/80 border border-rose-500/50 rounded-full flex items-center justify-center relative z-10 shadow-[0_0_40px_rgba(225,29,72,0.3)]">
-                  <AlertTriangle size={36} className="text-rose-500 drop-shadow-[0_0_10px_rgba(225,29,72,0.8)]" />
-               </div>
-             </div>
-             <h2 className="text-2xl font-bold text-white mb-2 tracking-tight">Telemetry Sync Failed</h2>
-             <p className="text-slate-400 mb-8 leading-relaxed">Unable to retrieve live bed statuses. The system is operating in offline mode. Changes will be queued.</p>
-             <button 
-                onClick={() => setAppState('loading')}
-                className="px-8 py-3 bg-rose-500/10 hover:bg-rose-500/20 text-rose-500 border border-rose-500/50 rounded-xl font-bold transition-all shadow-[0_0_20px_rgba(225,29,72,0.15)] hover:shadow-[0_0_30px_rgba(225,29,72,0.3)] active:scale-95"
-             >
-               Force Reconnect
-             </button>
-          </motion.div>
-        )}
+            <Sparkles size={14} className="text-blue-600" /> AI Auto-Triage
+          </button>
 
-        {appState === 'empty' && (
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex-1 flex flex-col items-center justify-center text-center"
+          <button 
+            onClick={() => {
+              setPreselectedBedForAdmission(undefined);
+              setShowAdmissionModal(true);
+            }}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold shadow-xs transition-all cursor-pointer"
           >
-             <div className="relative mb-6">
-                <div className="absolute inset-0 bg-[#2563EB]/10 blur-2xl rounded-full"></div>
-                <div className="w-24 h-24 bg-[#0B1C30]/80 border border-slate-700/80 rounded-full flex items-center justify-center relative z-10 shadow-[0_0_40px_rgba(37,99,235,0.2)]">
-                   <BedDouble size={40} className="text-[#2563EB] drop-shadow-[0_0_10px_rgba(37,99,235,0.8)]" />
-                </div>
-             </div>
-             <h2 className="text-2xl font-bold text-white mb-2 tracking-tight">No Beds Configured</h2>
-             <p className="text-slate-400 max-w-md mb-8">Your facility does not have any active beds matching the current filters. Adjust your criteria to continue.</p>
-             <button 
-                onClick={() => {
-                   setSearchQuery('');
-                   setAppState('loading');
-                }}
-                className="px-6 py-2.5 bg-[#2563EB]/10 hover:bg-[#2563EB]/20 text-[#2563EB] border border-[#2563EB]/40 rounded-xl font-bold transition-all active:scale-95 flex items-center gap-2"
-             >
-                <RefreshCw size={18} />
-                Clear Filters
-             </button>
-          </motion.div>
-        )}
+            <UserPlus size={14} /> Admit Patient
+          </button>
 
-        {(appState === 'full' || appState === 'partial') && (
-          <div className="flex-1 flex flex-col min-h-0">
-            {appState === 'partial' && (
-              <div className="mb-4 bg-amber-500/10 border border-amber-500/30 text-amber-500 px-4 py-2 rounded-xl flex items-center justify-between shadow-[0_0_15px_rgba(245,158,11,0.1)] shrink-0">
-                 <div className="flex items-center gap-2 font-bold text-sm">
-                    <WifiOff size={16} className="animate-pulse" />
-                    OFFLINE MODE (PARTIAL DATA)
-                 </div>
-                 <span className="text-xs text-amber-500/70 font-semibold">Displaying cached telemetry. Changes will queue and sync when online.</span>
+          <button className="text-slate-500 hover:text-slate-700 p-1.5 rounded-lg hover:bg-slate-100 transition-colors">
+            <MoreHorizontal size={18} />
+          </button>
+
+          <button className="relative text-slate-500 hover:text-slate-700 p-1.5 rounded-lg hover:bg-slate-100 transition-colors">
+            <Bell size={18} />
+          </button>
+
+          <button className="text-slate-500 hover:text-slate-700 p-1.5 rounded-lg hover:bg-slate-100 transition-colors">
+            <Settings size={18} />
+          </button>
+
+          {/* USER AVATAR */}
+          <div className="flex items-center gap-2 pl-2 border-l border-slate-200">
+            <div className="w-7 h-7 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-xs shadow-xs">
+              NS
+            </div>
+            <div className="flex flex-col text-left">
+              <span className="text-xs font-bold text-slate-900 leading-tight">Nurse Sarah</span>
+              <span className="text-[10px] text-slate-500 font-medium">Charge Nurse</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* MAIN BODY */}
+      <div className="flex-1 p-4 overflow-y-auto flex flex-col gap-4">
+        
+        {/* KPI RIBBON */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          
+          <div className="bg-white rounded-2xl p-4 border border-slate-200 shadow-xs flex items-center justify-between">
+            <div>
+              <span className="text-xs font-semibold text-slate-500 block">Total Hospital Census</span>
+              <div className="flex items-baseline gap-2 mt-1">
+                <span className="text-2xl font-bold text-slate-950 font-sans">{occupiedBeds}</span>
+                <span className="text-xs text-slate-400 font-medium">/ {totalBeds} Beds</span>
               </div>
-            )}
-            {/* Top Row: KPI Cards */}
-            <div className="grid grid-cols-3 gap-6 mb-6 shrink-0">
+            </div>
+            <span className="p-2.5 rounded-xl bg-blue-50 text-blue-700">
+              <BedDouble size={20} />
+            </span>
+          </div>
+
+          <div className="bg-white rounded-2xl p-4 border border-slate-200 shadow-xs flex items-center justify-between">
+            <div>
+              <span className="text-xs font-semibold text-slate-500 block">Critical Resuscitation</span>
+              <div className="flex items-baseline gap-2 mt-1">
+                <span className="text-2xl font-bold text-rose-600 font-sans">{criticalBeds}</span>
+                <span className="text-xs text-rose-600 font-bold">Priority 1</span>
+              </div>
+            </div>
+            <span className="p-2.5 rounded-xl bg-rose-50 text-rose-700">
+              <Activity size={20} />
+            </span>
+          </div>
+
+          <div className="bg-white rounded-2xl p-4 border border-slate-200 shadow-xs flex items-center justify-between">
+            <div>
+              <span className="text-xs font-semibold text-slate-500 block">Available Open Beds</span>
+              <div className="flex items-baseline gap-2 mt-1">
+                <span className="text-2xl font-bold text-emerald-700 font-sans">{availableBeds}</span>
+                <span className="text-xs text-emerald-700 font-bold">Ready</span>
+              </div>
+            </div>
+            <span className="p-2.5 rounded-xl bg-emerald-50 text-emerald-700">
+              <BedDouble size={20} />
+            </span>
+          </div>
+
+          <div className="bg-white rounded-2xl p-4 border border-slate-200 shadow-xs flex items-center justify-between">
+            <div>
+              <span className="text-xs font-semibold text-slate-500 block">Decontamination &amp; EVS</span>
+              <div className="flex items-baseline gap-2 mt-1">
+                <span className="text-2xl font-bold text-amber-600 font-sans">{cleaningBeds}</span>
+                <span className="text-xs text-amber-600 font-bold">In-Progress</span>
+              </div>
+            </div>
+            <span className="p-2.5 rounded-xl bg-amber-50 text-amber-700">
+              <Sparkles size={20} />
+            </span>
+          </div>
+
+        </div>
+
+        {/* FILTER BAR & TABLE CONTAINER */}
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-xs flex-1 flex flex-col overflow-hidden">
+          
+          {/* FILTER PILLS */}
+          <div className="p-3 border-b border-slate-100 flex items-center justify-between flex-wrap gap-2">
+            <div className="flex items-center gap-1.5">
+              <span className="text-xs font-bold text-slate-500 mr-2 flex items-center gap-1">
+                <Filter size={13} /> Filter:
+              </span>
               
-              <div className="bg-[#0B1C30]/80 backdrop-blur-xl border border-slate-800/80 rounded-2xl p-6 shadow-xl relative overflow-hidden group">
-                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                  <Clock size={64} />
-                </div>
-                <div className="flex items-center space-x-3 text-slate-400 mb-4">
-                  <div className="p-2 bg-amber-500/10 rounded-lg text-amber-500"><Clock size={20} /></div>
-                  <span className="font-semibold text-sm uppercase tracking-wider">Avg EVS TAT</span>
-                </div>
-                <div className="flex items-baseline space-x-2">
-                  <span className="text-4xl font-bold text-white">{avgTat}</span>
-                  <span className="text-slate-400 font-mono">mins</span>
-                </div>
-              </div>
-
-              <div className="bg-[#0B1C30]/80 backdrop-blur-xl border border-slate-800/80 rounded-2xl p-6 shadow-xl relative overflow-hidden group">
-                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                  <Users size={64} />
-                </div>
-                <div className="flex items-center space-x-3 text-slate-400 mb-4">
-                  <div className="p-2 bg-[#2563EB]/10 rounded-lg text-[#2563EB]"><BedDouble size={20} /></div>
-                  <span className="font-semibold text-sm uppercase tracking-wider">Facility Occupancy</span>
-                </div>
-                <div className="flex items-baseline space-x-2">
-                  <span className="text-4xl font-bold text-white">{occupancyRate}%</span>
-                </div>
-                <div className="w-full bg-slate-800 h-1.5 mt-4 rounded-full overflow-hidden">
-                  <div className="bg-[#2563EB] h-full rounded-full" style={{ width: `${occupancyRate}%` }}></div>
-                </div>
-              </div>
-
-              <div className="bg-[#0B1C30]/80 backdrop-blur-xl border border-slate-800/80 rounded-2xl p-6 shadow-xl relative overflow-hidden group">
-                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                  <AlertTriangle size={64} />
-                </div>
-                <div className="flex items-center space-x-3 text-slate-400 mb-4">
-                  <div className="p-2 bg-rose-500/10 rounded-lg text-rose-500"><AlertTriangle size={20} /></div>
-                  <span className="font-semibold text-sm uppercase tracking-wider">Critical Acuity</span>
-                </div>
-                <div className="flex items-baseline space-x-2">
-                  <span className={`text-4xl font-bold ${criticalAlerts > 0 ? 'text-rose-500' : 'text-white'}`}>{criticalAlerts}</span>
-                  <span className="text-slate-400 font-mono">Active</span>
-                </div>
-                {criticalAlerts > 0 && (
-                   <p className="text-xs text-rose-500 mt-4 font-mono animate-pulse">REQUIRES IMMEDIATE ATTENTION</p>
-                )}
-              </div>
-
+              {(['all', 'critical', 'stable', 'isolation', 'empty', 'cleaning'] as const).map((filterKey) => (
+                <button
+                  key={filterKey}
+                  onClick={() => setSelectedFilter(filterKey)}
+                  className={`px-3 py-1 rounded-lg text-xs font-semibold capitalize transition-all cursor-pointer ${
+                    selectedFilter === filterKey 
+                      ? 'bg-slate-900 text-white shadow-2xs' 
+                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                  }`}
+                >
+                  {filterKey === 'empty' ? 'Vacant' : filterKey === 'cleaning' ? 'Decontaminating' : filterKey}
+                </button>
+              ))}
             </div>
 
-            {/* Bottom Row: Consolidated Data Grid */}
-            <div className="flex-1 bg-[#0B1C30]/50 backdrop-blur-md rounded-2xl border border-slate-800/80 overflow-hidden flex flex-col">
-               <div className="grid grid-cols-5 gap-4 p-4 border-b border-slate-800 bg-slate-900/50 text-xs font-semibold text-slate-400 uppercase tracking-widest">
-                 <div className="col-span-1">Bed ID</div>
-                 <div className="col-span-1">Room</div>
-                 <div className="col-span-1">Status</div>
-                 <div className="col-span-1">Acuity</div>
-                 <div className="col-span-1 text-right">Action</div>
-               </div>
-               
-               <div className="flex-1 overflow-y-auto custom-scrollbar p-2 space-y-2">
-                 {filteredBeds.map(bed => (
-                   <motion.div 
-                     key={bed.id}
-                     whileHover={{ x: 4 }}
-                     onClick={() => setSelectedBed(bed)}
-                     className={`grid grid-cols-5 gap-4 p-4 rounded-xl items-center cursor-pointer border transition-colors ${
-                       selectedBed?.id === bed.id 
-                         ? 'bg-[#2563EB]/10 border-[#2563EB]/30' 
-                         : 'bg-black/20 border-slate-800/50 hover:border-slate-600'
-                     }`}
-                   >
-                     <div className="col-span-1 font-mono font-bold text-white">{bed.id}</div>
-                     <div className="col-span-1 text-slate-300 truncate max-w-full" title={bed.room}>{bed.room}</div>
-                     <div className="col-span-1">
-                        <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold uppercase tracking-wider ${
-                           bed.status === 'occupied' ? 'bg-[#2563EB]/20 text-[#2563EB]' :
-                           bed.status === 'cleaning' ? 'bg-amber-500/20 text-amber-500' :
-                           'bg-slate-700/50 text-slate-400'
-                        }`}>
-                          {bed.status}
-                        </span>
-                     </div>
-                     <div className="col-span-1">
-                       {bed.acuity === 'critical' ? (
-                         <div className="flex items-center text-rose-500 space-x-1">
-                           <AlertTriangle size={14} className="animate-pulse" />
-                           <span className="text-xs uppercase tracking-wider font-bold">Critical</span>
-                         </div>
-                       ) : bed.acuity === 'stable' ? (
-                         <span className="text-xs uppercase tracking-wider text-emerald-400">Stable</span>
-                       ) : (
-                         <span className="text-xs text-slate-500">-</span>
-                       )}
-                     </div>
-                     <div className="col-span-1 flex justify-end">
-                       <ChevronRight size={18} className="text-slate-500" />
-                     </div>
-                   </motion.div>
-                 ))}
-               </div>
-            </div>
+            <span className="text-xs font-semibold text-slate-500">
+              Showing {filteredBeds.length} of {beds.length} Bays
+            </span>
           </div>
-        )}
+
+          {/* TABLE */}
+          <div className="flex-1 overflow-x-auto p-4">
+            <table className="w-full text-left text-xs">
+              <thead className="bg-slate-50 text-slate-600 border-b border-slate-100">
+                <tr>
+                  <th className="py-2.5 px-4 font-semibold">Patient Name</th>
+                  <th className="py-2.5 px-3 font-semibold">Bed / Ward Location</th>
+                  <th className="py-2.5 px-3 font-semibold">Status &amp; Acuity</th>
+                  <th className="py-2.5 px-3 font-semibold">Attending Physician</th>
+                  <th className="py-2.5 px-3 font-semibold">Telemetry &amp; Vitals</th>
+                  <th className="py-2.5 px-3 font-semibold">Safety Directives</th>
+                  <th className="py-2.5 px-4 font-semibold text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100 text-slate-800">
+                {filteredBeds.map(bed => {
+                  const safety = bed.patientSafety;
+                  const isCrit = bed.acuity === 'critical';
+                  const isVacant = bed.status === 'empty';
+                  const isCleaning = bed.status === 'cleaning';
+
+                  return (
+                    <tr key={bed.id} className="hover:bg-slate-50/80 transition-colors">
+                      
+                      {/* PATIENT AVATAR & NAME */}
+                      <td className="py-3 px-4">
+                        <div className="flex items-center gap-3">
+                          {bed.status === 'occupied' ? (
+                            <DynamicPatientAvatar
+                              photoUrl={safety?.photoUrl}
+                              patientName={bed.patientName}
+                              bedId={bed.id}
+                              size="sm"
+                              shape="circle"
+                              acuity={isCrit ? 'critical' : 'stable'}
+                              allowUpload={true}
+                            />
+                          ) : (
+                            <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs ${
+                              isVacant ? 'bg-slate-100 text-slate-400' : 'bg-amber-100 text-amber-700'
+                            }`}>
+                              {isVacant ? '—' : '🧹'}
+                            </div>
+                          )}
+                          <div>
+                            <span className="font-bold text-slate-900 block text-xs">
+                              {bed.patientName || (isVacant ? 'Vacant Bay Ready for Admission' : 'Terminal Cleaning in Progress')}
+                            </span>
+                            <span className="text-[10px] text-slate-500 font-mono">
+                              {safety?.mrn || (isVacant ? 'BAY-VACANT' : 'EVS-SCHEDULED')}
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+
+                      {/* LOCATION */}
+                      <td className="py-3 px-3">
+                        <span className="font-bold text-slate-900">{bed.id}</span>
+                        <span className="text-[10px] text-slate-500 block">{bed.room}</span>
+                      </td>
+
+                      {/* ACUITY */}
+                      <td className="py-3 px-3">
+                        <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold ${
+                          isCrit ? 'bg-rose-100 text-rose-700' :
+                          isVacant ? 'bg-slate-100 text-slate-600' :
+                          isCleaning ? 'bg-amber-100 text-amber-700' : 'bg-emerald-100 text-emerald-700'
+                        }`}>
+                          {isCrit ? 'Critical Acuity' : isVacant ? 'Vacant' : isCleaning ? 'Cleaning' : 'Stable'}
+                        </span>
+                      </td>
+
+                      {/* DOCTOR */}
+                      <td className="py-3 px-3 text-slate-700 font-medium">
+                        {safety?.assignedDoctor || (isVacant ? '—' : 'EVS Team 1')}
+                      </td>
+
+                      {/* VITALS */}
+                      <td className="py-3 px-3">
+                        {safety?.vitals ? (
+                          <div className="text-[11px] font-mono flex items-center gap-1.5">
+                            <span className="text-emerald-700 font-semibold">{safety.vitals.hr} bpm</span>
+                            <span className="text-slate-300">•</span>
+                            <span className="text-blue-600 font-semibold">{safety.vitals.spo2}% SpO2</span>
+                          </div>
+                        ) : (
+                          <span className="text-[11px] text-slate-400 font-mono">—</span>
+                        )}
+                      </td>
+
+                      {/* SAFETY */}
+                      <td className="py-3 px-3">
+                        <div className="flex flex-wrap gap-1">
+                          {safety?.fallRisk && (
+                            <span className="px-1.5 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-200 text-[9px] font-bold">
+                              Fall Risk
+                            </span>
+                          )}
+                          {safety?.isolation && safety.isolation !== 'none' && (
+                            <span className="px-1.5 py-0.5 rounded bg-purple-50 text-purple-700 border border-purple-200 text-[9px] font-bold">
+                              {safety.isolation}
+                            </span>
+                          )}
+                          {!safety?.fallRisk && (!safety?.isolation || safety.isolation === 'none') && (
+                            <span className="text-[10px] text-slate-400">Standard Precautions</span>
+                          )}
+                        </div>
+                      </td>
+
+                      {/* ACTIONS */}
+                      <td className="py-3 px-4 text-right">
+                        {isVacant ? (
+                          <button
+                            onClick={() => {
+                              setPreselectedBedForAdmission(bed.id);
+                              setShowAdmissionModal(true);
+                            }}
+                            className="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 transition-all cursor-pointer"
+                          >
+                            + Admit
+                          </button>
+                        ) : (
+                          <button
+                            onClick={() => handleOpenBed(bed)}
+                            className="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-slate-100 hover:bg-slate-200 text-slate-800 transition-all cursor-pointer"
+                          >
+                            Inspect Dossier
+                          </button>
+                        )}
+                      </td>
+
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
       </div>
 
-      {/* Right Pane: Contextual Details (Zero-Scroll Pattern) */}
-      <AnimatePresence mode="wait">
-        {selectedBed && (
-          <motion.div 
-            initial={{ x: 50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: 50, opacity: 0 }}
-            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            className="w-[380px] border-l border-slate-800/80 bg-[#0B1C30]/90 backdrop-blur-2xl h-full flex flex-col shrink-0"
-          >
-            <div className="p-6 border-b border-slate-800/80 flex items-center justify-between">
-              <div>
-                <h2 className="text-xl font-bold text-white font-mono">{selectedBed.id}</h2>
-                <p className="text-slate-400 text-sm mt-1">{selectedBed.room}</p>
-              </div>
-              <button onClick={() => setSelectedBed(null)} className="p-2 hover:bg-white/10 rounded-full transition-all active:scale-95">
-                <X size={20} className="text-slate-400" />
-              </button>
-            </div>
+      {/* ADMISSION MODAL */}
+      <PatientAdmissionModal 
+        isOpen={showAdmissionModal}
+        onClose={() => setShowAdmissionModal(false)}
+        preselectedBedId={preselectedBedForAdmission}
+        availableBeds={beds.filter(b => b.status === 'empty')}
+        onSuccess={() => {
+          setShowAdmissionModal(false);
+          showToast('Patient successfully admitted!', 'success');
+        }}
+      />
 
-            <div className="p-6 flex-1 space-y-6 overflow-y-auto">
-              
-              {selectedBed.status === 'occupied' && (
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3 text-[#2563EB] mb-2">
-                    <Stethoscope size={18} />
-                    <h3 className="font-semibold uppercase tracking-wider text-sm">Patient Profile</h3>
-                  </div>
-                  <div className="p-4 bg-black/20 rounded-xl border border-slate-800">
-                    <p className="font-medium text-white truncate max-w-full" title={selectedBed.patientName}>{selectedBed.patientName || "Unknown Patient"}</p>
-                    <p className="text-sm text-slate-400 mt-1">Acuity: {selectedBed.acuity.toUpperCase()}</p>
-                  </div>
-                </div>
-              )}
-
-              {selectedBed.status === 'cleaning' && (
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3 text-amber-500 mb-2">
-                    <Sparkles size={18} />
-                    <h3 className="font-semibold uppercase tracking-wider text-sm">EVS Operation</h3>
-                  </div>
-                  <div className="p-4 bg-amber-500/5 rounded-xl border border-amber-500/20">
-                    <p className="font-medium text-amber-500 capitalize">{selectedBed.evsStatus || "Unknown"} Status</p>
-                    <div className="flex items-center mt-3 text-sm text-slate-300">
-                      <Clock size={14} className="mr-2 text-slate-500" />
-                      TAT: {selectedBed.tat || 0} minutes elapsed
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {selectedBed.status === 'empty' && (
-                <div className="flex flex-col items-center justify-center py-10 text-center">
-                   <div className="w-16 h-16 rounded-full bg-slate-800/50 flex items-center justify-center mb-4 border border-slate-700">
-                      <BedDouble size={24} className="text-slate-500" />
-                   </div>
-                   <h3 className="text-white font-semibold">Bed is Ready</h3>
-                   <p className="text-slate-400 text-sm mt-2 max-w-[200px]">This bed has been cleaned and is ready for admission.</p>
-                </div>
-              )}
-
-            </div>
-
-            <div className="p-6 border-t border-slate-800/80 space-y-3">
-              {selectedBed.status === 'occupied' && (
-                <button className="w-full py-3 bg-rose-500/10 hover:bg-rose-500/20 text-rose-500 border border-rose-500/30 rounded-xl font-bold transition-all active:scale-95">
-                  Initiate Transfer
-                </button>
-              )}
-              {selectedBed.status === 'cleaning' && (
-                <button className="w-full py-3 bg-amber-500/10 hover:bg-amber-500/20 text-amber-500 border border-amber-500/30 rounded-xl font-bold transition-all active:scale-95">
-                  Page EVS Staff
-                </button>
-              )}
-              {selectedBed.status === 'empty' && (
-                <button 
-                  onClick={() => showToast('Bed assignment workflow initiated.', 'info')}
-                  className="flex items-center justify-center gap-2 w-full py-2 bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-bold rounded-lg transition-all shadow-[0_0_15px_rgba(37,99,235,0.3)] active:scale-95"
-                >
-                  Assign Bed
-                </button>
-              )}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
+      {/* DRAWER INSPECTOR */}
+      {selectedRoom && (
+        <PatientDrawerInspector 
+          room={selectedRoom}
+          bedsInRoom={beds.filter(b => b.room === selectedRoom.id)}
+          selectedBedId={selectedBedId}
+          onSelectBed={(id) => setSelectedBedId(id)}
+          onClose={() => {
+            setSelectedRoom(null);
+            setSelectedBedId(null);
+          }}
+          onOpenAdmissionForBed={(bedId) => {
+            setPreselectedBedForAdmission(bedId);
+            setShowAdmissionModal(true);
+          }}
+        />
+      )}
     </div>
   );
 });

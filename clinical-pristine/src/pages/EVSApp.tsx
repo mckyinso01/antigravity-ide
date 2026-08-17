@@ -1,293 +1,385 @@
-import { useState, useEffect, useCallback, memo } from 'react';
+import { useState, useEffect, memo } from 'react';
 import { useToast } from '../contexts/ToastContext';
-import { motion } from 'framer-motion';
-import { Sparkles, ClipboardList, Clock, AlertTriangle, CheckCircle, RefreshCw, ChevronRight, User, WifiOff } from 'lucide-react';
+import { 
+  Sparkles, 
+  Users, 
+  Clock, 
+  CheckCircle2, 
+  Plus, 
+  ShieldCheck, 
+  Zap, 
+  Play
+} from 'lucide-react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db, type EVSTask } from '../db';
-
-const MOCK_TASKS: EVSTask[] = [
-  { id: 'EVS-701', room: 'Room 101', priority: 'stat', status: 'pending', requestTime: '10:05 AM' },
-  { id: 'EVS-702', room: 'Room 204', priority: 'routine', status: 'pending', requestTime: '10:15 AM' },
-  { id: 'EVS-703', room: 'Room 310', priority: 'urgent', status: 'in-progress', assignedTo: 'Maria S.', requestTime: '09:30 AM', elapsedMinutes: 24 },
-  { id: 'EVS-704', room: 'OR 2', priority: 'stat', status: 'in-progress', assignedTo: 'John D.', requestTime: '09:45 AM', elapsedMinutes: 15 },
-];
+import { clinicalAudio } from '../utils/clinicalAudio';
+import { StaffDirectory } from './StaffDirectory';
+import { EvsBedsideVerifyModal } from '../components/EvsBedsideVerifyModal';
 
 export const EVSApp = memo(() => {
   const { showToast } = useToast();
   const tasks = useLiveQuery(() => db.evsTasks.toArray(), []) || [];
-  const [appState, setAppState] = useState<'loading' | 'error' | 'empty' | 'full' | 'partial'>('loading');
-  const [productivityScore, setProductivityScore] = useState(0);
 
-  const assignTask = useCallback(async (id: string) => {
-    await db.evsTasks.update(id, { status: 'in-progress', assignedTo: 'Current User' });
-    showToast(`Task ${id} moved to Active Cleaning.`, 'info');
-  }, [showToast]);
-
-  const simulateIntelligentDispatch = useCallback(async () => {
-    const pendingTasks = await db.evsTasks.where('status').equals('pending').toArray();
-    if (pendingTasks.length === 0) {
-      showToast('Queue is empty. No tasks to dispatch.', 'info');
-      return;
-    }
-    
-    const sorted = [...pendingTasks].sort((a, b) => {
-      const priorityWeight: Record<string, number> = { 'stat': 3, 'high': 2, 'routine': 1 };
-      const weightDiff = priorityWeight[b.priority] - priorityWeight[a.priority];
-      if (weightDiff !== 0) return weightDiff;
-      const elapsedB = b.elapsedMinutes ?? 0;
-      const elapsedA = a.elapsedMinutes ?? 0;
-      return elapsedB - elapsedA;
-    });
-
-    const toDispatch = sorted.slice(0, Math.min(3, sorted.length));
-    
-    await db.transaction('rw', db.evsTasks, async () => {
-      for (const t of toDispatch) {
-        await db.evsTasks.update(t.id, { status: 'in-progress', assignedTo: 'Auto-Dispatched AI' });
-      }
-    });
-
-    showToast(`Intelligent Dispatch optimally assigned ${toDispatch.length} tasks.`, 'success');
-  }, [showToast]);
+  const [activeTab, setActiveTab] = useState<'staff' | 'evs'>('staff');
+  const [activeTimerSeconds, setActiveTimerSeconds] = useState(0);
+  const [verifyingTask, setVerifyingTask] = useState<EVSTask | null>(null);
 
   useEffect(() => {
-    const fetchTasks = async () => {
-      try {
-        setAppState('loading');
-        await new Promise(resolve => setTimeout(resolve, 800));
-        // Mock error condition for testing
-        if (Math.random() > 0.8) throw new Error("Sync Failed");
-        
-        await db.transaction('rw', db.evsTasks, async () => {
-           await db.evsTasks.clear();
-           await db.evsTasks.bulkAdd(MOCK_TASKS);
-        });
-
-        if (MOCK_TASKS.length === 0) {
-           setAppState('empty');
-        } else {
-           setProductivityScore(88); // Mock score
-           setAppState('full');
-        }
-      } catch (err) {
-        console.error("Sync Error:", err);
-        const cached = await db.evsTasks.count();
-        if (cached > 0) {
-           setAppState('partial');
-           showToast('Offline Mode: Displaying cached telemetry.', 'warn');
-        } else {
-           setAppState('error');
-        }
-      }
-    };
-    fetchTasks();
-  }, [showToast]);
+    const interval = setInterval(() => {
+      setActiveTimerSeconds(prev => prev + 1);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   const pendingTasks = tasks.filter(t => t.status === 'pending');
-  const activeTasks = tasks.filter(t => t.status === 'in-progress');
+  const inProgressTasks = tasks.filter(t => t.status === 'in-progress');
+  const completedTasks = tasks.filter(t => t.status === 'completed');
+
+  const handleStartTask = async (task: EVSTask) => {
+    try {
+      await db.evsTasks.update(task.id, {
+        status: 'in-progress',
+        assignedTo: 'Maria S. (Clean Team 1)',
+        startedAt: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      });
+      clinicalAudio.playDrawerSwoosh();
+      showToast(`Started terminal disinfection for ${task.room} (${task.bedId})`, 'info');
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleVerifiedRelease = async (data: { scannedQr: string; disinfectantLot: string; evsBadgePin: string }) => {
+    if (!verifyingTask) return;
+    try {
+      await db.evsTasks.update(verifyingTask.id, {
+        status: 'completed',
+        cleaningDurationSeconds: activeTimerSeconds
+      });
+
+      if (verifyingTask.bedId) {
+        await db.beds.update(verifyingTask.bedId, {
+          status: 'empty',
+          acuity: 'none',
+          evsStatus: 'completed',
+          patientName: undefined,
+          patientSafety: undefined
+        });
+      }
+
+      clinicalAudio.playSuccessChime();
+      showToast(`✨ ${verifyingTask.bedId || verifyingTask.room} physically verified (${data.scannedQr}) with lot ${data.disinfectantLot}! Bed is VACANT.`, 'success');
+      setVerifyingTask(null);
+    } catch (err) {
+      console.error(err);
+      showToast('Failed to complete verification.', 'error');
+    }
+  };
+
+  const handleAutoDispatch = async () => {
+    if (pendingTasks.length === 0) {
+      showToast('No pending disinfection tasks in queue.', 'info');
+      return;
+    }
+
+    for (const t of pendingTasks.slice(0, 2)) {
+      await db.evsTasks.update(t.id, {
+        status: 'in-progress',
+        assignedTo: 'Autonomous UV-C Disinfection Robot'
+      });
+    }
+
+    clinicalAudio.playSuccessChime();
+    showToast('Autonomous UV-C Decontamination Units Dispatched!', 'success');
+  };
+
+  const handleAddSampleClean = async () => {
+    const newId = `EVS-${Date.now().toString().slice(-4)}`;
+    await db.evsTasks.add({
+      id: newId,
+      room: 'ICU Resuscitation Suite 101',
+      bedId: 'B-11',
+      floorNumber: 1,
+      priority: 'stat',
+      status: 'pending',
+      isolationType: 'airborne',
+      dischargeReason: 'STAT Disinfection & Terminal Quaternary Clean',
+      ppeRequired: ['N95 Respirator', 'Fluid Gown', 'Gloves'],
+      chemicalProtocol: 'Terminal UV-C Purge & Bleach Wipe',
+      requestTime: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      elapsedMinutes: 0
+    });
+    showToast(`Added STAT Disinfection Task ${newId}`, 'info');
+  };
 
   return (
-    <div className="flex flex-col h-full w-full bg-[#050811] text-slate-200 font-sans p-6 overflow-hidden">
-      
-      {/* Header */}
-      <div className="flex justify-between items-center mb-6 shrink-0">
-        <div>
-          <h1 className="text-2xl font-bold text-white flex items-center gap-3">
-            <ClipboardList className="text-emerald-500" />
-            EVS Field App
-          </h1>
-          <p className="text-slate-400 text-sm mt-1">Live task assignments and turnaround tracking</p>
-        </div>
-        
+    <div className="flex-1 flex flex-col h-full overflow-hidden bg-[#F4F5F7]">
+      {/* TOP TAB NAV BAR */}
+      <header className="h-14 bg-white border-b border-slate-200 px-6 flex items-center justify-between shrink-0 select-none">
         <div className="flex items-center gap-4">
-           {(appState === 'full' || appState === 'partial') && (
-             <div className="flex items-center gap-3 bg-[#0B1C30]/80 border border-slate-800 rounded-xl px-4 py-2">
-               <span className="text-sm font-semibold uppercase text-slate-400">Shift Score</span>
-               <span className="text-xl font-bold text-emerald-400">{productivityScore}%</span>
-             </div>
-           )}
-           <button 
-             onClick={() => setAppState('loading')}
-             className="flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 rounded-lg text-sm text-white transition-all active:scale-95 h-[44px]"
-           >
-             <RefreshCw size={16} className={appState === 'loading' ? 'animate-spin' : ''} />
-             Sync
-           </button>
+          <div className="flex items-center bg-slate-100 p-1 rounded-xl border border-slate-300">
+            <button
+              onClick={() => { setActiveTab('staff'); clinicalAudio.playDrawerSwoosh(); }}
+              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                activeTab === 'staff'
+                  ? 'bg-white text-blue-700 shadow-xs'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              <Users size={15} />
+              <span>Personnel Directory &amp; Telemetry</span>
+            </button>
+
+            <button
+              onClick={() => { setActiveTab('evs'); clinicalAudio.playDrawerSwoosh(); }}
+              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                activeTab === 'evs'
+                  ? 'bg-white text-blue-700 shadow-xs'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              <Sparkles size={15} />
+              <span>EVS Sanitization Tasks</span>
+              <span className="text-[10px] font-mono px-1.5 py-0.2 rounded-full bg-amber-100 text-amber-800">
+                {pendingTasks.length + inProgressTasks.length}
+              </span>
+            </button>
+          </div>
         </div>
-      </div>
 
-      {/* 4-State Journey */}
-      <div className="flex-1 relative rounded-2xl overflow-hidden flex">
-        {appState === 'loading' && (
-          <div className="w-full h-full bg-[#0B1C30]/50 border border-slate-800 flex flex-col items-center justify-center space-y-4 rounded-2xl">
-             <div className="relative">
-                <div className="absolute inset-0 bg-emerald-500/20 rounded-full blur-xl animate-pulse"></div>
-                <Sparkles size={40} className="text-emerald-500 animate-pulse relative z-10" />
-             </div>
-             <p className="text-slate-400 font-mono text-sm tracking-widest uppercase">Syncing Field Assignments...</p>
+        <div className="flex items-center gap-3">
+          {activeTab === 'evs' && (
+            <>
+              <button 
+                onClick={handleAutoDispatch}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold shadow-2xs transition-all cursor-pointer border border-slate-300"
+              >
+                <Zap size={14} className="text-blue-600" /> Auto-Dispatch Units
+              </button>
+
+              <button 
+                onClick={handleAddSampleClean}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold shadow-xs transition-all cursor-pointer"
+              >
+                <Plus size={14} /> New EVS Task
+              </button>
+            </>
+          )}
+
+          {/* USER AVATAR */}
+          <div className="flex items-center gap-2 pl-2 border-l border-slate-200">
+            <div className="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs shadow-xs">
+              SV
+            </div>
+            <div className="flex flex-col text-left">
+              <span className="text-xs font-bold text-slate-900 leading-tight">Sarah Vance, RN</span>
+              <span className="text-[10px] text-slate-500 font-medium">Charge Nurse</span>
+            </div>
           </div>
-        )}
+        </div>
+      </header>
 
-        {appState === 'error' && (
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="w-full h-full bg-[#0B1C30]/50 border border-slate-800 flex flex-col items-center justify-center text-center rounded-2xl"
-          >
-             <div className="relative mb-6">
-               <div className="absolute inset-0 bg-amber-500/20 blur-2xl animate-pulse rounded-full"></div>
-               <div className="w-20 h-20 bg-amber-950/80 border border-amber-500/50 rounded-full flex items-center justify-center relative z-10 shadow-[0_0_40px_rgba(245,158,11,0.3)]">
-                  <AlertTriangle size={36} className="text-amber-500 drop-shadow-[0_0_10px_rgba(245,158,11,0.8)]" />
-               </div>
-             </div>
-             <h2 className="text-2xl font-bold text-white mb-2 tracking-tight">EVS Sync Failed</h2>
-             <p className="text-slate-400 mb-8 max-w-md leading-relaxed">Network connection to field devices lost. Continuing in offline mode.</p>
-             <button 
-                onClick={() => setAppState('loading')}
-                className="px-8 py-3 bg-amber-500/10 hover:bg-amber-500/20 text-amber-500 border border-amber-500/50 rounded-xl font-bold transition-all shadow-[0_0_20px_rgba(245,158,11,0.15)] hover:shadow-[0_0_30px_rgba(245,158,11,0.3)] active:scale-95"
-             >
-               Force Reconnect
-             </button>
-          </motion.div>
-        )}
-
-        {appState === 'empty' && (
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="w-full h-full bg-[#0B1C30]/50 border border-slate-800 flex flex-col items-center justify-center text-center rounded-2xl"
-          >
-             <div className="relative mb-6">
-                <div className="absolute inset-0 bg-emerald-500/20 blur-2xl rounded-full"></div>
-                <div className="w-24 h-24 bg-emerald-950/80 border border-emerald-500/50 rounded-full flex items-center justify-center relative z-10 shadow-[0_0_50px_rgba(16,185,129,0.4)]">
-                   <CheckCircle size={48} className="text-emerald-400 drop-shadow-[0_0_15px_rgba(16,185,129,0.8)]" />
+      {/* BODY CONTENT */}
+      {activeTab === 'staff' ? (
+        <StaffDirectory />
+      ) : (
+        <div className="flex-1 p-4 overflow-y-auto flex flex-col gap-4 custom-scrollbar">
+          
+          {/* TOP STATS */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            
+            <div className="bg-white rounded-2xl p-4 border border-slate-200 shadow-xs flex items-center justify-between">
+              <div>
+                <span className="text-xs font-semibold text-slate-500 block">Pending Cleaning Queue</span>
+                <div className="flex items-baseline gap-2 mt-1">
+                  <span className="text-2xl font-bold text-amber-600 font-sans">{pendingTasks.length}</span>
+                  <span className="text-xs text-slate-400 font-medium">Bays Queued</span>
                 </div>
-             </div>
-             <h2 className="text-3xl font-bold text-white mb-2 tracking-tight">All Clear!</h2>
-             <p className="text-emerald-400 max-w-md text-lg mb-8">Zero pending tasks. Excellent turnaround today.</p>
-             <button 
-                onClick={() => showToast('Generating Shift Audit...', 'info')}
-                className="px-8 py-3 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 rounded-xl font-bold transition-all active:scale-95 flex items-center gap-2"
-             >
-                <ClipboardList size={20} />
-                Review Shift Audit
-             </button>
-          </motion.div>
-        )}
-
-        {(appState === 'full' || appState === 'partial') && (
-          <div className="w-full h-full flex flex-col min-h-0">
-             {appState === 'partial' && (
-              <div className="mb-4 bg-amber-500/10 border border-amber-500/30 text-amber-500 px-4 py-2 rounded-xl flex items-center justify-between shadow-[0_0_15px_rgba(245,158,11,0.1)] shrink-0">
-                 <div className="flex items-center gap-2 font-bold text-sm">
-                    <WifiOff size={16} className="animate-pulse" />
-                    OFFLINE MODE (PARTIAL DATA)
-                 </div>
-                 <span className="text-xs text-amber-500/70 font-semibold">Displaying cached EVS tasks. Assignments will queue.</span>
               </div>
-             )}
-             <div className="w-full h-full flex gap-6 min-h-0">
-             {/* Pending Column */}
-             <div className="flex-1 flex flex-col min-h-0 bg-[#0B1C30]/80 border border-slate-800 rounded-2xl p-4">
-                <div className="flex items-center justify-between mb-4 px-2">
-                   <h3 className="font-bold text-white uppercase tracking-wider text-sm">Pending Queue</h3>
-                   <div className="flex items-center gap-2">
-                      <span className="bg-rose-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">{pendingTasks.length}</span>
-                      <button onClick={simulateIntelligentDispatch} className="ml-2 bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 border border-emerald-500/50 px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-1 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-                         <Sparkles size={14} />
-                         Auto-Dispatch
-                      </button>
-                   </div>
-                </div>
-                
-                <div className="flex-1 overflow-y-auto custom-scrollbar space-y-4 px-2 pb-4">
-                  {pendingTasks.map(task => (
-                    <motion.div 
-                       key={task.id}
-                       whileHover={{ scale: 1.02 }}
-                       className="bg-[#050811] border border-slate-800/80 p-4 rounded-xl shadow-lg relative overflow-hidden group cursor-pointer"
-                    >
-                      {task.priority === 'stat' && (
-                        <div className="absolute top-0 left-0 w-1 h-full bg-rose-500 shadow-[0_0_10px_rgba(225,29,72,0.8)]"></div>
-                      )}
-                      {task.priority === 'urgent' && (
-                        <div className="absolute top-0 left-0 w-1 h-full bg-amber-500"></div>
-                      )}
-                      
-                      <div className="flex justify-between items-start mb-3">
-                         <span className="font-mono font-bold text-white">{task.room}</span>
-                         <span className={`text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${
-                           task.priority === 'stat' ? 'bg-rose-500/20 text-rose-500 border border-rose-500/30' :
-                           task.priority === 'urgent' ? 'bg-amber-500/20 text-amber-500 border border-amber-500/30' :
-                           'bg-slate-700/50 text-slate-400'
-                         }`}>
-                           {task.priority}
-                         </span>
-                      </div>
-                      
-                      <div className="flex items-center justify-between text-slate-400 text-sm mt-4">
-                        <div className="flex items-center gap-1.5">
-                           <Clock size={14} />
-                           <span>Req: {task.requestTime}</span>
-                        </div>
-                        <button 
-                          onClick={() => assignTask(task.id)}
-                          className="flex items-center gap-1 text-[#2563EB] hover:text-[#3B82F6] transition-all group-hover:translate-x-1 duration-200 active:scale-95"
-                        >
-                          <span className="text-xs font-bold uppercase">Assign</span>
-                          <ChevronRight size={16} />
-                        </button>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-             </div>
+              <span className="p-2.5 rounded-xl bg-amber-50 text-amber-700">
+                <Clock size={20} />
+              </span>
+            </div>
 
-             {/* Active Column */}
-             <div className="flex-1 flex flex-col min-h-0 bg-[#0B1C30]/80 border border-slate-800 rounded-2xl p-4">
-                <div className="flex items-center justify-between mb-4 px-2">
-                   <h3 className="font-bold text-white uppercase tracking-wider text-sm">Active Cleaning</h3>
-                   <span className="bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 px-2 py-1 rounded-full text-xs font-bold">{activeTasks.length}</span>
+            <div className="bg-white rounded-2xl p-4 border border-slate-200 shadow-xs flex items-center justify-between">
+              <div>
+                <span className="text-xs font-semibold text-slate-500 block">Active Decontaminations</span>
+                <div className="flex items-baseline gap-2 mt-1">
+                  <span className="text-2xl font-bold text-blue-600 font-sans">{inProgressTasks.length}</span>
+                  <span className="text-xs text-blue-600 font-bold">In-Progress</span>
                 </div>
-                
-                <div className="flex-1 overflow-y-auto custom-scrollbar space-y-4 px-2 pb-4">
-                  {activeTasks.map(task => (
-                    <motion.div 
-                       key={task.id}
-                       whileHover={{ scale: 1.02 }}
-                       className="bg-[#050811] border border-emerald-500/30 p-4 rounded-xl shadow-[0_0_20px_rgba(16,185,129,0.05)] cursor-pointer"
-                    >
-                      <div className="flex justify-between items-start mb-3">
-                         <span className="font-mono font-bold text-white">{task.room}</span>
-                         <div className="flex items-center gap-1.5 text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full text-xs font-bold">
-                            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
-                            IN PROGRESS
-                         </div>
-                      </div>
+              </div>
+              <span className="p-2.5 rounded-xl bg-blue-50 text-blue-700">
+                <Sparkles size={20} />
+              </span>
+            </div>
 
-                      <div className="flex items-center gap-2 mb-4 text-slate-300 text-sm">
-                         <User size={14} className="text-slate-500" />
-                         <span>Assigned to: <span className="font-semibold text-white truncate max-w-[120px] inline-block align-bottom">{task.assignedTo}</span></span>
-                      </div>
-                      
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-1.5 text-amber-500 text-sm font-mono font-bold">
-                           <Clock size={14} />
-                           <span>{task.elapsedMinutes}m elapsed</span>
-                        </div>
-                        <button className="flex items-center gap-1 px-3 py-1.5 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 rounded-lg text-xs font-bold transition-all active:scale-95">
-                          Verify
-                        </button>
-                      </div>
-                    </motion.div>
-                  ))}
+            <div className="bg-white rounded-2xl p-4 border border-slate-200 shadow-xs flex items-center justify-between">
+              <div>
+                <span className="text-xs font-semibold text-slate-500 block">Terminal Cleans Completed</span>
+                <div className="flex items-baseline gap-2 mt-1">
+                  <span className="text-2xl font-bold text-emerald-700 font-sans">{completedTasks.length}</span>
+                  <span className="text-xs text-emerald-700 font-bold">Passed UV-C Assay</span>
                 </div>
-             </div>
-             </div>
+              </div>
+              <span className="p-2.5 rounded-xl bg-emerald-50 text-emerald-800">
+                <ShieldCheck size={20} />
+              </span>
+            </div>
+
+            <div className="bg-white rounded-2xl p-4 border border-slate-200 shadow-xs flex items-center justify-between">
+              <div>
+                <span className="text-xs font-semibold text-slate-500 block">Average Turnaround Time</span>
+                <div className="flex items-baseline gap-2 mt-1">
+                  <span className="text-2xl font-bold text-slate-900 font-sans">18.4</span>
+                  <span className="text-xs text-slate-400 font-medium">Minutes / Bay</span>
+                </div>
+              </div>
+              <span className="p-2.5 rounded-xl bg-purple-50 text-purple-700">
+                <Zap size={20} />
+              </span>
+            </div>
+
           </div>
-        )}
-      </div>
 
+          {/* 3-COLUMN WORKFLOW BOARD */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 flex-1">
+            
+            {/* 1. PENDING QUEUE */}
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center justify-between px-1">
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-600 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-amber-500"></span>
+                  Pending EVS Request Queue ({pendingTasks.length})
+                </span>
+              </div>
+
+              <div className="space-y-3">
+                {pendingTasks.map(task => (
+                  <div key={task.id} className="bg-white rounded-2xl p-4 border border-slate-200 shadow-xs flex flex-col gap-3">
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <span className="text-xs font-bold text-slate-900 block">{task.room}</span>
+                        <span className="text-[11px] font-mono text-slate-500 font-semibold">{task.bedId || 'Entire Suite'}</span>
+                      </div>
+                      <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${
+                        task.priority === 'stat' ? 'bg-rose-100 text-rose-800' : 'bg-amber-100 text-amber-800'
+                      }`}>
+                        {task.priority}
+                      </span>
+                    </div>
+
+                    <div className="text-xs text-slate-600 space-y-1">
+                      <p className="font-medium text-slate-800">{task.dischargeReason}</p>
+                      <p className="text-[11px] text-slate-500">Protocol: <span className="font-semibold text-slate-700">{task.chemicalProtocol}</span></p>
+                    </div>
+
+                    <div className="flex items-center justify-between pt-2 border-t border-slate-100">
+                      <span className="text-[10px] text-slate-400 font-medium">Requested: {task.requestTime}</span>
+                      <button 
+                        onClick={() => handleStartTask(task)}
+                        className="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer"
+                      >
+                        <Play size={12} fill="white" /> Start Cleaning
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 2. IN-PROGRESS ACTIVE CLEANS */}
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center justify-between px-1">
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-600 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-blue-500 animate-ping"></span>
+                  Active Decontaminations ({inProgressTasks.length})
+                </span>
+              </div>
+
+              <div className="space-y-3">
+                {inProgressTasks.map(task => (
+                  <div key={task.id} className="bg-white rounded-2xl p-4 border border-blue-200 shadow-xs flex flex-col gap-3 ring-1 ring-blue-500/20">
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <span className="text-xs font-bold text-slate-900 block">{task.room}</span>
+                        <span className="text-[11px] font-mono text-blue-700 font-bold">{task.bedId || 'Suite'}</span>
+                      </div>
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-100 text-blue-800 animate-pulse">
+                        In Progress
+                      </span>
+                    </div>
+
+                    <div className="p-2.5 rounded-xl bg-blue-50/50 border border-blue-100 text-xs text-blue-900">
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="font-semibold">{task.assignedTo || 'Specialist Maria S.'}</span>
+                        <span className="font-mono text-[10px] font-bold text-blue-700">Elapsed: 8m</span>
+                      </div>
+                      <span className="text-[11px] block text-blue-800">{task.chemicalProtocol}</span>
+                    </div>
+
+                    <div className="flex items-center justify-between pt-2 border-t border-slate-100">
+                      <span className="text-[10px] text-slate-400 font-medium">Started: {task.startedAt || 'Recently'}</span>
+                      <button 
+                        onClick={() => setVerifyingTask(task)}
+                        className="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer shadow-xs"
+                      >
+                        <CheckCircle2 size={14} />
+                        <span>Bedside QR Verify &amp; Release</span>
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 3. VERIFIED TERMINAL CLEANS & LOGS */}
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center justify-between px-1">
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-600 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  Completed &amp; Released ({completedTasks.length})
+                </span>
+              </div>
+
+              <div className="bg-white rounded-2xl p-4 border border-slate-200 shadow-xs flex flex-col gap-3">
+                <span className="text-xs font-bold text-slate-800 uppercase tracking-wider">EVS Staff Deployment Status</span>
+                
+                <div className="space-y-2 text-xs">
+                  <div className="flex items-center justify-between p-2 rounded-lg bg-slate-50">
+                    <span className="font-semibold text-slate-800">Clean Team 1 (Maria S.)</span>
+                    <span className="text-blue-600 font-bold">Cleaning ICU Bay 101</span>
+                  </div>
+                  <div className="flex items-center justify-between p-2 rounded-lg bg-slate-50">
+                    <span className="font-semibold text-slate-800">Autonomous UV-C Bot 1</span>
+                    <span className="text-emerald-700 font-bold">UV-C Purging B-17</span>
+                  </div>
+                  <div className="flex items-center justify-between p-2 rounded-lg bg-slate-50">
+                    <span className="font-semibold text-slate-800">Unit Bravo (Carlos R.)</span>
+                    <span className="text-slate-500 font-medium">Standby in Supply Station</span>
+                  </div>
+                </div>
+
+                <div className="p-3 rounded-xl bg-blue-50 border border-blue-200 text-xs text-blue-800 mt-4 flex items-center gap-2">
+                  <Sparkles size={16} className="text-blue-600 shrink-0" />
+                  <span>Next automated UV-C surface sweep scheduled in <strong>24 minutes</strong>.</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      )}
+
+      {/* Bedside Physical QR / Chemical Lot Verification Modal Gate */}
+      <EvsBedsideVerifyModal
+        isOpen={!!verifyingTask}
+        onClose={() => setVerifyingTask(null)}
+        task={verifyingTask}
+        onVerifiedRelease={handleVerifiedRelease}
+      />
     </div>
   );
 });

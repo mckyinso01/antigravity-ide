@@ -1,0 +1,17 @@
+{
+  "name": "hospital_leads_database",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "imap-simple": "^5.1.0",
+    "nodemailer": "^9.0.5"
+  }
+}

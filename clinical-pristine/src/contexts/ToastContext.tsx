@@ -52,28 +52,29 @@ export const ToastProvider = ({ children }: { children: ReactNode }) => {
               animate={{ opacity: 1, x: 0, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
               layout
-              className={`pointer-events-auto flex items-center gap-3 px-4 py-3 rounded-xl border shadow-xl backdrop-blur-md min-w-[300px] ${
+              className={`pointer-events-auto flex items-center gap-3 px-4 py-3 rounded-xl border shadow-xl min-w-[320px] max-w-[420px] bg-white font-sans ${
                 toast.type === 'success' 
-                  ? 'bg-emerald-950/80 border-emerald-500/50 text-emerald-100 shadow-[0_0_30px_rgba(16,185,129,0.15)]'
+                  ? 'border-slate-200 border-l-4 border-l-emerald-500 text-slate-800'
                   : toast.type === 'error'
-                  ? 'bg-rose-950/80 border-rose-500/50 text-rose-100 shadow-[0_0_30px_rgba(225,29,72,0.15)]'
+                  ? 'border-slate-200 border-l-4 border-l-rose-500 text-slate-900'
                   : toast.type === 'warn'
-                  ? 'bg-amber-950/80 border-amber-500/50 text-amber-100 shadow-[0_0_30px_rgba(245,158,11,0.15)]'
-                  : 'bg-[#0B1C30]/90 border-[#2563EB]/50 text-blue-100 shadow-[0_0_30px_rgba(37,99,235,0.15)]'
+                  ? 'border-slate-200 border-l-4 border-l-amber-500 text-slate-800'
+                  : 'border-slate-200 border-l-4 border-l-blue-600 text-slate-800'
               }`}
             >
               <div className="shrink-0">
-                {toast.type === 'success' && <CheckCircle2 className="text-emerald-400" size={20} />}
-                {toast.type === 'error' && <AlertCircle className="text-rose-400" size={20} />}
-                {toast.type === 'warn' && <AlertCircle className="text-amber-400" size={20} />}
-                {toast.type === 'info' && <Info className="text-[#2563EB]" size={20} />}
+                {toast.type === 'success' && <CheckCircle2 className="text-emerald-600" size={20} />}
+                {toast.type === 'error' && <AlertCircle className="text-rose-600" size={20} />}
+                {toast.type === 'warn' && <AlertCircle className="text-amber-600" size={20} />}
+                {toast.type === 'info' && <Info className="text-blue-600" size={20} />}
               </div>
               
-              <span className="flex-1 text-sm font-medium">{toast.message}</span>
+              <span className="flex-1 text-xs font-semibold leading-snug">{toast.message}</span>
               
               <button 
                 onClick={() => removeToast(toast.id)}
-                className="shrink-0 p-1 hover:bg-white/10 rounded-full transition-colors opacity-60 hover:opacity-100"
+                className="shrink-0 p-1 hover:bg-slate-100 rounded-lg transition-colors text-slate-400 hover:text-slate-700 cursor-pointer"
+                title="Dismiss Notification"
               >
                 <X size={14} />
               </button>

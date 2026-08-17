@@ -61,3 +61,14 @@ Antigravity IDE democratizes world-class interactive web applications, static AI
 
 - **CI Pipeline**: `.github/workflows/validate-model-output.yml`
 - **Artifact Retention**: Audit logs, test coverage reports, and model output JSON files must be retained for 90 days.
+
+---
+
+## 6. Commercial Verification & Payment Gateway Policy
+
+1. **Merchant KYC Compliance**:
+   - Live payment gateways (e.g., PayMongo, Stripe PH) require verified **DTI Registration** and **BIR Certificate of Registration (Form 2303)**.
+   - Applications without verified merchant KYC must deploy with interim direct invoice rails (Direct QR Ph / Bank Wire / Custom Quotation) with manual receipt verification.
+
+2. **Zero Fake Transaction Rule**:
+   - All commercial products must verify payment flows against official Sandbox/Test Mode or live ₱1 test transactions before receiving production clearance.

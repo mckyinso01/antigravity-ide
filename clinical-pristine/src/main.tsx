@@ -5,15 +5,18 @@ import App from './App.tsx'
 import './index.css'
 import { ToastProvider } from './contexts/ToastContext'
 import { EmergencyProvider } from './contexts/EmergencyContext'
+import { AccessibilityProvider } from './contexts/AccessibilityContext'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
-      <ToastProvider>
-        <EmergencyProvider>
-          <App />
-        </EmergencyProvider>
-      </ToastProvider>
+      <AccessibilityProvider>
+        <ToastProvider>
+          <EmergencyProvider>
+            <App />
+          </EmergencyProvider>
+        </ToastProvider>
+      </AccessibilityProvider>
     </BrowserRouter>
   </StrictMode>,
 )

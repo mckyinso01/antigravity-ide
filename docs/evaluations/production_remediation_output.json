@@ -1,280 +1,1817 @@
 {
-  "audit_id": "antigravity-audit-2026-08-03-001",
-  "summary": "Full repository audit focused on production controls, agent workflows, secret leakage, model-output validation, and CI gating for Antigravity IDE. Prioritized fixes and safe patches prepared (non-destructive).",
+  "audit_id": "REMED-2026-08-14-DYN",
+  "summary": "Dynamic mock data scan completed on 2026-08-14T16:01:47.364Z",
   "errors": [],
-  "changes": [
+  "findings": [
     {
-      "id": "chg-001",
-      "title": "Secrets committed in .agents/scripts/config.json — redact and provide template",
-      "severity": "critical",
-      "description": "Hard-coded API keys and tokens are present in .agents/scripts/config.json and must be removed, rotated, and replaced with a template and .gitignore to prevent future commits.",
+      "id": "MOCK-VIOLATION-1",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"MOCK_\" found in clinical-pristine/src/pages/AlertsApp.tsx at line 8",
       "evidence": [
         {
-          "file": ".agents/scripts/config.json",
-          "startLine": 1,
-          "endLine": 6,
-          "snippet": "{\n    \"github_pat\": \"\",\n    \"groq_api_key\": \"\",\n    \"google_ai_key\": \"\"\n"
+          "file": "clinical-pristine/src/pages/AlertsApp.tsx",
+          "startLine": 8,
+          "endLine": 8,
+          "snippet": "const MOCK_ALERTS: SecurityAlert[] = ["
         }
       ],
       "proposed_fix": {
-        "type": "patch",
+        "type": "refactor",
         "diff_unified": null,
-        "explanation": "Remove hard-coded secrets, add guidance to use environment variables or a local config that is gitignored; secrets must be rotated outside the repo.",
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
         "tests_added": [],
         "requires_human_review": true
       },
-      "confidence": 0.99
+      "confidence": 0.95
     },
     {
-      "id": "chg-002",
-      "title": "Add local_config_template.json and .gitignore to prevent committing secrets",
+      "id": "MOCK-VIOLATION-2",
+      "title": "Mock/Static Data Detected",
       "severity": "high",
-      "description": "Provide a blank template for local configuration and ignore it in git to reduce accidental secret commits.",
+      "description": "Pattern \"MOCK_\" found in clinical-pristine/src/pages/AlertsApp.tsx at line 30",
       "evidence": [
         {
-          "file": ".agents/scripts/config.json",
-          "startLine": 1,
-          "endLine": 14,
-          "snippet": "{\n    \"github_pat\": \"\",\n    \"groq_api_key\": \"\",\n    \"google_ai_key\": \"\",\n    \"huggingface_token\": \"\",\n"
+          "file": "clinical-pristine/src/pages/AlertsApp.tsx",
+          "startLine": 30,
+          "endLine": 30,
+          "snippet": "await db.alerts.bulkAdd(MOCK_ALERTS);"
         }
       ],
       "proposed_fix": {
-        "type": "patch",
+        "type": "refactor",
         "diff_unified": null,
-        "explanation": "Adds a template that developers can copy to local_config.json (which should be gitignored). This keeps secrets out of the repo while preserving developer ergonomics.",
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
         "tests_added": [],
-        "requires_human_review": false
+        "requires_human_review": true
       },
       "confidence": 0.95
     },
     {
-      "id": "chg-003",
-      "title": "Add .agents/scripts/.gitignore to ignore local config & env files",
-      "severity": "medium",
-      "description": "Ensure local_config.json and .env are ignored to prevent accidental commits of secrets.",
+      "id": "MOCK-VIOLATION-3",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"MOCK_\" found in clinical-pristine/src/pages/AlertsApp.tsx at line 33",
       "evidence": [
         {
-          "file": ".agents/scripts/config.json",
-          "startLine": 1,
-          "endLine": 4,
-          "snippet": "{\n    \"github_pat\": \"\",\n    \"groq_api_key\": \"\",\n"
+          "file": "clinical-pristine/src/pages/AlertsApp.tsx",
+          "startLine": 33,
+          "endLine": 33,
+          "snippet": "if (MOCK_ALERTS.length === 0) {"
         }
       ],
       "proposed_fix": {
-        "type": "patch",
+        "type": "refactor",
         "diff_unified": null,
-        "explanation": "Ignore local_config.json and .env in the .agents/scripts folder to prevent committing local secrets.",
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
         "tests_added": [],
-        "requires_human_review": false
+        "requires_human_review": true
       },
       "confidence": 0.95
     },
     {
-      "id": "chg-004",
-      "title": "Add model-output validator (Zod) to enforce schema on model responses",
+      "id": "MOCK-VIOLATION-4",
+      "title": "Mock/Static Data Detected",
       "severity": "high",
-      "description": "No repository-level validator exists to ensure model outputs are valid, structured JSON; add tools/validate_model_output.ts using Zod.",
+      "description": "Pattern \"MOCK_\" found in clinical-pristine/src/pages/BedManagement.tsx at line 10",
       "evidence": [
         {
-          "file": "README.md",
-          "startLine": 1,
+          "file": "clinical-pristine/src/pages/BedManagement.tsx",
+          "startLine": 10,
           "endLine": 10,
-          "snippet": "Repository scaffolding shows multi-agent outputs but no validator/auditor present in repo"
+          "snippet": "const MOCK_BEDS: BedData[] = Array.from({ length: 12 }, (_, i) => {"
         }
       ],
       "proposed_fix": {
-        "type": "patch",
+        "type": "refactor",
         "diff_unified": null,
-        "explanation": "Adds a strict schema validator to ensure the model output is valid JSON and meets the expected audit schema before any further processing.",
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
         "tests_added": [],
-        "requires_human_review": false
+        "requires_human_review": true
       },
       "confidence": 0.95
     },
     {
-      "id": "chg-005",
-      "title": "Add model-output auditor (file existence + git apply --check)",
+      "id": "MOCK-VIOLATION-5",
+      "title": "Mock/Static Data Detected",
       "severity": "high",
-      "description": "Add an auditor script that verifies any file paths referenced by model output exist and that proposed unified diffs pass git apply --check.",
+      "description": "Pattern \"MOCK_\" found in clinical-pristine/src/pages/BedManagement.tsx at line 43",
       "evidence": [
         {
-          "file": ".agents/scripts/README.md",
-          "startLine": 1,
-          "endLine": 10,
-          "snippet": "Multi-AI Debate & Voting Council System (0-Quota / Free Swarm) ... sends tasks to multiple free-tier AI models in parallel"
+          "file": "clinical-pristine/src/pages/BedManagement.tsx",
+          "startLine": 43,
+          "endLine": 43,
+          "snippet": "await db.beds.bulkAdd(MOCK_BEDS);"
         }
       ],
       "proposed_fix": {
-        "type": "patch",
+        "type": "refactor",
         "diff_unified": null,
-        "explanation": "Adds an auditor to detect hallucinated file references and to verify that patches are syntactically applicable before human review or automated PR creation.",
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
         "tests_added": [],
-        "requires_human_review": false
+        "requires_human_review": true
       },
       "confidence": 0.95
     },
     {
-      "id": "chg-006",
-      "title": "Add tests/webhook.spec.ts to verify raw-body webhook handling",
-      "severity": "medium",
-      "description": "Provide a Supertest test skeleton for any Stripe-like webhook endpoints to ensure raw body handling is used where necessary.",
+      "id": "MOCK-VIOLATION-6",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"MOCK_\" found in clinical-pristine/src/pages/BedManagement.tsx at line 46",
       "evidence": [
         {
-          "file": ".agents/scripts/README.md",
+          "file": "clinical-pristine/src/pages/BedManagement.tsx",
+          "startLine": 46,
+          "endLine": 46,
+          "snippet": "if (MOCK_BEDS.length === 0) {"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-7",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in clinical-pristine/src/pages/BedManagement.tsx at line 135",
+      "evidence": [
+        {
+          "file": "clinical-pristine/src/pages/BedManagement.tsx",
+          "startLine": 135,
+          "endLine": 135,
+          "snippet": "placeholder=\"Search Room or ID...\""
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-8",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in clinical-pristine/src/pages/BedManagement.tsx at line 136",
+      "evidence": [
+        {
+          "file": "clinical-pristine/src/pages/BedManagement.tsx",
+          "startLine": 136,
+          "endLine": 136,
+          "snippet": "className=\"w-48 bg-transparent text-sm text-white px-3 py-2 outline-none placeholder:text-slate-600\""
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-9",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"MOCK_\" found in clinical-pristine/src/pages/CommandCenter.tsx at line 8",
+      "evidence": [
+        {
+          "file": "clinical-pristine/src/pages/CommandCenter.tsx",
+          "startLine": 8,
+          "endLine": 8,
+          "snippet": "const MOCK_ROOMS: RoomData[] = Array.from({ length: 8 }, (_, i) => {"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-10",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"MOCK_\" found in clinical-pristine/src/pages/CommandCenter.tsx at line 22",
+      "evidence": [
+        {
+          "file": "clinical-pristine/src/pages/CommandCenter.tsx",
+          "startLine": 22,
+          "endLine": 22,
+          "snippet": "const MOCK_BEDS: BedData[] = Array.from({ length: 16 }, (_, i) => {"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-11",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"MOCK_\" found in clinical-pristine/src/pages/CommandCenter.tsx at line 35",
+      "evidence": [
+        {
+          "file": "clinical-pristine/src/pages/CommandCenter.tsx",
+          "startLine": 35,
+          "endLine": 35,
+          "snippet": "const MOCK_WALLS: WallData[] = ["
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-12",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"MOCK_\" found in clinical-pristine/src/pages/CommandCenter.tsx at line 101",
+      "evidence": [
+        {
+          "file": "clinical-pristine/src/pages/CommandCenter.tsx",
+          "startLine": 101,
+          "endLine": 101,
+          "snippet": "await db.rooms.bulkAdd(MOCK_ROOMS);"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-13",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"MOCK_\" found in clinical-pristine/src/pages/CommandCenter.tsx at line 102",
+      "evidence": [
+        {
+          "file": "clinical-pristine/src/pages/CommandCenter.tsx",
+          "startLine": 102,
+          "endLine": 102,
+          "snippet": "await db.walls.bulkAdd(MOCK_WALLS);"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-14",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"MOCK_\" found in clinical-pristine/src/pages/CommandCenter.tsx at line 103",
+      "evidence": [
+        {
+          "file": "clinical-pristine/src/pages/CommandCenter.tsx",
+          "startLine": 103,
+          "endLine": 103,
+          "snippet": "await db.beds.bulkAdd(MOCK_BEDS);"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-15",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in clinical-pristine/src/pages/CommandCenter.tsx at line 483",
+      "evidence": [
+        {
+          "file": "clinical-pristine/src/pages/CommandCenter.tsx",
+          "startLine": 483,
+          "endLine": 483,
+          "snippet": "placeholder=\"e.g. Level 1\""
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-16",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in clinical-pristine/src/pages/CommandCenter.tsx at line 712",
+      "evidence": [
+        {
+          "file": "clinical-pristine/src/pages/CommandCenter.tsx",
+          "startLine": 712,
+          "endLine": 712,
+          "snippet": "placeholder=\"Enter Password... (Hint: admin)\" autoFocus"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-17",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"MOCK_\" found in clinical-pristine/src/pages/EVSApp.tsx at line 8",
+      "evidence": [
+        {
+          "file": "clinical-pristine/src/pages/EVSApp.tsx",
+          "startLine": 8,
+          "endLine": 8,
+          "snippet": "const MOCK_TASKS: EVSTask[] = ["
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-18",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"MOCK_\" found in clinical-pristine/src/pages/EVSApp.tsx at line 63",
+      "evidence": [
+        {
+          "file": "clinical-pristine/src/pages/EVSApp.tsx",
+          "startLine": 63,
+          "endLine": 63,
+          "snippet": "await db.evsTasks.bulkAdd(MOCK_TASKS);"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-19",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"MOCK_\" found in clinical-pristine/src/pages/EVSApp.tsx at line 66",
+      "evidence": [
+        {
+          "file": "clinical-pristine/src/pages/EVSApp.tsx",
+          "startLine": 66,
+          "endLine": 66,
+          "snippet": "if (MOCK_TASKS.length === 0) {"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-20",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"MOCK_\" found in clinical-pristine/src/pages/Login.tsx at line 38",
+      "evidence": [
+        {
+          "file": "clinical-pristine/src/pages/Login.tsx",
+          "startLine": 38,
+          "endLine": 38,
+          "snippet": "localStorage.setItem('auth_token', 'mock_token_123');"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-21",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in clinical-pristine/src/pages/Login.tsx at line 130",
+      "evidence": [
+        {
+          "file": "clinical-pristine/src/pages/Login.tsx",
+          "startLine": 130,
+          "endLine": 130,
+          "snippet": "className=\"w-full bg-[#050811]/50 border border-slate-700/50 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-[#2563EB]/50 focus:ring-1 focus:ring-[#2563EB]/50 transition-all disabled:opacity-50\""
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-22",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in clinical-pristine/src/pages/Login.tsx at line 131",
+      "evidence": [
+        {
+          "file": "clinical-pristine/src/pages/Login.tsx",
+          "startLine": 131,
+          "endLine": 131,
+          "snippet": "placeholder=\"e.g. admin\""
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-23",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in clinical-pristine/src/pages/Login.tsx at line 146",
+      "evidence": [
+        {
+          "file": "clinical-pristine/src/pages/Login.tsx",
+          "startLine": 146,
+          "endLine": 146,
+          "snippet": "className=\"w-full bg-[#050811]/50 border border-slate-700/50 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-[#2563EB]/50 focus:ring-1 focus:ring-[#2563EB]/50 transition-all disabled:opacity-50\""
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-24",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in clinical-pristine/src/pages/Login.tsx at line 147",
+      "evidence": [
+        {
+          "file": "clinical-pristine/src/pages/Login.tsx",
+          "startLine": 147,
+          "endLine": 147,
+          "snippet": "placeholder=\"••••••••\""
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-25",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in design/designSystem.js at line 103",
+      "evidence": [
+        {
+          "file": "design/designSystem.js",
+          "startLine": 103,
+          "endLine": 103,
+          "snippet": "input: \"bg-white dark:bg-[#071322] border border-slate-300 dark:border-slate-800 focus:border-blue-500 dark:focus:border-[#00E5FF] focus:ring-1 focus:ring-blue-500 dark:focus:ring-[#00E5FF] text-slate-800 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 rounded-lg px-3.5 py-2.5 text-sm transition-all outline-none\","
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-26",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in design/designSystem.js at line 104",
+      "evidence": [
+        {
+          "file": "design/designSystem.js",
+          "startLine": 104,
+          "endLine": 104,
+          "snippet": "inputNumeric: \"bg-white dark:bg-[#071322] border border-slate-300 dark:border-slate-800 focus:border-blue-500 dark:focus:border-[#00E5FF] focus:ring-1 focus:ring-blue-500 dark:focus:ring-[#00E5FF] text-blue-600 dark:text-[#00E5FF] placeholder:text-slate-400 dark:placeholder:text-slate-500 rounded-lg px-3.5 py-2.5 font-mono text-sm font-bold text-right outline-none\","
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-27",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in huggingface-hub/app.js at line 89",
+      "evidence": [
+        {
+          "file": "huggingface-hub/app.js",
+          "startLine": 89,
+          "endLine": 89,
+          "snippet": "imgPlaceholder: document.getElementById('img-placeholder'),"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-28",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in huggingface-hub/app.js at line 93",
+      "evidence": [
+        {
+          "file": "huggingface-hub/app.js",
+          "startLine": 93,
+          "endLine": 93,
+          "snippet": "audioPlaceholder: document.getElementById('audio-placeholder'),"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-29",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in huggingface-hub/app.js at line 97",
+      "evidence": [
+        {
+          "file": "huggingface-hub/app.js",
+          "startLine": 97,
+          "endLine": 97,
+          "snippet": "classPlaceholder: document.getElementById('class-placeholder'),"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-30",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in huggingface-hub/app.js at line 515",
+      "evidence": [
+        {
+          "file": "huggingface-hub/app.js",
+          "startLine": 515,
+          "endLine": 515,
+          "snippet": "elements.imgPlaceholder.classList.add('hidden');"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-31",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in huggingface-hub/app.js at line 527",
+      "evidence": [
+        {
+          "file": "huggingface-hub/app.js",
+          "startLine": 527,
+          "endLine": 527,
+          "snippet": "elements.audioPlaceholder.classList.add('hidden');"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-32",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in huggingface-hub/app.js at line 574",
+      "evidence": [
+        {
+          "file": "huggingface-hub/app.js",
+          "startLine": 574,
+          "endLine": 574,
+          "snippet": "elements.classPlaceholder.classList.add('hidden');"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-33",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in OnePassword-Enterprise-AI/src/components/GlobalCommandPaletteModal.jsx at line 43",
+      "evidence": [
+        {
+          "file": "OnePassword-Enterprise-AI/src/components/GlobalCommandPaletteModal.jsx",
+          "startLine": 43,
+          "endLine": 43,
+          "snippet": "placeholder=\"Type a command or search 1Password vault (e.g. SOC2, vault, export)...\""
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-34",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in OnePassword-Enterprise-AI/src/components/GlobalCommandPaletteModal.jsx at line 44",
+      "evidence": [
+        {
+          "file": "OnePassword-Enterprise-AI/src/components/GlobalCommandPaletteModal.jsx",
+          "startLine": 44,
+          "endLine": 44,
+          "snippet": "className=\"w-full bg-transparent text-sm font-mono text-white placeholder-slate-500 focus:outline-none\""
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-35",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in OnePassword-Enterprise-AI/src/components/SecretLeakageScanner.jsx at line 98",
+      "evidence": [
+        {
+          "file": "OnePassword-Enterprise-AI/src/components/SecretLeakageScanner.jsx",
+          "startLine": 98,
+          "endLine": 98,
+          "snippet": "placeholder=\"Paste code snippet, .env file, or JSON config here...\""
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-36",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in OnePassword-Enterprise-AI/src/components/ZeroKnowledgeVaultConsole.jsx at line 81",
+      "evidence": [
+        {
+          "file": "OnePassword-Enterprise-AI/src/components/ZeroKnowledgeVaultConsole.jsx",
+          "startLine": 81,
+          "endLine": 81,
+          "snippet": "placeholder=\"Enter Master Passphrase (e.g. MasterKey2026!)...\""
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-37",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in OnePassword-Enterprise-AI/src/components/ZeroKnowledgeVaultConsole.jsx at line 106",
+      "evidence": [
+        {
+          "file": "OnePassword-Enterprise-AI/src/components/ZeroKnowledgeVaultConsole.jsx",
+          "startLine": 106,
+          "endLine": 106,
+          "snippet": "placeholder=\"e.g. AWS_PRODUCTION_SECRET_KEY\""
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-38",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in OnePassword-Enterprise-AI/src/components/ZeroKnowledgeVaultConsole.jsx at line 116",
+      "evidence": [
+        {
+          "file": "OnePassword-Enterprise-AI/src/components/ZeroKnowledgeVaultConsole.jsx",
+          "startLine": 116,
+          "endLine": 116,
+          "snippet": "placeholder=\"e.g. wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY\""
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-39",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in Reddit-AdTech-Enterprise/src/components/AdRankingStreamConsole.jsx at line 201",
+      "evidence": [
+        {
+          "file": "Reddit-AdTech-Enterprise/src/components/AdRankingStreamConsole.jsx",
+          "startLine": 201,
+          "endLine": 201,
+          "snippet": "placeholder=\"Search ad title, advertiser, or auction ID... (Backspace to clear)\""
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-40",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in Reddit-AdTech-Enterprise/src/components/AdRankingStreamConsole.jsx at line 204",
+      "evidence": [
+        {
+          "file": "Reddit-AdTech-Enterprise/src/components/AdRankingStreamConsole.jsx",
+          "startLine": 204,
+          "endLine": 204,
+          "snippet": "className=\"w-full bg-[#1A1F26] border border-[#2D3748] rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-[#FF4500] focus:ring-1 focus:ring-[#FF4500] transition-all\""
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-41",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in Reddit-AdTech-Enterprise/src/components/GlobalCommandPaletteModal.jsx at line 43",
+      "evidence": [
+        {
+          "file": "Reddit-AdTech-Enterprise/src/components/GlobalCommandPaletteModal.jsx",
+          "startLine": 43,
+          "endLine": 43,
+          "snippet": "placeholder=\"Type a command or search... (Press Esc to close)\""
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-42",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in Reddit-AdTech-Enterprise/src/components/GlobalCommandPaletteModal.jsx at line 46",
+      "evidence": [
+        {
+          "file": "Reddit-AdTech-Enterprise/src/components/GlobalCommandPaletteModal.jsx",
+          "startLine": 46,
+          "endLine": 46,
+          "snippet": "className=\"w-full bg-transparent pl-10 pr-10 py-2 text-base text-white placeholder-slate-500 focus:outline-none\""
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-43",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"hardcoded\" found in scripts/ast-scan.ts at line 54",
+      "evidence": [
+        {
+          "file": "scripts/ast-scan.ts",
+          "startLine": 54,
+          "endLine": 54,
+          "snippet": "id: 'HARDCODED-SECRET-KEY',"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-44",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"hardcoded\" found in scripts/ast-scan.ts at line 57",
+      "evidence": [
+        {
+          "file": "scripts/ast-scan.ts",
+          "startLine": 57,
+          "endLine": 57,
+          "snippet": "message: 'Possible hardcoded API key or token detected.'"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-45",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"hardcoded\" found in scripts/ast-scan.ts at line 120",
+      "evidence": [
+        {
+          "file": "scripts/ast-scan.ts",
+          "startLine": 120,
+          "endLine": 120,
+          "snippet": "const displayMatch = rule.id === 'HARDCODED-SECRET-KEY' ? '[REDACTED_SECRET]' : match[0];"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-46",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"MOCK_\" found in scripts/run_production_remediation_agent.js at line 31",
+      "evidence": [
+        {
+          "file": "scripts/run_production_remediation_agent.js",
+          "startLine": 31,
+          "endLine": 31,
+          "snippet": "const MOCK_PATTERNS = ["
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-47",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"MOCK_\" found in scripts/run_production_remediation_agent.js at line 32",
+      "evidence": [
+        {
+          "file": "scripts/run_production_remediation_agent.js",
+          "startLine": 32,
+          "endLine": 32,
+          "snippet": "/MOCK_/i,"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-48",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"mockData\" found in scripts/run_production_remediation_agent.js at line 33",
+      "evidence": [
+        {
+          "file": "scripts/run_production_remediation_agent.js",
+          "startLine": 33,
+          "endLine": 33,
+          "snippet": "/mockData/i,"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-49",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"fakeData\" found in scripts/run_production_remediation_agent.js at line 34",
+      "evidence": [
+        {
+          "file": "scripts/run_production_remediation_agent.js",
           "startLine": 34,
-          "endLine": 41,
-          "snippet": "## 3. Security Audit with File Context\n\n```bash\npython .agents/scripts/council_debate.py --task \"Audit for XSS, CSRF, and secret leaks\" --file \"omnistock/src/App.jsx\" --role \"SEC-01\"\n```"
+          "endLine": 34,
+          "snippet": "/fakeData/i,"
         }
       ],
       "proposed_fix": {
-        "type": "test",
+        "type": "refactor",
         "diff_unified": null,
-        "explanation": "Adds a test that simulates a raw webhook post to ensure the code can handle raw body verification flows (e.g., Stripe webhooks).",
-        "tests_added": ["tests/webhook.spec.ts"],
-        "requires_human_review": false
-      },
-      "confidence": 0.9
-    },
-    {
-      "id": "chg-007",
-      "title": "Add CI workflow to validate model outputs and run auditor (PR gating)",
-      "severity": "high",
-      "description": "Add a GitHub Actions workflow that runs the validator and auditor on PRs so that model-generated patches are validated before merge.",
-      "evidence": [
-        {
-          "file": "package.json",
-          "startLine": 1,
-          "endLine": 40,
-          "snippet": "\"dependencies\": { \"openai\": \"^6.49.0\" }\n// No scripts for model-output validation or audit present"
-        }
-      ],
-      "proposed_fix": {
-        "type": "config",
-        "diff_unified": null,
-        "explanation": "Adds CI gating that runs the new validator/auditor and prevents merging model-sourced patches that fail validation.",
-        "tests_added": [],
-        "requires_human_review": false
-      },
-      "confidence": 0.92
-    },
-    {
-      "id": "chg-008",
-      "title": "Update root package.json to add devDependencies & scripts for validation/auditor/tests",
-      "severity": "medium",
-      "description": "Add devDependencies (zod, ts-node, vitest, supertest, eslint) and npm scripts to run validator and auditor easily in CI/local.",
-      "evidence": [
-        {
-          "file": "package.json",
-          "startLine": 1,
-          "endLine": 10,
-          "snippet": "{\n  \"dependencies\": {\n    \"openai\": \"^6.49.0\"\n  }\n}\n"
-        }
-      ],
-      "proposed_fix": {
-        "type": "patch",
-        "diff_unified": null,
-        "explanation": "Adds development tooling needed to run the validator, auditor, and tests in CI. Dependency updates should be non-destructive but test in CI.",
-        "tests_added": [],
-        "requires_human_review": true,
-        "requires_human_review_reason": "Dependency changes can affect builds; run in CI and validate."
-      },
-      "confidence": 0.80
-    },
-    {
-      "id": "chg-009",
-      "title": "Harden multi-agent runtime: restrict network/API calls without explicit approval",
-      "severity": "high",
-      "description": "The council_debate.py call_api() function will attempt to call external endpoints if tokens are set; add an explicit runtime gate (ENV var) to prevent uncontrolled outbound calls and require human opt-in for networked execution.",
-      "evidence": [
-        {
-          "file": ".agents/scripts/council_debate.py",
-          "startLine": 200,
-          "endLine": 216,
-          "snippet": "def call_api(provider_key, system_prompt, user_prompt, config):\n    provider = PROVIDERS[provider_key]\n    token = get_auth_token(provider[\"auth_type\"], config)\n    \n    # Safety gate: require explicit environment opt-in to allow outbound network calls by agents.\n    if os.environ.get(\"ALLOW_AGENT_NETWORK\", \"0\") != \"1\":\n        return call_hf_fallback(provider_key, system_prompt, user_prompt, config, \"Network calls disabled by ALLOW_AGENT_NETWORK gate\")"
-        }
-      ],
-      "proposed_fix": {
-        "type": "patch",
-        "diff_unified": null,
-        "explanation": "Adds a runtime safety gate so automated agent code cannot make external API calls unless environment explicitly allows it. This reduces risk of data exfiltration or unapproved API use.",
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
         "tests_added": [],
         "requires_human_review": true
       },
       "confidence": 0.95
     },
     {
-      "id": "chg-010",
-      "title": "Docs: remove guidance encouraging storing tokens in localStorage and checked-in .env",
+      "id": "MOCK-VIOLATION-50",
+      "title": "Mock/Static Data Detected",
       "severity": "high",
-      "description": "Some README files recommend storing tokens in browser localStorage or user .env under C:\\Users which encourages insecure practices. Update docs to recommend environment variables, local_config_template, and secrets managers.",
+      "description": "Pattern \"hardcoded\" found in scripts/run_production_remediation_agent.js at line 35",
       "evidence": [
         {
-          "file": ".agents/AGENTS.md",
-          "startLine": 26,
-          "endLine": 27,
-          "snippet": "3. **Zero-Quota Law**: Subagents CANNOT make paid API calls or consume Antigravity quota."
+          "file": "scripts/run_production_remediation_agent.js",
+          "startLine": 35,
+          "endLine": 35,
+          "snippet": "/hardcoded/i,"
         }
       ],
       "proposed_fix": {
-        "type": "doc",
+        "type": "refactor",
         "diff_unified": null,
-        "explanation": "Removes insecure instructions and points users to safe alternatives (env vars, local_config_template.json, and CI secrets).",
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
         "tests_added": [],
-        "requires_human_review": false
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-51",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"staticData\" found in scripts/run_production_remediation_agent.js at line 36",
+      "evidence": [
+        {
+          "file": "scripts/run_production_remediation_agent.js",
+          "startLine": 36,
+          "endLine": 36,
+          "snippet": "/staticData/i,"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-52",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"dummy\" found in scripts/run_production_remediation_agent.js at line 37",
+      "evidence": [
+        {
+          "file": "scripts/run_production_remediation_agent.js",
+          "startLine": 37,
+          "endLine": 37,
+          "snippet": "/dummy/i,"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-53",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"John Doe\" found in scripts/run_production_remediation_agent.js at line 38",
+      "evidence": [
+        {
+          "file": "scripts/run_production_remediation_agent.js",
+          "startLine": 38,
+          "endLine": 38,
+          "snippet": "/John Doe/i,"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-54",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"lorem ipsum\" found in scripts/run_production_remediation_agent.js at line 40",
+      "evidence": [
+        {
+          "file": "scripts/run_production_remediation_agent.js",
+          "startLine": 40,
+          "endLine": 40,
+          "snippet": "/lorem ipsum/i,"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-55",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in scripts/run_production_remediation_agent.js at line 41",
+      "evidence": [
+        {
+          "file": "scripts/run_production_remediation_agent.js",
+          "startLine": 41,
+          "endLine": 41,
+          "snippet": "/placeholder/i,"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-56",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"TODO\" found in scripts/run_production_remediation_agent.js at line 42",
+      "evidence": [
+        {
+          "file": "scripts/run_production_remediation_agent.js",
+          "startLine": 42,
+          "endLine": 42,
+          "snippet": "/TODO/i,"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-57",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"FIXME\" found in scripts/run_production_remediation_agent.js at line 43",
+      "evidence": [
+        {
+          "file": "scripts/run_production_remediation_agent.js",
+          "startLine": 43,
+          "endLine": 43,
+          "snippet": "/FIXME/i"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-58",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"MOCK_\" found in scripts/run_production_remediation_agent.js at line 75",
+      "evidence": [
+        {
+          "file": "scripts/run_production_remediation_agent.js",
+          "startLine": 75,
+          "endLine": 75,
+          "snippet": "for (const pattern of MOCK_PATTERNS) {"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-59",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"hardcoded\" found in scripts/run_production_remediation_agent.js at line 133",
+      "evidence": [
+        {
+          "file": "scripts/run_production_remediation_agent.js",
+          "startLine": 133,
+          "endLine": 133,
+          "snippet": "explanation: `Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.`,"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-60",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in Shorts-Automation-Agent/src/components/ScriptGeneratorStudio.jsx at line 83",
+      "evidence": [
+        {
+          "file": "Shorts-Automation-Agent/src/components/ScriptGeneratorStudio.jsx",
+          "startLine": 83,
+          "endLine": 83,
+          "snippet": "placeholder=\"Enter topic prompt...\""
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-61",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in Shorts-Automation-Agent/src/components/ScriptGeneratorStudio.jsx at line 182",
+      "evidence": [
+        {
+          "file": "Shorts-Automation-Agent/src/components/ScriptGeneratorStudio.jsx",
+          "startLine": 182,
+          "endLine": 182,
+          "snippet": "placeholder=\"Script content will appear here...\""
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-62",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"placeholder\" found in Shorts-Automation-Agent/src/components/VideoCanvasRenderer.jsx at line 139",
+      "evidence": [
+        {
+          "file": "Shorts-Automation-Agent/src/components/VideoCanvasRenderer.jsx",
+          "startLine": 139,
+          "endLine": 139,
+          "snippet": "{/* Background Particle Animation Placeholder */}"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-63",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"hardcoded\" found in tools/replace_hex_with_tokens.js at line 4",
+      "evidence": [
+        {
+          "file": "tools/replace_hex_with_tokens.js",
+          "startLine": 4,
+          "endLine": 4,
+          "snippet": "* - Scans source files for hardcoded hex colors and suggests replacements based on master_tokens.json."
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "MOCK-VIOLATION-64",
+      "title": "Mock/Static Data Detected",
+      "severity": "high",
+      "description": "Pattern \"hardcoded\" found in tools/replace_hex_with_tokens.js at line 79",
+      "evidence": [
+        {
+          "file": "tools/replace_hex_with_tokens.js",
+          "startLine": 79,
+          "endLine": 79,
+          "snippet": "// console.log(`Hex scan complete. Found ${occurrences.length} hardcoded hex occurrences.`);"
+        }
+      ],
+      "proposed_fix": {
+        "type": "refactor",
+        "diff_unified": null,
+        "explanation": "Replace static/mock value with a real data source (API call, database query, or localStorage). Do NOT use hardcoded values in production components.",
+        "tests_added": [],
+        "requires_human_review": true
       },
       "confidence": 0.95
     }
   ],
-  "ci_workflows": [
+  "code_changes_suggested": [
     {
-      "file": ".github/workflows/validate-model-output.yml",
-      "explanation": "CI workflow to run validator, auditor, lint and tests on PRs to prevent merging bad model-generated patches",
-      "workflow_snippet": "name: Validate Model Output & Repo Checks\non: [pull_request]"
-    }
-  ],
-  "agent_policy_changes": [
-    {
-      "agent_id": "repo-reader",
-      "role": "Read-only inspection agent",
-      "allowed_actions": ["read_repo"],
-      "deny_actions": ["create_branch", "apply_patch", "open_pr", "run_tests", "deploy"],
-      "review_requirements": "No approvals required for read actions; cannot change code."
+      "file": "clinical-pristine/src/pages/AlertsApp.tsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 8: Remove mock pattern \"MOCK_\" and wire to real data source."
     },
     {
-      "agent_id": "auditor-agent",
-      "role": "Validate model outputs and open issues",
-      "allowed_actions": ["read_repo", "run_tests", "open_issues"],
-      "deny_actions": ["apply_patch", "deploy"],
-      "review_requirements": "If any model output flagged requires_human_review, escalate to human security-officer."
+      "file": "clinical-pristine/src/pages/AlertsApp.tsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 30: Remove mock pattern \"MOCK_\" and wire to real data source."
     },
     {
-      "agent_id": "remediation-agent",
-      "role": "Apply low-risk patches and open PRs",
-      "allowed_actions": ["read_repo", "create_branch", "apply_patch", "open_pr", "run_tests"],
-      "deny_actions": ["apply_destructive_patches", "deploy_without_approval"],
-      "review_requirements": "All patches with severity >= high OR requires_human_review=true require explicit human approval before merge."
+      "file": "clinical-pristine/src/pages/AlertsApp.tsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 33: Remove mock pattern \"MOCK_\" and wire to real data source."
     },
     {
-      "agent_id": "deploy-agent",
-      "role": "Trigger deployments",
-      "allowed_actions": ["read_repo", "deploy"],
-      "deny_actions": ["apply_patch", "merge_pr"],
-      "review_requirements": "Deploy only after CI green and a human approval token is recorded in the audit log."
+      "file": "clinical-pristine/src/pages/BedManagement.tsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 10: Remove mock pattern \"MOCK_\" and wire to real data source."
+    },
+    {
+      "file": "clinical-pristine/src/pages/BedManagement.tsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 43: Remove mock pattern \"MOCK_\" and wire to real data source."
+    },
+    {
+      "file": "clinical-pristine/src/pages/BedManagement.tsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 46: Remove mock pattern \"MOCK_\" and wire to real data source."
+    },
+    {
+      "file": "clinical-pristine/src/pages/BedManagement.tsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 135: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "clinical-pristine/src/pages/BedManagement.tsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 136: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "clinical-pristine/src/pages/CommandCenter.tsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 8: Remove mock pattern \"MOCK_\" and wire to real data source."
+    },
+    {
+      "file": "clinical-pristine/src/pages/CommandCenter.tsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 22: Remove mock pattern \"MOCK_\" and wire to real data source."
+    },
+    {
+      "file": "clinical-pristine/src/pages/CommandCenter.tsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 35: Remove mock pattern \"MOCK_\" and wire to real data source."
+    },
+    {
+      "file": "clinical-pristine/src/pages/CommandCenter.tsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 101: Remove mock pattern \"MOCK_\" and wire to real data source."
+    },
+    {
+      "file": "clinical-pristine/src/pages/CommandCenter.tsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 102: Remove mock pattern \"MOCK_\" and wire to real data source."
+    },
+    {
+      "file": "clinical-pristine/src/pages/CommandCenter.tsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 103: Remove mock pattern \"MOCK_\" and wire to real data source."
+    },
+    {
+      "file": "clinical-pristine/src/pages/CommandCenter.tsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 483: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "clinical-pristine/src/pages/CommandCenter.tsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 712: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "clinical-pristine/src/pages/EVSApp.tsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 8: Remove mock pattern \"MOCK_\" and wire to real data source."
+    },
+    {
+      "file": "clinical-pristine/src/pages/EVSApp.tsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 63: Remove mock pattern \"MOCK_\" and wire to real data source."
+    },
+    {
+      "file": "clinical-pristine/src/pages/EVSApp.tsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 66: Remove mock pattern \"MOCK_\" and wire to real data source."
+    },
+    {
+      "file": "clinical-pristine/src/pages/Login.tsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 38: Remove mock pattern \"MOCK_\" and wire to real data source."
+    },
+    {
+      "file": "clinical-pristine/src/pages/Login.tsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 130: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "clinical-pristine/src/pages/Login.tsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 131: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "clinical-pristine/src/pages/Login.tsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 146: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "clinical-pristine/src/pages/Login.tsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 147: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "design/designSystem.js",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 103: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "design/designSystem.js",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 104: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "huggingface-hub/app.js",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 89: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "huggingface-hub/app.js",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 93: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "huggingface-hub/app.js",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 97: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "huggingface-hub/app.js",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 515: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "huggingface-hub/app.js",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 527: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "huggingface-hub/app.js",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 574: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "OnePassword-Enterprise-AI/src/components/GlobalCommandPaletteModal.jsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 43: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "OnePassword-Enterprise-AI/src/components/GlobalCommandPaletteModal.jsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 44: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "OnePassword-Enterprise-AI/src/components/SecretLeakageScanner.jsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 98: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "OnePassword-Enterprise-AI/src/components/ZeroKnowledgeVaultConsole.jsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 81: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "OnePassword-Enterprise-AI/src/components/ZeroKnowledgeVaultConsole.jsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 106: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "OnePassword-Enterprise-AI/src/components/ZeroKnowledgeVaultConsole.jsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 116: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "Reddit-AdTech-Enterprise/src/components/AdRankingStreamConsole.jsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 201: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "Reddit-AdTech-Enterprise/src/components/AdRankingStreamConsole.jsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 204: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "Reddit-AdTech-Enterprise/src/components/GlobalCommandPaletteModal.jsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 43: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "Reddit-AdTech-Enterprise/src/components/GlobalCommandPaletteModal.jsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 46: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "scripts/ast-scan.ts",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 54: Remove mock pattern \"hardcoded\" and wire to real data source."
+    },
+    {
+      "file": "scripts/ast-scan.ts",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 57: Remove mock pattern \"hardcoded\" and wire to real data source."
+    },
+    {
+      "file": "scripts/ast-scan.ts",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 120: Remove mock pattern \"hardcoded\" and wire to real data source."
+    },
+    {
+      "file": "scripts/run_production_remediation_agent.js",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 31: Remove mock pattern \"MOCK_\" and wire to real data source."
+    },
+    {
+      "file": "scripts/run_production_remediation_agent.js",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 32: Remove mock pattern \"MOCK_\" and wire to real data source."
+    },
+    {
+      "file": "scripts/run_production_remediation_agent.js",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 33: Remove mock pattern \"mockData\" and wire to real data source."
+    },
+    {
+      "file": "scripts/run_production_remediation_agent.js",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 34: Remove mock pattern \"fakeData\" and wire to real data source."
+    },
+    {
+      "file": "scripts/run_production_remediation_agent.js",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 35: Remove mock pattern \"hardcoded\" and wire to real data source."
+    },
+    {
+      "file": "scripts/run_production_remediation_agent.js",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 36: Remove mock pattern \"staticData\" and wire to real data source."
+    },
+    {
+      "file": "scripts/run_production_remediation_agent.js",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 37: Remove mock pattern \"dummy\" and wire to real data source."
+    },
+    {
+      "file": "scripts/run_production_remediation_agent.js",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 38: Remove mock pattern \"John Doe\" and wire to real data source."
+    },
+    {
+      "file": "scripts/run_production_remediation_agent.js",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 40: Remove mock pattern \"lorem ipsum\" and wire to real data source."
+    },
+    {
+      "file": "scripts/run_production_remediation_agent.js",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 41: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "scripts/run_production_remediation_agent.js",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 42: Remove mock pattern \"TODO\" and wire to real data source."
+    },
+    {
+      "file": "scripts/run_production_remediation_agent.js",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 43: Remove mock pattern \"FIXME\" and wire to real data source."
+    },
+    {
+      "file": "scripts/run_production_remediation_agent.js",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 75: Remove mock pattern \"MOCK_\" and wire to real data source."
+    },
+    {
+      "file": "scripts/run_production_remediation_agent.js",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 133: Remove mock pattern \"hardcoded\" and wire to real data source."
+    },
+    {
+      "file": "Shorts-Automation-Agent/src/components/ScriptGeneratorStudio.jsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 83: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "Shorts-Automation-Agent/src/components/ScriptGeneratorStudio.jsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 182: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "Shorts-Automation-Agent/src/components/VideoCanvasRenderer.jsx",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 139: Remove mock pattern \"placeholder\" and wire to real data source."
+    },
+    {
+      "file": "tools/replace_hex_with_tokens.js",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 4: Remove mock pattern \"hardcoded\" and wire to real data source."
+    },
+    {
+      "file": "tools/replace_hex_with_tokens.js",
+      "change_type": "modify",
+      "diff_unified": null,
+      "explanation": "Line 79: Remove mock pattern \"hardcoded\" and wire to real data source."
     }
   ],
   "metadata": {
-    "generated_at": "2026-08-03T22:15:00Z",
-    "model": "gemini-3.6-flash",
-    "temperature": 0.0
+    "generated_at": "2026-08-14T16:01:47.364Z",
+    "model": "dynamic-scanner-v1",
+    "temperature": 0,
+    "files_scanned": 76,
+    "total_violations": 64
   },
   "post_checks": {
-    "patchs_apply_check": true,
-    "lint_passed": true,
-    "tests_passed": true,
+    "patchs_apply_check": false,
+    "lint_passed": null,
+    "tests_passed": null,
     "notes": [
-      "All 10 remediation changes verified and integrated into repository codebase.",
-      "Added ALLOW_AGENT_NETWORK safety gate in council_debate.py.",
-      "Zero hallucinations detected."
+      "Scanned 76 source files",
+      "Found 64 mock/static data violations"
     ]
   }
 }
