@@ -296,6 +296,7 @@ export function App() {
               selectedBin={selectedBin}
               onSelectBin={(bin) => setSelectedBin(bin)}
               onOpenOptimizer={() => setIsOptimizerOpen(true)}
+              onRefreshBins={refreshAllData}
             />
           )}
 

@@ -61,6 +61,27 @@ export interface SkuItem {
   imageUrl?: string;
 }
 
+export interface AisleSignage {
+  aisle: string; // e.g. 'A'
+  name: string; // e.g. 'Pharmaceuticals & PPE' or 'Noodles & Canned Goods'
+  icon: string; // e.g. '💊', '🥫', '🧼'
+  color: string; // e.g. '#06B6D4'
+  department: string;
+}
+
+export interface FacilityZone {
+  id: string;
+  name: string;
+  code: string;
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  color: string;
+  strokeColor: string;
+  isTempControlled?: boolean;
+}
+
 export interface WarehouseTopology {
   aisles: string[]; // e.g. ['A', 'B', 'C', 'D', 'E', 'F']
   baysPerAisle: number; // e.g. 8

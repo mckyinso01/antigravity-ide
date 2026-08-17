@@ -1,4 +1,4 @@
-import type { BinSlot, SkuItem, PickOrder, InventoryMovementLog, ClientAccount, WarehouseStats } from '../types';
+import type { BinSlot, SkuItem, PickOrder, InventoryMovementLog, ClientAccount, WarehouseStats, AisleSignage, FacilityZone } from '../types';
 
 const STORAGE_KEYS = {
   BINS: 'omnistock_bins_v1',
@@ -6,8 +6,28 @@ const STORAGE_KEYS = {
   ORDERS: 'omnistock_orders_v1',
   LOGS: 'omnistock_logs_v1',
   CLIENTS: 'omnistock_clients_v1',
-  ACTIVE_WAREHOUSE: 'omnistock_active_wh_v1'
+  ACTIVE_WAREHOUSE: 'omnistock_active_wh_v1',
+  AISLE_SIGNS: 'omnistock_aisle_signs_v1',
+  ZONES: 'omnistock_zones_v1'
 };
+
+const DEFAULT_AISLE_SIGNS: AisleSignage[] = [
+  { aisle: 'A', name: 'Pharma & PPE Supplies', icon: '💊', color: '#06B6D4', department: 'Healthcare & Safety' },
+  { aisle: 'B', name: 'EV Lithium Batteries', icon: '⚡', color: '#3B82F6', department: 'Electronics & Energy' },
+  { aisle: 'C', name: 'Hydraulics & Heavy Cylinders', icon: '🧰', color: '#10B981', department: 'Industrial Equipment' },
+  { aisle: 'D', name: 'Precision Ball Bearings', icon: '⚙️', color: '#F59E0B', department: 'Hardware & Machinery' },
+  { aisle: 'E', name: 'Cold Chain Vaccines (-80°C)', icon: '❄️', color: '#38BDF8', department: 'Cold Vault Biologics' },
+  { aisle: 'F', name: 'Hazmat Chemicals & Solvents', icon: '☣️', color: '#A855F7', department: 'Hazardous Materials' },
+  { aisle: 'G', name: 'Noodles, Milk & Canned Goods', icon: '🥫', color: '#EC4899', department: 'Food & Dry Provisions' },
+  { aisle: 'H', name: 'Soaps, Shampoos & Detergents', icon: '🧼', color: '#14B8A6', department: 'Household & Sanitization' },
+];
+
+const DEFAULT_ZONES: FacilityZone[] = [
+  { id: 'zone-dock', name: 'DOCK INBOUND', code: 'DOCK-IN', x: 20, y: 340, width: 120, height: 90, color: '#121D36', strokeColor: '#2A4374' },
+  { id: 'zone-cold', name: 'COLD VAULT (-80°C)', code: 'COLD-VLT', x: 520, y: 20, width: 130, height: 300, color: 'rgba(6, 182, 212, 0.05)', strokeColor: '#0891B2', isTempControlled: true },
+  { id: 'zone-hazmat', name: 'HAZMAT CAGE', code: 'HAZ-CAGE', x: 660, y: 20, width: 120, height: 300, color: 'rgba(168, 85, 247, 0.05)', strokeColor: '#9333EA' },
+  { id: 'zone-ship', name: 'PACK & SHIP', code: 'PACK-SHIP', x: 660, y: 340, width: 120, height: 90, color: '#121D36', strokeColor: '#2A4374' }
+];
 
 // Initial Seed Data: Warehouse Alpha (Main Northeast Distribution Hub)
 function generateInitialBins(): BinSlot[] {
@@ -706,18 +726,93 @@ class WarehouseDB {
     };
   }
 
+  getAisleSigns(): AisleSignage[] {
+    const data = localStorage.getItem(STORAGE_KEYS.AISLE_SIGNS);
+    if (!data) {
+      localStorage.setItem(STORAGE_KEYS.AISLE_SIGNS, JSON.stringify(DEFAULT_AISLE_SIGNS));
+      return DEFAULT_AISLE_SIGNS;
+    }
+    return JSON.parse(data);
+  }
+
+  saveAisleSigns(signs: AisleSignage[]) {
+    localStorage.setItem(STORAGE_KEYS.AISLE_SIGNS, JSON.stringify(signs));
+  }
+
+  updateAisleSign(aisle: string, update: Partial<AisleSignage>) {
+    const current = this.getAisleSigns();
+    const updated = current.map(s => s.aisle === aisle ? { ...s, ...update } : s);
+    this.saveAisleSigns(updated);
+    return updated;
+  }
+
+  getZones(): FacilityZone[] {
+    const data = localStorage.getItem(STORAGE_KEYS.ZONES);
+    if (!data) {
+      localStorage.setItem(STORAGE_KEYS.ZONES, JSON.stringify(DEFAULT_ZONES));
+      return DEFAULT_ZONES;
+    }
+    return JSON.parse(data);
+  }
+
+  saveZones(zones: FacilityZone[]) {
+    localStorage.setItem(STORAGE_KEYS.ZONES, JSON.stringify(zones));
+  }
+
+  addZone(zone: FacilityZone) {
+    const zones = this.getZones();
+    zones.push(zone);
+    this.saveZones(zones);
+    return zones;
+  }
+
+  deleteZone(zoneId: string) {
+    const zones = this.getZones().filter(z => z.id !== zoneId);
+    this.saveZones(zones);
+    return zones;
+  }
+
+  addCustomBin(bin: BinSlot) {
+    const bins = this.getBins();
+    bins.push(bin);
+    this.saveBins(bins);
+    return bins;
+  }
+
+  deleteBin(binId: string) {
+    const bins = this.getBins().filter(b => b.id !== binId);
+    this.saveBins(bins);
+    return bins;
+  }
+
+  updateBinPosition(binId: string, x: number, y: number) {
+    const bins = this.getBins().map(b => b.id === binId ? { ...b, x, y } : b);
+    this.saveBins(bins);
+    return bins;
+  }
+
+  renameBin(binId: string, code: string, aisle: string, bay: number, level: number) {
+    const bins = this.getBins().map(b => b.id === binId ? { ...b, code, aisle, bay, level } : b);
+    this.saveBins(bins);
+    return bins;
+  }
+
   resetToDefault() {
     localStorage.removeItem(STORAGE_KEYS.BINS);
     localStorage.removeItem(STORAGE_KEYS.SKUS);
     localStorage.removeItem(STORAGE_KEYS.ORDERS);
     localStorage.removeItem(STORAGE_KEYS.LOGS);
     localStorage.removeItem(STORAGE_KEYS.CLIENTS);
+    localStorage.removeItem(STORAGE_KEYS.AISLE_SIGNS);
+    localStorage.removeItem(STORAGE_KEYS.ZONES);
     return {
       bins: this.getBins(),
       skus: this.getSkus(),
       orders: this.getOrders(),
       clients: this.getClients(),
-      logs: this.getLogs()
+      logs: this.getLogs(),
+      aisleSigns: this.getAisleSigns(),
+      zones: this.getZones()
     };
   }
 }

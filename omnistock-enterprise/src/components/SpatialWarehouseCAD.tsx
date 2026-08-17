@@ -1,14 +1,25 @@
-import React, { useState } from 'react';
-import type { BinSlot, PickOrder } from '../types';
+import React, { useState, useRef } from 'react';
+import type { BinSlot, PickOrder, AisleSignage, FacilityZone } from '../types';
+import { db } from '../services/db';
 import { 
   ZoomIn, 
   ZoomOut, 
   Zap, 
   Navigation, 
-  Flame,
-  Search,
-  Layers,
-  ChevronRight
+  Flame, 
+  Search, 
+  Layers, 
+  ChevronRight,
+  Edit3,
+  Check,
+  Plus,
+  Trash2,
+  Tag,
+  Square,
+  Save,
+  CheckCircle2,
+  X,
+  Move
 } from 'lucide-react';
 import { HelpTooltip } from './HelpTooltip';
 
@@ -18,6 +29,7 @@ interface SpatialWarehouseCADProps {
   selectedBin: BinSlot | null;
   onSelectBin: (bin: BinSlot) => void;
   onOpenOptimizer: () => void;
+  onRefreshBins?: () => void;
 }
 
 export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
@@ -25,7 +37,8 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
   activeOrder,
   selectedBin,
   onSelectBin,
-  onOpenOptimizer
+  onOpenOptimizer,
+  onRefreshBins
 }) => {
   const [selectedLevel, setSelectedLevel] = useState<number>(1);
   const [showHeatmap, setShowHeatmap] = useState<boolean>(false);
@@ -34,17 +47,53 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
   const [hoveredBin, setHoveredBin] = useState<BinSlot | null>(null);
   const [showManifestHUD, setShowManifestHUD] = useState<boolean>(true);
   const [manifestSearch, setManifestSearch] = useState<string>('');
+  const [activeAisleFilter, setActiveAisleFilter] = useState<string | null>(null);
+
+  // CAD Studio / Editor Mode State
+  const [isEditorMode, setIsEditorMode] = useState<boolean>(false);
+  const [aisleSigns, setAisleSigns] = useState<AisleSignage[]>(db.getAisleSigns());
+  const [zones, setZones] = useState<FacilityZone[]>(db.getZones());
+  const [statusMessage, setStatusMessage] = useState<string | null>(null);
+
+  // Dragging State
+  const [draggingBinId, setDraggingBinId] = useState<string | null>(null);
+  const [dragOffset, setDragOffset] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const svgRef = useRef<SVGSVGElement | null>(null);
+
+  // Modals inside CAD Studio
+  const [editingAisle, setEditingAisle] = useState<AisleSignage | null>(null);
+  const [isAddRackOpen, setIsAddRackOpen] = useState<boolean>(false);
+  const [isAddZoneOpen, setIsAddZoneOpen] = useState<boolean>(false);
+
+  // Add Rack Form State
+  const [newRackAisle, setNewRackAisle] = useState<string>('A');
+  const [newRackBay, setNewRackBay] = useState<number>(9);
+  const [newRackX, setNewRackX] = useState<number>(80);
+  const [newRackY, setNewRackY] = useState<number>(420);
+  const [newRackSku, setNewRackSku] = useState<string>('');
+
+  // Add Zone Form State
+  const [newZoneName, setNewZoneName] = useState<string>('DRY PROVISIONS & BULK');
+  const [newZoneCode, setNewZoneCode] = useState<string>('BULK-DRY');
+  const [newZoneX, setNewZoneX] = useState<number>(300);
+  const [newZoneY, setNewZoneY] = useState<number>(20);
+  const [newZoneW, setNewZoneW] = useState<number>(180);
+  const [newZoneH, setNewZoneH] = useState<number>(140);
+  const [newZoneColor, setNewZoneColor] = useState<string>('rgba(236, 72, 153, 0.08)');
+  const [newZoneStroke, setNewZoneStroke] = useState<string>('#EC4899');
 
   // Filter bins by vertical racking level
   const currentLevelBins = bins.filter(b => b.level === selectedLevel);
 
   // Filter items on current level for HUD manifest
   const occupiedLevelBins = currentLevelBins.filter(b => b.quantity > 0 && b.skuCode);
-  const filteredManifest = occupiedLevelBins.filter(b => 
-    b.skuName?.toLowerCase().includes(manifestSearch.toLowerCase()) ||
-    b.skuCode?.toLowerCase().includes(manifestSearch.toLowerCase()) ||
-    b.code.toLowerCase().includes(manifestSearch.toLowerCase())
-  );
+  const filteredManifest = occupiedLevelBins.filter(b => {
+    const matchesAisle = activeAisleFilter ? b.aisle === activeAisleFilter : true;
+    const matchesSearch = b.skuName?.toLowerCase().includes(manifestSearch.toLowerCase()) ||
+                          b.skuCode?.toLowerCase().includes(manifestSearch.toLowerCase()) ||
+                          b.code.toLowerCase().includes(manifestSearch.toLowerCase());
+    return matchesAisle && matchesSearch;
+  });
 
   // Get active pick bin codes from activeOrder
   const activePickBinCodes = activeOrder 
@@ -63,7 +112,7 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
     if (bin.status === 'EMPTY') return '#1E293B';
     if (bin.status === 'QUARANTINE') return '#A855F7';
     if (bin.status === 'RESERVED') return '#EAB308';
-    if (bin.zone === 'Cold Vault') return '#06B6D4';
+    if (bin.zone.includes('Cold')) return '#06B6D4';
     if (bin.velocityClass === 'A') return '#10B981';
     return '#3B82F6';
   };
@@ -81,14 +130,137 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
 
   const pathString = pathPoints.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ');
 
+  // SVG Mouse Coordinates helper for Drag & Drop
+  const getSVGCoordinates = (e: React.MouseEvent<SVGSVGElement>) => {
+    if (!svgRef.current) return { x: 0, y: 0 };
+    const rect = svgRef.current.getBoundingClientRect();
+    const scaleX = 800 / rect.width;
+    const scaleY = 460 / rect.height;
+    return {
+      x: Math.round((e.clientX - rect.left) * scaleX),
+      y: Math.round((e.clientY - rect.top) * scaleY)
+    };
+  };
+
+  // Drag handlers
+  const handleMouseDownOnBin = (e: React.MouseEvent, bin: BinSlot) => {
+    if (!isEditorMode) {
+      onSelectBin(bin);
+      return;
+    }
+    e.stopPropagation();
+    setDraggingBinId(bin.id);
+    onSelectBin(bin);
+    const coords = getSVGCoordinates(e as any);
+    setDragOffset({ x: coords.x - bin.x, y: coords.y - bin.y });
+  };
+
+  const handleMouseMoveSVG = (e: React.MouseEvent<SVGSVGElement>) => {
+    if (!isEditorMode || !draggingBinId) return;
+    const coords = getSVGCoordinates(e);
+    const newX = Math.max(10, Math.min(760, coords.x - dragOffset.x));
+    const newY = Math.max(10, Math.min(420, coords.y - dragOffset.y));
+    
+    // Snap to 5px grid
+    const snappedX = Math.round(newX / 5) * 5;
+    const snappedY = Math.round(newY / 5) * 5;
+
+    db.updateBinPosition(draggingBinId, snappedX, snappedY);
+    if (onRefreshBins) onRefreshBins();
+  };
+
+  const handleMouseUpSVG = () => {
+    if (draggingBinId) {
+      setDraggingBinId(null);
+      setStatusMessage('📍 Rack position updated and saved!');
+      setTimeout(() => setStatusMessage(null), 2000);
+    }
+  };
+
+  // Add new rack handler
+  const handleAddNewRack = (e: React.FormEvent) => {
+    e.preventDefault();
+    const code = `${newRackAisle}-${String(newRackBay).padStart(2, '0')}-L${selectedLevel}`;
+    const newBinSlot: BinSlot = {
+      id: `bin-custom-${Date.now()}`,
+      code,
+      aisle: newRackAisle,
+      bay: Number(newRackBay),
+      level: selectedLevel,
+      zone: newRackAisle === 'E' ? 'Cold Vault' : newRackAisle === 'F' ? 'Hazmat Cage' : 'Standard Pallet Racks',
+      x: Number(newRackX),
+      y: Number(newRackY),
+      status: newRackSku ? 'OCCUPIED' : 'EMPTY',
+      capacityKg: 1200,
+      currentWeightKg: newRackSku ? 350 : 0,
+      skuCode: newRackSku || undefined,
+      skuName: newRackSku ? `Custom Slotted SKU (${newRackSku})` : undefined,
+      quantity: newRackSku ? 50 : 0,
+      batchLot: `LOT-2026-${newRackAisle}${newRackBay}`,
+      expiryDate: '2028-12-31',
+      velocityClass: newRackAisle === 'A' || newRackAisle === 'B' ? 'A' : 'B',
+      lastAudited: new Date().toISOString().split('T')[0],
+      auditLogs: []
+    };
+
+    db.addCustomBin(newBinSlot);
+    if (onRefreshBins) onRefreshBins();
+    setIsAddRackOpen(false);
+    setStatusMessage(`✨ New Rack ${code} successfully added to Floorplan!`);
+    setTimeout(() => setStatusMessage(null), 3000);
+  };
+
+  // Delete selected rack handler
+  const handleDeleteSelectedRack = () => {
+    if (!selectedBin) return;
+    if (confirm(`Are you sure you want to delete Rack ${selectedBin.code} from the warehouse layout?`)) {
+      db.deleteBin(selectedBin.id);
+      if (onRefreshBins) onRefreshBins();
+      setStatusMessage(`🗑️ Rack ${selectedBin.code} deleted.`);
+      setTimeout(() => setStatusMessage(null), 3000);
+    }
+  };
+
+  // Add Zone handler
+  const handleAddNewZone = (e: React.FormEvent) => {
+    e.preventDefault();
+    const newZone: FacilityZone = {
+      id: `zone-${Date.now()}`,
+      name: newZoneName,
+      code: newZoneCode,
+      x: Number(newZoneX),
+      y: Number(newZoneY),
+      width: Number(newZoneW),
+      height: Number(newZoneH),
+      color: newZoneColor,
+      strokeColor: newZoneStroke
+    };
+    const updated = db.addZone(newZone);
+    setZones(updated);
+    setIsAddZoneOpen(false);
+    setStatusMessage(`📐 Storage Zone '${newZoneName}' created!`);
+    setTimeout(() => setStatusMessage(null), 3000);
+  };
+
+  // Save Aisle Sign update
+  const handleSaveAisleSign = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editingAisle) return;
+    const updated = db.updateAisleSign(editingAisle.aisle, editingAisle);
+    setAisleSigns(updated);
+    setEditingAisle(null);
+    setStatusMessage(`🏷️ Aisle ${editingAisle.aisle} signage updated to '${editingAisle.name}'!`);
+    setTimeout(() => setStatusMessage(null), 3000);
+  };
+
   return (
     <div className="flex-1 flex flex-col h-full bg-[#070B14] overflow-hidden relative font-sans">
       {/* Top HUD Controls Bar */}
       <div className="h-12 border-b border-[#1E2D4D] bg-[#0D1527]/90 backdrop-blur-md px-4 flex items-center justify-between shrink-0 z-10">
         <div className="flex items-center gap-3">
           <span className="text-xs font-mono font-bold text-slate-200 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#5BC0BE] animate-ping"></span>
-            SPATIAL CAD DIGITAL TWIN • LEVEL {selectedLevel}
+            <span className={`w-2 h-2 rounded-full ${isEditorMode ? 'bg-amber-400 animate-bounce' : 'bg-[#5BC0BE] animate-ping'}`}></span>
+            {isEditorMode ? 'CAD FLOORPLAN STUDIO • EDIT MODE' : `SPATIAL CAD DIGITAL TWIN • LEVEL ${selectedLevel}`}
           </span>
 
           {/* Level Switcher (1 to 4) with HelpTooltip */}
@@ -136,72 +308,107 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
           </HelpTooltip>
         </div>
 
-        {/* Action Toggles & Eulerian Optimizer Button */}
+        {/* Action Toggles, Studio Mode Switcher & Optimizer Button */}
         <div className="flex items-center gap-2">
-          {/* Heatmap Toggle with HelpTooltip */}
+          {/* Heatmap Toggle */}
+          {!isEditorMode && (
+            <HelpTooltip
+              title="Velocity Heatmap Toggle"
+              purpose="Kinukulayan ang racks ayon sa demand velocity: Berde (Class A Fast-Movers) vs Asul (Class B) vs Dilaw (Class C)."
+              howTo="I-click upang makita kung saang racks pinakamadalas mag-pull ng inventory."
+              position="bottom"
+            >
+              <button
+                onClick={() => setShowHeatmap(!showHeatmap)}
+                className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-mono border transition-all cursor-pointer ${
+                  showHeatmap 
+                    ? 'bg-amber-500/20 text-amber-300 border-amber-500/50 glow-amber' 
+                    : 'bg-[#121D36] text-slate-400 border-[#1E2D4D] hover:text-slate-200'
+                }`}
+              >
+                <Flame size={13} className={showHeatmap ? 'text-amber-400' : 'text-slate-400'} />
+                <span>Velocity Heatmap</span>
+              </button>
+            </HelpTooltip>
+          )}
+
+          {/* Eulerian Wave Pick Path Toggle */}
+          {!isEditorMode && (
+            <HelpTooltip
+              title="Eulerian Pick Path Router"
+              purpose="Ipinapakita ang neon shortest-path trail na nag-uugnay sa Dock Inbound, Pick Bins, at Pack & Ship."
+              howTo="I-click upang ipakita o itago ang optimized forklift route guide."
+              position="bottom"
+            >
+              <button
+                onClick={() => setShowPickPath(!showPickPath)}
+                className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-mono border transition-all cursor-pointer ${
+                  showPickPath 
+                    ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/50 glow-mint' 
+                    : 'bg-[#121D36] text-slate-400 border-[#1E2D4D] hover:text-slate-200'
+                }`}
+              >
+                <Navigation size={13} className="text-emerald-400" />
+                <span>Eulerian Pick Route</span>
+              </button>
+            </HelpTooltip>
+          )}
+
+          {/* EDIT MODE TOGGLE BUTTON */}
           <HelpTooltip
-            title="Velocity Heatmap Toggle"
-            purpose="Kinukulayan ang racks ayon sa demand velocity: Berde (Class A Fast-Movers) vs Asul (Class B) vs Dilaw (Class C)."
-            howTo="I-click upang makita kung saang racks pinakamadalas mag-pull ng inventory."
+            title="CAD Floorplan Studio Editor"
+            purpose="Binubuksan ang interactive layout builder kung saan maaari kang mag-drag at mag-usod ng racks, magdagdag ng bagong shelf, magbura, at mag-rename ng mga aisle signage."
+            howTo="I-click upang lumipat sa pagitan ng View Mode at Drag-and-Drop Studio Mode."
             position="bottom"
           >
             <button
-              onClick={() => setShowHeatmap(!showHeatmap)}
-              className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-mono border transition-all cursor-pointer ${
-                showHeatmap 
-                  ? 'bg-amber-500/20 text-amber-300 border-amber-500/50 glow-amber' 
-                  : 'bg-[#121D36] text-slate-400 border-[#1E2D4D] hover:text-slate-200'
+              onClick={() => setIsEditorMode(!isEditorMode)}
+              className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono font-bold border transition-all cursor-pointer shadow-sm ${
+                isEditorMode
+                  ? 'bg-amber-500 text-[#070B14] border-amber-400 shadow-amber-500/30 glow-amber'
+                  : 'bg-[#121D36] hover:bg-[#1E2D4D] text-[#6FFFE9] border-[#5BC0BE]/50'
               }`}
             >
-              <Flame size={13} className={showHeatmap ? 'text-amber-400' : 'text-slate-400'} />
-              <span>Velocity Heatmap</span>
+              {isEditorMode ? (
+                <>
+                  <Check size={13} className="stroke-[3]" />
+                  <span>Exit Studio (Done)</span>
+                </>
+              ) : (
+                <>
+                  <Edit3 size={13} />
+                  <span>Edit Floorplan Studio</span>
+                </>
+              )}
             </button>
           </HelpTooltip>
 
-          {/* Eulerian Wave Pick Path Toggle with HelpTooltip */}
-          <HelpTooltip
-            title="Eulerian Pick Path Router"
-            purpose="Ipinapakita ang neon shortest-path trail na nag-uugnay sa Dock Inbound, Pick Bins, at Pack & Ship."
-            howTo="I-click upang ipakita o itago ang optimized forklift route guide."
-            position="bottom"
-          >
-            <button
-              onClick={() => setShowPickPath(!showPickPath)}
-              className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-mono border transition-all cursor-pointer ${
-                showPickPath 
-                  ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/50 glow-mint' 
-                  : 'bg-[#121D36] text-slate-400 border-[#1E2D4D] hover:text-slate-200'
-              }`}
+          {/* Wave Pick Optimizer Modal Trigger */}
+          {!isEditorMode && (
+            <HelpTooltip
+              title="Wave Batch Optimizer"
+              purpose="Binubuksan ang multi-order batching algorithm upang pagsamahin ang mga customer orders sa iisang mabilis na pick wave."
+              howTo="I-click upang kalkulahin ang sabay-sabay na pick schedule."
+              position="bottom"
             >
-              <Navigation size={13} className="text-emerald-400" />
-              <span>Eulerian Pick Route</span>
-            </button>
-          </HelpTooltip>
+              <button
+                onClick={onOpenOptimizer}
+                className="flex items-center gap-1.5 bg-gradient-to-r from-[#3A86FF] to-[#5BC0BE] hover:opacity-95 text-[#070B14] font-bold text-xs px-3 py-1 rounded-lg shadow-sm cursor-pointer font-mono"
+              >
+                <Zap size={13} className="fill-current stroke-[2]" />
+                <span>Optimize Wave</span>
+              </button>
+            </HelpTooltip>
+          )}
 
-          {/* Wave Pick Optimizer Modal Trigger with HelpTooltip */}
-          <HelpTooltip
-            title="Wave Batch Optimizer"
-            purpose="Binubuksan ang multi-order batching algorithm upang pagsamahin ang mga customer orders sa iisang mabilis na pick wave."
-            howTo="I-click upang suriin ang kabuuang bigat, oras na matitipid, at i-dispatch ang wave sa mga forklift cart."
-            position="bottom"
-          >
-            <button
-              onClick={onOpenOptimizer}
-              className="flex items-center gap-1.5 bg-gradient-to-r from-[#3A86FF] to-[#5BC0BE] hover:opacity-95 text-[#070B14] font-bold text-xs px-3 py-1 rounded-lg shadow-sm cursor-pointer font-mono"
-            >
-              <Zap size={13} className="fill-current stroke-[2]" />
-              <span>Optimize Wave</span>
-            </button>
-          </HelpTooltip>
-
-          {/* Zoom controls with HelpTooltip */}
+          {/* Zoom controls */}
           <HelpTooltip
             title="CAD Blueprint Zoom Controls"
             purpose="Pinalalaki o pinaliliit ang SVG floorplan resolution para sa mas malinaw na pag-inspeksyon."
             howTo="I-click ang (+) upang mag-zoom in sa mga racks o (-) upang lumayo."
             position="bottom"
           >
-            <div className="flex items-center bg-[#070B14] border border-[#1E2D4D] rounded-lg p-0.5 ml-2">
+            <div className="flex items-center bg-[#070B14] border border-[#1E2D4D] rounded-lg p-0.5 ml-1">
               <button 
                 onClick={() => setZoomLevel(Math.max(0.7, zoomLevel - 0.1))} 
                 className="p-1 text-slate-400 hover:text-slate-200 cursor-pointer"
@@ -220,6 +427,64 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
         </div>
       </div>
 
+      {/* Interactive CAD Studio Action Toolbar (When in Edit Mode) */}
+      {isEditorMode && (
+        <div className="h-10 bg-[#121D36] border-b border-[#2A4374] px-4 flex items-center justify-between text-xs font-mono shrink-0 animate-fadeIn z-10">
+          <div className="flex items-center gap-2">
+            <span className="text-amber-300 font-bold flex items-center gap-1">
+              <Move size={13} />
+              <span>DRAG RACKS TO REPOSITION</span>
+            </span>
+            <span className="text-slate-400 text-[11px] border-l border-slate-700 pl-2">
+              Click any Aisle Banner to rename tags (e.g. Noodles, Shampoos, Pharma)
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            {/* Add Rack Button */}
+            <button
+              onClick={() => setIsAddRackOpen(true)}
+              className="flex items-center gap-1 px-2.5 py-1 rounded bg-[#0D1527] hover:bg-[#1E2D4D] border border-[#5BC0BE] text-[#6FFFE9] font-bold cursor-pointer"
+            >
+              <Plus size={12} />
+              <span>+ Add Rack/Bay</span>
+            </button>
+
+            {/* Add Custom Zone */}
+            <button
+              onClick={() => setIsAddZoneOpen(true)}
+              className="flex items-center gap-1 px-2.5 py-1 rounded bg-[#0D1527] hover:bg-[#1E2D4D] border border-pink-500 text-pink-300 font-bold cursor-pointer"
+            >
+              <Square size={12} />
+              <span>+ Add Zone</span>
+            </button>
+
+            {/* Delete Selected Rack */}
+            {selectedBin && (
+              <button
+                onClick={handleDeleteSelectedRack}
+                className="flex items-center gap-1 px-2.5 py-1 rounded bg-rose-950/80 hover:bg-rose-900 border border-rose-700 text-rose-300 font-bold cursor-pointer"
+              >
+                <Trash2 size={12} />
+                <span>Delete Rack {selectedBin.code}</span>
+              </button>
+            )}
+
+            {/* Save Button */}
+            <button
+              onClick={() => {
+                setStatusMessage('💾 Floorplan Layout & Signage synced to IndexedDB!');
+                setTimeout(() => setStatusMessage(null), 2500);
+              }}
+              className="flex items-center gap-1 px-3 py-1 rounded bg-emerald-500 hover:bg-emerald-400 text-[#070B14] font-bold cursor-pointer"
+            >
+              <Save size={12} />
+              <span>Save Changes</span>
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Main Workspace Area (CAD Floorplan + Level Manifest HUD) */}
       <div className="flex-1 flex overflow-hidden relative">
         {/* Left Interactive CAD Canvas Area */}
@@ -228,8 +493,22 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
             style={{ transform: `scale(${zoomLevel})`, transformOrigin: 'center center' }}
             className="transition-transform duration-200 bg-[#0D1527] border border-[#1E2D4D] rounded-2xl p-6 shadow-2xl relative w-[860px] h-[520px]"
           >
+            {/* Status Toast */}
+            {statusMessage && (
+              <div className="absolute top-2 left-1/2 -translate-x-1/2 z-40 bg-emerald-950 border border-emerald-500 text-emerald-300 px-4 py-1.5 rounded-xl shadow-xl text-xs font-mono font-bold flex items-center gap-2 animate-fadeIn">
+                <CheckCircle2 size={14} className="text-emerald-400" />
+                <span>{statusMessage}</span>
+              </div>
+            )}
+
             {/* Warehouse CAD Grid Canvas (SVG) */}
-            <svg className="w-full h-full" viewBox="0 0 800 460">
+            <svg 
+              ref={svgRef}
+              className="w-full h-full select-none" 
+              viewBox="0 0 800 460"
+              onMouseMove={handleMouseMoveSVG}
+              onMouseUp={handleMouseUpSVG}
+            >
               <defs>
                 {/* Subtle Grid Pattern */}
                 <pattern id="cadGrid" width="20" height="20" patternUnits="userSpaceOnUse">
@@ -240,31 +519,106 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
               {/* Background Grid */}
               <rect width="800" height="460" fill="url(#cadGrid)" />
 
-              {/* Warehouse Facility Zones & Boundary Markings */}
-              {/* Staging & Inbound Dock */}
-              <rect x="20" y="340" width="120" height="90" fill="#121D36" stroke="#2A4374" strokeWidth="1.5" rx="6" />
-              <text x="30" y="365" fill="#5BC0BE" fontSize="10" fontFamily="monospace" fontWeight="bold">DOCK INBOUND</text>
-              <text x="30" y="380" fill="#64748B" fontSize="8" fontFamily="monospace">Gate 01-04 • Active</text>
-
-              {/* Cold Vault Zone */}
-              <rect x="520" y="20" width="130" height="300" fill="rgba(6, 182, 212, 0.05)" stroke="#0891B2" strokeWidth="1" strokeDasharray="4" rx="8" />
-              <text x="530" y="40" fill="#06B6D4" fontSize="9" fontFamily="monospace" fontWeight="bold">COLD VAULT (-80°C)</text>
-
-              {/* Hazmat Cage */}
-              <rect x="660" y="20" width="120" height="300" fill="rgba(168, 85, 247, 0.05)" stroke="#9333EA" strokeWidth="1" strokeDasharray="4" rx="8" />
-              <text x="670" y="40" fill="#A855F7" fontSize="9" fontFamily="monospace" fontWeight="bold">HAZMAT CAGE</text>
-
-              {/* Pack & Ship Conveyor Staging */}
-              <rect x="660" y="340" width="120" height="90" fill="#121D36" stroke="#2A4374" strokeWidth="1.5" rx="6" />
-              <text x="670" y="365" fill="#10B981" fontSize="10" fontFamily="monospace" fontWeight="bold">PACK & SHIP</text>
-              <text x="670" y="380" fill="#64748B" fontSize="8" fontFamily="monospace">FedEx / Freight Out</text>
+              {/* DYNAMIC FACILITY STORAGE ZONES */}
+              {zones.map((zone) => (
+                <g key={zone.id}>
+                  <rect
+                    x={zone.x}
+                    y={zone.y}
+                    width={zone.width}
+                    height={zone.height}
+                    fill={zone.color}
+                    stroke={zone.strokeColor}
+                    strokeWidth="1.5"
+                    strokeDasharray="4"
+                    rx="8"
+                  />
+                  <text
+                    x={zone.x + 10}
+                    y={zone.y + 20}
+                    fill={zone.strokeColor}
+                    fontSize="9"
+                    fontFamily="monospace"
+                    fontWeight="bold"
+                  >
+                    {zone.name}
+                  </text>
+                </g>
+              ))}
 
               {/* Forklift Main Transit Aisle */}
               <line x1="20" y1="330" x2="780" y2="330" stroke="#EAB308" strokeWidth="1" strokeDasharray="6" opacity="0.6" />
               <text x="360" y="325" fill="#EAB308" fontSize="8" fontFamily="monospace" opacity="0.8">FORKLIFT MAIN TRANSIT LANE</text>
 
+              {/* OVERHEAD AISLE SIGNAGE BANNERS (Grocery / Multi-Category Style) */}
+              {aisleSigns.map((sign, idx) => {
+                const aisleX = 80 + (idx * 110);
+                const isFiltered = activeAisleFilter === sign.aisle;
+
+                return (
+                  <g
+                    key={sign.aisle}
+                    className="cursor-pointer group"
+                    onClick={() => {
+                      if (isEditorMode) {
+                        setEditingAisle(sign);
+                      } else {
+                        setActiveAisleFilter(activeAisleFilter === sign.aisle ? null : sign.aisle);
+                      }
+                    }}
+                  >
+                    {/* Overhead Signboard Plaque */}
+                    <rect
+                      x={aisleX - 25}
+                      y="15"
+                      width="90"
+                      height="26"
+                      rx="6"
+                      fill={isFiltered ? '#1C2D52' : '#0B132B'}
+                      stroke={isFiltered ? '#5BC0BE' : sign.color}
+                      strokeWidth={isFiltered ? 2 : 1}
+                      className="transition-all"
+                    />
+
+                    {/* Icon & Aisle Letter */}
+                    <text
+                      x={aisleX - 20}
+                      y="32"
+                      fontSize="11"
+                    >
+                      {sign.icon}
+                    </text>
+                    <text
+                      x={aisleX - 5}
+                      y="27"
+                      fill="#FFFFFF"
+                      fontSize="8"
+                      fontFamily="monospace"
+                      fontWeight="bold"
+                    >
+                      AISLE {sign.aisle}
+                    </text>
+                    <text
+                      x={aisleX - 5}
+                      y="37"
+                      fill={sign.color}
+                      fontSize="6.5"
+                      fontFamily="sans-serif"
+                      fontWeight="bold"
+                    >
+                      {sign.name.length > 15 ? sign.name.substring(0, 14) + '…' : sign.name}
+                    </text>
+
+                    {/* Edit pencil icon in edit mode */}
+                    {isEditorMode && (
+                      <circle cx={aisleX + 58} cy="28" r="5" fill="#EAB308" />
+                    )}
+                  </g>
+                );
+              })}
+
               {/* Animated Eulerian Shortest-Path Pick Route */}
-              {showPickPath && (
+              {!isEditorMode && showPickPath && (
                 <g>
                   <path
                     d={pathString}
@@ -294,13 +648,14 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
               {currentLevelBins.map((bin) => {
                 const isSelected = selectedBin?.id === bin.id;
                 const isHovered = hoveredBin?.id === bin.id;
+                const isDragging = draggingBinId === bin.id;
                 const color = getBinColor(bin);
 
                 return (
                   <g 
                     key={bin.id} 
-                    className="cursor-pointer transition-transform"
-                    onClick={() => onSelectBin(bin)}
+                    className={`cursor-pointer transition-transform ${isEditorMode ? 'cursor-grab active:cursor-grabbing' : ''}`}
+                    onMouseDown={(e) => handleMouseDownOnBin(e, bin)}
                     onMouseEnter={() => setHoveredBin(bin)}
                     onMouseLeave={() => setHoveredBin(null)}
                   >
@@ -311,8 +666,8 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
                       width="24"
                       height="24"
                       fill={color}
-                      stroke={isSelected ? '#FFFFFF' : isHovered ? '#6FFFE9' : '#1E2D4D'}
-                      strokeWidth={isSelected ? 2.5 : isHovered ? 2 : 1}
+                      stroke={isSelected ? '#FFFFFF' : isDragging ? '#F59E0B' : isHovered ? '#6FFFE9' : '#1E2D4D'}
+                      strokeWidth={isSelected ? 2.5 : isDragging ? 2 : isHovered ? 2 : 1}
                       rx="3"
                       className="transition-all duration-150"
                     />
@@ -334,8 +689,8 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
               })}
             </svg>
 
-            {/* Live Hover Tooltip with Item Name, Batch, and Photo Preview */}
-            {hoveredBin && (
+            {/* Live Hover Tooltip */}
+            {!isEditorMode && hoveredBin && (
               <div 
                 style={{ left: Math.min(hoveredBin.x + 30, 580), top: Math.max(hoveredBin.y - 40, 10) }}
                 className="absolute z-30 pointer-events-none bg-[#070B14]/98 border border-[#5BC0BE] p-3 rounded-xl shadow-2xl text-xs font-mono w-64 backdrop-blur-xl animate-fadeIn"
@@ -397,7 +752,17 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
                   <Layers size={13} className="text-[#5BC0BE]" />
                   Level {selectedLevel} Stock Manifest
                 </h4>
-                <span className="text-[10px] text-slate-400">{filteredManifest.length} Occupied Racks</span>
+                <div className="flex items-center gap-2 mt-0.5">
+                  <span className="text-[10px] text-slate-400">{filteredManifest.length} Occupied</span>
+                  {activeAisleFilter && (
+                    <span 
+                      onClick={() => setActiveAisleFilter(null)}
+                      className="text-[9px] px-1.5 py-0.2 rounded bg-[#5BC0BE]/20 text-[#6FFFE9] border border-[#5BC0BE]/40 cursor-pointer font-mono"
+                    >
+                      Aisle {activeAisleFilter} ✕
+                    </span>
+                  )}
+                </div>
               </div>
               <button 
                 onClick={() => setShowManifestHUD(false)}
@@ -456,6 +821,316 @@ export const SpatialWarehouseCAD: React.FC<SpatialWarehouseCADProps> = ({
           </div>
         )}
       </div>
+
+      {/* AISLE SIGNAGE CUSTOMIZER MODAL */}
+      {editingAisle && (
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+          <div className="w-full max-w-md bg-[#0D1527] border border-[#2A4374] rounded-2xl p-6 shadow-2xl space-y-4 font-sans text-xs">
+            <div className="flex items-center justify-between border-b border-[#1E2D4D] pb-3">
+              <h3 className="font-mono font-bold text-sm text-white flex items-center gap-2">
+                <Tag size={16} className="text-[#5BC0BE]" />
+                <span>Customize Aisle {editingAisle.aisle} Signage</span>
+              </h3>
+              <button 
+                onClick={() => setEditingAisle(null)}
+                className="text-slate-400 hover:text-white"
+              >
+                <X size={16} />
+              </button>
+            </div>
+
+            <form onSubmit={handleSaveAisleSign} className="space-y-3.5 font-mono">
+              <div>
+                <label className="text-slate-400 block mb-1">Aisle Category Name (e.g. Canned Goods, Pharma)</label>
+                <input
+                  type="text"
+                  value={editingAisle.name}
+                  onChange={(e) => setEditingAisle({ ...editingAisle, name: e.target.value })}
+                  className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2.5 rounded-xl font-bold"
+                  placeholder="e.g. Noodles, Milk & Canned Goods"
+                  required
+                />
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="text-slate-400 block mb-1">Icon / Emoji</label>
+                  <select
+                    value={editingAisle.icon}
+                    onChange={(e) => setEditingAisle({ ...editingAisle, icon: e.target.value })}
+                    className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2.5 rounded-xl"
+                  >
+                    <option value="💊">💊 Pharmaceuticals</option>
+                    <option value="🥫">🥫 Food & Canned Goods</option>
+                    <option value="🧼">🧼 Soaps & Shampoos</option>
+                    <option value="⚡">⚡ Electronics & Batteries</option>
+                    <option value="🧰">🧰 Hydraulics & Tools</option>
+                    <option value="⚙️">⚙️ Bearings & Fasteners</option>
+                    <option value="❄️">❄️ Cold Storage (-80°C)</option>
+                    <option value="☣️">☣️ Hazmat & Chemicals</option>
+                    <option value="📦">📦 General Dry Goods</option>
+                    <option value="🧴">🧴 Personal Care & Liquids</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="text-slate-400 block mb-1">Badge Accent Color</label>
+                  <select
+                    value={editingAisle.color}
+                    onChange={(e) => setEditingAisle({ ...editingAisle, color: e.target.value })}
+                    className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2.5 rounded-xl"
+                  >
+                    <option value="#06B6D4">Cyan (#06B6D4)</option>
+                    <option value="#3B82F6">Blue (#3B82F6)</option>
+                    <option value="#10B981">Green (#10B981)</option>
+                    <option value="#F59E0B">Amber (#F59E0B)</option>
+                    <option value="#EC4899">Pink (#EC4899)</option>
+                    <option value="#A855F7">Purple (#A855F7)</option>
+                    <option value="#14B8A6">Teal (#14B8A6)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label className="text-slate-400 block mb-1">Department / Sector</label>
+                <input
+                  type="text"
+                  value={editingAisle.department}
+                  onChange={(e) => setEditingAisle({ ...editingAisle, department: e.target.value })}
+                  className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2.5 rounded-xl"
+                  placeholder="e.g. Healthcare & Safety"
+                />
+              </div>
+
+              <div className="flex justify-end gap-2 pt-2 border-t border-[#1E2D4D]">
+                <button
+                  type="button"
+                  onClick={() => setEditingAisle(null)}
+                  className="px-4 py-2 bg-[#121D36] text-slate-300 rounded-xl"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="px-5 py-2 bg-[#5BC0BE] hover:bg-[#6FFFE9] text-[#070B14] font-bold rounded-xl shadow-md glow-mint"
+                >
+                  Save Signage
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* ADD CUSTOM RACK / BAY MODAL */}
+      {isAddRackOpen && (
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+          <div className="w-full max-w-md bg-[#0D1527] border border-[#2A4374] rounded-2xl p-6 shadow-2xl space-y-4 font-sans text-xs">
+            <div className="flex items-center justify-between border-b border-[#1E2D4D] pb-3">
+              <h3 className="font-mono font-bold text-sm text-white flex items-center gap-2">
+                <Plus size={16} className="text-[#5BC0BE]" />
+                <span>Add Custom Racking Bay</span>
+              </h3>
+              <button 
+                onClick={() => setIsAddRackOpen(false)}
+                className="text-slate-400 hover:text-white"
+              >
+                <X size={16} />
+              </button>
+            </div>
+
+            <form onSubmit={handleAddNewRack} className="space-y-3.5 font-mono">
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="text-slate-400 block mb-1">Aisle</label>
+                  <select
+                    value={newRackAisle}
+                    onChange={(e) => setNewRackAisle(e.target.value)}
+                    className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2.5 rounded-xl font-bold"
+                  >
+                    {['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'].map(a => (
+                      <option key={a} value={a}>Aisle {a}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label className="text-slate-400 block mb-1">Bay Number</label>
+                  <input
+                    type="number"
+                    min="1"
+                    max="20"
+                    value={newRackBay}
+                    onChange={(e) => setNewRackBay(Number(e.target.value))}
+                    className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2.5 rounded-xl font-bold"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="text-slate-400 block mb-1">Canvas X Coordinate</label>
+                  <input
+                    type="number"
+                    value={newRackX}
+                    onChange={(e) => setNewRackX(Number(e.target.value))}
+                    className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2.5 rounded-xl"
+                  />
+                </div>
+                <div>
+                  <label className="text-slate-400 block mb-1">Canvas Y Coordinate</label>
+                  <input
+                    type="number"
+                    value={newRackY}
+                    onChange={(e) => setNewRackY(Number(e.target.value))}
+                    className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2.5 rounded-xl"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="text-slate-400 block mb-1">Initial SKU Code (Optional)</label>
+                <input
+                  type="text"
+                  value={newRackSku}
+                  onChange={(e) => setNewRackSku(e.target.value)}
+                  placeholder="e.g. FOOD-NOODLE-RAMEN-100"
+                  className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2.5 rounded-xl"
+                />
+              </div>
+
+              <div className="flex justify-end gap-2 pt-2 border-t border-[#1E2D4D]">
+                <button
+                  type="button"
+                  onClick={() => setIsAddRackOpen(false)}
+                  className="px-4 py-2 bg-[#121D36] text-slate-300 rounded-xl"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="px-5 py-2 bg-[#5BC0BE] hover:bg-[#6FFFE9] text-[#070B14] font-bold rounded-xl shadow-md glow-mint"
+                >
+                  Create Rack
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* ADD STORAGE ZONE MODAL */}
+      {isAddZoneOpen && (
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+          <div className="w-full max-w-md bg-[#0D1527] border border-[#2A4374] rounded-2xl p-6 shadow-2xl space-y-4 font-sans text-xs">
+            <div className="flex items-center justify-between border-b border-[#1E2D4D] pb-3">
+              <h3 className="font-mono font-bold text-sm text-white flex items-center gap-2">
+                <Square size={16} className="text-pink-400" />
+                <span>Add Custom Facility Zone</span>
+              </h3>
+              <button 
+                onClick={() => setIsAddZoneOpen(false)}
+                className="text-slate-400 hover:text-white"
+              >
+                <X size={16} />
+              </button>
+            </div>
+
+            <form onSubmit={handleAddNewZone} className="space-y-3.5 font-mono">
+              <div>
+                <label className="text-slate-400 block mb-1">Zone Name</label>
+                <input
+                  type="text"
+                  value={newZoneName}
+                  onChange={(e) => setNewZoneName(e.target.value)}
+                  className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2.5 rounded-xl font-bold"
+                  placeholder="e.g. DRY PROVISIONS & BULK"
+                  required
+                />
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="text-slate-400 block mb-1">Zone Code</label>
+                  <input
+                    type="text"
+                    value={newZoneCode}
+                    onChange={(e) => setNewZoneCode(e.target.value)}
+                    className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2.5 rounded-xl"
+                  />
+                </div>
+                <div>
+                  <label className="text-slate-400 block mb-1">Border Color</label>
+                  <input
+                    type="text"
+                    value={newZoneStroke}
+                    onChange={(e) => {
+                      setNewZoneStroke(e.target.value);
+                      setNewZoneColor(`${e.target.value}15`);
+                    }}
+                    className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2.5 rounded-xl"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-4 gap-2">
+                <div>
+                  <label className="text-slate-400 block mb-1">X</label>
+                  <input
+                    type="number"
+                    value={newZoneX}
+                    onChange={(e) => setNewZoneX(Number(e.target.value))}
+                    className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2 rounded-lg"
+                  />
+                </div>
+                <div>
+                  <label className="text-slate-400 block mb-1">Y</label>
+                  <input
+                    type="number"
+                    value={newZoneY}
+                    onChange={(e) => setNewZoneY(Number(e.target.value))}
+                    className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2 rounded-lg"
+                  />
+                </div>
+                <div>
+                  <label className="text-slate-400 block mb-1">Width</label>
+                  <input
+                    type="number"
+                    value={newZoneW}
+                    onChange={(e) => setNewZoneW(Number(e.target.value))}
+                    className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2 rounded-lg"
+                  />
+                </div>
+                <div>
+                  <label className="text-slate-400 block mb-1">Height</label>
+                  <input
+                    type="number"
+                    value={newZoneH}
+                    onChange={(e) => setNewZoneH(Number(e.target.value))}
+                    className="w-full bg-[#070B14] border border-[#1E2D4D] text-white p-2 rounded-lg"
+                  />
+                </div>
+              </div>
+
+              <div className="flex justify-end gap-2 pt-2 border-t border-[#1E2D4D]">
+                <button
+                  type="button"
+                  onClick={() => setIsAddZoneOpen(false)}
+                  className="px-4 py-2 bg-[#121D36] text-slate-300 rounded-xl"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="px-5 py-2 bg-pink-500 hover:bg-pink-400 text-white font-bold rounded-xl shadow-md"
+                >
+                  Add Zone
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
