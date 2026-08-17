@@ -166,6 +166,54 @@ export const SystemSpecsModal = ({ isOpen, onClose }: SystemSpecsModalProps) => 
                   </div>
                 </div>
               </div>
+
+              {/* Direct B2B Corporate Wire / Zero-Surcharge Rails */}
+              <div className="p-3.5 rounded-xl bg-blue-50/70 border-2 border-blue-200 space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="font-black text-blue-950 text-xs">DIRECT B2B CORPORATE WIRE (0% GATEWAY SURCHARGE)</span>
+                  <span className="px-2 py-0.5 rounded-full bg-blue-600 text-white text-[9px] font-bold">VERIFIED PRIMARY</span>
+                </div>
+                <p className="text-[11px] text-slate-700 font-normal leading-relaxed">
+                  Enterprise healthcare networks executing high-value acquisitions ($18.5k–$65k) can bypass credit card processing fees via direct bank wire.
+                </p>
+                <div className="p-2.5 rounded-lg bg-white border border-blue-200 flex flex-wrap items-center justify-between gap-2">
+                  <div>
+                    <span className="text-[10px] text-slate-500 block">BENEFICIARY ACCOUNT / RAILS:</span>
+                    <span className="font-mono font-black text-blue-950 text-xs">005790246533 • BDO / BPI / UnionBank / SWIFT</span>
+                  </div>
+                  <button
+                    onClick={() => {
+                      navigator.clipboard.writeText('005790246533');
+                      alert('Beneficiary account number (005790246533) copied to clipboard!');
+                    }}
+                    className="px-2.5 py-1 bg-blue-100 hover:bg-blue-200 border border-blue-300 text-blue-900 rounded-lg text-[10px] font-bold transition-all cursor-pointer"
+                  >
+                    Copy Account No.
+                  </button>
+                </div>
+              </div>
+
+              {/* Tiered Refund Policy & Legal Protections */}
+              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                <span className="font-black text-slate-950 text-xs block">7-DAY 100% GUARANTEE &amp; 30-DAY TIERED REFUND POLICY</span>
+                <div className="space-y-1.5 text-[11px] text-slate-700 font-normal leading-relaxed">
+                  <p>
+                    <strong className="text-emerald-700 font-bold">1. Days 1 – 7 (Grace Period):</strong> 100% Full Refund upon written notice within seven (7) calendar days with zero penalties.
+                  </p>
+                  <p>
+                    <strong className="text-amber-700 font-bold">2. Days 8 – 30 (Post-Onboarding Phase):</strong> 90% Partial Refund. A 10% non-refundable retainer is retained to cover:
+                  </p>
+                  <ul className="pl-4 space-y-0.5 list-disc text-[10px] text-slate-600">
+                    <li>Technical labor incurred on hospital CAD floorplan drafting &amp; EVS sensor mapping.</li>
+                    <li>Non-refundable payment gateway transaction interchange and banking surcharges.</li>
+                    <li>Digital IP delivery and license certificate de-registration overhead.</li>
+                    <li>Dedicated intranet container environment de-provisioning.</li>
+                  </ul>
+                  <p>
+                    <strong className="text-rose-700 font-bold">3. Beyond Day 30:</strong> Final settlement after 30 days of production hospital deployment.
+                  </p>
+                </div>
+              </div>
             </section>
           </div>
 

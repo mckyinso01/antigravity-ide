@@ -672,6 +672,62 @@ export const LicensingDeploymentModal: React.FC<LicensingDeploymentModalProps> =
                 </p>
               </div>
 
+              {/* Tiered Refund Policy Card */}
+              <div className="p-4 rounded-xl bg-[#0D1527] border border-[#1E2D4D] space-y-3 font-sans">
+                <div className="flex items-center gap-2 font-mono font-bold text-amber-300">
+                  <Scale size={16} />
+                  <span>7-Day 100% Guarantee & 30-Day Tiered Refund Policy</span>
+                </div>
+                <div className="space-y-2 text-slate-300 text-[11px] leading-relaxed">
+                  <p>
+                    <strong className="text-emerald-400 font-mono">1. Days 1 – 7 (Grace Period):</strong> Clients may request a <strong className="text-white">100% Full Refund</strong> within seven (7) calendar days of initial purchase with zero penalties or deductions.
+                  </p>
+                  <p>
+                    <strong className="text-amber-400 font-mono">2. Days 8 – 30 (Post-Onboarding Phase):</strong> Refund requests submitted between Day 8 and Day 30 are eligible for a <strong className="text-white">90% refund of the total purchase price</strong>. A 10% non-refundable retainer fee is retained to cover:
+                  </p>
+                  <ul className="pl-4 space-y-1 text-slate-300 list-disc text-[10px]">
+                    <li><strong>Dedicated Technical Labor Incurred:</strong> Solutions engineering hours already spent on Master SKU schema conversion, CAD floorplan drafting, and scanner calibration.</li>
+                    <li><strong>Non-Refundable Gateway & Banking Fees:</strong> Merchant interchange fees and SWIFT wire surcharges deducted by payment processors that cannot be clawed back.</li>
+                    <li><strong>Digital IP Delivery & License Revocation:</strong> Administrative overhead for cryptographic key blacklisting and software certificate de-authorization.</li>
+                    <li><strong>Infrastructure De-provisioning:</strong> Secure data scrubbing and container registry decommissioning procedures.</li>
+                  </ul>
+                  <p>
+                    <strong className="text-rose-400 font-mono">3. Beyond Day 30:</strong> All commercial buyout licenses and software deliveries are deemed final and non-refundable following thirty (30) days of production deployment.
+                  </p>
+                </div>
+              </div>
+
+              {/* Direct B2B Bank Wire / Corporate Transfer Option */}
+              <div className="p-4 rounded-xl bg-blue-950/20 border border-blue-900/40 space-y-2 font-sans">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2 font-mono font-bold text-blue-300">
+                    <CreditCard size={16} />
+                    <span>Direct B2B Corporate Wire & Bank Transfer (0% Gateway Surcharge)</span>
+                  </div>
+                  <span className="text-[9px] text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-500/30 font-mono">
+                    VERIFIED PRIMARY
+                  </span>
+                </div>
+                <p className="text-slate-300 text-[11px] leading-relaxed">
+                  Enterprise clients executing high-value buyouts ($18.5k–$65k) can bypass third-party payment gateway transaction fees (2.9%–4.5%) via direct corporate bank wire transfer.
+                </p>
+                <div className="p-2.5 rounded-lg bg-[#070B14] border border-[#1E2D4D] font-mono text-[11px] text-slate-200 flex flex-wrap items-center justify-between gap-2">
+                  <div>
+                    <span className="text-slate-400 block text-[9px]">BENEFICIARY ACCOUNT / RAILS:</span>
+                    <span className="font-bold text-[#6FFFE9]">005790246533 • BDO / BPI / UnionBank / SWIFT</span>
+                  </div>
+                  <button
+                    onClick={() => {
+                      navigator.clipboard.writeText('005790246533');
+                      alert('Beneficiary account number (005790246533) copied to clipboard!');
+                    }}
+                    className="px-2.5 py-1 bg-[#121D36] hover:bg-[#1E2D4D] border border-[#2A4374] text-[#6FFFE9] rounded-lg text-[10px] font-bold transition-all cursor-pointer"
+                  >
+                    Copy Account No.
+                  </button>
+                </div>
+              </div>
+
               <div className="p-4 rounded-xl bg-[#0D1527] border border-[#1E2D4D] space-y-1.5">
                 <div className="flex items-center gap-2 font-mono font-bold text-[#6FFFE9]">
                   <Lock size={16} />
