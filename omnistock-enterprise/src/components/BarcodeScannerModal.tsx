@@ -28,30 +28,81 @@ export const BarcodeScannerModal: React.FC<BarcodeScannerModalProps> = ({
   const [inputCode, setInputCode] = useState('');
   const [matchedSku, setMatchedSku] = useState<SkuItem | null>(null);
   const [soundEnabled, setSoundEnabled] = useState(true);
+  const [audioProfile, setAudioProfile] = useState<'ZEBRA' | 'HONEYWELL' | 'DATALOGIC'>('ZEBRA');
   const [scanSuccessAnim, setScanSuccessAnim] = useState(false);
+  const [scanErrorAnim, setScanErrorAnim] = useState(false);
+  const [mispickMessage, setMispickMessage] = useState<string | null>(null);
 
-  // Play synthetic warehouse scanner beep
+  // Play synthetic warehouse scanner beep based on hardware profile
   const playBeep = () => {
     if (!soundEnabled) return;
     try {
       const audioCtx = new (window.AudioContext || (window as any).webkitAudioContext)();
       const osc = audioCtx.createOscillator();
       const gain = audioCtx.createGain();
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(1760, audioCtx.currentTime); // High pitch sharp scanner beep
-      gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.12);
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-      osc.start();
-      osc.stop(audioCtx.currentTime + 0.12);
+
+      if (audioProfile === 'ZEBRA') {
+        // Zebra TC52 crisp dual-pitch chime (880Hz -> 1760Hz)
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(880, audioCtx.currentTime);
+        osc.frequency.setValueAtTime(1760, audioCtx.currentTime + 0.04);
+        gain.gain.setValueAtTime(0.35, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.14);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.14);
+      } else if (audioProfile === 'HONEYWELL') {
+        // Honeywell Dolphin warm resonant bell tone (1200Hz)
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(1200, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.4, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.18);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.18);
+      } else {
+        // Datalogic Memor Green Spot laser confirmation (2000Hz)
+        osc.type = 'square';
+        osc.frequency.setValueAtTime(2000, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.09);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.09);
+      }
     } catch {
       // Audio context fallback
     }
   };
 
+  // Play 220Hz low sawtooth mispick error buzz
+  const playMispickBuzz = () => {
+    if (!soundEnabled) return;
+    try {
+      const audioCtx = new (window.AudioContext || (window as any).webkitAudioContext)();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(220, audioCtx.currentTime);
+      osc.frequency.setValueAtTime(180, audioCtx.currentTime + 0.12);
+      gain.gain.setValueAtTime(0.45, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.28);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.28);
+    } catch {
+      // Audio fallback
+    }
+  };
+
   const handleScanCode = (code: string) => {
     const clean = code.trim().toLowerCase();
+    if (!clean) return;
+
     const found = skus.find(s => 
       s.barcode.toLowerCase() === clean || 
       s.skuCode.toLowerCase() === clean || 
@@ -61,11 +112,16 @@ export const BarcodeScannerModal: React.FC<BarcodeScannerModalProps> = ({
     if (found) {
       playBeep();
       setMatchedSku(found);
+      setMispickMessage(null);
       setScanSuccessAnim(true);
       setTimeout(() => setScanSuccessAnim(false), 1500);
       onScannedSku(found);
     } else {
+      playMispickBuzz();
       setMatchedSku(null);
+      setMispickMessage(`MISPICK / UNKNOWN BARCODE: "${code}"`);
+      setScanErrorAnim(true);
+      setTimeout(() => setScanErrorAnim(false), 1800);
     }
   };
 
@@ -128,18 +184,83 @@ export const BarcodeScannerModal: React.FC<BarcodeScannerModalProps> = ({
 
           {/* Success flash */}
           {scanSuccessAnim && (
-            <div className="absolute inset-0 bg-emerald-500/20 backdrop-blur-xs flex items-center justify-center">
-              <div className="bg-[#070B14] border border-emerald-400 text-emerald-300 font-mono text-xs px-3 py-1.5 rounded-xl flex items-center gap-1.5 shadow-lg">
-                <CheckCircle2 size={15} />
-                <span>BARCODE DECODED (0.024s)</span>
+            <div className="absolute inset-0 bg-emerald-500/20 backdrop-blur-xs flex items-center justify-center animate-in fade-in duration-100">
+              <div className="bg-[#070B14] border border-emerald-400 text-emerald-300 font-mono text-xs px-3.5 py-2 rounded-xl flex items-center gap-2 shadow-2xl">
+                <CheckCircle2 size={16} className="text-emerald-400" />
+                <div>
+                  <div className="font-bold text-white">VALID BARCODE CONFIRMED</div>
+                  <div className="text-[10px] text-emerald-400">{audioProfile} Audio Chime (880Hz) • 0.024s</div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Error / Mispick flash */}
+          {scanErrorAnim && (
+            <div className="absolute inset-0 bg-rose-500/25 backdrop-blur-xs flex items-center justify-center animate-in fade-in duration-100">
+              <div className="bg-[#070B14] border border-rose-500 text-rose-300 font-mono text-xs px-3.5 py-2 rounded-xl flex items-center gap-2 shadow-2xl">
+                <X size={16} className="text-rose-500" />
+                <div>
+                  <div className="font-bold text-rose-200">MISPICK DETECTED</div>
+                  <div className="text-[10px] text-rose-400">220Hz Low Warning Buzz</div>
+                </div>
               </div>
             </div>
           )}
         </div>
 
+        {/* Hardware Sound Profile Selector */}
+        <div className="space-y-1 bg-[#0D1527] p-2.5 rounded-xl border border-[#1E2D4D]">
+          <div className="flex items-center justify-between text-[10px] font-mono">
+            <span className="text-slate-400 font-bold">SCANNER AUDIO PROFILE:</span>
+            <span className="text-[#5BC0BE] font-bold">{audioProfile}</span>
+          </div>
+          <div className="grid grid-cols-3 gap-1.5 pt-1">
+            <button
+              onClick={() => setAudioProfile('ZEBRA')}
+              className={`py-1 px-1.5 rounded-lg text-[10px] font-mono font-bold transition-all cursor-pointer ${
+                audioProfile === 'ZEBRA'
+                  ? 'bg-[#5BC0BE] text-[#070B14] shadow-xs'
+                  : 'bg-[#121D36] text-slate-400 hover:text-white border border-[#1E2D4D]'
+              }`}
+            >
+              Zebra TC52 (880Hz)
+            </button>
+            <button
+              onClick={() => setAudioProfile('HONEYWELL')}
+              className={`py-1 px-1.5 rounded-lg text-[10px] font-mono font-bold transition-all cursor-pointer ${
+                audioProfile === 'HONEYWELL'
+                  ? 'bg-[#5BC0BE] text-[#070B14] shadow-xs'
+                  : 'bg-[#121D36] text-slate-400 hover:text-white border border-[#1E2D4D]'
+              }`}
+            >
+              Honeywell (1.2kHz)
+            </button>
+            <button
+              onClick={() => setAudioProfile('DATALOGIC')}
+              className={`py-1 px-1.5 rounded-lg text-[10px] font-mono font-bold transition-all cursor-pointer ${
+                audioProfile === 'DATALOGIC'
+                  ? 'bg-[#5BC0BE] text-[#070B14] shadow-xs'
+                  : 'bg-[#121D36] text-slate-400 hover:text-white border border-[#1E2D4D]'
+              }`}
+            >
+              Datalogic (2kHz)
+            </button>
+          </div>
+        </div>
+
         {/* Quick-Click Sample Barcodes to Test Instantly */}
         <div className="space-y-1.5">
-          <span className="text-[11px] font-mono text-slate-400 block font-bold">1-Click Test Scenarios:</span>
+          <div className="flex items-center justify-between text-[11px] font-mono">
+            <span className="text-slate-400 font-bold">1-Click Test Scenarios:</span>
+            <button
+              onClick={() => handleScanCode('MISPICK-INVALID-CODE-999')}
+              className="text-rose-400 hover:text-rose-300 font-bold text-[10px] underline cursor-pointer"
+              title="Test 220Hz Mispick Error Buzz"
+            >
+              ⚠️ Test 220Hz Mispick Buzz
+            </button>
+          </div>
           <div className="grid grid-cols-2 gap-2">
             {skus.slice(0, 4).map((sku) => (
               <button
@@ -174,11 +295,25 @@ export const BarcodeScannerModal: React.FC<BarcodeScannerModalProps> = ({
           </button>
         </form>
 
+        {/* Mispick Banner */}
+        {mispickMessage && (
+          <div className="p-3 rounded-xl bg-rose-950/80 border border-rose-600 text-rose-200 text-xs font-mono flex items-center gap-2 animate-shake">
+            <X size={16} className="text-rose-400 shrink-0" />
+            <div>
+              <div className="font-bold">{mispickMessage}</div>
+              <div className="text-[10px] text-rose-300">Audio Warning: 220Hz low tone sounded. Check SKU tag.</div>
+            </div>
+          </div>
+        )}
+
         {/* Matched SKU Result Card */}
         {matchedSku && (
-          <div className="p-3.5 rounded-xl bg-[#121D36] border border-[#5BC0BE] space-y-1.5 animate-in fade-in zoom-in duration-150">
+          <div className="p-3.5 rounded-xl bg-[#121D36] border border-[#5BC0BE] space-y-1.5 animate-in fade-in zoom-in duration-150 shadow-xl">
             <div className="flex items-center justify-between text-xs font-mono">
-              <span className="text-[#5BC0BE] font-bold">VERIFIED SKU MATCH</span>
+              <span className="text-[#5BC0BE] font-bold flex items-center gap-1">
+                <CheckCircle2 size={13} className="text-emerald-400" />
+                VERIFIED SKU MATCH
+              </span>
               <span className="text-emerald-400 font-bold">{matchedSku.stockQty} In Stock</span>
             </div>
             <h4 className="text-white font-sans font-bold text-xs">{matchedSku.name}</h4>

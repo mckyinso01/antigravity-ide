@@ -1,0 +1,14 @@
+{
+  "name": "omnistock_leads_database",
+  "version": "1.0.0",
+  "description": "OmniStock Spatial CAD WMS Autonomous B2B Outreach & 24/7 Monitoring Daemon",
+  "main": "omnistockMasterDaemon.js",
+  "scripts": {
+    "start": "node omnistockMasterDaemon.js",
+    "dispatch-now": "node dispatch_omnistock_outreach.js 5"
+  },
+  "dependencies": {
+    "imap-simple": "^5.1.0",
+    "nodemailer": "^9.0.5"
+  }
+}

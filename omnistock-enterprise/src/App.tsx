@@ -11,6 +11,7 @@ import { BarcodeScannerModal } from './components/BarcodeScannerModal';
 import { WavePickOptimizerModal } from './components/WavePickOptimizerModal';
 import { LicensingDeploymentModal } from './components/LicensingDeploymentModal';
 import { CleanSweepModal } from './components/CleanSweepModal';
+import { WarehouseInactivityLock, PRESET_STAFF, type WarehouseStaffSession } from './components/WarehouseInactivityLock';
 
 import { InventoryCatalogView } from './pages/InventoryCatalogView';
 import { WavePickingView } from './pages/WavePickingView';
@@ -24,6 +25,29 @@ import { initOmniStockVisitorBeacon } from './utils/visitorEmailBeacon';
 export function App() {
   const [activeTab, setActiveTab] = useState<TabId>('cad');
   const [warehouseName, setWarehouseName] = useState('Warehouse Alpha • Northeast Logistics Hub');
+
+  // Configurable Auto-Lock & Active Staff Session State
+  const [autolockTimeout, setAutolockTimeout] = useState<number>(() => {
+    const saved = localStorage.getItem('omnistock_autolock_timeout');
+    return saved !== null ? parseInt(saved, 10) : 120; // 120s default configurable
+  });
+
+  const [activeStaff, setActiveStaff] = useState<WarehouseStaffSession>(() => {
+    const saved = localStorage.getItem('omnistock_active_staff');
+    return saved ? JSON.parse(saved) : PRESET_STAFF[0];
+  });
+
+  const [isManuallyLocked, setIsManuallyLocked] = useState(false);
+
+  const handleUpdateTimeout = (seconds: number) => {
+    setAutolockTimeout(seconds);
+    localStorage.setItem('omnistock_autolock_timeout', seconds.toString());
+  };
+
+  const handleChangeStaff = (staff: WarehouseStaffSession) => {
+    setActiveStaff(staff);
+    localStorage.setItem('omnistock_active_staff', JSON.stringify(staff));
+  };
 
   // Core Database State
   const [bins, setBins] = useState<BinSlot[]>([]);
@@ -272,6 +296,10 @@ export function App() {
         }}
         activeWarehouseName={warehouseName}
         onChangeWarehouse={(name) => setWarehouseName(name)}
+        onManualLock={() => setIsManuallyLocked(true)}
+        onOpenTimeoutSettings={() => setActiveTab('settings')}
+        activeStaffName={activeStaff.name}
+        currentTimeoutSeconds={autolockTimeout}
       />
 
       {/* Main Body Workspace */}
@@ -350,6 +378,10 @@ export function App() {
               onUpdateWarehouseName={(name) => setWarehouseName(name)}
               onExportJson={handleExportJson}
               onTopologyChanged={refreshAllData}
+              currentTimeout={autolockTimeout}
+              onUpdateTimeout={handleUpdateTimeout}
+              activeStaff={activeStaff}
+              onChangeStaff={handleChangeStaff}
             />
           )}
 
@@ -365,6 +397,17 @@ export function App() {
           )}
         </main>
       </div>
+
+      {/* 🔒 Configurable Warehouse Inactivity & Shift Auto-Lock Watchdog */}
+      <WarehouseInactivityLock
+        currentTimeout={autolockTimeout}
+        onUpdateTimeout={handleUpdateTimeout}
+        activeStaff={activeStaff}
+        onChangeStaff={handleChangeStaff}
+        isManuallyLocked={isManuallyLocked}
+        onUnlock={() => setIsManuallyLocked(false)}
+        onManualLock={() => setIsManuallyLocked(true)}
+      />
 
       {/* Global Modals */}
       <BarcodeScannerModal

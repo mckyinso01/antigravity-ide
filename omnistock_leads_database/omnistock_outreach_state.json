@@ -1,6 +1,32 @@
 {
-  "currentIndex": 20,
-  "totalDispatched": 20,
-  "lastDispatchedAt": "2026-08-17T16:30:18.596Z",
-  "status": "IDLE"
+  "currentIndex": 35,
+  "totalDispatched": 34,
+  "dailyBatchSize": 5,
+  "delaySecondsMin": 35,
+  "delaySecondsMax": 55,
+  "lastDispatchedAt": "2026-08-18T16:41:16.888Z",
+  "status": "IDLE",
+  "history": [
+    {
+      "runAt": "2026-08-18T14:41:07.560Z",
+      "batchRange": "21-25",
+      "successCount": 4,
+      "skippedCount": 1,
+      "failedCount": 0
+    },
+    {
+      "runAt": "2026-08-18T15:41:16.876Z",
+      "batchRange": "26-30",
+      "successCount": 5,
+      "skippedCount": 0,
+      "failedCount": 0
+    },
+    {
+      "runAt": "2026-08-18T16:41:16.888Z",
+      "batchRange": "31-35",
+      "successCount": 5,
+      "skippedCount": 0,
+      "failedCount": 0
+    }
+  ]
 }

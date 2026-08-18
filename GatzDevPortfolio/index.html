@@ -337,31 +337,94 @@
 <div>
 <div class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-2">Standalone Codebases</div>
 <h2 class="text-3xl md:text-4xl font-bold text-white mb-2 font-display underline decoration-accent-electric decoration-4 underline-offset-8">Featured Software Products</h2>
-<p class="text-on-surface-variant text-sm md:text-base">Independent enterprise codebases with 3px moving color border shadow &amp; 200px Ã— 150px feature preview screens.</p>
+<p class="text-on-surface-variant text-sm md:text-base">Independent enterprise codebases with 3px moving color border shadow &amp; 200px × 150px feature preview screens.</p>
 </div>
 <div class="font-mono text-xs text-blue-400 bg-surface-card px-4 py-2 rounded-xl border border-outline-variant flex items-center gap-2">
 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
 <span>4 STANDALONE_APPLICATIONS</span>
 </div>
 </div>
+
+<!-- LIVE SUBDOMAIN HEARTBEAT & TELEMETRY STATUS INDICATOR [HUB-01] -->
+<div class="glass-card spotlight-card p-5 rounded-2xl border border-blue-500/30 mb-8 font-mono text-xs">
+  <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-800">
+    <div class="flex items-center gap-2">
+      <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span class="font-bold text-white uppercase text-xs">Live Subdomain Telemetry Hub</span>
+      <span class="text-[10px] text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-500/30">ALL SYSTEMS 100% OPERATIONAL</span>
+    </div>
+    <div class="text-[11px] text-slate-400">Auto-Ping Interval: 5s • Global Edge Availability: 99.99%</div>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-3">
+    <!-- Subdomain 1: SiteSafe -->
+    <a href="https://sitesafe-ai.surge.sh" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 hover:border-blue-500 transition-all flex items-center justify-between group">
+      <div>
+        <div class="text-[10px] text-slate-400 font-bold">CONSTRUCTION OS</div>
+        <div class="text-xs font-bold text-white group-hover:text-blue-400">sitesafe-ai.surge.sh</div>
+      </div>
+      <div class="text-right">
+        <span class="text-[10px] text-emerald-400 font-bold">24ms</span>
+        <span class="block text-[9px] text-slate-500">HEALTHY</span>
+      </div>
+    </a>
+
+    <!-- Subdomain 2: OmniStock -->
+    <a href="https://omnistock.surge.sh" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 hover:border-emerald-500 transition-all flex items-center justify-between group">
+      <div>
+        <div class="text-[10px] text-slate-400 font-bold">SPATIAL WMS</div>
+        <div class="text-xs font-bold text-white group-hover:text-emerald-400">omnistock.surge.sh</div>
+      </div>
+      <div class="text-right">
+        <span class="text-[10px] text-emerald-400 font-bold">18ms</span>
+        <span class="block text-[9px] text-slate-500">HEALTHY</span>
+      </div>
+    </a>
+
+    <!-- Subdomain 3: Clinical Pristine -->
+    <a href="https://clinical-pristine.surge.sh" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 hover:border-indigo-500 transition-all flex items-center justify-between group">
+      <div>
+        <div class="text-[10px] text-slate-400 font-bold">HEALTHCARE ICU OS</div>
+        <div class="text-xs font-bold text-white group-hover:text-indigo-400">clinical-pristine.surge.sh</div>
+      </div>
+      <div class="text-right">
+        <span class="text-[10px] text-emerald-400 font-bold">21ms</span>
+        <span class="block text-[9px] text-slate-500">HEALTHY</span>
+      </div>
+    </a>
+
+    <!-- Subdomain 4: Saccade-UI -->
+    <a href="https://saccade-ai.surge.sh" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 hover:border-rose-500 transition-all flex items-center justify-between group">
+      <div>
+        <div class="text-[10px] text-slate-400 font-bold">NEURO BIOMETRIC CRO</div>
+        <div class="text-xs font-bold text-white group-hover:text-rose-400">saccade-ai.surge.sh</div>
+      </div>
+      <div class="text-right">
+        <span class="text-[10px] text-emerald-400 font-bold">15ms</span>
+        <span class="block text-[9px] text-slate-500">HEALTHY</span>
+      </div>
+    </a>
+  </div>
+</div>
+
 <!-- FILTER RAIL & KEYWORD SEARCH BAR -->
 <div class="glass-card spotlight-card p-4 rounded-2xl border border-outline-variant mb-10 flex flex-col md:flex-row justify-between items-center gap-4">
 <!-- Category Filter Tabs -->
 <div class="flex flex-wrap gap-2 text-xs font-mono">
 <button class="px-4 py-2 rounded-xl border border-accent-electric bg-accent-electric text-white font-bold transition-all shadow-md" id="filter-btn-all" onclick="filterCategory('all')">
-            All Products <span class="ml-1 opacity-80" id="count-all">[4]</span>
+            All Flagships <span class="ml-1 opacity-80" id="count-all">[4]</span>
 </button>
 <button class="px-4 py-2 rounded-xl border border-outline-variant bg-slate-950/80 text-on-surface-variant hover:text-white transition-all" id="filter-btn-pos" onclick="filterCategory('pos')">
-            POS &amp; Inventory <span class="ml-1 opacity-60" id="count-pos">[1]</span>
+            WMS &amp; Logistics <span class="ml-1 opacity-60" id="count-pos">[1]</span>
 </button>
 <button class="px-4 py-2 rounded-xl border border-outline-variant bg-slate-950/80 text-on-surface-variant hover:text-white transition-all" id="filter-btn-dispatch" onclick="filterCategory('dispatch')">
-            Medical Dispatch <span class="ml-1 opacity-60" id="count-dispatch">[1]</span>
+            Clinical ICU OS <span class="ml-1 opacity-60" id="count-dispatch">[1]</span>
 </button>
 <button class="px-4 py-2 rounded-xl border border-outline-variant bg-slate-950/80 text-on-surface-variant hover:text-white transition-all" id="filter-btn-crm" onclick="filterCategory('crm')">
-            Lead CRM <span class="ml-1 opacity-60" id="count-crm">[1]</span>
+            Construction CPM <span class="ml-1 opacity-60" id="count-crm">[1]</span>
 </button>
 <button class="px-4 py-2 rounded-xl border border-outline-variant bg-slate-950/80 text-on-surface-variant hover:text-white transition-all" id="filter-btn-legal" onclick="filterCategory('legal')">
-            Legal AI <span class="ml-1 opacity-60" id="count-legal">[1]</span>
+            Neurology CRO <span class="ml-1 opacity-60" id="count-legal">[1]</span>
 </button>
 </div>
 <!-- Keyword Search Input (Shortcut: Ctrl+K) -->
@@ -371,297 +434,117 @@
 <kbd class="absolute right-2.5 top-2.5 bg-slate-800 text-[9px] text-on-surface-variant px-1.5 py-0.5 rounded">Ctrl+K</kbd>
 </div>
 </div> <!-- Close Filter Rail Div -->
+
 <!-- 4 App Cards with 2PX MOVING COLOR BORDER & SOLID DARK NAVY INTERIOR (EXACT LOGIN PAGE PARITY) -->
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="product-cards-grid">
-<!-- App Card 1: OmniStock (StockMate) -->
-<div class="product-card-item moving-border-card rounded-3xl overflow-hidden" data-category="pos" data-search="omnistock pos inventory stockmate barcode checkout">
+
+<!-- App Card 1: OmniStock Enterprise WMS -->
+<div class="product-card-item moving-border-card rounded-3xl overflow-hidden" data-category="pos" data-search="omnistock wms inventory spatial 3d fefo barcode zebra honeywell">
 <div class="bg-[#0B1C30] w-full h-full p-7 rounded-[1.38rem] flex flex-col justify-between">
 <div>
 <div class="flex justify-between items-center mb-4">
 <div>
-<span class="text-[11px] font-mono text-emerald-400 uppercase tracking-wider bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-0.5 rounded">POS &amp; Inventory</span>
-<h3 class="text-2xl font-bold text-white mt-1 font-display">OmniStock</h3>
+<span class="text-[11px] font-mono text-emerald-400 uppercase tracking-wider bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-0.5 rounded">Autonomous WMS</span>
+<h3 class="text-2xl font-bold text-white mt-1 font-display">OmniStock Enterprise</h3>
 </div>
-<div class="text-xs font-mono text-on-surface-variant">[3 CORE FEATURES]</div>
-</div>
-<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">
-                Autonomous Inventory &amp; Point-of-Sale Engine with real-time barcode telemetry, stock adjustment alerts, and checkout logic.
-              </p>
-<!-- CORE FEATURE SCREENSHOTS VIEW (200px Height x 150px Width) WITH TELEMETRY STRIPS -->
-<div class="mb-6 space-y-3">
-<div class="flex justify-between items-center text-xs font-mono text-white font-semibold">
-<div class="flex items-center gap-1.5">
-<span class="material-symbols-outlined text-emerald-400 text-base">wallpaper</span>
-<span>Feature Screenshots (200px Ã— 150px):</span>
-</div>
-<span class="text-[10px] text-on-surface-variant hidden sm:inline">â† Swipe Features â†’</span>
-</div>
-<div class="flex gap-4 overflow-x-auto pb-2 no-scrollbar">
-<!-- Screenshot 1: Barcode Scanner HUD (150px W x 200px H) -->
-<div class="w-[150px] h-[200px] flex-shrink-0 bg-slate-950 p-3 rounded-xl border border-emerald-500/30 hover:border-emerald-400 transition-all cursor-pointer flex flex-col justify-between group" onclick="openFeatureModal('OmniStock', 'Barcode Telemetry &amp; Scanner HUD', 'Real-time laser scanning target reticle with instant GTIN/EAN SKU barcode identification and price lookup.')">
-<div class="flex justify-between items-center text-[9px] font-mono text-emerald-400 pb-1.5 border-b border-slate-900">
-<span>12ms</span>
-<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-</div>
-<div class="my-auto py-2 flex flex-col items-center justify-center text-center">
-<div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-emerald-400 text-2xl">qr_code_scanner</span>
-</div>
-<div class="text-xs font-bold text-white mb-1">Barcode HUD</div>
-<div class="text-[9px] font-mono text-on-surface-variant">GTIN / EAN Scan</div>
-<div class="mt-2 text-[8px] font-mono bg-emerald-950 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/30">Sub-10ms Lookup</div>
-</div>
-<div class="text-[9px] font-mono text-emerald-400 text-center flex items-center justify-center gap-1 pt-1 border-t border-slate-900">
-<span>View UI</span>
-<span class="material-symbols-outlined text-[10px]">open_in_full</span>
-</div>
-</div>
-<!-- Screenshot 2: Stock Threshold Monitor (150px W x 200px H) -->
-<div class="w-[150px] h-[200px] flex-shrink-0 bg-slate-950 p-3 rounded-xl border border-emerald-500/30 hover:border-emerald-400 transition-all cursor-pointer flex flex-col justify-between group" onclick="openFeatureModal('OmniStock', 'Stock Threshold &amp; Alert Monitor', 'Automated low-stock telemetry alerts, reorder triggers, and supplier inventory sync.')">
-<div class="flex justify-between items-center text-[9px] font-mono text-emerald-400 pb-1.5 border-b border-slate-900">
-<span>99.9%</span>
-<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-</div>
-<div class="my-auto py-2 flex flex-col items-center justify-center text-center">
-<div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-emerald-400 text-2xl">query_stats</span>
-</div>
-<div class="text-xs font-bold text-white mb-1">Stock Monitor</div>
-<div class="text-[9px] font-mono text-on-surface-variant">Auto Reorder Alert</div>
-<div class="mt-2 text-[8px] font-mono bg-emerald-950 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/30">Telemetry Ledger</div>
-</div>
-<div class="text-[9px] font-mono text-emerald-400 text-center flex items-center justify-center gap-1 pt-1 border-t border-slate-900">
-<span>View UI</span>
-<span class="material-symbols-outlined text-[10px]">open_in_full</span>
-</div>
-</div>
-<!-- Screenshot 3: POS Terminal (150px W x 200px H) -->
-<div class="w-[150px] h-[200px] flex-shrink-0 bg-slate-950 p-3 rounded-xl border border-emerald-500/30 hover:border-emerald-400 transition-all cursor-pointer flex flex-col justify-between group" onclick="openFeatureModal('OmniStock', 'POS Instant Checkout Terminal', 'Sub-second receipt generation, split payments, and offline cache synchronization.')">
-<div class="flex justify-between items-center text-[9px] font-mono text-emerald-400 pb-1.5 border-b border-slate-900">
-<span>AES-256</span>
-<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-</div>
-<div class="my-auto py-2 flex flex-col items-center justify-center text-center">
-<div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-emerald-400 text-2xl">point_of_sale</span>
-</div>
-<div class="text-xs font-bold text-white mb-1">POS Checkout</div>
-<div class="text-[9px] font-mono text-on-surface-variant">Instant Receipt</div>
-<div class="mt-2 text-[8px] font-mono bg-emerald-950 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/30">Offline Sync</div>
-</div>
-<div class="text-[9px] font-mono text-emerald-400 text-center flex items-center justify-center gap-1 pt-1 border-t border-slate-900">
-<span>View UI</span>
-<span class="material-symbols-outlined text-[10px]">open_in_full</span>
-</div>
-</div>
-</div>
-</div>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="font-mono text-xs bg-slate-950 px-2.5 py-1 rounded-md text-emerald-400 border border-slate-800">React 18</span>
-<span class="font-mono text-xs bg-slate-950 px-2.5 py-1 rounded-md text-emerald-400 border border-slate-800">Vite POS Engine</span>
-<span class="font-mono text-xs bg-slate-950 px-2.5 py-1 rounded-md text-emerald-400 border border-slate-800">Barcode Scanner</span>
-</div>
-</div>
-<a class="w-full py-3.5 bg-[#0B1C30] border border-blue-500/30 text-white font-extrabold text-xs uppercase tracking-wider rounded-xl font-mono text-center block transition-all duration-300 hover:border-cyan-400 hover:text-cyan-300 hover:shadow-[0_0_25px_rgba(0,229,255,0.45)] hover:-translate-y-0.5 group/btn" href="https://omnistock-pos.surge.sh" rel="noopener noreferrer" target="_blank">
-<span>Launch Live Application <span class="inline-block transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">â†—</span></span>
-</a>
-</div>
-</div>
-<!-- App Card 2: EMS Enterprise -->
-<div class="product-card-item moving-border-card rounded-3xl overflow-hidden" data-category="dispatch" data-search="ems medical dispatch command workforce biometrics payroll emergency">
-<div class="bg-[#0B1C30] w-full h-full p-7 rounded-[1.38rem] flex flex-col justify-between">
-<div>
-<div class="flex justify-between items-center mb-4">
-<div>
-<span class="text-[11px] font-mono text-indigo-400 uppercase tracking-wider bg-indigo-500/10 border border-indigo-500/30 px-2.5 py-0.5 rounded">Medical Dispatch</span>
-<h3 class="text-2xl font-bold text-white mt-1 font-display">EMS Enterprise</h3>
-</div>
-<div class="text-xs font-mono text-on-surface-variant">[3 CORE FEATURES]</div>
+<div class="text-xs font-mono text-emerald-400 font-bold">[SURGE LIVE]</div>
 </div>
 <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">
-                Medical Dispatch &amp; Fleet Operations Hub with real-time GPS tracking, biometric clocking, and automated payroll.
-              </p>
-<!-- CORE FEATURE SCREENSHOTS VIEW (200px Height x 150px Width) WITH TELEMETRY STRIPS -->
-<div class="mb-6 space-y-3">
-<div class="flex justify-between items-center text-xs font-mono text-white font-semibold">
-<div class="flex items-center gap-1.5">
-<span class="material-symbols-outlined text-indigo-400 text-base">wallpaper</span>
-<span>Feature Screenshots (200px Ã— 150px):</span>
-</div>
-<span class="text-[10px] text-on-surface-variant hidden sm:inline">â† Swipe Features â†’</span>
-</div>
-<div class="flex gap-4 overflow-x-auto pb-2 no-scrollbar">
-<!-- Screenshot 1: Medical Dispatch Map (150px W x 200px H) -->
-<div class="w-[150px] h-[200px] flex-shrink-0 bg-slate-950 p-3 rounded-xl border border-indigo-500/30 hover:border-indigo-400 transition-all cursor-pointer flex flex-col justify-between group" onclick="openFeatureModal('EMS Enterprise', 'Medical Dispatch Command HUD', 'Real-time GPS tracking of ambulance units, emergency triage routing, and responder status.')">
-<div class="flex justify-between items-center text-[9px] font-mono text-indigo-400 pb-1.5 border-b border-slate-900">
-<span>GPS HUD</span>
-<span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse"></span>
-</div>
-<div class="my-auto py-2 flex flex-col items-center justify-center text-center">
-<div class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-indigo-400 text-2xl">map</span>
-</div>
-<div class="text-xs font-bold text-white mb-1">Dispatch HUD</div>
-<div class="text-[9px] font-mono text-on-surface-variant">Unit GPS Tracker</div>
-<div class="mt-2 text-[8px] font-mono bg-indigo-950 text-indigo-300 px-2 py-0.5 rounded border border-indigo-500/30">Live Routing</div>
-</div>
-<div class="text-[9px] font-mono text-indigo-400 text-center flex items-center justify-center gap-1 pt-1 border-t border-slate-900">
-<span>View UI</span>
-<span class="material-symbols-outlined text-[10px]">open_in_full</span>
+Autonomous 3D Spatial Warehouse Management System with multi-profile Zebra/Honeywell laser audio feedback, FEFO lot expiry quarantine tracking, and instant picking telemetry.
+</p>
+<div class="flex flex-wrap gap-2 mb-6 font-mono text-xs">
+<span class="bg-slate-950 px-2.5 py-1 rounded-md text-emerald-400 border border-slate-800">Spatial 3D Grid</span>
+<span class="bg-slate-950 px-2.5 py-1 rounded-md text-emerald-400 border border-slate-800">Zebra / Honeywell Audio FX</span>
+<span class="bg-slate-950 px-2.5 py-1 rounded-md text-emerald-400 border border-slate-800">FEFO Expiry Quarantine</span>
 </div>
 </div>
-<!-- Screenshot 2: Biometric Clocking (150px W x 200px H) -->
-<div class="w-[150px] h-[200px] flex-shrink-0 bg-slate-950 p-3 rounded-xl border border-indigo-500/30 hover:border-indigo-400 transition-all cursor-pointer flex flex-col justify-between group" onclick="openFeatureModal('EMS Enterprise', 'Biometric Shift &amp; Clocking Terminal', 'Zero-trust facial recognition and PIN authentication for paramedic shift verification.')">
-<div class="flex justify-between items-center text-[9px] font-mono text-indigo-400 pb-1.5 border-b border-slate-900">
-<span>BIOMETRIC</span>
-<span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse"></span>
-</div>
-<div class="my-auto py-2 flex flex-col items-center justify-center text-center">
-<div class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-indigo-400 text-2xl">fingerprint</span>
-</div>
-<div class="text-xs font-bold text-white mb-1">Biometric Clock</div>
-<div class="text-[9px] font-mono text-on-surface-variant">Facial Recognition</div>
-<div class="mt-2 text-[8px] font-mono bg-indigo-950 text-indigo-300 px-2 py-0.5 rounded border border-indigo-500/30">Zero-Trust Auth</div>
-</div>
-<div class="text-[9px] font-mono text-indigo-400 text-center flex items-center justify-center gap-1 pt-1 border-t border-slate-900">
-<span>View UI</span>
-<span class="material-symbols-outlined text-[10px]">open_in_full</span>
-</div>
-</div>
-<!-- Screenshot 3: Automated Payroll Engine (150px W x 200px H) -->
-<div class="w-[150px] h-[200px] flex-shrink-0 bg-slate-950 p-3 rounded-xl border border-indigo-500/30 hover:border-indigo-400 transition-all cursor-pointer flex flex-col justify-between group" onclick="openFeatureModal('EMS Enterprise', 'Automated Paramedic Payroll Engine', 'Dynamic shift multiplier, overtime calculation, and instant payslip generation.')">
-<div class="flex justify-between items-center text-[9px] font-mono text-indigo-400 pb-1.5 border-b border-slate-900">
-<span>PAYROLL</span>
-<span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse"></span>
-</div>
-<div class="my-auto py-2 flex flex-col items-center justify-center text-center">
-<div class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-indigo-400 text-2xl">payments</span>
-</div>
-<div class="text-xs font-bold text-white mb-1">Payroll Engine</div>
-<div class="text-[9px] font-mono text-on-surface-variant">Overtime Math</div>
-<div class="mt-2 text-[8px] font-mono bg-indigo-950 text-indigo-300 px-2 py-0.5 rounded border border-indigo-500/30">Auto Payout</div>
-</div>
-<div class="text-[9px] font-mono text-indigo-400 text-center flex items-center justify-center gap-1 pt-1 border-t border-slate-900">
-<span>View UI</span>
-<span class="material-symbols-outlined text-[10px]">open_in_full</span>
-</div>
-</div>
-</div>
-</div>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="font-mono text-xs bg-slate-950 px-2.5 py-1 rounded-md text-indigo-400 border border-slate-800">React</span>
-<span class="font-mono text-xs bg-slate-950 px-2.5 py-1 rounded-md text-indigo-400 border border-slate-800">Express Node</span>
-<span class="font-mono text-xs bg-slate-950 px-2.5 py-1 rounded-md text-indigo-400 border border-slate-800">Zero-Trust Command</span>
-</div>
-</div>
-<a class="w-full py-3.5 bg-[#0B1C30] border border-blue-500/30 text-white font-extrabold text-xs uppercase tracking-wider rounded-xl font-mono text-center block transition-all duration-300 hover:border-cyan-400 hover:text-cyan-300 hover:shadow-[0_0_25px_rgba(0,229,255,0.45)] hover:-translate-y-0.5 group/btn" href="https://ems-workforce.surge.sh" rel="noopener noreferrer" target="_blank">
-<span>Launch Live Application <span class="inline-block transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">â†—</span></span>
+<a class="w-full py-3.5 bg-[#0B1C30] border border-emerald-500/40 text-emerald-300 font-extrabold text-xs uppercase tracking-wider rounded-xl font-mono text-center block transition-all duration-300 hover:border-emerald-400 hover:text-white hover:bg-emerald-600 hover:shadow-[0_0_25px_rgba(16,185,129,0.45)] hover:-translate-y-0.5 group/btn" href="https://omnistock.surge.sh" rel="noopener noreferrer" target="_blank">
+<span>Launch Live OmniStock WMS <span class="inline-block transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">↗</span></span>
 </a>
-</div>
-</div>
-<!-- App Card 3: GHL-PULSE -->
-<!-- App Card 4: LexAI Enterprise -->
-<div class="product-card-item moving-border-card rounded-3xl overflow-hidden" data-category="legal" data-search="lexai legal ai discovery ocr contract risk audit precedent search">
-<div class="bg-[#0B1C30] w-full h-full p-7 rounded-[1.38rem] flex flex-col justify-between">
-<div>
-<div class="flex justify-between items-center mb-4">
-<div>
-<span class="text-[11px] font-mono text-amber-400 uppercase tracking-wider bg-amber-500/10 border border-amber-500/30 px-2.5 py-0.5 rounded">Legal AI</span>
-<h3 class="text-2xl font-bold text-white mt-1 font-display">LexAI Enterprise</h3>
-</div>
-<div class="text-xs font-mono text-on-surface-variant">[3 CORE FEATURES]</div>
-</div>
-<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">
-                AI Legal Discovery &amp; Contract Risk Audit Suite with OCR contract scanning, clause extraction, and risk assessment.
-              </p>
-<!-- CORE FEATURE SCREENSHOTS VIEW (200px Height x 150px Width) WITH TELEMETRY STRIPS -->
-<div class="mb-6 space-y-3">
-<div class="flex justify-between items-center text-xs font-mono text-white font-semibold">
-<div class="flex items-center gap-1.5">
-<span class="material-symbols-outlined text-amber-400 text-base">wallpaper</span>
-<span>Feature Screenshots (200px Ã— 150px):</span>
-</div>
-<span class="text-[10px] text-on-surface-variant hidden sm:inline">â† Swipe Features â†’</span>
-</div>
-<div class="flex gap-4 overflow-x-auto pb-2 no-scrollbar">
-<!-- Screenshot 1: OCR Legal Document Scanner (150px W x 200px H) -->
-<div class="w-[150px] h-[200px] flex-shrink-0 bg-slate-950 p-3 rounded-xl border border-amber-500/30 hover:border-amber-400 transition-all cursor-pointer flex flex-col justify-between group" onclick="openFeatureModal('LexAI Enterprise', 'OCR Legal Document Scanner', 'Optical character recognition processing multi-page legal contracts and court filings.')">
-<div class="flex justify-between items-center text-[9px] font-mono text-amber-400 pb-1.5 border-b border-slate-900">
-<span>OCR BEAM</span>
-<span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
-</div>
-<div class="my-auto py-2 flex flex-col items-center justify-center text-center">
-<div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-amber-400 text-2xl">document_scanner</span>
-</div>
-<div class="text-xs font-bold text-white mb-1">OCR Scanner</div>
-<div class="text-[9px] font-mono text-on-surface-variant">PDF Clause Extract</div>
-<div class="mt-2 text-[8px] font-mono bg-amber-950 text-amber-300 px-2 py-0.5 rounded border border-amber-500/30">Sub-Second Optical</div>
-</div>
-<div class="text-[9px] font-mono text-amber-400 text-center flex items-center justify-center gap-1 pt-1 border-t border-slate-900">
-<span>View UI</span>
-<span class="material-symbols-outlined text-[10px]">open_in_full</span>
-</div>
-</div>
-<!-- Screenshot 2: Clause Risk Audit Gauge (150px W x 200px H) -->
-<div class="w-[150px] h-[200px] flex-shrink-0 bg-slate-950 p-3 rounded-xl border border-amber-500/30 hover:border-amber-400 transition-all cursor-pointer flex flex-col justify-between group" onclick="openFeatureModal('LexAI Enterprise', 'Clause Risk Audit &amp; Liability Gauge', 'Real-time liability scoring identifying high-risk indemnification clauses.')">
-<div class="flex justify-between items-center text-[9px] font-mono text-amber-400 pb-1.5 border-b border-slate-900">
-<span>RISK GAUGE</span>
-<span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
-</div>
-<div class="my-auto py-2 flex flex-col items-center justify-center text-center">
-<div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-amber-400 text-2xl">gavel</span>
-</div>
-<div class="text-xs font-bold text-white mb-1">Clause Risk</div>
-<div class="text-[9px] font-mono text-on-surface-variant">Liability Detection</div>
-<div class="mt-2 text-[8px] font-mono bg-amber-950 text-amber-300 px-2 py-0.5 rounded border border-amber-500/30">Penalty Flagging</div>
-</div>
-<div class="text-[9px] font-mono text-amber-400 text-center flex items-center justify-center gap-1 pt-1 border-t border-slate-900">
-<span>View UI</span>
-<span class="material-symbols-outlined text-[10px]">open_in_full</span>
-</div>
-</div>
-<!-- Screenshot 3: Legal Precedent Index (150px W x 200px H) -->
-<div class="w-[150px] h-[200px] flex-shrink-0 bg-slate-950 p-3 rounded-xl border border-amber-500/30 hover:border-amber-400 transition-all cursor-pointer flex flex-col justify-between group" onclick="openFeatureModal('LexAI Enterprise', 'Case Law &amp; Precedent Vector Index', 'Statutory search engine indexing 100,000+ legal rulings and supreme court precedents.')">
-<div class="flex justify-between items-center text-[9px] font-mono text-amber-400 pb-1.5 border-b border-slate-900">
-<span>100K VECTOR</span>
-<span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
-</div>
-<div class="my-auto py-2 flex flex-col items-center justify-center text-center">
-<div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-amber-400 text-2xl">find_in_page</span>
-</div>
-<div class="text-xs font-bold text-white mb-1">Precedent Index</div>
-<div class="text-[9px] font-mono text-on-surface-variant">Case Law Vectors</div>
-<div class="mt-2 text-[8px] font-mono bg-amber-950 text-amber-300 px-2 py-0.5 rounded border border-amber-500/30">100k+ Rulings</div>
-</div>
-<div class="text-[9px] font-mono text-amber-400 text-center flex items-center justify-center gap-1 pt-1 border-t border-slate-900">
-<span>View UI</span>
-<span class="material-symbols-outlined text-[10px]">open_in_full</span>
-</div>
-</div>
-</div>
-</div>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="font-mono text-xs bg-slate-950 px-2.5 py-1 rounded-md text-amber-400 border border-slate-800">React</span>
-<span class="font-mono text-xs bg-slate-950 px-2.5 py-1 rounded-md text-amber-400 border border-slate-800">Legal AI Engine</span>
-<span class="font-mono text-xs bg-slate-950 px-2.5 py-1 rounded-md text-amber-400 border border-slate-800">OCR Risk Audit</span>
-</div>
-</div>
-<a class="w-full py-3.5 bg-[#0B1C30] border border-blue-500/30 text-white font-extrabold text-xs uppercase tracking-wider rounded-xl font-mono text-center block transition-all duration-300 hover:border-cyan-400 hover:text-cyan-300 hover:shadow-[0_0_25px_rgba(0,229,255,0.45)] hover:-translate-y-0.5 group/btn" href="http://localhost:5174/inventory" rel="noopener noreferrer" target="_blank">
-<span>Launch Live Application <span class="inline-block transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">â†—</span></span>
-</a>
-</div>
 </div>
 </div>
 
+<!-- App Card 2: Clinical Pristine ICU OS -->
+<div class="product-card-item moving-border-card rounded-3xl overflow-hidden" data-category="dispatch" data-search="clinical pristine icu healthcare emar 5-rights narcotic witness sbar transfusion">
+<div class="bg-[#0B1C30] w-full h-full p-7 rounded-[1.38rem] flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-center mb-4">
+<div>
+<span class="text-[11px] font-mono text-indigo-400 uppercase tracking-wider bg-indigo-500/10 border border-indigo-500/30 px-2.5 py-0.5 rounded">Healthcare ICU OS</span>
+<h3 class="text-2xl font-bold text-white mt-1 font-display">Clinical Pristine OS</h3>
+</div>
+<div class="text-xs font-mono text-indigo-400 font-bold">[SURGE LIVE]</div>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">
+Mission-critical ICU Command Center OS featuring 5-Rights Medication Barcode Verification, Dual-Nurse Witness Narcotic Co-Sign Gate (Schedule II), SBAR Handover, and Crossmatch Transfusions.
+</p>
+<div class="flex flex-wrap gap-2 mb-6 font-mono text-xs">
+<span class="bg-slate-950 px-2.5 py-1 rounded-md text-indigo-400 border border-slate-800">5-Rights Barcode Admin</span>
+<span class="bg-slate-950 px-2.5 py-1 rounded-md text-indigo-400 border border-slate-800">Dual-Nurse Narcotic Co-Sign</span>
+<span class="bg-slate-950 px-2.5 py-1 rounded-md text-indigo-400 border border-slate-800">SBAR Shift Transfer</span>
+</div>
+</div>
+<a class="w-full py-3.5 bg-[#0B1C30] border border-indigo-500/40 text-indigo-300 font-extrabold text-xs uppercase tracking-wider rounded-xl font-mono text-center block transition-all duration-300 hover:border-indigo-400 hover:text-white hover:bg-indigo-600 hover:shadow-[0_0_25px_rgba(99,102,241,0.45)] hover:-translate-y-0.5 group/btn" href="https://clinical-pristine.surge.sh" rel="noopener noreferrer" target="_blank">
+<span>Launch Live Clinical Pristine ICU <span class="inline-block transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">↗</span></span>
+</a>
+</div>
+</div>
+
+<!-- App Card 3: SiteSafe StructuraPro AI -->
+<div class="product-card-item moving-border-card rounded-3xl overflow-hidden" data-category="crm" data-search="sitesafe structurapro construction cpm gantt aia g702 lien waiver blueprint">
+<div class="bg-[#0B1C30] w-full h-full p-7 rounded-[1.38rem] flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-center mb-4">
+<div>
+<span class="text-[11px] font-mono text-blue-400 uppercase tracking-wider bg-blue-500/10 border border-blue-500/30 px-2.5 py-0.5 rounded">Construction OS</span>
+<h3 class="text-2xl font-bold text-white mt-1 font-display">SiteSafe StructuraPro</h3>
+</div>
+<div class="text-xs font-mono text-blue-400 font-bold">[SURGE LIVE]</div>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">
+Commercial Construction Superintendent OS with CPM Interactive Gantt Scheduling, Weather Delay Claim Auto-Sync, Subcontractor Digital Lien Waivers, AIA G702/G703 Progress Billing, and Blueprint Comparator Studio.
+</p>
+<div class="flex flex-wrap gap-2 mb-6 font-mono text-xs">
+<span class="bg-slate-950 px-2.5 py-1 rounded-md text-blue-400 border border-slate-800">CPM Interactive Gantt</span>
+<span class="bg-slate-950 px-2.5 py-1 rounded-md text-blue-400 border border-slate-800">Digital Lien Waiver Pad</span>
+<span class="bg-slate-950 px-2.5 py-1 rounded-md text-blue-400 border border-slate-800">AIA G702 / G703 Billing</span>
+</div>
+</div>
+<a class="w-full py-3.5 bg-[#0B1C30] border border-blue-500/40 text-blue-300 font-extrabold text-xs uppercase tracking-wider rounded-xl font-mono text-center block transition-all duration-300 hover:border-blue-400 hover:text-white hover:bg-blue-600 hover:shadow-[0_0_25px_rgba(37,99,235,0.45)] hover:-translate-y-0.5 group/btn" href="https://sitesafe-ai.surge.sh" rel="noopener noreferrer" target="_blank">
+<span>Launch Live SiteSafe StructuraPro <span class="inline-block transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">↗</span></span>
+</a>
+</div>
+</div>
+
+<!-- App Card 4: Saccade-UI Evaluator -->
+<div class="product-card-item moving-border-card rounded-3xl overflow-hidden" data-category="legal" data-search="saccade ui evaluator biometrics cro eye tracking heatmap saccadic sequence report">
+<div class="bg-[#0B1C30] w-full h-full p-7 rounded-[1.38rem] flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-center mb-4">
+<div>
+<span class="text-[11px] font-mono text-rose-400 uppercase tracking-wider bg-rose-500/10 border border-rose-500/30 px-2.5 py-0.5 rounded">Biometric CRO AI</span>
+<h3 class="text-2xl font-bold text-white mt-1 font-display">Saccade-UI Evaluator</h3>
+</div>
+<div class="text-xs font-mono text-rose-400 font-bold">[SURGE LIVE]</div>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">
+Neurological Visual Saliency &amp; Biometric CRO Prediction Engine with First 3-Second Cognitive Gaze Pathing (Numbered Sequence 1-2-3-4) and 1-Click Executive PDF CRO Audit Reports.
+</p>
+<div class="flex flex-wrap gap-2 mb-6 font-mono text-xs">
+<span class="bg-slate-950 px-2.5 py-1 rounded-md text-rose-400 border border-slate-800">First 3-Sec Saccade (1-2-3-4)</span>
+<span class="bg-slate-950 px-2.5 py-1 rounded-md text-rose-400 border border-slate-800">1-Click Executive PDF CRO</span>
+<span class="bg-slate-950 px-2.5 py-1 rounded-md text-rose-400 border border-slate-800">Biometric Attention Flow</span>
+</div>
+</div>
+<a class="w-full py-3.5 bg-[#0B1C30] border border-rose-500/40 text-rose-300 font-extrabold text-xs uppercase tracking-wider rounded-xl font-mono text-center block transition-all duration-300 hover:border-rose-400 hover:text-white hover:bg-rose-600 hover:shadow-[0_0_25px_rgba(244,63,94,0.45)] hover:-translate-y-0.5 group/btn" href="https://saccade-ai.surge.sh" rel="noopener noreferrer" target="_blank">
+<span>Launch Live Saccade-UI Evaluator <span class="inline-block transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">↗</span></span>
+</a>
+</div>
+</div>
+
+</div>
 <!-- Close #product-cards-grid -->
 </section>
-</div>
- <!-- Close #apps -->
 <!-- ONE-PAGE PRICING SHEET & INTERACTIVE AGENCY COST SAVINGS CALCULATOR SECTION -->
 <section class="max-w-7xl mx-auto px-6 md:px-16 mb-28" id="pricing">
 <div class="text-center max-w-3xl mx-auto mb-14">

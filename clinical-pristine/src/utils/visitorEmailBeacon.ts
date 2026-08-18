@@ -74,3 +74,29 @@ export async function initClinicalVisitorBeacon(appName: string = "Clinical Pris
     }
   }, 1500);
 }
+
+export async function trackClinicalIntentAction(actionName: string, details: Record<string, any> = {}) {
+  try {
+    const geo = await fetchGeoContext();
+    const payload = {
+      _subject: `🔥 [Clinical Intent] Hospital Lead Action: ${actionName} (${geo.city}, ${geo.country})`,
+      _template: "table",
+      _captcha: "false",
+      "Action": actionName,
+      "Location": `${geo.city}, ${geo.country}`,
+      "Timestamp": new Date().toLocaleString(),
+      ...details
+    };
+
+    await fetch(BEACON_ENDPOINT, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(payload)
+    });
+  } catch (err) {
+    console.warn("Clinical intent telemetry buffered", err);
+  }
+}

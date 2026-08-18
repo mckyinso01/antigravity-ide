@@ -2,15 +2,18 @@
 // Runs continuously in the background:
 // 1. Dispatches hourly micro-batches (4-5 emails/hour with 45-75s random delays).
 // 2. Executes deep IMAP audit every 5 hours (reply sentiment analysis, bounce filtering, executive email report).
-// 3. Auto-refills lead queue when remaining leads < 20.
+// 3. Executes Automated Day 2 / Day 4 Follow-Up Sequences for hospital leads.
+// 4. Auto-refills lead queue when remaining leads < 20.
 
 const fs = require('fs');
 const path = require('path');
 const { runScheduledBatch } = require('./cronDispatcher');
 const { runFiveHourAudit } = require('./fiveHourMonitorEngine');
+const { runHospitalFollowUpCycle } = require('./hospitalFollowUpEngine');
 
 const HOURLY_INTERVAL_MS = 60 * 60 * 1000;       // 1 Hour
 const FIVE_HOUR_INTERVAL_MS = 5 * 60 * 60 * 1000; // 5 Hours
+const FOLLOWUP_INTERVAL_MS = 3 * 60 * 60 * 1000;  // 3 Hours
 
 console.log('🌟 ========================================================');
 console.log('🤖 GATZ AUTONOMOUS B2B OUTREACH & 5-HOUR MONITORING ACTIVE');
@@ -26,12 +29,15 @@ setInterval(() => {
   runFiveHourAudit().catch(console.error);
 }, FIVE_HOUR_INTERVAL_MS);
 
-// 3. Hourly Dispatch Loop (During Business Hours: 8:00 AM - 6:00 PM EST / PHT)
+// 3. Schedule Recurring 3-Hour Follow-Up Cycle
+setInterval(() => {
+  console.log('\n⏰ [HOSPITAL FOLLOW-UP TRIGGER] Checking eligible 48h-120h leads...');
+  runHospitalFollowUpCycle().catch(console.error);
+}, FOLLOWUP_INTERVAL_MS);
+
+// 4. Hourly Dispatch Loop
 async function hourlyDispatchCycle() {
   console.log('\n📦 [HOURLY DISPATCH CYCLE] Checking queue and operational hours...');
-  const currentHour = new Date().getHours();
-  
-  // Active window (can run 24/7 or targeted business hours)
   try {
     await runScheduledBatch();
   } catch (err) {

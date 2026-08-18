@@ -1,5 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const dns = require('dns');
+dns.setServers(['8.8.8.8', '1.1.1.1']);
+const dnsPromises = dns.promises;
 const nodemailer = require('nodemailer');
 
 const SENDER_EMAIL = 'mckinsyo01@gmail.com';
@@ -18,6 +21,35 @@ const transporter = nodemailer.createTransport({
 const LEADS_FILE = path.join(__dirname, 'verified_100_us_uk_hospitals.json');
 const STATE_FILE = path.join(__dirname, 'outreach_state.json');
 const LOG_FILE = path.join(__dirname, 'outreach_dispatch_log.json');
+
+// Pre-Flight Deliverability Shield
+async function verifyEmailDeliverability(email) {
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (!email || !emailRegex.test(email)) {
+    return { valid: false, reason: 'INVALID_SYNTAX' };
+  }
+
+  const [localPart, domain] = email.toLowerCase().split('@');
+  const blacklistedLocalParts = [
+    'catch-all', 'admin', 'administrator', 'group', 'all', 'everyone',
+    'postmaster', 'mailer-daemon', 'no-reply', 'noreply', 'helpdesk',
+    'support-team', 'info-noreply', 'system'
+  ];
+
+  if (blacklistedLocalParts.includes(localPart)) {
+    return { valid: false, reason: `GENERIC_GROUP_ALIAS_BLOCKED (${localPart}@)` };
+  }
+
+  try {
+    const mxRecords = await dnsPromises.resolveMx(domain);
+    if (!mxRecords || mxRecords.length === 0) {
+      return { valid: false, reason: 'NO_MX_RECORDS_FOUND_FOR_DOMAIN' };
+    }
+    return { valid: true, mxHost: mxRecords[0].exchange };
+  } catch (err) {
+    return { valid: false, reason: `DNS_MX_LOOKUP_FAILED (${err.code || err.message})` };
+  }
+}
 
 function getState() {
   if (!fs.existsSync(STATE_FILE)) {
@@ -129,7 +161,7 @@ Clinical Live Workstation: https://clinical-pristine.surge.sh/`;
 }
 
 async function runScheduledBatch() {
-  console.log('⏰ [CRON TRIGGER] Starting Scheduled Daily B2B Hospital Outreach Batch...');
+  console.log('⏰ [CRON TRIGGER] Starting Scheduled Daily B2B Hospital Outreach Batch with Pre-Flight MX Shield...');
   await transporter.verify();
   console.log('✅ SMTP Authenticated as mckinsyo01@gmail.com');
 
@@ -153,10 +185,32 @@ async function runScheduledBatch() {
 
   for (let i = 0; i < currentBatch.length; i++) {
     const lead = currentBatch[i];
-    const { subject, plainText, html } = generateEmailContent(lead);
     const targetEmail = lead.sample_email;
 
-    console.log(`\n📨 [${i + 1}/${currentBatch.length}] Dispatching to #${lead.id}: ${lead.hospital_name} -> ${targetEmail}`);
+    // PRE-FLIGHT DELIVERABILITY CHECK
+    console.log(`\n🛡️ [PRE-FLIGHT] Checking deliverability for #${lead.id} ${lead.hospital_name} (${targetEmail})...`);
+    const deliverability = await verifyEmailDeliverability(targetEmail);
+
+    if (!deliverability.valid) {
+      console.warn(`  ⚠️ BLOCKED BY PRE-FLIGHT SHIELD: ${deliverability.reason}`);
+      const entry = {
+        id: lead.id,
+        hospital: lead.hospital_name,
+        recipient: targetEmail,
+        status: 'SKIPPED_PREFLIGHT',
+        reason: deliverability.reason,
+        timestamp: new Date().toISOString()
+      };
+      logs.push(entry);
+      batchResults.push(entry);
+      fs.writeFileSync(LOG_FILE, JSON.stringify(logs, null, 2));
+      continue;
+    }
+
+    console.log(`  ✓ DNS MX Active: ${deliverability.mxHost}`);
+    const { subject, plainText, html } = generateEmailContent(lead);
+
+    console.log(`📨 [${i + 1}/${currentBatch.length}] Dispatching to #${lead.id}: ${lead.hospital_name} -> ${targetEmail}`);
 
     try {
       const info = await transporter.sendMail({
@@ -167,7 +221,7 @@ async function runScheduledBatch() {
         html: html
       });
 
-      console.log(`✅ SUCCESS! MessageId: ${info.messageId}`);
+      console.log(`  ✅ SUCCESS! MessageId: ${info.messageId}`);
       const entry = {
         id: lead.id,
         hospital: lead.hospital_name,
@@ -179,7 +233,7 @@ async function runScheduledBatch() {
       logs.push(entry);
       batchResults.push(entry);
     } catch (err) {
-      console.error(`❌ FAILED for #${lead.id} (${targetEmail}):`, err.message);
+      console.error(`  ❌ FAILED for #${lead.id} (${targetEmail}):`, err.message);
       const entry = {
         id: lead.id,
         hospital: lead.hospital_name,
@@ -201,14 +255,16 @@ async function runScheduledBatch() {
     }
   }
 
+  const successfulInBatch = batchResults.filter(r => r.status === 'SUCCESS').length;
   // Update State
   state.nextLeadId = endId + 1;
-  state.totalSent += batchResults.filter(r => r.status === 'SUCCESS').length;
+  state.totalSent += successfulInBatch;
   state.lastRun = new Date().toISOString();
   state.history.push({
     runAt: new Date().toISOString(),
     batchRange: `${startId}-${endId}`,
-    successCount: batchResults.filter(r => r.status === 'SUCCESS').length,
+    successCount: successfulInBatch,
+    skippedCount: batchResults.filter(r => r.status === 'SKIPPED_PREFLIGHT').length,
     failedCount: batchResults.filter(r => r.status === 'FAILED').length
   });
   saveState(state);
@@ -218,10 +274,11 @@ async function runScheduledBatch() {
     await transporter.sendMail({
       from: `"Gatz Outreach Automator" <${SENDER_EMAIL}>`,
       to: SENDER_EMAIL,
-      subject: `📊 [Outreach Summary] Batch #${startId}-${endId} Completed (${batchResults.length} Hospitals)`,
+      subject: `📊 [Outreach Summary] Batch #${startId}-${endId} Completed (${successfulInBatch} Hospitals Delivered)`,
       text: `Daily B2B Outreach Cron Execution Complete:\n\n` +
         `• Batch Range: #${startId} - #${endId}\n` +
-        `• Successfully Delivered: ${batchResults.filter(r => r.status === 'SUCCESS').length}\n` +
+        `• Successfully Delivered: ${successfulInBatch}\n` +
+        `• Pre-Flight Blocked (Bad MX/Catch-All): ${batchResults.filter(r => r.status === 'SKIPPED_PREFLIGHT').length}\n` +
         `• Next Scheduled Batch: #${state.nextLeadId}\n` +
         `• Total Processed to date: ${state.nextLeadId - 1} / 100 Hospitals.\n\n` +
         `Targeted Institutions in this batch:\n` +
@@ -240,4 +297,4 @@ if (require.main === module) {
   runScheduledBatch().catch(console.error);
 }
 
-module.exports = { runScheduledBatch };
+module.exports = { runScheduledBatch, verifyEmailDeliverability };

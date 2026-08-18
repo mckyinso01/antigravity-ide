@@ -6,7 +6,8 @@ import {
   Layers, 
   ChevronDown,
   Terminal,
-  RotateCcw
+  RotateCcw,
+  Lock
 } from 'lucide-react';
 import { HelpTooltip } from './HelpTooltip';
 
@@ -17,6 +18,10 @@ interface NavigationHeaderProps {
   onOpenSearch: (query: string) => void;
   activeWarehouseName: string;
   onChangeWarehouse: (name: string) => void;
+  onManualLock?: () => void;
+  onOpenTimeoutSettings?: () => void;
+  activeStaffName?: string;
+  currentTimeoutSeconds?: number;
 }
 
 export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
@@ -25,7 +30,11 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
   onOpenCleanSweep,
   onOpenSearch,
   activeWarehouseName,
-  onChangeWarehouse
+  onChangeWarehouse,
+  onManualLock,
+  onOpenTimeoutSettings,
+  activeStaffName = 'Dave Miller',
+  currentTimeoutSeconds = 120
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [time, setTime] = useState(new Date().toLocaleTimeString());
@@ -138,6 +147,46 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
             <ScanLine size={15} className="stroke-[2.5]" />
             <span className="hidden sm:inline">Camera/RFID Scanner</span>
           </button>
+        </HelpTooltip>
+
+        {/* Active Staff Shift Badge */}
+        <div className="hidden xl:flex items-center gap-2 bg-[#0D1527] border border-[#1E2D4D] px-2.5 py-1 rounded-lg text-xs font-mono">
+          <div className="w-2 h-2 rounded-full bg-[#5BC0BE]"></div>
+          <span className="text-slate-300 font-bold">{activeStaffName}</span>
+        </div>
+
+        {/* Workstation Auto-Lock & Manual Lock Trigger */}
+        <HelpTooltip
+          title="Terminal Inactivity Auto-Lock (Configurable)"
+          purpose="Locks the terminal to protect picking orders and inventory ledger. Configurable timeout: active and adjustable for any user."
+          howTo="Click lock to immediately pause session, or click timeout pill to customize auto-lock seconds. Shortcut: Ctrl + L."
+          shortcut="Ctrl + L"
+          position="bottom"
+        >
+          <div className="flex items-center gap-1 bg-[#0D1527] border border-[#1E2D4D] rounded-lg p-0.5">
+            {onManualLock && (
+              <button
+                type="button"
+                onClick={onManualLock}
+                className="flex items-center gap-1 bg-[#1C2541] hover:bg-[#2A375E] text-[#6FFFE9] px-2.5 py-1 rounded-md text-xs font-mono font-bold transition cursor-pointer"
+                title="Lock Terminal Now (Ctrl+L)"
+              >
+                <Lock size={13} className="text-[#5BC0BE]" />
+                <span className="hidden sm:inline">Lock</span>
+              </button>
+            )}
+
+            {onOpenTimeoutSettings && (
+              <button
+                type="button"
+                onClick={onOpenTimeoutSettings}
+                className="px-1.5 py-1 text-slate-400 hover:text-[#6FFFE9] text-[10px] font-mono hover:bg-[#1C2541] rounded transition"
+                title="Configure Inactivity Auto-Lock Seconds"
+              >
+                {currentTimeoutSeconds === 0 ? '∞' : `${currentTimeoutSeconds}s`}
+              </button>
+            )}
+          </div>
         </HelpTooltip>
 
         {/* System Specs & Licensing */}

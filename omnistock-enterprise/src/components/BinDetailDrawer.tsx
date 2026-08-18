@@ -14,7 +14,9 @@ import {
   Upload,
   RefreshCw,
   Sparkles,
-  Layers
+  Layers,
+  AlertTriangle,
+  Clock
 } from 'lucide-react';
 import { HelpTooltip } from './HelpTooltip';
 
@@ -297,14 +299,77 @@ export const BinDetailDrawer: React.FC<BinDetailDrawerProps> = ({
             {/* Stored SKU Card */}
             {bin.skuCode ? (
               <div className="p-3.5 rounded-xl bg-[#121D36] border border-[#2A4374] space-y-2.5 shadow-lg">
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] text-[#5BC0BE] font-bold uppercase tracking-wider">
-                    {bin.skuCategory || 'STORED INVENTORY'}
-                  </span>
-                  <span className="text-[9px] px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-700 font-bold">
-                    CLASS {bin.velocityClass}
-                  </span>
-                </div>
+                {/* FEFO Expiry Calculation */}
+                {(() => {
+                  const daysUntilExpiry = bin.expiryDate
+                    ? Math.ceil((new Date(bin.expiryDate).getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24))
+                    : null;
+                  const isExpiringSoon = daysUntilExpiry !== null && daysUntilExpiry <= 30 && daysUntilExpiry >= 0;
+                  const isCriticalExpiry = daysUntilExpiry !== null && daysUntilExpiry <= 7 && daysUntilExpiry >= 0;
+                  const isExpired = daysUntilExpiry !== null && daysUntilExpiry < 0;
+
+                  return (
+                    <>
+                      <div className="flex items-center justify-between">
+                        <span className="text-[10px] text-[#5BC0BE] font-bold uppercase tracking-wider">
+                          {bin.skuCategory || 'STORED INVENTORY'}
+                        </span>
+                        <div className="flex items-center gap-1.5">
+                          {isExpired ? (
+                            <span className="text-[9px] px-2 py-0.5 rounded bg-rose-950 text-rose-300 border border-rose-600 font-extrabold uppercase">
+                              🚨 EXPIRED LOT
+                            </span>
+                          ) : isExpiringSoon ? (
+                            <span className={`text-[9px] px-2 py-0.5 rounded font-extrabold uppercase border flex items-center gap-1 ${
+                              isCriticalExpiry
+                                ? 'bg-rose-950 text-rose-300 border-rose-500 animate-pulse'
+                                : 'bg-amber-950 text-amber-300 border-amber-600'
+                            }`}>
+                              <Clock size={10} />
+                              FEFO: {daysUntilExpiry}d LEFT
+                            </span>
+                          ) : (
+                            <span className="text-[9px] px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-700 font-bold">
+                              FEFO FRESH
+                            </span>
+                          )}
+                          <span className="text-[9px] px-2 py-0.5 rounded bg-[#0A1124] text-slate-300 border border-[#2A4374] font-bold">
+                            CLASS {bin.velocityClass}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Expired Quarantine Banner */}
+                      {isExpired && (
+                        <div className="p-2.5 rounded-lg bg-rose-950/80 border border-rose-600 text-rose-200 text-[11px] flex items-center justify-between shadow-md">
+                          <div className="flex items-center gap-1.5">
+                            <AlertTriangle size={14} className="text-rose-400 shrink-0" />
+                            <span><strong>EXPIRED LOT:</strong> Do not release for picking.</span>
+                          </div>
+                          <button
+                            onClick={() => onTransfer(bin.id, 'QUARANTINE-01', bin.quantity)}
+                            className="px-2 py-0.5 bg-rose-600 hover:bg-rose-500 text-white rounded text-[10px] font-bold transition-all cursor-pointer"
+                          >
+                            Quarantine
+                          </button>
+                        </div>
+                      )}
+
+                      {/* Expiring Soon FEFO Priority Banner */}
+                      {isExpiringSoon && (
+                        <div className="p-2.5 rounded-lg bg-amber-950/80 border border-amber-500 text-amber-200 text-[11px] flex items-center justify-between shadow-md">
+                          <div className="flex items-center gap-1.5">
+                            <Clock size={14} className="text-amber-400 shrink-0 animate-pulse" />
+                            <span><strong>FEFO RULE:</strong> Expiring in {daysUntilExpiry} days. Pick first!</span>
+                          </div>
+                          <span className="px-1.5 py-0.5 bg-amber-500 text-black font-extrabold text-[9px] rounded uppercase">
+                            Prioritize
+                          </span>
+                        </div>
+                      )}
+                    </>
+                  );
+                })()}
 
                 <h4 className="text-white font-sans font-bold text-sm leading-snug">
                   {bin.skuName}
@@ -339,7 +404,7 @@ export const BinDetailDrawer: React.FC<BinDetailDrawerProps> = ({
                     <strong className="text-slate-200 font-mono">{bin.batchLot || 'LOT-2026-X1'}</strong>
                   </div>
                   <div>
-                    <span className="text-slate-400 block text-[9px]">EXPIRATION</span>
+                    <span className="text-slate-400 block text-[9px]">EXPIRATION (FEFO)</span>
                     <strong className="text-amber-300 font-mono">{bin.expiryDate || '2028-12-31'}</strong>
                   </div>
                 </div>

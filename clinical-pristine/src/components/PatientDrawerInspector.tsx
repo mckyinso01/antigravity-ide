@@ -26,9 +26,10 @@ import {
   Zap,
   CheckCircle2,
   Sparkles,
-  Activity
+  Activity,
+  ShieldCheck
 } from 'lucide-react';
-import { db, type RoomData, type BedData } from '../db';
+import { db, type RoomData, type BedData, type MedicationOrder } from '../db';
 import { useToast } from '../contexts/ToastContext';
 import { useEmergency } from '../contexts/EmergencyContext';
 import { BloodTransfusionModal } from './BloodTransfusionModal';
@@ -38,6 +39,7 @@ import { LabTatCountdown } from './LabTatCountdown';
 import { DynamicPatientAvatar } from './DynamicPatientAvatar';
 import { AddMedicationModal } from './AddMedicationModal';
 import { AttachApparatusModal } from './AttachApparatusModal';
+import { FiveRightsMedicationModal } from './FiveRightsMedicationModal';
 
 interface Props {
   room: RoomData | null;
@@ -70,6 +72,8 @@ export const PatientDrawerInspector = ({
   const [sbarTargetBed, setSbarTargetBed] = useState<BedData | null>(null);
   const [phlebotomyTargetBed, setPhlebotomyTargetBed] = useState<BedData | null>(null);
   const [medTargetBed, setMedTargetBed] = useState<BedData | null>(null);
+  const [fiveRightsTargetBed, setFiveRightsTargetBed] = useState<BedData | null>(null);
+  const [fiveRightsTargetMed, setFiveRightsTargetMed] = useState<MedicationOrder | null>(null);
   const [apparatusTargetBed, setApparatusTargetBed] = useState<BedData | null>(null);
   const [showDataSourceBedId, setShowDataSourceBedId] = useState<string | null>(null);
 
@@ -563,12 +567,26 @@ export const PatientDrawerInspector = ({
                                       <Check size={13} className="text-emerald-700" /> Given
                                     </span>
                                   ) : (
-                                    <button
-                                      onClick={() => handleMarkMedGiven(bed.id, idx)}
-                                      className="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-[11px] font-black border-2 border-blue-700 transition-all cursor-pointer shadow-sm hover:shadow-md hover:-translate-y-0.5"
-                                    >
-                                      Log Given
-                                    </button>
+                                    <div className="flex items-center gap-1.5">
+                                      <button
+                                        onClick={() => {
+                                          setFiveRightsTargetBed(bed);
+                                          setFiveRightsTargetMed(med);
+                                        }}
+                                        className="px-2.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] font-black border-2 border-emerald-700 transition-all cursor-pointer shadow-sm flex items-center gap-1"
+                                        title="5-Rights Barcode Verification & Dual Nurse Co-Sign"
+                                      >
+                                        <ShieldCheck size={13} />
+                                        <span>5-Rights Administer</span>
+                                      </button>
+                                      <button
+                                        onClick={() => handleMarkMedGiven(bed.id, idx)}
+                                        className="px-2.5 py-1.5 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-800 text-[11px] font-black border-2 border-slate-300 transition-all cursor-pointer shadow-xs"
+                                        title="Quick Log"
+                                      >
+                                        Quick Given
+                                      </button>
+                                    </div>
                                   )}
                                 </div>
                               ))
@@ -760,6 +778,16 @@ export const PatientDrawerInspector = ({
         isOpen={!!medTargetBed}
         onClose={() => setMedTargetBed(null)}
         bed={medTargetBed}
+      />
+
+      <FiveRightsMedicationModal
+        isOpen={!!fiveRightsTargetBed}
+        onClose={() => {
+          setFiveRightsTargetBed(null);
+          setFiveRightsTargetMed(null);
+        }}
+        bed={fiveRightsTargetBed}
+        medicationOrder={fiveRightsTargetMed}
       />
 
       <AttachApparatusModal

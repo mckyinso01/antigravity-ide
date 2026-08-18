@@ -1,9 +1,49 @@
 {
-  "nextLeadId": 1,
-  "totalSent": 0,
+  "nextLeadId": 31,
+  "totalSent": 30,
   "dailyBatchSize": 5,
   "delaySecondsMin": 35,
   "delaySecondsMax": 55,
-  "lastRun": null,
-  "history": []
+  "lastRun": "2026-08-18T16:41:34.578Z",
+  "history": [
+    {
+      "runAt": "2026-08-17T14:19:02.141Z",
+      "batchRange": "1-5",
+      "successCount": 5,
+      "failedCount": 0
+    },
+    {
+      "runAt": "2026-08-17T15:18:24.493Z",
+      "batchRange": "6-10",
+      "successCount": 5,
+      "failedCount": 0
+    },
+    {
+      "runAt": "2026-08-17T16:18:24.993Z",
+      "batchRange": "11-15",
+      "successCount": 5,
+      "failedCount": 0
+    },
+    {
+      "runAt": "2026-08-18T14:41:32.025Z",
+      "batchRange": "16-20",
+      "successCount": 5,
+      "skippedCount": 0,
+      "failedCount": 0
+    },
+    {
+      "runAt": "2026-08-18T15:41:38.125Z",
+      "batchRange": "21-25",
+      "successCount": 5,
+      "skippedCount": 0,
+      "failedCount": 0
+    },
+    {
+      "runAt": "2026-08-18T16:41:34.578Z",
+      "batchRange": "26-30",
+      "successCount": 5,
+      "skippedCount": 0,
+      "failedCount": 0
+    }
+  ]
 }

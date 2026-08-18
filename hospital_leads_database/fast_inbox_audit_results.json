@@ -1,0 +1,146 @@
+{
+  "auditedAt": "2026-08-18T13:00:37.952Z",
+  "totalEmailsChecked": 416,
+  "visitors": [
+    {
+      "date": "Mon, 17 Aug 2026 13:56:34 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://gatzdevs.surge.sh/"
+    },
+    {
+      "date": "Mon, 17 Aug 2026 13:57:37 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from San Roque, Philippines"
+    },
+    {
+      "date": "Mon, 17 Aug 2026 13:58:13 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from San Roque, Philippines"
+    },
+    {
+      "date": "Mon, 17 Aug 2026 14:21:43 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from San Francisco, United States"
+    },
+    {
+      "date": "Mon, 17 Aug 2026 14:50:58 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://omnistock.surge.sh/"
+    },
+    {
+      "date": "Mon, 17 Aug 2026 15:17:27 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Ashburn, United States"
+    },
+    {
+      "date": "Mon, 17 Aug 2026 15:17:36 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Quincy, United States"
+    },
+    {
+      "date": "Mon, 17 Aug 2026 15:19:22 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Los Angeles, United States"
+    },
+    {
+      "date": "Mon, 17 Aug 2026 16:16:27 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Quincy, United States"
+    },
+    {
+      "date": "Mon, 17 Aug 2026 16:18:27 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Quincy, United States"
+    },
+    {
+      "date": "Mon, 17 Aug 2026 16:18:32 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Quincy, United States"
+    },
+    {
+      "date": "Mon, 17 Aug 2026 16:18:33 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Quincy, United States"
+    },
+    {
+      "date": "Mon, 17 Aug 2026 16:19:27 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Des Moines, United States"
+    },
+    {
+      "date": "Mon, 17 Aug 2026 16:29:34 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Singapore, Singapore"
+    },
+    {
+      "date": "Mon, 17 Aug 2026 16:29:35 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://omnistock.surge.sh/"
+    },
+    {
+      "date": "Mon, 17 Aug 2026 16:35:29 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Ashburn, United States"
+    },
+    {
+      "date": "Mon, 17 Aug 2026 16:36:53 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Unknown, Global/VPN"
+    },
+    {
+      "date": "Mon, 17 Aug 2026 16:38:14 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://omnistock.surge.sh/"
+    },
+    {
+      "date": "Mon, 17 Aug 2026 17:16:21 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Reston, United States"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 10:49:12 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Unknown, Global/VPN"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 12:56:54 +0000",
+      "from": "OmniStock Lead Alert <mckinsyo01@gmail.com>",
+      "subject": "🚨 [HIGH INTENT LEAD] Inbound OmniStock Enterprise Reply! (FormSubmit <submissions@formsubmit.co>)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 12:56:56 +0000",
+      "from": "OmniStock Pipeline Manager <mckinsyo01@gmail.com>",
+      "subject": "📊 [OmniStock 5-Hour Report] 20 Dispatched • 80 Remaining • 3 Replies"
+    }
+  ],
+  "orders": [
+    {
+      "date": "Sat, 8 Aug 2026 14:00:10 +0000",
+      "from": "Stripe <notifications@stripe.com>",
+      "subject": "[Action required] Complete your Stripe setup by August 15, 2026 to avoid losing your work"
+    },
+    {
+      "date": "Sun, 9 Aug 2026 20:47:10 +0000",
+      "from": "MMFYT <contact@mmfyt.fr>",
+      "subject": "You have received your $800 (USD) transfer"
+    },
+    {
+      "date": "Thu, 13 Aug 2026 08:35:22 -0700",
+      "from": "Google Play <googleplay-noreply@google.com>",
+      "subject": "Your Google Play Order Receipt from Aug 13, 2026"
+    },
+    {
+      "date": "Mon, 17 Aug 2026 05:25:26 -0700",
+      "from": "Google Play <googleplay-noreply@google.com>",
+      "subject": "Facebook subscription suspended due to payment issue"
+    }
+  ],
+  "bounces": [
+    {
+      "date": "Mon, 17 Aug 2026 09:29:49 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    }
+  ],
+  "prospectReplies": []
+}

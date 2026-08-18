@@ -147,7 +147,9 @@
     "email": "customercare@kccmalls.com",
     "channel": "Official Support Channel",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED",
+    "decision_maker": "Arvin T. Chan (Chairperson & CEO)"
   },
   {
     "id": 16,
@@ -207,7 +209,8 @@
     "email": "info@ultramega.com.ph",
     "channel": "Official Wholesale Portal",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "decision_maker": "Benito Lim (President & Owner) / Julie Lim (VP Operations)"
   },
   {
     "id": 22,
@@ -217,17 +220,19 @@
     "email": "customer.care@robinsonsretail.com.ph",
     "channel": "Official Retail Unit",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "decision_maker": "Robina Gokongwei-Pe (CEO) / Stanley C. Co (COO)"
   },
   {
     "id": 23,
     "sector": "Supermarkets & Grocery",
     "company": "Davao Choice Mart",
-    "domain": "choicemart.com.ph",
-    "email": "info@choicemart.com.ph",
+    "domain": "nccc.com.ph",
+    "email": "customercare@nccc.com.ph",
     "channel": "Official Regional Retailer",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "decision_maker": "Lim Family Executive Directorate (NCCC / Choice Mart Group)"
   },
   {
     "id": 24,
@@ -247,7 +252,8 @@
     "email": "inquiry@southsupermarket.com.ph",
     "channel": "Official Customer Portal",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "decision_maker": "Executive Operations Board (Grand Union Supermarket Inc)"
   },
   {
     "id": 26,
@@ -257,7 +263,8 @@
     "email": "feedback@mercurydrug.com",
     "channel": "Official Corporate Feedback",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "decision_maker": "Executive Stewardship & National Supply Chain Directorate"
   },
   {
     "id": 27,
@@ -267,7 +274,8 @@
     "email": "customercare@southstardrug.com.ph",
     "channel": "Official Customer Care",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "decision_maker": "Stanley C. Co (President & CEO) / Thaddeus L. Sanchez (General Manager)"
   },
   {
     "id": 28,
@@ -277,17 +285,19 @@
     "email": "watsons.customercare@watsons.com.ph",
     "channel": "Official Corporate Support",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "decision_maker": "Danilo S. Chiong (Managing Director) / Jessie Calinog (Head of Supply Chain)"
   },
   {
     "id": 29,
     "sector": "Pharmacy & Health",
     "company": "Rose Pharmacy",
-    "domain": "rosepharmacy.com",
-    "email": "customercare@rosepharmacy.com",
+    "domain": "robinsonsretail.com.ph",
+    "email": "customer.care@robinsonsretail.com.ph",
     "channel": "Official Pharmacy Portal",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "decision_maker": "Michael G. So (General Manager) / Mariel Crisostomo (Group GM)"
   },
   {
     "id": 30,
@@ -297,7 +307,8 @@
     "email": "customercare@generika.com.ph",
     "channel": "Official Customer Portal",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "decision_maker": "Adrian Gino Guinto (President & CEO) / Atty. Yet Abarca (AC Health Pharma CEO)"
   },
   {
     "id": 31,

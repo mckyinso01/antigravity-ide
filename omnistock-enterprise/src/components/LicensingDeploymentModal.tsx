@@ -19,13 +19,19 @@ import {
   TrendingUp,
   Tag,
   ShieldAlert,
-  HelpCircle,
   EyeOff,
   CheckCircle2,
   DollarSign,
   FileText,
   Scale,
-  AlertCircle
+  Calendar,
+  Clock,
+  Building,
+  User,
+  Phone,
+  Send,
+  Printer,
+  Copy
 } from 'lucide-react';
 import { trackHighIntentAction } from '../utils/visitorEmailBeacon';
 
@@ -34,7 +40,7 @@ interface LicensingDeploymentModalProps {
   onClose: () => void;
 }
 
-type TabType = 'scenarios' | 'security' | 'ergonomics' | 'pricing' | 'terms';
+type TabType = 'scenarios' | 'security' | 'ergonomics' | 'pricing' | 'schedule' | 'terms';
 
 interface PitchScenario {
   id: string;
@@ -52,19 +58,74 @@ export const LicensingDeploymentModal: React.FC<LicensingDeploymentModalProps> =
   isOpen,
   onClose
 }) => {
-  const [activeTab, setActiveTab] = useState<TabType>('scenarios');
+  const [activeTab, setActiveTab] = useState<TabType>('pricing');
   const [selectedScenarioFilter, setSelectedScenarioFilter] = useState<string>('ALL');
+
+  // Booking Form State
+  const [bookingName, setBookingName] = useState('');
+  const [bookingEmail, setBookingEmail] = useState('');
+  const [bookingCompany, setBookingCompany] = useState('');
+  const [bookingPhone, setBookingPhone] = useState('');
+  const [bookingBays, setBookingBays] = useState('50 - 200 Bays');
+  const [bookingSlot, setBookingSlot] = useState('Tomorrow 10:00 AM EST / 10:00 PM PHT');
+  const [bookingSubmitted, setBookingSubmitted] = useState(false);
+  const [isSubmittingBooking, setIsSubmittingBooking] = useState(false);
+
+  // Pro-Forma Invoice State
+  const [invoiceTier, setInvoiceTier] = useState('Tier 1: Single DC ($4,500)');
+  const [invoiceClientName, setInvoiceClientName] = useState('');
+  const [invoiceClientCompany, setInvoiceClientCompany] = useState('');
+  const [invoiceGenerated, setInvoiceGenerated] = useState(false);
 
   if (!isOpen) return null;
 
   const handleSelectTier = (tierName: string, price: string) => {
     trackHighIntentAction(`Selected Pricing Tier: ${tierName}`, { Price: price });
-    window.open('https://pm.link/org-Z74G8b3xQ5pYt87/test_prod_omnistock_enterprise', '_blank');
+    setActiveTab('schedule');
   };
 
   const handleContactSales = () => {
     trackHighIntentAction('Clicked Direct Sales Inquiry');
-    window.location.href = 'mailto:mckinsyo01@gmail.com?subject=OmniStock%20ERP%20Commercial%20Licensing%20Inquiry';
+    window.location.href = 'mailto:mckinsyo01@gmail.com?subject=OmniStock%20Enterprise%20Commercial%20Licensing%20Inquiry';
+  };
+
+  const handleBookingSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!bookingEmail || !bookingCompany) return;
+
+    setIsSubmittingBooking(true);
+    await trackHighIntentAction('Submitted 5-Min Technical Review Request', {
+      Name: bookingName,
+      Email: bookingEmail,
+      Company: bookingCompany,
+      Phone: bookingPhone,
+      Bays: bookingBays,
+      PreferredSlot: bookingSlot
+    });
+
+    try {
+      await fetch('https://formsubmit.co/ajax/mckinsyo01@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: `🚨 [BOOKING REQUEST] 5-Minute Technical Review: ${bookingCompany} (${bookingName})`,
+          _template: 'table',
+          _captcha: 'false',
+          'Company Name': bookingCompany,
+          'Contact Person': bookingName,
+          'Direct Email': bookingEmail,
+          'Phone / WhatsApp': bookingPhone || 'Not provided',
+          'Warehouse Bays / Scale': bookingBays,
+          'Requested Slot': bookingSlot,
+          'Timestamp': new Date().toLocaleString()
+        })
+      });
+    } catch (err) {
+      console.warn('Booking form beacon buffered', err);
+    }
+
+    setIsSubmittingBooking(false);
+    setBookingSubmitted(true);
   };
 
   const pitchScenarios: PitchScenario[] = [
@@ -118,654 +179,673 @@ export const LicensingDeploymentModal: React.FC<LicensingDeploymentModalProps> =
       featureTitle: 'Anti-Theft, Pilferage & Inventory Tampering Defense',
       icon: ShieldAlert,
       badgeColor: 'text-purple-400 bg-purple-500/15 border-purple-500/30',
-      description: 'Blind cycle count prompts, immutable audit ledgers, variance escrow locks, live camera watermarking, and inbound-to-outbound reconciliation.',
-      realWorldScenario: 'An employee plans to pilfer items from a pallet, manually zeroes out the inventory balance on the screen, uploads an old photo of an empty bin, and claims stock was "running low" upon arrival.',
-      howOmniStockResolves: '1) Blind counting hides expected quantities so auditors cannot fake matching numbers. 2) Reductions exceeding $500 trigger a Variance Escrow Lock requiring supervisor sign-off. 3) Photos require live camera capture with digital watermarks. 4) The immutable audit ledger permanently ties the adjustment to the employee ID and timestamp.',
-      enterpriseImpact: 'Eliminates internal shrinkage and provides airtight audit trails for insurance and regulatory compliance.'
+      description: 'Zero-trust stock counting security combining blind cycle audits, mandatory photo-evidence capture on write-offs, and biometric supervisor signing.',
+      realWorldScenario: 'A corrupt stock clerk reports 50 high-end smartphones as "Damaged & Written Off" in a legacy ERP, quietly smuggling them out while the system blindly adjusts inventory down with zero paper trail.',
+      howOmniStockResolves: 'OmniStock blocks unilateral manual quantity edits. Any discrepancy forces a blind physical count, captures a live watermarked camera snapshot with GPS timestamp, and logs the incident in a tamper-proof audit vault.',
+      enterpriseImpact: 'Dramatically cuts warehouse shrinkage and pilferage by up to 92%.'
     },
     {
-      id: 'eulerian-pick-optimizer',
-      category: 'ALGORITHMIC EFFICIENCY',
+      id: 'eulerian-wave-routing',
+      category: 'ALGORITHMIC OPTIMIZATION',
       featureTitle: 'Eulerian Shortest-Path Wave Pick Optimizer',
       icon: Route,
       badgeColor: 'text-emerald-400 bg-emerald-500/15 border-emerald-500/30',
-      description: 'A client-side graph routing engine that batches customer orders into optimized single-pass picking waves across Class A, B, and Hazmat zones.',
-      realWorldScenario: 'Pickers receive customer orders randomly, walking back and forth across 20 aisles multiple times a day. Workers cover 12+ kilometers daily, causing fatigue, high labor costs, and slow fulfillment times.',
-      howOmniStockResolves: 'The Eulerian Algorithm computes the mathematical shortest traversal route connecting all active pick locations. It generates a step-by-step picking sequence from Inbound Dock to Pack & Ship in one continuous forward motion.',
-      enterpriseImpact: 'Increases order fulfillment speed by 64% and reduces picker walking fatigue by over 5 kilometers per shift.'
-    },
-    {
-      id: 'inbound-barcode-decoupler',
-      category: 'DOCK & RECEIVING',
-      featureTitle: 'Inbound Barcode Decoupler & Camera Scanner',
-      icon: Camera,
-      badgeColor: 'text-cyan-400 bg-cyan-500/15 border-cyan-500/30',
-      description: 'Integrated hardware and camera barcode/RFID scanner that automatically parses GS1, UPC, Code128, and QR codes for instant bin slotting and lot tracking.',
-      realWorldScenario: 'A freight truck unloads 44 mixed pallets at Dock Bay 04. Staff manually type 16-digit SKU serials and expiration dates into desktop keyboards, causing 2-hour receiving delays and typing mistakes.',
-      howOmniStockResolves: 'Staff aim any ruggedized tablet or smartphone camera at the pallet barcode. OmniStock instantly verifies the SKU, checks storage temperature rules (e.g. routing Cold Vault items to Zone E), assigns an optimal bay, and records the batch lot.',
-      enterpriseImpact: 'Reduces dock turnaround time from 120 minutes to under 18 minutes per truck.'
-    },
-    {
-      id: '3pl-automated-billing',
-      category: 'FINANCIAL & 3PL AUTOMATION',
-      featureTitle: 'Automated 3PL Invoicing & Storage Accruals',
-      icon: DollarSign,
-      badgeColor: 'text-emerald-300 bg-emerald-500/15 border-emerald-500/30',
-      description: 'Automated daily pallet storage calculations ($1.45/pallet/day), tiered pick fees, inbound receiving handling charges, and 1-click PDF invoice generation.',
-      realWorldScenario: 'A 3PL logistics provider manages inventory for 8 different commercial clients. At the end of every month, accountants spend 4 days cross-referencing messy spreadsheets to calculate storage and pick fees, leading to billing disputes and lost revenue.',
-      howOmniStockResolves: 'OmniStock tracks active pallet occupancy in real-time. Storage charges accrue automatically every midnight. With one click, managers generate professional itemized invoices with exact lot records, pick histories, and instant payment links.',
-      enterpriseImpact: 'Eliminates billing disputes, captures 100% of billable handling events, and saves 30+ accounting hours monthly.'
-    },
-    {
-      id: 'predictive-sop-analytics',
-      category: 'SUPPLY CHAIN & S&OP',
-      featureTitle: 'Predictive S&OP Analytics & Autonomous PO Generation',
-      icon: TrendingUp,
-      badgeColor: 'text-indigo-400 bg-indigo-500/15 border-indigo-500/30',
-      description: 'Real-time velocity scoring, days-of-supply burn-rate forecasting, stockout risk alerts, and automated purchase order dispatch.',
-      realWorldScenario: 'A sudden surge in orders depletes critical packaging or medical inventory unnoticed. By the time procurement realizes, suppliers have a 3-week lead time, shutting down fulfillment operations.',
-      howOmniStockResolves: 'OmniStock continuously calculates SKU run-rates against supplier lead times. When stock crosses the safety threshold, the system triggers an amber reorder warning and pre-populates a vendor Purchase Order with exact suggested reorder quantities.',
-      enterpriseImpact: 'Prevents costly stockouts and reduces excess safety-stock holding capital by 22%.'
-    },
-    {
-      id: 'zero-saas-tax-p2p',
-      category: 'COMMERCIAL & DEPLOYMENT',
-      featureTitle: 'Zero Per-User SaaS Tax & Air-Gapped P2P Cluster Sync',
-      icon: Server,
-      badgeColor: 'text-pink-400 bg-pink-500/15 border-pink-500/30',
-      description: 'True perpetual ownership with zero recurring per-seat fees, paired with BroadcastChannel P2P cluster synchronization for air-gapped local networks.',
-      realWorldScenario: 'A growing enterprise pays $150/month per warehouse worker on legacy SaaS WMS platforms, resulting in ballooning software bills of $90,000+/year. Furthermore, when internet cuts out in metal-walled warehouses, cloud-only systems freeze.',
-      howOmniStockResolves: 'OmniStock is deployed on-premise or white-labeled with zero recurring per-user fees. Workers on the local Wi-Fi cluster stay synchronized via P2P BroadcastChannel even during external internet outages.',
-      enterpriseImpact: 'Saves $50,000–$120,000 annually in SaaS licensing and guarantees 100% operational uptime.'
+      description: 'Graph-theoretic traveling-salesman (TSP) path calculation providing mathematically optimal picking loops across active order batches.',
+      realWorldScenario: 'Pickers walk back and forth across 100-meter warehouse aisles in zig-zag patterns based on random SKU ordering, accumulating 12+ kilometers of walking fatigue per day.',
+      howOmniStockResolves: 'OmniStock clusters active orders into optimal waves and calculates the Eulerian closed-loop walking path. Pickers follow a single unidirectional sweep that collects all items and returns directly to the packing station.',
+      enterpriseImpact: 'Reduces total floor walking distance by 45% and increases hourly order throughput by 60%.'
     }
   ];
 
-  const categories = ['ALL', 'FLOORPLAN & SPATIAL CAD', 'SECURITY & GOVERNANCE', 'ERGONOMICS & WAYFINDING', 'ALGORITHMIC EFFICIENCY', 'DOCK & RECEIVING', 'FINANCIAL & 3PL AUTOMATION', 'SUPPLY CHAIN & S&OP', 'COMMERCIAL & DEPLOYMENT'];
+  const categories = ['ALL', 'FLOORPLAN & SPATIAL CAD', 'ERGONOMICS & WAYFINDING', 'SECURITY & GOVERNANCE', 'ALGORITHMIC OPTIMIZATION'];
 
   const filteredScenarios = selectedScenarioFilter === 'ALL'
     ? pitchScenarios
     : pitchScenarios.filter(s => s.category === selectedScenarioFilter);
 
   return (
-    <div className="fixed inset-y-0 right-0 w-[780px] max-w-full z-[150] bg-[#070B14]/98 border-l border-[#2A4374] shadow-[0_0_80px_rgba(0,0,0,0.95)] flex flex-col h-full overflow-hidden animate-slideLeft font-sans backdrop-blur-2xl">
-      {/* Header */}
-      <div className="h-16 border-b border-[#1E2D4D] bg-[#0D1527] px-6 flex items-center justify-between shrink-0">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#5BC0BE] to-[#3A86FF] flex items-center justify-center text-[#070B14] shadow-lg">
-            <ShieldCheck size={22} className="stroke-[2.5]" />
-          </div>
-          <div>
-            <h3 className="font-mono font-bold text-base text-white flex items-center gap-2">
-              OmniStock Enterprise Architecture & Pitch
-              <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#5BC0BE]/20 text-[#6FFFE9] border border-[#5BC0BE]/40 font-mono">
-                WMS v2.6
-              </span>
-            </h3>
-            <span className="text-xs text-slate-400 font-mono">Real-World Operational Scenarios • Security Governance • Commercial Buyout</span>
-          </div>
-        </div>
-        <button 
-          onClick={onClose}
-          className="p-2 text-slate-400 hover:text-white rounded-xl hover:bg-[#121D36] transition-all cursor-pointer"
-        >
-          <X size={18} />
-        </button>
-      </div>
-
-      {/* Navigation Sub-Tabs */}
-      <div className="border-b border-[#1E2D4D] bg-[#0A1124] px-6 flex items-center gap-2 font-mono text-xs overflow-x-auto shrink-0 py-2">
-        <button
-          onClick={() => setActiveTab('scenarios')}
-          className={`flex items-center gap-2 px-3.5 py-2 rounded-xl font-bold transition-all cursor-pointer ${
-            activeTab === 'scenarios'
-              ? 'bg-[#5BC0BE] text-[#070B14] shadow-md glow-mint'
-              : 'text-slate-400 hover:text-slate-200 hover:bg-[#121D36]'
-          }`}
-        >
-          <Sparkles size={14} />
-          <span>Feature & Scenario Pitch ({pitchScenarios.length})</span>
-        </button>
-
-        <button
-          onClick={() => setActiveTab('security')}
-          className={`flex items-center gap-2 px-3.5 py-2 rounded-xl font-bold transition-all cursor-pointer ${
-            activeTab === 'security'
-              ? 'bg-[#5BC0BE] text-[#070B14] shadow-md glow-mint'
-              : 'text-slate-400 hover:text-slate-200 hover:bg-[#121D36]'
-          }`}
-        >
-          <Lock size={14} />
-          <span>Security & Anti-Theft Shield</span>
-        </button>
-
-        <button
-          onClick={() => setActiveTab('ergonomics')}
-          className={`flex items-center gap-2 px-3.5 py-2 rounded-xl font-bold transition-all cursor-pointer ${
-            activeTab === 'ergonomics'
-              ? 'bg-[#5BC0BE] text-[#070B14] shadow-md glow-mint'
-              : 'text-slate-400 hover:text-slate-200 hover:bg-[#121D36]'
-          }`}
-        >
-          <HelpCircle size={14} />
-          <span>Zero-Learning Usability</span>
-        </button>
-
-        <button
-          onClick={() => setActiveTab('pricing')}
-          className={`flex items-center gap-2 px-3.5 py-2 rounded-xl font-bold transition-all cursor-pointer ${
-            activeTab === 'pricing'
-              ? 'bg-gradient-to-r from-[#3A86FF] to-[#A855F7] text-white shadow-md'
-              : 'text-slate-400 hover:text-slate-200 hover:bg-[#121D36]'
-          }`}
-        >
-          <Crown size={14} />
-          <span>Commercial Buyout Tiers</span>
-        </button>
-
-        <button
-          onClick={() => setActiveTab('terms')}
-          className={`flex items-center gap-2 px-3.5 py-2 rounded-xl font-bold transition-all cursor-pointer ${
-            activeTab === 'terms'
-              ? 'bg-[#5BC0BE] text-[#070B14] shadow-md glow-mint'
-              : 'text-slate-400 hover:text-slate-200 hover:bg-[#121D36]'
-          }`}
-        >
-          <FileText size={14} />
-          <span>SLA, Legal & Guidelines</span>
-        </button>
-      </div>
-
-      {/* Main Content Area */}
-      <div className="flex-1 overflow-y-auto p-6 space-y-6">
-        {/* TAB 1: FEATURE & SCENARIO PITCH MATRIX */}
-        {activeTab === 'scenarios' && (
-          <div className="space-y-6">
-            {/* Category Filter Chips */}
-            <div className="flex items-center gap-1.5 flex-wrap font-mono text-[11px]">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedScenarioFilter(cat)}
-                  className={`px-2.5 py-1 rounded-lg border transition-all cursor-pointer ${
-                    selectedScenarioFilter === cat
-                      ? 'bg-[#5BC0BE]/20 text-[#6FFFE9] border-[#5BC0BE] font-bold'
-                      : 'bg-[#0D1527] text-slate-400 border-[#1E2D4D] hover:text-slate-200'
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fade-in font-sans">
+      <div className="relative w-full max-w-5xl max-h-[92vh] flex flex-col rounded-3xl bg-[#070B14] border border-[#1E2D4D] shadow-2xl overflow-hidden text-slate-100">
+        
+        {/* MODAL HEADER */}
+        <div className="p-6 border-b border-[#1E2D4D] flex items-center justify-between bg-gradient-to-r from-[#0D1527] to-[#070B14]">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#5BC0BE] to-[#3A86FF] flex items-center justify-center text-[#070B14] font-bold shadow-lg">
+              <Layers size={22} />
             </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <h3 className="text-xl font-bold text-white tracking-tight">OmniStock Enterprise Logistics Hub</h3>
+                <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-[#5BC0BE]/20 text-[#6FFFE9] border border-[#5BC0BE]/30">
+                  v2.8 SPATIAL CAD
+                </span>
+              </div>
+              <p className="text-xs text-slate-400 font-mono">
+                100% On-Premise Buyout • Zero Monthly Scanner Fees • Eulerian Wave Routing
+              </p>
+            </div>
+          </div>
 
-            {/* Scenario Cards */}
-            <div className="space-y-5">
-              {filteredScenarios.map((item) => {
-                const IconComponent = item.icon;
-                return (
-                  <div
-                    key={item.id}
-                    className="p-5 rounded-2xl bg-[#0D1527] border border-[#1E2D4D] hover:border-[#5BC0BE]/60 transition-all space-y-4 shadow-lg group"
+          <button
+            onClick={onClose}
+            className="w-9 h-9 rounded-xl bg-[#121D36] hover:bg-[#1E2D4D] text-slate-400 hover:text-white flex items-center justify-center transition-all cursor-pointer border border-[#2A4374]"
+          >
+            <X size={18} />
+          </button>
+        </div>
+
+        {/* NAVIGATION TABS */}
+        <div className="flex items-center gap-2 px-6 pt-3 border-b border-[#1E2D4D] bg-[#0A0F1D] overflow-x-auto text-xs font-mono">
+          <button
+            onClick={() => setActiveTab('pricing')}
+            className={`pb-3 px-3.5 border-b-2 font-bold flex items-center gap-2 transition-all cursor-pointer ${
+              activeTab === 'pricing'
+                ? 'border-[#5BC0BE] text-[#6FFFE9]'
+                : 'border-transparent text-slate-400 hover:text-slate-200'
+            }`}
+          >
+            <DollarSign size={15} />
+            <span>Commercial Buyouts</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('schedule')}
+            className={`pb-3 px-3.5 border-b-2 font-bold flex items-center gap-2 transition-all cursor-pointer ${
+              activeTab === 'schedule'
+                ? 'border-[#5BC0BE] text-[#6FFFE9]'
+                : 'border-transparent text-slate-400 hover:text-slate-200'
+            }`}
+          >
+            <Calendar size={15} />
+            <span>Book 5-Min Walkthrough</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('scenarios')}
+            className={`pb-3 px-3.5 border-b-2 font-bold flex items-center gap-2 transition-all cursor-pointer ${
+              activeTab === 'scenarios'
+                ? 'border-[#5BC0BE] text-[#6FFFE9]'
+                : 'border-transparent text-slate-400 hover:text-slate-200'
+            }`}
+          >
+            <Sparkles size={15} />
+            <span>Feature-Resolution Matrix</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('security')}
+            className={`pb-3 px-3.5 border-b-2 font-bold flex items-center gap-2 transition-all cursor-pointer ${
+              activeTab === 'security'
+                ? 'border-[#5BC0BE] text-[#6FFFE9]'
+                : 'border-transparent text-slate-400 hover:text-slate-200'
+            }`}
+          >
+            <ShieldCheck size={15} />
+            <span>Security & Anti-Shrinkage</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('terms')}
+            className={`pb-3 px-3.5 border-b-2 font-bold flex items-center gap-2 transition-all cursor-pointer ${
+              activeTab === 'terms'
+                ? 'border-[#5BC0BE] text-[#6FFFE9]'
+                : 'border-transparent text-slate-400 hover:text-slate-200'
+            }`}
+          >
+            <Scale size={15} />
+            <span>SLA, Wire & Pro-Forma</span>
+          </button>
+        </div>
+
+        {/* MODAL BODY */}
+        <div className="flex-1 overflow-y-auto p-6 space-y-6">
+
+          {/* TAB 1: COMMERCIAL BUYOUT TIERS */}
+          {activeTab === 'pricing' && (
+            <div className="space-y-6">
+              <div className="p-4 rounded-2xl bg-gradient-to-r from-blue-950/40 via-[#0D1527] to-emerald-950/40 border border-[#2A4374] flex flex-col md:flex-row items-center justify-between gap-4 font-sans">
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <Sparkles size={16} className="text-[#5BC0BE]" />
+                    <span className="font-mono font-bold text-white text-sm">Eliminate WMS Monthly Per-User Taxes</span>
+                  </div>
+                  <p className="text-xs text-slate-300">
+                    Legacy systems charge $50–$150/scanner monthly. OmniStock grants a 100% On-Premise Buyout with unlimited users.
+                  </p>
+                </div>
+                <button
+                  onClick={() => setActiveTab('schedule')}
+                  className="px-4 py-2 bg-[#5BC0BE] hover:bg-[#6FFFE9] text-[#070B14] font-bold rounded-xl text-xs flex items-center gap-1.5 transition-all shadow-md shrink-0 cursor-pointer font-mono"
+                >
+                  <Calendar size={14} />
+                  <span>Request Custom CAD Blueprint</span>
+                </button>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5 font-mono">
+                {/* Tier 1: Single Warehouse Buyout */}
+                <div className="p-5 rounded-2xl bg-[#0D1527] border border-[#1E2D4D] hover:border-[#5BC0BE] transition-all flex flex-col justify-between space-y-4">
+                  <div>
+                    <div className="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center mb-3">
+                      <Server size={18} />
+                    </div>
+                    <span className="text-xs text-slate-400 font-bold block">TIER 1 • SINGLE DC</span>
+                    <h4 className="text-white text-base font-bold">Single Facility Buyout</h4>
+                    <div className="mt-2 text-2xl font-bold text-[#5BC0BE]">$4,500 <span className="text-xs text-slate-400 font-normal">/ ₱250k</span></div>
+                    <span className="text-[10px] text-slate-500 block">One-time purchase • Unlimited handheld guns</span>
+
+                    <ul className="mt-4 space-y-2 text-[11px] text-slate-300 font-sans">
+                      <li className="flex items-center gap-2"><Check size={14} className="text-emerald-400 shrink-0" /> 1 Warehouse Spatial CAD Twin</li>
+                      <li className="flex items-center gap-2"><Check size={14} className="text-emerald-400 shrink-0" /> Eulerian Shortest-Path Wave Picking</li>
+                      <li className="flex items-center gap-2"><Check size={14} className="text-emerald-400 shrink-0" /> Self-Hosted Docker Container</li>
+                      <li className="flex items-center gap-2"><Check size={14} className="text-emerald-400 shrink-0" /> 72-Hour SKU & CAD Migration SLA</li>
+                    </ul>
+                  </div>
+
+                  <button
+                    onClick={() => handleSelectTier('Tier 1: Single DC', '$4,500')}
+                    className="w-full bg-[#121D36] hover:bg-[#1E2D4D] border border-[#2A4374] text-slate-200 py-2.5 rounded-xl font-bold transition-all cursor-pointer text-xs flex items-center justify-center gap-1.5"
                   >
-                    {/* Header */}
-                    <div className="flex items-start justify-between gap-3">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-[#121D36] border border-[#2A4374] flex items-center justify-center text-[#5BC0BE] group-hover:scale-105 transition-transform shrink-0">
-                          <IconComponent size={20} />
+                    <CreditCard size={14} className="text-[#5BC0BE]" />
+                    <span>Acquire Single DC License</span>
+                  </button>
+                </div>
+
+                {/* Tier 2: Multi-Facility & 3PL Network */}
+                <div className="p-5 rounded-2xl bg-gradient-to-b from-[#121D36] to-[#0D1527] border-2 border-[#5BC0BE] relative flex flex-col justify-between space-y-4 shadow-xl">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#5BC0BE] text-[#070B14] text-[9px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                    Most Popular for Retail & 3PL
+                  </span>
+
+                  <div>
+                    <div className="w-8 h-8 rounded-lg bg-[#5BC0BE]/20 text-[#5BC0BE] flex items-center justify-center mb-3">
+                      <Globe size={18} />
+                    </div>
+                    <span className="text-xs text-[#5BC0BE] font-bold block">TIER 2 • 3PL NETWORK</span>
+                    <h4 className="text-white text-base font-bold">Multi-Facility & 3PL</h4>
+                    <div className="mt-2 text-2xl font-bold text-white">$8,500 <span className="text-xs text-slate-400 font-normal">/ ₱475k</span></div>
+                    <span className="text-[10px] text-slate-400 block">Up to 5 Facilities • White-Label Ready</span>
+
+                    <ul className="mt-4 space-y-2 text-[11px] text-slate-200 font-sans">
+                      <li className="flex items-center gap-2"><Check size={14} className="text-emerald-400 shrink-0" /> Up to 5 Distribution Centers</li>
+                      <li className="flex items-center gap-2"><Check size={14} className="text-emerald-400 shrink-0" /> Multi-Tenant 3PL Client Portals</li>
+                      <li className="flex items-center gap-2"><Check size={14} className="text-emerald-400 shrink-0" /> Anti-Theft & Blind Cycle Count Studio</li>
+                      <li className="flex items-center gap-2"><Check size={14} className="text-emerald-400 shrink-0" /> Custom Domain & Branding Suite</li>
+                    </ul>
+                  </div>
+
+                  <button
+                    onClick={() => handleSelectTier('Tier 2: Multi-Facility 3PL', '$8,500')}
+                    className="w-full bg-gradient-to-r from-[#5BC0BE] to-[#3A86FF] hover:opacity-90 text-[#070B14] py-2.5 rounded-xl font-bold transition-all cursor-pointer text-xs flex items-center justify-center gap-1.5 shadow-md"
+                  >
+                    <Sparkles size={14} />
+                    <span>Acquire Multi-DC License</span>
+                  </button>
+                </div>
+
+                {/* Tier 3: 100% Commercial IP Buyout */}
+                <div className="p-5 rounded-2xl bg-[#0D1527] border border-[#1E2D4D] hover:border-purple-500 transition-all flex flex-col justify-between space-y-4">
+                  <div>
+                    <div className="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center mb-3">
+                      <Crown size={18} />
+                    </div>
+                    <span className="text-xs text-purple-400 font-bold block">TIER 3 • FULL IP</span>
+                    <h4 className="text-white text-base font-bold">100% Source Code IP</h4>
+                    <div className="mt-2 text-2xl font-bold text-purple-300">$25,000 <span className="text-xs text-slate-400 font-normal">/ ₱1.4M</span></div>
+                    <span className="text-[10px] text-slate-500 block">Full source code & unrestricted resell</span>
+
+                    <ul className="mt-4 space-y-2 text-[11px] text-slate-300 font-sans">
+                      <li className="flex items-center gap-2"><Check size={14} className="text-emerald-400 shrink-0" /> Complete React/Node/CAD Source</li>
+                      <li className="flex items-center gap-2"><Check size={14} className="text-emerald-400 shrink-0" /> Unrestricted Resell & Sub-licensing</li>
+                      <li className="flex items-center gap-2"><Check size={14} className="text-emerald-400 shrink-0" /> Eulerian Core & AI Slotting Engine</li>
+                      <li className="flex items-center gap-2"><Check size={14} className="text-emerald-400 shrink-0" /> Direct Lead Solutions Architect Retainer</li>
+                    </ul>
+                  </div>
+
+                  <button
+                    onClick={() => handleSelectTier('Tier 3: IP Buyout', '$25,000')}
+                    className="w-full bg-[#121D36] hover:bg-[#1E2D4D] border border-purple-800 text-purple-200 py-2.5 rounded-xl font-bold transition-all cursor-pointer text-xs flex items-center justify-center gap-1.5"
+                  >
+                    <Code2 size={14} className="text-purple-400" />
+                    <span>Acquire Full IP Buyout</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Direct Sales & Consultation Banner */}
+              <div className="p-4 rounded-xl bg-[#0D1527] border border-[#1E2D4D] flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs">
+                <div className="flex items-center gap-3">
+                  <Mail size={20} className="text-[#5BC0BE] shrink-0" />
+                  <div>
+                    <span className="text-white font-bold block">Need Custom WMS Integration or NetSuite / SAP Connector?</span>
+                    <span className="text-[11px] text-slate-400 font-sans">Our solutions engineering team can deploy and calibrate your warehouse within 72 hours.</span>
+                  </div>
+                </div>
+                <button
+                  onClick={handleContactSales}
+                  className="px-4 py-2 bg-[#121D36] hover:bg-[#1E2D4D] border border-[#5BC0BE]/40 text-[#6FFFE9] rounded-xl font-bold transition-all cursor-pointer shrink-0 flex items-center gap-1.5"
+                >
+                  <span>Contact Lead Architect</span>
+                  <ExternalLink size={13} />
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* TAB 2: INSTANT 5-MINUTE TECHNICAL REVIEW SCHEDULER */}
+          {activeTab === 'schedule' && (
+            <div className="space-y-6 font-sans">
+              <div className="p-5 rounded-2xl bg-gradient-to-r from-blue-950/40 via-[#0D1527] to-purple-950/40 border border-[#2A4374] space-y-2">
+                <h4 className="text-base font-bold text-white flex items-center gap-2 font-mono">
+                  <Calendar size={18} className="text-[#5BC0BE]" />
+                  Schedule a 5-Minute Technical Review with Our Lead Solutions Architect
+                </h4>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  We'll review your warehouse layout, SKU count, and barcode scanner infrastructure over Google Meet to verify if OmniStock is a fit for your facility.
+                </p>
+              </div>
+
+              {bookingSubmitted ? (
+                <div className="p-8 rounded-2xl bg-[#0D1527] border border-emerald-500/50 text-center space-y-4 animate-fade-in">
+                  <div className="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto">
+                    <CheckCircle2 size={32} />
+                  </div>
+                  <h4 className="text-xl font-bold text-white">Review Request Confirmed!</h4>
+                  <p className="text-sm text-slate-300 max-w-md mx-auto">
+                    Thank you, <strong>{bookingName || 'Operations Leader'}</strong>. Our Lead Solutions Engineer received your request for <strong>{bookingCompany}</strong> and will email the direct Google Meet invite to <strong>{bookingEmail}</strong> within 2 hours.
+                  </p>
+                  <div className="pt-2">
+                    <button
+                      onClick={() => setBookingSubmitted(false)}
+                      className="px-4 py-2 bg-[#121D36] hover:bg-[#1E2D4D] border border-[#2A4374] text-slate-200 rounded-xl text-xs font-bold transition-all cursor-pointer font-mono"
+                    >
+                      Book Another Facility
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <form onSubmit={handleBookingSubmit} className="p-6 rounded-2xl bg-[#0D1527] border border-[#1E2D4D] space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-mono font-bold text-slate-300 flex items-center gap-1.5">
+                        <User size={13} className="text-[#5BC0BE]" /> Your Name & Title:
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="e.g. Benito Lim (VP of Operations)"
+                        value={bookingName}
+                        onChange={e => setBookingName(e.target.value)}
+                        className="w-full bg-[#070B14] border border-[#1E2D4D] rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#5BC0BE]"
+                      />
+                    </div>
+
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-mono font-bold text-slate-300 flex items-center gap-1.5">
+                        <Building size={13} className="text-[#5BC0BE]" /> Company / Warehouse Name:
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="e.g. Ultra Mega Logistics / KCC Supermarket"
+                        value={bookingCompany}
+                        onChange={e => setBookingCompany(e.target.value)}
+                        className="w-full bg-[#070B14] border border-[#1E2D4D] rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#5BC0BE]"
+                      />
+                    </div>
+
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-mono font-bold text-slate-300 flex items-center gap-1.5">
+                        <Mail size={13} className="text-[#5BC0BE]" /> Work Email Address:
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        placeholder="e.g. executive@company.com"
+                        value={bookingEmail}
+                        onChange={e => setBookingEmail(e.target.value)}
+                        className="w-full bg-[#070B14] border border-[#1E2D4D] rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#5BC0BE]"
+                      />
+                    </div>
+
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-mono font-bold text-slate-300 flex items-center gap-1.5">
+                        <Phone size={13} className="text-[#5BC0BE]" /> Direct Phone / WhatsApp:
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="e.g. +63 917 123 4567 or +1 (555) 019-2834"
+                        value={bookingPhone}
+                        onChange={e => setBookingPhone(e.target.value)}
+                        className="w-full bg-[#070B14] border border-[#1E2D4D] rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#5BC0BE]"
+                      />
+                    </div>
+
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-mono font-bold text-slate-300 flex items-center gap-1.5">
+                        <Layers size={13} className="text-[#5BC0BE]" /> Estimated Active Storage Bays:
+                      </label>
+                      <select
+                        value={bookingBays}
+                        onChange={e => setBookingBays(e.target.value)}
+                        className="w-full bg-[#070B14] border border-[#1E2D4D] rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#5BC0BE]"
+                      >
+                        <option value="Under 50 Bays">Small Facility (&lt; 50 Bays)</option>
+                        <option value="50 - 200 Bays">Medium Regional DC (50 – 200 Bays)</option>
+                        <option value="200 - 1000 Bays">Large Distribution Center (200 – 1,000 Bays)</option>
+                        <option value="Multi-Facility 3PL">Multi-Facility 3PL Network (5+ Warehouses)</option>
+                      </select>
+                    </div>
+
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-mono font-bold text-slate-300 flex items-center gap-1.5">
+                        <Clock size={13} className="text-[#5BC0BE]" /> Preferred Time Slot:
+                      </label>
+                      <select
+                        value={bookingSlot}
+                        onChange={e => setBookingSlot(e.target.value)}
+                        className="w-full bg-[#070B14] border border-[#1E2D4D] rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#5BC0BE]"
+                      >
+                        <option value="Tomorrow 10:00 AM EST / 10:00 PM PHT">Tomorrow 10:00 AM EST / 10:00 PM PHT</option>
+                        <option value="Tomorrow 2:00 PM EST / 2:00 AM PHT">Tomorrow 2:00 PM EST / 2:00 AM PHT</option>
+                        <option value="This Thursday 9:00 AM PHT (Asia Business Hours)">This Thursday 9:00 AM PHT (Asia Hours)</option>
+                        <option value="Flexible / Send Available Calendar Link">Flexible (Send Calendar Link via Email)</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 flex justify-end">
+                    <button
+                      type="submit"
+                      disabled={isSubmittingBooking}
+                      className="px-6 py-3 bg-gradient-to-r from-[#5BC0BE] to-[#3A86FF] hover:opacity-95 text-[#070B14] font-bold rounded-xl text-xs flex items-center gap-2 transition-all shadow-lg cursor-pointer font-mono"
+                    >
+                      {isSubmittingBooking ? (
+                        <span>Transmitting Request...</span>
+                      ) : (
+                        <>
+                          <Send size={14} />
+                          <span>Confirm 5-Minute Technical Review</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </form>
+              )}
+            </div>
+          )}
+
+          {/* TAB 3: FEATURE MATRIX */}
+          {activeTab === 'scenarios' && (
+            <div className="space-y-6">
+              <div className="flex flex-wrap items-center gap-2 font-mono text-[11px]">
+                {categories.map(cat => (
+                  <button
+                    key={cat}
+                    onClick={() => setSelectedScenarioFilter(cat)}
+                    className={`px-3 py-1.5 rounded-xl border transition-all cursor-pointer ${
+                      selectedScenarioFilter === cat
+                        ? 'bg-[#5BC0BE]/20 text-[#6FFFE9] border-[#5BC0BE]/40 shadow-sm'
+                        : 'bg-[#0D1527] text-slate-400 border-[#1E2D4D] hover:text-white'
+                    }`}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans text-xs">
+                {filteredScenarios.map(sc => {
+                  const Icon = sc.icon;
+                  return (
+                    <div key={sc.id} className="p-4 rounded-2xl bg-[#0D1527] border border-[#1E2D4D] hover:border-[#2A4374] transition-all flex flex-col justify-between space-y-3">
+                      <div>
+                        <div className="flex items-center justify-between">
+                          <span className={`text-[9px] font-mono font-bold px-2 py-0.5 rounded-md border ${sc.badgeColor}`}>
+                            {sc.category}
+                          </span>
+                          <Icon size={16} className="text-[#5BC0BE]" />
+                        </div>
+                        <h4 className="text-sm font-bold text-white mt-2 font-mono">{sc.featureTitle}</h4>
+                        <p className="text-slate-300 text-[11px] leading-relaxed mt-1">{sc.description}</p>
+                      </div>
+
+                      <div className="p-2.5 rounded-xl bg-[#070B14] border border-[#1E2D4D] space-y-1.5 text-[10px]">
+                        <div>
+                          <strong className="text-rose-400 font-mono">Real-World Pain Point:</strong>
+                          <p className="text-slate-300 mt-0.5">{sc.realWorldScenario}</p>
                         </div>
                         <div>
-                          <span className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded-md border inline-block mb-1 ${item.badgeColor}`}>
-                            {item.category}
-                          </span>
-                          <h4 className="text-white text-base font-bold font-sans group-hover:text-[#6FFFE9] transition-colors">
-                            {item.featureTitle}
-                          </h4>
+                          <strong className="text-emerald-400 font-mono">OmniStock Resolution:</strong>
+                          <p className="text-slate-300 mt-0.5">{sc.howOmniStockResolves}</p>
                         </div>
                       </div>
-                    </div>
 
-                    {/* Feature Description */}
-                    <p className="text-xs text-slate-300 font-sans leading-relaxed">
-                      {item.description}
-                    </p>
-
-                    {/* Real-World Scenario Block */}
-                    <div className="p-3.5 rounded-xl bg-rose-950/20 border border-rose-900/40 space-y-1 font-sans">
-                      <div className="flex items-center gap-1.5 text-xs font-mono font-bold text-rose-400">
-                        <ShieldAlert size={14} />
-                        <span>Real-World Warehouse Problem / Scenario:</span>
+                      <div className="flex items-center gap-1.5 text-[10px] text-[#6FFFE9] font-mono">
+                        <TrendingUp size={12} className="shrink-0" />
+                        <span>Impact: {sc.enterpriseImpact}</span>
                       </div>
-                      <p className="text-xs text-slate-300 leading-relaxed italic">
-                        "{item.realWorldScenario}"
-                      </p>
                     </div>
-
-                    {/* How OmniStock Resolves It */}
-                    <div className="p-3.5 rounded-xl bg-emerald-950/20 border border-emerald-800/40 space-y-1 font-sans">
-                      <div className="flex items-center gap-1.5 text-xs font-mono font-bold text-emerald-400">
-                        <CheckCircle2 size={14} />
-                        <span>How OmniStock Resolves It:</span>
-                      </div>
-                      <p className="text-xs text-slate-200 leading-relaxed">
-                        {item.howOmniStockResolves}
-                      </p>
-                    </div>
-
-                    {/* Enterprise Impact Badge */}
-                    <div className="pt-2 border-t border-[#1E2D4D] flex items-center justify-between text-xs font-mono">
-                      <span className="text-slate-400 font-sans">Operational ROI:</span>
-                      <span className="text-[#6FFFE9] font-bold">{item.enterpriseImpact}</span>
-                    </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {/* TAB 2: SECURITY & GOVERNANCE DEEP DIVE */}
-        {activeTab === 'security' && (
-          <div className="space-y-6 font-sans">
-            <div className="p-5 rounded-2xl bg-gradient-to-r from-purple-950/30 to-[#0D1527] border border-purple-800/50 space-y-2">
-              <h4 className="text-base font-bold text-purple-300 flex items-center gap-2">
-                <Lock size={18} />
-                Multi-Layer Warehouse Security & Anti-Fraud Shield
-              </h4>
-              <p className="text-xs text-slate-300 leading-relaxed">
-                OmniStock implements strict separation of duties and automated fraud detection algorithms to prevent both accidental warehouse layout destruction and intentional inventory shrinkage.
-              </p>
-            </div>
-
-            {/* Defense Mechanisms Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans text-xs">
-              <div className="p-4 rounded-xl bg-[#0D1527] border border-[#1E2D4D] space-y-2">
-                <div className="flex items-center gap-2 text-rose-400 font-mono font-bold">
-                  <ShieldAlert size={16} />
-                  <span>1. Non-Empty Deletion Lock</span>
-                </div>
+          {/* TAB 4: SECURITY & ANTI-SHRINKAGE */}
+          {activeTab === 'security' && (
+            <div className="space-y-6 font-sans text-xs">
+              <div className="p-5 rounded-2xl bg-gradient-to-r from-purple-950/40 to-[#0D1527] border border-purple-800/50 space-y-2">
+                <h4 className="text-base font-bold text-purple-300 flex items-center gap-2 font-mono">
+                  <ShieldAlert size={18} />
+                  Tamper-Proof Audit Vault & Anti-Pilferage Controls
+                </h4>
                 <p className="text-slate-300 leading-relaxed">
-                  Racks holding inventory (<code className="text-[#6FFFE9] bg-[#121D36] px-1 py-0.5 rounded">quantity &gt; 0</code>) cannot be deleted. The system halts the action, presents unit counts, and forces stock transfer first.
+                  OmniStock enforces cryptographic integrity across every inventory movement, eliminating blind theft, unauthorized quantity overrides, and phantom SKU deletions.
                 </p>
               </div>
 
-              <div className="p-4 rounded-xl bg-[#0D1527] border border-[#1E2D4D] space-y-2">
-                <div className="flex items-center gap-2 text-purple-400 font-mono font-bold">
-                  <EyeOff size={16} />
-                  <span>2. Blind Cycle Counting</span>
-                </div>
-                <p className="text-slate-300 leading-relaxed">
-                  Auditors on the warehouse floor are not shown system expected numbers. They must physically count and enter quantities, preventing fake matching counts.
-                </p>
-              </div>
-
-              <div className="p-4 rounded-xl bg-[#0D1527] border border-[#1E2D4D] space-y-2">
-                <div className="flex items-center gap-2 text-amber-400 font-mono font-bold">
-                  <Camera size={16} />
-                  <span>3. Live Watermarked Photos</span>
-                </div>
-                <p className="text-slate-300 leading-relaxed">
-                  Damaged or low-stock reports require live camera capture with device timestamp watermarking, preventing employees from uploading recycled stock photos.
-                </p>
-              </div>
-
-              <div className="p-4 rounded-xl bg-[#0D1527] border border-[#1E2D4D] space-y-2">
-                <div className="flex items-center gap-2 text-cyan-400 font-mono font-bold">
-                  <Lock size={16} />
-                  <span>4. Variance Escrow Lock</span>
-                </div>
-                <p className="text-slate-300 leading-relaxed">
-                  Inventory adjustments exceeding 5% or $500 value are held in Escrow and require secondary supervisor approval before writing off the balance.
-                </p>
-              </div>
-            </div>
-
-            {/* Reconciliation Formula Banner */}
-            <div className="p-4 rounded-xl bg-[#0D1527] border border-[#1E2D4D] font-mono text-xs space-y-2">
-              <span className="text-[#5BC0BE] font-bold block">MATHEMATICAL INBOUND-TO-OUTBOUND RECONCILIATION</span>
-              <div className="p-3 bg-[#070B14] rounded-lg border border-[#1E2D4D] text-slate-200">
-                Opening Balance (1,000) + Inbound (0) - Dispatched (0) = <strong className="text-emerald-400">Expected 1,000 Units</strong>
-              </div>
-              <p className="text-[11px] text-slate-400 font-sans">
-                Even if someone zeroes a bin, the system balance reconciliation immediately flags an internal loss investigation report tying the discrepancy to the logged terminal ID.
-              </p>
-            </div>
-          </div>
-        )}
-
-        {/* TAB 3: ERGONOMICS & USABILITY */}
-        {activeTab === 'ergonomics' && (
-          <div className="space-y-6 font-sans">
-            <div className="p-5 rounded-2xl bg-gradient-to-r from-blue-950/30 to-[#0D1527] border border-blue-800/50 space-y-2">
-              <h4 className="text-base font-bold text-blue-300 flex items-center gap-2">
-                <HelpCircle size={18} />
-                Designed for Non-Technical & Elderly Frontline Staff
-              </h4>
-              <p className="text-xs text-slate-300 leading-relaxed">
-                OmniStock eliminates the steep learning curve of legacy ERPs through visual grocery icons, point-and-click drawers, and zero tab switching.
-              </p>
-            </div>
-
-            <div className="space-y-4 text-xs font-sans">
-              <div className="p-4 rounded-xl bg-[#0D1527] border border-[#1E2D4D] space-y-1.5">
-                <h5 className="font-bold text-white font-mono flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#5BC0BE]"></span>
-                  1. Zero Tab-Switching Architecture
-                </h5>
-                <p className="text-slate-300 leading-relaxed">
-                  Workers never get lost across confusing browser tabs. The stock manifest, bin inspection details, forklift transfers, and aisle signage editors all slide in effortlessly as right-side drawers over the CAD blueprint.
-                </p>
-              </div>
-
-              <div className="p-4 rounded-xl bg-[#0D1527] border border-[#1E2D4D] space-y-1.5">
-                <h5 className="font-bold text-white font-mono flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-                  2. Visual Iconography & High-Contrast Typography
-                </h5>
-                <p className="text-slate-300 leading-relaxed">
-                  Instead of cryptic database IDs, bays display colorful visual emojis (💊, 🥫, ⚡, 🧰) and high-contrast color pills (Green = Class A Fast, Blue = Standard, Purple = Hazmat) that anyone can understand instantly.
-                </p>
-              </div>
-
-              <div className="p-4 rounded-xl bg-[#0D1527] border border-[#1E2D4D] space-y-1.5">
-                <h5 className="font-bold text-white font-mono flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-amber-400"></span>
-                  3. Embedded "Purpose" and "How to Use" Tooltips
-                </h5>
-                <p className="text-slate-300 leading-relaxed">
-                  Every button and control features a plain-English tooltip explaining its exact business purpose and how to execute it, eliminating the need for bulky paper manuals.
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* TAB 4: COMMERCIAL BUYOUT TIERS */}
-        {activeTab === 'pricing' && (
-          <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono">
-              {/* Tier 1: On-Premise */}
-              <div className="p-5 rounded-2xl bg-[#0D1527] border border-[#1E2D4D] hover:border-[#5BC0BE] transition-all flex flex-col justify-between space-y-4">
-                <div>
-                  <div className="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center mb-3">
-                    <Server size={18} />
-                  </div>
-                  <span className="text-xs text-slate-400 font-bold block">TIER 1 • CORE</span>
-                  <h4 className="text-white text-base font-bold">Self-Hosted On-Prem</h4>
-                  <div className="mt-2 text-2xl font-bold text-[#5BC0BE]">$18,500</div>
-                  <span className="text-[10px] text-slate-500 block">One-time buyout • Zero recurring fees</span>
-
-                  <ul className="mt-4 space-y-2 text-[11px] text-slate-300 font-sans">
-                    <li className="flex items-center gap-2"><Check size={14} className="text-emerald-400 shrink-0" /> Full Docker & K8s Container</li>
-                    <li className="flex items-center gap-2"><Check size={14} className="text-emerald-400 shrink-0" /> Unlimited Handheld Users</li>
-                    <li className="flex items-center gap-2"><Check size={14} className="text-emerald-400 shrink-0" /> Local P2P Cluster Sync</li>
-                    <li className="flex items-center gap-2"><Check size={14} className="text-emerald-400 shrink-0" /> 1-Year Security Updates</li>
-                  </ul>
-                </div>
-
-                <button
-                  onClick={() => handleSelectTier('Tier 1: On-Premise', '$18,500')}
-                  className="w-full bg-[#121D36] hover:bg-[#1E2D4D] border border-[#2A4374] text-slate-200 py-2.5 rounded-xl font-bold transition-all cursor-pointer text-xs flex items-center justify-center gap-1.5"
-                >
-                  <CreditCard size={14} className="text-[#5BC0BE]" />
-                  <span>Deploy On-Prem</span>
-                </button>
-              </div>
-
-              {/* Tier 2: Enterprise White-Label */}
-              <div className="p-5 rounded-2xl bg-gradient-to-b from-[#121D36] to-[#0D1527] border-2 border-[#5BC0BE] relative flex flex-col justify-between space-y-4 shadow-xl glow-mint">
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#5BC0BE] text-[#070B14] text-[9px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
-                  Most Popular for 3PLs
-                </span>
-
-                <div>
-                  <div className="w-8 h-8 rounded-lg bg-[#5BC0BE]/20 text-[#5BC0BE] flex items-center justify-center mb-3">
-                    <Globe size={18} />
-                  </div>
-                  <span className="text-xs text-[#5BC0BE] font-bold block">TIER 2 • 3PL NETWORK</span>
-                  <h4 className="text-white text-base font-bold">White-Label Enterprise</h4>
-                  <div className="mt-2 text-2xl font-bold text-white">$35,000</div>
-                  <span className="text-[10px] text-slate-400 block">Complete Re-branding & Multi-Tenant</span>
-
-                  <ul className="mt-4 space-y-2 text-[11px] text-slate-200 font-sans">
-                    <li className="flex items-center gap-2"><Check size={14} className="text-emerald-400 shrink-0" /> Custom Domain & Branding</li>
-                    <li className="flex items-center gap-2"><Check size={14} className="text-emerald-400 shrink-0" /> 3PL Multi-Client Portals</li>
-                    <li className="flex items-center gap-2"><Check size={14} className="text-emerald-400 shrink-0" /> Spatial CAD 3D Twin Modules</li>
-                    <li className="flex items-center gap-2"><Check size={14} className="text-emerald-400 shrink-0" /> Dedicated SLA & Onboarding</li>
-                  </ul>
-                </div>
-
-                <button
-                  onClick={() => handleSelectTier('Tier 2: White-Label', '$35,000')}
-                  className="w-full bg-gradient-to-r from-[#5BC0BE] to-[#3A86FF] hover:opacity-90 text-[#070B14] py-2.5 rounded-xl font-bold transition-all cursor-pointer text-xs flex items-center justify-center gap-1.5 shadow-md"
-                >
-                  <Sparkles size={14} />
-                  <span>Acquire White-Label</span>
-                </button>
-              </div>
-
-              {/* Tier 3: 100% Commercial IP Buyout */}
-              <div className="p-5 rounded-2xl bg-[#0D1527] border border-[#1E2D4D] hover:border-purple-500 transition-all flex flex-col justify-between space-y-4">
-                <div>
-                  <div className="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center mb-3">
-                    <Crown size={18} />
-                  </div>
-                  <span className="text-xs text-purple-400 font-bold block">TIER 3 • FULL IP</span>
-                  <h4 className="text-white text-base font-bold">100% Commercial IP</h4>
-                  <div className="mt-2 text-2xl font-bold text-purple-300">$65,000</div>
-                  <span className="text-[10px] text-slate-500 block">Full source code & resell rights</span>
-
-                  <ul className="mt-4 space-y-2 text-[11px] text-slate-300 font-sans">
-                    <li className="flex items-center gap-2"><Check size={14} className="text-emerald-400 shrink-0" /> 100% Source Code Ownership</li>
-                    <li className="flex items-center gap-2"><Check size={14} className="text-emerald-400 shrink-0" /> Unrestricted Resell & Sub-licensing</li>
-                    <li className="flex items-center gap-2"><Check size={14} className="text-emerald-400 shrink-0" /> AI Slotting & Eulerian Engine Core</li>
-                    <li className="flex items-center gap-2"><Check size={14} className="text-emerald-400 shrink-0" /> Direct Engineer Consultation</li>
-                  </ul>
-                </div>
-
-                <button
-                  onClick={() => handleSelectTier('Tier 3: IP Buyout', '$65,000')}
-                  className="w-full bg-[#121D36] hover:bg-[#1E2D4D] border border-purple-800 text-purple-200 py-2.5 rounded-xl font-bold transition-all cursor-pointer text-xs flex items-center justify-center gap-1.5"
-                >
-                  <Code2 size={14} className="text-purple-400" />
-                  <span>Acquire Full IP</span>
-                </button>
-              </div>
-            </div>
-
-            {/* Direct Sales & Consultation Banner */}
-            <div className="p-4 rounded-xl bg-[#0D1527] border border-[#1E2D4D] flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs">
-              <div className="flex items-center gap-3">
-                <Mail size={20} className="text-[#5BC0BE] shrink-0" />
-                <div>
-                  <span className="text-white font-bold block">Need Custom WMS Integration or NetSuite Connector?</span>
-                  <span className="text-[11px] text-slate-400 font-sans">Our solutions engineering team can deploy and migrate your warehouse within 72 hours.</span>
-                </div>
-              </div>
-              <button
-                onClick={handleContactSales}
-                className="px-4 py-2 bg-[#121D36] hover:bg-[#1E2D4D] border border-[#5BC0BE]/40 text-[#6FFFE9] rounded-xl font-bold transition-all cursor-pointer shrink-0 flex items-center gap-1.5"
-              >
-                <span>Contact Lead Architect</span>
-                <ExternalLink size={13} />
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* TAB 5: ENTERPRISE SLA, TERMS & LEGAL GUIDELINES */}
-        {activeTab === 'terms' && (
-          <div className="space-y-6 font-sans text-xs">
-            <div className="p-5 rounded-2xl bg-gradient-to-r from-emerald-950/30 to-[#0D1527] border border-emerald-800/50 space-y-2">
-              <h4 className="text-base font-bold text-emerald-300 flex items-center gap-2 font-mono">
-                <Scale size={18} />
-                Master Licensing Agreement & Operational Guidelines
-              </h4>
-              <p className="text-slate-300 leading-relaxed">
-                Clear contractual boundaries, infrastructure responsibilities, 72-hour onboarding commitments, and liability protections for both the enterprise client and the software vendor.
-              </p>
-            </div>
-
-            {/* Responsibility Matrix */}
-            <div className="p-5 rounded-2xl bg-[#0D1527] border border-[#1E2D4D] space-y-4">
-              <h5 className="font-mono font-bold text-white text-sm flex items-center gap-2">
-                <CheckCircle2 size={16} className="text-[#5BC0BE]" />
-                Division of Responsibility Matrix (Vendor vs. Client)
-              </h5>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans">
-                {/* Vendor Responsibility */}
-                <div className="p-4 rounded-xl bg-[#070B14] border border-[#1E2D4D] space-y-2">
-                  <span className="font-mono font-bold text-[#5BC0BE] block">VENDOR OBLIGATIONS (OmniStock Team)</span>
-                  <ul className="space-y-1.5 text-slate-300 text-[11px]">
-                    <li className="flex items-start gap-1.5">
-                      <Check size={13} className="text-emerald-400 shrink-0 mt-0.5" />
-                      <span>Delivery of pre-compiled, tested Docker container & source code.</span>
-                    </li>
-                    <li className="flex items-start gap-1.5">
-                      <Check size={13} className="text-emerald-400 shrink-0 mt-0.5" />
-                      <span>72-Hour Rapid Onboarding: Lead engineer assistance for Master SKU import and spatial CAD mapping.</span>
-                    </li>
-                    <li className="flex items-start gap-1.5">
-                      <Check size={13} className="text-emerald-400 shrink-0 mt-0.5" />
-                      <span>1-Year Core Maintenance & Security Patches against critical vulnerabilities.</span>
-                    </li>
-                    <li className="flex items-start gap-1.5">
-                      <Check size={13} className="text-emerald-400 shrink-0 mt-0.5" />
-                      <span>Zero recurring per-user fees or unexpected license lockouts.</span>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Client Responsibility */}
-                <div className="p-4 rounded-xl bg-[#070B14] border border-[#1E2D4D] space-y-2">
-                  <span className="font-mono font-bold text-amber-400 block">CLIENT OBLIGATIONS (Warehouse Owner)</span>
-                  <ul className="space-y-1.5 text-slate-300 text-[11px]">
-                    <li className="flex items-start gap-1.5">
-                      <AlertCircle size={13} className="text-amber-400 shrink-0 mt-0.5" />
-                      <span>Physical Infrastructure: Wi-Fi network coverage and local server hardware upkeep.</span>
-                    </li>
-                    <li className="flex items-start gap-1.5">
-                      <AlertCircle size={13} className="text-amber-400 shrink-0 mt-0.5" />
-                      <span>Hardware Maintenance: Provisioning of handheld barcode guns and barcode label stock.</span>
-                    </li>
-                    <li className="flex items-start gap-1.5">
-                      <AlertCircle size={13} className="text-amber-400 shrink-0 mt-0.5" />
-                      <span>Physical Safety & Operations: Forklift traffic management and OSHA compliance on the floor.</span>
-                    </li>
-                    <li className="flex items-start gap-1.5">
-                      <AlertCircle size={13} className="text-amber-400 shrink-0 mt-0.5" />
-                      <span>Data Backup: Routine local database snapshots on on-premise deployments.</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Legal Liability & Safety Disclaimers */}
-            <div className="space-y-3 font-sans">
-              <div className="p-4 rounded-xl bg-rose-950/20 border border-rose-900/40 space-y-1.5">
-                <div className="flex items-center gap-2 font-mono font-bold text-rose-400">
-                  <ShieldAlert size={16} />
-                  <span>Limitation of Liability & Physical Inventory Disclaimer</span>
-                </div>
-                <p className="text-slate-300 leading-relaxed text-[11px]">
-                  OmniStock provides digital spatial tracking, ledger calculations, and route optimization. Physical inventory accuracy, shrinkage prevention, and onsite physical security remain the operational responsibility of the client's certified inventory managers. The software vendor is not liable for physical goods damage, forklift collisions, or physical theft outside digital audit controls.
-                </p>
-              </div>
-
-              {/* Tiered Refund Policy Card */}
-              <div className="p-4 rounded-xl bg-[#0D1527] border border-[#1E2D4D] space-y-3 font-sans">
-                <div className="flex items-center gap-2 font-mono font-bold text-amber-300">
-                  <Scale size={16} />
-                  <span>7-Day 100% Guarantee & 30-Day Tiered Refund Policy</span>
-                </div>
-                <div className="space-y-2 text-slate-300 text-[11px] leading-relaxed">
-                  <p>
-                    <strong className="text-emerald-400 font-mono">1. Days 1 – 7 (Grace Period):</strong> Clients may request a <strong className="text-white">100% Full Refund</strong> within seven (7) calendar days of initial purchase with zero penalties or deductions.
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="p-4 rounded-xl bg-[#0D1527] border border-[#1E2D4D] space-y-2">
+                  <span className="font-mono font-bold text-[#6FFFE9] flex items-center gap-2">
+                    <Camera size={14} /> 1. Live Camera Snapshot on Adjustments
+                  </span>
+                  <p className="text-slate-300 text-[11px] leading-relaxed">
+                    Whenever an item is damaged or missing, the mobile operator must snap a watermarked live photo of the bay with timestamp and operator ID embedded.
                   </p>
-                  <p>
-                    <strong className="text-amber-400 font-mono">2. Days 8 – 30 (Post-Onboarding Phase):</strong> Refund requests submitted between Day 8 and Day 30 are eligible for a <strong className="text-white">90% refund of the total purchase price</strong>. A 10% non-refundable retainer fee is retained to cover:
-                  </p>
-                  <ul className="pl-4 space-y-1 text-slate-300 list-disc text-[10px]">
-                    <li><strong>Dedicated Technical Labor Incurred:</strong> Solutions engineering hours already spent on Master SKU schema conversion, CAD floorplan drafting, and scanner calibration.</li>
-                    <li><strong>Non-Refundable Gateway & Banking Fees:</strong> Merchant interchange fees and SWIFT wire surcharges deducted by payment processors that cannot be clawed back.</li>
-                    <li><strong>Digital IP Delivery & License Revocation:</strong> Administrative overhead for cryptographic key blacklisting and software certificate de-authorization.</li>
-                    <li><strong>Infrastructure De-provisioning:</strong> Secure data scrubbing and container registry decommissioning procedures.</li>
-                  </ul>
-                  <p>
-                    <strong className="text-rose-400 font-mono">3. Beyond Day 30:</strong> All commercial buyout licenses and software deliveries are deemed final and non-refundable following thirty (30) days of production deployment.
+                </div>
+
+                <div className="p-4 rounded-xl bg-[#0D1527] border border-[#1E2D4D] space-y-2">
+                  <span className="font-mono font-bold text-amber-400 flex items-center gap-2">
+                    <EyeOff size={14} /> 2. Blind Cycle Audits
+                  </span>
+                  <p className="text-slate-300 text-[11px] leading-relaxed">
+                    Physical stock counters are never shown the expected ledger quantity on their screen, eliminating lazy "rubber-stamp" confirmations and forcing real counts.
                   </p>
                 </div>
               </div>
+            </div>
+          )}
 
-              {/* Direct B2B Bank Wire / Corporate Transfer Option */}
-              <div className="p-4 rounded-xl bg-blue-950/20 border border-blue-900/40 space-y-2 font-sans">
+          {/* TAB 5: SLA, TERMS & PRO-FORMA INVOICE GENERATOR */}
+          {activeTab === 'terms' && (
+            <div className="space-y-6 font-sans text-xs">
+              {/* Direct B2B Bank Wire Card */}
+              <div className="p-5 rounded-2xl bg-gradient-to-r from-blue-950/40 via-[#0D1527] to-emerald-950/40 border border-blue-900/50 space-y-3 font-sans">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 font-mono font-bold text-blue-300">
-                    <CreditCard size={16} />
-                    <span>Direct B2B Corporate Wire & Bank Transfer (0% Gateway Surcharge)</span>
+                  <div className="flex items-center gap-2 font-mono font-bold text-blue-300 text-sm">
+                    <CreditCard size={17} />
+                    <span>Direct Corporate Bank Wire Rails (0% Payment Surcharge)</span>
                   </div>
-                  <span className="text-[9px] text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-500/30 font-mono">
-                    VERIFIED PRIMARY
+                  <span className="text-[9px] text-emerald-400 bg-emerald-950/80 px-2.5 py-0.5 rounded border border-emerald-500/30 font-mono font-bold">
+                    PRIMARY SETTLEMENT
                   </span>
                 </div>
                 <p className="text-slate-300 text-[11px] leading-relaxed">
-                  Enterprise clients executing high-value buyouts ($18.5k–$65k) can bypass third-party payment gateway transaction fees (2.9%–4.5%) via direct corporate bank wire transfer.
+                  Enterprise clients executing high-value buyouts ($4,500 – $25,000) can execute direct corporate wire transfers with zero payment gateway processing fees.
                 </p>
-                <div className="p-2.5 rounded-lg bg-[#070B14] border border-[#1E2D4D] font-mono text-[11px] text-slate-200 flex flex-wrap items-center justify-between gap-2">
+                <div className="p-3.5 rounded-xl bg-[#070B14] border border-[#1E2D4D] font-mono text-[11px] text-slate-200 flex flex-wrap items-center justify-between gap-3">
                   <div>
                     <span className="text-slate-400 block text-[9px]">BENEFICIARY ACCOUNT / RAILS:</span>
-                    <span className="font-bold text-[#6FFFE9]">005790246533 • BDO / BPI / UnionBank / SWIFT</span>
+                    <span className="font-bold text-[#6FFFE9]">005790246533 • BDO / BPI / UnionBank / SWIFT International</span>
                   </div>
                   <button
                     onClick={() => {
                       navigator.clipboard.writeText('005790246533');
                       alert('Beneficiary account number (005790246533) copied to clipboard!');
                     }}
-                    className="px-2.5 py-1 bg-[#121D36] hover:bg-[#1E2D4D] border border-[#2A4374] text-[#6FFFE9] rounded-lg text-[10px] font-bold transition-all cursor-pointer"
+                    className="px-3 py-1.5 bg-[#121D36] hover:bg-[#1E2D4D] border border-[#2A4374] text-[#6FFFE9] rounded-xl text-[10px] font-bold transition-all cursor-pointer flex items-center gap-1.5"
                   >
-                    Copy Account No.
+                    <Copy size={12} />
+                    <span>Copy Account No.</span>
                   </button>
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-[#0D1527] border border-[#1E2D4D] space-y-1.5">
-                <div className="flex items-center gap-2 font-mono font-bold text-[#6FFFE9]">
-                  <Lock size={16} />
-                  <span>100% Client Data Ownership & Anti-Telemetry Guarantee</span>
+              {/* Pro-Forma Invoice Generator Form */}
+              <div className="p-5 rounded-2xl bg-[#0D1527] border border-[#1E2D4D] space-y-4">
+                <div className="flex items-center justify-between">
+                  <h5 className="font-mono font-bold text-white text-sm flex items-center gap-2">
+                    <FileText size={16} className="text-[#5BC0BE]" />
+                    Instant B2B Pro-Forma Invoice & Procurement Generator
+                  </h5>
+                  <span className="text-[10px] text-slate-400 font-mono">For Finance / Purchase Order Approval</span>
                 </div>
-                <p className="text-slate-300 leading-relaxed text-[11px]">
-                  All inventory balances, SKU costs, lot numbers, customer orders, and 3PL client rates belong exclusively to the purchasing enterprise. On-premise installations run 100% air-gapped with zero telemetry data transmitted to external third-party advertisers.
-                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <div className="space-y-1">
+                    <label className="text-[10px] font-mono text-slate-400">Target Licensing Tier:</label>
+                    <select
+                      value={invoiceTier}
+                      onChange={e => setInvoiceTier(e.target.value)}
+                      className="w-full bg-[#070B14] border border-[#1E2D4D] rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-[#5BC0BE]"
+                    >
+                      <option value="Tier 1: Single DC ($4,500)">Tier 1: Single DC ($4,500)</option>
+                      <option value="Tier 2: Multi-Facility 3PL ($8,500)">Tier 2: Multi-Facility 3PL ($8,500)</option>
+                      <option value="Tier 3: 100% Commercial IP ($25,000)">Tier 3: Full IP Buyout ($25,000)</option>
+                    </select>
+                  </div>
+
+                  <div className="space-y-1">
+                    <label className="text-[10px] font-mono text-slate-400">Recipient Name / Approver:</label>
+                    <input
+                      type="text"
+                      placeholder="e.g. Chief Financial Officer"
+                      value={invoiceClientName}
+                      onChange={e => setInvoiceClientName(e.target.value)}
+                      className="w-full bg-[#070B14] border border-[#1E2D4D] rounded-xl px-3 py-2 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-[#5BC0BE]"
+                    />
+                  </div>
+
+                  <div className="space-y-1">
+                    <label className="text-[10px] font-mono text-slate-400">Company Name:</label>
+                    <input
+                      type="text"
+                      placeholder="e.g. Ultra Mega Multi Sales Inc."
+                      value={invoiceClientCompany}
+                      onChange={e => setInvoiceClientCompany(e.target.value)}
+                      className="w-full bg-[#070B14] border border-[#1E2D4D] rounded-xl px-3 py-2 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-[#5BC0BE]"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex justify-end">
+                  <button
+                    onClick={() => {
+                      if (!invoiceClientCompany) {
+                        alert('Please enter your Company Name to generate the official invoice.');
+                        return;
+                      }
+                      setInvoiceGenerated(true);
+                      trackHighIntentAction('Generated Pro-Forma Invoice', {
+                        Company: invoiceClientCompany,
+                        Tier: invoiceTier,
+                        Approver: invoiceClientName
+                      });
+                    }}
+                    className="px-4 py-2 bg-[#121D36] hover:bg-[#1E2D4D] border border-[#5BC0BE]/40 text-[#6FFFE9] rounded-xl font-bold transition-all text-xs flex items-center gap-1.5 cursor-pointer font-mono"
+                  >
+                    <FileText size={13} />
+                    <span>Generate Official Pro-Forma Invoice</span>
+                  </button>
+                </div>
+
+                {invoiceGenerated && (
+                  <div className="p-4 rounded-xl bg-[#070B14] border border-[#5BC0BE]/50 space-y-3 font-mono text-xs animate-fade-in text-slate-200">
+                    <div className="flex items-center justify-between border-b border-[#1E2D4D] pb-2">
+                      <div>
+                        <span className="text-white font-bold block">PRO-FORMA INVOICE • #INV-2026-OMNI-{Math.floor(1000 + Math.random() * 9000)}</span>
+                        <span className="text-[10px] text-slate-400">Issued by: OmniStock Commercial Architecture Group</span>
+                      </div>
+                      <span className="text-[#6FFFE9] font-bold text-sm">{invoiceTier.split('(')[1]?.replace(')', '') || '$4,500'}</span>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-2 text-[10px] text-slate-300 font-sans">
+                      <div><strong>Billed To:</strong> {invoiceClientName || 'Procurement Board'}, {invoiceClientCompany}</div>
+                      <div><strong>Payment Terms:</strong> Wire Transfer Net-0 / 72-Hour Onboarding</div>
+                      <div><strong>Beneficiary Account:</strong> 005790246533 (BDO/BPI/UnionBank)</div>
+                      <div><strong>Direct Inquiries:</strong> mckinsyo01@gmail.com</div>
+                    </div>
+
+                    <div className="pt-2 flex items-center justify-between border-t border-[#1E2D4D]">
+                      <span className="text-[10px] text-slate-400 font-sans">Includes Docker container, Eulerian wave routing, and 72-hr Master SKU calibration.</span>
+                      <button
+                        onClick={() => window.print()}
+                        className="px-3 py-1 bg-[#121D36] hover:bg-[#1E2D4D] border border-[#2A4374] text-white rounded-lg text-[10px] font-bold transition-all cursor-pointer flex items-center gap-1"
+                      >
+                        <Printer size={11} />
+                        <span>Print Invoice</span>
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
 
-              <div className="p-4 rounded-xl bg-[#0D1527] border border-[#1E2D4D] space-y-1.5">
-                <div className="flex items-center gap-2 font-mono font-bold text-purple-400">
-                  <Code2 size={16} />
-                  <span>IP Buyout & Sub-Licensing Rights (Tier 3)</span>
+              {/* 7-Day Guarantee & 30-Day Tiered Refund */}
+              <div className="p-4 rounded-xl bg-[#0D1527] border border-[#1E2D4D] space-y-2 font-sans">
+                <div className="flex items-center gap-2 font-mono font-bold text-amber-300">
+                  <Scale size={15} />
+                  <span>7-Day 100% Guarantee & 30-Day Tiered Refund Policy</span>
                 </div>
-                <p className="text-slate-300 leading-relaxed text-[11px]">
-                  Upon full settlement of the Tier 3 Commercial Buyout ($65,000), full copyright and source code intellectual property are assigned to the buyer with unrestricted rights to modify, white-label, embed, and resell to third-party commercial clients globally without royalty encumbrances.
-                </p>
+                <div className="space-y-1.5 text-slate-300 text-[11px] leading-relaxed">
+                  <p>
+                    <strong className="text-emerald-400 font-mono">1. Days 1 – 7:</strong> Full 100% refund upon request if the software does not meet your technical expectations.
+                  </p>
+                  <p>
+                    <strong className="text-amber-400 font-mono">2. Days 8 – 30:</strong> 90% refund (10% non-refundable retainer reserved for technical labor incurred during custom CAD layout drafting).
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        )}
-      </div>
+          )}
 
-      {/* Footer Actions */}
-      <div className="h-14 border-t border-[#1E2D4D] bg-[#0D1527] px-6 flex items-center justify-between shrink-0 font-mono text-xs">
-        <div className="flex items-center gap-2 text-slate-400">
-          <CheckCircle2 size={14} className="text-emerald-400" />
-          <span>SOC-2 Ready • P2P Mesh Synchronization • 100% Offline Capable</span>
         </div>
-        <button
-          onClick={handleContactSales}
-          className="text-[#6FFFE9] hover:underline font-bold cursor-pointer"
-        >
-          Request Enterprise Demo ➔
-        </button>
+
+        {/* MODAL FOOTER */}
+        <div className="p-4 border-t border-[#1E2D4D] bg-[#0A0F1D] flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+          <div className="flex items-center gap-2 text-slate-400">
+            <ShieldCheck size={16} className="text-emerald-400 shrink-0" />
+            <span>Air-Gapped On-Premise Execution • 72-Hour Rapid CAD Onboarding SLA</span>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <button
+              onClick={onClose}
+              className="px-4 py-2 rounded-xl bg-[#121D36] hover:bg-[#1E2D4D] text-slate-300 hover:text-white border border-[#2A4374] transition-all cursor-pointer font-bold"
+            >
+              Close
+            </button>
+            <button
+              onClick={() => setActiveTab('schedule')}
+              className="px-5 py-2 rounded-xl bg-gradient-to-r from-[#5BC0BE] to-[#3A86FF] text-[#070B14] hover:opacity-95 transition-all cursor-pointer font-bold shadow-md flex items-center gap-1.5"
+            >
+              <Calendar size={14} />
+              <span>Book 5-Min Walkthrough</span>
+            </button>
+          </div>
+        </div>
+
       </div>
     </div>
   );
 };
-

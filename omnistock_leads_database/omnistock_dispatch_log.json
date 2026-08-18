@@ -198,5 +198,154 @@
     "messageId": "<a2f056b3-93a5-26f5-0800-bdce2671db73@gmail.com>",
     "timestamp": "2026-08-17T16:30:18.596Z",
     "status": "DELIVERED"
+  },
+  {
+    "id": 21,
+    "company": "Ultra Mega Wholesale Mart",
+    "email": "info@ultramega.com.ph",
+    "sector": "Supermarkets & Grocery",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Ultra Mega Wholesale Mart",
+    "messageId": "<d6843f0d-3834-966c-c528-83faa109b6e7@gmail.com>",
+    "timestamp": "2026-08-18T14:38:15.285Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 22,
+    "company": "EasyMart Supermarket (Robinsons)",
+    "email": "customer.care@robinsonsretail.com.ph",
+    "sector": "Supermarkets & Grocery",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for EasyMart Supermarket (Robinsons)",
+    "messageId": "<ff732a86-1b38-2397-6f03-3bda6f4f9d59@gmail.com>",
+    "timestamp": "2026-08-18T14:38:59.995Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 23,
+    "company": "Davao Choice Mart",
+    "email": "customercare@nccc.com.ph",
+    "sector": "Supermarkets & Grocery",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Davao Choice Mart",
+    "messageId": "<7073e685-8390-0963-04f2-9e94047b5921@gmail.com>",
+    "timestamp": "2026-08-18T14:39:37.481Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 24,
+    "company": "SM Hypermarket",
+    "email": "customercare@smmarkets.ph",
+    "sector": "Supermarkets & Grocery",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for SM Hypermarket",
+    "messageId": "<a4d8a99e-8413-7851-2e41-4984598621a4@gmail.com>",
+    "timestamp": "2026-08-18T14:40:31.507Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 25,
+    "company": "South Supermarket",
+    "email": "inquiry@southsupermarket.com.ph",
+    "sector": "Supermarkets & Grocery",
+    "status": "SKIPPED_PREFLIGHT",
+    "reason": "DNS_MX_LOOKUP_FAILED (ENODATA)",
+    "timestamp": "2026-08-18T14:41:07.559Z"
+  },
+  {
+    "id": 26,
+    "company": "Mercury Drug Corporation",
+    "email": "feedback@mercurydrug.com",
+    "sector": "Pharmacy & Health",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Mercury Drug Corporation",
+    "messageId": "<d92acee5-747b-af89-c336-13cd312f713a@gmail.com>",
+    "timestamp": "2026-08-18T15:38:14.052Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 27,
+    "company": "Southstar Drug",
+    "email": "customercare@southstardrug.com.ph",
+    "sector": "Pharmacy & Health",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Southstar Drug",
+    "messageId": "<dbdd2c40-f5bd-d03b-e4e1-6951c7a83c3a@gmail.com>",
+    "timestamp": "2026-08-18T15:38:53.333Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 28,
+    "company": "Watsons Personal Care Stores",
+    "email": "watsons.customercare@watsons.com.ph",
+    "sector": "Pharmacy & Health",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Watsons Personal Care Stores",
+    "messageId": "<0c65944d-5ac0-7d52-adfe-d68ff3efc472@gmail.com>",
+    "timestamp": "2026-08-18T15:39:45.073Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 29,
+    "company": "Rose Pharmacy",
+    "email": "customer.care@robinsonsretail.com.ph",
+    "sector": "Pharmacy & Health",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Rose Pharmacy",
+    "messageId": "<ebefa565-a4bc-56b0-7a8a-471746dbe6ff@gmail.com>",
+    "timestamp": "2026-08-18T15:40:34.535Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 30,
+    "company": "Generika Drugstore",
+    "email": "customercare@generika.com.ph",
+    "sector": "Pharmacy & Health",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Generika Drugstore",
+    "messageId": "<ad10fba4-c2ff-f987-a8db-72e21e06300e@gmail.com>",
+    "timestamp": "2026-08-18T15:41:16.875Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 31,
+    "company": "The Generics Pharmacy (TGP)",
+    "email": "customercare@tgp.com.ph",
+    "sector": "Pharmacy & Health",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for The Generics Pharmacy (TGP)",
+    "messageId": "<5c4c8743-6126-7baf-663f-7725dc79bd54@gmail.com>",
+    "timestamp": "2026-08-18T16:38:16.191Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 32,
+    "company": "St. Joseph Drug",
+    "email": "info@stjosephdrug.com",
+    "sector": "Pharmacy & Health",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for St. Joseph Drug",
+    "messageId": "<f8d008e4-0d33-474c-566f-07dac593c1ac@gmail.com>",
+    "timestamp": "2026-08-18T16:39:00.115Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 33,
+    "company": "HB1 Pharmacy (NCCC Group)",
+    "email": "customercare@nccc.com.ph",
+    "sector": "Pharmacy & Health",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for HB1 Pharmacy (NCCC Group)",
+    "messageId": "<28cb7146-38b8-c5ba-d80a-532a9b115608@gmail.com>",
+    "timestamp": "2026-08-18T16:39:57.107Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 34,
+    "company": "MedExpress Drugstore",
+    "email": "customercare@medexpress.com.ph",
+    "sector": "Pharmacy & Health",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for MedExpress Drugstore",
+    "messageId": "<2aa326ef-cced-e521-8890-7d80d3e79310@gmail.com>",
+    "timestamp": "2026-08-18T16:40:37.358Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 35,
+    "company": "Botika ng Bayan",
+    "email": "info@doh.gov.ph",
+    "sector": "Pharmacy & Health",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Botika ng Bayan",
+    "messageId": "<1dfa0320-f525-9a88-b6a7-1b4b3749f527@gmail.com>",
+    "timestamp": "2026-08-18T16:41:16.885Z",
+    "status": "DELIVERED"
   }
 ]

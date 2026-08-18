@@ -7,24 +7,35 @@ import {
   Download, 
   Copy,
   Sliders,
-  CheckCircle2
+  CheckCircle2,
+  Lock
 } from 'lucide-react';
+import { TIMEOUT_PRESETS, type WarehouseStaffSession, PRESET_STAFF } from '../components/WarehouseInactivityLock';
 
 interface SettingsViewProps {
   warehouseName: string;
   onUpdateWarehouseName: (name: string) => void;
   onExportJson: () => void;
   onTopologyChanged?: () => void;
+  currentTimeout: number;
+  onUpdateTimeout: (seconds: number) => void;
+  activeStaff: WarehouseStaffSession;
+  onChangeStaff: (staff: WarehouseStaffSession) => void;
 }
 
 export const SettingsView: React.FC<SettingsViewProps> = ({
   warehouseName,
   onUpdateWarehouseName,
   onExportJson,
-  onTopologyChanged
+  onTopologyChanged,
+  currentTimeout,
+  onUpdateTimeout,
+  activeStaff,
+  onChangeStaff
 }) => {
   const currentTopo = db.getTopology();
   const [nameInput, setNameInput] = useState(warehouseName);
+  const [customTimeoutInput, setCustomTimeoutInput] = useState(currentTimeout.toString());
   const [aislesCount, setAislesCount] = useState<number>(currentTopo.aisles.length);
   const [baysCount, setBaysCount] = useState<number>(currentTopo.baysPerAisle);
   const [tiersCount, setTiersCount] = useState<number>(currentTopo.tiersCount);
@@ -78,12 +89,105 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
 
       {/* Main Grid */}
       <div className="flex-1 p-6 overflow-y-auto space-y-6 max-w-4xl font-mono text-xs">
+        {/* 🔒 CONFIGURABLE TERMINAL INACTIVITY & SHIFT AUTO-LOCK SECURITY */}
+        <div className="bg-[#0D1527] border border-[#2A4374] rounded-2xl p-6 space-y-4 shadow-2xl">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-bold text-[#6FFFE9] flex items-center gap-2">
+              <Lock size={16} className="text-[#5BC0BE]" />
+              TERMINAL INACTIVITY &amp; SHIFT AUTO-LOCK SECURITY
+            </span>
+            <span className="px-2.5 py-0.5 rounded-full bg-[#121D36] border border-[#5BC0BE]/40 text-[#6FFFE9] font-bold text-[10px]">
+              Active: {currentTimeout === 0 ? 'Disabled' : `${currentTimeout} Seconds`}
+            </span>
+          </div>
+
+          <p className="text-slate-300 font-sans text-xs">
+            100% Configurable security lockout policy for all warehouse terminals and mobile handheld barcode scanners. Protects pick orders and stock movements against unauthorized access.
+          </p>
+
+          {/* Quick Presets Grid */}
+          <div className="space-y-2 pt-1">
+            <span className="text-[11px] font-bold text-slate-400 uppercase">Select Auto-Lock Timeout Preset:</span>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+              {TIMEOUT_PRESETS.map((preset) => (
+                <button
+                  key={preset.seconds}
+                  type="button"
+                  onClick={() => {
+                    onUpdateTimeout(preset.seconds);
+                    setCustomTimeoutInput(preset.seconds.toString());
+                  }}
+                  className={`p-2.5 rounded-xl text-left transition flex items-center justify-between border cursor-pointer ${
+                    currentTimeout === preset.seconds
+                      ? 'bg-[#5BC0BE]/20 border-[#5BC0BE] text-[#6FFFE9] font-bold shadow-sm'
+                      : 'bg-[#070B14] border-[#1E2D4D] text-slate-300 hover:bg-[#1C2541]'
+                  }`}
+                >
+                  <span className="text-[11px]">{preset.label}</span>
+                  {currentTimeout === preset.seconds && <CheckCircle2 size={14} className="text-[#5BC0BE]" />}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Custom Timeout Seconds & Active Shift Selection */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2 border-t border-[#1E2D4D]">
+            {/* Custom Input */}
+            <div className="space-y-1.5">
+              <span className="text-[11px] font-bold text-slate-400 uppercase">Set Custom Timeout (Seconds):</span>
+              <div className="flex items-center gap-2">
+                <input
+                  type="number"
+                  min="10"
+                  max="7200"
+                  value={customTimeoutInput}
+                  onChange={(e) => setCustomTimeoutInput(e.target.value)}
+                  className="flex-1 px-3 py-2 rounded-xl bg-[#070B14] border border-[#1E2D4D] text-white focus:outline-none focus:border-[#5BC0BE]"
+                  placeholder="e.g. 90"
+                />
+                <button
+                  type="button"
+                  onClick={() => {
+                    const parsed = parseInt(customTimeoutInput, 10);
+                    if (!isNaN(parsed) && parsed >= 0) {
+                      onUpdateTimeout(parsed);
+                      alert(`✅ Auto-lock interval updated to ${parsed} seconds!`);
+                    }
+                  }}
+                  className="px-4 py-2 rounded-xl bg-[#5BC0BE] text-slate-950 font-bold hover:bg-[#489F9E] transition cursor-pointer"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+
+            {/* Active Shift Worker Switcher */}
+            <div className="space-y-1.5">
+              <span className="text-[11px] font-bold text-slate-400 uppercase">Active Shift Worker Profile:</span>
+              <select
+                value={activeStaff.id}
+                onChange={(e) => {
+                  const found = PRESET_STAFF.find(s => s.id === e.target.value);
+                  if (found) onChangeStaff(found);
+                }}
+                className="w-full bg-[#070B14] border border-[#1E2D4D] text-slate-200 text-xs rounded-xl px-3 py-2 font-mono focus:outline-none focus:border-[#5BC0BE] cursor-pointer"
+              >
+                {PRESET_STAFF.map(s => (
+                  <option key={s.id} value={s.id}>
+                    {s.name} • {s.roleTitle} (PIN: {s.pin})
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+        </div>
+
         {/* NO-CODE VISUAL RACKING & TOPOLOGY STUDIO */}
         <div className="bg-[#0D1527] border border-[#2A4374] rounded-2xl p-6 space-y-4 shadow-2xl">
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold text-[#6FFFE9] flex items-center gap-2">
               <Sliders size={16} className="text-[#5BC0BE]" />
-              VISUAL RACKING TOPOLOGY & CAPACITY BUILDER
+              VISUAL RACKING TOPOLOGY &amp; CAPACITY BUILDER
             </span>
             <span className="px-2.5 py-0.5 rounded-full bg-[#121D36] border border-[#5BC0BE]/40 text-[#6FFFE9] font-bold text-[10px]">
               Total Capacity: {totalCalculatedBins} Bins
