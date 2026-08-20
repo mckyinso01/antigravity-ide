@@ -86,7 +86,7 @@ export const LicensingDeploymentModal: React.FC<LicensingDeploymentModalProps> =
 
   const handleContactSales = () => {
     trackHighIntentAction('Clicked Direct Sales Inquiry');
-    window.location.href = 'mailto:mckinsyo01@gmail.com?subject=OmniStock%20Enterprise%20Commercial%20Licensing%20Inquiry';
+    window.location.href = 'mailto:mharcgatan@linkable.it.com?subject=OmniStock%20Enterprise%20Commercial%20Licensing%20Inquiry';
   };
 
   const handleBookingSubmit = async (e: React.FormEvent) => {
@@ -104,24 +104,17 @@ export const LicensingDeploymentModal: React.FC<LicensingDeploymentModalProps> =
     });
 
     try {
-      await fetch('https://formsubmit.co/ajax/mckinsyo01@gmail.com', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          _subject: `🚨 [BOOKING REQUEST] 5-Minute Technical Review: ${bookingCompany} (${bookingName})`,
-          _template: 'table',
-          _captcha: 'false',
-          'Company Name': bookingCompany,
-          'Contact Person': bookingName,
-          'Direct Email': bookingEmail,
-          'Phone / WhatsApp': bookingPhone || 'Not provided',
-          'Warehouse Bays / Scale': bookingBays,
-          'Requested Slot': bookingSlot,
-          'Timestamp': new Date().toLocaleString()
-        })
+      console.log('[OmniStock Booking] Review requested:', {
+        company: bookingCompany,
+        name: bookingName,
+        email: bookingEmail,
+        phone: bookingPhone,
+        bays: bookingBays,
+        slot: bookingSlot,
+        timestamp: new Date().toISOString()
       });
     } catch (err) {
-      console.warn('Booking form beacon buffered', err);
+      console.warn('Booking form buffered', err);
     }
 
     setIsSubmittingBooking(false);
@@ -784,7 +777,7 @@ export const LicensingDeploymentModal: React.FC<LicensingDeploymentModalProps> =
                       <div><strong>Billed To:</strong> {invoiceClientName || 'Procurement Board'}, {invoiceClientCompany}</div>
                       <div><strong>Payment Terms:</strong> Wire Transfer Net-0 / 72-Hour Onboarding</div>
                       <div><strong>Beneficiary Account:</strong> 005790246533 (BDO/BPI/UnionBank)</div>
-                      <div><strong>Direct Inquiries:</strong> mckinsyo01@gmail.com</div>
+                      <div><strong>Direct Inquiries:</strong> mharcgatan@linkable.it.com</div>
                     </div>
 
                     <div className="pt-2 flex items-center justify-between border-t border-[#1E2D4D]">
@@ -849,3 +842,4 @@ export const LicensingDeploymentModal: React.FC<LicensingDeploymentModalProps> =
     </div>
   );
 };
+

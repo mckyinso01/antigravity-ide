@@ -1,0 +1,41 @@
+[
+  {
+    "id": "thread-1787228737724-2q6821",
+    "leadEmail": "dr.miller@bannerhealth.com",
+    "leadName": "Dr. Robert Miller",
+    "role": "Decision Maker",
+    "organization": "Banner University Medical Center",
+    "domain": "bannerhealth.com",
+    "vertical": "clinical",
+    "dealStatus": "NEW_OUTREACH",
+    "leadScore": 60,
+    "createdAt": "2026-08-20T12:25:37.724Z",
+    "lastActivityAt": "2026-08-20T12:27:02.374Z",
+    "threadHistory": [
+      {
+        "id": "msg-1787228774300-21jz3",
+        "sender": "dr.miller@bannerhealth.com",
+        "recipient": "mharcgatan@linkable.it.com",
+        "direction": "INBOUND",
+        "subject": "Evaluating ICU Telemetry & Epic FHIR integration",
+        "body": "Hi Mharc, we saw Clinical Pristine OS. We currently use Epic Systems across our ICU wings. How customizable is your medication alert engine for our specific hospital SOPs, and what is your pricing model?",
+        "timestamp": "2026-08-20T12:26:14.300Z",
+        "salesMethodology": null,
+        "intent": "PRICING_INQUIRY",
+        "escalationTriggered": false
+      },
+      {
+        "id": "msg-1787228822374-4b339",
+        "sender": "mharcgatan@linkable.it.com",
+        "recipient": "dr.miller@bannerhealth.com",
+        "direction": "OUTBOUND",
+        "subject": "Re: Evaluating ICU Telemetry & Epic FHIR integration",
+        "body": "<p>Dr. Miller,</p>\n\n<p>Clinical Pristine OS integrates natively with Epic via bi-directional FHIR R4 APIs. To match Banner’s exact ICU medication SOPs",
+        "timestamp": "2026-08-20T12:27:02.374Z",
+        "salesMethodology": "CHALLENGER_SPIN_INTEGRATED_CLOSER",
+        "intent": null,
+        "escalationTriggered": true
+      }
+    ]
+  }
+]

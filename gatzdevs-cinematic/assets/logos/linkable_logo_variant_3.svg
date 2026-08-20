@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB" />
+      <stop offset="50%" stop-color="#00E5FF" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+    <linearGradient id="innerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0B1C30" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+    <filter id="shieldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="14" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="128" fill="#050811" />
+  <rect width="504" height="504" x="4" y="4" rx="124" fill="none" stroke="#1E293B" stroke-width="4" />
+  <g filter="url(#shieldGlow)">
+    <path d="M256 90 L380 145 L380 270 C380 345 256 410 256 410 C256 410 132 345 132 270 L132 145 Z" 
+          fill="url(#innerGrad)" stroke="url(#shieldGrad)" stroke-width="16" stroke-linejoin="round" />
+    <path d="M196 210 L256 165 L316 210 L316 280 L256 325 L196 280 Z" 
+          fill="none" stroke="#00E5FF" stroke-width="7" opacity="0.8" />
+    <circle cx="256" cy="165" r="9" fill="#00E5FF" />
+    <circle cx="316" cy="210" r="9" fill="#2563EB" />
+    <circle cx="316" cy="280" r="9" fill="#8B5CF6" />
+    <circle cx="256" cy="325" r="9" fill="#10B981" />
+    <circle cx="196" cy="280" r="9" fill="#00E5FF" />
+    <circle cx="196" cy="210" r="9" fill="#38BDF8" />
+    <circle cx="256" cy="245" r="22" fill="#00E5FF" opacity="0.3" />
+    <circle cx="256" cy="245" r="14" fill="#FFFFFF" />
+  </g>
+</svg>

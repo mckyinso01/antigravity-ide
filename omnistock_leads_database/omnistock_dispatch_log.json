@@ -347,5 +347,123 @@
     "messageId": "<1dfa0320-f525-9a88-b6a7-1b4b3749f527@gmail.com>",
     "timestamp": "2026-08-18T16:41:16.885Z",
     "status": "DELIVERED"
+  },
+  {
+    "id": 36,
+    "company": "Healthy Options",
+    "email": "customercare@healthyoptions.com.ph",
+    "sector": "Pharmacy & Health",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Healthy Options",
+    "messageId": "<0602cecb-7934-7655-22c7-5a9dc76dc2e6@gmail.com>",
+    "timestamp": "2026-08-18T17:38:14.636Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 37,
+    "company": "Executive Optical (EO Health)",
+    "email": "customercare@eo-executiveoptical.com",
+    "sector": "Pharmacy & Health",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Executive Optical (EO Health)",
+    "messageId": "<4586b0b2-9563-e4ae-a229-e1adf9ffd443@gmail.com>",
+    "timestamp": "2026-08-18T17:39:12.988Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 38,
+    "company": "Ideal Vision Center",
+    "email": "customercare@idealvisioncenter.com.ph",
+    "sector": "Pharmacy & Health",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Ideal Vision Center",
+    "messageId": "<511f3158-f6b9-0774-0ea8-a18b4808f9ca@gmail.com>",
+    "timestamp": "2026-08-18T17:40:02.831Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 39,
+    "company": "Sunnies Face & Sunnies Specs",
+    "email": "hello@sunniesface.com",
+    "sector": "Pharmacy & Health",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Sunnies Face & Sunnies Specs",
+    "messageId": "<41c1a73c-9e84-4a5f-8b5c-05af1d1c952f@gmail.com>",
+    "timestamp": "2026-08-18T17:40:56.309Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 40,
+    "company": "Surplus Shop (SM Retail)",
+    "email": "customercare@smmarkets.ph",
+    "sector": "Pharmacy & Health",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Surplus Shop (SM Retail)",
+    "messageId": "<f35aaf77-a5e2-645a-f301-4372e58bcc01@gmail.com>",
+    "timestamp": "2026-08-18T17:41:52.744Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 41,
+    "company": "Daiso Japan (Robinsons)",
+    "email": "customer.care@robinsonsretail.com.ph",
+    "sector": "Pharmacy & Health",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Daiso Japan (Robinsons)",
+    "messageId": "<352fb600-dfe3-5430-1653-d3477ef9e6c1@gmail.com>",
+    "timestamp": "2026-08-18T18:38:14.523Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 42,
+    "company": "Miniso Philippines Health Care",
+    "email": "customercare@miniso.ph",
+    "sector": "Pharmacy & Health",
+    "status": "SKIPPED_PREFLIGHT",
+    "reason": "DNS_MX_LOOKUP_FAILED (ENODATA)",
+    "timestamp": "2026-08-18T18:38:56.065Z"
+  },
+  {
+    "id": 43,
+    "company": "Mumuso Philippines",
+    "email": "info@mumuso.com.ph",
+    "sector": "Pharmacy & Health",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Mumuso Philippines",
+    "messageId": "<84ed90af-eb57-ae70-ad32-16f047bfecb7@gmail.com>",
+    "timestamp": "2026-08-18T18:38:59.506Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 44,
+    "company": "Yoyoso Philippines",
+    "email": "info@yoyoso.ph",
+    "sector": "Pharmacy & Health",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Yoyoso Philippines",
+    "messageId": "<42828a85-e15b-4e8b-31d5-ac0602a6655e@gmail.com>",
+    "timestamp": "2026-08-18T18:39:49.601Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 45,
+    "company": "KKV Lifestyle Retail",
+    "email": "contact@kkv.ph",
+    "sector": "Pharmacy & Health",
+    "status": "SKIPPED_PREFLIGHT",
+    "reason": "DNS_MX_LOOKUP_FAILED (ENODATA)",
+    "timestamp": "2026-08-18T18:40:33.875Z"
+  },
+  {
+    "id": 46,
+    "company": "Penshoppe (Golden ABC)",
+    "email": "customercare@penshoppe.com",
+    "sector": "Fashion & Apparel",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Penshoppe (Golden ABC)",
+    "messageId": "<3bd97904-dfd3-dcba-8889-d6170f5a2808@gmail.com>",
+    "timestamp": "2026-08-18T19:38:15.294Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 47,
+    "company": "Bench (Suyen Corporation)",
+    "email": "customercare@bench.com.ph",
+    "sector": "Fashion & Apparel",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Bench (Suyen Corporation)",
+    "messageId": "<cfd8edb9-984c-8db1-602f-d433a65d0b82@gmail.com>",
+    "timestamp": "2026-08-18T19:38:56.679Z",
+    "status": "DELIVERED"
   }
 ]

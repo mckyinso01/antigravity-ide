@@ -3,8 +3,25 @@ const path = require('path');
 const imaps = require('imap-simple');
 const nodemailer = require('nodemailer');
 
-const SENDER_EMAIL = 'mckinsyo01@gmail.com';
-const SENDER_PASS = 'ldiibghudivdkboq';
+const envPath = path.join(__dirname, '.env');
+if (fs.existsSync(envPath)) {
+  const lines = fs.readFileSync(envPath, 'utf8').split('\n');
+  lines.forEach(line => {
+    const trimmed = line.trim();
+    if (trimmed && !trimmed.startsWith('#')) {
+      const [key, ...vals] = trimmed.split('=');
+      if (key && vals.length) {
+        process.env[key.trim()] = vals.join('=').trim();
+      }
+    }
+  });
+}
+
+const { getThreadAnalytics } = require('./conversationThreadManager');
+
+const SENDER_EMAIL = process.env.SPACEMAIL_USER || 'mharcgatan@linkable.it.com';
+const SENDER_PASS = process.env.SPACEMAIL_PASS || 'Melonjuice01!';
+const FOUNDER_PERSONAL = process.env.ESCALATION_EMAIL || 'mckinsyo01@gmail.com';
 
 const STATE_FILE = path.join(__dirname, 'outreach_state.json');
 const LOG_FILE = path.join(__dirname, 'outreach_dispatch_log.json');
@@ -14,8 +31,8 @@ const imapConfig = {
   imap: {
     user: SENDER_EMAIL,
     password: SENDER_PASS,
-    host: 'imap.gmail.com',
-    port: 993,
+    host: process.env.SPACEMAIL_HOST || 'mail.spacemail.com',
+    port: parseInt(process.env.SPACEMAIL_IMAP_PORT || '993', 10),
     tls: true,
     tlsOptions: { rejectUnauthorized: false },
     authTimeout: 10000
@@ -23,8 +40,8 @@ const imapConfig = {
 };
 
 const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  port: 465,
+  host: process.env.SPACEMAIL_HOST || 'mail.spacemail.com',
+  port: parseInt(process.env.SPACEMAIL_SMTP_PORT || '465', 10),
   secure: true,
   auth: { user: SENDER_EMAIL, pass: SENDER_PASS }
 });
@@ -134,8 +151,8 @@ async function runFiveHourAudit() {
   // Send 5-Hour Executive Progress Report Email
   try {
     await transporter.sendMail({
-      from: `"Gatz Autonomous Pipeline" <${SENDER_EMAIL}>`,
-      to: SENDER_EMAIL,
+      from: `"LinkableAI Autonomous Pipeline" <${SENDER_EMAIL}>`,
+      to: [FOUNDER_PERSONAL, SENDER_EMAIL],
       subject: `📊 [5-Hour Pipeline Report] ${totalSent} Dispatched • ${pendingLeads} Remaining • ${detectedReplies.length} Replies`,
       html: `
         <div style="font-family: sans-serif; padding: 20px; border: 1px solid #e2e8f0; border-radius: 10px; max-width: 600px;">

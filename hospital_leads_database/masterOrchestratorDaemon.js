@@ -1,54 +1,121 @@
-// 🚀 MASTER AUTONOMOUS OUTREACH & 5-HOUR MONITORING DAEMON
-// Runs continuously in the background:
-// 1. Dispatches hourly micro-batches (4-5 emails/hour with 45-75s random delays).
-// 2. Executes deep IMAP audit every 5 hours (reply sentiment analysis, bounce filtering, executive email report).
-// 3. Executes Automated Day 2 / Day 4 Follow-Up Sequences for hospital leads.
-// 4. Auto-refills lead queue when remaining leads < 20.
+// 🚀 LINKABLEAI UNIFIED AUTONOMOUS CRM MASTER ORCHESTRATOR DAEMON
+// Version: 3.0.0 (LeadSuite Pro + Alexis Vance Elite AI Sales Closer Edition)
+// Founder: Mharc Gatan <mharcgatan@linkable.it.com>
+//
+// Integrated Autonomous Cron Subsystems:
+// 0. LeadSuite Pro Autonomous Lead Hunter (Runs every 4 hours)
+// 1. Inbound Reply Parser & Alexis Vance AI Sales Closer (Runs every 10 mins)
+// 2. Co-Design Follow-Up & Interactive Sandbox Pitch Engine (Runs every 60 mins)
+// 3. Self-Healing Bounce Recovery & MX DNS Resolver (Runs every 2 hours)
+// 4. Lead Auto-Refill & Expansion Prospect Queue Engine (Runs every 4 hours)
+// 5. Executive Telemetry & 5-Hour Audit Dispatcher (Runs every 5 hours)
 
 const fs = require('fs');
 const path = require('path');
-const { runScheduledBatch } = require('./cronDispatcher');
+
+const { runLeadHunterCycle } = require('./leadSuiteProHunter');
+const { auditAndParseInboundReplies } = require('./inboundReplyParserDaemon');
+const { runFollowUpBatch } = require('./coDesignFollowUpCronEngine');
+const { runSelfHealingBounceRecovery } = require('./selfHealingBounceEngine');
+const { autoRefillNextBatch } = require('./leadAutoRefillEngine');
 const { runFiveHourAudit } = require('./fiveHourMonitorEngine');
-const { runHospitalFollowUpCycle } = require('./hospitalFollowUpEngine');
 
-const HOURLY_INTERVAL_MS = 60 * 60 * 1000;       // 1 Hour
-const FIVE_HOUR_INTERVAL_MS = 5 * 60 * 60 * 1000; // 5 Hours
-const FOLLOWUP_INTERVAL_MS = 3 * 60 * 60 * 1000;  // 3 Hours
+// Interval Constants (in milliseconds)
+const INBOUND_PARSER_INTERVAL_MS = 10 * 60 * 1000;          // 10 Minutes
+const CODESIGN_FOLLOWUP_INTERVAL_MS = 60 * 60 * 1000;        // 60 Minutes
+const SELF_HEALING_BOUNCE_INTERVAL_MS = 2 * 60 * 60 * 1000; // 2 Hours
+const LEAD_HUNTER_INTERVAL_MS = 4 * 60 * 60 * 1000;         // 4 Hours
+const LEAD_REFILL_INTERVAL_MS = 4 * 60 * 60 * 1000;         // 4 Hours
+const FIVE_HOUR_AUDIT_INTERVAL_MS = 5 * 60 * 60 * 1000;     // 5 Hours
 
-console.log('🌟 ========================================================');
-console.log('🤖 GATZ AUTONOMOUS B2B OUTREACH & 5-HOUR MONITORING ACTIVE');
-console.log(`⏰ Daemon Started: ${new Date().toLocaleString()}`);
-console.log('========================================================\n');
+console.log('================================================================');
+console.log('🤖 LINKABLEAI MASTER ORCHESTRATOR DAEMON v3.0 INITIALIZED');
+console.log(`⏰ Startup Timestamp: ${new Date().toLocaleString()}`);
+console.log(`👤 Executive Owner: Mharc Gatan (mharcgatan@linkable.it.com)`);
+console.log(`🤖 AI Sales Specialist: Alexis Vance (Challenger / SPIN Closer)`);
+console.log('================================================================\n');
 
-// 1. Initial 5-Hour Audit on Startup
-runFiveHourAudit().catch(console.error);
-
-// 2. Schedule Recurring 5-Hour Audit
-setInterval(() => {
-  console.log('\n⏰ [5-HOUR TIMER TRIGGER] Running scheduled audit...');
-  runFiveHourAudit().catch(console.error);
-}, FIVE_HOUR_INTERVAL_MS);
-
-// 3. Schedule Recurring 3-Hour Follow-Up Cycle
-setInterval(() => {
-  console.log('\n⏰ [HOSPITAL FOLLOW-UP TRIGGER] Checking eligible 48h-120h leads...');
-  runHospitalFollowUpCycle().catch(console.error);
-}, FOLLOWUP_INTERVAL_MS);
-
-// 4. Hourly Dispatch Loop
-async function hourlyDispatchCycle() {
-  console.log('\n📦 [HOURLY DISPATCH CYCLE] Checking queue and operational hours...');
+// 0. LeadSuite Pro Autonomous Lead Hunter Subsystem (Every 4h)
+async function triggerLeadHunterCycle() {
+  console.log(`\n🌐 [ENGINE 0: LEADSUITE HUNTER TRIGGER] Scanning OpenStreetMap & DecisionMakers at ${new Date().toLocaleTimeString()}...`);
   try {
-    await runScheduledBatch();
+    const verticals = ['clinical', 'sitesafe', 'omnistock', 'saccade'];
+    const randomVertical = verticals[Math.floor(Math.random() * verticals.length)];
+    await runLeadHunterCycle({ vertical: randomVertical });
   } catch (err) {
-    console.error('⚠️ Hourly dispatch error:', err.message);
+    console.error('⚠️ LeadSuite Hunter error:', err.message);
   }
 }
 
-// Run first batch immediately if triggered with --start
-if (process.argv.includes('--start-now')) {
-  hourlyDispatchCycle();
+// 1. Inbound Prospect Reply Parser & AI Sales Closer Subsystem (Every 10m)
+async function triggerInboundParserCycle() {
+  console.log(`\n📨 [ENGINE 1: INBOUND AI CLOSER TRIGGER] Auditing Spacemail inbox at ${new Date().toLocaleTimeString()}...`);
+  try {
+    await auditAndParseInboundReplies();
+  } catch (err) {
+    console.error('⚠️ Inbound parser error:', err.message);
+  }
 }
 
-// Schedule hourly cycles
-setInterval(hourlyDispatchCycle, HOURLY_INTERVAL_MS);
+// 2. Co-Design Follow-Up Engine Subsystem (Every 60m)
+async function triggerCoDesignFollowUpCycle() {
+  console.log(`\n📬 [ENGINE 2: CODESIGN FOLLOW-UP TRIGGER] Scanning leads needing sandbox follow-ups at ${new Date().toLocaleTimeString()}...`);
+  try {
+    await runFollowUpBatch();
+  } catch (err) {
+    console.error('⚠️ Co-Design follow-up error:', err.message);
+  }
+}
+
+// 3. Self-Healing Bounce Recovery Subsystem (Every 2h)
+async function triggerSelfHealingBounceCycle() {
+  console.log(`\n🛡️ [ENGINE 4: SELF-HEALING BOUNCE TRIGGER] Checking bounced domains & finding replacement executives at ${new Date().toLocaleTimeString()}...`);
+  try {
+    await runSelfHealingBounceRecovery();
+  } catch (err) {
+    console.error('⚠️ Self-healing bounce error:', err.message);
+  }
+}
+
+// 4. Lead Auto-Refill Subsystem (Every 4h)
+async function triggerLeadRefillCycle() {
+  console.log(`\n🔄 [LEAD AUTO-REFILL TRIGGER] Verifying lead queue buffer at ${new Date().toLocaleTimeString()}...`);
+  try {
+    await autoRefillNextBatch();
+  } catch (err) {
+    console.error('⚠️ Lead refill error:', err.message);
+  }
+}
+
+// 5. Five-Hour Executive Telemetry Dispatcher (Every 5h)
+async function triggerFiveHourAuditCycle() {
+  console.log(`\n📊 [ENGINE 5: EXECUTIVE 5-HR TELEMETRY TRIGGER] Compiling conversation analytics & dispatching report at ${new Date().toLocaleTimeString()}...`);
+  try {
+    await runFiveHourAudit();
+  } catch (err) {
+    console.error('⚠️ Five-hour audit error:', err.message);
+  }
+}
+
+// Startup Immediate Execution Pass
+async function runInitialStartupPass() {
+  console.log('🚀 Running initial orchestrator validation sequence across all engines...\n');
+  await triggerInboundParserCycle();
+  await triggerCoDesignFollowUpCycle();
+  await triggerSelfHealingBounceCycle();
+  await triggerLeadRefillCycle();
+  await triggerLeadHunterCycle();
+  await triggerFiveHourAuditCycle();
+  console.log('\n✅ Initial validation sequence completed. All 6 cron timers armed and active!\n');
+}
+
+// Arm all background timers
+setInterval(triggerInboundParserCycle, INBOUND_PARSER_INTERVAL_MS);
+setInterval(triggerCoDesignFollowUpCycle, CODESIGN_FOLLOWUP_INTERVAL_MS);
+setInterval(triggerSelfHealingBounceCycle, SELF_HEALING_BOUNCE_INTERVAL_MS);
+setInterval(triggerLeadRefillCycle, LEAD_REFILL_INTERVAL_MS);
+setInterval(triggerLeadHunterCycle, LEAD_HUNTER_INTERVAL_MS);
+setInterval(triggerFiveHourAuditCycle, FIVE_HOUR_AUDIT_INTERVAL_MS);
+
+// Start immediately
+runInitialStartupPass().catch(console.error);

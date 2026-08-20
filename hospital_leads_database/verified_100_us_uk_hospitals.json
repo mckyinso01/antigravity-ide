@@ -49,7 +49,8 @@
     "email_domain": "skagitregionalhealth.org",
     "email_pattern": "first.last@skagitregionalhealth.org",
     "sample_email": "gary.smith@skagitregionalhealth.org",
-    "pain_point": "PACU to Med-Surg bed turn delays"
+    "pain_point": "PACU to Med-Surg bed turn delays",
+    "status": "BOUNCED"
   },
   {
     "id": 5,
@@ -62,7 +63,8 @@
     "email_domain": "kadlec.org",
     "email_pattern": "first.last@kadlec.org",
     "sample_email": "angela.hughes@kadlec.org",
-    "pain_point": "Regional trauma referral intake bottleneck"
+    "pain_point": "Regional trauma referral intake bottleneck",
+    "status": "BOUNCED"
   },
   {
     "id": 6,
@@ -127,7 +129,8 @@
     "email_domain": "evergreenhealth.com",
     "email_pattern": "first.last@evergreenhealth.com",
     "sample_email": "chris.akeroyd@evergreenhealth.com",
-    "pain_point": "ICU bed occupancy and MEWS deterioration tracking"
+    "pain_point": "ICU bed occupancy and MEWS deterioration tracking",
+    "status": "BOUNCED"
   },
   {
     "id": 11,
@@ -166,7 +169,8 @@
     "email_domain": "multicare.org",
     "email_pattern": "first.last@multicare.org",
     "sample_email": "kimberly.kelley@multicare.org",
-    "pain_point": "Nurse staffing ratios and shift turnover"
+    "pain_point": "Nurse staffing ratios and shift turnover",
+    "status": "BOUNCED"
   },
   {
     "id": 14,
@@ -218,7 +222,8 @@
     "email_domain": "monument.health",
     "email_pattern": "first.last@monument.health",
     "sample_email": "stephanie.lahr@monument.health",
-    "pain_point": "Level 2 trauma regional surge coordination"
+    "pain_point": "Level 2 trauma regional surge coordination",
+    "status": "BOUNCED"
   },
   {
     "id": 18,
@@ -231,7 +236,8 @@
     "email_domain": "billingsclinic.org",
     "email_pattern": "first.last@billingsclinic.org",
     "sample_email": "amy.linscheid@billingsclinic.org",
-    "pain_point": "Inpatient telemetry bed allocation"
+    "pain_point": "Inpatient telemetry bed allocation",
+    "status": "BOUNCED"
   },
   {
     "id": 19,
@@ -257,7 +263,8 @@
     "email_domain": "carsontahoe.org",
     "email_pattern": "first.last@carsontahoe.org",
     "sample_email": "cheryl.caughron@carsontahoe.org",
-    "pain_point": "Surviving Sepsis Hour-1 compliance workflow"
+    "pain_point": "Surviving Sepsis Hour-1 compliance workflow",
+    "status": "BOUNCED"
   },
   {
     "id": 21,
@@ -270,7 +277,8 @@
     "email_domain": "sanjuanregional.net",
     "email_pattern": "first.last@sanjuanregional.net",
     "sample_email": "john.buffington@sanjuanregional.net",
-    "pain_point": "Four Corners geographic patient transfer bottleneck"
+    "pain_point": "Four Corners geographic patient transfer bottleneck",
+    "status": "BOUNCED"
   },
   {
     "id": 22,
@@ -283,7 +291,8 @@
     "email_domain": "grmc.org",
     "email_pattern": "first.last@grmc.org",
     "sample_email": "cynthia.moreno@grmc.org",
-    "pain_point": "Zero-footprint standalone clinical HUD need"
+    "pain_point": "Zero-footprint standalone clinical HUD need",
+    "status": "BOUNCED"
   },
   {
     "id": 23,
@@ -309,7 +318,8 @@
     "email_domain": "summithealthcare.net",
     "email_pattern": "first.last@summithealthcare.net",
     "sample_email": "david.rogers@summithealthcare.net",
-    "pain_point": "Isolated mountain patient placement and code blue timer"
+    "pain_point": "Isolated mountain patient placement and code blue timer",
+    "status": "BOUNCED"
   },
   {
     "id": 25,
@@ -361,7 +371,8 @@
     "email_domain": "bannerhealth.com",
     "email_pattern": "first.last@bannerhealth.com",
     "sample_email": "lisa.lovelace@bannerhealth.com",
-    "pain_point": "Winter respiratory surge admissions"
+    "pain_point": "Winter respiratory surge admissions",
+    "status": "BOUNCED"
   },
   {
     "id": 29,
@@ -374,7 +385,8 @@
     "email_domain": "cchwyo.org",
     "email_pattern": "first.last@cchwyo.org",
     "sample_email": "leo.morris@cchwyo.org",
-    "pain_point": "Industrial trauma triage and rapid HUD"
+    "pain_point": "Industrial trauma triage and rapid HUD",
+    "status": "BOUNCED"
   },
   {
     "id": 30,
@@ -400,7 +412,8 @@
     "email_domain": "blessinghealth.org",
     "email_pattern": "first.last@blessinghealth.org",
     "sample_email": "scott.christensen@blessinghealth.org",
-    "pain_point": "Tri-State multi-facility patient placement"
+    "pain_point": "Tri-State multi-facility patient placement",
+    "status": "BOUNCED"
   },
   {
     "id": 32,
@@ -452,7 +465,8 @@
     "email_domain": "crh.org",
     "email_pattern": "first.last@crh.org",
     "sample_email": "steve.baker@crh.org",
-    "pain_point": "Automated MEWS escalation and clinical alerts"
+    "pain_point": "Automated MEWS escalation and clinical alerts",
+    "status": "BOUNCED"
   },
   {
     "id": 36,
@@ -465,7 +479,8 @@
     "email_domain": "mhsystem.org",
     "email_pattern": "first.last@mhsystem.org",
     "sample_email": "cindy.frank@mhsystem.org",
-    "pain_point": "OH/WV cross-border patient transfer sync"
+    "pain_point": "OH/WV cross-border patient transfer sync",
+    "status": "BOUNCED"
   },
   {
     "id": 37,
@@ -478,7 +493,8 @@
     "email_domain": "ftmc.com",
     "email_pattern": "first.last@ftmc.com",
     "sample_email": "brent.burkey@ftmc.com",
-    "pain_point": "Seasonal coastal volume variance"
+    "pain_point": "Seasonal coastal volume variance",
+    "status": "BOUNCED"
   },
   {
     "id": 38,
@@ -491,7 +507,8 @@
     "email_domain": "memorial.health",
     "email_pattern": "first.last@memorial.health",
     "sample_email": "drew.early@memorial.health",
-    "pain_point": "Stroke and cardiac spatial triage bottlenecks"
+    "pain_point": "Stroke and cardiac spatial triage bottlenecks",
+    "status": "BOUNCED"
   },
   {
     "id": 39,
@@ -504,7 +521,8 @@
     "email_domain": "ksbhospital.com",
     "email_pattern": "first.last@ksbhospital.com",
     "sample_email": "ryan.venier@ksbhospital.com",
-    "pain_point": "IT capital expenditure and self-hosted HUD need"
+    "pain_point": "IT capital expenditure and self-hosted HUD need",
+    "status": "BOUNCED"
   },
   {
     "id": 40,
@@ -543,7 +561,8 @@
     "email_domain": "morrishospital.org",
     "email_pattern": "first.last@morrishospital.org",
     "sample_email": "john.burt@morrishospital.org",
-    "pain_point": "Exurban growth causing ED hold delays"
+    "pain_point": "Exurban growth causing ED hold delays",
+    "status": "BOUNCED"
   },
   {
     "id": 43,
@@ -1298,5 +1317,135 @@
     "email_pattern": "firstname.lastname@kch.nhs.uk",
     "sample_email": "kch-tr.privatepatients@nhs.net",
     "pain_point": "Private patient unit embedded flow coordination"
+  },
+  {
+    "id": 101,
+    "hospital_name": "Valley Baptist Medical Center",
+    "country": "US",
+    "location": "Harlingen, TX",
+    "beds": 398,
+    "core_ehr": "Cerner",
+    "decision_maker": "Stephen Finch (CIO) / Lisa Smith (CNO)",
+    "email_domain": "valleybaptist.net",
+    "email_pattern": "first.last@valleybaptist.net",
+    "sample_email": "stephen.finch@valleybaptist.net",
+    "pain_point": "Rio Grande Valley high emergency volume and bi-national patient flow"
+  },
+  {
+    "id": 102,
+    "hospital_name": "Citizens Medical Center",
+    "country": "US",
+    "location": "Victoria, TX",
+    "beds": 338,
+    "core_ehr": "Meditech",
+    "decision_maker": "Jeff Siewert (CIO) / Shannon Spree (CNO)",
+    "email_domain": "citizensmedicalcenter.org",
+    "email_pattern": "first.last@citizensmedicalcenter.org",
+    "sample_email": "jeff.siewert@citizensmedicalcenter.org",
+    "pain_point": "Golden Crescent trauma referral bottleneck"
+  },
+  {
+    "id": 103,
+    "hospital_name": "Shannon Medical Center",
+    "country": "US",
+    "location": "San Angelo, TX",
+    "beds": 400,
+    "core_ehr": "Epic",
+    "decision_maker": "Bryan Horner (CEO) / Pam Bradshaw (CNO)",
+    "email_domain": "shannonhealth.org",
+    "email_pattern": "first.last@shannonhealth.org",
+    "sample_email": "bryan.horner@shannonhealth.org",
+    "pain_point": "West Texas regional expansion; inter-facility transfer bed holds"
+  },
+  {
+    "id": 104,
+    "hospital_name": "Kaweah Health Medical Center",
+    "country": "US",
+    "location": "Visalia, CA",
+    "beds": 435,
+    "core_ehr": "Cerner",
+    "decision_maker": "Luke Schneider (CIO) / Keri Noeske (CNO)",
+    "email_domain": "kaweahhealth.org",
+    "email_pattern": "first.last@kaweahhealth.org",
+    "sample_email": "luke.schneider@kaweahhealth.org",
+    "pain_point": "Central Valley agricultural trauma and ED hallway boarding"
+  },
+  {
+    "id": 105,
+    "hospital_name": "Salinas Valley Health",
+    "country": "US",
+    "location": "Salinas, CA",
+    "beds": 263,
+    "core_ehr": "Epic",
+    "decision_maker": "Audrey Parks (CIO) / Lisa Paulo (CNO)",
+    "email_domain": "salinasvalleyhealth.com",
+    "email_pattern": "first.last@salinasvalleyhealth.com",
+    "sample_email": "audrey.parks@salinasvalleyhealth.com",
+    "pain_point": "Monterey County emergency surge management"
+  },
+  {
+    "id": 106,
+    "hospital_name": "Marshall Medical Center",
+    "country": "US",
+    "location": "Placerville, CA",
+    "beds": 111,
+    "core_ehr": "Epic",
+    "decision_maker": "Chris Akiyama (CIO) / Kathy Glaser (CNO)",
+    "email_domain": "marshallmedical.org",
+    "email_pattern": "first.last@marshallmedical.org",
+    "sample_email": "chris.akiyama@marshallmedical.org",
+    "pain_point": "Sierra Foothills rural isolation and winter weather trauma"
+  },
+  {
+    "id": 107,
+    "hospital_name": "Barton Memorial Hospital",
+    "country": "US",
+    "location": "South Lake Tahoe, CA",
+    "beds": 73,
+    "core_ehr": "Epic",
+    "decision_maker": "David Orr (CIO) / Julie Clayton (CNO)",
+    "email_domain": "bartonhealth.org",
+    "email_pattern": "first.last@bartonhealth.org",
+    "sample_email": "david.orr@bartonhealth.org",
+    "pain_point": "Ski season orthopedic trauma surgery throughput"
+  },
+  {
+    "id": 108,
+    "hospital_name": "NHS Lothian (Royal Infirmary of Edinburgh)",
+    "country": "UK",
+    "location": "Edinburgh, Scotland",
+    "beds": 1200,
+    "core_ehr": "TrakCare",
+    "decision_maker": "Martin Egan (Director of Digital) / Alison Macdonald (Nurse Director)",
+    "email_domain": "nhslothian.scot.nhs.uk",
+    "email_pattern": "firstname.lastname@nhslothian.scot.nhs.uk",
+    "sample_email": "martin.egan@nhslothian.scot.nhs.uk",
+    "pain_point": "Scottish 4-hour emergency target and acute delayed discharge"
+  },
+  {
+    "id": 109,
+    "hospital_name": "NHS Greater Glasgow and Clyde",
+    "country": "UK",
+    "location": "Glasgow, Scotland",
+    "beds": 2500,
+    "core_ehr": "EMIS / TrakCare",
+    "decision_maker": "Alastair Bishop (Director of eHealth) / Angela Wallace (Nurse Director)",
+    "email_domain": "ggc.scot.nhs.uk",
+    "email_pattern": "firstname.lastname@ggc.scot.nhs.uk",
+    "sample_email": "alastair.bishop@ggc.scot.nhs.uk",
+    "pain_point": "Queen Elizabeth University Hospital acute flow coordination"
+  },
+  {
+    "id": 110,
+    "hospital_name": "Aneurin Bevan University Health Board",
+    "country": "UK",
+    "location": "Newport, Wales",
+    "beds": 1400,
+    "core_ehr": "Welsh Clinical Portal",
+    "decision_maker": "Director of Digital / Executive Nurse Director",
+    "email_domain": "wales.nhs.uk",
+    "email_pattern": "firstname.lastname@wales.nhs.uk",
+    "sample_email": "digital.director@wales.nhs.uk",
+    "pain_point": "Grange University Hospital acute emergency bed placement"
   }
 ]

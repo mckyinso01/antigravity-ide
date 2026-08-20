@@ -1,0 +1,800 @@
+[
+  {
+    "domain": "dbhdd.georgia.gov",
+    "companyName": "Georgia Regional Hospital Atlanta",
+    "website": "https://dbhdd.georgia.gov/georgia-regional-hospital-atlanta",
+    "contacts": [
+      {
+        "id": "dm-owner-dbhdd.georgia.gov",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Georgia Regional Hospital Atlanta Executive Office",
+        "email": "owner@dbhdd.georgia.gov",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-dbhdd.georgia.gov",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@dbhdd.georgia.gov",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-dbhdd.georgia.gov",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@dbhdd.georgia.gov",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Atlanta, Georgia",
+    "phone": "+1 404 243 2100",
+    "hasActiveMx": false,
+    "discoveredAt": "2026-08-20T12:24:42.461Z"
+  },
+  {
+    "domain": "va.gov",
+    "companyName": "Atlanta VA Medical Center",
+    "website": "https://www.va.gov/atlanta-health-care/",
+    "contacts": [
+      {
+        "id": "dm-owner-va.gov",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Atlanta VA Medical Center Executive Office",
+        "email": "owner@va.gov",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-va.gov",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@va.gov",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-va.gov",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@va.gov",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Atlanta, Georgia",
+    "phone": "+1-404-321-6111",
+    "hasActiveMx": false,
+    "discoveredAt": "2026-08-20T12:24:42.468Z"
+  },
+  {
+    "domain": "emoryhealthcare.org",
+    "companyName": "Emory Wesley Woods Hospital",
+    "website": "https://www.emoryhealthcare.org/locations/hospitals/emory-university-hospital-wesley-woods",
+    "contacts": [
+      {
+        "id": "dm-owner-emoryhealthcare.org",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Emory Wesley Woods Hospital Executive Office",
+        "email": "owner@emoryhealthcare.org",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-emoryhealthcare.org",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@emoryhealthcare.org",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-emoryhealthcare.org",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@emoryhealthcare.org",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Atlanta, Georgia",
+    "phone": "",
+    "hasActiveMx": false,
+    "discoveredAt": "2026-08-20T12:24:42.474Z"
+  },
+  {
+    "domain": "selectspecialtyhospitals.com",
+    "companyName": "Select Specialty Hospital - Midtown Atlanta",
+    "website": "https://www.selectspecialtyhospitals.com/locations-and-tours/ga/atlanta/midtown-atlanta",
+    "contacts": [
+      {
+        "id": "dm-owner-selectspecialtyhospitals.com",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Select Specialty Hospital - Midtown Atlanta Executive Office",
+        "email": "owner@selectspecialtyhospitals.com",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-selectspecialtyhospitals.com",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@selectspecialtyhospitals.com",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-selectspecialtyhospitals.com",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@selectspecialtyhospitals.com",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Atlanta, Georgia",
+    "phone": "+1 404 873 2871",
+    "hasActiveMx": false,
+    "discoveredAt": "2026-08-20T12:24:42.481Z"
+  },
+  {
+    "domain": "dekalbmedical.org",
+    "companyName": "Emory Decatur",
+    "website": "http://www.dekalbmedical.org/",
+    "contacts": [
+      {
+        "id": "dm-owner-dekalbmedical.org",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Emory Decatur Executive Office",
+        "email": "owner@dekalbmedical.org",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-dekalbmedical.org",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@dekalbmedical.org",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-dekalbmedical.org",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@dekalbmedical.org",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Atlanta, Georgia",
+    "phone": "+1 404 501 1000",
+    "hasActiveMx": false,
+    "discoveredAt": "2026-08-20T12:24:42.486Z"
+  },
+  {
+    "domain": "piedmont.org",
+    "companyName": "Piedmont Atlanta Hospital",
+    "website": "https://www.piedmont.org/locations/piedmont-atlanta/pah-home",
+    "contacts": [
+      {
+        "id": "dm-owner-piedmont.org",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Piedmont Atlanta Hospital Executive Office",
+        "email": "owner@piedmont.org",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-piedmont.org",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@piedmont.org",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-piedmont.org",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@piedmont.org",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Atlanta, Georgia",
+    "phone": "+1 404 605 5000",
+    "hasActiveMx": false,
+    "discoveredAt": "2026-08-20T12:24:42.493Z"
+  },
+  {
+    "domain": "emorylongtermacutecare.com",
+    "companyName": "Emory Long-Term Acute Care",
+    "website": "https://emorylongtermacutecare.com",
+    "contacts": [
+      {
+        "id": "dm-owner-emorylongtermacutecare.com",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Emory Long-Term Acute Care Executive Office",
+        "email": "owner@emorylongtermacutecare.com",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-emorylongtermacutecare.com",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@emorylongtermacutecare.com",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-emorylongtermacutecare.com",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@emorylongtermacutecare.com",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Atlanta, Georgia",
+    "phone": "",
+    "hasActiveMx": false,
+    "discoveredAt": "2026-08-20T12:24:42.499Z"
+  },
+  {
+    "domain": "choa.org",
+    "companyName": "Hughes Spalding Hospital",
+    "website": "https://www.choa.org/locations/hughes-spalding-hospital",
+    "contacts": [
+      {
+        "id": "dm-owner-choa.org",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Hughes Spalding Hospital Executive Office",
+        "email": "owner@choa.org",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-choa.org",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@choa.org",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-choa.org",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@choa.org",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Atlanta, Georgia",
+    "phone": "+1 404 785 5437",
+    "hasActiveMx": false,
+    "discoveredAt": "2026-08-20T12:24:42.513Z"
+  },
+  {
+    "domain": "wellstar.org",
+    "companyName": "WellStar Windy Hill Hospital",
+    "website": "https://www.wellstar.org/locations/pages/wellstar-windy-hill-hospital.aspx",
+    "contacts": [
+      {
+        "id": "dm-owner-wellstar.org",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "WellStar Windy Hill Hospital Executive Office",
+        "email": "owner@wellstar.org",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-wellstar.org",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@wellstar.org",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-wellstar.org",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@wellstar.org",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Atlanta, Georgia",
+    "phone": "+1-770-644-1000",
+    "hasActiveMx": false,
+    "discoveredAt": "2026-08-20T12:24:42.520Z"
+  },
+  {
+    "domain": "advocatechildrenshospital.com",
+    "companyName": "Advocate Children's Hospital - Oak Lawn",
+    "website": "https://www.advocatechildrenshospital.com/",
+    "contacts": [
+      {
+        "id": "dm-owner-advocatechildrenshospital.com",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Advocate Children's Hospital - Oak Lawn Executive Office",
+        "email": "owner@advocatechildrenshospital.com",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-advocatechildrenshospital.com",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@advocatechildrenshospital.com",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-advocatechildrenshospital.com",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@advocatechildrenshospital.com",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Chicago, Illinois",
+    "phone": "+1 708 684 8000",
+    "hasActiveMx": false,
+    "discoveredAt": "2026-08-20T12:32:15.809Z"
+  },
+  {
+    "domain": "universityofchicago.com",
+    "companyName": "University of Chicago",
+    "website": "https://universityofchicago.com",
+    "contacts": [
+      {
+        "id": "dm-owner-universityofchicago.com",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "University of Chicago Executive Office",
+        "email": "owner@universityofchicago.com",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-universityofchicago.com",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@universityofchicago.com",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-universityofchicago.com",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@universityofchicago.com",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Chicago, Illinois",
+    "phone": "",
+    "hasActiveMx": false,
+    "discoveredAt": "2026-08-20T12:32:16.043Z"
+  },
+  {
+    "domain": "cityscapecounseling.com",
+    "companyName": "Cityscape Counseling",
+    "website": "https://www.cityscapecounseling.com",
+    "contacts": [
+      {
+        "id": "dm-owner-cityscapecounseling.com",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Cityscape Counseling Executive Office",
+        "email": "owner@cityscapecounseling.com",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-cityscapecounseling.com",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@cityscapecounseling.com",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-cityscapecounseling.com",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@cityscapecounseling.com",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Chicago, Illinois",
+    "phone": "+1-708-628-7645",
+    "hasActiveMx": true,
+    "discoveredAt": "2026-08-20T12:32:16.160Z"
+  },
+  {
+    "domain": "resurrectionmedicalcenter.com",
+    "companyName": "Resurrection Medical Center",
+    "website": "https://resurrectionmedicalcenter.com/",
+    "contacts": [
+      {
+        "id": "dm-owner-resurrectionmedicalcenter.com",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Resurrection Medical Center Executive Office",
+        "email": "owner@resurrectionmedicalcenter.com",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-resurrectionmedicalcenter.com",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@resurrectionmedicalcenter.com",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-resurrectionmedicalcenter.com",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@resurrectionmedicalcenter.com",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Chicago, Illinois",
+    "phone": "+1 773 774 8000",
+    "hasActiveMx": false,
+    "discoveredAt": "2026-08-20T12:32:16.295Z"
+  },
+  {
+    "domain": "saintmaryofnazarethhospital.com",
+    "companyName": "Saint Mary of Nazareth Hospital",
+    "website": "https://saintmaryofnazarethhospital.com/",
+    "contacts": [
+      {
+        "id": "dm-owner-saintmaryofnazarethhospital.com",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Saint Mary of Nazareth Hospital Executive Office",
+        "email": "owner@saintmaryofnazarethhospital.com",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-saintmaryofnazarethhospital.com",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@saintmaryofnazarethhospital.com",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-saintmaryofnazarethhospital.com",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@saintmaryofnazarethhospital.com",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Chicago, Illinois",
+    "phone": "+1 312 770 2000",
+    "hasActiveMx": false,
+    "discoveredAt": "2026-08-20T12:32:16.499Z"
+  },
+  {
+    "domain": "luriechildrens.org",
+    "companyName": "Ann & Robert H. Lurie Children's Hospital",
+    "website": "https://www.luriechildrens.org/",
+    "contacts": [
+      {
+        "id": "dm-owner-luriechildrens.org",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Ann & Robert H. Lurie Children's Hospital Executive Office",
+        "email": "owner@luriechildrens.org",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-luriechildrens.org",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@luriechildrens.org",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-luriechildrens.org",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@luriechildrens.org",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Chicago, Illinois",
+    "phone": "+1 312 227 4000",
+    "hasActiveMx": true,
+    "discoveredAt": "2026-08-20T12:32:16.527Z"
+  },
+  {
+    "domain": "thorekandersonville.org",
+    "companyName": "Thorek Memorial Hospital Andersonville",
+    "website": "https://thorekandersonville.org/",
+    "contacts": [
+      {
+        "id": "dm-owner-thorekandersonville.org",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Thorek Memorial Hospital Andersonville Executive Office",
+        "email": "owner@thorekandersonville.org",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-thorekandersonville.org",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@thorekandersonville.org",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-thorekandersonville.org",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@thorekandersonville.org",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Chicago, Illinois",
+    "phone": "+1 773 271 9040",
+    "hasActiveMx": true,
+    "discoveredAt": "2026-08-20T12:32:16.633Z"
+  },
+  {
+    "domain": "lorettohospital.org",
+    "companyName": "Loretto Hospital",
+    "website": "https://www.lorettohospital.org/",
+    "contacts": [
+      {
+        "id": "dm-owner-lorettohospital.org",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Loretto Hospital Executive Office",
+        "email": "owner@lorettohospital.org",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-lorettohospital.org",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@lorettohospital.org",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-lorettohospital.org",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@lorettohospital.org",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Chicago, Illinois",
+    "phone": "+1 773 626 4300",
+    "hasActiveMx": true,
+    "discoveredAt": "2026-08-20T12:32:17.402Z"
+  },
+  {
+    "domain": "loyolamedicine.org",
+    "companyName": "Loyola University Hospital",
+    "website": "https://www.loyolamedicine.org/location/loyola-university-medical-center-2",
+    "contacts": [
+      {
+        "id": "dm-owner-loyolamedicine.org",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Loyola University Hospital Executive Office",
+        "email": "owner@loyolamedicine.org",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-loyolamedicine.org",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@loyolamedicine.org",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-loyolamedicine.org",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@loyolamedicine.org",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Chicago, Illinois",
+    "phone": "",
+    "hasActiveMx": false,
+    "discoveredAt": "2026-08-20T12:32:19.917Z"
+  },
+  {
+    "domain": "rmlspecialtyhospital.org",
+    "companyName": "RML Specialty Hospital",
+    "website": "https://www.rmlspecialtyhospital.org/",
+    "contacts": [
+      {
+        "id": "dm-owner-rmlspecialtyhospital.org",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "RML Specialty Hospital Executive Office",
+        "email": "owner@rmlspecialtyhospital.org",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-rmlspecialtyhospital.org",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@rmlspecialtyhospital.org",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-rmlspecialtyhospital.org",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@rmlspecialtyhospital.org",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Chicago, Illinois",
+    "phone": "+1 773 826 6300",
+    "hasActiveMx": true,
+    "discoveredAt": "2026-08-20T12:32:20.037Z"
+  }
+]

@@ -17,7 +17,8 @@
     "email": "customer.care@robinsonsretail.com.ph",
     "channel": "Official Customer Care",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 3,
@@ -37,7 +38,8 @@
     "email": "customercare@smmarkets.ph",
     "channel": "Official Customer Portal",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 5,
@@ -47,7 +49,8 @@
     "email": "customer.care@metroretail.com.ph",
     "channel": "Official Corporate Contact",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 6,
@@ -127,7 +130,8 @@
     "email": "info@sanroquesupermarket.com.ph",
     "channel": "Official Regional Supermarket",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 14,
@@ -179,7 +183,8 @@
     "email": "info@eversupermarket.com",
     "channel": "Official Retail Portal",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 19,
@@ -199,7 +204,8 @@
     "email": "info@sanroquesupermarket.com.ph",
     "channel": "Official Corporate Email",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 21,
@@ -210,7 +216,8 @@
     "channel": "Official Wholesale Portal",
     "verification_status": "100% VERIFIED",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "decision_maker": "Benito Lim (President & Owner) / Julie Lim (VP Operations)"
+    "decision_maker": "Benito Lim (President & Owner) / Julie Lim (VP Operations)",
+    "status": "BOUNCED"
   },
   {
     "id": 22,
@@ -221,7 +228,8 @@
     "channel": "Official Retail Unit",
     "verification_status": "100% VERIFIED",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "decision_maker": "Robina Gokongwei-Pe (CEO) / Stanley C. Co (COO)"
+    "decision_maker": "Robina Gokongwei-Pe (CEO) / Stanley C. Co (COO)",
+    "status": "BOUNCED"
   },
   {
     "id": 23,
@@ -242,7 +250,8 @@
     "email": "customercare@smmarkets.ph",
     "channel": "Official SM Markets Portal",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 25,
@@ -264,7 +273,8 @@
     "channel": "Official Corporate Feedback",
     "verification_status": "100% VERIFIED",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "decision_maker": "Executive Stewardship & National Supply Chain Directorate"
+    "decision_maker": "Executive Stewardship & National Supply Chain Directorate",
+    "status": "BOUNCED"
   },
   {
     "id": 27,
@@ -297,7 +307,8 @@
     "channel": "Official Pharmacy Portal",
     "verification_status": "100% VERIFIED",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "decision_maker": "Michael G. So (General Manager) / Mariel Crisostomo (Group GM)"
+    "decision_maker": "Michael G. So (General Manager) / Mariel Crisostomo (Group GM)",
+    "status": "BOUNCED"
   },
   {
     "id": 30,
@@ -348,7 +359,8 @@
     "email": "customercare@medexpress.com.ph",
     "channel": "Official Pharmacy Support",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 35,
@@ -358,7 +370,8 @@
     "email": "info@doh.gov.ph",
     "channel": "Official Institutional Channel",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 36,
@@ -368,7 +381,8 @@
     "email": "customercare@healthyoptions.com.ph",
     "channel": "Official Retail Support",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 37,
@@ -388,7 +402,8 @@
     "email": "customercare@idealvisioncenter.com.ph",
     "channel": "Official Optical Retailer",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 39,
@@ -408,7 +423,8 @@
     "email": "customercare@smmarkets.ph",
     "channel": "Official SM Retail Group",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 41,
@@ -418,7 +434,8 @@
     "email": "customer.care@robinsonsretail.com.ph",
     "channel": "Official Robinsons Retail Unit",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 42,
@@ -518,7 +535,8 @@
     "email": "customer.care@robinsonsretail.com.ph",
     "channel": "Official Retail Portal",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 52,

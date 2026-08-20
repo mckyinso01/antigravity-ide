@@ -1,6 +1,6 @@
 {
-  "auditedAt": "2026-08-18T13:00:37.952Z",
-  "totalEmailsChecked": 416,
+  "auditedAt": "2026-08-19T11:01:19.286Z",
+  "totalEmailsChecked": 547,
   "visitors": [
     {
       "date": "Mon, 17 Aug 2026 13:56:34 +0000",
@@ -111,14 +111,279 @@
       "date": "Tue, 18 Aug 2026 12:56:56 +0000",
       "from": "OmniStock Pipeline Manager <mckinsyo01@gmail.com>",
       "subject": "📊 [OmniStock 5-Hour Report] 20 Dispatched • 80 Remaining • 3 Replies"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 13:05:28 +0000",
+      "from": "OmniStock Lead Alert <mckinsyo01@gmail.com>",
+      "subject": "🚨 [HIGH INTENT LEAD] Inbound OmniStock Enterprise Reply! (FormSubmit <submissions@formsubmit.co>)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 13:05:32 +0000",
+      "from": "OmniStock Pipeline Manager <mckinsyo01@gmail.com>",
+      "subject": "📊 [OmniStock 5-Hour Report] 20 Dispatched • 80 Remaining • 3 Replies"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 13:27:04 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://omnistock.surge.sh/"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 13:38:21 +0000",
+      "from": "OmniStock Lead Alert <mckinsyo01@gmail.com>",
+      "subject": "🚨 [HIGH INTENT LEAD] Inbound OmniStock Enterprise Reply! (FormSubmit <submissions@formsubmit.co>)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 13:38:25 +0000",
+      "from": "OmniStock Pipeline Manager <mckinsyo01@gmail.com>",
+      "subject": "📊 [OmniStock 5-Hour Report] 20 Dispatched • 80 Remaining • 4 Replies"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 13:38:59 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Unknown, Global/VPN"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 14:08:05 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on http://localhost:5174/"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 14:41:07 +0000",
+      "from": "OmniStock Outreach Automator <mckinsyo01@gmail.com>",
+      "subject": "📦 [OmniStock Summary] Batch #21-25 Completed (4 Delivered)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:07:12 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://omnistock.surge.sh/"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:10:48 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://saccade-ai.surge.sh/"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:34:35 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from San Roque, Philippines"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:39:28 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://omnistock.surge.sh/"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:39:30 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Singapore, Singapore"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:40:37 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Unknown, Global/VPN"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:40:44 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://clinical-pristine.surge.sh/"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:41:16 +0000",
+      "from": "OmniStock Outreach Automator <mckinsyo01@gmail.com>",
+      "subject": "📦 [OmniStock Summary] Batch #26-30 Completed (5 Delivered)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:41:46 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://omnistock.surge.sh/"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:42:36 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Unknown, Global/VPN"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:42:36 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Unknown, Global/VPN"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:42:36 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Unknown, Global/VPN"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:16:44 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🔥 [High-Intent Action] Prospect Clicked Launch Demo (Clinical Pristine OS) (San Roque, Philippines)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:16:49 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://clinical-pristine.surge.sh/"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:38:44 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://omnistock.surge.sh/"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:38:45 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Singapore, Singapore"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:39:28 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://clinical-pristine.surge.sh/"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:39:29 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Unknown, Global/VPN"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:41:16 +0000",
+      "from": "OmniStock Outreach Automator <mckinsyo01@gmail.com>",
+      "subject": "📦 [OmniStock Summary] Batch #31-35 Completed (5 Delivered)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:43:11 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Unknown, Global/VPN"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:43:10 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://clinical-pristine.surge.sh/"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:44:26 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Unknown, Global/VPN"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:44:26 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Unknown, Global/VPN"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:44:27 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Unknown, Global/VPN"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:55:40 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://omnistock.surge.sh/"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:59:00 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (Singapore, Singapore)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:59:00 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (San Roque, Philippines)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:59:00 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (Manila, Philippines)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:59:00 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (San Roque, Philippines)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:59:00 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (Singapore, Singapore)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:59:00 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (Singapore, Singapore)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:59:00 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (Unknown, Global/VPN)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:59:00 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (Singapore, Singapore)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:59:00 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (San Roque, Philippines)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 17:00:41 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (San Roque, Philippines)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 17:41:52 +0000",
+      "from": "OmniStock Outreach Automator <mckinsyo01@gmail.com>",
+      "subject": "📦 [OmniStock Summary] Batch #36-40 Completed (5 Delivered)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 18:38:23 +0000",
+      "from": "OmniStock Lead Alert <mckinsyo01@gmail.com>",
+      "subject": "🚨 [HIGH INTENT LEAD] Inbound OmniStock Enterprise Reply! (FormSubmit <submissions@formsubmit.co>)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 18:38:26 +0000",
+      "from": "OmniStock Pipeline Manager <mckinsyo01@gmail.com>",
+      "subject": "📊 [OmniStock 5-Hour Report] 39 Dispatched • 60 Remaining • 18 Replies"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 18:40:33 +0000",
+      "from": "OmniStock Outreach Automator <mckinsyo01@gmail.com>",
+      "subject": "📦 [OmniStock Summary] Batch #41-45 Completed (3 Delivered)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 20:06:03 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🏥 [Hospital Lead] New Visitor Launched Clinical Pristine OS (Unknown, Global/VPN)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 20:06:03 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🏥 [Hospital Lead] New Visitor Launched Clinical Pristine OS (Unknown, Global/VPN)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 20:06:03 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🏥 [Hospital Lead] New Visitor Launched Clinical Pristine OS (San Roque, Philippines)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 20:06:03 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🏥 [Hospital Lead] New Visitor Launched Clinical Pristine OS (Unknown, Global/VPN)"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 03:54:16 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (Unknown, Global/VPN)"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 03:59:32 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🏥 [Hospital Lead] New Visitor Launched Clinical Pristine OS (Ashburn, United States)"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 04:00:50 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🏥 [Hospital Lead] New Visitor Launched Clinical Pristine OS (Miami, United States)"
     }
   ],
   "orders": [
-    {
-      "date": "Sat, 8 Aug 2026 14:00:10 +0000",
-      "from": "Stripe <notifications@stripe.com>",
-      "subject": "[Action required] Complete your Stripe setup by August 15, 2026 to avoid losing your work"
-    },
     {
       "date": "Sun, 9 Aug 2026 20:47:10 +0000",
       "from": "MMFYT <contact@mmfyt.fr>",
@@ -133,6 +398,16 @@
       "date": "Mon, 17 Aug 2026 05:25:26 -0700",
       "from": "Google Play <googleplay-noreply@google.com>",
       "subject": "Facebook subscription suspended due to payment issue"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:33:28 +0000",
+      "from": "Netflix <info@account.netflix.com>",
+      "subject": "We couldn’t process your payment"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 10:49:40 +0000 (UTC)",
+      "from": "Spaceship <receipts@spaceship.com>",
+      "subject": "Spaceship order summary #d23a5e85-4bca-4d2a-9453-c2cc61391c2e"
     }
   ],
   "bounces": [
@@ -140,7 +415,178 @@
       "date": "Mon, 17 Aug 2026 09:29:49 -0700 (PDT)",
       "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
       "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 07:38:16 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 07:39:09 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 07:40:03 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 07:40:32 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 07:41:33 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 08:38:14 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 08:38:19 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 08:40:36 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 08:40:43 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 09:39:57 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 09:40:37 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 09:40:38 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 09:41:17 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 10:15:32 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 10:38:16 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 10:40:44 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 13:40:59 -0400",
+      "from": "<postmaster@CRH.org>",
+      "subject": "Undeliverable: Reducing ED Boarding & Bed Turnaround Latency at Columbus Regional Health (Zero-Footprint Epic HUD)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 10:41:53 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 10:44:30 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Delay)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 10:45:48 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 11:05:47 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Delay)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 11:17:44 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Delay)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 11:38:15 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 11:38:16 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 11:39:00 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 11:39:06 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 11:39:50 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 11:40:01 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 11:40:54 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 12:12:04 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Delay)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 12:38:57 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 12:39:05 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 13:08:00 -0700 (PDT)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "subject": "Delivery Status Notification (Failure)"
     }
   ],
-  "prospectReplies": []
+  "prospectReplies": [
+    {
+      "date": "Tue, 18 Aug 2026 13:40:59 -0400",
+      "from": "<postmaster@CRH.org>",
+      "subject": "Undeliverable: Reducing ED Boarding & Bed Turnaround Latency at Columbus Regional Health (Zero-Footprint Epic HUD)"
+    }
+  ]
 }

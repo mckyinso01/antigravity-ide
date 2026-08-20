@@ -1,10 +1,10 @@
 {
-  "nextLeadId": 31,
-  "totalSent": 30,
+  "nextLeadId": 41,
+  "totalSent": 39,
   "dailyBatchSize": 5,
   "delaySecondsMin": 35,
   "delaySecondsMax": 55,
-  "lastRun": "2026-08-18T16:41:34.578Z",
+  "lastRun": "2026-08-18T18:41:32.320Z",
   "history": [
     {
       "runAt": "2026-08-17T14:19:02.141Z",
@@ -41,6 +41,20 @@
     {
       "runAt": "2026-08-18T16:41:34.578Z",
       "batchRange": "26-30",
+      "successCount": 5,
+      "skippedCount": 0,
+      "failedCount": 0
+    },
+    {
+      "runAt": "2026-08-18T17:40:57.204Z",
+      "batchRange": "31-35",
+      "successCount": 4,
+      "skippedCount": 1,
+      "failedCount": 0
+    },
+    {
+      "runAt": "2026-08-18T18:41:32.320Z",
+      "batchRange": "36-40",
       "successCount": 5,
       "skippedCount": 0,
       "failedCount": 0

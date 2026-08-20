@@ -1,6 +1,6 @@
 {
-  "auditedAt": "2026-08-18T12:59:20.645Z",
-  "totalBounces": 1,
+  "auditedAt": "2026-08-20T01:08:37.084Z",
+  "totalBounces": 42,
   "bounces": [
     {
       "date": "Mon, 17 Aug 2026 09:29:49 -0700 (PDT)",
@@ -9,159 +9,337 @@
       "failedRecipient": "catch-all@kccmalls.com",
       "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
       "snippet": "Hello mckinsyo01@gmail.com,  We're writing to let you know that the group you tried to contact (catch-all) may not exist, or you may not have permission to post messages to the group. A few more details on why you weren't able to post:   * You might have spelled or formatted the group name incorrectly.  * The owner of the group may have remove"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 07:38:16 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "info@ultramega.com.ph",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--000000000000c133d50659533c9a Content-Type: multipart/related; boundary=\"000000000000c1341c0659533c9b\"  --000000000000c1341c0659533c9b Content-Type: multipart/alternative; boundary=\"000000000000c1341e0659533c9c\"  --000000000000c1341e0659533c9c Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 07:39:09 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "stephanie.lahr@monument.health",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--000000000000e9be9b0659533fcf Content-Type: multipart/related; boundary=\"000000000000e9e0150659533f5a\"  --000000000000e9e0150659533f5a Content-Type: multipart/alternative; boundary=\"000000000000e9e01a0659533f5b\"  --000000000000e9e01a0659533f5b Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 07:40:03 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "amy.linscheid@billingsclinic.org",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--0000000000001c53cd065953439a Content-Type: multipart/related; boundary=\"0000000000001c610e06595343aa\"  --0000000000001c610e06595343aa Content-Type: multipart/alternative; boundary=\"0000000000001c611406595343ab\"  --0000000000001c611406595343ab Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 07:40:32 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customercare@smmarkets.ph",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--000000000000dd37710659534439 Content-Type: multipart/related; boundary=\"000000000000dd450a06595344b2\"  --000000000000dd450a06595344b2 Content-Type: multipart/alternative; boundary=\"000000000000dd451006595344b3\"  --000000000000dd451006595344b3 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 07:41:33 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "cheryl.caughron@carsontahoe.org",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--000000000000793387065953486e Content-Type: multipart/related; boundary=\"00000000000079499b0659534822\"  --00000000000079499b0659534822 Content-Type: multipart/alternative; boundary=\"0000000000007949a20659534826\"  --0000000000007949a20659534826 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 08:38:14 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "john.buffington@sanjuanregional.net",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--00000000000035547c065954137e Content-Type: multipart/related; boundary=\"000000000000356ac706595413a7\"  --000000000000356ac706595413a7 Content-Type: multipart/alternative; boundary=\"000000000000356ad006595413a8\"  --000000000000356ad006595413a8 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 08:38:19 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "feedback@mercurydrug.com",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--00000000000081a6280659541342 Content-Type: multipart/related; boundary=\"00000000000081af400659541353\"  --00000000000081af400659541353 Content-Type: multipart/alternative; boundary=\"00000000000081af5e0659541354\"  --00000000000081af5e0659541354 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 08:40:36 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customer.care@robinsonsretail.com.ph",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--000000000000ac9cb00659541bb7 Content-Type: multipart/related; boundary=\"000000000000acaac20659541bf4\"  --000000000000acaac20659541bf4 Content-Type: multipart/alternative; boundary=\"000000000000acaac80659541bf5\"  --000000000000acaac80659541bf5 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 08:40:43 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "david.rogers@summithealthcare.net",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--00000000000017ad6f0659541c4d Content-Type: multipart/related; boundary=\"00000000000017b6060659541c71\"  --00000000000017b6060659541c71 Content-Type: multipart/alternative; boundary=\"00000000000017b60a0659541c72\"  --00000000000017b60a0659541c72 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 09:39:57 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "lisa.lovelace@bannerhealth.com",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--000000000000e4ad49065954ef3f Content-Type: multipart/related; boundary=\"000000000000e4bffb065954ef80\"  --000000000000e4bffb065954ef80 Content-Type: multipart/alternative; boundary=\"000000000000e4c001065954ef81\"  --000000000000e4c001065954ef81 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 09:40:37 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "leo.morris@cchwyo.org",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--00000000000045d076065954f2c9 Content-Type: multipart/related; boundary=\"00000000000045eb42065954f2f1\"  --00000000000045eb42065954f2f1 Content-Type: multipart/alternative; boundary=\"00000000000045eb4a065954f2f2\"  --00000000000045eb4a065954f2f2 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 09:40:38 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customercare@medexpress.com.ph",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--0000000000005ff9e8065954f22a Content-Type: multipart/related; boundary=\"00000000000060064a065954f251\"  --00000000000060064a065954f251 Content-Type: multipart/alternative; boundary=\"00000000000060064f065954f252\"  --00000000000060064f065954f252 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 09:41:17 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "info@doh.gov.ph",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--000000000000b35232065954f4f1 Content-Type: multipart/related; boundary=\"000000000000b35ce8065954f4fb\"  --000000000000b35ce8065954f4fb Content-Type: multipart/alternative; boundary=\"000000000000b35cef065954f4fc\"  --000000000000b35cef065954f4fc Content-Type: text/plain; charset=\"UTF-8\" Content-Transfer-Encoding: quoted-printable   ** Add"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 10:15:32 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customer.care@robinsonsretail.com.ph",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--0000000000002480ad0659556f0e Content-Type: multipart/related; boundary=\"00000000000024955a0659556fdf\"  --00000000000024955a0659556fdf Content-Type: multipart/alternative; boundary=\"00000000000024955f0659556fe0\"  --00000000000024955f0659556fe0 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 10:38:16 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "scott.christensen@blessinghealth.org",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--0000000000007c9bb5065955c03b Content-Type: multipart/related; boundary=\"0000000000007cb44f065955c090\"  --0000000000007cb44f065955c090 Content-Type: multipart/alternative; boundary=\"0000000000007cb454065955c091\"  --0000000000007cb454065955c091 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 10:40:44 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customercare@idealvisioncenter.com.ph",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--00000000000049a1d2065955c952 Content-Type: multipart/related; boundary=\"00000000000049b1ef065955c97d\"  --00000000000049b1ef065955c97d Content-Type: multipart/alternative; boundary=\"00000000000049b1f4065955c97e\"  --00000000000049b1f4065955c97e Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 13:40:59 -0400",
+      "subject": "Undeliverable: Reducing ED Boarding & Bed Turnaround Latency at Columbus Regional Health (Zero-Footprint Epic HUD)",
+      "from": "<postmaster@CRH.org>",
+      "failedRecipient": "steve.baker@crh.org",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--c3940226-41d1-4b2d-9aea-ca32d469365e Content-Type: multipart/alternative; differences=Content-Type; \tboundary=\"ef095b88-5cd8-4133-8cc1-f6c9cb996f55\"  --ef095b88-5cd8-4133-8cc1-f6c9cb996f55 Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable  Delivery has failed to these recipients or groups:  steve.b"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 10:41:53 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customercare@smmarkets.ph",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--0000000000006a4c4b065955cdf1 Content-Type: multipart/related; boundary=\"0000000000006a6060065955cd49\"  --0000000000006a6060065955cd49 Content-Type: multipart/alternative; boundary=\"0000000000006a6066065955cd4a\"  --0000000000006a6066065955cd4a Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 10:44:30 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Delay)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "info@eversupermarket.com",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--000000000000c7929a065955d613 Content-Type: multipart/related; boundary=\"000000000000c7a2d0065955d661\"  --000000000000c7a2d0065955d661 Content-Type: multipart/alternative; boundary=\"000000000000c7a2d7065955d662\"  --000000000000c7a2d7065955d662 Content-Type: text/plain; charset=\"UTF-8\"   ** Delivery incomplete **  There was a temporary "
+    },
+    {
+      "date": "Tue, 18 Aug 2026 10:45:48 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customercare@healthyoptions.com.ph",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--000000000000648111065955dbaf Content-Type: multipart/related; boundary=\"0000000000006497b0065955dbb8\"  --0000000000006497b0065955dbb8 Content-Type: multipart/alternative; boundary=\"0000000000006497bd065955dbb9\"  --0000000000006497bd065955dbb9 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 11:05:47 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Delay)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "info@sanroquesupermarket.com.ph",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--000000000000de84c0065956223e Content-Type: multipart/related; boundary=\"000000000000dea15c065956220d\"  --000000000000dea15c065956220d Content-Type: multipart/alternative; boundary=\"000000000000dea15e065956220e\"  --000000000000dea15e065956220e Content-Type: text/plain; charset=\"UTF-8\"   ** Delivery incomplete **  There was a temporary "
+    },
+    {
+      "date": "Tue, 18 Aug 2026 11:17:44 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Delay)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customer.care@metroretail.com.ph",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--0000000000009e04900659564d84 Content-Type: multipart/related; boundary=\"0000000000009e160b0659564d85\"  --0000000000009e160b0659564d85 Content-Type: multipart/alternative; boundary=\"0000000000009e16190659564d86\"  --0000000000009e16190659564d86 Content-Type: text/plain; charset=\"UTF-8\"   ** Delivery incomplete **  There was a temporary "
+    },
+    {
+      "date": "Tue, 18 Aug 2026 11:38:15 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "cindy.frank@mhsystem.org",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--000000000000f9ffbf0659569655 Content-Type: multipart/related; boundary=\"000000000000fa144206595696b0\"  --000000000000fa144206595696b0 Content-Type: multipart/alternative; boundary=\"000000000000fa144606595696b1\"  --000000000000fa144606595696b1 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 11:38:16 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customer.care@robinsonsretail.com.ph",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--0000000000001076fc0659569784 Content-Type: multipart/related; boundary=\"000000000000107feb06595697a8\"  --000000000000107feb06595697a8 Content-Type: multipart/alternative; boundary=\"000000000000107fef06595697a9\"  --000000000000107fef06595697a9 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 11:39:00 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "info@mumuso.com.ph",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--000000000000a69cca0659569960 Content-Type: multipart/related; boundary=\"000000000000a6b327065956998b\"  --000000000000a6b327065956998b Content-Type: multipart/alternative; boundary=\"000000000000a6b32b065956998c\"  --000000000000a6b32b065956998c Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 11:39:06 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "brent.burkey@ftmc.com",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--00000000000000024f0659569ac3 Content-Type: multipart/related; boundary=\"000000000000000bbd0659569adc\"  --000000000000000bbd0659569adc Content-Type: multipart/alternative; boundary=\"000000000000000bc00659569add\"  --000000000000000bc00659569add Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 11:39:50 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "info@yoyoso.ph",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--000000000000a758400659569c4f Content-Type: multipart/related; boundary=\"000000000000a760f80659569c50\"  --000000000000a760f80659569c50 Content-Type: multipart/alternative; boundary=\"000000000000a760fb0659569c51\"  --000000000000a760fb0659569c51 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 11:40:01 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "drew.early@memorial.health",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--00000000000048d2d00659569dd3 Content-Type: multipart/related; boundary=\"00000000000048df280659569df2\"  --00000000000048df280659569df2 Content-Type: multipart/alternative; boundary=\"00000000000048df2b0659569df5\"  --00000000000048df2b0659569df5 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 11:40:54 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "ryan.venier@ksbhospital.com",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--000000000000778086065956a057 Content-Type: multipart/related; boundary=\"000000000000778ab0065956a064\"  --000000000000778ab0065956a064 Content-Type: multipart/alternative; boundary=\"000000000000778ab4065956a065\"  --000000000000778ab4065956a065 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 12:12:04 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Delay)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "info@sanroquesupermarket.com.ph",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--000000000000e6f8f50659570f29 Content-Type: multipart/related; boundary=\"000000000000e7089d0659570f40\"  --000000000000e7089d0659570f40 Content-Type: multipart/alternative; boundary=\"000000000000e708ab0659570f41\"  --000000000000e708ab0659570f41 Content-Type: text/plain; charset=\"UTF-8\"   ** Delivery incomplete **  There was a temporary "
+    },
+    {
+      "date": "Tue, 18 Aug 2026 12:38:57 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customercare@bench.com.ph",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--0000000000000f18cc065957700c Content-Type: multipart/related; boundary=\"0000000000000f2ec6065957703f\"  --0000000000000f2ec6065957703f Content-Type: multipart/alternative; boundary=\"0000000000000f2ecd0659577040\"  --0000000000000f2ecd0659577040 Content-Type: text/plain; charset=\"UTF-8\" Content-Transfer-Encoding: quoted-printable   ** Add"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 12:39:05 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "john.burt@morrishospital.org",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--0000000000008a01490659577010 Content-Type: multipart/related; boundary=\"0000000000008a0bcb0659577027\"  --0000000000008a0bcb0659577027 Content-Type: multipart/alternative; boundary=\"0000000000008a0bd00659577028\"  --0000000000008a0bd00659577028 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 13:08:00 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customercare@penshoppe.com",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--000000000000f99daa065957d706 Content-Type: multipart/related; boundary=\"000000000000f9acb0065957d707\"  --000000000000f9acb0065957d707 Content-Type: multipart/alternative; boundary=\"000000000000f9acb6065957d708\"  --000000000000f9acb6065957d708 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 04:16:08 -0700",
+      "subject": "Undeliverable: [EXTERNAL] Quick follow-up: What custom modules or workflow modifications would Kadlec Regional Medical Center need?",
+      "from": "<postmaster@providence.org>",
+      "failedRecipient": "angela.hughes@kadlec.org",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--fd60d032-0756-4680-8820-e4856d3dcec0 Content-Type: multipart/alternative; differences=Content-Type; \tboundary=\"a6fe12a9-c045-48b0-9f31-3349061fde57\"  --a6fe12a9-c045-48b0-9f31-3349061fde57 Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable  Delivery has failed to these recipients or groups:  angela."
+    },
+    {
+      "date": "Wed, 19 Aug 2026 04:15:59 -0700",
+      "subject": "Undeliverable: [EXTERNAL] Quick follow-up: What custom modules or workflow modifications would Kadlec Regional Medical Center need?",
+      "from": "<postmaster@providence.org>",
+      "failedRecipient": "angela.hughes@kadlec.org",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--3176bbf1-c62e-40dd-bc61-fc15d63db365 Content-Type: multipart/alternative; differences=Content-Type; \tboundary=\"3a2737f6-da1f-4490-a1cf-da8151a82749\"  --3a2737f6-da1f-4490-a1cf-da8151a82749 Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable  Delivery has failed to these recipients or groups:  angela."
+    },
+    {
+      "date": "Wed, 19 Aug 2026 05:17:48 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "chris.akeroyd@evergreenhealth.com",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--0000000000003905cf065965644d Content-Type: multipart/related; boundary=\"00000000000039192c0659656479\"  --00000000000039192c0659656479 Content-Type: multipart/alternative; boundary=\"000000000000391933065965647a\"  --000000000000391933065965647a Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 06:16:53 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "kimberly.kelley@multicare.org",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--00000000000086a6e2065966370f Content-Type: multipart/related; boundary=\"00000000000086b38f0659663735\"  --00000000000086b38f0659663735 Content-Type: multipart/alternative; boundary=\"00000000000086b3960659663736\"  --00000000000086b3960659663736 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 09:30:59 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Delay)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customer.care@metroretail.com.ph",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--000000000000af5fbd065968ede9 Content-Type: multipart/related; boundary=\"000000000000af7510065968edf0\"  --000000000000af7510065968edf0 Content-Type: multipart/alternative; boundary=\"000000000000af7515065968edf1\"  --000000000000af7515065968edf1 Content-Type: text/plain; charset=\"UTF-8\"   ** Delivery incomplete **  There was a temporary "
+    },
+    {
+      "date": "Wed, 19 Aug 2026 10:05:08 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Delay)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "info@eversupermarket.com",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--000000000000d181970659696772 Content-Type: multipart/related; boundary=\"000000000000d1928806596967f8\"  --000000000000d1928806596967f8 Content-Type: multipart/alternative; boundary=\"000000000000d1928e06596967f9\"  --000000000000d1928e06596967f9 Content-Type: text/plain; charset=\"UTF-8\"   ** Delivery incomplete **  There was a temporary "
+    },
+    {
+      "date": "Wed, 19 Aug 2026 10:36:49 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Delay)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "info@sanroquesupermarket.com.ph",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--0000000000001cc335065969d9ce Content-Type: multipart/related; boundary=\"0000000000001cd6a5065969d9db\"  --0000000000001cd6a5065969d9db Content-Type: multipart/alternative; boundary=\"0000000000001cd6af065969d9dc\"  --0000000000001cd6af065969d9dc Content-Type: text/plain; charset=\"UTF-8\"   ** Delivery incomplete **  There was a temporary "
+    },
+    {
+      "date": "Wed, 19 Aug 2026 12:09:23 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Delay)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "info@sanroquesupermarket.com.ph",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--0000000000002ef41d06596b24b7 Content-Type: multipart/related; boundary=\"0000000000002f00e606596b24de\"  --0000000000002f00e606596b24de Content-Type: multipart/alternative; boundary=\"0000000000002f00ea06596b24df\"  --0000000000002f00ea06596b24df Content-Type: text/plain; charset=\"UTF-8\"   ** Delivery incomplete **  There was a temporary "
     }
   ],
   "prospectReplies": [
-    {
-      "date": "Mon, 10 Aug 2026 21:27:03 +0000",
-      "from": "Apollo <support@apollo.io>",
-      "subject": "Updated Apollo Terms of Service, Privacy Policy, and AI Policy",
-      "snippet": "--84b7c2cf8e4767378dd1b2a526a66ed28da7afd745ca6332ea6d8295b5ce Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"utf-8\"  We're updating our Terms of Service, Privacy P"
-    },
-    {
-      "date": "Mon, 10 Aug 2026 22:30:07 +0000",
-      "from": "Supabase <welcome@supabase.com>",
-      "subject": "Supa Update August 2026",
-      "snippet": "--66da6dac2104ad9d43ef6e636a077c50f94f0f850737c1d3d85ebe6ac937 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"utf-8\"  Everything that happened in the last month at "
-    },
-    {
-      "date": "Tue, 11 Aug 2026 00:25:07 +0000",
-      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
-      "subject": "Jr. Pod Lead (AI Visibility) at Smart Outsourcing Solution. 29 more work from home jobs",
-      "snippet": "--_----xqHdSOb2ZXvVXSsy7hTkYA===_C6/39-23512-3EB6A7A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A30 new work from home jobs=0A=0AJobs"
-    },
-    {
-      "date": "Tue, 11 Aug 2026 02:34:20 +0000",
-      "from": "\"GrabPoints.com\" <info@mail.grabpoints.com>",
-      "subject": "📣 Complete This Quick Survey - Receive 2632 points in 15 minutes",
-      "snippet": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"> <html xmlns=\"http://www.w3.org/1999/xhtml\">   <head>     <meta http-equiv=\""
-    },
-    {
-      "date": "Tue, 11 Aug 2026 04:04:27 +0100",
-      "from": "Yotspot <no-reply@yotspot.com>",
-      "subject": "Yotspot - New jobs for you!",
-      "snippet": "PCFET0NUWVBFIGh0bWw+CjxodG1sPgoJCQkJPGhlYWQ+CgkJCQkJPG1ldGEgbmFtZT0idmlld3Bv cnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCI+CgkJCQkJPG1ldGEgaHR0cC1lcXVpdj0i Q29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7"
-    },
-    {
-      "date": "Tue, 11 Aug 2026 03:21:35 +0000",
-      "from": "Dribbble <no-reply@n.dribbble.com>",
-      "subject": "Find world-class design and development talent on Dribbble.",
-      "snippet": "--36df81cf0f6053916067bbcf651926654d64d74baa8bb0ac2ee1cec5a025 Content-Type: text/plain; charset=\"utf-8\" Content-Transfer-Encoding: quoted-printable  Compare portfolios, ratings, reviews, badges, "
-    },
-    {
-      "date": "Tue, 11 Aug 2026 03:30:33 +0000",
-      "from": "Mobbin Team <team@mobbin.com>",
-      "subject": "Save and share on Mobbin",
-      "snippet": "--f5ac72bcea778e7e1f2a8050df0e101bdd45d1c16c2bf72d2d754228a684 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"utf-8\"  When you find something that inspires you, sav"
-    },
-    {
-      "date": "Mon, 10 Aug 2026 21:00:26 -0700",
-      "from": "Jamaica Chono <jamaica.chono@buskowitz.com>",
-      "subject": "Your Solar Proposal — Start Saving up to PHP 127,031/Year ☀",
-      "snippet": "--0000000000000874cb0658bd83bf Content-Type: multipart/alternative; boundary=\"0000000000000874ca0658bd83bd\"  --0000000000000874ca0658bd83bd Content-Type: text/plain; charset=\"UTF-8\" Content-Trans"
-    },
-    {
-      "date": "Tue, 11 Aug 2026 07:36:17 +0000",
-      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
-      "subject": "AI Growth & Performance Marketing Operator at Expounder. 29 more automation work from home jobs",
-      "snippet": "--_----m0xZCjgZm9gslYAxwLR9Yg===_66/06-44400-1F0DA7A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A30 new automation work from home job"
-    },
-    {
-      "date": "Tue, 11 Aug 2026 07:55:58 +0000",
-      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
-      "subject": "AI Growth & Performance Marketing Operator at Expounder. 29 more automation specialist jobs in Philippines",
-      "snippet": "--_----ffymhjj2O53zWL0P0Uo67Q===_62/1D-02923-E85DA7A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A30 new automation specialist jobs in"
-    },
-    {
-      "date": "Tue, 11 Aug 2026 09:45:59 +0000",
-      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
-      "subject": "CRM Specialist (Fieldd to GHL Through Zapier) at NXT LVL Mobile Detailing. 29 more automation jobs",
-      "snippet": "--_----xmD5g3ujdMoRPynruEq6cw===_69/F5-15598-75FEA7A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A30 new automation jobs=0A=0AJobs 1-3"
-    },
-    {
-      "date": "Tue, 11 Aug 2026 13:20:53 +0000",
-      "from": "\"GrabPoints.com\" <info@mail.grabpoints.com>",
-      "subject": "🏆 Fast Track Your Opinion - Get 329 points in 5 minutes",
-      "snippet": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"> <html xmlns=\"http://www.w3.org/1999/xhtml\">   <head>     <meta http-equiv=\""
-    },
-    {
-      "date": "Tue, 11 Aug 2026 10:14:37 -0400 (EDT)",
-      "from": "FlexJobs <notify@mg.flexjobs.com>",
-      "subject": "Don’t miss today’s  jobs!",
-      "snippet": "------=_Part_146689957_1114140027.1786457677981 Content-Type: multipart/related;  \tboundary=\"----=_Part_146689959_435565266.1786457677981\"  ------=_Part_146689959_435565266.1786457677981 Content-"
-    },
-    {
-      "date": "Tue, 11 Aug 2026 15:21:47 +0000",
-      "from": "\"Zapier\" <events@send.zapier.com>",
-      "subject": "ZapConnect 2026: Explore the agenda",
-      "snippet": "--_----rTO+tL47MAE6k6PsogXPbw===_71/6E-04533-B0E3B7A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  ZapConnect 2026: Explore the agenda  From keynotes to w"
-    },
-    {
-      "date": "Tue, 11 Aug 2026 10:04:15 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/EMS] Run failed: EMS Enterprise CI/CD - main (498e74c)",
-      "snippet": "--part_0639d6d90f9a8caf948fa5751afd736f69e7e6fd768f74fa48522e31bb3e1370 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/EMS] EMS Enterprise CI/CD workflow run "
-    },
-    {
-      "date": "Tue, 11 Aug 2026 17:30:04 +0000",
-      "from": "Apollo <hello@mail.apollo.io>",
-      "subject": "New research: Only 6% think AI will replace their team",
-      "snippet": "--5c39ce1a28a822bd0ef7ecc2042b20a6c81f6547a1e792f1fb4a018ba066 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"utf-8\"  Apollo surveyed 300+ GTM pros on how they=E2=8"
-    },
-    {
-      "date": "Tue, 11 Aug 2026 19:16:40 +0000",
-      "from": "\"Coursera\" <Coursera@m.learn.coursera.org>",
-      "subject": "New course in the Google AI Certificate!",
-      "snippet": "--_----cCiDmwbY+LNe6kf/dUBrkQ===_06/0C-33901-8157B7A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Learn how to create your own app. No coding experience "
-    },
-    {
-      "date": "Tue, 11 Aug 2026 22:57:42 +0000",
-      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
-      "subject": "Jr. Pod Lead (AI Visibility) at Smart Outsourcing Solution. 29 more work from home jobs",
-      "snippet": "--_----e/u35VbBhc05jvN3S+dpFA===_C6/85-20190-6E8AB7A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A30 new work from home jobs=0A=0AJobs"
-    },
-    {
-      "date": "Wed, 12 Aug 2026 02:21:57 +0000 (UTC)",
-      "from": "DEV Community Newsletter <yo@dev.to>",
-      "subject": "AI Werewolves, ReAct déjà vu, the open weights fight, and more!",
-      "snippet": "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\" \"http://www.w= 3.org/TR/REC-html40/loose.dtd\"> <html>   <body style=3D'font-family: \"HelveticaNeue-Light\", \"Helvetica Neue Light\"= , \""
-    },
-    {
-      "date": "Wed, 12 Aug 2026 03:30:37 +0000",
-      "from": "Jovin from Mobbin <jovin@mobbin.com>",
-      "subject": "Unlock endless inspiration with Mobbin Pro",
-      "snippet": "--16477e27eedd23a1bf5025d048376d64e059e7f5173fcad7f55824cef0f8 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"utf-8\"  Mobbin logo  Hi there,  Ready to take your"
-    },
-    {
-      "date": "Wed, 12 Aug 2026 04:03:38 +0000",
-      "from": "SEEK Pass Support <support@seekpass.co>",
-      "subject": "An update regarding your New Zealand Right to Work verification",
-      "snippet": "----_NmP-64d9ff6d2aa49553-Part_1 Content-Type: text/plain; charset=utf-8 Content-Transfer-Encoding: quoted-printable  https://seekpass.co?utm_source=3DSEEK-Pass&utm_medium=3Demail&utm_campaign= ="
-    },
-    {
-      "date": "Wed, 12 Aug 2026 05:31:20 +0000",
-      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
-      "subject": "Property Management Virtual Assistant (Hospitality Operations Coordinator) at T-Mate Global Solutions. 29 more automation work from home jobs",
-      "snippet": "--_----FlBVr40HeiviBPEhLBlVsQ===_6A/6B-44069-8250C7A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A30 new automation work from home job"
-    },
-    {
-      "date": "Wed, 12 Aug 2026 07:45:15 +0000",
-      "from": "SEEK Pass Support <support@seekpass.co>",
-      "subject": "Your Career History has been verified",
-      "snippet": "----_NmP-0f7b2ba406304ac9-Part_1 Content-Type: text/plain; charset=utf-8 Content-Transfer-Encoding: quoted-printable  https://seekpass.co?utm_source=3DSEEK-Pass&utm_medium=3Demail&utm_campaign= ="
-    },
-    {
-      "date": "Wed, 12 Aug 2026 11:24:32 +0000 (UTC)",
-      "from": "PlaytestCloud <help@playtestcloud.com>",
-      "subject": "Experienced with Sky: Children of the Light? We want to hear from you!",
-      "snippet": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.= w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"> <html xmlns=3D\"http://www.w3.org/1999/xhtml\" xmlns=3D\"http://www.w3.org/19"
-    },
-    {
-      "date": "Wed, 12 Aug 2026 14:47:07 +0000",
-      "from": "Apollo <info@mail.apollo.io>",
-      "subject": "Ends tomorrow: Live agent support",
-      "snippet": "--db9fa3cc58b5f9f66772ae45dfc828a313a97cfd8fbf33dc2807118c8678 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"utf-8\"  Upgrade your plan to unlock live chat and dedi"
-    },
     {
       "date": "Wed, 12 Aug 2026 19:00:34 +0000",
       "from": "\"Zapier\" <events@send.zapier.com>",
@@ -1864,6 +2042,702 @@
       "date": "Tue, 18 Aug 2026 10:49:12 +0000",
       "from": "FormSubmit <submissions@formsubmit.co>",
       "subject": "🚨 [GatzDevs Lead] New Visitor from Unknown, Global/VPN",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 13:27:04 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://omnistock.surge.sh/",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 13:38:59 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Unknown, Global/VPN",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 14:08:05 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on http://localhost:5174/",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 10:27:53 -0400 (EDT)",
+      "from": "FlexJobs <notify@mg.flexjobs.com>",
+      "subject": "Don’t miss today’s  jobs!",
+      "snippet": "------=_Part_208115772_1021879490.1787063273253 Content-Type: multipart/related;  \tboundary=\"----=_Part_208115773_1219771508.1787063273253\"  ------=_Part_208115773_1219771508.1787063273253 Conten"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 14:29:35 +0000",
+      "from": "\"Coursera\" <Coursera@m.learn.coursera.org>",
+      "subject": "🎉 Save 40% on three months of Coursera Plus",
+      "snippet": "<!DOCTYPE html>=0A<html     en lang=3D\"en\" xmlns:v=3D\"urn:schemas-microsoft= -com:vml\" xmlns:o=3D\"urn:schemas-microsoft-com:office:office\" style=3D\"widt= h: 100% !important; scroll-behavior: smooth;"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:07:12 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://omnistock.surge.sh/",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:10:48 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://saccade-ai.surge.sh/",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:33:28 +0000",
+      "from": "Netflix <info@account.netflix.com>",
+      "subject": "We couldn’t process your payment",
+      "snippet": "------=_Part_1101458_1568143738.1787067208112 Content-Type: text/plain; charset=UTF-8 Content-Transfer-Encoding: quoted-printable  Let=E2=80=99s fix it so you can keep enjoying your favorite shows"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:34:35 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from San Roque, Philippines",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:39:02 +0000",
+      "from": "customercare@southstardrug.com.ph",
+      "subject": "Southstar Drug welcome email",
+      "snippet": " ----==_mimepart_6a847c96c5c05_17b1860131126 Content-Type: text/plain;  charset=utf-8 Content-Transfer-Encoding: quoted-printable  Welcome to Southstar Drug. Complete your sign-up to activate an"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:39:28 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://omnistock.surge.sh/",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:39:30 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Singapore, Singapore",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:40:01 +0000 (UTC)",
+      "from": "<donotreply@my354302.mail.crm.ondemand.com>",
+      "subject": "Thank you. We have received the email",
+      "snippet": "<html>=0A=0A<head>=0A    <=21-- Search-Title -->=0A    <title>Thank you for=  contacting us.</title>=0A    <meta http-equiv=3D=22Content-Type=22 content= =3D=22text/html; charset=3Dutf-8=22>=0A</hea"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:40:37 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Unknown, Global/VPN",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:40:44 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://clinical-pristine.surge.sh/",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:41:46 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://omnistock.surge.sh/",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:42:36 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Unknown, Global/VPN",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:42:36 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Unknown, Global/VPN",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:42:36 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Unknown, Global/VPN",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 15:44:15 +0000 (UTC)",
+      "from": "<donotreply@my354302.mail.crm.ondemand.com>",
+      "subject": "Thank you for contacting us.",
+      "snippet": "<html>=0A<head>=0A<=21-- Search-Title -->=0A<title>Your feedback matters=21= </title>=0A<meta http-equiv=3D=22Content-Type=22 content=3D=22text/html; ch= arset=3Dutf-8=22>=0A</head>=0A<=21-- Google "
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:16:44 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🔥 [High-Intent Action] Prospect Clicked Launch Demo (Clinical Pristine OS) (San Roque, Philippines)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:16:49 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://clinical-pristine.surge.sh/",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:38:26 +0000",
+      "from": "TGP <support@thegenericspharmacy.zendesk.com>",
+      "subject": "Southstar Drug welcome email",
+      "snippet": " ----==_mimepart_6a848a8210e1a_10c18602952cd Content-Type: text/plain;  charset=utf-8 Content-Transfer-Encoding: quoted-printable  Welcome to Southstar Drug. Complete your sign-up to activate an"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:38:44 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://omnistock.surge.sh/",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:38:45 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Singapore, Singapore",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:39:28 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://clinical-pristine.surge.sh/",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:39:29 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Unknown, Global/VPN",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:43:11 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Unknown, Global/VPN",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:43:10 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://clinical-pristine.surge.sh/",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:44:26 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Unknown, Global/VPN",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:44:26 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Unknown, Global/VPN",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:44:27 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🚨 [GatzDevs Lead] New Visitor from Unknown, Global/VPN",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:52:56 +0000 (UTC)",
+      "from": "Namecheap <hello@namecheap.com>",
+      "subject": "Welcome to Namecheap",
+      "snippet": "--7675c64ffb700cc80eefb92a7fc4ebbdc5b6f9513758df2225a094b498c5 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=utf-8 Mime-Version: 1.0  Namecheap We have everything "
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:55:40 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://omnistock.surge.sh/",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:59:00 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (Singapore, Singapore)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:59:00 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (San Roque, Philippines)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:59:00 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (Manila, Philippines)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:59:00 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (San Roque, Philippines)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:59:00 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (Singapore, Singapore)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:59:00 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (Singapore, Singapore)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:59:00 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (Unknown, Global/VPN)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:59:00 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (Singapore, Singapore)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 16:59:00 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (San Roque, Philippines)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 17:00:41 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (San Roque, Philippines)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 10:25:52 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: .github/workflows/validate-attestation.yml - main (31f1045)",
+      "snippet": "--part_8a7986b8019611162a7fe8be326d8b011cdda9a741c1976fda05ef23a0672fc0 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] .github/workflows/vali"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 10:25:58 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Master CI Pipeline & Security Gating - main (31f1045)",
+      "snippet": "--part_c2dadf2b9a8f3bcd23beba3498917834551d045b306d6ddce93c8ce471fe2062 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Master CI Pipeline & S"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 10:25:58 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Python Unit Tests - main (31f1045)",
+      "snippet": "--part_4b6c6ddc58fd2e5f728f5abf82da811ffef60b93a5aaa6545dac1957f51a2773 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python Unit Tests work"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 10:25:59 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Python + Node (acorn) Tests Matrix - main (31f1045)",
+      "snippet": "--part_14c214367fd3056e3b96af7aa10689a7cea623340016d084d857c7170e75564a Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python + Node (acorn) "
+    },
+    {
+      "date": "Tue, 18 Aug 2026 10:25:59 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: FAANG-Tier Zero-Defect CI Pipeline - main (31f1045)",
+      "snippet": "--part_7120a91573e3b41af800f6b1fe011b392d8cf87ff3d4e5c8c46b383a3f6b6f9f Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] FAANG-Tier Zero-Defect"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 10:25:59 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Validate Design Tokens - main (31f1045)",
+      "snippet": "--part_3da7d4e84dccd14d981d13f5a7416377a7d2db7d309df0e60a1af82e13639422 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Validate Design Tokens"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 10:26:00 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Gemini 3.6 Flash Deterministic Code Audit - main (31f1045)",
+      "snippet": "--part_845378d3dacb7f0fdde188b1c4a94a06d5d80f5633852919b2bc6bb4870a907a Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Gemini 3.6 Flash Deter"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 17:44:40 +0000",
+      "from": "Apollo <hello@mail.apollo.io>",
+      "subject": "Is AI actually replacing GTM roles? 300+ pros answered",
+      "snippet": "--35e8cdd673f5650db6153ef9521498a4b5c6b322952e26b26cfebc4724f7 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"utf-8\"  Plus, a $30 dashboard that used to cost millio"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 11:17:57 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: .github/workflows/validate-attestation.yml - main (9425820)",
+      "snippet": "--part_e3807cb7d383c4ebf2004a66cabce81cbea47ed93e9ed25904827fbfb9c55d74 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] .github/workflows/vali"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 11:18:02 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Python Unit Tests - main (9425820)",
+      "snippet": "--part_c8a8f62f988b13fc425b5b2574c3854302737c6816ea44bdf552ba05e6c10e7d Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python Unit Tests work"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 11:18:04 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Master CI Pipeline & Security Gating - main (9425820)",
+      "snippet": "--part_f4aed7401d6a97b50cc4192739b5b25b2737d452441d6113113fb8bff18f35ef Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Master CI Pipeline & S"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 11:18:04 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: FAANG-Tier Zero-Defect CI Pipeline - main (9425820)",
+      "snippet": "--part_69cbb2d1e205661d711ab33c4301b2a30d204a29bd2ba5674ae5befa40f8fb18 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] FAANG-Tier Zero-Defect"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 11:18:04 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Python + Node (acorn) Tests Matrix - main (9425820)",
+      "snippet": "--part_a8b2505e1750f3e9d70af32215b216e9202b916b163d25e374e0c673ad70a495 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python + Node (acorn) "
+    },
+    {
+      "date": "Tue, 18 Aug 2026 11:18:04 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Gemini 3.6 Flash Deterministic Code Audit - main (9425820)",
+      "snippet": "--part_feada21384e96d76b34b7682121df6022ad7ba3ee6df3be09052794a58d28b47 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Gemini 3.6 Flash Deter"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 11:18:03 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Validate Design Tokens - main (9425820)",
+      "snippet": "--part_20355b4dd5ada6884d50a4abc4094c679b8f09d492fd8681fa49bd46daad3ebd Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Validate Design Tokens"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 18:54:12 +0000 (UTC)",
+      "from": "Spaceship <alert@spaceship.com>",
+      "subject": "Important action required: Please verify account",
+      "snippet": "--ac5f8fa47dcd0419186a9155413d56140921c3034aea0aa997e669e954fc Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=utf-8 Mime-Version: 1.0  To continue using your Spaces"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 19:02:23 +0000 (UTC)",
+      "from": "Spaceship <alert@spaceship.com>",
+      "subject": "Security alert: New device or new location login attempt",
+      "snippet": "--ca84bb206328c73b0bb388af74b6e8b8470ed63b613023fb61e0287ab1e7 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=utf-8 Mime-Version: 1.0  An attempt to access your Spa"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 19:05:32 +0000 (UTC)",
+      "from": "Spaceship <hello@spaceship.com>",
+      "subject": "Welcome to Spaceship",
+      "snippet": "--a87c562f2e97efa45b48e3c8925391fddfc0db4a94f54f807e0a17dedabb Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=utf-8 Mime-Version: 1.0  Discover your next-generation"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 19:15:47 +0000 (UTC)",
+      "from": "Spaceship <alert@spaceship.com>",
+      "subject": "Security alert: New device or new location login attempt",
+      "snippet": "--a500b45590989f8be7d05634d234cd11ae2bbcf56a8320ca791b49a5e7c5 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=utf-8 Mime-Version: 1.0  An attempt to access your Spa"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 19:31:19 +0000",
+      "from": "donotreply@otp.mypaymentvault.com",
+      "subject": "Your Identity Verification Code",
+      "snippet": "<html><body><p>Hello MHARC CHRISTIAN GATAN,</p><p>Here is the Verification = Code you requested.</p><p>Verification Code: <font size=3D\"+2\"><strong>3384= 88</strong></font></p><p>The code will expir"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 20:06:03 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🏥 [Hospital Lead] New Visitor Launched Clinical Pristine OS (Unknown, Global/VPN)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 20:06:03 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🏥 [Hospital Lead] New Visitor Launched Clinical Pristine OS (Unknown, Global/VPN)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 20:06:03 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🏥 [Hospital Lead] New Visitor Launched Clinical Pristine OS (San Roque, Philippines)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 20:06:03 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🏥 [Hospital Lead] New Visitor Launched Clinical Pristine OS (Unknown, Global/VPN)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 20:14:21 +0000",
+      "from": "\"Grammarly Insights\" <hello@mail.grammarly.com>",
+      "subject": "Time to jump back in!",
+      "snippet": "--_----z8kaGWgZJCGhnRc8xtCjLA===_25/F8-02197-D1DB48A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Grammarly  Keep earning badges and tracking your progre"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 21:05:04 +0000",
+      "from": "\"Coursera\" <Coursera@m.learn.coursera.org>",
+      "subject": "⚡️ Save 40% on three months of Coursera Plus",
+      "snippet": "--_----cbvwYQ/zpQhM+xMQjfZ6lw===_00/83-21596-009C48A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Start saving on new career-changing skills today.      "
+    },
+    {
+      "date": "Tue, 18 Aug 2026 22:08:35 +0000",
+      "from": "\"GrabPoints.com\" <info@mail.grabpoints.com>",
+      "subject": "📊 Share Your Thoughts - Earn 2632 points in only 15 minutes",
+      "snippet": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"> <html xmlns=\"http://www.w3.org/1999/xhtml\">   <head>     <meta http-equiv=\""
+    },
+    {
+      "date": "Tue, 18 Aug 2026 23:21:18 +0000",
+      "from": "Perplexity <team@mail.perplexity.ai>",
+      "subject": "Your answer is one search away",
+      "snippet": "--kzujxg1hass Content-Type: text/plain; charset=UTF-8 Content-Transfer-Encoding: quoted-printable  See how people are using Perplexity to answer their toughest questions     See how people ar"
+    },
+    {
+      "date": "Tue, 18 Aug 2026 23:30:42 +0000 (UTC)",
+      "from": "Michael Arellano via LinkedIn <invitations@linkedin.com>",
+      "subject": "Michael accepted your invitation, explore their network",
+      "snippet": "------=_Part_7430868_1240052981.1787095842898 Content-Type: text/plain;charset=UTF-8 Content-Transfer-Encoding: quoted-printable Content-ID: text-body  ----------------------------------------  "
+    },
+    {
+      "date": "Wed, 19 Aug 2026 00:06:04 +0000",
+      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
+      "subject": "React / Front End Developer | Remote at Seven Seven Global Services Inc. 29 more work from home jobs",
+      "snippet": "--_----CAHhNBCaTqwrpxrIvprOZQ===_AF/B6-33645-C63F48A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A30 new work from home jobs=0A=0AJobs"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 02:24:40 +0000 (UTC)",
+      "from": "DEV Community Newsletter <yo@dev.to>",
+      "subject": "A Liar's Dice bot, AI watermarks, HTML's overdue funeral, and more!",
+      "snippet": "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\" \"http://www.w= 3.org/TR/REC-html40/loose.dtd\"> <html>   <body style=3D'font-family: \"HelveticaNeue-Light\", \"Helvetica Neue Light\"= , \""
+    },
+    {
+      "date": "Tue, 18 Aug 2026 19:33:22 -0700",
+      "from": "Ëyë via Messenger <messages@facebookmail.com>",
+      "subject": "Ëyë Rhä Gëé sent you a message",
+      "snippet": " --b1_ed878df156851cb7a50969a3ab4f64ce Content-Type: text/plain; charset=\"UTF-8\" Content-Transfer-Encoding: quoted-printable  Hi Mharc,  [https://facebook.com/email/appredirect/?rid=3D100000141"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 03:30:44 +0000 (UTC)",
+      "from": "Mark Joseph Arpon via LinkedIn <invitations@linkedin.com>",
+      "subject": "Mark Joseph accepted your invitation, explore their network",
+      "snippet": "------=_Part_2312156_546332202.1787110244114 Content-Type: text/plain;charset=UTF-8 Content-Transfer-Encoding: quoted-printable Content-ID: text-body  ----------------------------------------  "
+    },
+    {
+      "date": "Wed, 19 Aug 2026 03:54:16 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (Unknown, Global/VPN)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 03:59:32 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🏥 [Hospital Lead] New Visitor Launched Clinical Pristine OS (Ashburn, United States)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 04:00:50 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🏥 [Hospital Lead] New Visitor Launched Clinical Pristine OS (Miami, United States)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 03:56:57 +0100",
+      "from": "Yotspot <no-reply@yotspot.com>",
+      "subject": "Yotspot - New jobs for you!",
+      "snippet": "PCFET0NUWVBFIGh0bWw+CjxodG1sPgoJCQkJPGhlYWQ+CgkJCQkJPG1ldGEgbmFtZT0idmlld3Bv cnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCI+CgkJCQkJPG1ldGEgaHR0cC1lcXVpdj0i Q29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 05:23:11 +0000",
+      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
+      "subject": "Web Developer at Granny Flats X. 29 more automation work from home jobs",
+      "snippet": "--_----XpI3n4fMTrGxSxDbUXuYNw===_36/0C-09801-FBD358A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A30 new automation work from home job"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 06:34:06 +0000",
+      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
+      "subject": "Implementation QA Specialist- Philippines - Remote at Online Marketing Gurus. 29 more automation specialist jobs in Philippines",
+      "snippet": "--_----D5ruFd7mhTGrpjl2IjZTww===_58/BC-40587-E5E458A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A30 new automation specialist jobs in"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 07:30:42 +0000 (UTC)",
+      "from": "Ahtisham Malik via LinkedIn <invitations@linkedin.com>",
+      "subject": "Ahtisham accepted your invitation, explore their network",
+      "snippet": "------=_Part_21903_206277409.1787124642013 Content-Type: text/plain;charset=UTF-8 Content-Transfer-Encoding: quoted-printable Content-ID: text-body  ----------------------------------------  Th"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 07:33:36 +0000",
+      "from": "\"GrabPoints.com\" <info@mail.grabpoints.com>",
+      "subject": "💬 We Want Your Voice - Get 2632 points in 15 minutes",
+      "snippet": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"> <html xmlns=\"http://www.w3.org/1999/xhtml\">   <head>     <meta http-equiv=\""
+    },
+    {
+      "date": "Wed, 19 Aug 2026 10:38:03 +0000",
+      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
+      "subject": "Implementation QA Specialist- Philippines - Remote at Online Marketing Gurus. 29 more automation jobs",
+      "snippet": "--_----W3k8tM23Wg9eATCj9BXbtA===_CC/35-54044-B87858A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A30 new automation jobs=0A=0AJobs 1-3"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 10:39:00 +0000 (UTC)",
+      "from": "Spaceship <alert@spaceship.com>",
+      "subject": "Security alert: New device or new location login attempt",
+      "snippet": "--c052af7406516e6c75e3ca33e540ad97596448e212eebe1593f8373b3f34 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=utf-8 Mime-Version: 1.0  An attempt to access your Spa"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 10:42:42 +0000 (UTC)",
+      "from": "Spaceship <alert@spaceship.com>",
+      "subject": "Security alert: New device or new location login attempt",
+      "snippet": "--6ddfa2505de0203b7f8f1f2188ab2560c2d6477c736a7b3954b8789c5064 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=utf-8 Mime-Version: 1.0  An attempt to access your Spa"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 10:49:40 +0000 (UTC)",
+      "from": "Spaceship <receipts@spaceship.com>",
+      "subject": "Spaceship order summary #d23a5e85-4bca-4d2a-9453-c2cc61391c2e",
+      "snippet": "--52fef84a32be5864671ee01af2e9927f591e593587fa0f88c6b3bd6f9840 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=utf-8 Mime-Version: 1.0  Check your order details to e"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 11:01:21 +0000",
+      "from": "Dubai Duty Free <DubaiDutyFree@email.dubaidutyfree.com>",
+      "subject": "Last chance for Millennium Millionaire Series 555!",
+      "snippet": "<=21DOCTYPE html PUBLIC =22-//W3C//DTD XHTML 1=2E0 Transitional//EN=22 =22h= ttp://www=2Ew3=2Eorg/TR/xhtml1/DTD/xhtml1-transitional=2Edtd=22> <html xmlns=3D=22http://www=2Ew3=2Eorg/1999/xhtml=22 xml"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 11:12:11 +0000",
+      "from": "Mobbin <newsletter@mobbin.com>",
+      "subject": "Wednesday Web Drop",
+      "snippet": "--0d4843d80c03a50afb0ade95065182c20db101b1cfd7a44e23f6b6f50737 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"utf-8\"  New web apps on Mobbin this week. Featuring D"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 11:17:01 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🏥 [Hospital Lead] New Visitor Launched Clinical Pristine OS (Des Moines, United States)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 12:18:00 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "⚡ [SACCADE-UI LEAD] LIVE_URL_ANALYSIS",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 13:18:01 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🏥 [Hospital Lead] New Visitor Launched Clinical Pristine OS (San Roque, Philippines)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 13:18:33 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://omnistock.linkable.it.com/",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 13:19:19 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://clinical.linkable.it.com/",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 13:24:09 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://clinical.linkable.it.com/",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 13:26:42 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://omnistock.linkable.it.com/",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 13:34:21 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://clinical.linkable.it.com/",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 13:34:39 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://clinical.linkable.it.com/",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 09:50:32 -0400 (EDT)",
+      "from": "FlexJobs <notify@mg.flexjobs.com>",
+      "subject": "You're Invited: Turn Interviews Into Offers",
+      "snippet": "------=_Part_227592287_797539061.1787147432841 Content-Type: multipart/related;  \tboundary=\"----=_Part_227592288_1010165189.1787147432841\"  ------=_Part_227592288_1010165189.1787147432841 Content"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 14:45:17 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🏥 [Hospital Lead] New Visitor Launched Clinical Pristine OS (Unknown, Global/VPN)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 14:45:19 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🏥 [Hospital Lead] New Visitor Launched Clinical Pristine OS (Unknown, Global/VPN)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 14:45:20 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🏥 [Hospital Lead] New Visitor Launched Clinical Pristine OS (Unknown, Global/VPN)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 14:45:18 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🏥 [Hospital Lead] New Visitor Launched Clinical Pristine OS (Unknown, Global/VPN)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 15:12:21 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🏥 [Hospital Lead] New Visitor Launched Clinical Pristine OS (Unknown, Global/VPN)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 15:12:41 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🏥 [Hospital Lead] New Visitor Launched Clinical Pristine OS (Unknown, Global/VPN)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 15:33:48 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://omnistock.linkable.it.com/",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 15:33:59 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://omnistock.linkable.it.com/",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 17:55:09 +0000",
+      "from": "Apollo <hello@mail.apollo.io>",
+      "subject": "One week left to register for ApolloNext for just $99",
+      "snippet": "--0cdb237f3fe26712cc99f7f46c0fd5e5e2cc813deca7e452203a065a9c92 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"utf-8\"  Prices increase soon. Save your spot at the GT"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 18:31:04 +0000",
+      "from": "\"Zapier\" <events@send.zapier.com>",
+      "subject": "Tomorrow: Build TikTok CAPI live with us",
+      "snippet": "--_----ncB86H+DTktY7kQC+icl/w===_8A/64-31270-866F58A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  [Live workshop] Build TikTok CAPI live with us  No code"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 18:36:31 +0000",
+      "from": "\"Boom 3D Windows\" <marketing@globaldelight.com>",
+      "subject": "Back to School Sale: Level up your PC audio with Boom 3D | Now 75% OFF!",
+      "snippet": " This is a MIME encoded message.  --MIMEboundary61F1B9D2 Content-Type: text/plain; charset=\"utf-8\" Content-Transfer-Encoding: 7bit  Experience deeper immersion in movies and games, higher fidelit"
+    },
+    {
+      "date": "Wed, 19 Aug 2026 23:21:20 +0000",
+      "from": "Perplexity <team@mail.perplexity.ai>",
+      "subject": "Ask Perplexity a question and get a clear, trusted answer.",
+      "snippet": "--2kvbkd4wpk Content-Type: text/plain; charset=UTF-8 Content-Transfer-Encoding: quoted-printable  Perplexity is built for fast, verifiable answers.   Perplexity is built for fast, verifiable an"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 00:20:32 +0000 (UTC)",
+      "from": "LinkedIn <invitations@linkedin.com>",
+      "subject": "See Society for AIDS in Africa’s and other people’s connections, experience, and more",
+      "snippet": "------=_Part_1341754_909948346.1787185232467 Content-Type: text/plain;charset=UTF-8 Content-Transfer-Encoding: quoted-printable Content-ID: text-body  You have 2 new connections. Check out their "
+    },
+    {
+      "date": "Thu, 20 Aug 2026 00:51:52 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🏥 [Hospital Lead] New Visitor Launched Clinical Pristine OS (Unknown, Global/VPN)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 00:52:25 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "Action Required: Activate FormSubmit on https://omnistock.linkable.it.com/",
       "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
     }
   ]

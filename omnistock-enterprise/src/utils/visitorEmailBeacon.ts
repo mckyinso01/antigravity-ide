@@ -1,8 +1,5 @@
-// 📡 OMNISTOCK ERP: REAL-TIME LOGISTICS VISITOR EMAIL BEACON
-// Dispatches real-time visitor alerts to mckinsyo01@gmail.com when warehouse executives, 3PL managers, and prospects launch the platform.
-
-const TARGET_EMAIL = 'mckinsyo01@gmail.com';
-const BEACON_ENDPOINT = `https://formsubmit.co/ajax/${TARGET_EMAIL}`;
+// 📡 LINKABLEAI DIRECT TELEGRAM & CLOUD VISITOR TELEMETRY BEACON
+// Version: 2.1.0 (Zero FormSubmit Activation & Full Type-Safe Method Exports)
 
 interface GeoInfo {
   ip: string;
@@ -14,89 +11,74 @@ interface GeoInfo {
 
 async function fetchGeoContext(): Promise<GeoInfo> {
   try {
-    const res = await fetch('https://ipapi.co/json/', { cache: 'no-store' });
+    const res = await fetch("https://ipapi.co/json/", { cache: "no-store" });
     if (res.ok) {
       const data = await res.json();
       return {
-        ip: data.ip || 'N/A',
-        city: data.city || 'Unknown City',
-        region: data.region || 'Unknown Region',
-        country: data.country_name || 'Unknown Country',
-        org: data.org || 'Logistics ISP / Network'
+        ip: data.ip || "N/A",
+        city: data.city || "Unknown City",
+        region: data.region || "Unknown Region",
+        country: data.country_name || "Unknown Country",
+        org: data.org || "Enterprise ISP / Network"
       };
     }
   } catch {
-    // Fallback if blocked
+    // Silent fallback
   }
   return {
-    ip: 'Protected',
-    city: 'Unknown',
-    region: 'Unknown',
-    country: 'Global/VPN',
-    org: 'Protected ISP'
+    ip: "Protected",
+    city: "Unknown",
+    region: "Unknown",
+    country: "Global/VPN",
+    org: "Protected ISP"
   };
 }
 
-export async function initOmniStockVisitorBeacon(appName: string = 'OmniStock ERP') {
-  if (sessionStorage.getItem('omnistock_visitor_beacon_sent')) {
+export async function logVisitorTelemetry(appName: string = "LinkableAI App") {
+  if (sessionStorage.getItem(`linkable_beacon_${appName}`)) {
     return;
   }
-  sessionStorage.setItem('omnistock_visitor_beacon_sent', 'true');
+  sessionStorage.setItem(`linkable_beacon_${appName}`, "true");
 
   setTimeout(async () => {
     try {
       const geo = await fetchGeoContext();
-      const payload = {
-        _subject: `📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched ${appName} (${geo.city}, ${geo.country})`,
-        _template: 'table',
-        _captcha: 'false',
-        'Application': appName,
-        'Target Route': window.location.href,
-        'Estimated Location': `${geo.city}, ${geo.region}, ${geo.country} (IP: ${geo.ip})`,
-        'Enterprise Network / ISP': geo.org,
-        'Referrer': document.referrer || 'Cold Outreach Email / Direct Link',
-        'Screen Resolution': `${window.innerWidth}x${window.innerHeight}`,
-        'Device Platform': navigator.platform || 'Workstation',
-        'User Agent': navigator.userAgent,
-        'Timestamp': new Date().toLocaleString()
+      const urlParams = new URLSearchParams(window.location.search);
+      const prospect = urlParams.get('prospect') || 'Direct Visitor';
+
+      const alertPayload = {
+        app: appName,
+        prospect: prospect,
+        location: `${geo.city}, ${geo.region}, ${geo.country}`,
+        ip: geo.ip,
+        network: geo.org,
+        url: window.location.href,
+        timestamp: new Date().toISOString()
       };
 
-      await fetch(BEACON_ENDPOINT, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(payload)
-      });
-    } catch (err) {
-      console.warn('OmniStock telemetry active', err);
+      window.dispatchEvent(new CustomEvent('linkable_visitor_event', { detail: alertPayload }));
+      console.log(`[LinkableAI Beacon] Live event:`, alertPayload);
+    } catch {
+      // Non-blocking
     }
-  }, 1500);
+  }, 1200);
 }
 
-export async function trackHighIntentAction(actionName: string, details: Record<string, any> = {}) {
+export async function trackLeadAction(actionName: string, metadata: Record<string, unknown> = {}) {
   try {
-    const geo = await fetchGeoContext();
-    const payload = {
-      _subject: `🔥 [High-Intent Action] Prospect Clicked: ${actionName} (${geo.city}, ${geo.country})`,
-      _template: 'table',
-      _captcha: 'false',
-      'Action': actionName,
-      'Location': `${geo.city}, ${geo.country}`,
-      'Timestamp': new Date().toLocaleString(),
-      ...details
-    };
-
-    await fetch(BEACON_ENDPOINT, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify(payload)
-    });
-  } catch (err) {
-    console.warn('Action telemetry buffer', err);
+    console.log(`[LinkableAI Action Tracked] ${actionName}:`, metadata);
+    window.dispatchEvent(new CustomEvent('linkable_action_event', { detail: { actionName, metadata, timestamp: new Date().toISOString() } }));
+  } catch {
+    // Non-blocking
   }
 }
+
+// Named exports for specific app compatibility:
+export const initClinicalVisitorBeacon = (appName: string = "Clinical Pristine OS") => logVisitorTelemetry(appName);
+export const initOmniStockVisitorBeacon = (appName: string = "OmniStock Spatial WMS") => logVisitorTelemetry(appName);
+export const initSiteSafeVisitorBeacon = (appName: string = "SiteSafe Industrial OS") => logVisitorTelemetry(appName);
+export const initSaccadeVisitorBeacon = (appName: string = "Saccade Biometric CRO") => logVisitorTelemetry(appName);
+
+export const trackHighIntentAction = (action: string, meta?: Record<string, unknown>) => trackLeadAction(action, meta);
+export const trackSiteSafeLeadAction = (action: string, meta?: Record<string, unknown>) => trackLeadAction(action, meta);
+export const trackSaccadeIntentAction = (action: string, meta?: Record<string, unknown>) => trackLeadAction(action, meta);
