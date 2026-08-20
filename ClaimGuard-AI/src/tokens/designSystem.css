@@ -1,0 +1,264 @@
+/* ==========================================================================
+   CLAIM GUARD AI - MASTER UNIFIED DESIGN SYSTEM (EMIL KOWALSKI / IMPECCABLE)
+   Single Source of Truth Design Tokens for Desktop, Laptop & Tablet
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap');
+
+:root {
+  /* Base Typography */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Universal Spacing Rhythm (4px base) */
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* Universal Border Radius */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 26px;
+  --radius-full: 9999px;
+
+  /* Emil Kowalski Spring Physics Easing Curves */
+  --ease-spring-snappy: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-spring-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 120ms;
+  --duration-normal: 220ms;
+  --duration-drawer: 320ms;
+}
+
+/* ==========================================================================
+   DARK OBSIDIAN CYBER-LEGAL THEME (DEFAULT)
+   ========================================================================== */
+html[data-theme="dark"],
+:root {
+  --bg-app: hsl(224, 45%, 5%);
+  --bg-surface: hsl(224, 38%, 9%);
+  --bg-surface-elevated: hsl(224, 35%, 13%);
+  --bg-surface-glass: rgba(13, 20, 36, 0.78);
+  --bg-drawer: hsl(224, 40%, 8%);
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.14);
+  --border-strong: rgba(255, 255, 255, 0.24);
+  --border-active: hsl(187, 92%, 55%);
+
+  /* Specular Light Physics */
+  --specular-border: 1px solid rgba(255, 255, 255, 0.14);
+  --specular-top: 1px solid rgba(255, 255, 255, 0.22);
+
+  --text-primary: hsl(210, 40%, 98%);
+  --text-secondary: hsl(215, 22%, 78%);
+  --text-muted: hsl(215, 16%, 54%);
+  --text-inverse: hsl(224, 45%, 7%);
+
+  /* Status Tokens with High-Luminance Glow */
+  --status-emerald: hsl(158, 64%, 52%);
+  --status-emerald-bg: rgba(16, 185, 129, 0.12);
+  --status-emerald-border: rgba(16, 185, 129, 0.35);
+
+  --status-cyan: hsl(187, 92%, 55%);
+  --status-cyan-bg: rgba(6, 182, 212, 0.12);
+  --status-cyan-border: rgba(6, 182, 212, 0.35);
+
+  --status-amber: hsl(38, 92%, 52%);
+  --status-amber-bg: rgba(245, 158, 11, 0.12);
+  --status-amber-border: rgba(245, 158, 11, 0.35);
+
+  --status-rose: hsl(350, 89%, 60%);
+  --status-rose-bg: rgba(244, 63, 94, 0.12);
+  --status-rose-border: rgba(244, 63, 94, 0.35);
+
+  --status-indigo: hsl(243, 75%, 62%);
+  --status-indigo-bg: rgba(99, 102, 241, 0.12);
+  --status-indigo-border: rgba(99, 102, 241, 0.35);
+
+  /* Deep Multi-Layered Shadows */
+  --shadow-sm: 0 2px 8px -2px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  --shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  --shadow-lg: 0 20px 48px -8px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  --shadow-drawer: -16px 0 48px rgba(0, 0, 0, 0.8), inset 1px 0 0 rgba(255, 255, 255, 0.08);
+  --shadow-glow: 0 0 28px rgba(6, 182, 212, 0.28);
+}
+
+/* ==========================================================================
+   LIGHT SWISS CLINICAL QUARTZ THEME
+   ========================================================================== */
+html[data-theme="light"] {
+  --bg-app: hsl(210, 20%, 98%);
+  --bg-surface: hsl(0, 0%, 100%);
+  --bg-surface-elevated: hsl(214, 32%, 96%);
+  --bg-surface-glass: rgba(255, 255, 255, 0.92);
+  --bg-drawer: hsl(0, 0%, 100%);
+
+  --border-subtle: hsl(214, 32%, 91%);
+  --border-medium: hsl(214, 25%, 82%);
+  --border-strong: hsl(214, 20%, 65%);
+  --border-active: hsl(204, 94%, 48%);
+
+  --specular-border: 1px solid rgba(0, 0, 0, 0.06);
+  --specular-top: 1px solid rgba(255, 255, 255, 0.8);
+
+  --text-primary: hsl(222, 47%, 11%);
+  --text-secondary: hsl(215, 25%, 35%);
+  --text-muted: hsl(215, 16%, 55%);
+  --text-inverse: hsl(210, 40%, 98%);
+
+  --status-emerald: hsl(158, 70%, 38%);
+  --status-emerald-bg: rgba(16, 185, 129, 0.08);
+  --status-emerald-border: rgba(16, 185, 129, 0.25);
+
+  --status-cyan: hsl(199, 89%, 40%);
+  --status-cyan-bg: rgba(6, 182, 212, 0.08);
+  --status-cyan-border: rgba(6, 182, 212, 0.25);
+
+  --status-amber: hsl(38, 92%, 40%);
+  --status-amber-bg: rgba(245, 158, 11, 0.08);
+  --status-amber-border: rgba(245, 158, 11, 0.25);
+
+  --status-rose: hsl(350, 80%, 48%);
+  --status-rose-bg: rgba(244, 63, 94, 0.08);
+  --status-rose-border: rgba(244, 63, 94, 0.25);
+
+  --status-indigo: hsl(243, 75%, 52%);
+  --status-indigo-bg: rgba(99, 102, 241, 0.08);
+  --status-indigo-border: rgba(99, 102, 241, 0.25);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.12);
+  --shadow-drawer: -10px 0 32px rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 0 20px rgba(6, 182, 212, 0.15);
+}
+
+/* Base Root Styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-app);
+  background-image: 
+    radial-gradient(1200px 600px at 50% -120px, rgba(6, 182, 212, 0.07), transparent 70%),
+    radial-gradient(900px 450px at 90% 30%, rgba(99, 102, 241, 0.05), transparent 60%),
+    radial-gradient(800px 400px at 10% 50%, rgba(16, 185, 129, 0.04), transparent 60%);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Optical Typography Standards */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Interactive Element Springs (Emil Kowalski Physics) */
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: transform var(--duration-fast) var(--ease-spring-snappy),
+              box-shadow var(--duration-fast) var(--ease-spring-smooth),
+              background var(--duration-fast) var(--ease-spring-smooth),
+              border-color var(--duration-fast) var(--ease-spring-smooth);
+}
+
+button:active {
+  transform: scale(0.975);
+}
+
+/* Specular Card Classes */
+.specular-card {
+  background: var(--bg-surface-glass);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-md);
+  transition: border-color var(--duration-normal) var(--ease-spring-smooth),
+              transform var(--duration-normal) var(--ease-spring-smooth),
+              box-shadow var(--duration-normal) var(--ease-spring-smooth);
+}
+
+.specular-card:hover {
+  border-top: 1px solid rgba(255, 255, 255, 0.28);
+  border-color: var(--border-medium);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-medium);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
+
+/* Utility Animations */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.65; transform: scale(0.97); }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Accessibility Screen Reader Utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

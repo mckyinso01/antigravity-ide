@@ -37,5 +37,104 @@
         "escalationTriggered": true
       }
     ]
+  },
+  {
+    "id": "thread-1787236818768-raqlqk",
+    "leadEmail": "postmaster@crh.org",
+    "leadName": "Chief Information Officer / Operations Director",
+    "role": "Decision Maker",
+    "organization": "Enterprise Prospect Organization",
+    "domain": "crh.org",
+    "vertical": "clinical",
+    "dealStatus": "NEW_OUTREACH",
+    "leadScore": 90,
+    "createdAt": "2026-08-20T14:40:18.768Z",
+    "lastActivityAt": "2026-08-20T15:10:56.942Z",
+    "threadHistory": [
+      {
+        "id": "msg-1787236829017-qx660",
+        "sender": "postmaster@crh.org",
+        "recipient": "mharcgatan@linkable.it.com",
+        "direction": "INBOUND",
+        "subject": "Undeliverable: Quick follow-up: What custom modules or workflow modifications would Columbus Regional Health need?",
+        "body": "--3381ee0b-bc2c-4be5-abff-6aab1f1f7e68 Content-Type: multipart/alternative; differences=Content-Type; boundary=\"e081f555-9d73-4b38-a9ac-9bf22f993c47\" --e081f555-9d73-4b38-a9ac-9bf22f993c47 Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable Delivery has failed to these recipients or groups: steve.baker@crh.org The email address you entered couldn't be found. Please check the recipient's email address and try to resend the message. If the problem continues, please contact your email admin. Diagnostic information for administrators: Generating server: T-EXCHMB-02.crh.org steve.baker@crh.org Remote Server returned '550 5.1.10 RESOLVER.ADR.RecipientNotFound; Recipient not found by SMTP address lookup' Original message headers: Received: from CRHMB01.crh.org (172.24.186.101) by T-EXCHMB-02.crh.org (172.24.166.198) with Microsoft SMTP Server (version=3DTLS1_2, cipher=3DTLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.2.1748.39; Thu, 20 Aug 2026 10:31:53 -0400 Received: from TCEDGE01.CRH.ORG (10.1.2.23) by CRHMB01.crh.org (172.24.186.101) with Microsoft SMTP Server (version=3DTLS1_2, cipher=3DTLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.2507.44 via Frontend Transport; Thu, 20 Aug 2026 10:31:53 -0400 Received: from mx0a-0078d501.pphosted.com (205.220.168.93) by crhmail.crh.org (10.1.2.23) with Microsoft SMTP Server id 15.1.2507.44; Thu, 20 Aug 2026 10:31:50 -0400 Received: from pps.filterd (m0307421.ppops.net [127.0.0.1]) by mx0a-0078d501.pphosted.c",
+        "timestamp": "2026-08-20T14:40:29.017Z",
+        "salesMethodology": null,
+        "intent": "GENERAL_INQUIRY",
+        "escalationTriggered": false
+      },
+      {
+        "id": "msg-1787236873880-zbkhk",
+        "sender": "mharcgatan@linkable.it.com",
+        "recipient": "postmaster@crh.org",
+        "direction": "OUTBOUND",
+        "subject": "Re: Undeliverable: Quick follow-up: What custom modules or workflow modifications would Columbus Regional Health need?",
+        "body": "<p>Attention: IT Leadership & Clinical Operations Team at Columbus Regional Health,</p>\n\n<p>Following a routing bounce, I am redirecting this directly to your clinical IT team.",
+        "timestamp": "2026-08-20T14:41:13.880Z",
+        "salesMethodology": "CHALLENGER_SPIN_INTEGRATED_CLOSER",
+        "intent": null,
+        "escalationTriggered": true
+      },
+      {
+        "id": "msg-1787237426860-cnuw2",
+        "sender": "postmaster@crh.org",
+        "recipient": "mharcgatan@linkable.it.com",
+        "direction": "INBOUND",
+        "subject": "Undeliverable: Re: Undeliverable: Quick follow-up: What custom modules or workflow modifications would Columbus Regional Health need?",
+        "body": "--b451f28c-d988-4c12-b9fd-bde38df16e1a Content-Type: multipart/alternative; differences=Content-Type; boundary=\"b5044fbb-214d-42f0-8411-d8f31c0d3d49\" --b5044fbb-214d-42f0-8411-d8f31c0d3d49 Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable Delivery has failed to these recipients or groups: postmaster@crh.org The email address you entered couldn't be found. Please check the recipient's email address and try to resend the message. If the problem continues, please contact your email admin. Diagnostic information for administrators: Generating server: CRHMB01.crh.org postmaster@crh.org Remote Server returned '550 5.1.10 RESOLVER.ADR.RecipientNotFound; Recipient not found by SMTP address lookup' Original message headers: Received: from CRHMB01.crh.org (172.24.186.101) by CRHMB01.crh.org (172.24.186.101) with Microsoft SMTP Server (version=3DTLS1_2, cipher=3DTLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.44; Thu, 20 Aug 2026 10:41:22 -0400 Received: from TCEDGE01.CRH.ORG (10.1.2.23) by CRHMB01.crh.org (172.24.186.101) with Microsoft SMTP Server (version=3DTLS1_2, cipher=3DTLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.2507.44 via Frontend Transport; Thu, 20 Aug 2026 10:41:22 -0400 Received: from mx0a-0078d501.pphosted.com (205.220.168.93) by crhmail.crh.org (10.1.2.23) with Microsoft SMTP Server id 15.1.2507.44; Thu, 20 Aug 2026 10:41:20 -0400 Received: from pps.filterd (m0307422.ppops.net [127.0.0.1]) by mx0a-0078d501.pphosted.com (8.18.1",
+        "timestamp": "2026-08-20T14:50:26.860Z",
+        "salesMethodology": null,
+        "intent": "BOUNCE_AUTO_REPLY",
+        "escalationTriggered": false
+      },
+      {
+        "id": "msg-1787237445945-03acq",
+        "sender": "mharcgatan@linkable.it.com",
+        "recipient": "postmaster@crh.org",
+        "direction": "OUTBOUND",
+        "subject": "Re: Undeliverable: Re: Undeliverable: Quick follow-up: What custom modules or workflow modifications would Columbus Regional Health need?",
+        "body": "<p>Attention: Executive IT & Clinical Operations Leadership | Columbus Regional Health</p>\n\n<p>To ensure critical architectural communications reach your team despite internal address routing updates, I am reaching out",
+        "timestamp": "2026-08-20T14:50:45.945Z",
+        "salesMethodology": "CHALLENGER_SPIN_INTEGRATED_CLOSER",
+        "intent": null,
+        "escalationTriggered": true
+      },
+      {
+        "id": "msg-1787238026819-ehm4h",
+        "sender": "postmaster@crh.org",
+        "recipient": "mharcgatan@linkable.it.com",
+        "direction": "INBOUND",
+        "subject": "Undeliverable: Re: Undeliverable: Re: Undeliverable: Quick follow-up: What custom modules or workflow modifications would Columbus Regional Health need?",
+        "body": "--6cf74890-937b-4d24-81f2-6a28066b45e5 Content-Type: multipart/alternative; differences=Content-Type; boundary=\"313778a5-f15d-449b-9128-bc9538efb8e3\" --313778a5-f15d-449b-9128-bc9538efb8e3 Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable Delivery has failed to these recipients or groups: postmaster@crh.org The email address you entered couldn't be found. Please check the recipient's email address and try to resend the message. If the problem continues, please contact your email admin. Diagnostic information for administrators: Generating server: T-EXCHMB-01.crh.org postmaster@crh.org Remote Server returned '550 5.1.10 RESOLVER.ADR.RecipientNotFound; Recipient not found by SMTP address lookup' Original message headers: Received: from CRHMB01.crh.org (172.24.186.101) by T-EXCHMB-01.crh.org (172.24.166.197) with Microsoft SMTP Server (version=3DTLS1_2, cipher=3DTLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.2.1748.39; Thu, 20 Aug 2026 10:51:07 -0400 Received: from TCEDGE01.CRH.ORG (10.1.2.23) by CRHMB01.crh.org (172.24.186.101) with Microsoft SMTP Server (version=3DTLS1_2, cipher=3DTLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.2507.44 via Frontend Transport; Thu, 20 Aug 2026 10:51:07 -0400 Received: from mx0b-0078d501.pphosted.com (205.220.180.93) by crhmail.crh.org (10.1.2.23) with Microsoft SMTP Server id 15.1.2507.44; Thu, 20 Aug 2026 10:51:05 -0400 Received: from pps.filterd (m0307423.ppops.net [127.0.0.1]) by mx0b-0078d501.pphosted.com",
+        "timestamp": "2026-08-20T15:00:26.819Z",
+        "salesMethodology": null,
+        "intent": "BOUNCE_AUTO_REPLY",
+        "escalationTriggered": false
+      },
+      {
+        "id": "msg-1787238051962-43fyr",
+        "sender": "mharcgatan@linkable.it.com",
+        "recipient": "postmaster@crh.org",
+        "direction": "OUTBOUND",
+        "subject": "Re: Undeliverable: Re: Undeliverable: Re: Undeliverable: Quick follow-up: What custom modules or workflow modifications would Columbus Regional Health need?",
+        "body": "<p>Attention: IT &amp; Clinical Operations Leadership | Columbus Regional Health</p>\n\n<p>We identified an Exchange routing loop (T-EXCHMB-01) triggered by",
+        "timestamp": "2026-08-20T15:00:51.962Z",
+        "salesMethodology": "CHALLENGER_SPIN_INTEGRATED_CLOSER",
+        "intent": null,
+        "escalationTriggered": true
+      },
+      {
+        "id": "msg-1787238656942-rlylp",
+        "sender": "postmaster@crh.org",
+        "recipient": "mharcgatan@linkable.it.com",
+        "direction": "INBOUND",
+        "subject": "Undeliverable: Re: Undeliverable: Re: Undeliverable: Re: Undeliverable: Quick follow-up: What custom modules or workflow modifications would Columbus Regional Health need?",
+        "body": "--0f44e7a3-812f-41a1-878e-213852a07157 Content-Type: multipart/alternative; differences=Content-Type; boundary=\"2bb9a89e-cf9e-4871-91af-ff684a60159e\" --2bb9a89e-cf9e-4871-91af-ff684a60159e Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable Delivery has failed to these recipients or groups: postmaster@crh.org The email address you entered couldn't be found. Please check the recipient's email address and try to resend the message. If the problem continues, please contact your email admin. Diagnostic information for administrators: Generating server: T-EXCHMB-02.crh.org postmaster@crh.org Remote Server returned '550 5.1.10 RESOLVER.ADR.RecipientNotFound; Recipient not found by SMTP address lookup' Original message headers: Received: from CRHMB01.crh.org (172.24.186.101) by T-EXCHMB-02.crh.org (172.24.166.198) with Microsoft SMTP Server (version=3DTLS1_2, cipher=3DTLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.2.1748.39; Thu, 20 Aug 2026 11:00:59 -0400 Received: from TCEDGE01.CRH.ORG (10.1.2.23) by CRHMB01.crh.org (172.24.186.101) with Microsoft SMTP Server (version=3DTLS1_2, cipher=3DTLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.2507.44 via Frontend Transport; Thu, 20 Aug 2026 11:00:59 -0400 Received: from mx0b-0078d501.pphosted.com (205.220.180.93) by crhmail.crh.org (10.1.2.23) with Microsoft SMTP Server id 15.1.2507.44; Thu, 20 Aug 2026 11:00:57 -0400 Received: from pps.filterd (m0307423.ppops.net [127.0.0.1]) by mx0b-0078d501.pphosted.com",
+        "timestamp": "2026-08-20T15:10:56.942Z",
+        "salesMethodology": null,
+        "intent": "BOUNCE_AUTO_REPLY",
+        "escalationTriggered": false
+      }
+    ]
   }
 ]

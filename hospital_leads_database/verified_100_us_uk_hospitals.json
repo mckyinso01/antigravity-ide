@@ -345,7 +345,8 @@
     "email_domain": "gphealth.org",
     "email_pattern": "first.last@gphealth.org",
     "sample_email": "david.zimmerman@gphealth.org",
-    "pain_point": "Nurse documentation burnout"
+    "pain_point": "Nurse documentation burnout",
+    "status": "BOUNCED"
   },
   {
     "id": 27,

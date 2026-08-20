@@ -796,5 +796,341 @@
     "phone": "+1 773 826 6300",
     "hasActiveMx": true,
     "discoveredAt": "2026-08-20T12:32:20.037Z"
+  },
+  {
+    "domain": "tarzanatc.org",
+    "companyName": "Tarzana Treatment Centers Long Beach",
+    "website": "https://www.tarzanatc.org/location-detail/long-beach/2101-magnolia-avenue/",
+    "contacts": [
+      {
+        "id": "dm-owner-tarzanatc.org",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Tarzana Treatment Centers Long Beach Executive Office",
+        "email": "owner@tarzanatc.org",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-tarzanatc.org",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@tarzanatc.org",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-tarzanatc.org",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@tarzanatc.org",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Los Angeles, California",
+    "phone": "+1 562 218 1868",
+    "hasActiveMx": true,
+    "discoveredAt": "2026-08-20T16:30:22.036Z"
+  },
+  {
+    "domain": "lach-la.com",
+    "companyName": "Los Angeles Community Hospital",
+    "website": "https://www.lach-la.com/",
+    "contacts": [
+      {
+        "id": "dm-owner-lach-la.com",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Los Angeles Community Hospital Executive Office",
+        "email": "owner@lach-la.com",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-lach-la.com",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@lach-la.com",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-lach-la.com",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@lach-la.com",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Los Angeles, California",
+    "phone": "+1 323 267 0477",
+    "hasActiveMx": false,
+    "discoveredAt": "2026-08-20T16:30:22.175Z"
+  },
+  {
+    "domain": "millerchildrenshospitallb.org",
+    "companyName": "Jonathan Jaques Children's Cancer Center",
+    "website": "https://www.millerchildrenshospitallb.org/cancer",
+    "contacts": [
+      {
+        "id": "dm-owner-millerchildrenshospitallb.org",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Jonathan Jaques Children's Cancer Center Executive Office",
+        "email": "owner@millerchildrenshospitallb.org",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-millerchildrenshospitallb.org",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@millerchildrenshospitallb.org",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-millerchildrenshospitallb.org",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@millerchildrenshospitallb.org",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Los Angeles, California",
+    "phone": "+1 562 933 8500",
+    "hasActiveMx": false,
+    "discoveredAt": "2026-08-20T16:30:22.356Z"
+  },
+  {
+    "domain": "uclahealth.org",
+    "companyName": "Mattel Children's Hospital",
+    "website": "https://www.uclahealth.org/hospitals/mattel",
+    "contacts": [
+      {
+        "id": "dm-owner-uclahealth.org",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Mattel Children's Hospital Executive Office",
+        "email": "owner@uclahealth.org",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-uclahealth.org",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@uclahealth.org",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-uclahealth.org",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@uclahealth.org",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Los Angeles, California",
+    "phone": "+1 310 825 9111",
+    "hasActiveMx": true,
+    "discoveredAt": "2026-08-20T16:30:22.530Z"
+  },
+  {
+    "domain": "rehab.ucla.edu",
+    "companyName": "Neurological Rehabilitation & Research Unit",
+    "website": "http://rehab.ucla.edu/body.cfm?id=29",
+    "contacts": [
+      {
+        "id": "dm-owner-rehab.ucla.edu",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Neurological Rehabilitation & Research Unit Executive Office",
+        "email": "owner@rehab.ucla.edu",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-rehab.ucla.edu",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@rehab.ucla.edu",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-rehab.ucla.edu",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@rehab.ucla.edu",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Los Angeles, California",
+    "phone": "+1 310 794 6556",
+    "hasActiveMx": false,
+    "discoveredAt": "2026-08-20T16:30:22.885Z"
+  },
+  {
+    "domain": "kedren.org",
+    "companyName": "Kedren Community Health Center",
+    "website": "https://kedren.org/",
+    "contacts": [
+      {
+        "id": "dm-owner-kedren.org",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Kedren Community Health Center Executive Office",
+        "email": "owner@kedren.org",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-kedren.org",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@kedren.org",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-kedren.org",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@kedren.org",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Los Angeles, California",
+    "phone": "+1 323 233 0425",
+    "hasActiveMx": true,
+    "discoveredAt": "2026-08-20T16:30:23.356Z"
+  },
+  {
+    "domain": "toddcancercenter.com",
+    "companyName": "Todd Cancer Center",
+    "website": "https://toddcancercenter.com",
+    "contacts": [
+      {
+        "id": "dm-owner-toddcancercenter.com",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Todd Cancer Center Executive Office",
+        "email": "owner@toddcancercenter.com",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-toddcancercenter.com",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@toddcancercenter.com",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-toddcancercenter.com",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@toddcancercenter.com",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Los Angeles, California",
+    "phone": "",
+    "hasActiveMx": false,
+    "discoveredAt": "2026-08-20T16:30:23.423Z"
+  },
+  {
+    "domain": "californiarehabinstitute.com",
+    "companyName": "California Rehabilitation Institute",
+    "website": "https://www.californiarehabinstitute.com/locations-and-tours/california-rehabilitation-institute/",
+    "contacts": [
+      {
+        "id": "dm-owner-californiarehabinstitute.com",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "California Rehabilitation Institute Executive Office",
+        "email": "owner@californiarehabinstitute.com",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-californiarehabinstitute.com",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@californiarehabinstitute.com",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-californiarehabinstitute.com",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@californiarehabinstitute.com",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "clinical",
+    "location": "Los Angeles, California",
+    "phone": "",
+    "hasActiveMx": true,
+    "discoveredAt": "2026-08-20T16:30:23.495Z"
   }
 ]
