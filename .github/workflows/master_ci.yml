@@ -1,0 +1,43 @@
+name: Titan Zero-Defect Master CI & Health Validation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  validate-and-test:
+    name: Full Platform Verification & Zero-Defect Audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python Test Dependencies
+        run: python -m pip install --upgrade pip && pip install pytest
+
+      - name: Run Design Token & Code Quality Audits
+        run: |
+          node design/scripts/validate_tokens.js
+          node scripts/validate_code_quality_schema.js docs/evaluations/production_remediation_output.json .
+
+      - name: Run Master Project & Multi-AI Council Tests
+        run: |
+          python tests/python/run_tests.py
+          python .agents/scripts/master_project_audit.py
+
+      - name: Platform 360 Clean Sweep Health Check
+        run: |
+          node run_clean_sweep_audit.js
