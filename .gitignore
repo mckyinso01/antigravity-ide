@@ -1,4 +1,3 @@
- *.exe
 # Ignore executables and binaries
 *.exe
 *.dll
@@ -11,11 +10,15 @@
 *.rar
 *.7z
 
-# Ignore media
+# Ignore media & video render cache
 *.mp4
 *.avi
 *.mov
 *.iso
+*.wav
+titan-cinematic-proof-kit/frames/
+titan-cinematic-proof-kit/story_frames/
+titan-cinematic-proof-kit/app_promos/
 
 # Ignore logs
 *.log
@@ -35,8 +38,6 @@ __pycache__/
 node_modules/
 npm-debug.log
 yarn-error.log
-# Ignore attorneyAgent project since it will be its own repository
-attorneyAgent/
 
 # Local development ignores
 scratch/
@@ -55,21 +56,5 @@ extensions/
 .pi/
 .kiro/
 
-# Nested Project ignores
-antigravity-clean/
-marketmaster-ai/
-social_launch/
-EMS/
-omnistock/
-GHL-PULSE/
-ARIA-X/
-Lead-gen/
-RaketMate/
-Saccade-UI-evaluator/
-Fleet-core/
-
-# Secrets and Local Configs
-local_config.json
-*.pem
-private.pem
-agent_token.jwt
+# Submodules and nested repo caches
+SiteSafe-AI/
