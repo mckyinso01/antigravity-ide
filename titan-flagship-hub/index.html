@@ -29,16 +29,16 @@
 
       <div class="telemetry-pill">
         <span class="status-dot"></span>
-        <span>33 / 33 TITANS ONLINE • SUB-50MS SLA</span>
+        <span>34 / 34 TITANS ONLINE • SUB-50MS SLA</span>
       </div>
 
       <div class="nav-links">
         <a href="#apps" class="nav-link">Production Apps</a>
         <a href="#pitch-engine" class="nav-link" style="color: var(--accent-amber);">B2B Pitch Engine</a>
-        <a href="#workforce" class="nav-link">33 Titans</a>
+        <a href="#pricing" class="nav-link" style="color: var(--accent-emerald); font-weight: 700;">Grand Slam Pricing</a>
+        <a href="#workforce" class="nav-link">34 Titans</a>
         <a href="#simulator" class="nav-link">Live Audit</a>
-        <a href="#pricing" class="nav-link">Pricing & ROI</a>
-        <button class="btn-primary" onclick="openTrialModal()">Launch 7-Day Trial &rarr;</button>
+        <button class="btn-primary" onclick="openClaimPilotModal()">Deploy Sovereign AI &rarr;</button>
       </div>
     </div>
   </nav>
@@ -55,7 +55,7 @@
       </h1>
 
       <p class="hero-sub">
-        Stop paying $500,000/year for slow development cycles. We synthesized the world's <strong>Top-5 engineering, security, and marketing legends</strong> into an invincible 33-Titan AI workforce.
+        Stop paying $500,000/year for slow development cycles. We synthesized the world's <strong>Top-5 engineering, security, and marketing legends</strong> into an invincible 34-Titan AI workforce.
       </p>
 
       <div class="hero-actions">
@@ -84,19 +84,27 @@
       <div class="section-header">
         <div class="section-tag">Enterprise Fleet & Breakthrough Containers</div>
         <h2 class="section-title">Production Applications Arsenal</h2>
-        <p class="section-sub">Explore the breakthrough enterprise software engines built, verified, and audited by our 33 Titans.</p>
+        <p class="section-sub">Explore the breakthrough enterprise software engines built, verified, and audited by our 34 Titans.</p>
       </div>
 
-  <!-- B2B Enterprise Pitch & Video Outreach Command Engine -->
-  <section id="pitch-engine" class="section" style="background: radial-gradient(circle at top right, rgba(6, 182, 212, 0.08), transparent 70%);">
+      <div class="apps-grid" id="apps-grid">
+        <!-- Dynamically rendered by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- B2B Outreach & Video Pitch Engine -->
+  <section id="pitch-engine" class="section">
     <div class="container">
       <div class="section-header">
-        <div class="section-tag">LeadSuite Pro AI • Direct-Response Weaponry</div>
-        <h2 class="section-title">LeadSuite Pro AI & Video Pitch Cinema</h2>
-        <p class="section-sub">Autonomous B2B Lead Prospecting Engine linked directly to 100+ verified enterprise accounts, customized video hooks, and Chris Voss deal-closing copy.</p>
+        <div class="section-tag" style="background: rgba(6, 182, 212, 0.15); color: var(--accent-cyan); border-color: rgba(6, 182, 212, 0.3);">
+          Gary Halbert Copy + Chris Voss Tactical Empathy
+        </div>
+        <h2 class="section-title">B2B Video Outreach & Pitch Engine</h2>
+        <p class="section-sub">Select an enterprise sector to generate personalized video outreach copy, objection busters, LinkedIn DMs, and board memos.</p>
       </div>
 
-      <!-- LeadSuite Pro AI Fast Bar -->
+      <!-- LeadSuite Pro AI Verified Target Accounts Selector -->
       <div style="background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
         <div style="display: flex; align-items: center; gap: 12px;">
           <div style="background: rgba(6, 182, 212, 0.2); width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px;">⚡</div>
@@ -143,6 +151,14 @@
       </div>
 
       <div class="audit-box" style="padding: 28px; border-color: rgba(6, 182, 212, 0.3);">
+        <!-- Channel Selector Tabs -->
+        <div style="display: flex; gap: 8px; margin-bottom: 20px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 14px; flex-wrap: wrap;">
+          <button class="filter-btn active" onclick="selectChannel('email')" id="chan-email">📧 Cold Email Hook</button>
+          <button class="filter-btn" onclick="selectChannel('linkedin')" id="chan-linkedin">💼 LinkedIn Executive DM</button>
+          <button class="filter-btn" onclick="selectChannel('twitter')" id="chan-twitter">🐦 X/Twitter Direct Hook</button>
+          <button class="filter-btn" onclick="selectChannel('board')" id="chan-board" style="border-color: var(--accent-amber); color: var(--accent-amber);">📑 Board Executive Memo</button>
+        </div>
+
         <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px;">
           <!-- Left Column: Pitch Generator Controls -->
           <div>
@@ -179,12 +195,18 @@
             </div>
 
             <!-- 1-Click Action Buttons -->
-            <div style="display: flex; gap: 10px;">
-              <button class="btn-primary" onclick="copyPitchToClipboard()" style="flex: 1; padding: 12px; font-size: 13px;">
-                📋 Copy Pitch to Clipboard
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <button class="btn-primary" onclick="copyPitchToClipboard()" style="flex: 1; padding: 12px; font-size: 13px; min-width: 140px;">
+                📋 Copy Outreach Copy
               </button>
-              <button class="btn-secondary" onclick="playSelectedPitchVideo()" style="padding: 12px 16px; font-size: 13px; border-color: var(--accent-amber); color: var(--accent-amber); display: inline-flex; align-items: center; gap: 6px;">
-                <span>🎬</span> Watch Demo Film
+              <button class="btn-secondary" onclick="playSelectedPitchVideo()" style="padding: 12px 14px; font-size: 13px; border-color: var(--accent-cyan); color: var(--accent-cyan); display: inline-flex; align-items: center; gap: 6px;">
+                <span>🎬</span> Demo Film
+              </button>
+              <button class="btn-secondary" onclick="openBoardMemoModal()" style="padding: 12px 14px; font-size: 13px; border-color: var(--accent-amber); color: var(--accent-amber); display: inline-flex; align-items: center; gap: 6px;">
+                <span>📑</span> Board Memo
+              </button>
+              <button class="btn-primary" onclick="openClaimPilotModal()" style="width: 100%; margin-top: 6px; padding: 12px; font-size: 13px; background: linear-gradient(135deg, #10b981, #059669); border-color: #10b981;">
+                🚀 Claim 7-Day Pilot & Sandbox Key &rarr;
               </button>
             </div>
           </div>
@@ -192,31 +214,31 @@
           <!-- Right Column: Live Formatted Pitch Preview & AI Sequencer Box -->
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-              <span style="font-size: 11px; font-weight: 700; color: var(--accent-cyan); font-family: var(--font-mono);">FORMATTED OUTREACH COPY (LEADSUITE PRO AI LINKED)</span>
+              <span id="pitch-preview-header" style="font-size: 11px; font-weight: 700; color: var(--accent-cyan); font-family: var(--font-mono);">FORMATTED OUTREACH COPY (LEADSUITE PRO AI LINKED)</span>
               <span id="copy-status-badge" style="font-size: 11px; color: var(--accent-emerald); display: none; font-weight: 600;">✓ COPIED!</span>
             </div>
-            <pre id="pitch-preview-box" class="audit-output" style="height: 310px; overflow-y: auto; white-space: pre-wrap; font-size: 12px; line-height: 1.5; color: #e2e8f0; font-family: var(--font-mono);"></pre>
+            <pre id="pitch-preview-box" class="audit-output" style="height: 330px; overflow-y: auto; white-space: pre-wrap; font-size: 12px; line-height: 1.5; color: #e2e8f0; font-family: var(--font-mono);"></pre>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 33 Titans Live Workforce Explorer -->
+  <!-- 34 Titans Live Workforce Explorer -->
   <section id="workforce" class="section">
     <div class="container">
       <div class="section-header">
         <div class="section-tag">Autonomous Multi-AI Roster</div>
-        <h2 class="section-title">Explore the 33-Titan Workforce</h2>
+        <h2 class="section-title">Explore the 34-Titan Workforce</h2>
         <p class="section-sub">Every role is powered by the fused cognitive mental models, behavior, and rejection gates of the world's Top-5 masters.</p>
       </div>
 
       <!-- Category Filter Tabs -->
       <div class="filter-tabs">
-        <button class="filter-btn active" data-filter="all">All 33 Titans</button>
+        <button class="filter-btn active" data-filter="all">All 34 Titans</button>
         <button class="filter-btn" data-filter="engineering">Engineering Council (18)</button>
         <button class="filter-btn" data-filter="marketing">Marketing & Media (5)</button>
-        <button class="filter-btn" data-filter="sentry">Factory Sentries (9)</button>
+        <button class="filter-btn" data-filter="sentry">Factory Sentries & Executive (10)</button>
         <button class="filter-btn" data-filter="redteam">Devil's Red Team (1)</button>
       </div>
 
@@ -267,59 +289,71 @@ export async function transferFunds(account: any, amount: number) {
   </section>
 
   <!-- Transparent Pricing & ROI Calculator -->
+  <!-- Grand Slam 3-Tier Pricing & ROI Calculator -->
   <section id="pricing" class="section">
     <div class="container">
       <div class="section-header">
-        <div class="section-tag">Predictable Economics</div>
-        <h2 class="section-title">Transparent Enterprise Retainers</h2>
-        <p class="section-sub">Replace unpredictable agency hours and expensive salaries with a dedicated autonomous software & marketing factory.</p>
+        <div class="section-tag" style="border-color: var(--accent-amber); color: var(--accent-amber);">Alex Hormozi & Charlie Munger Economic Design</div>
+        <h2 class="section-title">Grand Slam Enterprise Pricing Models</h2>
+        <p class="section-sub">Choose between zero-risk recovery contingency, sovereign monthly retainers, or full air-gapped source code ownership.</p>
       </div>
 
       <!-- Pricing Cards -->
       <div class="pricing-grid">
-        <!-- Retainer 1 -->
-        <div class="pricing-card">
-          <h3 style="font-size: 20px; font-weight: 700;">Growth Retainer</h3>
-          <p style="font-size: 13px; color: var(--text-muted);">For fast-moving startups and high-growth MVPs.</p>
-          <div class="pricing-price">$4,997<span style="font-size: 16px; color: var(--text-dim); font-weight: 500;">/month</span></div>
+        <!-- Tier 1: Pure Contingency -->
+        <div class="pricing-card" style="border-color: rgba(16, 185, 129, 0.3);">
+          <div style="font-size: 11px; font-weight: 700; color: var(--accent-emerald); font-family: var(--font-mono); margin-bottom: 6px;">ZERO-RISK ENTERPRISE PILOT</div>
+          <h3 style="font-size: 20px; font-weight: 700;">15% Pure Contingency</h3>
+          <p style="font-size: 13px; color: var(--text-muted);">For hospitals, surgical centers, and contractors recovering lost revenue.</p>
+          <div class="pricing-price">$0<span style="font-size: 16px; color: var(--text-dim); font-weight: 500;"> upfront</span></div>
           <ul class="pricing-features">
-            <li>Unlimited Software Feature Sprints</li>
-            <li>48-Hour Turnaround Guarantee</li>
-            <li>18 Multi-AI Council Architecture</li>
-            <li>Full Digital Marketing & Copy Scribe</li>
-            <li>Pause or cancel anytime</li>
+            <li><strong>$0 Out-of-Pocket Cost</strong> to get started</li>
+            <li>15% fee only on successfully recovered cash flow</li>
+            <li>Free 7-day live production sandbox & trial</li>
+            <li>Automated ERISA § 502(a)(1)(B) statutory defense</li>
+            <li>If we recover $0, you owe $0</li>
           </ul>
-          <button class="btn-secondary" onclick="openTrialModal()" style="width: 100%;">Start 7-Day Trial</button>
+          <button class="btn-primary" onclick="openClaimPilotModal()" style="width: 100%; background: linear-gradient(135deg, #10b981, #059669); border-color: #10b981;">
+            🚀 Claim Zero-Risk Pilot
+          </button>
         </div>
 
-        <!-- Retainer 2 (Featured) -->
+        <!-- Tier 2: Sovereign Retainer (Featured) -->
         <div class="pricing-card featured">
           <div class="featured-pill">MOST POPULAR • MAXIMUM VELOCITY</div>
-          <h3 style="font-size: 20px; font-weight: 700;">Enterprise Factory</h3>
-          <p style="font-size: 13px; color: var(--text-muted);">For established scaleups and mission-critical systems.</p>
-          <div class="pricing-price">$9,997<span style="font-size: 16px; color: var(--text-dim); font-weight: 500;">/month</span></div>
+          <div style="font-size: 11px; font-weight: 700; color: var(--accent-cyan); font-family: var(--font-mono); margin-bottom: 6px;">FULL AUTONOMOUS FACTORY</div>
+          <h3 style="font-size: 20px; font-weight: 700;">Sovereign Retainer</h3>
+          <p style="font-size: 13px; color: var(--text-muted);">Dedicated 34-Titan AI workforce building and shipping weekly.</p>
+          <div class="pricing-price">$4,997<span style="font-size: 16px; color: var(--text-dim); font-weight: 500;">/month</span></div>
           <ul class="pricing-features">
-            <li>Dedicated 33-Titan Autonomous Cluster</li>
-            <li>24-Hour Express Turnaround SLA</li>
-            <li>Independent Red Team Security Audits</li>
-            <li>Automated CI/CD & Air-Gapped DevOps</li>
-            <li>White-Glove Architecture Reviews</li>
+            <li><strong>Dedicated 34-Titan Autonomous Cluster</strong></li>
+            <li>Unlimited Software Feature Sprints & Weekly Shipments</li>
+            <li>48-Hour Turnaround SLA with Zero-Defect Rejection Gates</li>
+            <li>Independent Red Team Security & Compliance Audits</li>
+            <li>Full Gary Halbert Digital Marketing & Video Scribe Suite</li>
+            <li>Pause or cancel anytime with 1-click</li>
           </ul>
-          <button class="btn-primary" onclick="openTrialModal()" style="width: 100%;">Claim Enterprise Sandbox</button>
+          <button class="btn-primary" onclick="openClaimPilotModal()" style="width: 100%;">
+            ⚡ Deploy 34-Titan Workforce
+          </button>
         </div>
 
-        <!-- Pay per module -->
-        <div class="pricing-card">
-          <h3 style="font-size: 20px; font-weight: 700;">Pay-Per-Module Escrow</h3>
-          <p style="font-size: 13px; color: var(--text-muted);">For isolated features, audits, or single landing pages.</p>
-          <div class="pricing-price">$1,497<span style="font-size: 16px; color: var(--text-dim); font-weight: 500;">/deliverable</span></div>
+        <!-- Tier 3: Turnkey Source Code License -->
+        <div class="pricing-card" style="border-color: rgba(139, 92, 246, 0.4);">
+          <div style="font-size: 11px; font-weight: 700; color: var(--accent-violet); font-family: var(--font-mono); margin-bottom: 6px;">PERPETUAL ENTERPRISE LICENSE</div>
+          <h3 style="font-size: 20px; font-weight: 700;">Air-Gapped Source License</h3>
+          <p style="font-size: 13px; color: var(--text-muted);">For defense, banking, and private healthcare requiring on-premise sovereignty.</p>
+          <div class="pricing-price">$14,997<span style="font-size: 16px; color: var(--text-dim); font-weight: 500;"> one-time</span></div>
           <ul class="pricing-features">
-            <li>1 Dedicated Feature or Marketing Lander</li>
-            <li>Non-custodial milestone escrow</li>
-            <li>Zero-defect verification guarantee</li>
-            <li>Full source code & copyright handover</li>
+            <li><strong>100% Full Source Code & IP Transfer</strong></li>
+            <li>Self-hosted, air-gapped Docker / Kubernetes bundle</li>
+            <li>Zero external cloud dependencies or telemetry leaks</li>
+            <li>FDA 21 CFR Part 11 & SOC2 Type II compliance audit packet</li>
+            <li>Lifetime software sovereignty with zero recurring fees</li>
           </ul>
-          <button class="btn-secondary" onclick="openTrialModal()" style="width: 100%;">Order Single Module</button>
+          <button class="btn-secondary" onclick="openClaimPilotModal()" style="width: 100%; border-color: var(--accent-violet); color: var(--accent-violet);">
+            🔒 Request On-Premise License
+          </button>
         </div>
       </div>
 
@@ -357,8 +391,8 @@ export async function transferFunds(account: any, amount: number) {
     <div class="modal-content">
       <button id="trial-close-btn" class="modal-close">&times;</button>
       <div id="trial-form-container">
-        <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 6px;">Activate 7-Day Reverse Trial</h3>
-        <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 20px;">Zero financial commitment. Test the full power of our 33 Titans on your actual codebase or marketing campaign.</p>
+        <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 6px;">Activate 7-Day Dedicated Pilot & Sandbox</h3>
+        <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 20px;">Zero financial commitment. We will provision a dedicated live cloud sandbox loaded with your target specifications.</p>
 
         <form onsubmit="handleTrialSubmit(event)">
           <div class="form-group">
@@ -370,14 +404,37 @@ export async function transferFunds(account: any, amount: number) {
             <input type="email" id="client-email" class="form-input" placeholder="you@company.com" required>
           </div>
           <div class="form-group">
-            <label class="form-label" for="client-pain">Primary Technical or Marketing Pain Point</label>
-            <input type="text" id="client-pain" class="form-input" placeholder="e.g. Need to build a compliant SaaS in 7 days" required>
+            <label class="form-label" for="client-pain">Primary Technical or Commercial Objective</label>
+            <input type="text" id="client-pain" class="form-input" placeholder="e.g. Test 3 live cases on free 7-day sandbox" required>
           </div>
 
-          <button type="submit" class="btn-primary" style="width: 100%; margin-top: 10px; padding: 12px;">
-            Initialize 7-Day Dedicated Sandbox &rarr;
+          <button type="submit" class="btn-primary" style="width: 100%; margin-top: 10px; padding: 12px; background: linear-gradient(135deg, #10b981, #059669); border-color: #10b981;">
+            🚀 Provision Instant Sandbox &rarr;
           </button>
         </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Board-Ready Executive One-Pager Memo Modal -->
+  <div id="board-memo-modal" class="modal-backdrop" style="display: none;" onclick="closeBoardMemoModalOnBackdrop(event)">
+    <div class="modal-container" style="max-width: 860px; padding: 32px; background: #090d16; border: 1px solid var(--accent-amber); box-shadow: 0 0 60px rgba(245, 158, 11, 0.25);">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 16px;">
+        <div>
+          <div style="font-size: 11px; font-family: var(--font-mono); color: var(--accent-amber); letter-spacing: 0.1em; text-transform: uppercase;">BOARD OF DIRECTORS EXECUTIVE BRIEFING MEMO</div>
+          <h2 id="memo-title" style="font-size: 20px; font-weight: 800; color: #fff; margin-top: 4px;">ENTERPRISE EXECUTIVE BRIEFING</h2>
+          <div id="memo-subtitle" style="font-size: 12px; color: var(--text-muted); font-family: var(--font-mono); margin-top: 2px;">Prepared for: Executive Leadership Team</div>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn-primary" onclick="printBoardMemo()" style="padding: 8px 14px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px; background: var(--accent-amber); color: #000; font-weight: 700;">
+            <span>🖨️</span> Print / Export PDF
+          </button>
+          <button class="modal-close" onclick="closeBoardMemoModal()">&times;</button>
+        </div>
+      </div>
+
+      <div id="memo-body-content" style="font-size: 13px; line-height: 1.65; color: #cbd5e1; max-height: 520px; overflow-y: auto; padding-right: 12px;">
+        <!-- Dynamically populated by app.js -->
       </div>
     </div>
   </div>
@@ -389,7 +446,7 @@ export async function transferFunds(account: any, amount: number) {
         <div style="display: flex; align-items: center; gap: 10px;">
           <span style="font-size: 24px;">🎬</span>
           <div>
-            <h3 id="video-modal-title" style="font-size: 18px; font-weight: 800; color: #fff;">TITAN 33-AI FACTORY & 5 ENTERPRISE WEAPONS (40S PROMO)</h3>
+            <h3 id="video-modal-title" style="font-size: 18px; font-weight: 800; color: #fff;">TITAN 34-AI FACTORY & 5 ENTERPRISE WEAPONS (40S PROMO)</h3>
             <p id="video-modal-sub" style="font-size: 12px; color: var(--accent-cyan); font-family: var(--font-mono);">1080p 60FPS • SYNTHETIC CYBERNETIC SOUNDTRACK • ZERO-MOCK REALITY</p>
           </div>
         </div>
@@ -428,7 +485,7 @@ export async function transferFunds(account: any, amount: number) {
     <div class="container">
       <p style="margin-bottom: 8px;">© 2026 TITAN AUTONOMOUS SOFTWARE & MARKETING FACTORY. ALL RIGHTS RESERVED.</p>
       <p style="color: var(--text-dim); font-size: 12px; font-family: var(--font-mono);">
-        POWERED BY 33 TITANS • 1:1 RENDER-TO-CODE PARITY • ZERO-DEFECT PROTOCOL
+        POWERED BY 34 TITANS • 1:1 RENDER-TO-CODE PARITY • ZERO-DEFECT PROTOCOL • SOVEREIGN ENTERPRISE
       </p>
     </div>
   </footer>

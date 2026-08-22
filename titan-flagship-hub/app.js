@@ -308,6 +308,17 @@ const TITANS_DATABASE = [
     titans: "Kevin Mitnick, George Hotz (geohot), Samy Kamkar, Charlie Miller (NSA), Barnaby Jack",
     desc: "Adversarially stress-tests, audits, and attempts to hack every feature before client release.",
     rejectionGate: "Banned: rubber-stamping code without executing explicit bypass payloads."
+  },
+
+  // SECTION 5: SOVEREIGN REVENUE & AUTONOMOUS ENTERPRISE (1)
+  {
+    id: "CEO-01",
+    name: "Autonomous Enterprise & Co-Owner",
+    category: "sentry",
+    badge: "CHIEF EXECUTIVE",
+    titans: "Charlie Munger, Warren Buffett, Alex Hormozi, Sam Altman, Keith Rabois, Ray Dalio, Naval Ravikant",
+    desc: "Autonomous capital allocation, Grand Slam pricing models, inversion audit gates, and 24/7 sovereign enterprise operations.",
+    rejectionGate: "Banned: linear low-leverage agency models, un-hedged operational risk, zero-pricing power."
   }
 ];
 
@@ -808,8 +819,9 @@ window.switchFilm = function(type) {
     video.play().catch(() => {});
   }
 };
-// 7. B2B PITCH ENGINE & VIDEO OUTREACH SYSTEM
+// 7. B2B PITCH ENGINE & MULTI-CHANNEL VIP SWIPE SYSTEM
 let currentPitchKey = "cp";
+let currentChannel = "email";
 
 const PITCH_CONFIG = {
   cp: {
@@ -822,14 +834,38 @@ const PITCH_CONFIG = {
 Noticed {{COMPANY}}'s oncology department is expanding clinical research, but usually clinical coordinators spend 15+ hours a week sifting through 500-page EHR binders to match EGFR/KRAS biomarker mutations.
 
 I recorded a 30-second video showing how our critical care workstation converts bedside voice dictation into an FDA 21 CFR Part 11 signed SBAR report—and instantly matched an oncology patient to a $12,500 pharma research trial in 300ms:
-▶ [Watch 30s Video Demo: http://localhost:4173/]
+▶ [Watch 30s Video Demo: https://linkable.it.com/]
 
 Would you be opposed to testing this with 3 anonymized patient charts on a free 7-day hospital sandbox?
 
 Best regards,
 Titan Autonomous HealthTech Solutions
-http://localhost:8089/`,
-    videoUrl: "http://localhost:4173/",
+https://linkable.it.com/`,
+    linkedin: `Hi {{PROSPECT}} — saw {{COMPANY}}'s oncology research expansion.
+
+Most clinical directors lose 15+ hrs/week manually cross-referencing EHR binders with pharma trial protocols.
+
+We built an FDA 21 CFR Part 11 voice-to-SBAR workstation that matches patients to active $12.5k pharma trials in 300ms.
+
+Recorded a 30s screen capture for you: https://linkable.it.com/
+
+Would you be against testing 3 anonymized charts on a free 7-day sandbox?`,
+    twitter: `Hey {{PROSPECT}} — quick idea for {{COMPANY}}'s clinical team.
+
+Instead of clinical coordinators spending 15 hrs/wk manually matching EHR biomarker charts, our voice-to-SBAR workstation matches oncology trials in 300ms (FDA 21 CFR Part 11 compliant).
+
+30s video teardown: https://linkable.it.com/
+
+Open to trying 3 test cases for free?`,
+    boardMemo: {
+      title: "EXECUTIVE MEMORANDUM: CLINICAL-PRISTINE WORKSTATION DEPLOYMENT",
+      problem: "Clinical coordinators spend 15+ hours/week manually matching complex EHR records with clinical trials, causing delayed protocol enrollment and uncaptured clinical trial revenue.",
+      solution: "Deploy Clinical-Pristine autonomous voice-to-SBAR clinical workstation with instant EGFR/KRAS mutation trial matching.",
+      compliance: "FDA 21 CFR Part 11 Signed SBAR, HL7 / FHIR Invariants, Sub-300ms Biometric Ingestion.",
+      roi: "Projected annual revenue capture of $450,000 in pharma trial sponsorships; 65% reduction in coordinator administrative overtime.",
+      recommendation: "Authorize 7-day zero-risk production pilot across 3 oncology trial protocols ($0 upfront commitment)."
+    },
+    videoUrl: "https://linkable.it.com/",
     filmType: "promo"
   },
   cg: {
@@ -842,7 +878,7 @@ http://localhost:8089/`,
 Most hospital billing directors I speak with are bleeding $1.2M+ annually because commercial insurance carriers automatically deny 30% of legitimate claims—betting your team lacks time to file federal appeals.
 
 We built an autonomous ERISA § 502(a)(1)(B) statutory defense generator that triggers an 18% p.a. compounding penalty clock against bad-faith insurers and forces settlement in under 14 days:
-▶ [Watch 30s Case Teardown: http://localhost:8094/]
+▶ [Watch 30s Case Teardown: https://linkable.it.com/]
 
 We work on a 15% pure contingency basis ($0 upfront, $0 out-of-pocket).
 
@@ -850,8 +886,32 @@ Would it be a bad idea to run 5 of your oldest denied claims through our engine 
 
 Best regards,
 ClaimGuard-AI Legal Defense
-http://localhost:8089/`,
-    videoUrl: "http://localhost:8094/",
+https://linkable.it.com/`,
+    linkedin: `Sarah — quick note regarding {{COMPANY}}'s commercial insurance write-offs.
+
+Carriers automatically deny ~30% of clean surgical claims betting billing teams lack bandwidth to litigate.
+
+Our autonomous engine executes ERISA § 502(a)(1)(B) statutory demand packets triggering 18% p.a. interest penalties, forcing insurer settlement in <14 days.
+
+We work on 15% pure contingency ($0 upfront). 30s proof: https://linkable.it.com/
+
+Would it hurt to run 5 stale denied claims through for free?`,
+    twitter: `{{PROSPECT}} — are commercial insurers sitting on {{COMPANY}}'s clean claims?
+
+ClaimGuard-AI generates ERISA § 502(a)(1)(B) statutory appeal packets with active 18% penalty interest clocks. Insurers settle in 14 days.
+
+Zero upfront cost (15% pure contingency). Case proof: https://linkable.it.com/
+
+Worth a 5-claim free test run?`,
+    boardMemo: {
+      title: "EXECUTIVE MEMORANDUM: AUTONOMOUS REVENUE CYCLE DEFENSE & RECOVERY",
+      problem: "Commercial health insurers arbitrarily deny legitimate inpatient and surgical claims, creating $1.2M+ in uncollected accounts receivable and unrecoverable bad debt write-offs.",
+      solution: "Deploy ClaimGuard-AI Autonomous Statutory Adjudicator to issue ERISA § 502(a)(1)(B) and DOL § 2560.503-1 demand packages with automated 18% penalty interest compounding.",
+      compliance: "ERISA 29 U.S.C. § 1132, DOL Fiduciary Mandates, SOC-2 Type II Certified, Air-Gapped Encryption.",
+      roi: "Estimated 84% recovery rate on aged denials within 14 days; projected annual cash flow recovery of $680,000–$1.2M at 15% pure contingency fee structure ($0 upfront risk).",
+      recommendation: "Approve 5-claim proof-of-concept audit with zero financial exposure to the health system."
+    },
+    videoUrl: "https://linkable.it.com/",
     filmType: "story"
   },
   sp: {
@@ -864,14 +924,38 @@ http://localhost:8089/`,
 Saw {{COMPANY}}'s ongoing commercial construction projects. Usually, general contractors lose weeks of profit to OBO structural inspection delays and subcontractor retainage disputes over beam deflection tolerances.
 
 I recorded a 30-second video demonstrating how our mobile 3D LiDAR scanner sweeps 48,200 points on a jobsite in 30 seconds, flags NSCP 2015 / IBC 2024 moment violations before concrete pouring, and releases escrow automatically:
-▶ [Watch 30s LiDAR Field Demo: http://localhost:4174/]
+▶ [Watch 30s LiDAR Field Demo: https://linkable.it.com/]
 
 Would you be open to testing the LiDAR blueprint scanner on your active project this week?
 
 Mabuhay,
 StructuraPro Enterprise
-http://localhost:8089/`,
-    videoUrl: "http://localhost:4174/",
+https://linkable.it.com/`,
+    linkedin: `Engr. Santos — quick note on {{COMPANY}}'s active commercial builds.
+
+Subcontractor retainage disputes and delayed municipal OBO sign-offs over beam deflection usually eat 8-12% of GC net margin.
+
+Our mobile 3D LiDAR engine performs 48,200-point structural sweeps in 30s, certifying NSCP 2015 / IBC 2024 compliance before concrete pour.
+
+30s LiDAR demo: https://linkable.it.com/
+
+Open to testing the blueprint scanner on 1 jobsite for free?`,
+    twitter: `Engr. {{PROSPECT}} — tired of inspection delays on {{COMPANY}}'s active sites?
+
+StructuraPro performs 48k-point 3D LiDAR sweeps in 30s, catches beam moment violations before pour, and automates milestone escrow release.
+
+Field demo: https://linkable.it.com/
+
+Want to test on 1 floor slab this week?`,
+    boardMemo: {
+      title: "EXECUTIVE MEMORANDUM: JOBSITE 3D LIDAR QUALITY ASSURANCE & ESCROW GOVERNANCE",
+      problem: "Manual site inspections miss micro-deflections in structural steel and rebar spacing, causing expensive structural retrofits, municipal stop-work orders, and contentious subcontractor retainage lawsuits.",
+      solution: "Equip project engineers with StructuraPro 3D LiDAR Scanner and automated smart-contract milestone escrow verification.",
+      compliance: "NSCP 2015 Section 418, IBC 2024 Chapter 19, ASTM E1155 Floor Flatness Standards.",
+      roi: "Elimination of post-pour structural remediation ($120k+ avg savings per commercial tower); 14-day acceleration in occupancy certification.",
+      recommendation: "Approve single-tower field pilot with zero disruption to scheduled pours."
+    },
+    videoUrl: "https://linkable.it.com/",
     filmType: "promo"
   },
   os: {
@@ -884,14 +968,38 @@ http://localhost:8089/`,
 Noticed {{COMPANY}}'s logistics expansion. Usually, warehouse operators spend 40% of their shift walking inefficient pick routes, and purchasing managers overpay by 10-15% during urgent stockouts.
 
 I put together a 30-second demo of OmniStock: our AI spatial warehouse CAD routes forklift operators via Euclidean shortest path, while our Spot Restock AI automatically pits 3 suppliers in a blind bidding war to save 13% per order:
-▶ [Watch 30s Spatial HUD Demo: http://localhost:4179/]
+▶ [Watch 30s Spatial HUD Demo: https://linkable.it.com/]
 
 Would you be opposed to testing the spatial CAD map on one of your storage aisles?
 
 Best regards,
 OmniStock Enterprise Logistics
-http://localhost:8089/`,
-    videoUrl: "http://localhost:4179/",
+https://linkable.it.com/`,
+    linkedin: `David — saw {{COMPANY}}'s warehouse network scaling up.
+
+Most 3PL operators waste 40% of floor labor on suboptimal pick paths, while procurement teams overpay 12% on rush supplier restocks.
+
+Our spatial CAD AI computes Euclidean optimal pick paths and runs instant 3-supplier blind bidding auctions.
+
+30s floor HUD demo: https://linkable.it.com/
+
+Would it be a bad idea to test the spatial optimizer on 1 warehouse zone?`,
+    twitter: `{{PROSPECT}} — quick efficiency lever for {{COMPANY}}'s 3PL facilities.
+
+OmniStock spatial CAD cuts forklift transit distance by 34% and triggers automated spot supplier bidding to save 13% on emergency inventory restocks.
+
+30s walkthrough: https://linkable.it.com/
+
+Up for testing 1 aisle this month?`,
+    boardMemo: {
+      title: "EXECUTIVE MEMORANDUM: SPATIAL WAREHOUSE ROUTING & DYNAMIC SPOT PROCUREMENT",
+      problem: "Suboptimal picking transit paths and fragmented vendor purchasing lead to bloated labor costs and 12-15% supplier markups during seasonal stockouts.",
+      solution: "Implement OmniStock 3D Spatial CAD pick route optimization and Spot Restock reverse-auction broker.",
+      compliance: "GS1 Barcode Compliance, EDI 850/855 Protocol Invariants, SOC2 Data Isolation.",
+      roi: "34% reduction in order fulfillment cycle times; $180,000 annual savings per distribution center in procurement spot-buying.",
+      recommendation: "Authorize sandbox test run on primary regional distribution facility."
+    },
+    videoUrl: "https://linkable.it.com/",
     filmType: "promo"
   },
   sc: {
@@ -906,18 +1014,42 @@ Love what you guys are building with {{COMPANY}}.
 I ran your homepage through our biometric foveal gaze AI (simulates human eye fixations in 2 seconds) and noticed a critical visual clutter bottleneck: 82% of user attention fixates on the banner text, while your primary "Add to Cart" button is sitting in a cold visual blindspot.
 
 Here is the 30-second screen recording showing the before/after heatmap and our 1-click Bento grid redesign (+38% projected conversion lift):
-▶ [Watch Your Free Heatmap Audit: http://localhost:8095/]
+▶ [Watch Your Free Heatmap Audit: https://linkable.it.com/]
 
 Can I send you the copyable CSS tokens to fix this on your Shopify theme for free?
 
 Best,
 Conversion Architect, Saccade-UI
-http://localhost:8089/`,
-    videoUrl: "http://localhost:8095/",
+https://linkable.it.com/`,
+    linkedin: `Alex — love {{COMPANY}}'s direct-to-consumer brand trajectory.
+
+We ran your PDP through our biometric gaze simulator and found 82% of buyer eye fixations get trapped in banner whitespace, leaving checkout CTAs in an optic blindspot.
+
+We generated a Bento grid CSS fix projecting +38% conversion lift.
+
+30s visual audit: https://linkable.it.com/
+
+Can I drop you the clean CSS tokens for your team to test?`,
+    twitter: `{{PROSPECT}} — quick conversion diagnostic on {{COMPANY}}.
+
+Biometric foveal gaze scan revealed 82% of customer focus gets trapped in hero text while buy buttons sit cold.
+
+Redesign teardown (30s): https://linkable.it.com/
+
+Want the free copyable CSS fix?`,
+    boardMemo: {
+      title: "EXECUTIVE MEMORANDUM: BIOMETRIC GAZE OPTIMIZATION & REVENUE CONVERSION",
+      problem: "Paid advertising traffic bounce rates remain high due to visual attention friction and cognitive load in the upper-funnel user interface.",
+      solution: "Apply Saccade-UI biometric eye-tracking simulation and automated Bento grid layout restructuring.",
+      compliance: "WCAG 2.1 AA Accessibility, Core Web Vitals Sub-50ms INP / LCP Benchmarks.",
+      roi: "Projected 28-38% increase in checkout progression rate; $220,000 incremental gross merchandise value without additional ad spend.",
+      recommendation: "Deploy A/B test layout across top 2 highest-traffic product landing pages."
+    },
+    videoUrl: "https://linkable.it.com/",
     filmType: "promo"
   },
   tf: {
-    name: "Titan 33-AI Autonomous Factory Retainer",
+    name: "Titan 34-AI Autonomous Factory Retainer",
     defaultProspect: "Jason Reed, CEO & Founder",
     defaultCompany: "CloudScale SaaS",
     subject: "cutting {{COMPANY}}'s software engineering spend by 80%",
@@ -925,16 +1057,40 @@ http://localhost:8089/`,
 
 Most founders at your stage are tired of paying $50,000/month to traditional dev agencies that deliver slow, buggy code with endless change order invoices.
 
-We engineered an autonomous 33-AI software factory (combining the mental models of antirez, John Carmack, and Leslie Lamport) that ships clean, production-ready features in 48 hours under strict Zero-Defect rejection gates.
+We engineered an autonomous 34-AI software factory (combining the mental models of antirez, John Carmack, and Leslie Lamport) that ships clean, production-ready features in 48 hours under strict Zero-Defect rejection gates.
 
-I set up a live dedicated sandbox for {{COMPANY}} here: http://localhost:8089/
+I set up a live dedicated sandbox for {{COMPANY}} here: https://linkable.it.com/
 
 Worth a 5-minute look, or are you 100% satisfied with your current dev velocity?
 
 Best,
 Managing Partner, Titan Autonomous Factory
-http://localhost:8089/`,
-    videoUrl: "http://localhost:8089/",
+https://linkable.it.com/`,
+    linkedin: `Jason — quick note on {{COMPANY}}'s product roadmap velocity.
+
+Most scaleups spend $50k/mo on dev agencies only to suffer buggy releases, missed deadlines, and endless change orders.
+
+Our autonomous 34-Titan factory ships production features in 48 hrs with built-in AST lints, security audits, and zero-defect proof receipts.
+
+Dedicated sandbox: https://linkable.it.com/
+
+Worth a 5-min peek, or is dev velocity already optimal?`,
+    twitter: `{{PROSPECT}} — tired of $50k/mo agency bills and slow dev sprints at {{COMPANY}}?
+
+Titan Autonomous Factory delivers production features in 48 hrs backed by 34 fused AI specialists and zero-defect gates.
+
+Live sandbox: https://linkable.it.com/
+
+Open to testing 1 backlog feature for free?`,
+    boardMemo: {
+      title: "EXECUTIVE MEMORANDUM: SOVEREIGN AUTONOMOUS ENGINEERING FACTORY ADOPTION",
+      problem: "Engineering payroll inflation ($250k/yr per senior engineer) and legacy dev agency overhead create drag on capital efficiency and time-to-market.",
+      solution: "Engage the Titan 34-Titan Autonomous AI Factory on a predictable sovereign retainer with guaranteed 48-hour delivery SLAs.",
+      compliance: "Air-Gapped Sovereign Deployment, OWASP ASVS v4 Level 3, 100% IP & Source Code Ownership.",
+      roi: "80% reduction in annualized software engineering expenditure; 4x increase in quarterly feature release velocity.",
+      recommendation: "Initiate 7-day dedicated sandbox pilot on single sprint backlog."
+    },
+    videoUrl: "https://linkable.it.com/",
     filmType: "story"
   }
 };
@@ -973,6 +1129,35 @@ window.setupPitchEngine = function() {
   updatePitchOutput();
 };
 
+window.selectChannel = function(channel) {
+  currentChannel = channel;
+  const tabs = {
+    email: document.getElementById("chan-email"),
+    linkedin: document.getElementById("chan-linkedin"),
+    twitter: document.getElementById("chan-twitter"),
+    board: document.getElementById("chan-board")
+  };
+  Object.keys(tabs).forEach(k => {
+    if (tabs[k]) {
+      if (k === channel) {
+        tabs[k].classList.add("active");
+      } else {
+        tabs[k].classList.remove("active");
+      }
+    }
+  });
+
+  const header = document.getElementById("pitch-preview-header");
+  if (header) {
+    if (channel === 'email') header.textContent = "FORMATTED OUTREACH COPY • COLD EMAIL (GARY HALBERT + VOSS)";
+    if (channel === 'linkedin') header.textContent = "FORMATTED OUTREACH COPY • LINKEDIN EXECUTIVE INMAIL";
+    if (channel === 'twitter') header.textContent = "FORMATTED OUTREACH COPY • X / TWITTER DIRECT VALUE HOOK";
+    if (channel === 'board') header.textContent = "FORMATTED OUTREACH COPY • BOARD EXECUTIVE ONE-PAGER BRIEF";
+  }
+
+  updatePitchOutput();
+};
+
 window.selectPitchTemplate = function(key) {
   currentPitchKey = key;
   document.querySelectorAll(".pitch-tab").forEach(tab => tab.classList.remove("active"));
@@ -995,15 +1180,39 @@ window.updatePitchOutput = function() {
   const cName = document.getElementById("pitch-company-name")?.value || config.defaultCompany;
   const objVal = document.getElementById("pitch-objection-select")?.value || "none";
 
-  let subject = config.subject.replace(/{{COMPANY}}/g, cName).replace(/{{PROSPECT}}/g, pName);
-  let body = config.body.replace(/{{COMPANY}}/g, cName).replace(/{{PROSPECT}}/g, pName);
+  let fullText = "";
 
-  if (objVal !== "none" && OBJECTIONS_RESPONSES[objVal]) {
-    const objText = OBJECTIONS_RESPONSES[objVal].replace(/{{COMPANY}}/g, cName).replace(/{{PROSPECT}}/g, pName);
-    body += objText;
+  if (currentChannel === "linkedin") {
+    fullText = (config.linkedin || config.body).replace(/{{COMPANY}}/g, cName).replace(/{{PROSPECT}}/g, pName);
+  } else if (currentChannel === "twitter") {
+    fullText = (config.twitter || config.body).replace(/{{COMPANY}}/g, cName).replace(/{{PROSPECT}}/g, pName);
+  } else if (currentChannel === "board") {
+    const memo = config.boardMemo || {};
+    fullText = `========================================================================\n` +
+      `🏢 ${memo.title || 'EXECUTIVE BRIEFING'}\n` +
+      `Prepared for: ${pName} (${cName})\n` +
+      `Prepared by: Titan Sovereign Autonomous Enterprise\n` +
+      `Date: ${new Date().toLocaleDateString()}\n` +
+      `========================================================================\n\n` +
+      `1. CORE OPERATIONAL BOTTLENECK:\n${memo.problem}\n\n` +
+      `2. PROPOSED AUTONOMOUS SOLUTION:\n${memo.solution}\n\n` +
+      `3. STATUTORY COMPLIANCE & PROTOCOL INVARIANTS:\n${memo.compliance}\n\n` +
+      `4. ESTIMATED ECONOMIC IMPACT & ROI:\n${memo.roi}\n\n` +
+      `5. EXECUTIVE RECOMMENDATION:\n${memo.recommendation}\n\n` +
+      `========================================================================\n` +
+      `[PROVISION LIVE PILOT SANDBOX: https://linkable.it.com/#pricing]`;
+  } else {
+    // Default: Email
+    let subject = config.subject.replace(/{{COMPANY}}/g, cName).replace(/{{PROSPECT}}/g, pName);
+    let body = config.body.replace(/{{COMPANY}}/g, cName).replace(/{{PROSPECT}}/g, pName);
+
+    if (objVal !== "none" && OBJECTIONS_RESPONSES[objVal]) {
+      const objText = OBJECTIONS_RESPONSES[objVal].replace(/{{COMPANY}}/g, cName).replace(/{{PROSPECT}}/g, pName);
+      body += objText;
+    }
+    fullText = `SUBJECT: ${subject}\n\n${body}`;
   }
 
-  const fullText = `SUBJECT: ${subject}\n\n${body}`;
   const previewBox = document.getElementById("pitch-preview-box");
   if (previewBox) {
     previewBox.textContent = fullText;
@@ -1035,6 +1244,84 @@ window.playSelectedPitchVideo = function() {
       window.switchFilm(config.filmType);
     }
   }
+};
+
+window.openClaimPilotModal = function() {
+  const config = PITCH_CONFIG[currentPitchKey] || PITCH_CONFIG.cp;
+  const pName = document.getElementById("pitch-prospect-name")?.value || config.defaultProspect;
+  const cName = document.getElementById("pitch-company-name")?.value || config.defaultCompany;
+
+  const companyInput = document.getElementById("client-company");
+  const painInput = document.getElementById("client-pain");
+
+  if (companyInput) companyInput.value = cName;
+  if (painInput) painInput.value = `Testing ${config.name} on 7-day sandbox pilot (${pName})`;
+
+  if (typeof window.openTrialModal === 'function') {
+    window.openTrialModal();
+  }
+};
+
+window.openBoardMemoModal = function() {
+  const config = PITCH_CONFIG[currentPitchKey] || PITCH_CONFIG.cp;
+  const pName = document.getElementById("pitch-prospect-name")?.value || config.defaultProspect;
+  const cName = document.getElementById("pitch-company-name")?.value || config.defaultCompany;
+  const memo = config.boardMemo || {};
+
+  const modal = document.getElementById("board-memo-modal");
+  const title = document.getElementById("memo-title");
+  const subtitle = document.getElementById("memo-subtitle");
+  const body = document.getElementById("memo-body-content");
+
+  if (title) title.textContent = memo.title || "EXECUTIVE MEMORANDUM";
+  if (subtitle) subtitle.textContent = `Prepared for: ${pName} • ${cName} | Confidential`;
+
+  if (body) {
+    body.innerHTML = `
+      <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 18px; margin-bottom: 16px;">
+        <div style="font-size: 11px; font-weight: 700; color: var(--accent-red); font-family: var(--font-mono); margin-bottom: 4px;">SECTION 1: OPERATIONAL BOTTLENECK & SYSTEM DEFICIT</div>
+        <p style="color: #e2e8f0; font-size: 13px;">${memo.problem}</p>
+      </div>
+
+      <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 18px; margin-bottom: 16px;">
+        <div style="font-size: 11px; font-weight: 700; color: var(--accent-cyan); font-family: var(--font-mono); margin-bottom: 4px;">SECTION 2: AUTONOMOUS SOVEREIGN SOLUTION ARCHITECTURE</div>
+        <p style="color: #e2e8f0; font-size: 13px;">${memo.solution}</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+        <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 18px;">
+          <div style="font-size: 11px; font-weight: 700; color: var(--accent-violet); font-family: var(--font-mono); margin-bottom: 4px;">SECTION 3: STATUTORY PROTOCOL INVARIANTS</div>
+          <p style="color: #cbd5e1; font-size: 12px;">${memo.compliance}</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 18px;">
+          <div style="font-size: 11px; font-weight: 700; color: var(--accent-emerald); font-family: var(--font-mono); margin-bottom: 4px;">SECTION 4: FINANCIAL ROI & CASH RECOVERY</div>
+          <p style="color: #cbd5e1; font-size: 12px;">${memo.roi}</p>
+        </div>
+      </div>
+
+      <div style="background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.4); border-radius: 8px; padding: 18px;">
+        <div style="font-size: 11px; font-weight: 700; color: var(--accent-amber); font-family: var(--font-mono); margin-bottom: 4px;">SECTION 5: ACTIONABLE EXECUTIVE RECOMMENDATION</div>
+        <p style="color: #fde68a; font-size: 13px; font-weight: 600;">${memo.recommendation}</p>
+      </div>
+    `;
+  }
+
+  if (modal) modal.style.display = "flex";
+};
+
+window.closeBoardMemoModal = function() {
+  const modal = document.getElementById("board-memo-modal");
+  if (modal) modal.style.display = "none";
+};
+
+window.closeBoardMemoModalOnBackdrop = function(e) {
+  if (e.target && e.target.id === "board-memo-modal") {
+    closeBoardMemoModal();
+  }
+};
+
+window.printBoardMemo = function() {
+  window.print();
 };
 
 // 8. LEADSUITE PRO AI VERIFIED ACCOUNTS & AUTONOMOUS SEQUENCER
