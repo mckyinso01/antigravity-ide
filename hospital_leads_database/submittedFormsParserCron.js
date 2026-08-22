@@ -75,14 +75,14 @@ function saveLedger(ledger) {
 function parseFormSubmitBody(bodyText, subject) {
   const result = {
     app: 'Unknown Application',
-    organization: 'Anonymous Prospect',
-    contactName: 'Executive Lead',
-    contactEmail: 'N/A',
-    contactTitle: 'Director',
-    problemReductionRating: '5 / 5 Stars',
-    problemScoreNum: 5,
-    pricingRoiRating: '5 / 5 Stars',
-    pricingScoreNum: 5,
+    organization: '',
+    contactName: '',
+    contactEmail: '',
+    contactTitle: '',
+    problemReductionRating: '',
+    problemScoreNum: null,
+    pricingRoiRating: '',
+    pricingScoreNum: null,
     desiredCustomizations: '',
     requestedAutomations: '',
     submittedAt: new Date().toISOString()
@@ -101,19 +101,19 @@ function parseFormSubmitBody(bodyText, subject) {
   lines.forEach((line, idx) => {
     if (/organization|company|facility|hospital|contractor/i.test(line)) {
       const match = line.split(/:\s*/)[1] || (lines[idx + 1] && !lines[idx + 1].includes(':') ? lines[idx + 1] : '');
-      if (match) result.organization = match.trim();
+      if (match && match !== '=') result.organization = match.trim();
     }
     if (/contactName|contact_name|name\b/i.test(line) && !/organization/i.test(line)) {
       const match = line.split(/:\s*/)[1] || (lines[idx + 1] && !lines[idx + 1].includes(':') ? lines[idx + 1] : '');
-      if (match) result.contactName = match.trim();
+      if (match && !match.includes('Clicked Launch Demo') && match !== '=') result.contactName = match.trim();
     }
     if (/contactEmail|contact_email|email\b/i.test(line)) {
       const match = line.split(/:\s*/)[1] || (lines[idx + 1] && !lines[idx + 1].includes(':') ? lines[idx + 1] : '');
-      if (match && match.includes('@')) result.contactEmail = match.trim();
+      if (match && match.includes('@') && !match.includes('example.com') && !match.includes('test.com')) result.contactEmail = match.trim();
     }
     if (/contactTitle|contact_title|title|role\b/i.test(line)) {
       const match = line.split(/:\s*/)[1] || (lines[idx + 1] && !lines[idx + 1].includes(':') ? lines[idx + 1] : '');
-      if (match) result.contactTitle = match.trim();
+      if (match && match !== '=') result.contactTitle = match.trim();
     }
     if (/problemReductionRating|problem_reduction|operational bottlenecks/i.test(line)) {
       const match = line.split(/:\s*/)[1] || (lines[idx + 1] && !lines[idx + 1].includes(':') ? lines[idx + 1] : '');
@@ -140,6 +140,11 @@ function parseFormSubmitBody(bodyText, subject) {
       if (match) result.requestedAutomations = match.trim();
     }
   });
+
+  // Strict Validation: Must have at least a valid contact email or actual customization/feedback text
+  if (!result.contactEmail && !result.desiredCustomizations && !result.requestedAutomations && !result.problemScoreNum) {
+    return null; // Reject incomplete/test submission
+  }
 
   return result;
 }
@@ -190,15 +195,17 @@ async function runSubmittedFormsParserJob() {
               const textPart = msg.parts.find(p => p.which === 'TEXT');
               const bodyText = textPart?.body || '';
               const parsed = parseFormSubmitBody(bodyText, subject);
+              if (!parsed) continue; // Skip incomplete, bot click, or test submissions
+
               parsed.dateReceived = date;
               parsed.mailbox = account.name;
 
               const entryId = `${parsed.contactEmail}_${parsed.organization}_${parsed.app}`;
               if (!existingIds.has(entryId)) {
+                ledger.push(parsed);
                 existingIds.add(entryId);
-                ledger.unshift(parsed);
                 newEntriesCount++;
-                console.log(`  ✨ [NEW EVALUATION INGESTED] App: ${parsed.app} | Org: ${parsed.organization} | Score: ${parsed.problemScoreNum}/5 | Contact: ${parsed.contactEmail}`);
+                console.log(`    ⭐ [AUTHENTIC EVALUATION INGESTED] ${parsed.app} from ${parsed.contactEmail || parsed.organization} (Rating: ${parsed.problemReductionRating || 'N/A'})`);
               }
             }
           }
