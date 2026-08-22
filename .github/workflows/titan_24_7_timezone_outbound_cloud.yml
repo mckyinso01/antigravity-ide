@@ -1,0 +1,34 @@
+name: Titan 24/7 Timezone-Aware Autonomous Outbound Cloud Engine
+
+on:
+  schedule:
+    # Runs at the top of every hour 24/7/365 (completely independent of local desktop state)
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+jobs:
+  run-timezone-outbound-dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        working-directory: ./hospital_leads_database
+        run: npm install nodemailer imap-simple dotenv
+
+      - name: Execute Autonomous Golden-Hour Timezone Dispatch
+        working-directory: ./hospital_leads_database
+        env:
+          SPACEMAIL_USER: ${{ secrets.SPACEMAIL_USER || 'mharcgatan@linkable.it.com' }}
+          SPACEMAIL_PASS: ${{ secrets.SPACEMAIL_PASS || 'Melonjuice01!' }}
+          SPACEMAIL_HOST: 'mail.spacemail.com'
+          SPACEMAIL_SMTP_PORT: '465'
+          ESCALATION_EMAIL: 'mckinsyo01@gmail.com'
+        run: |
+          node timezoneAwareDispatchScheduler.js

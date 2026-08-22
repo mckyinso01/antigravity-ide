@@ -334,5 +334,38 @@
     "status": "SUCCESS",
     "messageId": "<6833b89d-6d90-46b4-82e7-8ead586c4842@gmail.com>",
     "timestamp": "2026-08-18T19:39:04.493Z"
+  },
+  {
+    "id": 43,
+    "hospital": "Silver Cross Hospital",
+    "recipient": "kevin.brower@silvercross.org",
+    "timezone": "America/Chicago",
+    "targetLocalTime": "10:51",
+    "window": "MORNING_GOLDEN_HOUR (8:30-11:30 AM)",
+    "status": "SUCCESS",
+    "messageId": "<fda426fb-e16c-4d44-2bb9-4d9ffadc7c2c@linkable.it.com>",
+    "timestamp": "2026-08-22T15:51:14.531Z"
+  },
+  {
+    "id": 44,
+    "hospital": "Valley Baptist Medical Center",
+    "recipient": "stephen.finch@valleybaptist.net",
+    "timezone": "America/Chicago",
+    "targetLocalTime": "10:51",
+    "window": "MORNING_GOLDEN_HOUR (8:30-11:30 AM)",
+    "status": "SUCCESS",
+    "messageId": "<4a903ead-b719-315c-c3a4-2cdde0adef77@linkable.it.com>",
+    "timestamp": "2026-08-22T15:51:18.641Z"
+  },
+  {
+    "id": 45,
+    "hospital": "Citizens Medical Center",
+    "recipient": "jeff.siewert@citizensmedicalcenter.org",
+    "timezone": "America/Chicago",
+    "targetLocalTime": "10:51",
+    "window": "MORNING_GOLDEN_HOUR (8:30-11:30 AM)",
+    "status": "SUCCESS",
+    "messageId": "<18698e3b-7d33-79b3-d1a1-bb7a6376fe83@linkable.it.com>",
+    "timestamp": "2026-08-22T15:51:22.832Z"
   }
 ]

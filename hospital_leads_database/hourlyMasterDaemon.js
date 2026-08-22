@@ -16,19 +16,22 @@ const { runSelfHealingBounceRecovery } = require('./selfHealingBounceEngine');
 const { autoRefillNextBatch } = require('./leadAutoRefillEngine');
 const { runLeadHunterCycle } = require('./leadSuiteProHunter');
 const { runSubmittedFormsParserJob } = require('./submittedFormsParserCron');
+const { runTimezoneAwareDispatchCycle } = require('./timezoneAwareDispatchScheduler');
 
 // Intervals (ms)
 const INBOUND_INTERVAL_MS = 10 * 60 * 1000;         // 10 mins
 const FORMS_SURVEY_INTERVAL_MS = 15 * 60 * 1000;    // 15 mins (Submitted Evaluations)
 const HOURLY_REPORT_INTERVAL_MS = 60 * 60 * 1000;   // 60 mins
+const TIMEZONE_OUTBOUND_INTERVAL_MS = 60 * 60 * 1000; // 60 mins (Golden Hour Dispatcher)
 const CODESIGN_INTERVAL_MS = 60 * 60 * 1000;       // 60 mins
 const BOUNCE_INTERVAL_MS = 2 * 60 * 60 * 1000;      // 2 hours
 const HUNTER_INTERVAL_MS = 4 * 60 * 60 * 1000;      // 4 hours
 
 console.log('================================================================');
-console.log('🤖 LINKABLEAI 24/7 MASTER AUTONOMOUS DAEMON v4.1 ACTIVE');
+console.log('🤖 LINKABLEAI 24/7 MASTER AUTONOMOUS DAEMON v5.0 ACTIVE');
 console.log(`⏰ Startup: ${new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' })} PHT`);
 console.log(`👤 Executive Owner: Mharc Gatan (mharcgatan@linkable.it.com)`);
+console.log(`🌍 Timezone-Aware Golden Hour Dispatcher: ACTIVE (Every 60 mins)`);
 console.log(`📋 Submitted Form & Evaluation Ingestion: ACTIVE (Every 15 mins)`);
 console.log(`📊 Hourly Comprehensive Report: ACTIVE (Every 60 mins)`);
 console.log('================================================================\n');
@@ -63,7 +66,17 @@ async function safeHourlyReport() {
   }
 }
 
-// 4. Co-Design Follow-Up
+// 4. Timezone-Aware Outbound Golden Hour Dispatcher
+async function safeTimezoneOutbound() {
+  try {
+    console.log(`\n🌍 [60-MIN CRON] Running Timezone-Aware Golden Hour Dispatch at ${new Date().toLocaleTimeString()}...`);
+    await runTimezoneAwareDispatchCycle({ maxBatchSize: 3, dryRun: false });
+  } catch (e) {
+    console.error('⚠️ Timezone outbound error:', e.message);
+  }
+}
+
+// 5. Co-Design Follow-Up
 async function safeCoDesign() {
   try {
     console.log(`\n📬 [60-MIN CRON] Checking Co-Design Follow-Ups at ${new Date().toLocaleTimeString()}...`);
@@ -73,7 +86,7 @@ async function safeCoDesign() {
   }
 }
 
-// 5. Self-Healing Bounces
+// 6. Self-Healing Bounces
 async function safeBounce() {
   try {
     console.log(`\n🛡️ [2-HR CRON] Running Bounce Recovery at ${new Date().toLocaleTimeString()}...`);
@@ -83,7 +96,7 @@ async function safeBounce() {
   }
 }
 
-// 6. Lead Hunter & Refill
+// 7. Lead Hunter & Refill
 async function safeHunter() {
   try {
     console.log(`\n🌐 [4-HR CRON] Running LeadSuite Hunter & Refill at ${new Date().toLocaleTimeString()}...`);
@@ -98,11 +111,12 @@ async function safeHunter() {
 setInterval(safeInbound, INBOUND_INTERVAL_MS);
 setInterval(safeFormsParser, FORMS_SURVEY_INTERVAL_MS);
 setInterval(safeHourlyReport, HOURLY_REPORT_INTERVAL_MS);
+setInterval(safeTimezoneOutbound, TIMEZONE_OUTBOUND_INTERVAL_MS);
 setInterval(safeCoDesign, CODESIGN_INTERVAL_MS);
 setInterval(safeBounce, BOUNCE_INTERVAL_MS);
 setInterval(safeHunter, HUNTER_INTERVAL_MS);
 
-console.log('✅ All 6 Background Cron Schedulers are registered and running.');
+console.log('✅ All 7 Background Cron Schedulers are registered and running.');
 
 // Keep process alive
 process.stdin.resume();
