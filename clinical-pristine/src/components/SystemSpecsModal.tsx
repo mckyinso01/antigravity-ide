@@ -18,6 +18,7 @@ import {
   Mail,
   Send,
   Printer,
+  Download,
   Copy,
   CreditCard,
   CheckCircle2,
@@ -32,6 +33,7 @@ import {
 import { clinicalAudio } from '../utils/clinicalAudio';
 import { trackClinicalIntentAction } from '../utils/visitorEmailBeacon';
 import { RoiCalculatorWidget } from './RoiCalculatorWidget';
+import { downloadAirGappedDeploymentBundle } from '../utils/airGappedBundle';
 import { PayPalCheckoutButton } from './PayPalCheckoutButton';
 
 interface SystemSpecsModalProps {
@@ -522,6 +524,25 @@ export const SystemSpecsModal = ({ isOpen, onClose }: SystemSpecsModalProps) => 
             {/* TAB 3: SPECS */}
             {activeTab === 'specs' && (
               <section className="space-y-3">
+                <div className="p-4 rounded-2xl bg-slate-900 border-2 border-blue-600 text-white flex flex-col sm:flex-row items-center justify-between gap-4 font-mono shadow-md">
+                  <div>
+                    <div className="flex items-center gap-2 text-xs font-black text-cyan-400">
+                      <Sparkles size={14} />
+                      <span>100% AIR-GAPPED ON-PREMISES DEPLOYMENT BUNDLE</span>
+                    </div>
+                    <p className="text-[11px] text-slate-300 mt-1 font-sans font-bold">
+                      Zero outbound telemetry. Export complete Docker Compose stack, Kubernetes Helm charts, and Bare-Metal systemd service.
+                    </p>
+                  </div>
+                  <button
+                    onClick={downloadAirGappedDeploymentBundle}
+                    className="px-4 py-2.5 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-slate-950 font-black rounded-xl text-xs flex items-center gap-1.5 transition-all shadow-md shrink-0 cursor-pointer"
+                  >
+                    <Download size={14} />
+                    <span>Download Air-Gapped Docker Bundle</span>
+                  </button>
+                </div>
+
                 <h3 className="text-xs font-black text-slate-950 uppercase tracking-wider font-mono flex items-center gap-2">
                   <Cpu size={14} className="text-blue-700" />
                   AUTONOMOUS MEDICAL WORKSTATION ENGINES

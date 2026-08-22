@@ -31,10 +31,12 @@ import {
   Phone,
   Send,
   Printer,
+  Download,
   Copy
 } from 'lucide-react';
 import { trackHighIntentAction } from '../utils/visitorEmailBeacon';
 import { RoiCalculatorWidget } from './RoiCalculatorWidget';
+import { downloadAirGappedDeploymentBundle } from '../utils/airGappedBundle';
 import { PayPalCheckoutButton } from './PayPalCheckoutButton';
 
 interface LicensingDeploymentModalProps {
@@ -354,6 +356,24 @@ export const LicensingDeploymentModal: React.FC<LicensingDeploymentModalProps> =
                 >
                   <Calendar size={14} />
                   <span>Request Custom CAD Blueprint</span>
+                </button>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-[#0D1527] border border-emerald-500/40 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs">
+                <div>
+                  <span className="text-emerald-400 font-bold block flex items-center gap-1.5">
+                    <Sparkles className="w-4 h-4" /> 100% Air-Gapped On-Premises WMS Docker Stack
+                  </span>
+                  <p className="text-slate-400 text-[11px] mt-1 font-sans">
+                    Export turnkey Docker Compose, Kubernetes manifests, and offline bare-metal systemd scripts.
+                  </p>
+                </div>
+                <button
+                  onClick={downloadAirGappedDeploymentBundle}
+                  className="px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-bold transition flex items-center gap-1.5 cursor-pointer shrink-0"
+                >
+                  <Download className="w-4 h-4" />
+                  <span>Download Docker Bundle</span>
                 </button>
               </div>
 

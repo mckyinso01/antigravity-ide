@@ -1720,5 +1720,173 @@
     "phone": "",
     "hasActiveMx": true,
     "discoveredAt": "2026-08-22T05:13:36.512Z"
+  },
+  {
+    "domain": "rylandsmanchester.com",
+    "companyName": "Rylands",
+    "website": "https://rylandsmanchester.com/",
+    "contacts": [
+      {
+        "id": "dm-owner-rylandsmanchester.com",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Rylands Executive Office",
+        "email": "owner@rylandsmanchester.com",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-rylandsmanchester.com",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@rylandsmanchester.com",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-rylandsmanchester.com",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@rylandsmanchester.com",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "omnistock",
+    "location": "Manchester, United Kingdom",
+    "phone": "",
+    "hasActiveMx": true,
+    "discoveredAt": "2026-08-22T06:04:17.722Z"
+  },
+  {
+    "domain": "joedavies.co.uk",
+    "companyName": "Joe Davies",
+    "website": "https://joedavies.co.uk/",
+    "contacts": [
+      {
+        "id": "dm-owner-joedavies.co.uk",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Joe Davies Executive Office",
+        "email": "owner@joedavies.co.uk",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-joedavies.co.uk",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@joedavies.co.uk",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-joedavies.co.uk",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@joedavies.co.uk",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "omnistock",
+    "location": "Manchester, United Kingdom",
+    "phone": "",
+    "hasActiveMx": true,
+    "discoveredAt": "2026-08-22T06:04:17.757Z"
+  },
+  {
+    "domain": "bondedwarehouse.com",
+    "companyName": "Bonded Warehouse",
+    "website": "https://bondedwarehouse.com",
+    "contacts": [
+      {
+        "id": "dm-owner-bondedwarehouse.com",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Bonded Warehouse Executive Office",
+        "email": "owner@bondedwarehouse.com",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-bondedwarehouse.com",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@bondedwarehouse.com",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-bondedwarehouse.com",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@bondedwarehouse.com",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "omnistock",
+    "location": "Manchester, United Kingdom",
+    "phone": "",
+    "hasActiveMx": true,
+    "discoveredAt": "2026-08-22T06:04:17.839Z"
+  },
+  {
+    "domain": "safestore.co.uk",
+    "companyName": "Safestore",
+    "website": "https://www.safestore.co.uk/storage/stockport/bryant/",
+    "contacts": [
+      {
+        "id": "dm-owner-safestore.co.uk",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Safestore Executive Office",
+        "email": "owner@safestore.co.uk",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-safestore.co.uk",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@safestore.co.uk",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-safestore.co.uk",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@safestore.co.uk",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "omnistock",
+    "location": "Manchester, United Kingdom",
+    "phone": "",
+    "hasActiveMx": true,
+    "discoveredAt": "2026-08-22T06:04:17.925Z"
   }
 ]
