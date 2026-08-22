@@ -289,5 +289,44 @@
         "escalationTriggered": false
       }
     ]
+  },
+  {
+    "id": "thread-1787414059973-l6yeue",
+    "leadEmail": "postmaster@valleybaptist.net",
+    "leadName": "Chief Information Officer / Operations Director",
+    "role": "Decision Maker",
+    "organization": "Enterprise Prospect Organization",
+    "domain": "valleybaptist.net",
+    "vertical": "clinical",
+    "dealStatus": "NEW_OUTREACH",
+    "leadScore": 60,
+    "createdAt": "2026-08-22T15:54:19.973Z",
+    "lastActivityAt": "2026-08-22T15:54:39.176Z",
+    "threadHistory": [
+      {
+        "id": "msg-1787414066622-vh4tt",
+        "sender": "postmaster@valleybaptist.net",
+        "recipient": "mharcgatan@linkable.it.com",
+        "direction": "INBOUND",
+        "subject": "Undeliverable: clinical trial revenue & oncology matching for Valley Baptist Medical Center",
+        "body": "--ba696f15-a6db-464e-ba15-c1d27e2a3e37 Content-Type: multipart/alternative; differences=Content-Type; boundary=\"dba2134a-ffa2-496c-a40f-c66a070969cc\" --dba2134a-ffa2-496c-a40f-c66a070969cc Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable Delivery has failed to these recipients or groups: stephen.finch@valleybaptist.net The e-mail address you entered couldn't be found. Please check the recipient's e-mail address and try to resend the message. If the problem continues, please contact your helpdesk. Diagnostic information for administrators: Generating server: valleybaptist.net stephen.finch@valleybaptist.net #550 5.1.1 RESOLVER.ADR.RecipNotFound; not found ## Original message headers: Received: from BL0PR07CU001.outbound.protection.outlook.com (10.36.89.77) by VBHS-EXA-HC2.valleybaptist.net (10.111.8.114) with Microsoft SMTP Server (TLS) id 14.3.487.0; Sat, 22 Aug 2026 10:53:07 -0500 ARC-Seal: i=3D1; a=3Drsa-sha256; s=3Darcselector10001; d=3Dmicrosoft.com; cv=3Dnone; b=3DIIs4B+SdQWIDjTiQD5eL2UVXnSceoWeyM6TOVxj0pfzyfbS8pJ4v1ZaRmI1t16d5rJnUwgxxmYYyMLnOIHFcxWEk8Yz5grYVp9U48Mv9nAB4x4P2EtHJ6E0iPgM3PriSz9FW5CCsCjc877XIi/45l7hGmeMDibGM83zAWAcdE+OporPHSR1HzmTjUfkt8nBIYw3b6cmpifH8I3V+lG7VcBEKhaHHCCulED16R1S9Nmvbkf1xU3tZEVJuqJwVft6PgapAv+5vFjcOy5xqqUPqave0dnfvELMHq60RIIveM5fD1Cw+2U1SxSd7ejiIaoVbZGVZSHIB+EmdaJ4uS8voXA=3D=3D ARC-Message-Signature: i=3D1; a=3Drsa-sha256; c=3Drelaxed/relaxed; d=3Dmicrosoft.com; s=3Darcselector10001; h=3DFrom:Date:Subje",
+        "timestamp": "2026-08-22T15:54:26.622Z",
+        "salesMethodology": null,
+        "intent": "BOUNCE_AUTO_REPLY",
+        "escalationTriggered": false
+      },
+      {
+        "id": "msg-1787414079176-23bi4",
+        "sender": "mharcgatan@linkable.it.com",
+        "recipient": "postmaster@valleybaptist.net",
+        "direction": "OUTBOUND",
+        "subject": "Re: Undeliverable: clinical trial revenue & oncology matching for Valley Baptist Medical Center",
+        "body": "risk completely: Founder Mharc Gatan provides 100% free custom FHIR/REST API modifications tailored to your stack, protected by our 3-Gives Milestone Escrow Schedule",
+        "timestamp": "2026-08-22T15:54:39.176Z",
+        "salesMethodology": "CHALLENGER_SPIN_INTEGRATED_CLOSER",
+        "intent": null,
+        "escalationTriggered": true
+      }
+    ]
   }
 ]
