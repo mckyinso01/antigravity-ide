@@ -1,0 +1,33 @@
+name: Titan 24/7 Cloud Self-Healing Bounce Recovery
+
+on:
+  schedule:
+    # Runs on GitHub Cloud every 2 hours (24/7/365, independent of desktop state)
+    - cron: '0 */2 * * *'
+  workflow_dispatch:
+
+jobs:
+  run-bounce-recovery:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        working-directory: ./hospital_leads_database
+        run: npm install nodemailer imap-simple dotenv
+
+      - name: Run Self-Healing Bounce Recovery Engine
+        working-directory: ./hospital_leads_database
+        env:
+          SPACEMAIL_USER: ${{ secrets.SPACEMAIL_USER || 'mharcgatan@linkable.it.com' }}
+          SPACEMAIL_PASS: ${{ secrets.SPACEMAIL_PASS || 'Melonjuice01!' }}
+          SPACEMAIL_HOST: 'mail.spacemail.com'
+          ESCALATION_EMAIL: 'mckinsyo01@gmail.com'
+        run: |
+          node selfHealingBounceEngine.js

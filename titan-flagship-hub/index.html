@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TITAN AI | Autonomous Software & Digital Marketing Factory</title>
+  <meta name="description" content="Deploy enterprise software at 10x velocity with zero defects. Synthesizing the world's Top-5 engineering, security, and marketing titans into an invincible AI workforce.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient Lighting Effects -->
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+
+  <!-- Top Telemetry Navigation -->
+  <nav class="top-nav">
+    <div class="container nav-wrapper">
+      <a href="#" class="brand-badge">
+        <div class="brand-icon">T</div>
+        <div>
+          <div class="brand-title">TITAN FACTORY</div>
+          <div style="font-size: 10px; color: var(--text-dim); font-family: var(--font-mono); letter-spacing: 0.05em;">AUTONOMOUS ENTERPRISE V5.0</div>
+        </div>
+      </a>
+
+      <div class="telemetry-pill">
+        <span class="status-dot"></span>
+        <span>33 / 33 TITANS ONLINE • SUB-50MS SLA</span>
+      </div>
+
+      <div class="nav-links">
+        <a href="#apps" class="nav-link">Production Apps</a>
+        <a href="#pitch-engine" class="nav-link" style="color: var(--accent-amber);">B2B Pitch Engine</a>
+        <a href="#workforce" class="nav-link">33 Titans</a>
+        <a href="#simulator" class="nav-link">Live Audit</a>
+        <a href="#pricing" class="nav-link">Pricing & ROI</a>
+        <button class="btn-primary" onclick="openTrialModal()">Launch 7-Day Trial &rarr;</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-pill">
+        <span>⚡ THE NEW STANDARD IN AUTONOMOUS ENGINEERING & GROWTH</span>
+      </div>
+      
+      <h1 class="hero-title">
+        Deploy Enterprise Software at <span class="gradient-text">10x Velocity</span> with Zero Defects.
+      </h1>
+
+      <p class="hero-sub">
+        Stop paying $500,000/year for slow development cycles. We synthesized the world's <strong>Top-5 engineering, security, and marketing legends</strong> into an invincible 33-Titan AI workforce.
+      </p>
+
+      <div class="hero-actions">
+        <button class="btn-primary" style="padding: 14px 28px; font-size: 16px;" onclick="openTrialModal()">
+          Activate 7-Day Reverse Trial &rarr;
+        </button>
+        <button class="btn-secondary" style="padding: 14px 24px; font-size: 16px; border-color: var(--accent-amber); color: var(--accent-amber); display: inline-flex; align-items: center; gap: 8px;" onclick="openVideoModal()">
+          <span>🎬</span> Watch 40s B2B Film
+        </button>
+        <a href="#apps" class="btn-secondary" style="padding: 14px 28px; font-size: 16px;">
+          Explore Production Apps
+        </a>
+      </div>
+
+      <div class="trust-bullets">
+        <div class="trust-item"><span>🔒</span> 100% Zero-Defect Rejection Gates</div>
+        <div class="trust-item"><span>⚡</span> 48-Hour Turnaround Guarantee</div>
+        <div class="trust-item"><span>🛡️</span> Built-in Adversarial Red Team</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Enterprise Production Applications Arsenal -->
+  <section id="apps" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Enterprise Fleet & Breakthrough Containers</div>
+        <h2 class="section-title">Production Applications Arsenal</h2>
+        <p class="section-sub">Explore the breakthrough enterprise software engines built, verified, and audited by our 33 Titans.</p>
+      </div>
+
+  <!-- B2B Enterprise Pitch & Video Outreach Command Engine -->
+  <section id="pitch-engine" class="section" style="background: radial-gradient(circle at top right, rgba(6, 182, 212, 0.08), transparent 70%);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">LeadSuite Pro AI • Direct-Response Weaponry</div>
+        <h2 class="section-title">LeadSuite Pro AI & Video Pitch Cinema</h2>
+        <p class="section-sub">Autonomous B2B Lead Prospecting Engine linked directly to 100+ verified enterprise accounts, customized video hooks, and Chris Voss deal-closing copy.</p>
+      </div>
+
+      <!-- LeadSuite Pro AI Fast Bar -->
+      <div style="background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="background: rgba(6, 182, 212, 0.2); width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px;">⚡</div>
+          <div>
+            <div style="font-size: 13px; font-weight: 700; color: #fff;">LEADSUITE PRO AI • VERIFIED ENTERPRISE DATABASE</div>
+            <div style="font-size: 11px; color: var(--text-dim);">Select a pre-verified corporate account to instantly auto-populate decision-makers and video proof:</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 10px; align-items: center; flex: 1; max-width: 520px;">
+          <select id="leadsuite-select" class="form-input" onchange="loadLeadSuiteAccount(this.value)" style="background: #090d16; border-color: rgba(6, 182, 212, 0.4); color: #fff; font-size: 12px; padding: 8px 12px;">
+            <option value="">-- Choose Verified Account (LeadSuite Pro AI) --</option>
+            <optgroup label="🏥 Hospital & Healthcare (Clinical-Pristine)">
+              <option value="makati_med">Makati Medical Center (Dr. Aris Alcantara, CMO)</option>
+              <option value="st_lukes">St. Luke's Medical Center (Dr. Benjamin Morales, Oncology Head)</option>
+              <option value="the_medical_city">The Medical City Ortigas (Dr. Patricia Ramos, Clinical VP)</option>
+            </optgroup>
+            <optgroup label="🛡️ Healthcare Billing & Legal (ClaimGuard-AI)">
+              <option value="metro_surgical">Metro Surgical Billing (Sarah Jenkins, CFO)</option>
+              <option value="apex_health">Apex Health Systems (David Sterling, Revenue Cycle Dir)</option>
+            </optgroup>
+            <optgroup label="🏗️ Civil & General Contractors (StructuraPro)">
+              <option value="megawide">Megawide Construction Corp (Engr. Rafael Tan, GC Lead)</option>
+              <option value="eei_corp">EEI Corporation (Engr. Dennis Santos, VP Operations)</option>
+              <option value="dmci">DMCI Holdings Construction (Engr. Marco Santos, Chief Engr)</option>
+            </optgroup>
+            <optgroup label="📦 Logistics & 3PL Warehouses (OmniStock)">
+              <option value="robinsons">Robinsons Retail / RSC (Mr. Leonardo Gomez, VP Supply Chain)</option>
+              <option value="sm_prime">SM Prime Logistics (Ms. Teresa Chua, Logistics Head)</option>
+              <option value="fast_logistics">Fast Logistics Group (Mr. Katherine Lim, 3PL Dir)</option>
+            </optgroup>
+            <optgroup label="👁️ E-Commerce & CRO (Saccade-UI)">
+              <option value="ecowear">EcoWear Apparel (Alex Rivera, Head of Growth)</option>
+              <option value="sunnies">Sunnies Studios (Marco Valdez, E-Com VP)</option>
+            </optgroup>
+            <optgroup label="🏛️ Scaleup SaaS & Tech Retainer (Titan Factory)">
+              <option value="cloudscale">CloudScale SaaS (Jason Reed, CEO & Founder)</option>
+              <option value="fintech_ally">FinTech Alliance (Markus Vance, CTO)</option>
+            </optgroup>
+          </select>
+          <button class="btn-primary" onclick="runAutonomousAISequencer()" style="padding: 8px 14px; font-size: 12px; white-space: nowrap; background: linear-gradient(135deg, #06b6d4, #3b82f6);">
+            🤖 Auto-Dispatch All (AI Mode)
+          </button>
+        </div>
+      </div>
+
+      <div class="audit-box" style="padding: 28px; border-color: rgba(6, 182, 212, 0.3);">
+        <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px;">
+          <!-- Left Column: Pitch Generator Controls -->
+          <div>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px;">
+              <button class="pitch-tab active" onclick="selectPitchTemplate('cp')" id="tab-pitch-cp">🏥 Hospital (Clinical-Pristine)</button>
+              <button class="pitch-tab" onclick="selectPitchTemplate('cg')" id="tab-pitch-cg">🛡️ Insurance (ClaimGuard)</button>
+              <button class="pitch-tab" onclick="selectPitchTemplate('sp')" id="tab-pitch-sp">🏗️ Construction (StructuraPro)</button>
+              <button class="pitch-tab" onclick="selectPitchTemplate('os')" id="tab-pitch-os">📦 Logistics (OmniStock)</button>
+              <button class="pitch-tab" onclick="selectPitchTemplate('sc')" id="tab-pitch-sc">👁️ E-Com (Saccade-UI)</button>
+              <button class="pitch-tab" onclick="selectPitchTemplate('tf')" id="tab-pitch-tf">🏛️ CEO Software Retainer</button>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px;">
+              <div>
+                <label class="form-label" style="font-size: 11px;">Prospect Name</label>
+                <input type="text" id="pitch-prospect-name" class="form-input" value="Dr. Michael Vance" oninput="updatePitchOutput()">
+              </div>
+              <div>
+                <label class="form-label" style="font-size: 11px;">Company / Target Org</label>
+                <input type="text" id="pitch-company-name" class="form-input" value="Apex Memorial Health" oninput="updatePitchOutput()">
+              </div>
+            </div>
+
+            <!-- Chris Voss Objection Buster Selector -->
+            <div style="margin-bottom: 16px;">
+              <label class="form-label" style="font-size: 11px; color: var(--accent-amber);">⚡ Chris Voss Tactical Objection Buster:</label>
+              <select id="pitch-objection-select" class="form-input" onchange="updatePitchOutput()" style="background: #0f172a; border-color: var(--border-subtle); color: #fff;">
+                <option value="none">Standard Direct Pitch (Cold Video Outreach)</option>
+                <option value="budget">Objection: "We don't have budget for new software this quarter"</option>
+                <option value="inhouse">Objection: "We already have an in-house engineering/IT team"</option>
+                <option value="lockin">Objection: "We cannot risk vendor lock-in or cloud dependencies"</option>
+                <option value="compliance">Objection: "Is this HIPAA / FDA / SOC-2 / Building Code compliant?"</option>
+              </select>
+            </div>
+
+            <!-- 1-Click Action Buttons -->
+            <div style="display: flex; gap: 10px;">
+              <button class="btn-primary" onclick="copyPitchToClipboard()" style="flex: 1; padding: 12px; font-size: 13px;">
+                📋 Copy Pitch to Clipboard
+              </button>
+              <button class="btn-secondary" onclick="playSelectedPitchVideo()" style="padding: 12px 16px; font-size: 13px; border-color: var(--accent-amber); color: var(--accent-amber); display: inline-flex; align-items: center; gap: 6px;">
+                <span>🎬</span> Watch Demo Film
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Column: Live Formatted Pitch Preview & AI Sequencer Box -->
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span style="font-size: 11px; font-weight: 700; color: var(--accent-cyan); font-family: var(--font-mono);">FORMATTED OUTREACH COPY (LEADSUITE PRO AI LINKED)</span>
+              <span id="copy-status-badge" style="font-size: 11px; color: var(--accent-emerald); display: none; font-weight: 600;">✓ COPIED!</span>
+            </div>
+            <pre id="pitch-preview-box" class="audit-output" style="height: 310px; overflow-y: auto; white-space: pre-wrap; font-size: 12px; line-height: 1.5; color: #e2e8f0; font-family: var(--font-mono);"></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 33 Titans Live Workforce Explorer -->
+  <section id="workforce" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Autonomous Multi-AI Roster</div>
+        <h2 class="section-title">Explore the 33-Titan Workforce</h2>
+        <p class="section-sub">Every role is powered by the fused cognitive mental models, behavior, and rejection gates of the world's Top-5 masters.</p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">All 33 Titans</button>
+        <button class="filter-btn" data-filter="engineering">Engineering Council (18)</button>
+        <button class="filter-btn" data-filter="marketing">Marketing & Media (5)</button>
+        <button class="filter-btn" data-filter="sentry">Factory Sentries (9)</button>
+        <button class="filter-btn" data-filter="redteam">Devil's Red Team (1)</button>
+      </div>
+
+      <!-- Bento Grid -->
+      <div class="titan-grid" id="titan-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Instant Code & System Audit Simulator -->
+  <section id="simulator" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Interactive Verification Engine</div>
+        <h2 class="section-title">Test the Titan Instant Audit</h2>
+        <p class="section-sub">Paste your code below to watch our AST, Security, QA, and Red Team sentries execute real-time zero-defect validation in sub-100ms.</p>
+      </div>
+
+      <div class="audit-box">
+        <div class="audit-grid">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span style="font-size: 13px; font-weight: 600; color: var(--text-muted);">SOURCE CODE INPUT</span>
+              <span style="font-size: 11px; font-family: var(--font-mono); color: var(--accent-cyan);">TypeScript / JS</span>
+            </div>
+            <textarea id="code-input" class="code-input-area" spellcheck="false">// Try changing types or removing try/catch to test Titan gates
+export async function transferFunds(account: any, amount: number) {
+  const query = "SELECT * FROM accounts WHERE id = " + account.id;
+  const res = await db.execute(query);
+  return res;
+}</textarea>
+            <button id="run-audit-btn" class="btn-primary" style="width: 100%; margin-top: 14px;">
+              Run Multi-Titan Audit Simulation &rarr;
+            </button>
+          </div>
+
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span style="font-size: 13px; font-weight: 600; color: var(--text-muted);">LIVE TITAN TELEMETRY RECEIPT</span>
+              <span style="font-size: 11px; font-family: var(--font-mono); color: var(--accent-emerald);">VERIFIED INVARIANT</span>
+            </div>
+            <pre id="audit-output" class="audit-output">// Click 'Run Multi-Titan Audit' to inspect code against our 33 Titans...</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transparent Pricing & ROI Calculator -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Predictable Economics</div>
+        <h2 class="section-title">Transparent Enterprise Retainers</h2>
+        <p class="section-sub">Replace unpredictable agency hours and expensive salaries with a dedicated autonomous software & marketing factory.</p>
+      </div>
+
+      <!-- Pricing Cards -->
+      <div class="pricing-grid">
+        <!-- Retainer 1 -->
+        <div class="pricing-card">
+          <h3 style="font-size: 20px; font-weight: 700;">Growth Retainer</h3>
+          <p style="font-size: 13px; color: var(--text-muted);">For fast-moving startups and high-growth MVPs.</p>
+          <div class="pricing-price">$4,997<span style="font-size: 16px; color: var(--text-dim); font-weight: 500;">/month</span></div>
+          <ul class="pricing-features">
+            <li>Unlimited Software Feature Sprints</li>
+            <li>48-Hour Turnaround Guarantee</li>
+            <li>18 Multi-AI Council Architecture</li>
+            <li>Full Digital Marketing & Copy Scribe</li>
+            <li>Pause or cancel anytime</li>
+          </ul>
+          <button class="btn-secondary" onclick="openTrialModal()" style="width: 100%;">Start 7-Day Trial</button>
+        </div>
+
+        <!-- Retainer 2 (Featured) -->
+        <div class="pricing-card featured">
+          <div class="featured-pill">MOST POPULAR • MAXIMUM VELOCITY</div>
+          <h3 style="font-size: 20px; font-weight: 700;">Enterprise Factory</h3>
+          <p style="font-size: 13px; color: var(--text-muted);">For established scaleups and mission-critical systems.</p>
+          <div class="pricing-price">$9,997<span style="font-size: 16px; color: var(--text-dim); font-weight: 500;">/month</span></div>
+          <ul class="pricing-features">
+            <li>Dedicated 33-Titan Autonomous Cluster</li>
+            <li>24-Hour Express Turnaround SLA</li>
+            <li>Independent Red Team Security Audits</li>
+            <li>Automated CI/CD & Air-Gapped DevOps</li>
+            <li>White-Glove Architecture Reviews</li>
+          </ul>
+          <button class="btn-primary" onclick="openTrialModal()" style="width: 100%;">Claim Enterprise Sandbox</button>
+        </div>
+
+        <!-- Pay per module -->
+        <div class="pricing-card">
+          <h3 style="font-size: 20px; font-weight: 700;">Pay-Per-Module Escrow</h3>
+          <p style="font-size: 13px; color: var(--text-muted);">For isolated features, audits, or single landing pages.</p>
+          <div class="pricing-price">$1,497<span style="font-size: 16px; color: var(--text-dim); font-weight: 500;">/deliverable</span></div>
+          <ul class="pricing-features">
+            <li>1 Dedicated Feature or Marketing Lander</li>
+            <li>Non-custodial milestone escrow</li>
+            <li>Zero-defect verification guarantee</li>
+            <li>Full source code & copyright handover</li>
+          </ul>
+          <button class="btn-secondary" onclick="openTrialModal()" style="width: 100%;">Order Single Module</button>
+        </div>
+      </div>
+
+      <!-- Interactive ROI Calculator -->
+      <div class="calculator-card">
+        <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 8px;">Interactive Annual Savings Calculator</h3>
+        <p style="color: var(--text-muted); font-size: 14px;">How many full-time engineers does your company currently employ or plan to hire?</p>
+        
+        <div class="slider-container">
+          <input type="range" id="engineer-slider" class="range-slider" min="1" max="15" value="4">
+          <div style="margin-top: 12px; font-size: 18px; font-weight: 700;">
+            <span id="eng-count-display" style="color: var(--accent-cyan);">4</span> Full-Time Engineers 
+            <span style="color: var(--text-dim); font-size: 14px;">(Avg. payroll: <span id="payroll-cost-display">$50,000/mo</span>)</span>
+          </div>
+        </div>
+
+        <div style="background: rgba(0,0,0,0.3); padding: 18px; border-radius: 12px; display: inline-block; border: 1px solid var(--border-subtle);">
+          <div style="font-size: 12px; font-family: var(--font-mono); color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px;">ESTIMATED NET ANNUAL SAVINGS WITH TITAN FACTORY</div>
+          <div class="calc-result" id="net-savings-display">$480,036</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Titan Role Detail Modal -->
+  <div id="titan-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button id="modal-close-btn" class="modal-close">&times;</button>
+      <div id="modal-titan-body"></div>
+    </div>
+  </div>
+
+  <!-- 7-Day Reverse Trial Modal -->
+  <div id="trial-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button id="trial-close-btn" class="modal-close">&times;</button>
+      <div id="trial-form-container">
+        <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 6px;">Activate 7-Day Reverse Trial</h3>
+        <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 20px;">Zero financial commitment. Test the full power of our 33 Titans on your actual codebase or marketing campaign.</p>
+
+        <form onsubmit="handleTrialSubmit(event)">
+          <div class="form-group">
+            <label class="form-label" for="client-company">Company / Project Name</label>
+            <input type="text" id="client-company" class="form-input" placeholder="e.g. Apex HealthTech" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="client-email">Work Email</label>
+            <input type="email" id="client-email" class="form-input" placeholder="you@company.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="client-pain">Primary Technical or Marketing Pain Point</label>
+            <input type="text" id="client-pain" class="form-input" placeholder="e.g. Need to build a compliant SaaS in 7 days" required>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; margin-top: 10px; padding: 12px;">
+            Initialize 7-Day Dedicated Sandbox &rarr;
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dual Film Video Player Modal -->
+  <div id="video-modal" class="modal-backdrop" style="display: none;" onclick="closeVideoModalOnBackdrop(event)">
+    <div class="modal-container" style="max-width: 980px; padding: 24px; background: #070b14; border: 1px solid var(--accent-cyan); box-shadow: 0 0 60px rgba(6, 182, 212, 0.3);">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 24px;">🎬</span>
+          <div>
+            <h3 id="video-modal-title" style="font-size: 18px; font-weight: 800; color: #fff;">TITAN 33-AI FACTORY & 5 ENTERPRISE WEAPONS (40S PROMO)</h3>
+            <p id="video-modal-sub" style="font-size: 12px; color: var(--accent-cyan); font-family: var(--font-mono);">1080p 60FPS • SYNTHETIC CYBERNETIC SOUNDTRACK • ZERO-MOCK REALITY</p>
+          </div>
+        </div>
+        <button class="modal-close" onclick="closeVideoModal()">&times;</button>
+      </div>
+
+      <!-- Film Switcher Tabs -->
+      <div style="display: flex; gap: 10px; margin-bottom: 14px;">
+        <button id="film-tab-promo" class="btn-primary" onclick="switchFilm('promo')" style="flex: 1; padding: 10px; font-size: 13px;">
+          🎬 Film 1: 40s B2B Suite Promo
+        </button>
+        <button id="film-tab-story" class="btn-secondary" onclick="switchFilm('story')" style="flex: 1; padding: 10px; font-size: 13px; border-color: var(--accent-amber); color: var(--accent-amber);">
+          🎞️ Film 2: 42s Narrative Story (Before vs After)
+        </button>
+      </div>
+
+      <div style="position: relative; border-radius: 12px; overflow: hidden; background: #000; border: 1px solid var(--border-subtle);">
+        <video id="promo-video-player" controls preload="auto" style="width: 100%; max-height: 500px; display: block; background: #000;" src="titan_promo.mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
+        <div id="video-modal-desc" style="font-size: 12px; color: var(--text-muted);">
+          Showcasing: <strong style="color: #fff;">Clinical-Pristine, StructuraPro, OmniStock, ClaimGuard & Saccade-UI</strong>
+        </div>
+        <a id="video-download-btn" href="titan_promo.mp4" download="TITAN_33_AUTONOMOUS_FACTORY_B2B_PROMO.mp4" class="btn-primary" style="padding: 10px 18px; font-size: 13px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+          <span>⬇️</span> Download 1080p MP4 (2.36 MB)
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p style="margin-bottom: 8px;">© 2026 TITAN AUTONOMOUS SOFTWARE & MARKETING FACTORY. ALL RIGHTS RESERVED.</p>
+      <p style="color: var(--text-dim); font-size: 12px; font-family: var(--font-mono);">
+        POWERED BY 33 TITANS • 1:1 RENDER-TO-CODE PARITY • ZERO-DEFECT PROTOCOL
+      </p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

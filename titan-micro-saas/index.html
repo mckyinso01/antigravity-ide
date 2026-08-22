@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Titan Shield | Autonomous Stripe Chargeback & Dispute Defender</title>
+  <meta name="description" content="Recover lost revenue with autonomous AI dispute evidence compilation. Stop bleeding 1-2% of e-commerce revenue.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="brand">
+        <div class="shield-icon">🛡️</div>
+        <span>TITAN SHIELD</span>
+        <span style="font-size: 11px; font-family: var(--font-mono); color: var(--accent-emerald); background: rgba(16,185,129,0.1); padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(16,185,129,0.3);">AUTONOMOUS MRR ENGINE</span>
+      </div>
+
+      <div style="font-size: 13px; color: var(--text-muted);">
+        Connected: <strong style="color: #fff;">Stripe Live Account</strong> (Webhook Sub-50ms)
+      </div>
+    </nav>
+
+    <!-- Metrics Row -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">TOTAL REVENUE RECOVERED</div>
+        <div class="metric-value" id="recovered-display">$14,890.00</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">DISPUTE WIN RATE</div>
+        <div class="metric-value" id="win-rate-display" style="color: var(--accent-emerald);">82%</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">ACTIVE OPEN DISPUTES</div>
+        <div class="metric-value" id="active-disputes-count" style="color: var(--accent-rose);">2</div>
+      </div>
+    </div>
+
+    <!-- Live Disputes Panel -->
+    <div class="panel">
+      <div class="panel-header">
+        <div>
+          <h3 style="font-size: 18px; font-weight: 700;">Live Chargeback Feed</h3>
+          <p style="font-size: 13px; color: var(--text-muted);">Real-time webhooks processed by TITAN-INBOUND-01 & FIN-01</p>
+        </div>
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Dispute ID</th>
+            <th>Customer</th>
+            <th>Amount</th>
+            <th>Reason</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="dispute-tbody">
+          <!-- Rendered by app.js -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Subscription Plans -->
+    <div class="panel">
+      <div class="panel-header">
+        <div>
+          <h3 style="font-size: 18px; font-weight: 700;">Subscription & Plan Tiers</h3>
+          <p style="font-size: 13px; color: var(--text-muted);">Monthly recurring revenue (MRR) automated billing plans</p>
+        </div>
+      </div>
+
+      <div class="pricing-row">
+        <div class="plan-card" id="plan-starter">
+          <h4 style="font-size: 18px; font-weight: 700;">Starter</h4>
+          <div style="font-size: 26px; font-weight: 800; margin: 10px 0;">$199<span style="font-size: 14px; color: var(--text-dim);">/mo</span></div>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">Up to $10,000/mo in protected transactions</p>
+          <button class="btn-primary" onclick="selectPlan('STARTER')">Select Plan</button>
+        </div>
+
+        <div class="plan-card active-plan" id="plan-pro">
+          <div style="font-size: 11px; font-family: var(--font-mono); color: var(--accent-emerald); font-weight: 700; margin-bottom: 6px;">CURRENT ACTIVE PLAN</div>
+          <h4 style="font-size: 18px; font-weight: 700;">Pro Scale</h4>
+          <div style="font-size: 26px; font-weight: 800; margin: 10px 0;">$499<span style="font-size: 14px; color: var(--text-dim);">/mo</span></div>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">Up to $50,000/mo in protected transactions</p>
+          <button class="btn-primary" onclick="selectPlan('PRO')">Active Plan</button>
+        </div>
+
+        <div class="plan-card" id="plan-enterprise">
+          <h4 style="font-size: 18px; font-weight: 700;">Enterprise</h4>
+          <div style="font-size: 26px; font-weight: 800; margin: 10px 0;">$999<span style="font-size: 14px; color: var(--text-dim);">/mo</span></div>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">Unlimited volume & 24/7 Red Team protection</p>
+          <button class="btn-primary" onclick="selectPlan('ENTERPRISE')">Upgrade to Enterprise</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

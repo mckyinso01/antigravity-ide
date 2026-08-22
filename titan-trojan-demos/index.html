@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Titan Trojan Horse Niche Demos | Pre-Built Enterprise MVPs</title>
+  <meta name="description" content="Pre-built, high-converting enterprise AI prototypes for Healthcare Clinical Trials, E-Commerce Chargeback Defense, and Real Estate Escrow.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="ambient-bg"></div>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="badge">
+        <span>🏆 PILLAR 3: TROJAN HORSE OUTREACH ENGINE</span>
+      </div>
+      <h1 class="title">
+        Pre-Built Enterprise Niche Prototypes
+      </h1>
+      <p style="color: var(--text-muted); font-size: 15px; max-width: 680px; margin: 0 auto;">
+        Don't ask clients if they want to buy. Show them a pre-built, customized MVP solving their exact pain point in 30 seconds.
+      </p>
+    </header>
+
+    <!-- Trojan Horse Personalizer Bar -->
+    <div class="personalizer-bar">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 13px; font-weight: 700; color: var(--accent-cyan);">🎯 TARGET CLIENT:</span>
+        <input type="text" id="target-client-input" class="personalizer-input" value="Apex Health Group" placeholder="Client Company Name">
+      </div>
+      <div style="font-size: 12px; font-family: var(--font-mono); color: var(--accent-emerald);">
+        ✓ DEMO & COLD PITCH LIVE-SYNCHRONIZED
+      </div>
+    </div>
+
+    <!-- Demo Navigation Tabs -->
+    <div class="demo-tabs">
+      <button class="demo-tab-btn active" data-target="panel-clinical">🏥 1. Clinical Trials Matcher (Healthcare)</button>
+      <button class="demo-tab-btn" data-target="panel-chargeback">💳 2. Stripe Dispute Defender (E-Commerce)</button>
+      <button class="demo-tab-btn" data-target="panel-escrow">⚖️ 3. Smart Escrow Disburser (Real Estate)</button>
+    </div>
+
+    <!-- Demo Viewport -->
+    <div class="demo-viewport">
+
+      <!-- PANEL 1: CLINICAL TRIALS -->
+      <div id="panel-clinical" class="demo-panel active">
+        <!-- Pitch Hook Drawer -->
+        <div class="pitch-box">
+          <div class="pitch-header">
+            <span style="font-size: 12px; font-weight: 700; color: var(--accent-cyan); font-family: var(--font-mono);">📩 COPY-01 3-SENTENCE COLD OUTREACH HOOK:</span>
+            <button class="btn-action" onclick="navigator.clipboard.writeText(document.getElementById('pitch-clinical').textContent); alert('Pitch copied to clipboard!')">Copy Pitch</button>
+          </div>
+          <pre id="pitch-clinical" class="pitch-copy"></pre>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <div>
+            <h3 style="font-size: 18px; font-weight: 700;"><span class="client-placeholder">Apex Health Group</span> Clinical Trial Portal</h3>
+            <p style="font-size: 13px; color: var(--text-muted);">Protocol ID: NCT04829102 • Non-Small Cell Lung Cancer Phase II</p>
+          </div>
+          <button id="match-action-btn" class="btn-action" onclick="simulatePatientMatch()">Run Patient Matching Algorithm</button>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Patient ID</th>
+              <th>Biomarker Status</th>
+              <th>ECOG Score</th>
+              <th>Eligibility</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>PT-8921</strong></td>
+              <td>EGFR Exon 19 Deletion</td>
+              <td>0 (Fully Active)</td>
+              <td><span class="status-pill match">✓ 99% MATCH</span></td>
+            </tr>
+            <tr>
+              <td><strong>PT-8922</strong></td>
+              <td>KRAS G12C</td>
+              <td>1 (Restricted)</td>
+              <td><span class="status-pill dispute">❌ INELIGIBLE</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div id="match-result-output"></div>
+      </div>
+
+      <!-- PANEL 2: CHARGEBACK DEFENDER -->
+      <div id="panel-chargeback" class="demo-panel">
+        <div class="pitch-box">
+          <div class="pitch-header">
+            <span style="font-size: 12px; font-weight: 700; color: var(--accent-cyan); font-family: var(--font-mono);">📩 COPY-01 3-SENTENCE COLD OUTREACH HOOK:</span>
+            <button class="btn-action" onclick="navigator.clipboard.writeText(document.getElementById('pitch-chargeback').textContent); alert('Pitch copied to clipboard!')">Copy Pitch</button>
+          </div>
+          <pre id="pitch-chargeback" class="pitch-copy"></pre>
+        </div>
+
+        <div style="margin-bottom: 16px;">
+          <h3 style="font-size: 18px; font-weight: 700;"><span class="client-placeholder">Apex Health Group</span> E-Commerce Dispute Defender</h3>
+          <p style="font-size: 13px; color: var(--text-muted);">Autonomous Stripe Fraud & Dispute Evidence Compiler</p>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Transaction ID</th>
+              <th>Amount</th>
+              <th>Dispute Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="dispute-ch_3M091A">
+              <td><strong>ch_3M091A</strong></td>
+              <td>$450.00</td>
+              <td><span class="status-pill dispute">⚠️ DISPUTE OPEN (Fraud Claim)</span></td>
+              <td><button class="btn-action" onclick="simulateChargebackDefense('ch_3M091A')">Auto-Defend Dispute &rarr;</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- PANEL 3: SMART ESCROW -->
+      <div id="panel-escrow" class="demo-panel">
+        <div style="margin-bottom: 16px;">
+          <h3 style="font-size: 18px; font-weight: 700;"><span class="client-placeholder">Apex Health Group</span> Real Estate Escrow Disburser</h3>
+          <p style="font-size: 13px; color: var(--text-muted);">Non-Custodial Title Inspection & Milestone Release</p>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Milestone</th>
+              <th>Escrow Balance</th>
+              <th>Verification Status</th>
+              <th>Release Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="escrow-MS-01">
+              <td><strong>MS-01: Environmental Inspection Pass</strong></td>
+              <td>$25,000.00</td>
+              <td><span class="status-pill escrow">⏳ PENDING VERIFICATION</span></td>
+              <td><button class="btn-action" onclick="simulateEscrowRelease('MS-01')">Verify & Disburse Funds &rarr;</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

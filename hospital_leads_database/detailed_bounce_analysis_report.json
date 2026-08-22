@@ -1,0 +1,1083 @@
+{
+  "analyzedAt": "2026-08-22T10:20:19.861Z",
+  "totalMessages": 132,
+  "counts": {
+    "userNotFound": 19,
+    "blockedOrSpamPolicy": 29,
+    "domainNotFound": 4,
+    "mailboxFullOrQuota": 1,
+    "autoReplyOutOfOffice": 0,
+    "systemNotification": 79,
+    "other": 0
+  },
+  "categorized": {
+    "userNotFound": [
+      {
+        "date": "Tue, 18 Aug 2026 07:40:32 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare@smmarkets.ph",
+        "excerpt": "--000000000000dd37710659534439 Content-Type: multipart/related; boundary=\"000000000000dd450a06595344b2\" --000000000000dd450a06595344b2 Content-Type: multipart/alternative; boundary=\"000000000000dd451006595344b3\" --000000000000dd451006595344b3 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to customercare@smmarkets.ph because the address couldn't be found, or is unable to receive mail. The response from the remote server was: 550 5.1.1 Email does n"
+      },
+      {
+        "date": "Tue, 18 Aug 2026 08:38:19 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "feedback@mercurydrug.com",
+        "excerpt": "--00000000000081a6280659541342 Content-Type: multipart/related; boundary=\"00000000000081af400659541353\" --00000000000081af400659541353 Content-Type: multipart/alternative; boundary=\"00000000000081af5e0659541354\" --00000000000081af5e0659541354 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to feedback@mercurydrug.com because the address couldn't be found, or is unable to receive mail. The response from the remote server was: 550 5.1.1 sorry, no mai"
+      },
+      {
+        "date": "Tue, 18 Aug 2026 08:40:43 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "david.rogers@summithealthcare.net",
+        "excerpt": "--00000000000017ad6f0659541c4d Content-Type: multipart/related; boundary=\"00000000000017b6060659541c71\" --00000000000017b6060659541c71 Content-Type: multipart/alternative; boundary=\"00000000000017b60a0659541c72\" --00000000000017b60a0659541c72 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to david.rogers@summithealthcare.net because the address couldn't be found, or is unable to receive mail. The response from the remote server was: 550 5.1.1 ... "
+      },
+      {
+        "date": "Tue, 18 Aug 2026 09:39:57 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "lisa.lovelace@bannerhealth.com",
+        "excerpt": "--000000000000e4ad49065954ef3f Content-Type: multipart/related; boundary=\"000000000000e4bffb065954ef80\" --000000000000e4bffb065954ef80 Content-Type: multipart/alternative; boundary=\"000000000000e4c001065954ef81\" --000000000000e4c001065954ef81 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to lisa.lovelace@bannerhealth.com because the address couldn't be found, or is unable to receive mail. The response from the remote server was: 550 5.1.1 User Un"
+      },
+      {
+        "date": "Tue, 18 Aug 2026 10:41:53 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare@smmarkets.ph",
+        "excerpt": "--0000000000006a4c4b065955cdf1 Content-Type: multipart/related; boundary=\"0000000000006a6060065955cd49\" --0000000000006a6060065955cd49 Content-Type: multipart/alternative; boundary=\"0000000000006a6066065955cd4a\" --0000000000006a6066065955cd4a Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to customercare@smmarkets.ph because the address couldn't be found, or is unable to receive mail. The response from the remote server was: 550 5.1.1 Email does n"
+      },
+      {
+        "date": "Tue, 18 Aug 2026 11:38:15 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "cindy.frank@mhsystem.org",
+        "excerpt": "--000000000000f9ffbf0659569655 Content-Type: multipart/related; boundary=\"000000000000fa144206595696b0\" --000000000000fa144206595696b0 Content-Type: multipart/alternative; boundary=\"000000000000fa144606595696b1\" --000000000000fa144606595696b1 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to cindy.frank@mhsystem.org because the address couldn't be found, or is unable to receive mail. The response from the remote server was: 550 5.1.1 User Unknown "
+      },
+      {
+        "date": "Tue, 18 Aug 2026 11:39:00 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "info@mumuso.com.ph",
+        "excerpt": "--000000000000a69cca0659569960 Content-Type: multipart/related; boundary=\"000000000000a6b327065956998b\" --000000000000a6b327065956998b Content-Type: multipart/alternative; boundary=\"000000000000a6b32b065956998c\" --000000000000a6b32b065956998c Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to info@mumuso.com.ph because the address couldn't be found, or is unable to receive mail. The response from the remote server was: 550 No Such User Here --00000"
+      },
+      {
+        "date": "Fri, 21 Aug 2026 22:39:35 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare@chrissports.com",
+        "excerpt": "--000000000000a7249f06599c2d6d Content-Type: multipart/related; boundary=\"000000000000a7353d06599c2d6e\" --000000000000a7353d06599c2d6e Content-Type: multipart/alternative; boundary=\"000000000000a7354806599c2d6f\" --000000000000a7354806599c2d6f Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to customercare@chrissports.com because the address couldn't be found, or is unable to receive mail. The response from the remote server was: 550 5.1.1 User does"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 00:13:34 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customerservice@ansons.ph",
+        "excerpt": "--000000000000c152cd06599d7d33 Content-Type: multipart/related; boundary=\"000000000000c161c606599d7d5e\" --000000000000c161c606599d7d5e Content-Type: multipart/alternative; boundary=\"000000000000c161cb06599d7d5f\" --000000000000c161cb06599d7d5f Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to customerservice@ansons.ph because the address couldn't be found, or is unable to receive mail. The response from the remote server was: 550 5.1.1 : Recipient "
+      },
+      {
+        "date": "Sat, 22 Aug 2026 00:36:13 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare@smmarkets.ph",
+        "excerpt": "--000000000000b67d3c06599dce24 Content-Type: multipart/related; boundary=\"000000000000b693ec06599dce5e\" --000000000000b693ec06599dce5e Content-Type: multipart/alternative; boundary=\"000000000000b693f006599dce5f\" --000000000000b693f006599dce5f Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to customercare@smmarkets.ph because the address couldn't be found, or is unable to receive mail. The response from the remote server was: 550 5.1.1 Email does n"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 12:27:15 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "dr.miller@bannerhealth.com",
+        "excerpt": "----_NmP-c20bed7bbedb550f-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: 7bit Delivery to the following recipient failed permanently: dr.miller@bannerhealth.com Technical details of permanent failure: 550 5.1.1 User Unknown ----_NmP-c20bed7bbedb550f-Part_1 Content-Type: message/delivery-status Content-Description: Delivery report Reporting-MTA: dns; out-2z4y-a151.jellyfish.systems X-ZoneMTA-Queue-ID: 1a01f239be000179f5 X-ZoneMTA-Sender: rfc822; mharc"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 12:31:47 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "david.rogers@summithealthcare.net",
+        "excerpt": "----_NmP-aa207e7e1dcaecd4-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: 7bit Delivery to the following recipient failed permanently: david.rogers@summithealthcare.net Technical details of permanent failure: 550 5.1.1 ... User unknown ----_NmP-aa207e7e1dcaecd4-Part_1 Content-Type: message/delivery-status Content-Description: Delivery report Reporting-MTA: dns; out-zbxj-a74.jellyfish.systems X-ZoneMTA-Queue-ID: 1a01f27e52b0006520 X-ZoneMTA-Sender: rfc"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 13:31:29 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "lisa.lovelace@bannerhealth.com",
+        "excerpt": "----_NmP-6b50959c2fe1e421-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: 7bit Delivery to the following recipient failed permanently: lisa.lovelace@bannerhealth.com Technical details of permanent failure: 550 5.1.1 User Unknown ----_NmP-6b50959c2fe1e421-Part_1 Content-Type: message/delivery-status Content-Description: Delivery report Reporting-MTA: dns; out-2z4y-a146.jellyfish.systems X-ZoneMTA-Queue-ID: 1a01f5e56fb0006a21 X-ZoneMTA-Sender: rfc822; m"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 13:31:49 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "leo.morris@cchwyo.org",
+        "excerpt": "----_NmP-0c42c9ecf7de0e9a-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: leo.morris@cchwyo.org Technical details of permanent failure: 550 5.4.1 Recipient address rejected: Access denied. For more information see https://aka.ms/EXOSmtpErrors [CO1PEPF000066E6.namprd05.prod.outlook.com 2026-08-20T13:31:49.795Z 08DEFB5634ED35B5] ----_NmP-0c42c9ecf7de0e9a-Part_1 Content-Type: messag"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 14:32:10 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "cindy.frank@mhsystem.org",
+        "excerpt": "----_NmP-904771992d01a905-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: 7bit Delivery to the following recipient failed permanently: cindy.frank@mhsystem.org Technical details of permanent failure: 550 5.1.1 User Unknown ----_NmP-904771992d01a905-Part_1 Content-Type: message/delivery-status Content-Description: Delivery report Reporting-MTA: dns; out-2uec-a104.jellyfish.systems X-ZoneMTA-Queue-ID: 1a01f96195500094e5 X-ZoneMTA-Sender: rfc822; mharcga"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 15:31:03 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "ryan.venier@ksbhospital.com",
+        "excerpt": "----_NmP-d63ba088acb3fec8-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: ryan.venier@ksbhospital.com Technical details of permanent failure: 550 5.4.1 Recipient address rejected: Access denied. For more information see https://aka.ms/EXOSmtpErrors [MWH0EPF000A6734.namprd04.prod.outlook.com 2026-08-20T15:31:03.865Z 08DEF9D2D7B5B026] ----_NmP-d63ba088acb3fec8-Part_1 Content-Type: "
+      },
+      {
+        "date": "Thu, 20 Aug 2026 15:42:27 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "drew.early@memorial.health",
+        "excerpt": "----_NmP-b94f42f5dbca95f4-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: drew.early@memorial.health Technical details of permanent failure: 550 Invalid Recipient - https://community.mimecast.com/docs/DOC-1369#550 [-nuqO6oLMSq9RYSns0voqQ.us546] ----_NmP-b94f42f5dbca95f4-Part_1 Content-Type: message/delivery-status Content-Description: Delivery report Reporting-MTA: dns; out-93wp-"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 16:30:21 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "brent.burkey@ftmc.com",
+        "excerpt": "----_NmP-ddb8653e766a226c-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: brent.burkey@ftmc.com Technical details of permanent failure: 550 5.4.1 Recipient address rejected: Access denied. For more information see https://aka.ms/EXOSmtpErrors [SN1PEPF0002BA52.namprd03.prod.outlook.com 2026-08-20T16:30:21.050Z 08DEFEC0F0F91ED8] ----_NmP-ddb8653e766a226c-Part_1 Content-Type: messag"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 16:43:10 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "john.burt@morrishospital.org",
+        "excerpt": "----_NmP-e16a56697432defc-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: john.burt@morrishospital.org Technical details of permanent failure: 550 Invalid Recipient - https://community.mimecast.com/docs/DOC-1369#550 [Lt9treLvN-yKf6gGSlb9tw.usb48] ----_NmP-e16a56697432defc-Part_1 Content-Type: message/delivery-status Content-Description: Delivery report Reporting-MTA: dns; out-2ue"
+      }
+    ],
+    "domainNotFound": [
+      {
+        "date": "Thu, 20 Aug 2026 11:35:30 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customer.care@metroretail.com.ph.",
+        "excerpt": "--000000000000d8476306597ec838 Content-Type: multipart/related; boundary=\"000000000000d8581d06597ec839\" --000000000000d8581d06597ec839 Content-Type: multipart/alternative; boundary=\"000000000000d8582706597ec83a\" --000000000000d8582706597ec83a Content-Type: text/plain; charset=\"UTF-8\" ** Message not delivered ** There was a problem delivering your message to customer.care@metroretail.com.ph. See the technical details below. The response was: DNS Error: DNS type 'mx' lookup of metroretail.com.ph r"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 12:30:25 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "john.buffington@sanjuanregional.net",
+        "excerpt": "----_NmP-d3611244cfc16e2d-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: john.buffington@sanjuanregional.net Technical details of permanent failure: 550 5.1.0 Recipient not found. ----_NmP-d3611244cfc16e2d-Part_1 Content-Type: message/delivery-status Content-Description: Delivery report Reporting-MTA: dns; out-2z4y-a151.jellyfish.systems X-ZoneMTA-Queue-ID: 1a01f26a5160009659 X-"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 12:31:03 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "cynthia.moreno@grmc.org",
+        "excerpt": "----_NmP-205ce40868c2894d-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: cynthia.moreno@grmc.org Technical details of permanent failure: 550 #5.7.1 Your access to submit messages to this e-mail system has been rejected. ----_NmP-205ce40868c2894d-Part_1 Content-Type: message/delivery-status Content-Description: Delivery report Reporting-MTA: dns; out-zbxj-a67.jellyfish.systems X-"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 13:30:27 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "david.zimmerman@gphealth.org",
+        "excerpt": "----_NmP-22a1cdba4c48dbf4-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: david.zimmerman@gphealth.org Technical details of permanent failure: 550 #5.7.1 Your access to submit messages to this e-mail system has been rejected. ----_NmP-22a1cdba4c48dbf4-Part_1 Content-Type: message/delivery-status Content-Description: Delivery report Reporting-MTA: dns; out-2uec-a104.jellyfish.syst"
+      }
+    ],
+    "blockedOrSpamPolicy": [
+      {
+        "date": "Fri, 21 Aug 2026 21:37:37 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare@puregold.com.ph.",
+        "excerpt": "--0000000000000a4a1e06599b5014 Content-Type: multipart/related; boundary=\"0000000000000a5ef706599b502a\" --0000000000000a5ef706599b502a Content-Type: multipart/alternative; boundary=\"0000000000000a5f0206599b502b\" --0000000000000a5f0206599b502b Content-Type: text/plain; charset=\"UTF-8\" ** Message not delivered ** There was a problem delivering your message to customercare@puregold.com.ph. Contact the remote server administrator for details. The response from the remote server was: 550 5.7.1 XGEMAI"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 12:26:35 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-c5628dc3faadc83e-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [104.207.68.32 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedMe"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 12:32:36 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-e5e42e48400361bc-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [198.54.127.74 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedMe"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 14:30:30 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "scott.christensen@blessinghealth.org",
+        "excerpt": "----_NmP-9664e05e0c6ee340-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: scott.christensen@blessinghealth.org Technical details of permanent failure: 554 Your access to this mail system has been rejected due to poor reputation of a domain used in message transfer ----_NmP-9664e05e0c6ee340-Part_1 Content-Type: message/delivery-status Content-Description: Delivery report Reporting"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 14:40:40 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-6f5cf268beff49b2-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [104.207.68.35 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedMe"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 14:40:48 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-e9aa797b1eb60b5e-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [104.207.68.39 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedMe"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 14:50:31 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-8248842dcff0a603-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [104.207.68.30 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedMe"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 14:50:31 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-4ed7c99aa50a2df3-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [104.207.68.27 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedMe"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 15:00:36 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-6b8098291e9f5bd6-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [198.54.127.68 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedMe"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 15:00:42 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-36f23b69532cf4b2-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [104.207.68.30 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedMe"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 17:30:23 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-e9d4b98b73a9f6ff-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [63.250.43.92 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedMes"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 17:38:30 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-451d9e1d9d07709a-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [63.250.43.92 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedMes"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 17:38:54 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-6474d44bedab10ec-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [198.54.127.146 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedM"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 17:57:42 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-06c187a99d8d7646-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [198.54.127.167 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedM"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 01:35:18 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-792fc089272d2d5a-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [63.250.43.122 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedMe"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 01:35:46 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-38fec3c182888d1b-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [198.54.127.134 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedM"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 01:36:20 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-4565c5703a97211f-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [198.54.127.71 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedMe"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 01:50:54 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-c24f590e12bcdc86-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [63.250.43.106 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedMe"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 01:56:35 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-ec51ac745fc2317e-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [104.207.68.34 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedMe"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 06:33:48 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-26fe465f6157b8e8-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [198.54.127.71 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedMe"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 06:33:48 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-d2466c0388b8dbb7-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [198.54.127.71 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedMe"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 06:34:09 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-bb8524faef3fa6f2-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [198.54.127.131 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedM"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 06:34:09 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-528692d102a41a4e-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [198.54.127.131 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedM"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 06:34:49 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-25257da95ffaac05-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [63.250.43.106 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedMe"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 06:34:49 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-f71d8e8d852492d6-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [198.54.127.139 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedM"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 06:35:30 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-da07abd00b464355-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [198.54.127.67 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedMe"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 06:35:30 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-f6076dab771c0294-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [198.54.127.153 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedM"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 06:37:10 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-0933cf0af7ba52aa-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [198.54.127.131 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedM"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 06:37:10 +0000",
+        "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "----_NmP-6adb384a6817373e-Part_1 Content-Type: text/plain Content-Description: Notification Content-Transfer-Encoding: quoted-printable Delivery to the following recipient failed permanently: mckinsyo01@gmail.com Technical details of permanent failure: 550-5.7.1 [63.250.43.106 12] Gmail has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. For more information, go to https://support.google.com/mail/?p=3DUnsolicitedMe"
+      }
+    ],
+    "mailboxFullOrQuota": [
+      {
+        "date": "Fri, 21 Aug 2026 19:39:20 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare@plainsandprints.com",
+        "excerpt": "--000000000000ff8145065999a8e5 Content-Type: multipart/related; boundary=\"000000000000ff8913065999a800\" --000000000000ff8913065999a800 Content-Type: multipart/alternative; boundary=\"000000000000ff8916065999a801\" --000000000000ff8916065999a801 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to customercare@plainsandprints.com because the address couldn't be found, or is unable to receive mail. The response from the remote server was: 552 1 Requested"
+      }
+    ],
+    "autoReplyOutOfOffice": [],
+    "systemNotification": [
+      {
+        "date": "Mon, 17 Aug 2026 09:29:49 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "Unknown Recipient",
+        "excerpt": "Hello mckinsyo01@gmail.com, We're writing to let you know that the group you tried to contact (catch-all) may not exist, or you may not have permission to post messages to the group. A few more details on why you weren't able to post: * You might have spelled or formatted the group name incorrectly. * The owner of the group may have removed this group. * You may need to join the group before receiving permission to post. * This group may not be open to posting. If you have questions related to t"
+      },
+      {
+        "date": "Tue, 18 Aug 2026 07:38:16 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "info@ultramega.com.ph",
+        "excerpt": "--000000000000c133d50659533c9a Content-Type: multipart/related; boundary=\"000000000000c1341c0659533c9b\" --000000000000c1341c0659533c9b Content-Type: multipart/alternative; boundary=\"000000000000c1341e0659533c9c\" --000000000000c1341e0659533c9c Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to info@ultramega.com.ph because the address couldn't be found, or is unable to receive mail. Learn more here: https://support.google.com/mail/?p=NoSuchUser The "
+      },
+      {
+        "date": "Tue, 18 Aug 2026 07:39:09 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "stephanie.lahr@monument.health",
+        "excerpt": "--000000000000e9be9b0659533fcf Content-Type: multipart/related; boundary=\"000000000000e9e0150659533f5a\" --000000000000e9e0150659533f5a Content-Type: multipart/alternative; boundary=\"000000000000e9e01a0659533f5b\" --000000000000e9e01a0659533f5b Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to stephanie.lahr@monument.health because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (Warning: Th"
+      },
+      {
+        "date": "Tue, 18 Aug 2026 07:40:03 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "amy.linscheid@billingsclinic.org",
+        "excerpt": "--0000000000001c53cd065953439a Content-Type: multipart/related; boundary=\"0000000000001c610e06595343aa\" --0000000000001c610e06595343aa Content-Type: multipart/alternative; boundary=\"0000000000001c611406595343ab\" --0000000000001c611406595343ab Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to amy.linscheid@billingsclinic.org because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (Warning: "
+      },
+      {
+        "date": "Tue, 18 Aug 2026 07:41:33 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "cheryl.caughron@carsontahoe.org",
+        "excerpt": "--000000000000793387065953486e Content-Type: multipart/related; boundary=\"00000000000079499b0659534822\" --00000000000079499b0659534822 Content-Type: multipart/alternative; boundary=\"0000000000007949a20659534826\" --0000000000007949a20659534826 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to cheryl.caughron@carsontahoe.org because the address couldn't be found, or is unable to receive mail. The response from the remote server was: 550 #5.1.0 Addre"
+      },
+      {
+        "date": "Tue, 18 Aug 2026 08:38:14 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "john.buffington@sanjuanregional.net",
+        "excerpt": "--00000000000035547c065954137e Content-Type: multipart/related; boundary=\"000000000000356ac706595413a7\" --000000000000356ac706595413a7 Content-Type: multipart/alternative; boundary=\"000000000000356ad006595413a8\" --000000000000356ad006595413a8 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to john.buffington@sanjuanregional.net because the address couldn't be found, or is unable to receive mail. Learn more here: https://www.secureserver.net/help/fi"
+      },
+      {
+        "date": "Tue, 18 Aug 2026 08:40:36 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customer.care@robinsonsretail.com.ph",
+        "excerpt": "--000000000000ac9cb00659541bb7 Content-Type: multipart/related; boundary=\"000000000000acaac20659541bf4\" --000000000000acaac20659541bf4 Content-Type: multipart/alternative; boundary=\"000000000000acaac80659541bf5\" --000000000000acaac80659541bf5 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to customer.care@robinsonsretail.com.ph because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (Warni"
+      },
+      {
+        "date": "Tue, 18 Aug 2026 09:40:37 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "leo.morris@cchwyo.org",
+        "excerpt": "--00000000000045d076065954f2c9 Content-Type: multipart/related; boundary=\"00000000000045eb42065954f2f1\" --00000000000045eb42065954f2f1 Content-Type: multipart/alternative; boundary=\"00000000000045eb4a065954f2f2\" --00000000000045eb4a065954f2f2 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to leo.morris@cchwyo.org because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (Warning: This link w"
+      },
+      {
+        "date": "Tue, 18 Aug 2026 09:40:38 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare@medexpress.com.ph",
+        "excerpt": "--0000000000005ff9e8065954f22a Content-Type: multipart/related; boundary=\"00000000000060064a065954f251\" --00000000000060064a065954f251 Content-Type: multipart/alternative; boundary=\"00000000000060064f065954f252\" --00000000000060064f065954f252 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to customercare@medexpress.com.ph because the address couldn't be found, or is unable to receive mail. The response from the remote server was: 550 I cannot deli"
+      },
+      {
+        "date": "Tue, 18 Aug 2026 09:41:17 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "info@doh.gov.ph",
+        "excerpt": "--000000000000b35232065954f4f1 Content-Type: multipart/related; boundary=\"000000000000b35ce8065954f4fb\" --000000000000b35ce8065954f4fb Content-Type: multipart/alternative; boundary=\"000000000000b35cef065954f4fc\" --000000000000b35cef065954f4fc Content-Type: text/plain; charset=\"UTF-8\" Content-Transfer-Encoding: quoted-printable ** Address not found ** Your message wasn't delivered to info@doh.gov.ph because the address couldn't be found, or is unable to receive mail. Learn more here: https://supp"
+      },
+      {
+        "date": "Tue, 18 Aug 2026 10:15:32 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customer.care@robinsonsretail.com.ph",
+        "excerpt": "--0000000000002480ad0659556f0e Content-Type: multipart/related; boundary=\"00000000000024955a0659556fdf\" --00000000000024955a0659556fdf Content-Type: multipart/alternative; boundary=\"00000000000024955f0659556fe0\" --00000000000024955f0659556fe0 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to customer.care@robinsonsretail.com.ph because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (Warni"
+      },
+      {
+        "date": "Tue, 18 Aug 2026 10:38:16 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "scott.christensen@blessinghealth.org",
+        "excerpt": "--0000000000007c9bb5065955c03b Content-Type: multipart/related; boundary=\"0000000000007cb44f065955c090\" --0000000000007cb44f065955c090 Content-Type: multipart/alternative; boundary=\"0000000000007cb454065955c091\" --0000000000007cb454065955c091 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to scott.christensen@blessinghealth.org because the address couldn't be found, or is unable to receive mail. The response from the remote server was: 550 #5.1.0 "
+      },
+      {
+        "date": "Tue, 18 Aug 2026 10:40:44 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare@idealvisioncenter.com.ph",
+        "excerpt": "--00000000000049a1d2065955c952 Content-Type: multipart/related; boundary=\"00000000000049b1ef065955c97d\" --00000000000049b1ef065955c97d Content-Type: multipart/alternative; boundary=\"00000000000049b1f4065955c97e\" --00000000000049b1f4065955c97e Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to customercare@idealvisioncenter.com.ph because the address couldn't be found, or is unable to receive mail. The response from the remote server was: 550 No Suc"
+      },
+      {
+        "date": "Tue, 18 Aug 2026 13:40:59 -0400",
+        "from": "<postmaster@CRH.org>",
+        "subject": "Undeliverable: Reducing ED Boarding & Bed Turnaround Latency at Columbus Regional Health (Zero-Footprint Epic HUD)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "postmaster@CRH.org",
+        "excerpt": "--c3940226-41d1-4b2d-9aea-ca32d469365e Content-Type: multipart/alternative; differences=Content-Type; boundary=\"ef095b88-5cd8-4133-8cc1-f6c9cb996f55\" --ef095b88-5cd8-4133-8cc1-f6c9cb996f55 Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable Delivery has failed to these recipients or groups: steve.baker@crh.org The email address you entered couldn't be found. Please check the recipient's email address and try to resend the message. If the problem continues, pl"
+      },
+      {
+        "date": "Tue, 18 Aug 2026 10:44:30 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Delay)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "info@eversupermarket.com.",
+        "excerpt": "--000000000000c7929a065955d613 Content-Type: multipart/related; boundary=\"000000000000c7a2d0065955d661\" --000000000000c7a2d0065955d661 Content-Type: multipart/alternative; boundary=\"000000000000c7a2d7065955d662\" --000000000000c7a2d7065955d662 Content-Type: text/plain; charset=\"UTF-8\" ** Delivery incomplete ** There was a temporary problem delivering your message to info@eversupermarket.com. Gmail will retry for 46 more hours. You'll be notified if the delivery fails permanently. Learn more here:"
+      },
+      {
+        "date": "Tue, 18 Aug 2026 10:45:48 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare@healthyoptions.com.ph",
+        "excerpt": "--000000000000648111065955dbaf Content-Type: multipart/related; boundary=\"0000000000006497b0065955dbb8\" --0000000000006497b0065955dbb8 Content-Type: multipart/alternative; boundary=\"0000000000006497bd065955dbb9\" --0000000000006497bd065955dbb9 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to customercare@healthyoptions.com.ph because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (Warning"
+      },
+      {
+        "date": "Tue, 18 Aug 2026 11:05:47 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Delay)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "info@sanroquesupermarket.com.ph.",
+        "excerpt": "--000000000000de84c0065956223e Content-Type: multipart/related; boundary=\"000000000000dea15c065956220d\" --000000000000dea15c065956220d Content-Type: multipart/alternative; boundary=\"000000000000dea15e065956220e\" --000000000000dea15e065956220e Content-Type: text/plain; charset=\"UTF-8\" ** Delivery incomplete ** There was a temporary problem delivering your message to info@sanroquesupermarket.com.ph. Gmail will retry for 46 more hours. You'll be notified if the delivery fails permanently. Learn mor"
+      },
+      {
+        "date": "Tue, 18 Aug 2026 11:17:44 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Delay)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customer.care@metroretail.com.ph.",
+        "excerpt": "--0000000000009e04900659564d84 Content-Type: multipart/related; boundary=\"0000000000009e160b0659564d85\" --0000000000009e160b0659564d85 Content-Type: multipart/alternative; boundary=\"0000000000009e16190659564d86\" --0000000000009e16190659564d86 Content-Type: text/plain; charset=\"UTF-8\" ** Delivery incomplete ** There was a temporary problem delivering your message to customer.care@metroretail.com.ph. Gmail will retry for 46 more hours. You'll be notified if the delivery fails permanently. The resp"
+      },
+      {
+        "date": "Tue, 18 Aug 2026 11:38:16 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customer.care@robinsonsretail.com.ph",
+        "excerpt": "--0000000000001076fc0659569784 Content-Type: multipart/related; boundary=\"000000000000107feb06595697a8\" --000000000000107feb06595697a8 Content-Type: multipart/alternative; boundary=\"000000000000107fef06595697a9\" --000000000000107fef06595697a9 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to customer.care@robinsonsretail.com.ph because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (Warni"
+      },
+      {
+        "date": "Tue, 18 Aug 2026 11:39:06 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "brent.burkey@ftmc.com",
+        "excerpt": "--00000000000000024f0659569ac3 Content-Type: multipart/related; boundary=\"000000000000000bbd0659569adc\" --000000000000000bbd0659569adc Content-Type: multipart/alternative; boundary=\"000000000000000bc00659569add\" --000000000000000bc00659569add Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to brent.burkey@ftmc.com because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (Warning: This link w"
+      },
+      {
+        "date": "Tue, 18 Aug 2026 11:39:50 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "info@yoyoso.ph",
+        "excerpt": "--000000000000a758400659569c4f Content-Type: multipart/related; boundary=\"000000000000a760f80659569c50\" --000000000000a760f80659569c50 Content-Type: multipart/alternative; boundary=\"000000000000a760fb0659569c51\" --000000000000a760fb0659569c51 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to info@yoyoso.ph because the address couldn't be found, or is unable to receive mail. Learn more here: https://www.secureserver.net/help/fix-rejected-email-with"
+      },
+      {
+        "date": "Tue, 18 Aug 2026 11:40:01 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "drew.early@memorial.health",
+        "excerpt": "--00000000000048d2d00659569dd3 Content-Type: multipart/related; boundary=\"00000000000048df280659569df2\" --00000000000048df280659569df2 Content-Type: multipart/alternative; boundary=\"00000000000048df2b0659569df5\" --00000000000048df2b0659569df5 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to drew.early@memorial.health because the address couldn't be found, or is unable to receive mail. Learn more here: https://community.mimecast.com/docs/DOC-1369#"
+      },
+      {
+        "date": "Tue, 18 Aug 2026 11:40:54 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "ryan.venier@ksbhospital.com",
+        "excerpt": "--000000000000778086065956a057 Content-Type: multipart/related; boundary=\"000000000000778ab0065956a064\" --000000000000778ab0065956a064 Content-Type: multipart/alternative; boundary=\"000000000000778ab4065956a065\" --000000000000778ab4065956a065 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to ryan.venier@ksbhospital.com because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (Warning: This "
+      },
+      {
+        "date": "Tue, 18 Aug 2026 12:12:04 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Delay)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "info@sanroquesupermarket.com.ph.",
+        "excerpt": "--000000000000e6f8f50659570f29 Content-Type: multipart/related; boundary=\"000000000000e7089d0659570f40\" --000000000000e7089d0659570f40 Content-Type: multipart/alternative; boundary=\"000000000000e708ab0659570f41\" --000000000000e708ab0659570f41 Content-Type: text/plain; charset=\"UTF-8\" ** Delivery incomplete ** There was a temporary problem delivering your message to info@sanroquesupermarket.com.ph. Gmail will retry for 45 more hours. You'll be notified if the delivery fails permanently. Learn mor"
+      },
+      {
+        "date": "Tue, 18 Aug 2026 12:38:57 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare@bench.com.ph",
+        "excerpt": "--0000000000000f18cc065957700c Content-Type: multipart/related; boundary=\"0000000000000f2ec6065957703f\" --0000000000000f2ec6065957703f Content-Type: multipart/alternative; boundary=\"0000000000000f2ecd0659577040\" --0000000000000f2ecd0659577040 Content-Type: text/plain; charset=\"UTF-8\" Content-Transfer-Encoding: quoted-printable ** Address not found ** Your message wasn't delivered to customercare@bench.com.ph because the address couldn't be found, or is unable to receive mail. Learn more here: ht"
+      },
+      {
+        "date": "Tue, 18 Aug 2026 12:39:05 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "john.burt@morrishospital.org",
+        "excerpt": "--0000000000008a01490659577010 Content-Type: multipart/related; boundary=\"0000000000008a0bcb0659577027\" --0000000000008a0bcb0659577027 Content-Type: multipart/alternative; boundary=\"0000000000008a0bd00659577028\" --0000000000008a0bd00659577028 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to john.burt@morrishospital.org because the address couldn't be found, or is unable to receive mail. Learn more here: https://community.mimecast.com/docs/DOC-136"
+      },
+      {
+        "date": "Tue, 18 Aug 2026 13:08:00 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare@penshoppe.com",
+        "excerpt": "--000000000000f99daa065957d706 Content-Type: multipart/related; boundary=\"000000000000f9acb0065957d707\" --000000000000f9acb0065957d707 Content-Type: multipart/alternative; boundary=\"000000000000f9acb6065957d708\" --000000000000f9acb6065957d708 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to customercare@penshoppe.com because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (Warning: This l"
+      },
+      {
+        "date": "Wed, 19 Aug 2026 04:16:08 -0700",
+        "from": "<postmaster@providence.org>",
+        "subject": "Undeliverable: [EXTERNAL] Quick follow-up: What custom modules or workflow modifications would Kadlec Regional Medical Center need?",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "postmaster@providence.org",
+        "excerpt": "--fd60d032-0756-4680-8820-e4856d3dcec0 Content-Type: multipart/alternative; differences=Content-Type; boundary=\"a6fe12a9-c045-48b0-9f31-3349061fde57\" --a6fe12a9-c045-48b0-9f31-3349061fde57 Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable Delivery has failed to these recipients or groups: angela.hughes@kadlec.org The email address you entered couldn't be found. Please check the recipient's email address and try to resend the message. If the problem continue"
+      },
+      {
+        "date": "Wed, 19 Aug 2026 04:15:59 -0700",
+        "from": "<postmaster@providence.org>",
+        "subject": "Undeliverable: [EXTERNAL] Quick follow-up: What custom modules or workflow modifications would Kadlec Regional Medical Center need?",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "postmaster@providence.org",
+        "excerpt": "--3176bbf1-c62e-40dd-bc61-fc15d63db365 Content-Type: multipart/alternative; differences=Content-Type; boundary=\"3a2737f6-da1f-4490-a1cf-da8151a82749\" --3a2737f6-da1f-4490-a1cf-da8151a82749 Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable Delivery has failed to these recipients or groups: angela.hughes@kadlec.org The email address you entered couldn't be found. Please check the recipient's email address and try to resend the message. If the problem continue"
+      },
+      {
+        "date": "Wed, 19 Aug 2026 05:17:48 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "chris.akeroyd@evergreenhealth.com",
+        "excerpt": "--0000000000003905cf065965644d Content-Type: multipart/related; boundary=\"00000000000039192c0659656479\" --00000000000039192c0659656479 Content-Type: multipart/alternative; boundary=\"000000000000391933065965647a\" --000000000000391933065965647a Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to chris.akeroyd@evergreenhealth.com because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (Warning:"
+      },
+      {
+        "date": "Wed, 19 Aug 2026 06:16:53 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "kimberly.kelley@multicare.org",
+        "excerpt": "--00000000000086a6e2065966370f Content-Type: multipart/related; boundary=\"00000000000086b38f0659663735\" --00000000000086b38f0659663735 Content-Type: multipart/alternative; boundary=\"00000000000086b3960659663736\" --00000000000086b3960659663736 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to kimberly.kelley@multicare.org because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (Warning: Thi"
+      },
+      {
+        "date": "Wed, 19 Aug 2026 09:30:59 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Delay)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customer.care@metroretail.com.ph.",
+        "excerpt": "--000000000000af5fbd065968ede9 Content-Type: multipart/related; boundary=\"000000000000af7510065968edf0\" --000000000000af7510065968edf0 Content-Type: multipart/alternative; boundary=\"000000000000af7515065968edf1\" --000000000000af7515065968edf1 Content-Type: text/plain; charset=\"UTF-8\" ** Delivery incomplete ** There was a temporary problem delivering your message to customer.care@metroretail.com.ph. Gmail will retry for 23 more hours. You'll be notified if the delivery fails permanently. The resp"
+      },
+      {
+        "date": "Wed, 19 Aug 2026 10:05:08 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Delay)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "info@eversupermarket.com.",
+        "excerpt": "--000000000000d181970659696772 Content-Type: multipart/related; boundary=\"000000000000d1928806596967f8\" --000000000000d1928806596967f8 Content-Type: multipart/alternative; boundary=\"000000000000d1928e06596967f9\" --000000000000d1928e06596967f9 Content-Type: text/plain; charset=\"UTF-8\" ** Delivery incomplete ** There was a temporary problem delivering your message to info@eversupermarket.com. Gmail will retry for 23 more hours. You'll be notified if the delivery fails permanently. Learn more here:"
+      },
+      {
+        "date": "Wed, 19 Aug 2026 10:36:49 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Delay)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "info@sanroquesupermarket.com.ph.",
+        "excerpt": "--0000000000001cc335065969d9ce Content-Type: multipart/related; boundary=\"0000000000001cd6a5065969d9db\" --0000000000001cd6a5065969d9db Content-Type: multipart/alternative; boundary=\"0000000000001cd6af065969d9dc\" --0000000000001cd6af065969d9dc Content-Type: text/plain; charset=\"UTF-8\" ** Delivery incomplete ** There was a temporary problem delivering your message to info@sanroquesupermarket.com.ph. Gmail will retry for 22 more hours. You'll be notified if the delivery fails permanently. Learn mor"
+      },
+      {
+        "date": "Wed, 19 Aug 2026 12:09:23 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Delay)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "info@sanroquesupermarket.com.ph.",
+        "excerpt": "--0000000000002ef41d06596b24b7 Content-Type: multipart/related; boundary=\"0000000000002f00e606596b24de\" --0000000000002f00e606596b24de Content-Type: multipart/alternative; boundary=\"0000000000002f00ea06596b24df\" --0000000000002f00ea06596b24df Content-Type: text/plain; charset=\"UTF-8\" ** Delivery incomplete ** There was a temporary problem delivering your message to info@sanroquesupermarket.com.ph. Gmail will retry for 21 more hours. You'll be notified if the delivery fails permanently. Learn mor"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 11:15:48 +0000",
+        "from": "<postmaster@skagitregionalhealth.org>",
+        "subject": "Undeliverable: Quick follow-up: What custom modules or workflow modifications would Skagit Regional Health need?",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "postmaster@skagitregionalhealth.org",
+        "excerpt": "--fe168d25-c8d3-43d8-8526-73bd4def3a7b Content-Type: multipart/alternative; differences=Content-Type; boundary=\"f35789ff-e71c-435f-afff-7cc4ebba7266\" --f35789ff-e71c-435f-afff-7cc4ebba7266 Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable Delivery has failed to these recipients or groups: gary.smith@skagitregionalhealth.org Your message wasn't delivered. Despite repeated attempts to deliver your message, a connection to the remote server couldn't be made. C"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 11:23:51 +0000",
+        "from": "<postmaster@skagitregionalhealth.org>",
+        "subject": "Undeliverable: Quick follow-up: What custom modules or workflow modifications would Skagit Regional Health need?",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "postmaster@skagitregionalhealth.org",
+        "excerpt": "--6966adce-9bf5-4fb0-8e79-d7e072b8e6d5 Content-Type: multipart/alternative; differences=Content-Type; boundary=\"98f9a819-316b-497c-813f-9ae8e4eed4b5\" --98f9a819-316b-497c-813f-9ae8e4eed4b5 Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable Delivery has failed to these recipients or groups: gary.smith@skagitregionalhealth.org Your message wasn't delivered. Despite repeated attempts to deliver your message, a connection to the remote server couldn't be made. C"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 04:33:05 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "stephanie.lahr@monument.health",
+        "excerpt": "--0000000000002d396d065978e27a Content-Type: multipart/related; boundary=\"0000000000002d511d065978e21b\" --0000000000002d511d065978e21b Content-Type: multipart/alternative; boundary=\"0000000000002d5123065978e21c\" --0000000000002d5123065978e21c Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to stephanie.lahr@monument.health because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (Warning: Th"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 04:34:28 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "cheryl.caughron@carsontahoe.org",
+        "excerpt": "--00000000000020316b065978e72a Content-Type: multipart/related; boundary=\"000000000000203db6065978e739\" --000000000000203db6065978e739 Content-Type: multipart/alternative; boundary=\"000000000000203dbd065978e73a\" --000000000000203dbd065978e73a Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to cheryl.caughron@carsontahoe.org because the address couldn't be found, or is unable to receive mail. The response from the remote server was: 550 #5.1.0 Addre"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 04:41:11 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "amy.linscheid@billingsclinic.org",
+        "excerpt": "--0000000000001d6e88065978ffa9 Content-Type: multipart/related; boundary=\"0000000000001d81cb065978ffb7\" --0000000000001d81cb065978ffb7 Content-Type: multipart/alternative; boundary=\"0000000000001d81d1065978ffb8\" --0000000000001d81d1065978ffb8 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to amy.linscheid@billingsclinic.org because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (Warning: "
+      },
+      {
+        "date": "Thu, 20 Aug 2026 13:01:01 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "info@sanroquesupermarket.com.ph.",
+        "excerpt": "--000000000000b099b906597ffae8 Content-Type: multipart/related; boundary=\"000000000000b0a8c906597ffaf9\" --000000000000b0a8c906597ffaf9 Content-Type: multipart/alternative; boundary=\"000000000000b0a8d406597ffafa\" --000000000000b0a8d406597ffafa Content-Type: text/plain; charset=\"UTF-8\" ** Message not delivered ** There was a problem delivering your message to info@sanroquesupermarket.com.ph. See the technical details below. Learn more here: https://support.google.com/mail/answer/7720 The response "
+      },
+      {
+        "date": "Thu, 20 Aug 2026 14:13:18 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "info@eversupermarket.com.",
+        "excerpt": "--0000000000002bf28c065980fdcd Content-Type: multipart/related; boundary=\"0000000000002c080b065980fd39\" --0000000000002c080b065980fd39 Content-Type: multipart/alternative; boundary=\"0000000000002c0811065980fd3a\" --0000000000002c0811065980fd3a Content-Type: text/plain; charset=\"UTF-8\" ** Message not delivered ** There was a problem delivering your message to info@eversupermarket.com. See the technical details below. Learn more here: https://support.google.com/mail/answer/7720 The response was: Th"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 15:14:38 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "info@sanroquesupermarket.com.ph.",
+        "excerpt": "--0000000000008abaad065981d8b1 Content-Type: multipart/related; boundary=\"0000000000008ad2d0065981d8c0\" --0000000000008ad2d0065981d8c0 Content-Type: multipart/alternative; boundary=\"0000000000008ad2d6065981d8c1\" --0000000000008ad2d6065981d8c1 Content-Type: text/plain; charset=\"UTF-8\" ** Message not delivered ** There was a problem delivering your message to info@sanroquesupermarket.com.ph. See the technical details below. Learn more here: https://support.google.com/mail/answer/7720 The response "
+      },
+      {
+        "date": "Fri, 21 Aug 2026 19:36:16 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare@penshoppe.com",
+        "excerpt": "--0000000000000a8ef10659999ebb Content-Type: multipart/related; boundary=\"0000000000000aa3ac0659999ec1\" --0000000000000aa3ac0659999ec1 Content-Type: multipart/alternative; boundary=\"0000000000000aa3b20659999ec2\" --0000000000000aa3b20659999ec2 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to customercare@penshoppe.com because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (Warning: This l"
+      },
+      {
+        "date": "Fri, 21 Aug 2026 19:37:03 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare@bench.com.ph",
+        "excerpt": "--000000000000cf9163065999a0d5 Content-Type: multipart/related; boundary=\"000000000000cfa350065999a001\" --000000000000cfa350065999a001 Content-Type: multipart/alternative; boundary=\"000000000000cfa357065999a002\" --000000000000cfa357065999a002 Content-Type: text/plain; charset=\"UTF-8\" Content-Transfer-Encoding: quoted-printable ** Address not found ** Your message wasn't delivered to customercare@bench.com.ph because the address couldn't be found, or is unable to receive mail. Learn more here: ht"
+      },
+      {
+        "date": "Fri, 21 Aug 2026 19:37:47 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare@bayo.com.ph",
+        "excerpt": "--000000000000749019065999a393 Content-Type: multipart/related; boundary=\"000000000000749035065999a394\" --000000000000749035065999a394 Content-Type: multipart/alternative; boundary=\"000000000000749036065999a395\" --000000000000749036065999a395 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to customercare@bayo.com.ph because the address couldn't be found, or is unable to receive mail. Learn more here: https://support.google.com/mail/?p=NoSuchUser T"
+      },
+      {
+        "date": "Fri, 21 Aug 2026 19:38:33 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare@kamiseta.com",
+        "excerpt": "--0000000000003239a4065999a6a2 Content-Type: multipart/related; boundary=\"0000000000003241c0065999a6a3\" --0000000000003241c0065999a6a3 Content-Type: multipart/alternative; boundary=\"0000000000003241c4065999a6a4\" --0000000000003241c4065999a6a4 Content-Type: text/plain; charset=\"UTF-8\" Content-Transfer-Encoding: quoted-printable ** Address not found ** Your message wasn't delivered to customercare@kamiseta.com because the address couldn't be found, or is unable to receive mail. Learn more here: ht"
+      },
+      {
+        "date": "Fri, 21 Aug 2026 20:36:16 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customer.care@robinsonsretail.com.ph",
+        "excerpt": "--0000000000009a35d206599a744a Content-Type: multipart/related; boundary=\"0000000000009a43ae06599a746b\" --0000000000009a43ae06599a746b Content-Type: multipart/alternative; boundary=\"0000000000009a43b306599a746c\" --0000000000009a43b306599a746c Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to customer.care@robinsonsretail.com.ph because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (Warni"
+      },
+      {
+        "date": "Fri, 21 Aug 2026 20:36:55 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare@bench.com.ph",
+        "excerpt": "--000000000000f3dd1b06599a761e Content-Type: multipart/related; boundary=\"000000000000f3ef7306599a7692\" --000000000000f3ef7306599a7692 Content-Type: multipart/alternative; boundary=\"000000000000f3ef7b06599a7693\" --000000000000f3ef7b06599a7693 Content-Type: text/plain; charset=\"UTF-8\" Content-Transfer-Encoding: quoted-printable ** Address not found ** Your message wasn't delivered to customercare@bench.com.ph because the address couldn't be found, or is unable to receive mail. Learn more here: ht"
+      },
+      {
+        "date": "Fri, 21 Aug 2026 20:37:50 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare@bench.com.ph",
+        "excerpt": "--00000000000038b71e06599a7a38 Content-Type: multipart/related; boundary=\"00000000000038c02b06599a7a39\" --00000000000038c02b06599a7a39 Content-Type: multipart/alternative; boundary=\"00000000000038c02e06599a7a3a\" --00000000000038c02e06599a7a3a Content-Type: text/plain; charset=\"UTF-8\" Content-Transfer-Encoding: quoted-printable ** Address not found ** Your message wasn't delivered to customercare@bench.com.ph because the address couldn't be found, or is unable to receive mail. Learn more here: ht"
+      },
+      {
+        "date": "Fri, 21 Aug 2026 21:03:42 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare@regattalifestyle.com",
+        "excerpt": "--000000000000b864fd06599ad680 Content-Type: multipart/related; boundary=\"000000000000b86e4306599ad681\" --000000000000b86e4306599ad681 Content-Type: multipart/alternative; boundary=\"000000000000b86e4a06599ad682\" --000000000000b86e4a06599ad682 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to customercare@regattalifestyle.com because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (Warning:"
+      },
+      {
+        "date": "Fri, 21 Aug 2026 21:37:58 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare@keds.com.ph",
+        "excerpt": "--00000000000042c7f106599b518e Content-Type: multipart/related; boundary=\"00000000000042d0f006599b51a5\" --00000000000042d0f006599b51a5 Content-Type: multipart/alternative; boundary=\"00000000000042d0f206599b51a6\" --00000000000042d0f206599b51a6 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to customercare@keds.com.ph because the address couldn't be found, or is unable to receive mail. Learn more here: https://www.secureserver.net/help/fix-rejected-"
+      },
+      {
+        "date": "Fri, 21 Aug 2026 21:38:42 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare@pony.com.ph",
+        "excerpt": "--000000000000e7d9a206599b53c8 Content-Type: multipart/related; boundary=\"000000000000e7e99e06599b53ec\" --000000000000e7e99e06599b53ec Content-Type: multipart/alternative; boundary=\"000000000000e7e9a306599b53ed\" --000000000000e7e9a306599b53ed Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to customercare@pony.com.ph because the address couldn't be found, or is unable to receive mail. Learn more here: https://www.secureserver.net/help/fix-rejected-"
+      },
+      {
+        "date": "Fri, 21 Aug 2026 21:42:39 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare@memofashion.com",
+        "excerpt": "--000000000000062a1906599b628a Content-Type: multipart/related; boundary=\"000000000000063d0206599b62a0\" --000000000000063d0206599b62a0 Content-Type: multipart/alternative; boundary=\"000000000000063d0906599b62a1\" --000000000000063d0906599b62a1 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to customercare@memofashion.com because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (Warning: This"
+      },
+      {
+        "date": "Fri, 21 Aug 2026 21:43:53 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customer.care@robinsonsretail.com.ph",
+        "excerpt": "--0000000000007141df06599b666a Content-Type: multipart/related; boundary=\"00000000000071509206599b669c\" --00000000000071509206599b669c Content-Type: multipart/alternative; boundary=\"00000000000071509706599b669d\" --00000000000071509706599b669d Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to customer.care@robinsonsretail.com.ph because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (Warni"
+      },
+      {
+        "date": "Fri, 21 Aug 2026 22:02:21 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare@oxgnfashion.com",
+        "excerpt": "--0000000000007134fd06599ba8b9 Content-Type: multipart/related; boundary=\"00000000000071431506599ba8c7\" --00000000000071431506599ba8c7 Content-Type: multipart/alternative; boundary=\"00000000000071431806599ba8c8\" --00000000000071431806599ba8c8 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to customercare@oxgnfashion.com because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (Warning: This"
+      },
+      {
+        "date": "Fri, 21 Aug 2026 22:36:15 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "info@complexlifestylestore.com",
+        "excerpt": "--000000000000b7934c06599c219a Content-Type: multipart/related; boundary=\"000000000000b7a56106599c21d8\" --000000000000b7a56106599c21d8 Content-Type: multipart/alternative; boundary=\"000000000000b7a56506599c21d9\" --000000000000b7a56506599c21d9 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to info@complexlifestylestore.com because the address couldn't be found, or is unable to receive mail. Learn more here: https://www.secureserver.net/help/fix-rej"
+      },
+      {
+        "date": "Fri, 21 Aug 2026 23:16:50 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare@citihardware.com",
+        "excerpt": "--000000000000d050a806599cb2a1 Content-Type: multipart/related; boundary=\"000000000000d062c806599cb2ea\" --000000000000d062c806599cb2ea Content-Type: multipart/alternative; boundary=\"000000000000d062cd06599cb2eb\" --000000000000d062cd06599cb2eb Content-Type: text/plain; charset=\"UTF-8\" Content-Transfer-Encoding: quoted-printable ** Address not found ** Your message wasn't delivered to customercare@citihardware.com because the address couldn't be found, or is unable to receive mail. Learn more here"
+      },
+      {
+        "date": "Fri, 21 Aug 2026 23:23:04 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare@truevalue.com.ph",
+        "excerpt": "--0000000000001f7cbd06599cc95a Content-Type: multipart/related; boundary=\"0000000000001f873706599cc95b\" --0000000000001f873706599cc95b Content-Type: multipart/alternative; boundary=\"0000000000001f873a06599cc95c\" --0000000000001f873a06599cc95c Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to customercare@truevalue.com.ph because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (Warning: Thi"
+      },
+      {
+        "date": "Fri, 21 Aug 2026 23:36:58 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare.ph@mrdiy.com",
+        "excerpt": "--000000000000d0f4db06599cfaf5 Content-Type: multipart/related; boundary=\"000000000000d10f0206599cfa53\" --000000000000d10f0206599cfa53 Content-Type: multipart/alternative; boundary=\"000000000000d10f0906599cfa54\" --000000000000d10f0906599cfa54 Content-Type: text/plain; charset=\"UTF-8\" Content-Transfer-Encoding: quoted-printable ** Address not found ** Your message wasn't delivered to customercare.ph@mrdiy.com because the address couldn't be found, or is unable to receive mail. Learn more here: ht"
+      },
+      {
+        "date": "Fri, 21 Aug 2026 23:38:41 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare@smappliance.com",
+        "excerpt": "--00000000000002a0f406599d015e Content-Type: multipart/related; boundary=\"00000000000002b29e06599d015f\" --00000000000002b29e06599d015f Content-Type: multipart/alternative; boundary=\"00000000000002b2a206599d0160\" --00000000000002b2a206599d0160 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to customercare@smappliance.com because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (Warning: This"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 00:03:20 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customer.care@robinsonsappliances.com.ph",
+        "excerpt": "--0000000000001f81d006599d5949 Content-Type: multipart/related; boundary=\"0000000000001f935106599d598c\" --0000000000001f935106599d598c Content-Type: multipart/alternative; boundary=\"0000000000001f935506599d598d\" --0000000000001f935506599d598d Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to customer.care@robinsonsappliances.com.ph because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (W"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 00:06:51 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "customercare@handyman.com.ph",
+        "excerpt": "--000000000000bcbe6806599d65cc Content-Type: multipart/related; boundary=\"000000000000bcd25606599d65e1\" --000000000000bcd25606599d65e1 Content-Type: multipart/alternative; boundary=\"000000000000bcd25b06599d65e2\" --000000000000bcd25b06599d65e2 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to customercare@handyman.com.ph because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (Warning: This"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 00:16:38 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "info@imperialappliance.com",
+        "excerpt": "--000000000000b829ea06599d882f Content-Type: multipart/related; boundary=\"000000000000b83e1d06599d88d2\" --000000000000b83e1d06599d88d2 Content-Type: multipart/alternative; boundary=\"000000000000b83e2006599d88d3\" --000000000000b83e2006599d88d3 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to info@imperialappliance.com because the domain imperialappliance.com couldn't be found. Check for typos or unnecessary spaces and try again. Learn more here: h"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 08:15:11 +0000",
+        "from": "<postmaster@jollibee.com.ph>",
+        "subject": "Undeliverable: Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Greenwich Pizza (JFC Group)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "postmaster@jollibee.com.ph",
+        "excerpt": "--1f4f68e4-0838-46e6-bb09-d81ef585a6c3 Content-Type: multipart/alternative; differences=Content-Type; boundary=\"07960234-6025-40aa-9eb3-178da83d84eb\" --07960234-6025-40aa-9eb3-178da83d84eb Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable [https://products.office.com/en-us/CMSImages/Office365Logo_Orange.png?version=3Db8d100a9-0a8b-8e6a-88e1-ef488fee0470] Your message to feedback@greenwich.com.ph couldn't be delivered. feedback wasn't found at greenwich.com."
+      },
+      {
+        "date": "Sat, 22 Aug 2026 01:16:08 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "feedback@redribbonbakeshop.com.ph",
+        "excerpt": "--00000000000078360106599e5d03 Content-Type: multipart/related; boundary=\"00000000000078467406599e5dd8\" --00000000000078467406599e5dd8 Content-Type: multipart/alternative; boundary=\"00000000000078467706599e5dd9\" --00000000000078467706599e5dd9 Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to feedback@redribbonbakeshop.com.ph because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (Warning:"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 08:16:58 +0000",
+        "from": "<postmaster@jollibee.com.ph>",
+        "subject": "Undeliverable: Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Mang Inasal (JFC Group)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "postmaster@jollibee.com.ph",
+        "excerpt": "--843705a3-185f-4643-b3f2-f748b3dbb59c Content-Type: multipart/alternative; differences=Content-Type; boundary=\"0f2f9934-5b3d-42db-bed4-e780c77dcc6c\" --0f2f9934-5b3d-42db-bed4-e780c77dcc6c Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable [https://products.office.com/en-us/CMSImages/Office365Logo_Orange.png?version=3Db8d100a9-0a8b-8e6a-88e1-ef488fee0470] Your message to feedback@manginasal.com couldn't be delivered. feedback wasn't found at manginasal.com. "
+      },
+      {
+        "date": "Sat, 22 Aug 2026 01:19:58 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "feedback@jollibee.com.ph",
+        "excerpt": "--00000000000031a25306599e6bb2 Content-Type: multipart/related; boundary=\"00000000000031afdf06599e6bcc\" --00000000000031afdf06599e6bcc Content-Type: multipart/alternative; boundary=\"00000000000031afe606599e6bcd\" --00000000000031afe606599e6bcd Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to feedback@jollibee.com.ph because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (Warning: This lin"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 08:22:34 +0000",
+        "from": "<postmaster@jollibee.com.ph>",
+        "subject": "Undeliverable: Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Chowking (JFC Group)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "postmaster@jollibee.com.ph",
+        "excerpt": "--328a4695-25c6-4791-a10a-e392fa90c8c1 Content-Type: multipart/alternative; differences=Content-Type; boundary=\"7f6d81ce-4873-4073-8dc9-8208e8fa6f4c\" --7f6d81ce-4873-4073-8dc9-8208e8fa6f4c Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable [https://products.office.com/en-us/CMSImages/Office365Logo_Orange.png?version=3Db8d100a9-0a8b-8e6a-88e1-ef488fee0470] Your message to feedback@chowking.com couldn't be delivered. feedback wasn't found at chowking.com. mcki"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 01:41:06 -0700 (PDT)",
+        "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+        "subject": "Delivery Status Notification (Failure)",
+        "account": "Gmail (mckinsyo01@gmail.com)",
+        "targetEmail": "help@landers.ph",
+        "excerpt": "--000000000000c2a6f306599eb668 Content-Type: multipart/related; boundary=\"000000000000c2b51e06599eb669\" --000000000000c2b51e06599eb669 Content-Type: multipart/alternative; boundary=\"000000000000c2b52906599eb66a\" --000000000000c2b52906599eb66a Content-Type: text/plain; charset=\"UTF-8\" ** Address not found ** Your message wasn't delivered to help@landers.ph because the address couldn't be found, or is unable to receive mail. Learn more here: https://aka.ms/EXOSmtpErrors (Warning: This link will ta"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 10:31:53 -0400",
+        "from": "<postmaster@CRH.org>",
+        "subject": "Undeliverable: Quick follow-up: What custom modules or workflow modifications would Columbus Regional Health need?",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "postmaster@CRH.org",
+        "excerpt": "--3381ee0b-bc2c-4be5-abff-6aab1f1f7e68 Content-Type: multipart/alternative; differences=Content-Type; boundary=\"e081f555-9d73-4b38-a9ac-9bf22f993c47\" --e081f555-9d73-4b38-a9ac-9bf22f993c47 Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable Delivery has failed to these recipients or groups: steve.baker@crh.org The email address you entered couldn't be found. Please check the recipient's email address and try to resend the message. If the problem continues, pl"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 10:41:22 -0400",
+        "from": "<postmaster@CRH.org>",
+        "subject": "Undeliverable: Re: Undeliverable: Quick follow-up: What custom modules or workflow modifications would Columbus Regional Health need?",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "postmaster@CRH.org",
+        "excerpt": "--b451f28c-d988-4c12-b9fd-bde38df16e1a Content-Type: multipart/alternative; differences=Content-Type; boundary=\"b5044fbb-214d-42f0-8411-d8f31c0d3d49\" --b5044fbb-214d-42f0-8411-d8f31c0d3d49 Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable Delivery has failed to these recipients or groups: postmaster@crh.org The email address you entered couldn't be found. Please check the recipient's email address and try to resend the message. If the problem continues, ple"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 10:51:08 -0400",
+        "from": "<postmaster@CRH.org>",
+        "subject": "Undeliverable: Re: Undeliverable: Re: Undeliverable: Quick follow-up: What custom modules or workflow modifications would Columbus Regional Health need?",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "postmaster@CRH.org",
+        "excerpt": "--6cf74890-937b-4d24-81f2-6a28066b45e5 Content-Type: multipart/alternative; differences=Content-Type; boundary=\"313778a5-f15d-449b-9128-bc9538efb8e3\" --313778a5-f15d-449b-9128-bc9538efb8e3 Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable Delivery has failed to these recipients or groups: postmaster@crh.org The email address you entered couldn't be found. Please check the recipient's email address and try to resend the message. If the problem continues, ple"
+      },
+      {
+        "date": "Thu, 20 Aug 2026 11:01:00 -0400",
+        "from": "<postmaster@CRH.org>",
+        "subject": "Undeliverable: Re: Undeliverable: Re: Undeliverable: Re: Undeliverable: Quick follow-up: What custom modules or workflow modifications would Columbus Regional Health need?",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "postmaster@CRH.org",
+        "excerpt": "--0f44e7a3-812f-41a1-878e-213852a07157 Content-Type: multipart/alternative; differences=Content-Type; boundary=\"2bb9a89e-cf9e-4871-91af-ff684a60159e\" --2bb9a89e-cf9e-4871-91af-ff684a60159e Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable Delivery has failed to these recipients or groups: postmaster@crh.org The email address you entered couldn't be found. Please check the recipient's email address and try to resend the message. If the problem continues, ple"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 02:34:10 -0400",
+        "from": "<postmaster@CRH.org>",
+        "subject": "Undeliverable: Re: Undeliverable: Quick follow-up: What custom modules or workflow modifications would Columbus Regional Health need?",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "postmaster@CRH.org",
+        "excerpt": "--88a1607d-7f9c-422b-adf5-df9059a8ecb4 Content-Type: multipart/alternative; differences=Content-Type; boundary=\"911399b1-0d56-4d53-a2eb-26d7d27cf030\" --911399b1-0d56-4d53-a2eb-26d7d27cf030 Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable Delivery has failed to these recipients or groups: postmaster@crh.org The email address you entered couldn't be found. Please check the recipient's email address and try to resend the message. If the problem continues, ple"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 02:35:43 -0400",
+        "from": "<postmaster@CRH.org>",
+        "subject": "Undeliverable: Re: Undeliverable: Quick follow-up: What custom modules or workflow modifications would Columbus Regional Health need?",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "postmaster@CRH.org",
+        "excerpt": "--eb4e8cba-4c70-4163-a6cc-0c3cd7128729 Content-Type: multipart/alternative; differences=Content-Type; boundary=\"1e4d3009-7929-4dd5-984a-4a12544c48f9\" --1e4d3009-7929-4dd5-984a-4a12544c48f9 Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable Delivery has failed to these recipients or groups: postmaster@crh.org The email address you entered couldn't be found. Please check the recipient's email address and try to resend the message. If the problem continues, ple"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 02:36:54 -0400",
+        "from": "<postmaster@CRH.org>",
+        "subject": "Undeliverable: Re: Undeliverable: Re: Undeliverable: Quick follow-up: What custom modules or workflow modifications would Columbus Regional Health need?",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "postmaster@CRH.org",
+        "excerpt": "--0fdd3d65-ad79-40bf-98d9-43126c9990b1 Content-Type: multipart/alternative; differences=Content-Type; boundary=\"8c0e3ecd-2551-45c9-a3a3-71efb3547e66\" --8c0e3ecd-2551-45c9-a3a3-71efb3547e66 Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable Delivery has failed to these recipients or groups: postmaster@crh.org The email address you entered couldn't be found. Please check the recipient's email address and try to resend the message. If the problem continues, ple"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 02:37:13 -0400",
+        "from": "<postmaster@CRH.org>",
+        "subject": "Undeliverable: Re: Undeliverable: Re: Undeliverable: Re: Undeliverable: Quick follow-up: What custom modules or workflow modifications would Columbus Regional Health need?",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "postmaster@CRH.org",
+        "excerpt": "--0fb3ba6b-bb38-4a33-adb5-1b2a56994b11 Content-Type: multipart/alternative; differences=Content-Type; boundary=\"5fbb75e5-bb29-4bc4-b373-f322301721e6\" --5fbb75e5-bb29-4bc4-b373-f322301721e6 Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable Delivery has failed to these recipients or groups: postmaster@crh.org The email address you entered couldn't be found. Please check the recipient's email address and try to resend the message. If the problem continues, ple"
+      },
+      {
+        "date": "Sat, 22 Aug 2026 02:37:32 -0400",
+        "from": "<postmaster@CRH.org>",
+        "subject": "Undeliverable: Re: Undeliverable: Re: Undeliverable: Quick follow-up: What custom modules or workflow modifications would Columbus Regional Health need?",
+        "account": "SpaceMail (mharcgatan@linkable.it.com)",
+        "targetEmail": "postmaster@CRH.org",
+        "excerpt": "--15503059-574d-456c-bd0e-1753cf2feeff Content-Type: multipart/alternative; differences=Content-Type; boundary=\"3160b067-688b-49fc-8169-369012369269\" --3160b067-688b-49fc-8169-369012369269 Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable Delivery has failed to these recipients or groups: postmaster@crh.org The email address you entered couldn't be found. Please check the recipient's email address and try to resend the message. If the problem continues, ple"
+      }
+    ],
+    "other": []
+  }
+}

@@ -1,0 +1,20 @@
+services:
+  - type: worker
+    name: titan-24-7-autonomous-sales-daemon
+    env: node
+    rootDir: hospital_leads_database
+    buildCommand: npm install
+    startCommand: node hourlyMasterDaemon.js
+    envVars:
+      - key: SPACEMAIL_USER
+        value: mharcgatan@linkable.it.com
+      - key: SPACEMAIL_PASS
+        value: Melonjuice01!
+      - key: SPACEMAIL_HOST
+        value: mail.spacemail.com
+      - key: SPACEMAIL_SMTP_PORT
+        value: 465
+      - key: ESCALATION_EMAIL
+        value: mckinsyo01@gmail.com
+      - key: TZ
+        value: Asia/Manila

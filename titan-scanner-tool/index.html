@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Titan Zero-Defect Code & Security Scanner | Free Enterprise Diagnostic Tool</title>
+  <meta name="description" content="Free enterprise code security, type-proof, and architecture scanner powered by the 33-Titan Multi-AI Engine. Scan your TypeScript, JavaScript, or SQL code in seconds.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="ambient-bg"></div>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="badge">
+        <span>⚡ POWERED BY TITAN 33-AI FACTORY • 100% FREE</span>
+      </div>
+      <h1 class="title">
+        Enterprise Code & Security Vulnerability Scanner
+      </h1>
+      <p class="subtitle">
+        Audit your code instantly against the strict standards of Anders Hejlsberg (Types), Tavis Ormandy (Security), antirez (Backend), and John Carmack (QA).
+      </p>
+    </header>
+
+    <!-- Scanner Workspace -->
+    <div class="scanner-card">
+      <div class="toolbar">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 13px; font-weight: 600; color: var(--text-muted);">SELECT PRESET:</span>
+          <select id="sample-select" class="lang-select">
+            <option value="vulnerable">High-Risk Vulnerable Endpoint (Node/TS)</option>
+            <option value="clean">Zero-Defect Certified Module</option>
+          </select>
+        </div>
+        <span style="font-size: 12px; font-family: var(--font-mono); color: var(--accent-cyan);">SUB-50MS MULTI-AI AUDIT</span>
+      </div>
+
+      <textarea id="code-editor" class="code-editor" spellcheck="false"></textarea>
+
+      <div class="action-bar">
+        <span style="font-size: 12px; color: var(--text-dim);">🔒 100% Private: Code is parsed in memory and never stored on third-party servers.</span>
+        <button id="scan-btn" class="btn-scan">
+          Scan Code with 33 Titans &rarr;
+        </button>
+      </div>
+    </div>
+
+    <!-- Diagnostic Results Card -->
+    <div id="results-card" class="results-card">
+      <div id="score-badge" class="score-badge danger">
+        <span>⚠️</span> HEALTH SCORE: 20/100 • CRITICAL DEFECTS DETECTED
+      </div>
+      <p id="scan-summary-text" style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;"></p>
+
+      <!-- Findings List -->
+      <div id="findings-list" class="findings-grid"></div>
+
+      <!-- Lead Magnet Conversion Box -->
+      <div class="lead-cta">
+        <h4>Need all vulnerabilities remediated with 100% Zero-Defect Guarantee?</h4>
+        <p>Our 33-Titan Autonomous Factory builds, tests, and refactors enterprise systems in 48 hours for a fraction of legacy agency pricing.</p>
+        <a href="http://localhost:8089/" target="_blank" style="display: inline-block; padding: 12px 28px; border-radius: 10px; background: #fff; color: #000; font-weight: 800; font-size: 14px; text-decoration: none; box-shadow: 0 0 20px rgba(255,255,255,0.4);">
+          Launch 7-Day Titan Factory Reverse-Trial &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

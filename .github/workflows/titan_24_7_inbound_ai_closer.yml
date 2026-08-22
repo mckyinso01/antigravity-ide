@@ -1,0 +1,34 @@
+name: Titan 24/7 Cloud Inbound Reply Parser & AI Closer
+
+on:
+  schedule:
+    # Runs continuously on GitHub Cloud every 15 minutes (24/7/365, independent of desktop state)
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+jobs:
+  parse-inbound-client-replies:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        working-directory: ./hospital_leads_database
+        run: npm install nodemailer imap-simple dotenv
+
+      - name: Run Inbound Reply Parser & AI Closer
+        working-directory: ./hospital_leads_database
+        env:
+          SPACEMAIL_USER: ${{ secrets.SPACEMAIL_USER || 'mharcgatan@linkable.it.com' }}
+          SPACEMAIL_PASS: ${{ secrets.SPACEMAIL_PASS || 'Melonjuice01!' }}
+          SPACEMAIL_HOST: 'mail.spacemail.com'
+          SPACEMAIL_PORT: '993'
+          ESCALATION_EMAIL: 'mckinsyo01@gmail.com'
+        run: |
+          node -e "const { auditAndParseInboundReplies } = require('./inboundReplyParserDaemon'); auditAndParseInboundReplies().then(() => console.log('Inbound check complete.'));"
