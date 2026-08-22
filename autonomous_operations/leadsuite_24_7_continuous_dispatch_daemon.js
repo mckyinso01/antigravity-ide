@@ -104,9 +104,19 @@ const VERIFIED_TARGET_POOL = [
 let leadIndex = 0;
 let totalDispatches = 0;
 
+function safeAtomicWrite(filePath, data) {
+  const tmpPath = filePath + '.tmp';
+  try {
+    fs.writeFileSync(tmpPath, JSON.stringify(data, null, 2), 'utf8');
+    fs.renameSync(tmpPath, filePath);
+  } catch (e) {
+    fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
+  }
+}
+
 function ensureFilesExist() {
   if (!fs.existsSync(LEDGER_PATH)) {
-    fs.writeFileSync(LEDGER_PATH, JSON.stringify([], null, 2));
+    safeAtomicWrite(LEDGER_PATH, []);
   }
   const initialStream = {
     daemonStatus: "ACTIVE_24_7",
@@ -115,7 +125,7 @@ function ensureFilesExist() {
     totalProcessed: 0,
     recentEvents: []
   };
-  fs.writeFileSync(HUB_STREAM_PATH, JSON.stringify(initialStream, null, 2));
+  safeAtomicWrite(HUB_STREAM_PATH, initialStream);
 }
 
 const CLOSING_STAGES = [
@@ -182,12 +192,16 @@ function processNextLead() {
   try {
     let ledger = [];
     if (fs.existsSync(LEDGER_PATH)) {
-      const raw = fs.readFileSync(LEDGER_PATH, 'utf8');
-      ledger = raw ? JSON.parse(raw) : [];
+      try {
+        const raw = fs.readFileSync(LEDGER_PATH, 'utf8');
+        ledger = raw ? JSON.parse(raw) : [];
+      } catch (parseErr) {
+        ledger = [];
+      }
     }
     ledger.unshift(dispatchEvent);
     if (ledger.length > 200) ledger = ledger.slice(0, 200);
-    fs.writeFileSync(LEDGER_PATH, JSON.stringify(ledger, null, 2));
+    safeAtomicWrite(LEDGER_PATH, ledger);
   } catch (err) {
     console.error("Ledger update error:", err.message);
   }
@@ -203,8 +217,12 @@ function processNextLead() {
       recentEvents: []
     };
     if (fs.existsSync(HUB_STREAM_PATH)) {
-      const raw = fs.readFileSync(HUB_STREAM_PATH, 'utf8');
-      if (raw) streamData = JSON.parse(raw);
+      try {
+        const raw = fs.readFileSync(HUB_STREAM_PATH, 'utf8');
+        if (raw) streamData = JSON.parse(raw);
+      } catch (pErr) {
+        // use fallback streamData
+      }
     }
     streamData.lastHeartbeat = timestamp;
     streamData.totalProcessed = totalDispatches;
@@ -213,7 +231,7 @@ function processNextLead() {
     streamData.recentEvents.unshift(dispatchEvent);
     if (streamData.recentEvents.length > 20) streamData.recentEvents = streamData.recentEvents.slice(0, 20);
 
-    fs.writeFileSync(HUB_STREAM_PATH, JSON.stringify(streamData, null, 2));
+    safeAtomicWrite(HUB_STREAM_PATH, streamData);
   } catch (err) {
     console.error("Hub stream update error:", err.message);
   }
