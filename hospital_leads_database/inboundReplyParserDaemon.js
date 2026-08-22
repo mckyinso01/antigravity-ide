@@ -392,6 +392,19 @@ async function auditAndParseInboundReplies() {
           messageId
         });
 
+        // Instant WhatsApp Alert Dispatch
+        try {
+          const { sendWhatsAppInboundAlert } = require('./whatsappNotificationEngine');
+          await sendWhatsAppInboundAlert({
+            prospect: leadMeta.executiveTitle || from,
+            company: leadMeta.hospitalName || 'Enterprise Lead',
+            subject: subject,
+            snippet: cleanText.substring(0, 200)
+          });
+        } catch (waErr) {
+          console.warn('⚠️ [WHATSAPP LEAD ALERT SKIP]', waErr.message);
+        }
+
         processedReplies.push({
           messageId,
           from,

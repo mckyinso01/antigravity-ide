@@ -311,6 +311,22 @@ async function generateAndDispatchHourlyReport() {
   const info = await transporter.sendMail(mailOptions);
   console.log(`✅ Hourly Executive Report successfully dispatched to Gmail! MessageId: ${info.messageId}`);
 
+  // 6. Dispatch WhatsApp Executive Digest (If WhatsApp credentials configured)
+  try {
+    const { sendWhatsAppExecutiveDigest } = require('./whatsappNotificationEngine');
+    console.log(`📱 Dispatching Hourly Executive Digest to WhatsApp...`);
+    const waRes = await sendWhatsAppExecutiveDigest({
+      totalHospitals,
+      subdomainResults,
+      unreadInbound: conversationThreads.length
+    });
+    if (waRes && waRes.success) {
+      console.log(`✅ Hourly Executive Digest successfully delivered to Founder WhatsApp!`);
+    }
+  } catch (waErr) {
+    console.warn(`⚠️ [WHATSAPP DISPATCH SKIP] ${waErr.message}`);
+  }
+
   return { success: true, messageId: info.messageId, timestamp: new Date().toISOString() };
 }
 
