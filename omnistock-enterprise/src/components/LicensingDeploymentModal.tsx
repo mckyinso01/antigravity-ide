@@ -915,7 +915,7 @@ $ docker compose -f docker-compose.prod.yml up -d --build
 $ curl http://localhost:5173/health
 {"status":"HEALTHY","system":"OMNISTOCK_SPATIAL_WMS","license":"VALID"}
 
-Founder Support WhatsApp: +63 962 281 6533
+Founder Support WhatsApp: +63 962 281 2703
 `;
                           const blob = new Blob([manifest], { type: 'text/markdown' });
                           const url = URL.createObjectURL(blob);
@@ -934,7 +934,7 @@ Founder Support WhatsApp: +63 962 281 6533
                       </button>
 
                       <a
-                        href="https://wa.me/639622816533?text=Hi%20Mharc,%20I%20unlocked%20OmniStock%20WMS%20Buyout%20Order%20"
+                        href="https://wa.me/639622812703?text=Hi%20Mharc,%20I%20unlocked%20OmniStock%20WMS%20Buyout%20Order%20"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-2.5 rounded-xl bg-[#070B14] hover:bg-[#121D36] border border-emerald-400 text-emerald-400 font-bold text-xs flex items-center justify-center gap-1.5 cursor-pointer text-center"

@@ -515,5 +515,153 @@
     "messageId": "<2776dea2-aa1c-9c7d-7b19-5e9dca067cc8@gmail.com>",
     "timestamp": "2026-08-22T02:39:19.575Z",
     "status": "DELIVERED"
+  },
+  {
+    "id": 51,
+    "company": "F&F Apparel (Robinsons Retail)",
+    "email": "customer.care@robinsonsretail.com.ph",
+    "sector": "Fashion & Apparel",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for F&F Apparel (Robinsons Retail)",
+    "messageId": "<9eb4b830-fcaa-c7ee-02df-0fad42da543d@gmail.com>",
+    "timestamp": "2026-08-22T03:36:14.055Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 52,
+    "company": "Kashieca (Suyen Corp)",
+    "email": "customercare@bench.com.ph",
+    "sector": "Fashion & Apparel",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Kashieca (Suyen Corp)",
+    "messageId": "<025fabdf-2297-c873-77c5-94ae228f342d@gmail.com>",
+    "timestamp": "2026-08-22T03:36:55.142Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 53,
+    "company": "Human Apparel (Suyen Corp)",
+    "email": "customercare@bench.com.ph",
+    "sector": "Fashion & Apparel",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Human Apparel (Suyen Corp)",
+    "messageId": "<1aaa3803-9abc-6e7d-f203-3d5b2007bf8f@gmail.com>",
+    "timestamp": "2026-08-22T03:37:49.820Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 54,
+    "company": "Forme Apparel (Golden ABC)",
+    "email": "customercare@forme.com.ph",
+    "sector": "Fashion & Apparel",
+    "status": "SKIPPED_PREFLIGHT",
+    "reason": "DNS_MX_LOOKUP_FAILED (ENODATA)",
+    "timestamp": "2026-08-22T03:38:38.890Z"
+  },
+  {
+    "id": 55,
+    "company": "Regatta (Golden ABC)",
+    "email": "customercare@regattalifestyle.com",
+    "sector": "Fashion & Apparel",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Regatta (Golden ABC)",
+    "messageId": "<4d41fc02-287a-2b42-7d10-fd288df0ea5c@gmail.com>",
+    "timestamp": "2026-08-22T03:38:41.408Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 56,
+    "company": "Oxgn (Golden ABC)",
+    "email": "customercare@oxgnfashion.com",
+    "sector": "Fashion & Apparel",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Oxgn (Golden ABC)",
+    "messageId": "<6a656de2-b851-0208-dca0-b878e4c237cd@gmail.com>",
+    "timestamp": "2026-08-22T04:36:13.796Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 57,
+    "company": "Memo (Golden ABC)",
+    "email": "customercare@memofashion.com",
+    "sector": "Fashion & Apparel",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Memo (Golden ABC)",
+    "messageId": "<819b5c57-c2d8-8d99-6543-8e1b08757a22@gmail.com>",
+    "timestamp": "2026-08-22T04:37:05.257Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 58,
+    "company": "Sperry Philippines",
+    "email": "customercare@sperryshoes.com.ph",
+    "sector": "Fashion & Apparel",
+    "status": "SKIPPED_PREFLIGHT",
+    "reason": "DNS_MX_LOOKUP_FAILED (ENODATA)",
+    "timestamp": "2026-08-22T04:37:55.295Z"
+  },
+  {
+    "id": 59,
+    "company": "Keds Philippines",
+    "email": "customercare@keds.com.ph",
+    "sector": "Fashion & Apparel",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Keds Philippines",
+    "messageId": "<198cb1bf-43eb-8dd7-1232-f0fc99170321@gmail.com>",
+    "timestamp": "2026-08-22T04:37:57.529Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 60,
+    "company": "Pony Footwear PH",
+    "email": "customercare@pony.com.ph",
+    "sector": "Fashion & Apparel",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Pony Footwear PH",
+    "messageId": "<3cdb728e-fde1-58cc-1bd6-b07b5eb6a02c@gmail.com>",
+    "timestamp": "2026-08-22T04:38:41.679Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 61,
+    "company": "Complex Studio PH",
+    "email": "info@complexlifestylestore.com",
+    "sector": "Fashion & Apparel",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Complex Studio PH",
+    "messageId": "<fd14cde9-f4fb-b1d0-ed82-01a89909b179@gmail.com>",
+    "timestamp": "2026-08-22T05:36:14.747Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 62,
+    "company": "Toby's Sports",
+    "email": "support@tobys.com",
+    "sector": "Fashion & Apparel",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Toby's Sports",
+    "messageId": "<f9e39671-461a-c133-4091-2415f902d912@gmail.com>",
+    "timestamp": "2026-08-22T05:36:52.515Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 63,
+    "company": "RUNNR Philippines",
+    "email": "support@runnr.com.ph",
+    "sector": "Fashion & Apparel",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for RUNNR Philippines",
+    "messageId": "<9b7b0027-411a-a091-b3e9-b3c9be1eb845@gmail.com>",
+    "timestamp": "2026-08-22T05:37:45.629Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 64,
+    "company": "Olympic Village Sports",
+    "email": "info@olympicvillage.com.ph",
+    "sector": "Fashion & Apparel",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Olympic Village Sports",
+    "messageId": "<74861ba8-2109-d454-b4c7-735010d551b4@gmail.com>",
+    "timestamp": "2026-08-22T05:38:42.752Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 65,
+    "company": "Chris Sports",
+    "email": "customercare@chrissports.com",
+    "sector": "Fashion & Apparel",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Chris Sports",
+    "messageId": "<cf0690aa-bd67-9135-f610-ffce21bf3662@gmail.com>",
+    "timestamp": "2026-08-22T05:39:35.424Z",
+    "status": "DELIVERED"
   }
 ]

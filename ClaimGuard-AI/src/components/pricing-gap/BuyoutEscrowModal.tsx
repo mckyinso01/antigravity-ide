@@ -367,7 +367,7 @@ $ docker compose -f docker-compose.prod.yml up -d --build
 $ curl http://localhost:5173/health
 {"status":"HEALTHY","system":"CLAIMGUARD_AI_LEGAL_DEFENSE","license":"VALID"}
 
-Founder Support WhatsApp: +63 962 281 6533
+Founder Support WhatsApp: +63 962 281 2703
 `;
                     const blob = new Blob([manifest], { type: 'text/markdown' });
                     const url = URL.createObjectURL(blob);
@@ -399,7 +399,7 @@ Founder Support WhatsApp: +63 962 281 6533
                 </button>
 
                 <a
-                  href="https://wa.me/639622816533?text=Hi%20Mharc,%20I%20unlocked%20ClaimGuard%20AI%20Buyout%20Order%20"
+                  href="https://wa.me/639622812703?text=Hi%20Mharc,%20I%20unlocked%20ClaimGuard%20AI%20Buyout%20Order%20"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{

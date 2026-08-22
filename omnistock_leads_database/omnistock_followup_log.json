@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "company": "Robinsons Supermarket",
+    "email": "robsupermarket@rsc.com.ph",
+    "originalSentAt": "2026-08-17T16:28:06.103Z",
+    "followUpSentAt": "2026-08-22T04:36:12.398Z",
+    "followUpMessageId": "<5b92bb4e-8550-5631-b3b3-d252572b6a38@gmail.com>",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 2,
+    "company": "Robinsons Retail Holdings",
+    "email": "customer.care@robinsonsretail.com.ph",
+    "originalSentAt": "2026-08-17T16:28:17.848Z",
+    "followUpSentAt": "2026-08-22T04:36:54.577Z",
+    "followUpMessageId": "<bd094dd2-d602-4ba9-2474-b60d52d753d2@gmail.com>",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 3,
+    "company": "Puregold Price Club",
+    "email": "customercare@puregold.com.ph",
+    "originalSentAt": "2026-08-17T16:28:24.649Z",
+    "followUpSentAt": "2026-08-22T04:37:36.927Z",
+    "followUpMessageId": "<7ebf3c7c-3e5e-8714-595b-cffb1093aaed@gmail.com>",
+    "status": "DELIVERED"
+  }
+]

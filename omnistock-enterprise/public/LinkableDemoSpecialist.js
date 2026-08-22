@@ -701,6 +701,7 @@
 
   // 9. FAQ Responses
   const FAQ_ANSWERS = {
+    migration: "🔄 <strong>Universal 1-Click Legacy Migration Engine:</strong> Switch from legacy incumbents in under 3 seconds with zero data loss. We support direct ingestion from: <br>• <strong>Healthcare ICU:</strong> Epic Systems, Cerner (Oracle Health), Meditech<br>• <strong>Construction CPM:</strong> Procore, Oracle Primavera P6 (.xer/.xml), MS Project, AIA G702<br>• <strong>Logistics WMS:</strong> Manhattan Associates, SAP EWM (MATMAS/LAGP), NetSuite WMS, Fishbowl, 50k SKU CSV<br>• <strong>Revenue Cycle:</strong> EDI 835/837, Epic Resolute & Optum Claim Dumps<br>• <strong>CRO & Biometrics:</strong> Hotjar, Crazy Egg & Google Analytics 4 Funnel Exports.",
     hipaa: "🔒 <strong>HIPAA & Security:</strong> All data is protected with AES-256 encryption at rest and TLS 1.3 in transit. We support on-premise Kubernetes or dedicated VPC deployments with zero external data telemetry leakage.",
     fhir: "⚡ <strong>HL7 & FHIR APIs:</strong> Fully compliant with HL7 v2.x and FHIR R4/R5 protocols. Compatible with Epic FHIR endpoints, Cerner Millennium, and MEDITECH.",
     pricing: "💰 <strong>High-ROI Economics:</strong> We eliminate traditional 7-figure enterprise consulting retainers by providing turnkey standalone software licenses with direct founder-level SLA support.",
@@ -743,7 +744,9 @@
     setTimeout(() => {
       let resp = `Thank you for asking about "<em>${query}</em>". This capability is fully supported across our enterprise architecture. For custom sandbox configurations, you can email founder Mharc Gatan directly at <strong>mharcgatan@linkable.it.com</strong>.`;
       const qLower = query.toLowerCase();
-      if (qLower.includes('hipaa') || qLower.includes('security') || qLower.includes('privacy')) {
+      if (qLower.includes('migrat') || qLower.includes('switch') || qLower.includes('procore') || qLower.includes('epic') || qLower.includes('p6') || qLower.includes('manhattan') || qLower.includes('sap') || qLower.includes('ewm') || qLower.includes('netsuite') || qLower.includes('hotjar') || qLower.includes('crazyegg') || qLower.includes('ga4') || qLower.includes('heatmap') || qLower.includes('import') || qLower.includes('csv')) {
+        resp = FAQ_ANSWERS.migration;
+      } else if (qLower.includes('hipaa') || qLower.includes('security') || qLower.includes('privacy')) {
         resp = FAQ_ANSWERS.hipaa;
       } else if (qLower.includes('api') || qLower.includes('fhir') || qLower.includes('hl7') || qLower.includes('integration')) {
         resp = FAQ_ANSWERS.fhir;

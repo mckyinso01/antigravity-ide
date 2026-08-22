@@ -1510,5 +1510,215 @@
     "phone": "+1-312-654-9173",
     "hasActiveMx": true,
     "discoveredAt": "2026-08-22T02:04:37.951Z"
+  },
+  {
+    "domain": "southlakegeneralcontractors.com",
+    "companyName": "Southlake General Contractors",
+    "website": "https://southlakegeneralcontractors.com",
+    "contacts": [
+      {
+        "id": "dm-owner-southlakegeneralcontractors.com",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Southlake General Contractors Executive Office",
+        "email": "owner@southlakegeneralcontractors.com",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-southlakegeneralcontractors.com",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@southlakegeneralcontractors.com",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-southlakegeneralcontractors.com",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@southlakegeneralcontractors.com",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "sitesafe",
+    "location": "Dallas, Texas",
+    "phone": "",
+    "hasActiveMx": false,
+    "discoveredAt": "2026-08-22T05:13:36.138Z"
+  },
+  {
+    "domain": "lingconstructioninc.com",
+    "companyName": "Ling Construction",
+    "website": "https://www.lingconstructioninc.com/",
+    "contacts": [
+      {
+        "id": "dm-owner-lingconstructioninc.com",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Ling Construction Executive Office",
+        "email": "owner@lingconstructioninc.com",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-lingconstructioninc.com",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@lingconstructioninc.com",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-lingconstructioninc.com",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@lingconstructioninc.com",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "sitesafe",
+    "location": "Dallas, Texas",
+    "phone": "",
+    "hasActiveMx": true,
+    "discoveredAt": "2026-08-22T05:13:36.216Z"
+  },
+  {
+    "domain": "dallasmastic.com",
+    "companyName": "Dallas Mastic",
+    "website": "https://www.dallasmastic.com",
+    "contacts": [
+      {
+        "id": "dm-owner-dallasmastic.com",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Dallas Mastic Executive Office",
+        "email": "owner@dallasmastic.com",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-dallasmastic.com",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@dallasmastic.com",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-dallasmastic.com",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@dallasmastic.com",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "sitesafe",
+    "location": "Dallas, Texas",
+    "phone": "+1 214 924 8483",
+    "hasActiveMx": true,
+    "discoveredAt": "2026-08-22T05:13:36.349Z"
+  },
+  {
+    "domain": "zerogradesolutions.com",
+    "companyName": "ZeroGrade Drainage Solutions",
+    "website": "https://www.zerogradesolutions.com",
+    "contacts": [
+      {
+        "id": "dm-owner-zerogradesolutions.com",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "ZeroGrade Drainage Solutions Executive Office",
+        "email": "owner@zerogradesolutions.com",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-zerogradesolutions.com",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@zerogradesolutions.com",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-zerogradesolutions.com",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@zerogradesolutions.com",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "sitesafe",
+    "location": "Dallas, Texas",
+    "phone": "+1 214 924 8483",
+    "hasActiveMx": true,
+    "discoveredAt": "2026-08-22T05:13:36.430Z"
+  },
+  {
+    "domain": "rocconstruction.com",
+    "companyName": "ROC Construction",
+    "website": "https://rocconstruction.com",
+    "contacts": [
+      {
+        "id": "dm-owner-rocconstruction.com",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "ROC Construction Executive Office",
+        "email": "owner@rocconstruction.com",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-rocconstruction.com",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@rocconstruction.com",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-rocconstruction.com",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@rocconstruction.com",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "sitesafe",
+    "location": "Dallas, Texas",
+    "phone": "",
+    "hasActiveMx": true,
+    "discoveredAt": "2026-08-22T05:13:36.512Z"
   }
 ]

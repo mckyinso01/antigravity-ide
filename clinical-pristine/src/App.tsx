@@ -28,6 +28,7 @@ import { SettingsPanel } from './components/SettingsPanel';
 import { ProductionCleanSweepModal } from './components/ProductionCleanSweepModal';
 import { HospitalClusterStatus } from './components/HospitalClusterStatus';
 import { Hl7InterfaceConsoleModal } from './components/Hl7InterfaceConsoleModal';
+import { UniversalEhrMigrationModal } from './components/UniversalEhrMigrationModal';
 import { HipaaInactivityLock } from './components/HipaaInactivityLock';
 import { initClinicalVisitorBeacon } from './utils/visitorEmailBeacon';
 import { useUrlProspectSession } from './hooks/useUrlTabNavigation';
@@ -37,11 +38,13 @@ const LicensingBar = ({
   onOpenSpecs, 
   onOpenCleanSweep,
   onOpenHl7Console,
+  onOpenEhrMigration,
   onOpenExitSurvey 
 }: { 
   onOpenSpecs: () => void; 
   onOpenCleanSweep: () => void; 
   onOpenHl7Console: () => void;
+  onOpenEhrMigration: () => void;
   onOpenExitSurvey?: () => void;
 }) => {
   const isProduction = localStorage.getItem('clinical_pristine_production_mode') === 'true';
@@ -66,6 +69,15 @@ const LicensingBar = ({
       </div>
 
       <div className="flex items-center space-x-2 sm:space-x-3 text-xs font-semibold text-slate-700 shrink-0">
+        {/* 1-Click Universal EHR Legacy Migration Engine Trigger */}
+        <button 
+          onClick={onOpenEhrMigration}
+          className="hover:bg-gradient-to-r hover:from-cyan-600 hover:to-blue-700 bg-gradient-to-r from-cyan-500 to-blue-600 text-[#070B14] hover:text-white font-bold flex items-center gap-1.5 cursor-pointer px-3 py-1 rounded-md shadow-sm transition-all shrink-0 font-mono"
+          title="1-Click Universal EHR Legacy Migration Engine (Epic, Cerner, Meditech, FHIR & CSV)"
+        >
+          <span>🔄 1-Click EHR Migration</span>
+        </button>
+
         <button 
           onClick={onOpenHl7Console}
           className="hover:text-blue-700 text-slate-900 font-bold flex items-center gap-1 cursor-pointer bg-blue-50 px-2.5 py-0.5 rounded-md border border-blue-300 shadow-2xs transition-all shrink-0"
@@ -166,6 +178,7 @@ function App() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isCleanSweepOpen, setIsCleanSweepOpen] = useState(false);
   const [isHl7ConsoleOpen, setIsHl7ConsoleOpen] = useState(false);
+  const [isEhrMigrationOpen, setIsEhrMigrationOpen] = useState(false);
   const [isExitSurveyOpen, setIsExitSurveyOpen] = useState(false);
   const prospectSession = useUrlProspectSession('hospital');
   const location = useLocation();
@@ -186,7 +199,7 @@ function App() {
 
   // 2. Modal Browser Back-Button Trapping
   useEffect(() => {
-    const isAnyModalOpen = Boolean(isSpecsOpen || isSettingsOpen || isCleanSweepOpen || isHl7ConsoleOpen || isExitSurveyOpen);
+    const isAnyModalOpen = Boolean(isSpecsOpen || isSettingsOpen || isCleanSweepOpen || isHl7ConsoleOpen || isEhrMigrationOpen || isExitSurveyOpen);
     if (isAnyModalOpen) {
       window.history.pushState({ modalOpen: true }, '');
       const handleModalPop = () => {
@@ -194,12 +207,13 @@ function App() {
         setIsSettingsOpen(false);
         setIsCleanSweepOpen(false);
         setIsHl7ConsoleOpen(false);
+        setIsEhrMigrationOpen(false);
         setIsExitSurveyOpen(false);
       };
       window.addEventListener('popstate', handleModalPop, { once: true });
       return () => window.removeEventListener('popstate', handleModalPop);
     }
-  }, [isSpecsOpen, isSettingsOpen, isCleanSweepOpen, isHl7ConsoleOpen, isExitSurveyOpen]);
+  }, [isSpecsOpen, isSettingsOpen, isCleanSweepOpen, isHl7ConsoleOpen, isEhrMigrationOpen, isExitSurveyOpen]);
 
   useEffect(() => {
     initClinicalVisitorBeacon('Clinical Pristine OS');
@@ -244,8 +258,9 @@ function App() {
 
       <LicensingBar 
         onOpenSpecs={() => setIsSpecsOpen(true)} 
-        onOpenCleanSweep={() => setIsCleanSweepOpen(true)}
+        onOpenCleanSweep={() => setIsCleanSweepOpen(false || true)}
         onOpenHl7Console={() => setIsHl7ConsoleOpen(true)}
+        onOpenEhrMigration={() => setIsEhrMigrationOpen(true)}
         onOpenExitSurvey={() => setIsExitSurveyOpen(true)}
       />
       
@@ -265,6 +280,12 @@ function App() {
         }}
       />
       
+      {/* Universal Legacy EHR / EMR 1-Click Migration Engine Modal */}
+      <UniversalEhrMigrationModal
+        isOpen={isEhrMigrationOpen}
+        onClose={() => setIsEhrMigrationOpen(false)}
+      />
+
       {/* Enterprise Epic & Cerner HL7 v2.5.1 / FHIR Ingestion Gateway Console */}
       <Hl7InterfaceConsoleModal
         isOpen={isHl7ConsoleOpen}

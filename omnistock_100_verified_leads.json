@@ -28,7 +28,8 @@
     "email": "customercare@puregold.com.ph",
     "channel": "Official Corporate Contact",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 4,
@@ -80,7 +81,8 @@
     "email": "customercare@puregold.com.ph",
     "channel": "Official Parent Group Helpdesk",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 9,
@@ -485,7 +487,8 @@
     "email": "customercare@penshoppe.com",
     "channel": "Official Corporate Brand",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 47,
@@ -495,7 +498,8 @@
     "email": "customercare@bench.com.ph",
     "channel": "Official Corporate Portal",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 48,
@@ -505,7 +509,8 @@
     "email": "customercare@bayo.com.ph",
     "channel": "Official Fashion Portal",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 49,
@@ -515,7 +520,8 @@
     "email": "customercare@kamiseta.com",
     "channel": "Official Brand Portal",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 50,
@@ -525,7 +531,8 @@
     "email": "customercare@plainsandprints.com",
     "channel": "Official Corporate Portal",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 51,
@@ -546,7 +553,8 @@
     "email": "customercare@bench.com.ph",
     "channel": "Official Brand Group",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 53,
@@ -556,7 +564,8 @@
     "email": "customercare@bench.com.ph",
     "channel": "Official Brand Group",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 54,
@@ -576,7 +585,8 @@
     "email": "customercare@regattalifestyle.com",
     "channel": "Official Corporate Support",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 56,
@@ -586,7 +596,8 @@
     "email": "customercare@oxgnfashion.com",
     "channel": "Official Corporate Support",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 57,
@@ -596,7 +607,8 @@
     "email": "customercare@memofashion.com",
     "channel": "Official Corporate Support",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 58,
@@ -616,7 +628,8 @@
     "email": "customercare@keds.com.ph",
     "channel": "Official Shoe Retailer",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 60,
@@ -626,7 +639,8 @@
     "email": "customercare@pony.com.ph",
     "channel": "Official Shoe Retailer",
     "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "status": "BOUNCED"
   },
   {
     "id": 61,

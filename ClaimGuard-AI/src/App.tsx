@@ -21,6 +21,7 @@ import { CaseStudy, EDGE_CASE_STUDIES } from './engine/edgeCaseStudiesData';
 import { LoginGateway } from './components/auth/LoginGateway';
 import { AuthUser } from './components/layout/Topbar';
 import { DocumentIngestionDrawer } from './components/document-studio/DocumentIngestionDrawer';
+import { UniversalClaimsMigrationModal } from './components/claims/UniversalClaimsMigrationModal';
 import { useUrlProspectSession } from './hooks/useUrlTabNavigation';
 import { ExitSurveyModal } from './components/ExitSurveyModal';
 
@@ -212,10 +213,16 @@ export const App: React.FC = () => {
         <VendorArchetypeDiagnostic />
       </main>
 
-      {/* Non-Modal Document Ingestion & Pre-Submission Scanner Drawer */}
-      <DocumentIngestionDrawer
+      {/* Universal 1-Click Epic, EDI 835 & Optum Migration Modal */}
+      <UniversalClaimsMigrationModal
         isOpen={isIngestionOpen}
         onClose={() => setIsIngestionOpen(false)}
+      />
+
+      {/* Non-Modal Document Ingestion & Pre-Submission Scanner Drawer */}
+      <DocumentIngestionDrawer
+        isOpen={false}
+        onClose={() => {}}
         onAddNewCase={handleAddNewCase}
       />
 

@@ -16,6 +16,7 @@ interface NavigationHeaderProps {
   onOpenScanner: () => void;
   onOpenSpecs: () => void;
   onOpenCleanSweep: () => void;
+  onOpenMigration?: () => void;
   onOpenSearch: (query: string) => void;
   activeWarehouseName: string;
   onChangeWarehouse: (name: string) => void;
@@ -30,6 +31,7 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
   onOpenScanner,
   onOpenSpecs,
   onOpenCleanSweep,
+  onOpenMigration,
   onOpenSearch,
   activeWarehouseName,
   onChangeWarehouse,
@@ -191,6 +193,23 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
             )}
           </div>
         </HelpTooltip>
+
+        {/* 1-Click Universal WMS Migration */}
+        {onOpenMigration && (
+          <HelpTooltip
+            title="1-Click Universal WMS Migration"
+            purpose="Instant zero data loss catalog import from Manhattan Associates, SAP EWM (MATMAS/LAGP), NetSuite, Fishbowl, or 50,000 Master SKU CSV/Excel."
+            howTo="Click to open the 1-click migration wizard with pre-validated enterprise presets."
+            position="bottom"
+          >
+            <button
+              onClick={onOpenMigration}
+              className="flex items-center gap-1.5 bg-gradient-to-r from-emerald-600/40 to-teal-600/40 hover:from-emerald-500 hover:to-teal-500 border border-emerald-500/50 text-emerald-200 hover:text-[#060A12] text-xs px-2.5 py-1.5 rounded-lg transition-all cursor-pointer shrink-0 font-mono font-bold shadow-md shadow-emerald-950/40"
+            >
+              <span>🔄 1-Click Migration</span>
+            </button>
+          </HelpTooltip>
+        )}
 
         {/* System Specs & Licensing */}
         <HelpTooltip

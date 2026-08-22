@@ -13,6 +13,7 @@ import { BarcodeScannerModal } from './components/BarcodeScannerModal';
 import { WavePickOptimizerModal } from './components/WavePickOptimizerModal';
 import { LicensingDeploymentModal } from './components/LicensingDeploymentModal';
 import { CleanSweepModal } from './components/CleanSweepModal';
+import { UniversalWmsMigrationModal } from './components/UniversalWmsMigrationModal';
 import { WarehouseInactivityLock, PRESET_STAFF, type WarehouseStaffSession } from './components/WarehouseInactivityLock';
 
 import { InventoryCatalogView } from './pages/InventoryCatalogView';
@@ -75,6 +76,7 @@ export function App() {
   const [isSpecsOpen, setIsSpecsOpen] = useState(false);
   const [isOptimizerOpen, setIsOptimizerOpen] = useState(false);
   const [isCleanSweepOpen, setIsCleanSweepOpen] = useState(false);
+  const [isMigrationOpen, setIsMigrationOpen] = useState(false);
   const [isExitSurveyOpen, setIsExitSurveyOpen] = useState(false);
 
   // 1. Exit-Intent Mouseleave Listener
@@ -320,6 +322,7 @@ export function App() {
         onOpenScanner={() => setIsScannerOpen(true)}
         onOpenSpecs={() => setIsSpecsOpen(true)}
         onOpenCleanSweep={() => setIsCleanSweepOpen(true)}
+        onOpenMigration={() => setIsMigrationOpen(true)}
         onOpenSearch={(q) => {
           if (q) {
             const foundSku = skus.find(s => s.skuCode.toLowerCase().includes(q.toLowerCase()) || s.name.toLowerCase().includes(q.toLowerCase()));
@@ -466,6 +469,13 @@ export function App() {
       <LicensingDeploymentModal
         isOpen={isSpecsOpen}
         onClose={() => setIsSpecsOpen(false)}
+      />
+
+      {/* Universal 1-Click WMS Migration Modal */}
+      <UniversalWmsMigrationModal
+        isOpen={isMigrationOpen}
+        onClose={() => setIsMigrationOpen(false)}
+        onMigrationComplete={() => refreshAllData()}
       />
 
       <CleanSweepModal

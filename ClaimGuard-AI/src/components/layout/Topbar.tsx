@@ -289,6 +289,27 @@ export const Topbar: React.FC<TopbarProps> = ({
           ⚖️ 2% Prompt Pay
         </button>
 
+        {/* 1-Click Claims Migration Wizard */}
+        {onOpenIngestion && (
+          <button
+            onClick={onOpenIngestion}
+            style={{
+              padding: '7px 11px',
+              borderRadius: 'var(--radius-sm)',
+              background: 'linear-gradient(135deg, rgba(6, 182, 212, 0.25), rgba(59, 130, 246, 0.25))',
+              border: '1px solid rgba(6, 182, 212, 0.6)',
+              color: '#06B6D4',
+              fontSize: '12px',
+              fontWeight: 800,
+              cursor: 'pointer',
+              boxShadow: '0 0 10px rgba(6, 182, 212, 0.2)'
+            }}
+            title="1-Click Epic Resolute, EDI 835 & Optum Denial Ingestion"
+          >
+            🔄 1-Click Migration
+          </button>
+        )}
+
         {/* 5-Year Cash Flow & Pricing */}
         <button
           onClick={onOpenPricingGap}
