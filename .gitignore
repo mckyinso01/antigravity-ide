@@ -23,6 +23,7 @@ titan-cinematic-proof-kit/app_promos/
 # Ignore dynamic 24/7 telemetry live streams & runtime ledgers
 titan-flagship-hub/leadsuite_live_stream.json
 titan-flagship-hub/leadsuite_live_stream.json.tmp
+dispatched_client_proposals_ledger.json
 dispatched_client_proposals_ledger.json.tmp
 
 # Ignore logs
