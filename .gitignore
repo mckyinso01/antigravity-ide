@@ -25,6 +25,7 @@ titan-flagship-hub/leadsuite_live_stream.json
 titan-flagship-hub/leadsuite_live_stream.json.tmp
 dispatched_client_proposals_ledger.json
 dispatched_client_proposals_ledger.json.tmp
+hospital_leads_database/inbound_replies_processed.json
 
 # Ignore logs
 *.log
