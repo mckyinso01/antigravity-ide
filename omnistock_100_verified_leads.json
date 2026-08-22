@@ -711,7 +711,8 @@
     "channel": "Official Footwear Outlet",
     "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "email_is_verified": false
+    "email_is_verified": false,
+    "status": "BOUNCED"
   },
   {
     "id": 62,
@@ -755,7 +756,8 @@
     "channel": "Official Sports Chain",
     "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "email_is_verified": false
+    "email_is_verified": false,
+    "status": "BOUNCED"
   },
   {
     "id": 66,
@@ -788,7 +790,8 @@
     "channel": "Official Robinsons Retail Unit",
     "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "email_is_verified": false
+    "email_is_verified": false,
+    "status": "BOUNCED"
   },
   {
     "id": 69,
@@ -810,7 +813,8 @@
     "channel": "Official Depot Portal",
     "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "email_is_verified": false
+    "email_is_verified": false,
+    "status": "BOUNCED"
   },
   {
     "id": 71,

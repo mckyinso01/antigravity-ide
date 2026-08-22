@@ -19,6 +19,8 @@ import { exportPatientToFHIR } from '../utils/clinicalCalculators';
 import { DynamicPatientAvatar } from './DynamicPatientAvatar';
 import { AddMedicationModal } from './AddMedicationModal';
 import { AttachApparatusModal } from './AttachApparatusModal';
+import { SbarHandoverModal } from './SbarHandoverModal';
+import { Radio } from 'lucide-react';
 
 interface Props {
   selectedBed?: BedData | null;
@@ -37,6 +39,7 @@ export const ConceptBRightPanel: React.FC<Props> = ({
   const [showMoreActions, setShowMoreActions] = useState(false);
   const [showAddMedModal, setShowAddMedModal] = useState(false);
   const [showAttachApparatusModal, setShowAttachApparatusModal] = useState(false);
+  const [showSbarModal, setShowSbarModal] = useState(false);
 
   const isVacant = !selectedBed || selectedBed.status === 'empty' || !selectedBed.patientName;
 
@@ -650,36 +653,49 @@ export const ConceptBRightPanel: React.FC<Props> = ({
       </div>
 
       {/* 7. QUICK CLINICAL ACTION FOOTER BAR */}
-      <div className="pt-2 border-t border-slate-100 flex items-center gap-2">
-        {isDischargedOrEmpty ? (
+      <div className="pt-2 border-t border-slate-100 flex flex-col gap-2">
+        {!isDischargedOrEmpty && (
           <button
-            onClick={() => onOpenAdmission && onOpenAdmission(selectedBed?.id)}
-            className="flex-1 py-2 px-3 bg-sky-600 hover:bg-sky-700 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-sm transition-all cursor-pointer"
+            onClick={() => setShowSbarModal(true)}
+            className="w-full py-2 px-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-xs transition-all cursor-pointer"
+            title="Launch FDA 21 CFR Part 11 Voice SBAR Handover & Pharma Trial Matcher"
           >
-            <UserPlus size={14} /> Admit Patient to {selectedBed?.id || 'Bed'}
+            <Radio size={14} className="animate-pulse text-cyan-300" />
+            <span>SBAR Voice Handover & Pharma Match ($12.5k)</span>
           </button>
-        ) : (
-          <>
-            <button
-              onClick={handleToggleCodeBlue}
-              className={`flex-1 py-2 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer border ${
-                isCodeBlue 
-                  ? 'bg-rose-700 text-white border-rose-800 animate-bounce' 
-                  : 'bg-rose-50 hover:bg-rose-100 text-rose-700 border-rose-200'
-              }`}
-            >
-              <Siren size={14} /> {isCodeBlue ? 'Cancel Code Blue' : 'Code Blue'}
-            </button>
-
-            <button
-              onClick={handleDischargePatient}
-              className="py-2 px-3 bg-slate-100 hover:bg-amber-50 text-slate-700 hover:text-amber-800 border border-slate-300 hover:border-amber-300 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer"
-              title="Discharge Patient and Queue EVS Cleaning"
-            >
-              <UserMinus size={14} /> Discharge
-            </button>
-          </>
         )}
+
+        <div className="flex items-center gap-2">
+          {isDischargedOrEmpty ? (
+            <button
+              onClick={() => onOpenAdmission && onOpenAdmission(selectedBed?.id)}
+              className="flex-1 py-2 px-3 bg-sky-600 hover:bg-sky-700 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-sm transition-all cursor-pointer"
+            >
+              <UserPlus size={14} /> Admit Patient to {selectedBed?.id || 'Bed'}
+            </button>
+          ) : (
+            <>
+              <button
+                onClick={handleToggleCodeBlue}
+                className={`flex-1 py-2 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer border ${
+                  isCodeBlue 
+                    ? 'bg-rose-700 text-white border-rose-800 animate-bounce' 
+                    : 'bg-rose-50 hover:bg-rose-100 text-rose-700 border-rose-200'
+                }`}
+              >
+                <Siren size={14} /> {isCodeBlue ? 'Cancel Code Blue' : 'Code Blue'}
+              </button>
+
+              <button
+                onClick={handleDischargePatient}
+                className="py-2 px-3 bg-slate-100 hover:bg-amber-50 text-slate-700 hover:text-amber-800 border border-slate-300 hover:border-amber-300 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer"
+                title="Discharge Patient and Queue EVS Cleaning"
+              >
+                <UserMinus size={14} /> Discharge
+              </button>
+            </>
+          )}
+        </div>
       </div>
 
       {/* MODALS */}
@@ -693,6 +709,13 @@ export const ConceptBRightPanel: React.FC<Props> = ({
         isOpen={showAttachApparatusModal}
         onClose={() => setShowAttachApparatusModal(false)}
         bed={selectedBed || null}
+      />
+
+      <SbarHandoverModal
+        isOpen={showSbarModal}
+        onClose={() => setShowSbarModal(false)}
+        bed={selectedBed || null}
+        room={selectedRoom || null}
       />
 
     </aside>

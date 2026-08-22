@@ -6,6 +6,9 @@ import { SidebarNav } from './components/SidebarNav';
 import type { TabId } from './components/SidebarNav';
 import { useUrlTabNavigation } from './hooks/useUrlTabNavigation';
 import { ExitSurveyModal } from './components/ExitSurveyModal';
+import { useEnterpriseTrial } from './hooks/useEnterpriseTrial';
+import { TrialExpiryCoDesignModal } from './components/TrialExpiryCoDesignModal';
+import { codeIntegrityGuardian } from './utils/codeIntegrityGuardian';
 
 import { SpatialWarehouseCAD } from './components/SpatialWarehouseCAD';
 import { BinDetailDrawer } from './components/BinDetailDrawer';
@@ -14,6 +17,7 @@ import { WavePickOptimizerModal } from './components/WavePickOptimizerModal';
 import { LicensingDeploymentModal } from './components/LicensingDeploymentModal';
 import { CleanSweepModal } from './components/CleanSweepModal';
 import { UniversalWmsMigrationModal } from './components/UniversalWmsMigrationModal';
+import { SupplierRestockNegotiatorModal } from './components/SupplierRestockNegotiatorModal';
 import { WarehouseInactivityLock, PRESET_STAFF, type WarehouseStaffSession } from './components/WarehouseInactivityLock';
 
 import { InventoryCatalogView } from './pages/InventoryCatalogView';
@@ -78,6 +82,21 @@ export function App() {
   const [isCleanSweepOpen, setIsCleanSweepOpen] = useState(false);
   const [isMigrationOpen, setIsMigrationOpen] = useState(false);
   const [isExitSurveyOpen, setIsExitSurveyOpen] = useState(false);
+  const [isNegotiatorOpen, setIsNegotiatorOpen] = useState(false);
+
+  // 7-Day Reverse Trial Engine & Code Guardian
+  const { daysRemaining, isExpired, isUnlockedPerpetual, requestExtension } = useEnterpriseTrial();
+  const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
+
+  useEffect(() => {
+    codeIntegrityGuardian.initialize();
+  }, []);
+
+  useEffect(() => {
+    if (isExpired) {
+      setIsTrialModalOpen(true);
+    }
+  }, [isExpired]);
 
   // 1. Exit-Intent Mouseleave Listener
   useEffect(() => {
@@ -323,6 +342,7 @@ export function App() {
         onOpenSpecs={() => setIsSpecsOpen(true)}
         onOpenCleanSweep={() => setIsCleanSweepOpen(true)}
         onOpenMigration={() => setIsMigrationOpen(true)}
+        onOpenNegotiator={() => setIsNegotiatorOpen(true)}
         onOpenSearch={(q) => {
           if (q) {
             const foundSku = skus.find(s => s.skuCode.toLowerCase().includes(q.toLowerCase()) || s.name.toLowerCase().includes(q.toLowerCase()));
@@ -339,6 +359,9 @@ export function App() {
         activeStaffName={activeStaff.name}
         currentTimeoutSeconds={autolockTimeout}
         onOpenExitSurvey={() => setIsExitSurveyOpen(true)}
+        trialDaysRemaining={daysRemaining}
+        isUnlockedPerpetual={isUnlockedPerpetual}
+        onOpenTrialModal={() => setIsTrialModalOpen(true)}
       />
 
       {/* Main Body Workspace */}
@@ -490,6 +513,22 @@ export function App() {
         onClose={() => setIsExitSurveyOpen(false)}
         prospectSession={prospectSession}
         appName="OmniStock Spatial WMS"
+      />
+
+      {/* ⏳ 7-Day Product-Led Reverse Trial & Co-Design Modal */}
+      <TrialExpiryCoDesignModal
+        isOpen={isTrialModalOpen}
+        onClose={() => setIsTrialModalOpen(false)}
+        daysRemaining={daysRemaining}
+        isExpired={isExpired}
+        onRequestExtension={requestExtension}
+        onOpenLicensingModal={() => setIsSpecsOpen(true)}
+      />
+
+      {/* 🤖 Autonomous AI Spot-Quote Supplier Restock & Spatial AR Forklift Modal */}
+      <SupplierRestockNegotiatorModal
+        isOpen={isNegotiatorOpen}
+        onClose={() => setIsNegotiatorOpen(false)}
       />
     </div>
   );

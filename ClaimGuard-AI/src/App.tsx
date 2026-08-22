@@ -22,8 +22,12 @@ import { LoginGateway } from './components/auth/LoginGateway';
 import { AuthUser } from './components/layout/Topbar';
 import { DocumentIngestionDrawer } from './components/document-studio/DocumentIngestionDrawer';
 import { UniversalClaimsMigrationModal } from './components/claims/UniversalClaimsMigrationModal';
+import { ErisaPenaltyInterestClockModal } from './components/claims/ErisaPenaltyInterestClockModal';
 import { useUrlProspectSession } from './hooks/useUrlTabNavigation';
 import { ExitSurveyModal } from './components/ExitSurveyModal';
+import { useEnterpriseTrial } from './hooks/useEnterpriseTrial';
+import { TrialExpiryCoDesignModal } from './components/TrialExpiryCoDesignModal';
+import { codeIntegrityGuardian } from './utils/codeIntegrityGuardian';
 
 export const App: React.FC = () => {
   // Authentication State (Pre-configured demo or authenticated hospital specialist)
@@ -64,7 +68,22 @@ export const App: React.FC = () => {
   const [escrowTier, setEscrowTier] = useState<string>('Tier 1: Departmental Workstation');
   const [escrowPrice, setEscrowPrice] = useState<number>(18500);
   const [isExitSurveyOpen, setIsExitSurveyOpen] = useState(false);
+  const [isErisaClockOpen, setIsErisaClockOpen] = useState(false);
   const prospectSession = useUrlProspectSession('healthcare_legal');
+
+  // 7-Day Reverse Enterprise Trial Engine & Code Guardian
+  const { daysRemaining, isExpired, isUnlockedPerpetual, requestExtension } = useEnterpriseTrial();
+  const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
+
+  useEffect(() => {
+    codeIntegrityGuardian.initialize();
+  }, []);
+
+  useEffect(() => {
+    if (isExpired) {
+      setIsTrialModalOpen(true);
+    }
+  }, [isExpired]);
 
   // 1. Exit-Intent Mouseleave Trigger
   useEffect(() => {
@@ -170,9 +189,13 @@ export const App: React.FC = () => {
         onOpenFleetHub={() => setIsFleetHubOpen(true)}
         onOpenPromptPay={() => setIsPromptPayOpen(true)}
         onOpenIngestion={() => setIsIngestionOpen(true)}
+        onOpenErisaClock={() => setIsErisaClockOpen(true)}
         authUser={authUser}
         onLogout={handleLogout}
         onOpenExitSurvey={() => setIsExitSurveyOpen(true)}
+        trialDaysRemaining={daysRemaining}
+        isUnlockedPerpetual={isUnlockedPerpetual}
+        onOpenTrialModal={() => setIsTrialModalOpen(true)}
       />
 
       {/* Main Workspace Body */}
@@ -294,6 +317,22 @@ export const App: React.FC = () => {
         onClose={() => setIsExitSurveyOpen(false)}
         prospectSession={prospectSession}
         appName="ClaimGuard AI Legal Defense OS"
+      />
+
+      {/* ⏳ 7-Day Product-Led Reverse Trial & Co-Design Modal */}
+      <TrialExpiryCoDesignModal
+        isOpen={isTrialModalOpen}
+        onClose={() => setIsTrialModalOpen(false)}
+        daysRemaining={daysRemaining}
+        isExpired={isExpired}
+        onRequestExtension={requestExtension}
+        onOpenLicensingModal={() => setIsPricingGapOpen(true)}
+      />
+
+      {/* ⚖️ Statutory ERISA § 502(a)(1)(B) 18% Penalty Clock & 15% Escrow Split */}
+      <ErisaPenaltyInterestClockModal
+        isOpen={isErisaClockOpen}
+        onClose={() => setIsErisaClockOpen(false)}
       />
 
       {/* Sovereign Footer */}

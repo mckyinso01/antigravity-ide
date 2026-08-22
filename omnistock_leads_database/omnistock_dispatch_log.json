@@ -713,5 +713,205 @@
     "messageId": "<7bd14c1a-fd97-e54e-cf5b-0ede7093c84a@gmail.com>",
     "timestamp": "2026-08-22T06:16:49.615Z",
     "status": "DELIVERED"
+  },
+  {
+    "id": 71,
+    "company": "AllHome Philippines",
+    "email": "info@allhome.com.ph",
+    "sector": "Hardware & Appliance",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for AllHome Philippines",
+    "messageId": "<3b16086b-bcff-1ba0-ac4a-9c78a19dcb84@gmail.com>",
+    "timestamp": "2026-08-22T06:36:14.422Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 72,
+    "company": "MR. D.I.Y. Philippines",
+    "email": "customercare.ph@mrdiy.com",
+    "sector": "Hardware & Appliance",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for MR. D.I.Y. Philippines",
+    "messageId": "<b1feb774-d13e-1b8a-557f-2c373615ae24@gmail.com>",
+    "timestamp": "2026-08-22T06:36:57.647Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 73,
+    "company": "Abenson Appliance",
+    "email": "customerservice@abenson.com",
+    "sector": "Hardware & Appliance",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Abenson Appliance",
+    "messageId": "<d2b35128-282d-6a9a-706b-8811b038bfaa@gmail.com>",
+    "timestamp": "2026-08-22T06:37:54.410Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 74,
+    "company": "SM Appliance Center",
+    "email": "customercare@smappliance.com",
+    "sector": "Hardware & Appliance",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for SM Appliance Center",
+    "messageId": "<eee6b1fb-8949-2b24-2751-64edf99aaf05@gmail.com>",
+    "timestamp": "2026-08-22T06:38:40.536Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 75,
+    "company": "Robinsons Appliances",
+    "email": "customer.care@robinsonsappliances.com.ph",
+    "sector": "Hardware & Appliance",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Robinsons Appliances",
+    "messageId": "<77c61776-1a93-f6ff-a767-d8c00ed8f9f9@gmail.com>",
+    "timestamp": "2026-08-22T06:39:24.141Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 76,
+    "company": "Anson's Appliance",
+    "email": "customerservice@ansons.ph",
+    "sector": "Hardware & Appliance",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Anson's Appliance",
+    "messageId": "<37845d48-336e-92bc-a984-36c7d2722456@gmail.com>",
+    "timestamp": "2026-08-22T07:13:32.836Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 77,
+    "company": "Automatic Centre",
+    "email": "customercare@automatic-centre.com",
+    "sector": "Hardware & Appliance",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Automatic Centre",
+    "messageId": "<19848ed2-6460-4151-5d25-1b2d52106275@gmail.com>",
+    "timestamp": "2026-08-22T07:14:26.799Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 78,
+    "company": "Western Appliances",
+    "email": "customercare@western.com.ph",
+    "sector": "Hardware & Appliance",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Western Appliances",
+    "messageId": "<57204dce-ed57-39f6-59ee-1af1b2764ae7@gmail.com>",
+    "timestamp": "2026-08-22T07:15:09.612Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 79,
+    "company": "Savers Depot & Appliance",
+    "email": "customerservice@abenson.com",
+    "sector": "Hardware & Appliance",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Savers Depot & Appliance",
+    "messageId": "<b1a91e28-2ca9-eb39-beac-120b3bc7ed82@gmail.com>",
+    "timestamp": "2026-08-22T07:15:53.947Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 80,
+    "company": "Imperial Appliance Plaza",
+    "email": "info@imperialappliance.com",
+    "sector": "Hardware & Appliance",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Imperial Appliance Plaza",
+    "messageId": "<05710e33-89b4-def7-5e36-c0cb8816a888@gmail.com>",
+    "timestamp": "2026-08-22T07:16:38.427Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 81,
+    "company": "Octagon Computer Superstore",
+    "email": "support@octagon.com.ph",
+    "sector": "Hardware & Appliance",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Octagon Computer Superstore",
+    "messageId": "<8076c359-5dba-6992-aa6e-af95ae46e4ab@gmail.com>",
+    "timestamp": "2026-08-22T07:36:13.575Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 82,
+    "company": "PC Express",
+    "email": "sales@pcx.com.ph",
+    "sector": "Hardware & Appliance",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for PC Express",
+    "messageId": "<9439f649-421e-e35a-8620-8a68e7697861@gmail.com>",
+    "timestamp": "2026-08-22T07:37:01.881Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 83,
+    "company": "Silicon Valley Computer",
+    "email": "support@siliconvalley.com.ph",
+    "sector": "Hardware & Appliance",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Silicon Valley Computer",
+    "messageId": "<f1c6a7da-ba1f-55e0-f2f7-b580fc252b9e@gmail.com>",
+    "timestamp": "2026-08-22T07:37:39.048Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 84,
+    "company": "Complink Computer",
+    "email": "sales@complink.com.ph",
+    "sector": "Hardware & Appliance",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Complink Computer",
+    "messageId": "<2ca4a514-61c9-5d2c-4bf9-f3ce72caa99a@gmail.com>",
+    "timestamp": "2026-08-22T07:38:21.512Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 85,
+    "company": "VillMan Computers",
+    "email": "sales@villman.com",
+    "sector": "Hardware & Appliance",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for VillMan Computers",
+    "messageId": "<9acce810-2dc4-c243-e2b7-620e53259ad7@gmail.com>",
+    "timestamp": "2026-08-22T07:39:11.024Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 86,
+    "company": "Jollibee Foods Corporation",
+    "email": "feedback@jollibee.com.ph",
+    "sector": "Food & Beverage",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Jollibee Foods Corporation",
+    "messageId": "<bdc54838-09eb-1797-4325-2344dbb0349c@gmail.com>",
+    "timestamp": "2026-08-22T08:13:32.909Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 87,
+    "company": "Chowking (JFC Group)",
+    "email": "feedback@chowking.com",
+    "sector": "Food & Beverage",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Chowking (JFC Group)",
+    "messageId": "<2c3120a9-25e1-5027-a701-e7b01f84db06@gmail.com>",
+    "timestamp": "2026-08-22T08:14:28.118Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 88,
+    "company": "Greenwich Pizza (JFC Group)",
+    "email": "feedback@greenwich.com.ph",
+    "sector": "Food & Beverage",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Greenwich Pizza (JFC Group)",
+    "messageId": "<6d0f2aff-fc24-d1f2-887d-62858be9e96c@gmail.com>",
+    "timestamp": "2026-08-22T08:15:08.612Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 89,
+    "company": "Red Ribbon Bakeshop (JFC)",
+    "email": "feedback@redribbonbakeshop.com.ph",
+    "sector": "Food & Beverage",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Red Ribbon Bakeshop (JFC)",
+    "messageId": "<ebb8e201-c651-2c14-0754-aba470839abf@gmail.com>",
+    "timestamp": "2026-08-22T08:16:06.139Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 90,
+    "company": "Mang Inasal (JFC Group)",
+    "email": "feedback@manginasal.com",
+    "sector": "Food & Beverage",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Mang Inasal (JFC Group)",
+    "messageId": "<72898e9e-a91c-5d19-b037-4ed486a49321@gmail.com>",
+    "timestamp": "2026-08-22T08:16:54.039Z",
+    "status": "DELIVERED"
   }
 ]

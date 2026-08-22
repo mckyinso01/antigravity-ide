@@ -25,5 +25,59 @@
     "followUpSentAt": "2026-08-22T04:37:36.927Z",
     "followUpMessageId": "<7ebf3c7c-3e5e-8714-595b-cffb1093aaed@gmail.com>",
     "status": "DELIVERED"
+  },
+  {
+    "id": 4,
+    "company": "SM Markets / SM Supermarket",
+    "email": "customercare@smmarkets.ph",
+    "originalSentAt": "2026-08-17T16:28:31.381Z",
+    "followUpSentAt": "2026-08-22T07:36:12.356Z",
+    "followUpMessageId": "<16b3dfb9-2120-2a4e-9996-385871cbc95b@gmail.com>",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 5,
+    "company": "Metro Retail Stores Group",
+    "email": "customer.care@metroretail.com.ph",
+    "originalSentAt": "2026-08-17T16:28:38.177Z",
+    "followUpSentAt": "2026-08-22T07:36:54.758Z",
+    "followUpMessageId": "<24433901-83df-9d52-16e4-32c31d8a15d0@gmail.com>",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 6,
+    "company": "AllDay Supermarket",
+    "email": "info@allday.com.ph",
+    "originalSentAt": "2026-08-17T16:28:45.214Z",
+    "followUpSentAt": "2026-08-22T07:37:36.860Z",
+    "followUpMessageId": "<38ce11d6-40ef-3e0d-0c66-66948996df42@gmail.com>",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 7,
+    "company": "Landers Superstore",
+    "email": "help@landers.ph",
+    "originalSentAt": "2026-08-17T16:28:51.794Z",
+    "followUpSentAt": "2026-08-22T08:13:31.591Z",
+    "followUpMessageId": "<e5716761-f0af-09fd-9760-12168ba397d6@gmail.com>",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 9,
+    "company": "WalterMart Supermarket",
+    "email": "waltermartinfo@waltermart.com.ph",
+    "originalSentAt": "2026-08-17T16:29:05.508Z",
+    "followUpSentAt": "2026-08-22T08:14:14.945Z",
+    "followUpMessageId": "<7c152f63-966f-d75a-20d3-d11c6178050b@gmail.com>",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 10,
+    "company": "Fisher Supermarket",
+    "email": "customercare@fishermall.com.ph",
+    "originalSentAt": "2026-08-17T16:29:12.586Z",
+    "followUpSentAt": "2026-08-22T08:14:57.264Z",
+    "followUpMessageId": "<bd5a90f4-42a9-1785-460e-6c2d2a142e69@gmail.com>",
+    "status": "DELIVERED"
   }
 ]

@@ -1,18 +1,46 @@
 import React from 'react';
 import { Send, Clock, Inbox, ShieldCheck, TrendingUp } from 'lucide-react';
-import { LeadRecord, InboundReply, CloudEngineTelemetry } from '../types';
+import { LeadRecord, InboundReply, CloudEngineTelemetry, CampaignVertical } from '../types';
 
 interface Props {
   leads: LeadRecord[];
   inboundReplies: InboundReply[];
   telemetry: CloudEngineTelemetry;
+  selectedVertical: CampaignVertical;
 }
 
-export const MetricCards: React.FC<Props> = ({ leads, inboundReplies, telemetry }) => {
-  const totalDispatched = leads.length;
-  const followedUpCount = leads.filter((l) => l.status === 'followed_up').length;
+export const MetricCards: React.FC<Props> = ({
+  leads,
+  inboundReplies,
+  telemetry,
+  selectedVertical,
+}) => {
+  const activeLeads =
+    selectedVertical === 'all'
+      ? leads
+      : leads.filter((l) => l.vertical === selectedVertical);
+
+  const totalDispatched = activeLeads.length;
+  const followedUpCount = activeLeads.filter((l) => l.status === 'followed_up').length;
   const replyCount = inboundReplies.length;
   const pendingReviewCount = inboundReplies.filter((r) => r.status === 'pending_review').length;
+
+  const getVerticalLabel = () => {
+    switch (selectedVertical) {
+      case 'clinical':
+        return 'Clinical ICU EHR';
+      case 'claimguard':
+        return 'ClaimGuard Claims Defense';
+      case 'sitesafe':
+        return 'SiteSafe Safety OS';
+      case 'omnistock':
+        return 'OmniStock Spatial WMS';
+      case 'saccade':
+        return 'Saccade Biometric CRO';
+      default:
+        return 'All 5 Flagships';
+    }
+  };
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -21,7 +49,7 @@ export const MetricCards: React.FC<Props> = ({ leads, inboundReplies, telemetry 
         <div className="absolute top-0 right-0 w-28 h-28 bg-cyan-500/10 rounded-full blur-2xl -mr-8 -mt-8 pointer-events-none" />
         <div className="flex items-center justify-between mb-3">
           <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">
-            Active Dispatched
+            Active Targets ({getVerticalLabel()})
           </span>
           <div className="w-8 h-8 rounded-xl bg-cyan-950/80 border border-cyan-500/30 flex items-center justify-center text-accent-cyan">
             <Send className="w-4 h-4" />
@@ -32,11 +60,11 @@ export const MetricCards: React.FC<Props> = ({ leads, inboundReplies, telemetry 
             {totalDispatched}
           </span>
           <span className="text-xs font-mono text-emerald-400 flex items-center gap-0.5">
-            <TrendingUp className="w-3 h-3" /> 100% Sent
+            <TrendingUp className="w-3 h-3" /> 100% Verified
           </span>
         </div>
         <p className="text-[11px] font-mono text-slate-500 mt-2">
-          Verified US/UK Hospital Leadership targets
+          Decision makers with custom demo sandbox links
         </p>
       </div>
 
@@ -56,11 +84,11 @@ export const MetricCards: React.FC<Props> = ({ leads, inboundReplies, telemetry 
             {followedUpCount}
           </span>
           <span className="text-xs font-mono text-indigo-400">
-            / {totalDispatched} Eligible
+            / {totalDispatched} Targets
           </span>
         </div>
         <p className="text-[11px] font-mono text-slate-500 mt-2">
-          Pacing: 25s jitter • Rate safe warmup
+          Pacing: 35–55s jitter • Spacemail rate-safe
         </p>
       </div>
 
@@ -112,7 +140,7 @@ export const MetricCards: React.FC<Props> = ({ leads, inboundReplies, telemetry 
           </span>
         </div>
         <p className="text-[11px] font-mono text-slate-500 mt-2">
-          Runs 24/7 in Google Cloud (PC-independent)
+          Google Cloud Run (24/7 Multi-Vertical Daemon)
         </p>
       </div>
     </div>

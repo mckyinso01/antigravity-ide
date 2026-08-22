@@ -8,15 +8,18 @@ import {
   Terminal,
   RotateCcw,
   Lock,
-  Sparkles
+  Sparkles,
+  Bot
 } from 'lucide-react';
 import { HelpTooltip } from './HelpTooltip';
+import { TrialStatusHeaderBadge } from './TrialStatusHeaderBadge';
 
 interface NavigationHeaderProps {
   onOpenScanner: () => void;
   onOpenSpecs: () => void;
   onOpenCleanSweep: () => void;
   onOpenMigration?: () => void;
+  onOpenNegotiator?: () => void;
   onOpenSearch: (query: string) => void;
   activeWarehouseName: string;
   onChangeWarehouse: (name: string) => void;
@@ -25,6 +28,9 @@ interface NavigationHeaderProps {
   activeStaffName?: string;
   currentTimeoutSeconds?: number;
   onOpenExitSurvey?: () => void;
+  trialDaysRemaining?: number;
+  isUnlockedPerpetual?: boolean;
+  onOpenTrialModal?: () => void;
 }
 
 export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
@@ -32,6 +38,7 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
   onOpenSpecs,
   onOpenCleanSweep,
   onOpenMigration,
+  onOpenNegotiator,
   onOpenSearch,
   activeWarehouseName,
   onChangeWarehouse,
@@ -39,7 +46,10 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
   onOpenTimeoutSettings,
   activeStaffName = 'Dave Miller',
   currentTimeoutSeconds = 120,
-  onOpenExitSurvey
+  onOpenExitSurvey,
+  trialDaysRemaining = 7,
+  isUnlockedPerpetual = false,
+  onOpenTrialModal
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [time, setTime] = useState(new Date().toLocaleTimeString());
@@ -138,6 +148,18 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
           </div>
         </HelpTooltip>
 
+        {/* Autonomous Supplier Restock AI Trigger */}
+        {onOpenNegotiator && (
+          <button
+            onClick={onOpenNegotiator}
+            className="flex items-center gap-1.5 bg-gradient-to-r from-emerald-500 to-teal-600 hover:opacity-90 text-[#070B14] font-bold text-xs px-3 py-1.5 rounded-lg shadow-md transition-all cursor-pointer shrink-0 font-mono"
+            title="Launch Autonomous Supplier Spot-Quote AI & AR Forklift Navigation"
+          >
+            <Bot size={15} className="stroke-[2.5]" />
+            <span className="hidden sm:inline">Spot Restock AI</span>
+          </button>
+        )}
+
         {/* Quick Camera Barcode Scanner Trigger */}
         <HelpTooltip
           title="BYOD Camera & RFID Scanner"
@@ -193,6 +215,15 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
             )}
           </div>
         </HelpTooltip>
+
+        {/* 7-Day Enterprise Sovereign Trial Badge */}
+        {onOpenTrialModal && (
+          <TrialStatusHeaderBadge
+            daysRemaining={trialDaysRemaining}
+            isUnlockedPerpetual={isUnlockedPerpetual}
+            onOpenCoDesignModal={onOpenTrialModal}
+          />
+        )}
 
         {/* 1-Click Universal WMS Migration */}
         {onOpenMigration && (

@@ -4,6 +4,7 @@ import {
   Sparkles, Globe2, Cpu
 } from 'lucide-react';
 import { PerSessionSentinelEngine } from '../../engine/perSessionSentinelEngine';
+import { TrialStatusHeaderBadge } from '../TrialStatusHeaderBadge';
 
 export interface AuthUser {
   name: string;
@@ -28,9 +29,13 @@ interface TopbarProps {
   onOpenFleetHub: () => void;
   onOpenPromptPay: () => void;
   onOpenIngestion?: () => void;
+  onOpenErisaClock?: () => void;
   authUser?: AuthUser | null;
   onLogout?: () => void;
   onOpenExitSurvey?: () => void;
+  trialDaysRemaining?: number;
+  isUnlockedPerpetual?: boolean;
+  onOpenTrialModal?: () => void;
 }
 
 export const Topbar: React.FC<TopbarProps> = ({
@@ -49,9 +54,13 @@ export const Topbar: React.FC<TopbarProps> = ({
   onOpenFleetHub,
   onOpenPromptPay,
   onOpenIngestion,
+  onOpenErisaClock,
   authUser,
   onLogout,
-  onOpenExitSurvey
+  onOpenExitSurvey,
+  trialDaysRemaining = 7,
+  isUnlockedPerpetual = false,
+  onOpenTrialModal
 }) => {
   const [showSettings, setShowSettings] = useState(false);
   const settingsRef = useRef<HTMLDivElement | null>(null);
@@ -290,6 +299,26 @@ export const Topbar: React.FC<TopbarProps> = ({
         </button>
 
         {/* 1-Click Claims Migration Wizard */}
+        {onOpenErisaClock && (
+          <button
+            onClick={onOpenErisaClock}
+            style={{
+              padding: '7px 11px',
+              borderRadius: 'var(--radius-sm)',
+              background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(239, 68, 68, 0.25))',
+              border: '1px solid rgba(245, 158, 11, 0.6)',
+              color: '#F59E0B',
+              fontSize: '12px',
+              fontWeight: 800,
+              cursor: 'pointer',
+              boxShadow: '0 0 10px rgba(245, 158, 11, 0.2)'
+            }}
+            title="Launch Statutory ERISA § 502(a)(1)(B) 18% p.a. Penalty Clock & 15% Escrow Split"
+          >
+            ⚖️ ERISA Penalty Clock
+          </button>
+        )}
+
         {onOpenIngestion && (
           <button
             onClick={onOpenIngestion}
@@ -447,6 +476,15 @@ export const Topbar: React.FC<TopbarProps> = ({
             </div>
           )}
         </div>
+
+        {/* 7-Day Reverse Enterprise Trial Badge */}
+        {onOpenTrialModal && (
+          <TrialStatusHeaderBadge
+            daysRemaining={trialDaysRemaining}
+            isUnlockedPerpetual={isUnlockedPerpetual}
+            onOpenCoDesignModal={onOpenTrialModal}
+          />
+        )}
 
         {/* Global Fleet Telemetry Sentinel */}
         <button

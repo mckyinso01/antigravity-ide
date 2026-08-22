@@ -1,12 +1,13 @@
-export type CampaignVertical = 'clinical' | 'sitesafe' | 'omnistock' | 'saccade' | 'all';
+export type CampaignVertical = 'clinical' | 'claimguard' | 'sitesafe' | 'omnistock' | 'saccade' | 'all';
 
 export type LeadStatus = 'delivered' | 'followed_up' | 'replied' | 'meeting_booked' | 'bounced_suppressed';
 
-export type ReplyIntent = 'ui_ux_mod' | 'custom_ehr' | 'pricing_licensing' | 'demo_request' | 'general';
+export type ReplyIntent = 'ui_ux_mod' | 'custom_ehr' | 'pricing_licensing' | 'demo_request' | 'claims_defense' | 'osha_safety' | 'general';
 
 export interface LeadRecord {
   id: number;
-  hospitalName: string;
+  companyName: string;
+  hospitalName?: string;
   contactName: string;
   title: string;
   email: string;
@@ -18,6 +19,7 @@ export interface LeadRecord {
   openCount: number;
   lastEngagedAgo: string;
   messageId: string;
+  painPoint?: string;
 }
 
 export interface InboundReply {

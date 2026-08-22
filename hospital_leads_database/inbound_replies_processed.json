@@ -1,1 +1,603 @@
-[]
+[
+  {
+    "messageId": "UID_1",
+    "from": "Spacemail Team <hello@spacemail.com>",
+    "subject": "Get started with Spacemail",
+    "date": "Wed, 19 Aug 2026 11:22:49 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": "<4360ac008dec3477d467a781d06452799ae76536-20075970-110430883@google.com>",
+    "from": "The Google Cloud Team <cloud-noreply@google.com>",
+    "subject": "Welcome to Cloud Identity for linkable.it.com",
+    "date": "Wed, 19 Aug 2026 04:34:56 -0700",
+    "type": "IGNORED_EXCLUSION"
+  },
+  {
+    "messageId": "<2021786832.2014983.1787140386683@marketo-platform--email-sender-prod-trigger-cluster-597f8699rhf>",
+    "from": "Google for Startups <googlecloud@google.com>",
+    "subject": "Google for Startups Cloud Program: First step for application completed",
+    "date": "Wed, 19 Aug 2026 06:53:06 -0500 (CDT)",
+    "type": "IGNORED_EXCLUSION"
+  },
+  {
+    "messageId": "<UgeavWdKTWQJ6aEGzJRppQ@notifications.google.com>",
+    "from": "Google Notifications <notify-noreply@google.com>",
+    "subject": "Google Cloud Organization is now available for your domain",
+    "date": "Wed, 19 Aug 2026 05:43:41 -0700",
+    "type": "IGNORED_EXCLUSION"
+  },
+  {
+    "messageId": "<d647d9c4ce9345df414782ec1e7cb52c9e773269-20148090-110901401@google.com>",
+    "from": "Google Payments <payments-noreply@google.com>",
+    "subject": "Google Payments: Your one-time code is being sent",
+    "date": "Wed, 19 Aug 2026 05:49:38 -0700",
+    "type": "IGNORED_EXCLUSION"
+  },
+  {
+    "messageId": "<1ER0dBwfN6PFSgfKUM5X8g@notifications.google.com>",
+    "from": "Google <no-reply@accounts.google.com>",
+    "subject": "Security alert",
+    "date": "Thu, 20 Aug 2026 01:22:25 GMT",
+    "type": "IGNORED_EXCLUSION"
+  },
+  {
+    "messageId": "<Hh4NJSArf4ww81zRXex5Jw@notifications.google.com>",
+    "from": "Google <no-reply@accounts.google.com>",
+    "subject": "2-Step Verification turned on",
+    "date": "Thu, 20 Aug 2026 01:22:43 GMT",
+    "type": "IGNORED_EXCLUSION"
+  },
+  {
+    "messageId": "<c8B0RaYxwIE2ziD9rgRXlw@notifications.google.com>",
+    "from": "Google <no-reply@accounts.google.com>",
+    "subject": "Security alert",
+    "date": "Thu, 20 Aug 2026 01:23:06 GMT",
+    "type": "IGNORED_EXCLUSION"
+  },
+  {
+    "messageId": "<mIg38wJtJSx1UyioHCenYA@notifications.google.com>",
+    "from": "Google  <families-noreply@google.com>",
+    "subject": "Join mharc's family group?",
+    "date": "Thu, 20 Aug 2026 03:51:59 -0700",
+    "type": "IGNORED_EXCLUSION"
+  },
+  {
+    "messageId": "<010001a01f0f3f38-2cdd9830-42f8-4469-876d-d7bde8f9dd7b-000000@email.amazonses.com>",
+    "from": "Zeno Rocha <zeno.rocha@resend.com>",
+    "subject": "Welcome to Resend!",
+    "date": "Thu, 20 Aug 2026 12:04:48 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": "<ae5b64a7-1f10-90d8-5194-6ba4b3b9a4c0@linkable.it.com>",
+    "from": "Alexis Vance • LinkableAI Enterprise Specialist <mharcgatan@linkable.it.com>",
+    "subject": "🚨 STAT High-Intent Prospect: Banner University Medical Center (Dr. Robert Miller) - PRICING_INQUIRY",
+    "date": "Thu, 20 Aug 2026 12:26:14 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <5c2f75da-918d-1233-ff0a-91dfae7a96df@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Thu, 20 Aug 2026 12:26:35 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <9dc0e9b8-30fc-e54e-568a-c3f828e33f43@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Thu, 20 Aug 2026 12:27:15 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <d62c1434-f1c6-0d06-8bc4-9a7485545a3d@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Thu, 20 Aug 2026 12:30:25 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <6f6aa908-59ff-f32a-7c59-455c970d1093@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Thu, 20 Aug 2026 12:31:03 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <a423cc25-f3d4-9473-d4e3-23b27be8a53a@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Thu, 20 Aug 2026 12:31:47 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": "<44c410bb-7b3e-954d-f8b9-c8913a5eeb4a@linkable.it.com>",
+    "from": "LinkableAI Autonomous Pipeline <mharcgatan@linkable.it.com>",
+    "subject": "📊 [5-Hour Pipeline Report] 41 Dispatched • 70 Remaining • 0 Replies",
+    "date": "Thu, 20 Aug 2026 12:32:23 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <e76e4094-7202-bf76-ee9e-bad8db9859a6@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Thu, 20 Aug 2026 12:32:36 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <134e81e0-8fa1-ec58-b5e4-112d98ac074e@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Thu, 20 Aug 2026 13:30:27 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <bb70376f-533d-4c0a-8c3e-5a4065b726f6@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Thu, 20 Aug 2026 13:31:29 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <618201db-c95f-3543-7fc1-716df7e438ae@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Thu, 20 Aug 2026 13:31:49 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <7a9209d5-1b87-2b9d-9f98-6b782253c454@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Thu, 20 Aug 2026 14:30:30 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": "<8701d7de-f96f-442c-8f25-7ab24356218f@T-EXCHMB-02.crh.org>",
+    "from": "<postmaster@CRH.org>",
+    "subject": "Undeliverable: Quick follow-up: What custom modules or workflow modifications would Columbus Regional Health need?",
+    "date": "Thu, 20 Aug 2026 10:31:53 -0400",
+    "hospital": "Enterprise Prospect Organization",
+    "category": "BOUNCE_AUTO_REPLY",
+    "processedAt": "2026-08-22T06:35:16.285Z",
+    "type": "VERIFIED_PROSPECT_REPLY",
+    "salesResult": {
+      "status": "SUCCESS",
+      "messageId": "<8b9a90e3-93fb-0eb1-f55e-ae8398b09fcf@linkable.it.com>",
+      "intent": "BOUNCE_AUTO_REPLY",
+      "isEscalated": true,
+      "replyContent": "<p>To the Chief Information Officer & Executive IT Leadership Team,</p>\n\n<p>Following an automated routing bounce for Steve Baker's inbox, I am reaching out"
+    }
+  },
+  {
+    "messageId": " <70e12312-660d-56b0-60b0-19285d26a86b@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Thu, 20 Aug 2026 14:32:10 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": "<cb86c9fa-6d9b-7e2f-095d-74b67c64e79c@linkable.it.com>",
+    "from": "Alexis Vance • LinkableAI Enterprise Specialist <mharcgatan@linkable.it.com>",
+    "subject": "🚨 STAT High-Intent Prospect: Enterprise Prospect Organization (Chief Information Officer / Operations Director) - GENERAL_INQUIRY",
+    "date": "Thu, 20 Aug 2026 14:40:29 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <85800c3b-7372-51cb-dcf4-d7df4baaeb9c@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Thu, 20 Aug 2026 14:40:40 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <36986c67-34b4-5ddc-5356-f1ec811bb9c3@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Thu, 20 Aug 2026 14:40:48 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": "<9c1c6576-c153-4308-9589-78fa67f06d53@CRHMB01.crh.org>",
+    "from": "<postmaster@CRH.org>",
+    "subject": "Undeliverable: Re: Undeliverable: Quick follow-up: What custom modules or workflow modifications would Columbus Regional Health need?",
+    "date": "Thu, 20 Aug 2026 10:41:22 -0400",
+    "hospital": "Enterprise Prospect Organization",
+    "category": "BOUNCE_AUTO_REPLY",
+    "processedAt": "2026-08-22T06:37:29.471Z",
+    "type": "VERIFIED_PROSPECT_REPLY",
+    "salesResult": {
+      "status": "SUCCESS",
+      "messageId": "<63dd8607-bdf1-6734-58e4-fe26652aed7c@linkable.it.com>",
+      "intent": "BOUNCE_AUTO_REPLY",
+      "isEscalated": true,
+      "replyContent": "<p>To the Executive IT Leadership Team at Columbus Regional Health,</p>\n\n<p>While resolving direct IT routing to your team, I wanted to reach out directly regarding CR"
+    }
+  },
+  {
+    "messageId": "<bf2f68af-f2e5-26e9-3a15-fddd39eb1f61@linkable.it.com>",
+    "from": "Alexis Vance • LinkableAI Enterprise Specialist <mharcgatan@linkable.it.com>",
+    "subject": "🚨 STAT High-Intent Prospect: Enterprise Prospect Organization (Chief Information Officer / Operations Director) - BOUNCE_AUTO_REPLY",
+    "date": "Thu, 20 Aug 2026 14:50:26 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <bc0f6626-fac6-e6f8-0680-beeafeded6c5@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Thu, 20 Aug 2026 14:50:31 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <38025dcc-ae15-c2be-d94b-d163ba9eb3ee@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Thu, 20 Aug 2026 14:50:31 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": "<5e91df3a-1281-4d31-ab5c-dcf988224393@T-EXCHMB-01.crh.org>",
+    "from": "<postmaster@CRH.org>",
+    "subject": "Undeliverable: Re: Undeliverable: Re: Undeliverable: Quick follow-up: What custom modules or workflow modifications would Columbus Regional Health need?",
+    "date": "Thu, 20 Aug 2026 10:51:08 -0400",
+    "hospital": "Enterprise Prospect Organization",
+    "category": "PROSPECT_INQUIRY",
+    "processedAt": "2026-08-22T06:37:48.299Z",
+    "type": "VERIFIED_PROSPECT_REPLY",
+    "salesResult": {
+      "status": "FAILED",
+      "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes"
+    }
+  },
+  {
+    "messageId": "<ae7ab377-bc82-da62-0876-421fd085e70e@linkable.it.com>",
+    "from": "Alexis Vance • LinkableAI Enterprise Specialist <mharcgatan@linkable.it.com>",
+    "subject": "🚨 STAT High-Intent Prospect: Enterprise Prospect Organization (Chief Information Officer / Operations Director) - BOUNCE_AUTO_REPLY",
+    "date": "Thu, 20 Aug 2026 15:00:26 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <8625bb27-8b8d-1a90-60bc-9ec2d9f2eb1a@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Thu, 20 Aug 2026 15:00:36 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <a0c2a1c6-76d4-d93c-f7e7-7a749b53ce72@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Thu, 20 Aug 2026 15:00:42 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": "<bc9f06fd-6a74-4b42-971b-fd22fc2d4115@T-EXCHMB-02.crh.org>",
+    "from": "<postmaster@CRH.org>",
+    "subject": "Undeliverable: Re: Undeliverable: Re: Undeliverable: Re: Undeliverable: Quick follow-up: What custom modules or workflow modifications would Columbus Regional Health need?",
+    "date": "Thu, 20 Aug 2026 11:01:00 -0400",
+    "hospital": "Enterprise Prospect Organization",
+    "category": "PROSPECT_INQUIRY",
+    "processedAt": "2026-08-22T06:38:08.983Z",
+    "type": "VERIFIED_PROSPECT_REPLY",
+    "salesResult": {
+      "status": "FAILED",
+      "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes"
+    }
+  },
+  {
+    "messageId": "<87c9c6e3-3436-ba66-4207-42283054b76a@linkable.it.com>",
+    "from": "Alexis Vance • LinkableAI Enterprise Specialist <mharcgatan@linkable.it.com>",
+    "subject": "🚨 STAT High-Intent Prospect: Enterprise Prospect Organization (Chief Information Officer / Operations Director) - BOUNCE_AUTO_REPLY",
+    "date": "Thu, 20 Aug 2026 15:10:56 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <f826e398-6e3b-d46d-2b26-b9f16d4dd0c2@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Thu, 20 Aug 2026 15:31:03 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <2438e6ff-1614-e69a-9e02-8917b85774c5@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Thu, 20 Aug 2026 15:42:27 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <855a3765-40d4-525e-67bd-60232ca4f2b8@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Thu, 20 Aug 2026 16:30:21 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <58991bd6-e50b-a780-548b-8e017ce368e9@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Thu, 20 Aug 2026 16:43:10 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": "<7006cace-a8a4-ddb3-c7d5-336a54a2e09b@linkable.it.com>",
+    "from": "LinkableAI Autonomous Pipeline <mharcgatan@linkable.it.com>",
+    "subject": "📊 [5-Hour Pipeline Report] 41 Dispatched • 70 Remaining • 0 Replies",
+    "date": "Thu, 20 Aug 2026 17:30:18 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <a5d7ccac-46a8-55a8-dca3-b686ad3d3389@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Thu, 20 Aug 2026 17:30:23 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <293b332a-a050-732d-7d55-91dfbdfee874@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Thu, 20 Aug 2026 17:38:30 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": "<6fa157c0-b360-3c1b-3fcb-8a76fbdc5159@linkable.it.com>",
+    "from": "LinkableAI Executive Sentinel <mharcgatan@linkable.it.com>",
+    "subject": "📊 [Hourly Report] LinkableAI Ecosystem Status • All 6 Endpoints 100% Operational (01:38 AM PHT)",
+    "date": "Thu, 20 Aug 2026 17:38:50 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <005807a2-a04c-a7c3-aeee-adfcb6732d20@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Thu, 20 Aug 2026 17:38:54 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <ffaa0cba-cb3d-f0f0-f074-84605ea97377@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Thu, 20 Aug 2026 17:57:42 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <2636075c-93ea-268d-6a28-cbb886681107@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Sat, 22 Aug 2026 01:35:18 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": "<03c372a5-b6eb-baa4-9e60-c1b0baebfb7b@linkable.it.com>",
+    "from": "LinkableAI Executive Sentinel <mharcgatan@linkable.it.com>",
+    "subject": "📊 [Hourly Report] LinkableAI Ecosystem Status • All 6 Endpoints 100% Operational (09:35 AM PHT)",
+    "date": "Sat, 22 Aug 2026 01:35:40 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <77b301fe-6fc9-01fb-a1f9-f2b094184dcf@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Sat, 22 Aug 2026 01:35:46 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": "<e8b585a7-1cd6-c9b2-aea1-6726a6d7eebe@linkable.it.com>",
+    "from": "LinkableAI Autonomous Pipeline <mharcgatan@linkable.it.com>",
+    "subject": "📊 [5-Hour Pipeline Report] 41 Dispatched • 70 Remaining • 0 Replies",
+    "date": "Sat, 22 Aug 2026 01:36:06 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <6b5a86db-9197-1a70-c922-ffca4750a0d8@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Sat, 22 Aug 2026 01:36:20 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": "<1ddb99df-cf75-e8e3-6d44-11e95ca17c7d@linkable.it.com>",
+    "from": "LinkableAI Autonomous Pipeline <mharcgatan@linkable.it.com>",
+    "subject": "📊 [5-Hour Pipeline Report] 41 Dispatched • 70 Remaining • 0 Replies",
+    "date": "Sat, 22 Aug 2026 01:50:46 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <4a845016-ea6a-1e5e-33c8-d4279b4bb0cb@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Sat, 22 Aug 2026 01:50:54 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <d07ac0b5-34b7-fd81-6ebc-152bcaae9350@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Sat, 22 Aug 2026 01:56:35 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <553e3b06-cad8-0d33-2c19-1d48dee51eb1@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Sat, 22 Aug 2026 06:33:48 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <1f6bcf6a-d5ac-ba53-40fb-07a0a28d1950@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Sat, 22 Aug 2026 06:33:48 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": "<4c079467-963c-f707-75de-05fd926ac04a@linkable.it.com>",
+    "from": "Alexis Vance • LinkableAI Enterprise Specialist <mharcgatan@linkable.it.com>",
+    "subject": "🚨 STAT High-Intent Prospect: Enterprise Prospect Organization (Chief Information Officer / Operations Director) - BOUNCE_AUTO_REPLY",
+    "date": "Sat, 22 Aug 2026 06:33:42 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": "<1fcb6924-5307-edf9-f60a-4f5f284bb59f@linkable.it.com>",
+    "from": "Alexis Vance • LinkableAI Enterprise Specialist <mharcgatan@linkable.it.com>",
+    "subject": "🚨 STAT High-Intent Prospect: Enterprise Prospect Organization (Chief Information Officer / Operations Director) - BOUNCE_AUTO_REPLY",
+    "date": "Sat, 22 Aug 2026 06:34:03 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <f3046424-0459-614b-d20d-4b7449a5c8f5@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Sat, 22 Aug 2026 06:34:09 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <23c005da-3905-43ea-2b6d-761f0c27a675@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Sat, 22 Aug 2026 06:34:09 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": "<2102b9e4-f32f-4379-838a-9ae3b5153028@TCMB01.crh.org>",
+    "from": "<postmaster@CRH.org>",
+    "subject": "Undeliverable: Re: Undeliverable: Quick follow-up: What custom modules or workflow modifications would Columbus Regional Health need?",
+    "date": "Sat, 22 Aug 2026 02:34:10 -0400",
+    "hospital": "Enterprise Prospect Organization",
+    "category": "PROSPECT_INQUIRY",
+    "processedAt": "2026-08-22T06:44:42.671Z",
+    "type": "VERIFIED_PROSPECT_REPLY",
+    "salesResult": {
+      "status": "FAILED",
+      "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes"
+    }
+  },
+  {
+    "messageId": "<7fed8020-97f8-02f2-437c-3fddaaa93b6a@linkable.it.com>",
+    "from": "Alexis Vance • LinkableAI Enterprise Specialist <mharcgatan@linkable.it.com>",
+    "subject": "🚨 STAT High-Intent Prospect: Enterprise Prospect Organization (Chief Information Officer / Operations Director) - BOUNCE_AUTO_REPLY",
+    "date": "Sat, 22 Aug 2026 06:34:42 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <3e8a28d1-0b6f-c94a-47e4-6b379579602b@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Sat, 22 Aug 2026 06:34:49 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <99499e4b-9a4b-a1b0-ec71-4145c3ba0a70@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Sat, 22 Aug 2026 06:34:49 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": "<7b7b35ec-9ab6-bbb0-a845-b50caefacd3a@linkable.it.com>",
+    "from": "Alexis Vance • LinkableAI Enterprise Specialist <mharcgatan@linkable.it.com>",
+    "subject": "🚨 STAT High-Intent Prospect: Enterprise Prospect Organization (Chief Information Officer / Operations Director) - BOUNCE_AUTO_REPLY",
+    "date": "Sat, 22 Aug 2026 06:35:22 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <cf214b3f-d2b5-6609-e044-73a5007d5946@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Sat, 22 Aug 2026 06:35:30 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <3b1d02e3-587a-2a7f-6ffa-bc03ccc0d544@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Sat, 22 Aug 2026 06:35:30 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": "<89340356-7eda-441d-b47b-365d77f82ef1@T-EXCHMB-01.crh.org>",
+    "from": "<postmaster@CRH.org>",
+    "subject": "Undeliverable: Re: Undeliverable: Quick follow-up: What custom modules or workflow modifications would Columbus Regional Health need?",
+    "date": "Sat, 22 Aug 2026 02:35:43 -0400",
+    "hospital": "Enterprise Prospect Organization",
+    "category": "PROSPECT_INQUIRY",
+    "processedAt": "2026-08-22T06:44:48.126Z",
+    "type": "VERIFIED_PROSPECT_REPLY",
+    "salesResult": {
+      "status": "FAILED",
+      "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes"
+    }
+  },
+  {
+    "messageId": "<ef8f8581-1ab0-4391-becc-d837d755c735@CRHMB01.crh.org>",
+    "from": "<postmaster@CRH.org>",
+    "subject": "Undeliverable: Re: Undeliverable: Re: Undeliverable: Quick follow-up: What custom modules or workflow modifications would Columbus Regional Health need?",
+    "date": "Sat, 22 Aug 2026 02:36:54 -0400",
+    "hospital": "Enterprise Prospect Organization",
+    "category": "PROSPECT_INQUIRY",
+    "processedAt": "2026-08-22T06:45:00.829Z",
+    "type": "VERIFIED_PROSPECT_REPLY",
+    "salesResult": {
+      "status": "FAILED",
+      "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes"
+    }
+  },
+  {
+    "messageId": "<ba89996d-5df6-509a-f9ee-c4ef02d7594f@linkable.it.com>",
+    "from": "Alexis Vance • LinkableAI Enterprise Specialist <mharcgatan@linkable.it.com>",
+    "subject": "🚨 STAT High-Intent Prospect: Enterprise Prospect Organization (Chief Information Officer / Operations Director) - BOUNCE_AUTO_REPLY",
+    "date": "Sat, 22 Aug 2026 06:36:53 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <30c6c73a-b115-6097-edb9-39e955c5f6c9@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Sat, 22 Aug 2026 06:37:10 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": " <75cc1d9e-bbc5-2b8f-22cb-3865c2337824@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Sat, 22 Aug 2026 06:37:10 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  },
+  {
+    "messageId": "<3df68de2-af5f-4663-af7a-5997e7e2dfac@CRHMB01.crh.org>",
+    "from": "<postmaster@CRH.org>",
+    "subject": "Undeliverable: Re: Undeliverable: Re: Undeliverable: Re: Undeliverable: Quick follow-up: What custom modules or workflow modifications would Columbus Regional Health need?",
+    "date": "Sat, 22 Aug 2026 02:37:13 -0400",
+    "hospital": "Enterprise Prospect Organization",
+    "category": "PROSPECT_INQUIRY",
+    "processedAt": "2026-08-22T06:45:06.482Z",
+    "type": "VERIFIED_PROSPECT_REPLY",
+    "salesResult": {
+      "status": "FAILED",
+      "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes"
+    }
+  },
+  {
+    "messageId": "<23737634-fb53-4d5e-91dd-da6cac0da87f@CRHMB01.crh.org>",
+    "from": "<postmaster@CRH.org>",
+    "subject": "Undeliverable: Re: Undeliverable: Re: Undeliverable: Quick follow-up: What custom modules or workflow modifications would Columbus Regional Health need?",
+    "date": "Sat, 22 Aug 2026 02:37:32 -0400",
+    "hospital": "Enterprise Prospect Organization",
+    "category": "PROSPECT_INQUIRY",
+    "processedAt": "2026-08-22T06:45:18.867Z",
+    "type": "VERIFIED_PROSPECT_REPLY",
+    "salesResult": {
+      "status": "FAILED",
+      "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes"
+    }
+  },
+  {
+    "messageId": " <2bb92af5-d684-34e3-5265-a80cddaad1a7@bounces.jellyfish.systems>",
+    "from": "Mail Delivery Subsystem <mailer-daemon@bounces.jellyfish.systems>",
+    "subject": "Delivery Status Notification (Failure)",
+    "date": "Sat, 22 Aug 2026 14:04:13 +0000",
+    "type": "IGNORED_NON_PROSPECT"
+  }
+]

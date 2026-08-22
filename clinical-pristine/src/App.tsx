@@ -33,19 +33,30 @@ import { HipaaInactivityLock } from './components/HipaaInactivityLock';
 import { initClinicalVisitorBeacon } from './utils/visitorEmailBeacon';
 import { useUrlProspectSession } from './hooks/useUrlTabNavigation';
 import { ExitSurveyModal } from './components/ExitSurveyModal';
+import { SmartTooltip } from './components/SmartTooltip';
+import { TrialStatusHeaderBadge } from './components/TrialStatusHeaderBadge';
+import { TrialExpiryCoDesignModal } from './components/TrialExpiryCoDesignModal';
+import { useEnterpriseTrial } from './hooks/useEnterpriseTrial';
+import { codeIntegrityGuardian } from './utils/codeIntegrityGuardian';
 
 const LicensingBar = ({ 
   onOpenSpecs, 
   onOpenCleanSweep,
   onOpenHl7Console,
   onOpenEhrMigration,
-  onOpenExitSurvey 
+  onOpenExitSurvey,
+  daysRemaining,
+  isUnlockedPerpetual,
+  onOpenCoDesignModal
 }: { 
   onOpenSpecs: () => void; 
   onOpenCleanSweep: () => void; 
   onOpenHl7Console: () => void;
   onOpenEhrMigration: () => void;
   onOpenExitSurvey?: () => void;
+  daysRemaining: number;
+  isUnlockedPerpetual: boolean;
+  onOpenCoDesignModal: () => void;
 }) => {
   const isProduction = localStorage.getItem('clinical_pristine_production_mode') === 'true';
   const hospitalName = localStorage.getItem('clinical_pristine_hospital_name') || 'Pristine General Hospital';
@@ -64,49 +75,77 @@ const LicensingBar = ({
           <span className="font-medium text-slate-600 hidden md:inline">v1.0.0-hospital-workstation</span>
         )}
 
+        {/* 7-Day Product-Led Reverse Trial Status Pill */}
+        <TrialStatusHeaderBadge
+          daysRemaining={daysRemaining}
+          isUnlockedPerpetual={isUnlockedPerpetual}
+          onOpenCoDesignModal={onOpenCoDesignModal}
+        />
+
         {/* Live Enterprise Cluster Status & HL7 Gateway Telemetry */}
         <HospitalClusterStatus onOpenHl7Console={onOpenHl7Console} />
       </div>
 
       <div className="flex items-center space-x-2 sm:space-x-3 text-xs font-semibold text-slate-700 shrink-0">
         {/* 1-Click Universal EHR Legacy Migration Engine Trigger */}
-        <button 
-          onClick={onOpenEhrMigration}
-          className="hover:bg-gradient-to-r hover:from-cyan-600 hover:to-blue-700 bg-gradient-to-r from-cyan-500 to-blue-600 text-[#070B14] hover:text-white font-bold flex items-center gap-1.5 cursor-pointer px-3 py-1 rounded-md shadow-sm transition-all shrink-0 font-mono"
-          title="1-Click Universal EHR Legacy Migration Engine (Epic, Cerner, Meditech, FHIR & CSV)"
+        <SmartTooltip
+          title="1-Click EHR Migration"
+          content="Ingest inpatient rosters, bed assignments, and vitals from Epic Systems, Cerner Millennium, Meditech, or FHIR JSON in under 3 seconds."
         >
-          <span>🔄 1-Click EHR Migration</span>
-        </button>
+          <button 
+            onClick={onOpenEhrMigration}
+            className="hover:bg-gradient-to-r hover:from-cyan-600 hover:to-blue-700 bg-gradient-to-r from-cyan-500 to-blue-600 text-[#070B14] hover:text-white font-bold flex items-center gap-1.5 cursor-pointer px-3 py-1 rounded-md shadow-sm transition-all shrink-0 font-mono"
+          >
+            <span>🔄 1-Click EHR Migration</span>
+          </button>
+        </SmartTooltip>
 
-        <button 
-          onClick={onOpenHl7Console}
-          className="hover:text-blue-700 text-slate-900 font-bold flex items-center gap-1 cursor-pointer bg-blue-50 px-2.5 py-0.5 rounded-md border border-blue-300 shadow-2xs transition-all shrink-0"
-          title="Open Epic / Cerner HL7 & FHIR Live Stream Ingestion Gateway"
+        <SmartTooltip
+          title="HL7 / FHIR MLLP Stream"
+          content="Inspect real-time ADT-A01 hospital admission feeds and HL7 v2.5.1 ER7 socket transactions on TCP Port 8089."
         >
-          <Server size={13} className="text-blue-700" />
-          <span>HL7/FHIR Gateway</span>
-        </button>
+          <button 
+            onClick={onOpenHl7Console}
+            className="hover:text-blue-700 text-slate-900 font-bold flex items-center gap-1 cursor-pointer bg-blue-50 px-2.5 py-0.5 rounded-md border border-blue-300 shadow-2xs transition-all shrink-0"
+          >
+            <Server size={13} className="text-blue-700" />
+            <span>HL7/FHIR Gateway</span>
+          </button>
+        </SmartTooltip>
 
-        <button 
-          onClick={onOpenCleanSweep}
-          className="hover:bg-rose-100 text-rose-700 font-bold flex items-center gap-1 cursor-pointer bg-rose-50 px-2.5 py-0.5 rounded-md border border-rose-300 shadow-2xs transition-all shrink-0"
-          title="Factory clean sweep to blank production hospital state"
+        <SmartTooltip
+          title="Factory Clean Sweep"
+          content="Reset patient telemetry and beds to clean production hospital state for fresh clinical staff onboarding."
         >
-          <span>🧹 Clean Sweep</span>
-        </button>
+          <button 
+            onClick={onOpenCleanSweep}
+            className="hover:bg-rose-100 text-rose-700 font-bold flex items-center gap-1 cursor-pointer bg-rose-50 px-2.5 py-0.5 rounded-md border border-rose-300 shadow-2xs transition-all shrink-0"
+          >
+            <span>🧹 Clean Sweep</span>
+          </button>
+        </SmartTooltip>
 
-        <button onClick={onOpenSpecs} className="hover:text-blue-700 transition-colors font-bold text-slate-900 flex items-center gap-1.5 cursor-pointer bg-slate-50 px-2.5 py-0.5 rounded-md border border-slate-300 shadow-2xs hover:border-slate-400 shrink-0">
-          <FileCode2 size={13} className="text-blue-700" /> <span className="hidden sm:inline">System</span> Specs
-        </button>
+        <SmartTooltip
+          title="System Architecture & Buyout"
+          content="View sub-15ms spatial workstation specifications, 100% on-premises Docker bundle, and perpetual licensing buyout tiers."
+        >
+          <button onClick={onOpenSpecs} className="hover:text-blue-700 transition-colors font-bold text-slate-900 flex items-center gap-1.5 cursor-pointer bg-slate-50 px-2.5 py-0.5 rounded-md border border-slate-300 shadow-2xs hover:border-slate-400 shrink-0">
+            <FileCode2 size={13} className="text-blue-700" /> <span className="hidden sm:inline">System</span> Specs
+          </button>
+        </SmartTooltip>
 
         {onOpenExitSurvey && (
-          <button 
-            onClick={onOpenExitSurvey} 
-            className="hover:bg-blue-600 hover:text-white transition-all font-bold text-blue-700 flex items-center gap-1 cursor-pointer bg-blue-50 px-2.5 py-0.5 rounded-md border border-blue-300 shadow-2xs shrink-0"
-            title="Leave a 1-minute clinical review and exit demo"
+          <SmartTooltip
+            title="Leave Clinical Feedback"
+            content="Share your 1-minute clinical review or request custom hospital modifications from Founder Mharc Gatan."
           >
-            <span>✨ Exit Demo</span>
-          </button>
+            <button 
+              onClick={onOpenExitSurvey} 
+              className="hover:bg-blue-600 hover:text-white transition-all font-bold text-blue-700 flex items-center gap-1 cursor-pointer bg-blue-50 px-2.5 py-0.5 rounded-md border border-blue-300 shadow-2xs shrink-0"
+            >
+              <span>✨ Exit Demo</span>
+            </button>
+          </SmartTooltip>
         )}
       </div>
     </div>
@@ -180,10 +219,26 @@ function App() {
   const [isHl7ConsoleOpen, setIsHl7ConsoleOpen] = useState(false);
   const [isEhrMigrationOpen, setIsEhrMigrationOpen] = useState(false);
   const [isExitSurveyOpen, setIsExitSurveyOpen] = useState(false);
+  const [isCoDesignOpen, setIsCoDesignOpen] = useState(false);
+
+  const { daysRemaining, isExpired, isUnlockedPerpetual, requestExtension } = useEnterpriseTrial();
   const prospectSession = useUrlProspectSession('hospital');
   const location = useLocation();
   const isLoginPage = location.pathname === '/login';
   const { isCodeBlue } = useEmergency();
+
+  // 0. Initialize Anti-Tamper Code Integrity Guardian
+  useEffect(() => {
+    codeIntegrityGuardian.initialize();
+  }, []);
+
+  // Auto-prompt Co-Design & Buyout Review if trial expired
+  useEffect(() => {
+    if (isExpired && !sessionStorage.getItem('cp_trial_expired_prompted')) {
+      setIsCoDesignOpen(true);
+      sessionStorage.setItem('cp_trial_expired_prompted', 'true');
+    }
+  }, [isExpired]);
 
   // 1. Exit-Intent Mouseleave Trigger
   useEffect(() => {
@@ -199,7 +254,7 @@ function App() {
 
   // 2. Modal Browser Back-Button Trapping
   useEffect(() => {
-    const isAnyModalOpen = Boolean(isSpecsOpen || isSettingsOpen || isCleanSweepOpen || isHl7ConsoleOpen || isEhrMigrationOpen || isExitSurveyOpen);
+    const isAnyModalOpen = Boolean(isSpecsOpen || isSettingsOpen || isCleanSweepOpen || isHl7ConsoleOpen || isEhrMigrationOpen || isExitSurveyOpen || isCoDesignOpen);
     if (isAnyModalOpen) {
       window.history.pushState({ modalOpen: true }, '');
       const handleModalPop = () => {
@@ -209,11 +264,12 @@ function App() {
         setIsHl7ConsoleOpen(false);
         setIsEhrMigrationOpen(false);
         setIsExitSurveyOpen(false);
+        setIsCoDesignOpen(false);
       };
       window.addEventListener('popstate', handleModalPop, { once: true });
       return () => window.removeEventListener('popstate', handleModalPop);
     }
-  }, [isSpecsOpen, isSettingsOpen, isCleanSweepOpen, isHl7ConsoleOpen, isEhrMigrationOpen, isExitSurveyOpen]);
+  }, [isSpecsOpen, isSettingsOpen, isCleanSweepOpen, isHl7ConsoleOpen, isEhrMigrationOpen, isExitSurveyOpen, isCoDesignOpen]);
 
   useEffect(() => {
     initClinicalVisitorBeacon('Clinical Pristine OS');
@@ -258,13 +314,27 @@ function App() {
 
       <LicensingBar 
         onOpenSpecs={() => setIsSpecsOpen(true)} 
-        onOpenCleanSweep={() => setIsCleanSweepOpen(false || true)}
+        onOpenCleanSweep={() => setIsCleanSweepOpen(true)}
         onOpenHl7Console={() => setIsHl7ConsoleOpen(true)}
         onOpenEhrMigration={() => setIsEhrMigrationOpen(true)}
         onOpenExitSurvey={() => setIsExitSurveyOpen(true)}
+        daysRemaining={daysRemaining}
+        isUnlockedPerpetual={isUnlockedPerpetual}
+        onOpenCoDesignModal={() => setIsCoDesignOpen(true)}
       />
       
       <SystemSpecsModal isOpen={isSpecsOpen} onClose={() => setIsSpecsOpen(false)} />
+      
+      {/* 7-Day Product-Led Reverse Trial Expiry & Co-Design Modal */}
+      <TrialExpiryCoDesignModal
+        isOpen={isCoDesignOpen}
+        onClose={() => setIsCoDesignOpen(false)}
+        daysRemaining={daysRemaining}
+        isExpired={isExpired}
+        onRequestExtension={requestExtension}
+        onOpenLicensingModal={() => setIsSpecsOpen(true)}
+      />
+
       <SettingsPanel 
         isOpen={isSettingsOpen} 
         onClose={() => setIsSettingsOpen(false)} 

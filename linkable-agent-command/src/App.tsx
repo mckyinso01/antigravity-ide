@@ -10,7 +10,7 @@ import {
   INITIAL_INBOUND_REPLIES,
   INITIAL_TELEMETRY,
 } from './data/liveTelemetryData';
-import { LeadRecord, InboundReply, CloudEngineTelemetry } from './types';
+import { LeadRecord, InboundReply, CloudEngineTelemetry, CampaignVertical } from './types';
 import {
   Activity,
   Layers,
@@ -24,6 +24,7 @@ export const App: React.FC = () => {
   const [inboundReplies, setInboundReplies] = useState<InboundReply[]>(INITIAL_INBOUND_REPLIES);
   const [telemetry, setTelemetry] = useState<CloudEngineTelemetry>(INITIAL_TELEMETRY);
   const [activeTab, setActiveTab] = useState<'pipeline' | 'inbound' | 'subdomains'>('pipeline');
+  const [selectedVertical, setSelectedVertical] = useState<CampaignVertical>('all');
   const [isCloudModalOpen, setIsCloudModalOpen] = useState(false);
   const [isTelegramModalOpen, setIsTelegramModalOpen] = useState(false);
   const [isRefreshing, setIsRefreshing] = useState(false);
@@ -36,7 +37,7 @@ export const App: React.FC = () => {
     }));
     setBannerAlert(
       !telemetry.autoPilotEnabled
-        ? '⚡ Auto-Pilot Activated: Follow-ups will dispatch on 60m cron schedule.'
+        ? '⚡ Auto-Pilot Activated: Multi-vertical follow-ups will dispatch on 60m cron schedule.'
         : '⏸️ Manual Review Mode Enabled: Outbound dispatches paused.'
     );
     setTimeout(() => setBannerAlert(null), 4000);
@@ -46,7 +47,7 @@ export const App: React.FC = () => {
     setIsRefreshing(true);
     setTimeout(() => {
       setIsRefreshing(false);
-      setBannerAlert('🔄 Telemetry synchronised with Google Cloud Run.');
+      setBannerAlert('🔄 Telemetry synchronised with Google Cloud Run & Spacemail.');
       setTimeout(() => setBannerAlert(null), 3000);
     }, 800);
   };
@@ -65,7 +66,8 @@ export const App: React.FC = () => {
       )
     );
     const targetLead = leads.find((l) => l.id === leadId);
-    setBannerAlert(`🚀 Single Co-Design Follow-Up dispatched to ${targetLead?.hospitalName}!`);
+    const name = targetLead?.companyName || targetLead?.hospitalName || 'Target Enterprise';
+    setBannerAlert(`🚀 Tailored outreach / follow-up dispatched to ${name}!`);
     setTimeout(() => setBannerAlert(null), 4000);
   };
 
@@ -104,6 +106,7 @@ export const App: React.FC = () => {
           leads={leads}
           inboundReplies={inboundReplies}
           telemetry={telemetry}
+          selectedVertical={selectedVertical}
         />
 
         {/* Tab Navigation */}
@@ -145,7 +148,7 @@ export const App: React.FC = () => {
               }`}
             >
               <Globe className="w-4 h-4" />
-              <span>SUBDOMAIN_FLEET (5)</span>
+              <span>SUBDOMAIN_FLEET (6)</span>
             </button>
           </div>
 
@@ -159,6 +162,8 @@ export const App: React.FC = () => {
           <LeadPipelineGrid
             leads={leads}
             onTriggerSingleFollowUp={handleTriggerSingleFollowUp}
+            selectedVertical={selectedVertical}
+            onSelectVertical={setSelectedVertical}
           />
         )}
 
@@ -177,7 +182,7 @@ export const App: React.FC = () => {
             <div className="glass-panel p-5 rounded-2xl border border-white/10 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-mono font-bold text-indigo-400">
+                  <span className="text-xs font-mono font-bold text-cyan-400">
                     🏥 CLINICAL ICU EHR OS
                   </span>
                   <span className="text-[10px] font-mono text-emerald-400 bg-emerald-950 px-2 py-0.5 rounded border border-emerald-500/30">
@@ -208,6 +213,37 @@ export const App: React.FC = () => {
             <div className="glass-panel p-5 rounded-2xl border border-white/10 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-2">
+                  <span className="text-xs font-mono font-bold text-amber-400">
+                    🛡️ CLAIMGUARD CLAIMS DEFENSE
+                  </span>
+                  <span className="text-[10px] font-mono text-emerald-400 bg-emerald-950 px-2 py-0.5 rounded border border-emerald-500/30">
+                    17ms • HEALTHY
+                  </span>
+                </div>
+                <h4 className="text-base font-bold text-white font-sans mb-1">
+                  claimguard.linkable.it.com
+                </h4>
+                <p className="text-xs text-slate-400 font-sans">
+                  Pre-Submission ERISA § 502 & CMS-0057-F Statutory Defense OS.
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
+                <span className="text-[11px] font-mono text-cyan-400">AI Demo Bot: Active</span>
+                <a
+                  href="https://claimguard.linkable.it.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-mono text-white hover:text-accent-cyan flex items-center gap-1"
+                >
+                  Visit Subdomain <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
+
+            {/* Subdomain 3 */}
+            <div className="glass-panel p-5 rounded-2xl border border-white/10 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-2">
                   <span className="text-xs font-mono font-bold text-blue-400">
                     🏗️ SITESAFE INDUSTRIAL OS
                   </span>
@@ -235,7 +271,7 @@ export const App: React.FC = () => {
               </div>
             </div>
 
-            {/* Subdomain 3 */}
+            {/* Subdomain 4 */}
             <div className="glass-panel p-5 rounded-2xl border border-white/10 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-2">
@@ -266,7 +302,7 @@ export const App: React.FC = () => {
               </div>
             </div>
 
-            {/* Subdomain 4 */}
+            {/* Subdomain 5 */}
             <div className="glass-panel p-5 rounded-2xl border border-white/10 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-2">
@@ -297,7 +333,7 @@ export const App: React.FC = () => {
               </div>
             </div>
 
-            {/* Subdomain 5 */}
+            {/* Subdomain 6 */}
             <div className="glass-panel p-5 rounded-2xl border border-white/10 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-2">
@@ -346,4 +382,5 @@ export const App: React.FC = () => {
     </div>
   );
 };
+
 export default App;

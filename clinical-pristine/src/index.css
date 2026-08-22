@@ -118,6 +118,41 @@
   }
 }
 
+/* Non-Modal Context-Preserving Push Canvas & Side-Sheets */
+.clinical-main-canvas {
+  transition: padding-right 240ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.clinical-main-canvas.inspector-docked {
+  padding-right: 560px;
+}
+
+/* Floating Clinical Telemetry HUD */
+.clinical-floating-island {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 45;
+  transition: all 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.clinical-floating-island:hover {
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 20px 42px rgba(15, 23, 42, 0.5);
+}
+
 /* Custom Scrollbar for Concept 3 Light Workstation */
 ::-webkit-scrollbar {
   width: 6px;
@@ -172,4 +207,5 @@
   box-shadow: none !important;
   border-color: #94A3B8 !important;
 }
+
 
