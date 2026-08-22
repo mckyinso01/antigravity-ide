@@ -1132,5 +1132,383 @@
     "phone": "",
     "hasActiveMx": true,
     "discoveredAt": "2026-08-20T16:30:23.495Z"
+  },
+  {
+    "domain": "badgermurphyfoodservice.com",
+    "companyName": "Badger Murphy Food Service",
+    "website": "https://badgermurphyfoodservice.com",
+    "contacts": [
+      {
+        "id": "dm-owner-badgermurphyfoodservice.com",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Badger Murphy Food Service Executive Office",
+        "email": "owner@badgermurphyfoodservice.com",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-badgermurphyfoodservice.com",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@badgermurphyfoodservice.com",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-badgermurphyfoodservice.com",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@badgermurphyfoodservice.com",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "omnistock",
+    "location": "Chicago, Illinois",
+    "phone": "",
+    "hasActiveMx": false,
+    "discoveredAt": "2026-08-22T01:36:02.807Z"
+  },
+  {
+    "domain": "czscommissary.com",
+    "companyName": "CZS Commissary",
+    "website": "https://czscommissary.com",
+    "contacts": [
+      {
+        "id": "dm-owner-czscommissary.com",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "CZS Commissary Executive Office",
+        "email": "owner@czscommissary.com",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-czscommissary.com",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@czscommissary.com",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-czscommissary.com",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@czscommissary.com",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "omnistock",
+    "location": "Chicago, Illinois",
+    "phone": "",
+    "hasActiveMx": false,
+    "discoveredAt": "2026-08-22T01:36:02.881Z"
+  },
+  {
+    "domain": "continentalpapergradingcompany.com",
+    "companyName": "Continental Paper Grading Company",
+    "website": "https://continentalpapergradingcompany.com",
+    "contacts": [
+      {
+        "id": "dm-owner-continentalpapergradingcompany.com",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Continental Paper Grading Company Executive Office",
+        "email": "owner@continentalpapergradingcompany.com",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-continentalpapergradingcompany.com",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@continentalpapergradingcompany.com",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-continentalpapergradingcompany.com",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@continentalpapergradingcompany.com",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "omnistock",
+    "location": "Chicago, Illinois",
+    "phone": "",
+    "hasActiveMx": false,
+    "discoveredAt": "2026-08-22T01:36:02.959Z"
+  },
+  {
+    "domain": "thelockup.com",
+    "companyName": "The Lock Up",
+    "website": "https://thelockup.com",
+    "contacts": [
+      {
+        "id": "dm-owner-thelockup.com",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "The Lock Up Executive Office",
+        "email": "owner@thelockup.com",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-thelockup.com",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@thelockup.com",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-thelockup.com",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@thelockup.com",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "omnistock",
+    "location": "Chicago, Illinois",
+    "phone": "",
+    "hasActiveMx": true,
+    "discoveredAt": "2026-08-22T01:36:03.029Z"
+  },
+  {
+    "domain": "hawthornewarehouse.com",
+    "companyName": "Hawthorne Warehouse",
+    "website": "https://hawthornewarehouse.com",
+    "contacts": [
+      {
+        "id": "dm-owner-hawthornewarehouse.com",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Hawthorne Warehouse Executive Office",
+        "email": "owner@hawthornewarehouse.com",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-hawthornewarehouse.com",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@hawthornewarehouse.com",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-hawthornewarehouse.com",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@hawthornewarehouse.com",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "omnistock",
+    "location": "Chicago, Illinois",
+    "phone": "",
+    "hasActiveMx": false,
+    "discoveredAt": "2026-08-22T01:36:03.096Z"
+  },
+  {
+    "domain": "dbrhomebuildersllc.com",
+    "companyName": "DBR Home Builders LLC",
+    "website": "https://dbrhomebuildersllc.com",
+    "contacts": [
+      {
+        "id": "dm-owner-dbrhomebuildersllc.com",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "DBR Home Builders LLC Executive Office",
+        "email": "owner@dbrhomebuildersllc.com",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-dbrhomebuildersllc.com",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@dbrhomebuildersllc.com",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-dbrhomebuildersllc.com",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@dbrhomebuildersllc.com",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "sitesafe",
+    "location": "Chicago, Illinois",
+    "phone": "",
+    "hasActiveMx": false,
+    "discoveredAt": "2026-08-22T02:04:37.628Z"
+  },
+  {
+    "domain": "rollincontracting.com",
+    "companyName": "Rollin Contracting",
+    "website": "https://www.rollincontracting.com/",
+    "contacts": [
+      {
+        "id": "dm-owner-rollincontracting.com",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Rollin Contracting Executive Office",
+        "email": "owner@rollincontracting.com",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-rollincontracting.com",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@rollincontracting.com",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-rollincontracting.com",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@rollincontracting.com",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "sitesafe",
+    "location": "Chicago, Illinois",
+    "phone": "+1-312-654-9173",
+    "hasActiveMx": true,
+    "discoveredAt": "2026-08-22T02:04:37.842Z"
+  },
+  {
+    "domain": "legendarydemolitionchicago.com",
+    "companyName": "Legendary Demolition",
+    "website": "https://legendarydemolitionchicago.com/",
+    "contacts": [
+      {
+        "id": "dm-owner-legendarydemolitionchicago.com",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Legendary Demolition Executive Office",
+        "email": "owner@legendarydemolitionchicago.com",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-legendarydemolitionchicago.com",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@legendarydemolitionchicago.com",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-legendarydemolitionchicago.com",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@legendarydemolitionchicago.com",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "sitesafe",
+    "location": "Chicago, Illinois",
+    "phone": "+1-312-697-1059",
+    "hasActiveMx": true,
+    "discoveredAt": "2026-08-22T02:04:37.921Z"
+  },
+  {
+    "domain": "facebook.com",
+    "companyName": "Rollin Contracting",
+    "website": "https://www.facebook.com/Rollin.Contracting/",
+    "contacts": [
+      {
+        "id": "dm-owner-facebook.com",
+        "role": "owner",
+        "roleTitle": "Founder / CEO / Managing Director",
+        "name": "Rollin Contracting Executive Office",
+        "email": "owner@facebook.com",
+        "confidence": 84,
+        "pitchAngle": "ROI, 5/10th pricing disruption, 100% free custom setup, and eliminating recurring SaaS taxes.",
+        "painPoint": "High software license fees, bloated headcount, and slow legacy vendor development cycles."
+      },
+      {
+        "id": "dm-cto-facebook.com",
+        "role": "cto",
+        "roleTitle": "Chief Technology Officer / CIO",
+        "name": "Engineering & Tech Architecture Lead",
+        "email": "tech@facebook.com",
+        "confidence": 88,
+        "pitchAngle": "Direct sprint augmentation, high-performance TypeScript/Node architectures, and perpetual Git source code ownership.",
+        "painPoint": "Feature backlogs, maintaining outdated legacy stacks, and brittle third-party integrations."
+      },
+      {
+        "id": "dm-ops-facebook.com",
+        "role": "ops",
+        "roleTitle": "Head of Operations / Chief Nursing Officer",
+        "name": "Operations & Process Lead",
+        "email": "operations@facebook.com",
+        "confidence": 80,
+        "pitchAngle": "Centralized operations, automated BCMA/CPM/FEFO compliance verification, and 3-Gives milestone security.",
+        "painPoint": "Manual double-entry, spreadsheet disorganization, and compliance audit penalties."
+      }
+    ],
+    "vertical": "sitesafe",
+    "location": "Chicago, Illinois",
+    "phone": "+1-312-654-9173",
+    "hasActiveMx": true,
+    "discoveredAt": "2026-08-22T02:04:37.951Z"
   }
 ]

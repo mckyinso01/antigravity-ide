@@ -7,7 +7,8 @@ import {
   ChevronDown,
   Terminal,
   RotateCcw,
-  Lock
+  Lock,
+  Sparkles
 } from 'lucide-react';
 import { HelpTooltip } from './HelpTooltip';
 
@@ -22,6 +23,7 @@ interface NavigationHeaderProps {
   onOpenTimeoutSettings?: () => void;
   activeStaffName?: string;
   currentTimeoutSeconds?: number;
+  onOpenExitSurvey?: () => void;
 }
 
 export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
@@ -34,7 +36,8 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
   onManualLock,
   onOpenTimeoutSettings,
   activeStaffName = 'Dave Miller',
-  currentTimeoutSeconds = 120
+  currentTimeoutSeconds = 120,
+  onOpenExitSurvey
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [time, setTime] = useState(new Date().toLocaleTimeString());
@@ -219,6 +222,24 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
             <RotateCcw size={15} />
           </button>
         </HelpTooltip>
+
+        {/* Exit Demo / Feedback Trigger */}
+        {onOpenExitSurvey && (
+          <HelpTooltip
+            title="Leave Feedback & Exit Demo"
+            purpose="Gives a quick 1-minute 1-5 rating to align custom modules for your warehouse SOPs before leaving."
+            howTo="Click to share your feedback and request custom integrations."
+            position="bottom"
+          >
+            <button
+              onClick={onOpenExitSurvey}
+              className="flex items-center gap-1.5 bg-gradient-to-r from-teal-500/10 to-emerald-500/10 hover:from-teal-500/20 hover:to-emerald-500/20 border border-teal-500/40 hover:border-teal-400 text-teal-300 text-xs px-2.5 py-1.5 rounded-lg transition-all cursor-pointer shrink-0 font-mono font-bold"
+            >
+              <Sparkles size={13} className="text-teal-400" />
+              <span className="hidden sm:inline">Exit Demo</span>
+            </button>
+          </HelpTooltip>
+        )}
       </div>
     </header>
   );

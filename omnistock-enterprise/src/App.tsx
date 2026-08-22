@@ -4,6 +4,8 @@ import type { BinSlot, SkuItem, PickOrder, ClientAccount, WarehouseStats } from 
 import { NavigationHeader } from './components/NavigationHeader';
 import { SidebarNav } from './components/SidebarNav';
 import type { TabId } from './components/SidebarNav';
+import { useUrlTabNavigation } from './hooks/useUrlTabNavigation';
+import { ExitSurveyModal } from './components/ExitSurveyModal';
 
 import { SpatialWarehouseCAD } from './components/SpatialWarehouseCAD';
 import { BinDetailDrawer } from './components/BinDetailDrawer';
@@ -22,8 +24,10 @@ import { SettingsView } from './pages/SettingsView';
 
 import { initOmniStockVisitorBeacon } from './utils/visitorEmailBeacon';
 
+const VALID_TABS: readonly TabId[] = ['cad', 'inventory', 'picking', 'receiving', 'clients', 'analytics', 'settings'] as const;
+
 export function App() {
-  const [activeTab, setActiveTab] = useState<TabId>('cad');
+  const { activeTab, setActiveTab, prospectSession } = useUrlTabNavigation<TabId>('cad', VALID_TABS, 'omnistock');
   const [warehouseName, setWarehouseName] = useState('Warehouse Alpha • Northeast Logistics Hub');
 
   // Configurable Auto-Lock & Active Staff Session State
@@ -71,6 +75,37 @@ export function App() {
   const [isSpecsOpen, setIsSpecsOpen] = useState(false);
   const [isOptimizerOpen, setIsOptimizerOpen] = useState(false);
   const [isCleanSweepOpen, setIsCleanSweepOpen] = useState(false);
+  const [isExitSurveyOpen, setIsExitSurveyOpen] = useState(false);
+
+  // 1. Exit-Intent Mouseleave Listener
+  useEffect(() => {
+    const handleMouseLeave = (e: MouseEvent) => {
+      if (e.clientY <= 5 && !sessionStorage.getItem('omnistock_survey_shown')) {
+        setIsExitSurveyOpen(true);
+        sessionStorage.setItem('omnistock_survey_shown', 'true');
+      }
+    };
+    document.addEventListener('mouseleave', handleMouseLeave);
+    return () => document.removeEventListener('mouseleave', handleMouseLeave);
+  }, []);
+
+  // 2. Modal Browser Back-Button Trapping (Closes active modal without tab ejection)
+  useEffect(() => {
+    const isAnyModalOpen = Boolean(selectedBin || isScannerOpen || isSpecsOpen || isOptimizerOpen || isCleanSweepOpen || isExitSurveyOpen);
+    if (isAnyModalOpen) {
+      window.history.pushState({ modalOpen: true }, '');
+      const handleModalPop = () => {
+        setSelectedBin(null);
+        setIsScannerOpen(false);
+        setIsSpecsOpen(false);
+        setIsOptimizerOpen(false);
+        setIsCleanSweepOpen(false);
+        setIsExitSurveyOpen(false);
+      };
+      window.addEventListener('popstate', handleModalPop, { once: true });
+      return () => window.removeEventListener('popstate', handleModalPop);
+    }
+  }, [selectedBin, isScannerOpen, isSpecsOpen, isOptimizerOpen, isCleanSweepOpen, isExitSurveyOpen]);
 
   // Initialize DB and Visitor Beacon
   useEffect(() => {
@@ -300,6 +335,7 @@ export function App() {
         onOpenTimeoutSettings={() => setActiveTab('settings')}
         activeStaffName={activeStaff.name}
         currentTimeoutSeconds={autolockTimeout}
+        onOpenExitSurvey={() => setIsExitSurveyOpen(true)}
       />
 
       {/* Main Body Workspace */}
@@ -436,6 +472,14 @@ export function App() {
         isOpen={isCleanSweepOpen}
         onClose={() => setIsCleanSweepOpen(false)}
         onConfirmReset={handleCleanSweep}
+      />
+
+      {/* 📋 Exit-Intent & Walkthrough Micro-Survey Modal */}
+      <ExitSurveyModal
+        isOpen={isExitSurveyOpen}
+        onClose={() => setIsExitSurveyOpen(false)}
+        prospectSession={prospectSession}
+        appName="OmniStock Spatial WMS"
       />
     </div>
   );

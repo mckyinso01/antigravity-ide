@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import type { SkuItem, BinSlot } from '../types';
-import { 
-  Package, 
-  Search, 
+import {
+  Package,
+  Search,
   Plus,
   X
 } from 'lucide-react';
@@ -36,8 +36,8 @@ export const InventoryCatalogView: React.FC<InventoryCatalogViewProps> = ({
 
   const filteredSkus = skus.filter(s => {
     const matchesSearch = s.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          s.skuCode.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          s.barcode.includes(searchTerm);
+      s.skuCode.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      s.barcode.includes(searchTerm);
     const matchesCat = categoryFilter === 'ALL' || s.category === categoryFilter;
     const matchesRisk = riskFilter === 'ALL' || s.stockoutRisk === riskFilter;
     return matchesSearch && matchesCat && matchesRisk;
@@ -177,11 +177,10 @@ export const InventoryCatalogView: React.FC<InventoryCatalogViewProps> = ({
                   </td>
                   <td className="p-3 text-emerald-400 font-bold">{sku.turnoverRate}x</td>
                   <td className="p-3">
-                    <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${
-                      sku.stockoutRisk === 'CRITICAL' 
-                        ? 'bg-rose-950 text-rose-300 border border-rose-800 animate-pulse' 
+                    <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${sku.stockoutRisk === 'CRITICAL'
+                        ? 'bg-rose-950 text-rose-300 border border-rose-800 animate-pulse'
                         : 'bg-emerald-950 text-emerald-300 border border-emerald-800'
-                    }`}>
+                      }`}>
                       {sku.stockoutRisk}
                     </span>
                   </td>
@@ -205,7 +204,7 @@ export const InventoryCatalogView: React.FC<InventoryCatalogViewProps> = ({
                 <span className="text-[10px] text-[#5BC0BE] font-mono">Catalog & Slotting Onboarding</span>
               </div>
             </div>
-            <button 
+            <button
               onClick={() => setIsAddModalOpen(false)}
               className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-[#121D36] transition-all cursor-pointer"
             >

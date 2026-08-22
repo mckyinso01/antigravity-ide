@@ -30,15 +30,19 @@ import { HospitalClusterStatus } from './components/HospitalClusterStatus';
 import { Hl7InterfaceConsoleModal } from './components/Hl7InterfaceConsoleModal';
 import { HipaaInactivityLock } from './components/HipaaInactivityLock';
 import { initClinicalVisitorBeacon } from './utils/visitorEmailBeacon';
+import { useUrlProspectSession } from './hooks/useUrlTabNavigation';
+import { ExitSurveyModal } from './components/ExitSurveyModal';
 
 const LicensingBar = ({ 
   onOpenSpecs, 
   onOpenCleanSweep,
-  onOpenHl7Console 
+  onOpenHl7Console,
+  onOpenExitSurvey 
 }: { 
   onOpenSpecs: () => void; 
   onOpenCleanSweep: () => void; 
   onOpenHl7Console: () => void;
+  onOpenExitSurvey?: () => void;
 }) => {
   const isProduction = localStorage.getItem('clinical_pristine_production_mode') === 'true';
   const hospitalName = localStorage.getItem('clinical_pristine_hospital_name') || 'Pristine General Hospital';
@@ -82,6 +86,16 @@ const LicensingBar = ({
         <button onClick={onOpenSpecs} className="hover:text-blue-700 transition-colors font-bold text-slate-900 flex items-center gap-1.5 cursor-pointer bg-slate-50 px-2.5 py-0.5 rounded-md border border-slate-300 shadow-2xs hover:border-slate-400 shrink-0">
           <FileCode2 size={13} className="text-blue-700" /> <span className="hidden sm:inline">System</span> Specs
         </button>
+
+        {onOpenExitSurvey && (
+          <button 
+            onClick={onOpenExitSurvey} 
+            className="hover:bg-blue-600 hover:text-white transition-all font-bold text-blue-700 flex items-center gap-1 cursor-pointer bg-blue-50 px-2.5 py-0.5 rounded-md border border-blue-300 shadow-2xs shrink-0"
+            title="Leave a 1-minute clinical review and exit demo"
+          >
+            <span>✨ Exit Demo</span>
+          </button>
+        )}
       </div>
     </div>
   );
@@ -152,9 +166,40 @@ function App() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isCleanSweepOpen, setIsCleanSweepOpen] = useState(false);
   const [isHl7ConsoleOpen, setIsHl7ConsoleOpen] = useState(false);
+  const [isExitSurveyOpen, setIsExitSurveyOpen] = useState(false);
+  const prospectSession = useUrlProspectSession('hospital');
   const location = useLocation();
   const isLoginPage = location.pathname === '/login';
   const { isCodeBlue } = useEmergency();
+
+  // 1. Exit-Intent Mouseleave Trigger
+  useEffect(() => {
+    const handleMouseLeave = (e: MouseEvent) => {
+      if (e.clientY <= 5 && !sessionStorage.getItem('clinical_survey_shown')) {
+        setIsExitSurveyOpen(true);
+        sessionStorage.setItem('clinical_survey_shown', 'true');
+      }
+    };
+    document.addEventListener('mouseleave', handleMouseLeave);
+    return () => document.removeEventListener('mouseleave', handleMouseLeave);
+  }, []);
+
+  // 2. Modal Browser Back-Button Trapping
+  useEffect(() => {
+    const isAnyModalOpen = Boolean(isSpecsOpen || isSettingsOpen || isCleanSweepOpen || isHl7ConsoleOpen || isExitSurveyOpen);
+    if (isAnyModalOpen) {
+      window.history.pushState({ modalOpen: true }, '');
+      const handleModalPop = () => {
+        setIsSpecsOpen(false);
+        setIsSettingsOpen(false);
+        setIsCleanSweepOpen(false);
+        setIsHl7ConsoleOpen(false);
+        setIsExitSurveyOpen(false);
+      };
+      window.addEventListener('popstate', handleModalPop, { once: true });
+      return () => window.removeEventListener('popstate', handleModalPop);
+    }
+  }, [isSpecsOpen, isSettingsOpen, isCleanSweepOpen, isHl7ConsoleOpen, isExitSurveyOpen]);
 
   useEffect(() => {
     initClinicalVisitorBeacon('Clinical Pristine OS');
@@ -201,6 +246,7 @@ function App() {
         onOpenSpecs={() => setIsSpecsOpen(true)} 
         onOpenCleanSweep={() => setIsCleanSweepOpen(true)}
         onOpenHl7Console={() => setIsHl7ConsoleOpen(true)}
+        onOpenExitSurvey={() => setIsExitSurveyOpen(true)}
       />
       
       <SystemSpecsModal isOpen={isSpecsOpen} onClose={() => setIsSpecsOpen(false)} />
@@ -227,6 +273,14 @@ function App() {
 
       {/* Automatic 5-Minute Inactivity Screen Privacy Shield */}
       <HipaaInactivityLock timeoutSeconds={300} />
+
+      {/* 📋 Exit-Intent & Walkthrough Micro-Survey Modal */}
+      <ExitSurveyModal
+        isOpen={isExitSurveyOpen}
+        onClose={() => setIsExitSurveyOpen(false)}
+        prospectSession={prospectSession}
+        appName="Clinical Pristine OS"
+      />
     </div>
   );
 }

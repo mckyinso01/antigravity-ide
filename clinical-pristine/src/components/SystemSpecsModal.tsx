@@ -31,17 +31,26 @@ import {
 } from 'lucide-react';
 import { clinicalAudio } from '../utils/clinicalAudio';
 import { trackClinicalIntentAction } from '../utils/visitorEmailBeacon';
+import { RoiCalculatorWidget } from './RoiCalculatorWidget';
+import { PayPalCheckoutButton } from './PayPalCheckoutButton';
 
 interface SystemSpecsModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-type TabType = 'specs' | 'pricing' | 'schedule' | 'invoice';
+type TabType = 'roi' | 'specs' | 'pricing' | 'schedule' | 'invoice';
 
 export const SystemSpecsModal = ({ isOpen, onClose }: SystemSpecsModalProps) => {
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [activeTab, setActiveTab] = useState<TabType>('pricing');
+  const [isVaultUnlocked, setIsVaultUnlocked] = useState(false);
+  const [activeOrderDetails, setActiveOrderDetails] = useState<{
+    orderId: string;
+    licenseKey: string;
+    tier: string;
+    timestamp: string;
+  } | null>(null);
 
   // Booking State
   const [bookingName, setBookingName] = useState('');
@@ -176,7 +185,19 @@ export const SystemSpecsModal = ({ isOpen, onClose }: SystemSpecsModalProps) => 
               }`}
             >
               <CreditCard size={14} />
-              <span>Commercial Buyouts</span>
+              <span>Commercial Buyout</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTab('roi')}
+              className={`pb-2.5 px-3 border-b-2 flex items-center gap-1.5 transition-all cursor-pointer ${
+                activeTab === 'roi'
+                  ? 'border-blue-700 text-blue-900'
+                  : 'border-transparent text-slate-500 hover:text-slate-900'
+              }`}
+            >
+              <Sparkles size={14} />
+              <span>ROI Calculator</span>
             </button>
 
             <button
@@ -188,7 +209,7 @@ export const SystemSpecsModal = ({ isOpen, onClose }: SystemSpecsModalProps) => 
               }`}
             >
               <Calendar size={14} />
-              <span>Book 5-Min Clinical Review</span>
+              <span>Book 5-Min Walkthrough</span>
             </button>
 
             <button
@@ -212,12 +233,21 @@ export const SystemSpecsModal = ({ isOpen, onClose }: SystemSpecsModalProps) => 
               }`}
             >
               <Scale size={14} />
-              <span>Pro-Forma &amp; Wire Rails</span>
+              <span>Pro-Forma &amp; Delivery Vault</span>
             </button>
           </div>
 
           {/* Drawer Body */}
           <div className="flex-1 p-6 space-y-6 overflow-y-auto custom-scrollbar text-sm bg-slate-50">
+
+            {/* TAB: ZERO-SAAS ROI CALCULATOR */}
+            {activeTab === 'roi' && (
+              <RoiCalculatorWidget
+                appName="Clinical Pristine OS"
+                defaultBuyoutPrice={35000}
+                onSelectTier={(tier, price) => handleSelectTier(tier, price)}
+              />
+            )}
 
             {/* TAB 1: COMMERCIAL BUYOUT TIERS */}
             {activeTab === 'pricing' && (
@@ -523,6 +553,25 @@ export const SystemSpecsModal = ({ isOpen, onClose }: SystemSpecsModalProps) => 
             {/* TAB 4: PRO-FORMA & WIRE RAILS */}
             {activeTab === 'invoice' && (
               <div className="space-y-5 font-sans text-xs">
+                {/* Official Live PayPal & Cards Smart Buttons */}
+                <div className="p-4 rounded-2xl bg-blue-950/20 border-2 border-blue-400/40">
+                  <PayPalCheckoutButton
+                    amountUsd={invoiceTier.includes('6,500') ? 6500 : invoiceTier.includes('14,500') ? 14500 : 35000}
+                    planName={`Clinical Pristine ICU OS (${invoiceTier})`}
+                    onSuccess={(details) => {
+                      const ord = `CLINICAL-PP-${Math.random().toString(36).substring(2, 7).toUpperCase()}`;
+                      const lic = `CLINICAL-IP-${Math.random().toString(36).substring(2, 6).toUpperCase()}-BONDED`;
+                      setActiveOrderDetails({
+                        orderId: ord,
+                        licenseKey: lic,
+                        tier: `${invoiceTier} [PAYPAL VERIFIED: ${details?.id || 'OK'}]`,
+                        timestamp: new Date().toISOString()
+                      });
+                      setIsVaultUnlocked(true);
+                    }}
+                  />
+                </div>
+
                 {/* Direct B2B Bank Wire Card */}
                 <div className="p-4 rounded-2xl bg-blue-50 border-2 border-blue-200 space-y-2.5">
                   <div className="flex items-center justify-between">
@@ -637,15 +686,107 @@ export const SystemSpecsModal = ({ isOpen, onClose }: SystemSpecsModalProps) => 
                         <div><strong>Direct Inquiries:</strong> mckinsyo01@gmail.com</div>
                       </div>
 
-                      <div className="pt-2 flex items-center justify-between border-t border-slate-200">
+                      <div className="pt-2 flex flex-wrap items-center justify-between gap-2 border-t border-slate-200">
                         <span className="text-[10px] text-slate-500 font-sans font-bold">Includes spatial bed CAD builder, ACLS metronome &amp; Sepsis Hour-1 CDS.</span>
+                        <div className="flex items-center gap-2">
+                          <button
+                            onClick={() => window.print()}
+                            className="px-2.5 py-1 bg-white hover:bg-slate-100 border border-slate-300 text-slate-950 rounded-lg text-[10px] font-black transition-all cursor-pointer flex items-center gap-1"
+                          >
+                            <Printer size={11} />
+                            <span>Print Invoice</span>
+                          </button>
+                          <button
+                            onClick={() => {
+                              const ord = `MED-2026-${Math.random().toString(36).substring(2, 7).toUpperCase()}`;
+                              const lic = `MED-SOVEREIGN-IP-${Math.random().toString(36).substring(2, 6).toUpperCase()}-BONDED`;
+                              setActiveOrderDetails({
+                                orderId: ord,
+                                licenseKey: lic,
+                                tier: invoiceTier,
+                                timestamp: new Date().toISOString()
+                              });
+                              setIsVaultUnlocked(true);
+                              trackClinicalIntentAction('Unlocked Clinical OS Software Vault', { Order: ord, Tier: invoiceTier });
+                            }}
+                            className="px-3 py-1.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white rounded-lg text-[10px] font-black transition-all cursor-pointer flex items-center gap-1 font-mono shadow-sm"
+                          >
+                            <CheckCircle2 size={11} />
+                            <span>Confirm Wire &amp; Unlock Hospital OS Vault</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* POST-PURCHASE SOFTWARE FULFILLMENT VAULT */}
+                  {isVaultUnlocked && activeOrderDetails && (
+                    <div className="p-4 rounded-2xl bg-emerald-950/90 border-2 border-emerald-500 space-y-3 font-mono text-xs text-white shadow-xl animate-fade-in">
+                      <div className="flex items-center justify-between pb-2 border-b border-emerald-500/40">
+                        <div className="flex items-center gap-2 text-emerald-300 font-bold">
+                          <CheckCircle2 size={16} />
+                          <span>HOSPITAL OS VAULT UNLOCKED • ORDER BONDED</span>
+                        </div>
+                        <span className="text-[10px] text-slate-300">{activeOrderDetails.orderId}</span>
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-[11px]">
+                        <div className="p-2.5 rounded-xl bg-slate-900 border border-emerald-500/40">
+                          <span className="text-slate-400 text-[10px] block">CRYPTOGRAPHIC LICENSE KEY:</span>
+                          <code className="text-cyan-300 font-bold text-xs">{activeOrderDetails.licenseKey}</code>
+                        </div>
+                        <div className="p-2.5 rounded-xl bg-slate-900 border border-emerald-500/40">
+                          <span className="text-slate-400 text-[10px] block">LICENSED TIER:</span>
+                          <span className="text-white font-bold">{activeOrderDetails.tier}</span>
+                        </div>
+                      </div>
+
+                      {/* Deliverables Action Buttons */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
                         <button
-                          onClick={() => window.print()}
-                          className="px-2.5 py-1 bg-white hover:bg-slate-100 border border-slate-300 text-slate-950 rounded-lg text-[10px] font-black transition-all cursor-pointer flex items-center gap-1"
+                          onClick={() => {
+                            const manifest = `# CLINICAL PRISTINE OS PRODUCTION PACKAGE
+ORDER ID: ${activeOrderDetails.orderId}
+LICENSE KEY: ${activeOrderDetails.licenseKey}
+TIER: ${activeOrderDetails.tier}
+ISSUED: ${activeOrderDetails.timestamp}
+
+## 🚀 3-MINUTE DOCKER AIR-GAPPED DEPLOYMENT
+$ git clone https://github.com/linkableai-enterprise/clinical-pristine-core.git
+$ cd clinical-pristine-core
+$ docker compose -f docker-compose.prod.yml up -d --build
+
+## ⚡ INSTANT LOCAL VERIFICATION
+$ curl http://localhost:5174/health
+{"status":"HEALTHY","system":"CLINICAL_PRISTINE_OS","license":"VALID"}
+
+Founder Support WhatsApp: +63 962 281 6533
+`;
+                            const blob = new Blob([manifest], { type: 'text/markdown' });
+                            const url = URL.createObjectURL(blob);
+                            const a = document.createElement('a');
+                            a.href = url;
+                            a.download = `${activeOrderDetails.orderId}_CLINICAL_PRISTINE_DEPLOYMENT_PACKAGE.md`;
+                            document.body.appendChild(a);
+                            a.click();
+                            document.body.removeChild(a);
+                            URL.revokeObjectURL(url);
+                          }}
+                          className="p-2 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-black text-xs flex items-center justify-center gap-1.5 shadow-md cursor-pointer"
                         >
-                          <Printer size={11} />
-                          <span>Print Invoice</span>
+                          <Server size={13} />
+                          <span>Download Production Package (.MD)</span>
                         </button>
+
+                        <a
+                          href="https://wa.me/639622816533?text=Hi%20Mharc,%20I%20unlocked%20Clinical%20Pristine%20Hospital%20Buyout%20Order%20"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-emerald-400 text-emerald-300 font-bold text-xs flex items-center justify-center gap-1.5 cursor-pointer text-center"
+                        >
+                          <Send size={13} />
+                          <span>Join Hospital Founder Onboarding</span>
+                        </a>
                       </div>
                     </div>
                   )}

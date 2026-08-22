@@ -341,14 +341,7 @@ module.exports = {
   forwardRawEmailToGmail
 };
 
-// Unit test when run directly
 if (require.main === module) {
-  processInboundAndGenerateSalesReply({
-    from: 'dr.miller@bannerhealth.com',
-    senderName: 'Dr. Robert Miller',
-    organization: 'Banner University Medical Center',
-    vertical: 'clinical',
-    subject: 'Evaluating ICU Telemetry & Epic FHIR integration',
-    body: 'Hi Mharc, we saw Clinical Pristine OS. We currently use Epic Systems across our ICU wings. How customizable is your medication alert engine for our specific hospital SOPs, and what is your pricing model?'
-  });
+  console.log('🤖 Alexis Vance AI Sales Specialist Module Loaded.');
+  console.log('Use with real inbound prospect events via inboundReplyParserDaemon.js.');
 }

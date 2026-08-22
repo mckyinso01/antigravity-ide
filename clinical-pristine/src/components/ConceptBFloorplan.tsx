@@ -459,7 +459,7 @@ export const ConceptBFloorplan: React.FC<Props> = ({
               <rect
                 x="10"
                 y="8"
-                width="auto"
+                width={Math.max(60, room.id.length * 9)}
                 height="18"
                 rx="4"
                 fill={theme.badgeBg}

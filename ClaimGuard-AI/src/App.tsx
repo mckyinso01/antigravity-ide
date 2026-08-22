@@ -21,6 +21,8 @@ import { CaseStudy, EDGE_CASE_STUDIES } from './engine/edgeCaseStudiesData';
 import { LoginGateway } from './components/auth/LoginGateway';
 import { AuthUser } from './components/layout/Topbar';
 import { DocumentIngestionDrawer } from './components/document-studio/DocumentIngestionDrawer';
+import { useUrlProspectSession } from './hooks/useUrlTabNavigation';
+import { ExitSurveyModal } from './components/ExitSurveyModal';
 
 export const App: React.FC = () => {
   // Authentication State (Pre-configured demo or authenticated hospital specialist)
@@ -57,11 +59,55 @@ export const App: React.FC = () => {
   const [isPromptPayOpen, setIsPromptPayOpen] = useState(false);
   const [isPricingGapOpen, setIsPricingGapOpen] = useState(false);
   const [isFleetHubOpen, setIsFleetHubOpen] = useState(false);
-
-  // Escrow Checkout State
-  const [escrowTier, setEscrowTier] = useState<string>('Tier 3: 100% Sovereign IP Buyout');
-  const [escrowPrice, setEscrowPrice] = useState<number>(485000);
   const [isEscrowOpen, setIsEscrowOpen] = useState(false);
+  const [escrowTier, setEscrowTier] = useState<string>('Tier 1: Departmental Workstation');
+  const [escrowPrice, setEscrowPrice] = useState<number>(18500);
+  const [isExitSurveyOpen, setIsExitSurveyOpen] = useState(false);
+  const prospectSession = useUrlProspectSession('healthcare_legal');
+
+  // 1. Exit-Intent Mouseleave Trigger
+  useEffect(() => {
+    const handleMouseLeave = (e: MouseEvent) => {
+      if (e.clientY <= 5 && !sessionStorage.getItem('claimguard_survey_shown')) {
+        setIsExitSurveyOpen(true);
+        sessionStorage.setItem('claimguard_survey_shown', 'true');
+      }
+    };
+    document.addEventListener('mouseleave', handleMouseLeave);
+    return () => document.removeEventListener('mouseleave', handleMouseLeave);
+  }, []);
+
+  // 2. Modal Browser Back-Button Trapping
+  useEffect(() => {
+    const isAnyModalOpen = Boolean(
+      isDrawerOpen || isIngestionOpen || isMootCourtOpen || isSaccadeOpen ||
+      isDocStudioOpen || isScannerOpen || isEFaxOpen || isPromptPayOpen ||
+      isPricingGapOpen || isFleetHubOpen || isEscrowOpen || isExitSurveyOpen
+    );
+    if (isAnyModalOpen) {
+      window.history.pushState({ modalOpen: true }, '');
+      const handleModalPop = () => {
+        setIsDrawerOpen(false);
+        setIsIngestionOpen(false);
+        setIsMootCourtOpen(false);
+        setIsSaccadeOpen(false);
+        setIsDocStudioOpen(false);
+        setIsScannerOpen(false);
+        setIsEFaxOpen(false);
+        setIsPromptPayOpen(false);
+        setIsPricingGapOpen(false);
+        setIsFleetHubOpen(false);
+        setIsEscrowOpen(false);
+        setIsExitSurveyOpen(false);
+      };
+      window.addEventListener('popstate', handleModalPop, { once: true });
+      return () => window.removeEventListener('popstate', handleModalPop);
+    }
+  }, [
+    isDrawerOpen, isIngestionOpen, isMootCourtOpen, isSaccadeOpen,
+    isDocStudioOpen, isScannerOpen, isEFaxOpen, isPromptPayOpen,
+    isPricingGapOpen, isFleetHubOpen, isEscrowOpen, isExitSurveyOpen
+  ]);
 
   const handleAddNewCase = (newCase: CaseStudy) => {
     setCasesList(prev => [newCase, ...prev]);
@@ -125,6 +171,7 @@ export const App: React.FC = () => {
         onOpenIngestion={() => setIsIngestionOpen(true)}
         authUser={authUser}
         onLogout={handleLogout}
+        onOpenExitSurvey={() => setIsExitSurveyOpen(true)}
       />
 
       {/* Main Workspace Body */}
@@ -232,6 +279,14 @@ export const App: React.FC = () => {
       <FounderFleetCommandHub
         isOpen={isFleetHubOpen}
         onClose={() => setIsFleetHubOpen(false)}
+      />
+
+      {/* 📋 Exit-Intent & Walkthrough Micro-Survey Modal */}
+      <ExitSurveyModal
+        isOpen={isExitSurveyOpen}
+        onClose={() => setIsExitSurveyOpen(false)}
+        prospectSession={prospectSession}
+        appName="ClaimGuard AI Legal Defense OS"
       />
 
       {/* Sovereign Footer */}

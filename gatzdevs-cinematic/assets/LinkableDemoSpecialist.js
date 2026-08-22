@@ -27,7 +27,11 @@
   let productTitle = 'LinkableAI Enterprise Hub';
   let badgeColor = '#00F5FF';
 
-  if (hostDomain.includes('clinical') || currentPath.includes('clinical')) {
+  if (hostDomain.includes('claimguard') || currentPath.includes('claimguard')) {
+    productContext = 'claimguard';
+    productTitle = 'ClaimGuard AI • Statutory Claims & ERISA OS';
+    badgeColor = '#00E5FF';
+  } else if (hostDomain.includes('clinical') || currentPath.includes('clinical')) {
     productContext = 'clinical';
     productTitle = 'Clinical AI • ICU Telemetry & EHR OS';
     badgeColor = '#6366F1';

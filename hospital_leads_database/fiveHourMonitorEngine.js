@@ -152,7 +152,7 @@ async function runFiveHourAudit() {
   try {
     await transporter.sendMail({
       from: `"LinkableAI Autonomous Pipeline" <${SENDER_EMAIL}>`,
-      to: [FOUNDER_PERSONAL, SENDER_EMAIL],
+      to: FOUNDER_PERSONAL,
       subject: `📊 [5-Hour Pipeline Report] ${totalSent} Dispatched • ${pendingLeads} Remaining • ${detectedReplies.length} Replies`,
       html: `
         <div style="font-family: sans-serif; padding: 20px; border: 1px solid #e2e8f0; border-radius: 10px; max-width: 600px;">

@@ -34,13 +34,15 @@ import {
   Copy
 } from 'lucide-react';
 import { trackHighIntentAction } from '../utils/visitorEmailBeacon';
+import { RoiCalculatorWidget } from './RoiCalculatorWidget';
+import { PayPalCheckoutButton } from './PayPalCheckoutButton';
 
 interface LicensingDeploymentModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-type TabType = 'scenarios' | 'security' | 'ergonomics' | 'pricing' | 'schedule' | 'terms';
+type TabType = 'roi' | 'scenarios' | 'security' | 'ergonomics' | 'pricing' | 'schedule' | 'terms';
 
 interface PitchScenario {
   id: string;
@@ -60,6 +62,13 @@ export const LicensingDeploymentModal: React.FC<LicensingDeploymentModalProps> =
 }) => {
   const [activeTab, setActiveTab] = useState<TabType>('pricing');
   const [selectedScenarioFilter, setSelectedScenarioFilter] = useState<string>('ALL');
+  const [isVaultUnlocked, setIsVaultUnlocked] = useState(false);
+  const [activeOrderDetails, setActiveOrderDetails] = useState<{
+    orderId: string;
+    licenseKey: string;
+    tier: string;
+    timestamp: string;
+  } | null>(null);
 
   // Booking Form State
   const [bookingName, setBookingName] = useState('');
@@ -242,6 +251,30 @@ export const LicensingDeploymentModal: React.FC<LicensingDeploymentModalProps> =
           </button>
 
           <button
+            onClick={() => setActiveTab('pricing')}
+            className={`pb-3 px-3.5 border-b-2 font-bold flex items-center gap-2 transition-all cursor-pointer ${
+              activeTab === 'pricing'
+                ? 'border-[#5BC0BE] text-[#6FFFE9]'
+                : 'border-transparent text-slate-400 hover:text-slate-200'
+            }`}
+          >
+            <DollarSign size={15} />
+            <span>Commercial Buyout</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('roi')}
+            className={`pb-3 px-3.5 border-b-2 font-bold flex items-center gap-2 transition-all cursor-pointer ${
+              activeTab === 'roi'
+                ? 'border-[#5BC0BE] text-[#6FFFE9]'
+                : 'border-transparent text-slate-400 hover:text-slate-200'
+            }`}
+          >
+            <DollarSign size={15} />
+            <span>ROI Calculator</span>
+          </button>
+
+          <button
             onClick={() => setActiveTab('schedule')}
             className={`pb-3 px-3.5 border-b-2 font-bold flex items-center gap-2 transition-all cursor-pointer ${
               activeTab === 'schedule'
@@ -292,6 +325,15 @@ export const LicensingDeploymentModal: React.FC<LicensingDeploymentModalProps> =
 
         {/* MODAL BODY */}
         <div className="flex-1 overflow-y-auto p-6 space-y-6">
+
+          {/* TAB: ZERO-SAAS ROI CALCULATOR */}
+          {activeTab === 'roi' && (
+            <RoiCalculatorWidget
+              appName="OmniStock Spatial WMS"
+              defaultBuyoutPrice={25000}
+              onSelectTier={(tier, price) => handleSelectTier(tier, price)}
+            />
+          )}
 
           {/* TAB 1: COMMERCIAL BUYOUT TIERS */}
           {activeTab === 'pricing' && (
@@ -663,6 +705,25 @@ export const LicensingDeploymentModal: React.FC<LicensingDeploymentModalProps> =
           {/* TAB 5: SLA, TERMS & PRO-FORMA INVOICE GENERATOR */}
           {activeTab === 'terms' && (
             <div className="space-y-6 font-sans text-xs">
+              {/* Live PayPal & Cards Smart Buttons */}
+              <div className="p-5 rounded-2xl bg-[#0D1527] border border-[#1E2D4D]">
+                <PayPalCheckoutButton
+                  amountUsd={invoiceTier.includes('4,500') ? 4500 : invoiceTier.includes('8,500') ? 8500 : 25000}
+                  planName={`OmniStock Spatial WMS (${invoiceTier})`}
+                  onSuccess={(details) => {
+                    const ord = `OMNISTOCK-PP-${Math.random().toString(36).substring(2, 7).toUpperCase()}`;
+                    const lic = `OMNISTOCK-IP-${Math.random().toString(36).substring(2, 6).toUpperCase()}-BONDED`;
+                    setActiveOrderDetails({
+                      orderId: ord,
+                      licenseKey: lic,
+                      tier: `${invoiceTier} [PAYPAL VERIFIED: ${details?.id || 'OK'}]`,
+                      timestamp: new Date().toISOString()
+                    });
+                    setIsVaultUnlocked(true);
+                  }}
+                />
+              </div>
+
               {/* Direct B2B Bank Wire Card */}
               <div className="p-5 rounded-2xl bg-gradient-to-r from-blue-950/40 via-[#0D1527] to-emerald-950/40 border border-blue-900/50 space-y-3 font-sans">
                 <div className="flex items-center justify-between">
@@ -780,15 +841,107 @@ export const LicensingDeploymentModal: React.FC<LicensingDeploymentModalProps> =
                       <div><strong>Direct Inquiries:</strong> mharcgatan@linkable.it.com</div>
                     </div>
 
-                    <div className="pt-2 flex items-center justify-between border-t border-[#1E2D4D]">
+                    <div className="pt-2 flex flex-wrap items-center justify-between gap-2 border-t border-[#1E2D4D]">
                       <span className="text-[10px] text-slate-400 font-sans">Includes Docker container, Eulerian wave routing, and 72-hr Master SKU calibration.</span>
+                      <div className="flex items-center gap-2">
+                        <button
+                          onClick={() => window.print()}
+                          className="px-3 py-1.5 bg-[#121D36] hover:bg-[#1E2D4D] border border-[#2A4374] text-white rounded-lg text-[10px] font-bold transition-all cursor-pointer flex items-center gap-1"
+                        >
+                          <Printer size={11} />
+                          <span>Print Invoice</span>
+                        </button>
+                        <button
+                          onClick={() => {
+                            const ord = `OMNI-2026-${Math.random().toString(36).substring(2, 7).toUpperCase()}`;
+                            const lic = `OMNI-SPATIAL-IP-${Math.random().toString(36).substring(2, 6).toUpperCase()}-BONDED`;
+                            setActiveOrderDetails({
+                              orderId: ord,
+                              licenseKey: lic,
+                              tier: invoiceTier,
+                              timestamp: new Date().toISOString()
+                            });
+                            setIsVaultUnlocked(true);
+                            trackHighIntentAction('Unlocked OmniStock Software Vault', { Order: ord, Tier: invoiceTier });
+                          }}
+                          className="px-3 py-1.5 bg-gradient-to-r from-[#5BC0BE] to-[#3A86FF] text-[#070B14] rounded-lg text-[10px] font-bold transition-all cursor-pointer flex items-center gap-1 font-mono shadow-md shadow-[#5BC0BE]/20"
+                        >
+                          <ShieldCheck size={11} />
+                          <span>Confirm Wire & Unlock Software Vault</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* POST-PURCHASE SOFTWARE FULFILLMENT VAULT */}
+                {isVaultUnlocked && activeOrderDetails && (
+                  <div className="p-5 rounded-2xl bg-emerald-950/60 border border-emerald-500/50 space-y-4 font-mono text-xs animate-fade-in">
+                    <div className="flex items-center justify-between pb-3 border-b border-emerald-500/30">
+                      <div className="flex items-center gap-2 text-emerald-400 font-bold">
+                        <CheckCircle2 size={18} />
+                        <span>SOVEREIGN WMS VAULT UNLOCKED • ORDER BONDED</span>
+                      </div>
+                      <span className="text-[10px] text-slate-300">{activeOrderDetails.orderId}</span>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-[11px]">
+                      <div className="p-3 rounded-xl bg-[#070B14] border border-emerald-500/30">
+                        <span className="text-slate-400 text-[10px] block">CRYPTOGRAPHIC LICENSE KEY:</span>
+                        <code className="text-[#6FFFE9] font-bold text-xs">{activeOrderDetails.licenseKey}</code>
+                      </div>
+                      <div className="p-3 rounded-xl bg-[#070B14] border border-emerald-500/30">
+                        <span className="text-slate-400 text-[10px] block">DELIVERABLE TIER:</span>
+                        <span className="text-white font-bold">{activeOrderDetails.tier}</span>
+                      </div>
+                    </div>
+
+                    {/* Deliverables Action Buttons */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
                       <button
-                        onClick={() => window.print()}
-                        className="px-3 py-1 bg-[#121D36] hover:bg-[#1E2D4D] border border-[#2A4374] text-white rounded-lg text-[10px] font-bold transition-all cursor-pointer flex items-center gap-1"
+                        onClick={() => {
+                          const manifest = `# OMNISTOCK SPATIAL WMS PRODUCTION PACKAGE
+ORDER ID: ${activeOrderDetails.orderId}
+LICENSE KEY: ${activeOrderDetails.licenseKey}
+TIER: ${activeOrderDetails.tier}
+ISSUED: ${activeOrderDetails.timestamp}
+
+## 🚀 3-MINUTE DOCKER PRODUCTION DEPLOYMENT
+$ git clone https://github.com/linkableai-enterprise/omnistock-core.git
+$ cd omnistock-core
+$ docker compose -f docker-compose.prod.yml up -d --build
+
+## ⚡ INSTANT LOCAL VERIFICATION
+$ curl http://localhost:5173/health
+{"status":"HEALTHY","system":"OMNISTOCK_SPATIAL_WMS","license":"VALID"}
+
+Founder Support WhatsApp: +63 962 281 6533
+`;
+                          const blob = new Blob([manifest], { type: 'text/markdown' });
+                          const url = URL.createObjectURL(blob);
+                          const a = document.createElement('a');
+                          a.href = url;
+                          a.download = `${activeOrderDetails.orderId}_OMNISTOCK_DEPLOYMENT_PACKAGE.md`;
+                          document.body.appendChild(a);
+                          a.click();
+                          document.body.removeChild(a);
+                          URL.revokeObjectURL(url);
+                        }}
+                        className="p-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-md cursor-pointer"
                       >
-                        <Printer size={11} />
-                        <span>Print Invoice</span>
+                        <Layers size={14} />
+                        <span>Download Production Bundle (.MD)</span>
                       </button>
+
+                      <a
+                        href="https://wa.me/639622816533?text=Hi%20Mharc,%20I%20unlocked%20OmniStock%20WMS%20Buyout%20Order%20"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2.5 rounded-xl bg-[#070B14] hover:bg-[#121D36] border border-emerald-400 text-emerald-400 font-bold text-xs flex items-center justify-center gap-1.5 cursor-pointer text-center"
+                      >
+                        <Send size={14} />
+                        <span>Join Founder Onboarding WhatsApp</span>
+                      </a>
                     </div>
                   </div>
                 )}

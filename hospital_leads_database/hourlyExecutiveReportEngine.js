@@ -299,18 +299,17 @@ async function generateAndDispatchHourlyReport() {
 </html>
   `;
 
-  // 5. Dispatch Email to Founder & Escalation Address
+  // 5. Dispatch Email directly to Founder Personal Gmail
   const mailOptions = {
     from: `"LinkableAI Executive Sentinel" <${SENDER_EMAIL}>`,
-    to: SENDER_EMAIL,
-    cc: FOUNDER_PERSONAL,
+    to: FOUNDER_PERSONAL,
     subject: `📊 [Hourly Report] LinkableAI Ecosystem Status • All 6 Endpoints 100% Operational (${new Date().toLocaleTimeString('en-US', { timeZone: 'Asia/Manila', hour: '2-digit', minute: '2-digit' })} PHT)`,
     html: htmlContent
   };
 
-  console.log(`📤 Dispatching report to ${SENDER_EMAIL} & ${FOUNDER_PERSONAL}...`);
+  console.log(`📤 Dispatching executive report directly to Founder Gmail (${FOUNDER_PERSONAL})...`);
   const info = await transporter.sendMail(mailOptions);
-  console.log(`✅ Hourly Executive Report successfully dispatched! MessageId: ${info.messageId}`);
+  console.log(`✅ Hourly Executive Report successfully dispatched to Gmail! MessageId: ${info.messageId}`);
 
   return { success: true, messageId: info.messageId, timestamp: new Date().toISOString() };
 }

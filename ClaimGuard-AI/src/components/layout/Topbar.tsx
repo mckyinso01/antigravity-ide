@@ -30,6 +30,7 @@ interface TopbarProps {
   onOpenIngestion?: () => void;
   authUser?: AuthUser | null;
   onLogout?: () => void;
+  onOpenExitSurvey?: () => void;
 }
 
 export const Topbar: React.FC<TopbarProps> = ({
@@ -49,7 +50,8 @@ export const Topbar: React.FC<TopbarProps> = ({
   onOpenPromptPay,
   onOpenIngestion,
   authUser,
-  onLogout
+  onLogout,
+  onOpenExitSurvey
 }) => {
   const [showSettings, setShowSettings] = useState(false);
   const settingsRef = useRef<HTMLDivElement | null>(null);
@@ -302,6 +304,26 @@ export const Topbar: React.FC<TopbarProps> = ({
         >
           💰 $485K Buyout ROI
         </button>
+
+        {/* Exit Demo / Micro-Survey Trigger */}
+        {onOpenExitSurvey && (
+          <button
+            onClick={onOpenExitSurvey}
+            style={{
+              padding: '7px 11px',
+              borderRadius: 'var(--radius-sm)',
+              background: 'rgba(6, 182, 212, 0.15)',
+              border: '1px solid rgba(6, 182, 212, 0.4)',
+              color: 'var(--status-cyan)',
+              fontSize: '12px',
+              fontWeight: 700,
+              cursor: 'pointer'
+            }}
+            title="Leave a 1-minute legal defense review and exit demo"
+          >
+            ✨ Exit Demo
+          </button>
+        )}
 
         {/* Theme Switcher */}
         <button

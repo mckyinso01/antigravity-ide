@@ -82,3 +82,4 @@ export const initSaccadeVisitorBeacon = (appName: string = "Saccade Biometric CR
 export const trackHighIntentAction = (action: string, meta?: Record<string, unknown>) => trackLeadAction(action, meta);
 export const trackSiteSafeLeadAction = (action: string, meta?: Record<string, unknown>) => trackLeadAction(action, meta);
 export const trackSaccadeIntentAction = (action: string, meta?: Record<string, unknown>) => trackLeadAction(action, meta);
+export const trackClinicalIntentAction = (action: string, meta?: Record<string, unknown>) => trackLeadAction(action, meta);

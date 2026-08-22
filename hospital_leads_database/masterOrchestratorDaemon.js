@@ -18,7 +18,7 @@ const { auditAndParseInboundReplies } = require('./inboundReplyParserDaemon');
 const { runFollowUpBatch } = require('./coDesignFollowUpCronEngine');
 const { runSelfHealingBounceRecovery } = require('./selfHealingBounceEngine');
 const { autoRefillNextBatch } = require('./leadAutoRefillEngine');
-const { runFiveHourAudit } = require('./fiveHourMonitorEngine');
+const { generateAndDispatchUnified5AppReport } = require('./unifiedMasterExecutiveReportEngine');
 
 // Interval Constants (in milliseconds)
 const INBOUND_PARSER_INTERVAL_MS = 10 * 60 * 1000;          // 10 Minutes
@@ -39,7 +39,7 @@ console.log('================================================================\n'
 async function triggerLeadHunterCycle() {
   console.log(`\n🌐 [ENGINE 0: LEADSUITE HUNTER TRIGGER] Scanning OpenStreetMap & DecisionMakers at ${new Date().toLocaleTimeString()}...`);
   try {
-    const verticals = ['clinical', 'sitesafe', 'omnistock', 'saccade'];
+    const verticals = ['claimguard', 'clinical', 'sitesafe', 'omnistock', 'saccade'];
     const randomVertical = verticals[Math.floor(Math.random() * verticals.length)];
     await runLeadHunterCycle({ vertical: randomVertical });
   } catch (err) {
@@ -87,13 +87,13 @@ async function triggerLeadRefillCycle() {
   }
 }
 
-// 5. Five-Hour Executive Telemetry Dispatcher (Every 5h)
+// 5. Unified 5-Flagship Executive Telemetry Dispatcher (Every 5h)
 async function triggerFiveHourAuditCycle() {
-  console.log(`\n📊 [ENGINE 5: EXECUTIVE 5-HR TELEMETRY TRIGGER] Compiling conversation analytics & dispatching report at ${new Date().toLocaleTimeString()}...`);
+  console.log(`\n📊 [ENGINE 5: UNIFIED 5-APP EXECUTIVE TELEMETRY TRIGGER] Compiling 5-flagship metrics & dispatching report at ${new Date().toLocaleTimeString()}...`);
   try {
-    await runFiveHourAudit();
+    await generateAndDispatchUnified5AppReport();
   } catch (err) {
-    console.error('⚠️ Five-hour audit error:', err.message);
+    console.error('⚠️ Unified 5-app audit error:', err.message);
   }
 }
 

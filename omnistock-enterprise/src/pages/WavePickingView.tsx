@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import type { PickOrder } from '../types';
-import { 
-  Zap, 
-  CheckCircle2, 
+import {
+  Zap,
+  CheckCircle2,
   ArrowRight
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
@@ -80,17 +80,15 @@ export const WavePickingView: React.FC<WavePickingViewProps> = ({
               <div
                 key={ord.id}
                 onClick={() => setActiveOrderId(ord.id)}
-                className={`p-4 rounded-2xl border transition-all cursor-pointer space-y-2 ${
-                  isSelected 
-                    ? 'bg-[#121D36] border-[#5BC0BE] shadow-lg glow-mint' 
+                className={`p-4 rounded-2xl border transition-all cursor-pointer space-y-2 ${isSelected
+                    ? 'bg-[#121D36] border-[#5BC0BE] shadow-lg glow-mint'
                     : 'bg-[#0D1527] border-[#1E2D4D] hover:border-slate-600'
-                }`}
+                  }`}
               >
                 <div className="flex items-center justify-between">
                   <span className="font-mono font-bold text-sm text-white">{ord.orderNumber}</span>
-                  <span className={`text-[10px] font-mono px-2 py-0.5 rounded font-bold ${
-                    ord.priority === 'STAT' ? 'bg-rose-950 text-rose-300 border border-rose-800' : 'bg-blue-950 text-blue-300 border border-blue-800'
-                  }`}>
+                  <span className={`text-[10px] font-mono px-2 py-0.5 rounded font-bold ${ord.priority === 'STAT' ? 'bg-rose-950 text-rose-300 border border-rose-800' : 'bg-blue-950 text-blue-300 border border-blue-800'
+                    }`}>
                     {ord.priority}
                   </span>
                 </div>
@@ -153,11 +151,10 @@ export const WavePickingView: React.FC<WavePickingViewProps> = ({
                   return (
                     <div
                       key={idx}
-                      className={`p-4 rounded-xl border flex items-center justify-between transition-all ${
-                        isPicked 
-                          ? 'bg-emerald-950/20 border-emerald-800/80 text-emerald-200' 
+                      className={`p-4 rounded-xl border flex items-center justify-between transition-all ${isPicked
+                          ? 'bg-emerald-950/20 border-emerald-800/80 text-emerald-200'
                           : 'bg-[#121D36] border-[#2A4374] text-white'
-                      }`}
+                        }`}
                     >
                       <div className="flex items-center gap-3">
                         <span className="w-7 h-7 rounded-lg bg-[#070B14] border border-[#1E2D4D] flex items-center justify-center font-bold text-xs text-[#5BC0BE]">
@@ -179,11 +176,10 @@ export const WavePickingView: React.FC<WavePickingViewProps> = ({
                         <button
                           onClick={() => handlePickLine(activeOrder.id, idx)}
                           disabled={isPicked}
-                          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
-                            isPicked
+                          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${isPicked
                               ? 'bg-emerald-900/60 text-emerald-300 border border-emerald-700 cursor-default'
                               : 'bg-[#5BC0BE] hover:bg-[#6FFFE9] text-[#070B14] shadow-sm'
-                          }`}
+                            }`}
                         >
                           <CheckCircle2 size={14} />
                           <span>{isPicked ? 'Verified' : 'Confirm Pick'}</span>

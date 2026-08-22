@@ -165,6 +165,7 @@ async function runLeadHunterCycle(options = {}) {
   console.log(`======================================================\n`);
 
   let tag = 'amenity=hospital';
+  if (targetVertical === 'claimguard') tag = 'amenity=hospital';
   if (targetVertical === 'sitesafe') tag = 'office=construction_company';
   if (targetVertical === 'omnistock') tag = 'building=warehouse';
   if (targetVertical === 'saccade') tag = 'office=advertising_agency';

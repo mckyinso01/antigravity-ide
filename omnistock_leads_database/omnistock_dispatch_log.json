@@ -465,5 +465,55 @@
     "messageId": "<cfd8edb9-984c-8db1-602f-d433a65d0b82@gmail.com>",
     "timestamp": "2026-08-18T19:38:56.679Z",
     "status": "DELIVERED"
+  },
+  {
+    "id": 46,
+    "company": "Penshoppe (Golden ABC)",
+    "email": "customercare@penshoppe.com",
+    "sector": "Fashion & Apparel",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Penshoppe (Golden ABC)",
+    "messageId": "<c0055972-5f07-534f-0873-c58156bf4034@gmail.com>",
+    "timestamp": "2026-08-22T02:36:14.322Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 47,
+    "company": "Bench (Suyen Corporation)",
+    "email": "customercare@bench.com.ph",
+    "sector": "Fashion & Apparel",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Bench (Suyen Corporation)",
+    "messageId": "<337238bc-10d7-6208-c307-eb450b7de5ec@gmail.com>",
+    "timestamp": "2026-08-22T02:37:02.582Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 48,
+    "company": "Bayo Philippines",
+    "email": "customercare@bayo.com.ph",
+    "sector": "Fashion & Apparel",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Bayo Philippines",
+    "messageId": "<e5e2f803-0516-6687-6886-17ef20496ce1@gmail.com>",
+    "timestamp": "2026-08-22T02:37:46.354Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 49,
+    "company": "Kamiseta Fashion",
+    "email": "customercare@kamiseta.com",
+    "sector": "Fashion & Apparel",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Kamiseta Fashion",
+    "messageId": "<b96faa30-67cd-0aff-3b14-1a1acad7c225@gmail.com>",
+    "timestamp": "2026-08-22T02:38:32.782Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 50,
+    "company": "Plains & Prints",
+    "email": "customercare@plainsandprints.com",
+    "sector": "Fashion & Apparel",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Plains & Prints",
+    "messageId": "<2776dea2-aa1c-9c7d-7b19-5e9dca067cc8@gmail.com>",
+    "timestamp": "2026-08-22T02:39:19.575Z",
+    "status": "DELIVERED"
   }
 ]
