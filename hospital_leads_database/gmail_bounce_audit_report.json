@@ -1,6 +1,6 @@
 {
-  "auditedAt": "2026-08-20T01:08:37.084Z",
-  "totalBounces": 42,
+  "auditedAt": "2026-08-22T06:14:44.542Z",
+  "totalBounces": 68,
   "bounces": [
     {
       "date": "Mon, 17 Aug 2026 09:29:49 -0700 (PDT)",
@@ -337,783 +337,217 @@
       "failedRecipient": "info@sanroquesupermarket.com.ph",
       "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
       "snippet": "--0000000000002ef41d06596b24b7 Content-Type: multipart/related; boundary=\"0000000000002f00e606596b24de\"  --0000000000002f00e606596b24de Content-Type: multipart/alternative; boundary=\"0000000000002f00ea06596b24df\"  --0000000000002f00ea06596b24df Content-Type: text/plain; charset=\"UTF-8\"   ** Delivery incomplete **  There was a temporary "
+    },
+    {
+      "date": "Thu, 20 Aug 2026 11:15:48 +0000",
+      "subject": "Undeliverable: Quick follow-up: What custom modules or workflow modifications would Skagit Regional Health need?",
+      "from": "<postmaster@skagitregionalhealth.org>",
+      "failedRecipient": "gary.smith@skagitregionalhealth.org",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--fe168d25-c8d3-43d8-8526-73bd4def3a7b Content-Type: multipart/alternative; differences=Content-Type; \tboundary=\"f35789ff-e71c-435f-afff-7cc4ebba7266\"  --f35789ff-e71c-435f-afff-7cc4ebba7266 Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable  Delivery has failed to these recipients or groups:  gary.sm"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 11:23:51 +0000",
+      "subject": "Undeliverable: Quick follow-up: What custom modules or workflow modifications would Skagit Regional Health need?",
+      "from": "<postmaster@skagitregionalhealth.org>",
+      "failedRecipient": "gary.smith@skagitregionalhealth.org",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--6966adce-9bf5-4fb0-8e79-d7e072b8e6d5 Content-Type: multipart/alternative; differences=Content-Type; \tboundary=\"98f9a819-316b-497c-813f-9ae8e4eed4b5\"  --98f9a819-316b-497c-813f-9ae8e4eed4b5 Content-Type: text/plain; charset=\"us-ascii\" Content-Transfer-Encoding: quoted-printable  Delivery has failed to these recipients or groups:  gary.sm"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 04:33:05 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "stephanie.lahr@monument.health",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--0000000000002d396d065978e27a Content-Type: multipart/related; boundary=\"0000000000002d511d065978e21b\"  --0000000000002d511d065978e21b Content-Type: multipart/alternative; boundary=\"0000000000002d5123065978e21c\"  --0000000000002d5123065978e21c Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 04:34:28 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "cheryl.caughron@carsontahoe.org",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--00000000000020316b065978e72a Content-Type: multipart/related; boundary=\"000000000000203db6065978e739\"  --000000000000203db6065978e739 Content-Type: multipart/alternative; boundary=\"000000000000203dbd065978e73a\"  --000000000000203dbd065978e73a Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 04:41:11 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "amy.linscheid@billingsclinic.org",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--0000000000001d6e88065978ffa9 Content-Type: multipart/related; boundary=\"0000000000001d81cb065978ffb7\"  --0000000000001d81cb065978ffb7 Content-Type: multipart/alternative; boundary=\"0000000000001d81d1065978ffb8\"  --0000000000001d81d1065978ffb8 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 11:35:30 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customer.care@metroretail.com.ph",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--000000000000d8476306597ec838 Content-Type: multipart/related; boundary=\"000000000000d8581d06597ec839\"  --000000000000d8581d06597ec839 Content-Type: multipart/alternative; boundary=\"000000000000d8582706597ec83a\"  --000000000000d8582706597ec83a Content-Type: text/plain; charset=\"UTF-8\"   ** Message not delivered **  There was a problem "
+    },
+    {
+      "date": "Thu, 20 Aug 2026 13:01:01 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "info@sanroquesupermarket.com.ph",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--000000000000b099b906597ffae8 Content-Type: multipart/related; boundary=\"000000000000b0a8c906597ffaf9\"  --000000000000b0a8c906597ffaf9 Content-Type: multipart/alternative; boundary=\"000000000000b0a8d406597ffafa\"  --000000000000b0a8d406597ffafa Content-Type: text/plain; charset=\"UTF-8\"   ** Message not delivered **  There was a problem "
+    },
+    {
+      "date": "Thu, 20 Aug 2026 14:13:18 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "info@eversupermarket.com",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--0000000000002bf28c065980fdcd Content-Type: multipart/related; boundary=\"0000000000002c080b065980fd39\"  --0000000000002c080b065980fd39 Content-Type: multipart/alternative; boundary=\"0000000000002c0811065980fd3a\"  --0000000000002c0811065980fd3a Content-Type: text/plain; charset=\"UTF-8\"   ** Message not delivered **  There was a problem "
+    },
+    {
+      "date": "Thu, 20 Aug 2026 15:14:38 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "info@sanroquesupermarket.com.ph",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--0000000000008abaad065981d8b1 Content-Type: multipart/related; boundary=\"0000000000008ad2d0065981d8c0\"  --0000000000008ad2d0065981d8c0 Content-Type: multipart/alternative; boundary=\"0000000000008ad2d6065981d8c1\"  --0000000000008ad2d6065981d8c1 Content-Type: text/plain; charset=\"UTF-8\"   ** Message not delivered **  There was a problem "
+    },
+    {
+      "date": "Fri, 21 Aug 2026 19:36:16 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customercare@penshoppe.com",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--0000000000000a8ef10659999ebb Content-Type: multipart/related; boundary=\"0000000000000aa3ac0659999ec1\"  --0000000000000aa3ac0659999ec1 Content-Type: multipart/alternative; boundary=\"0000000000000aa3b20659999ec2\"  --0000000000000aa3b20659999ec2 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 19:37:03 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customercare@bench.com.ph",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--000000000000cf9163065999a0d5 Content-Type: multipart/related; boundary=\"000000000000cfa350065999a001\"  --000000000000cfa350065999a001 Content-Type: multipart/alternative; boundary=\"000000000000cfa357065999a002\"  --000000000000cfa357065999a002 Content-Type: text/plain; charset=\"UTF-8\" Content-Transfer-Encoding: quoted-printable   ** Add"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 19:37:47 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customercare@bayo.com.ph",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--000000000000749019065999a393 Content-Type: multipart/related; boundary=\"000000000000749035065999a394\"  --000000000000749035065999a394 Content-Type: multipart/alternative; boundary=\"000000000000749036065999a395\"  --000000000000749036065999a395 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 19:38:33 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customercare@kamiseta.com",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--0000000000003239a4065999a6a2 Content-Type: multipart/related; boundary=\"0000000000003241c0065999a6a3\"  --0000000000003241c0065999a6a3 Content-Type: multipart/alternative; boundary=\"0000000000003241c4065999a6a4\"  --0000000000003241c4065999a6a4 Content-Type: text/plain; charset=\"UTF-8\" Content-Transfer-Encoding: quoted-printable   ** Add"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 19:39:20 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customercare@plainsandprints.com",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--000000000000ff8145065999a8e5 Content-Type: multipart/related; boundary=\"000000000000ff8913065999a800\"  --000000000000ff8913065999a800 Content-Type: multipart/alternative; boundary=\"000000000000ff8916065999a801\"  --000000000000ff8916065999a801 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 20:36:16 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customer.care@robinsonsretail.com.ph",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--0000000000009a35d206599a744a Content-Type: multipart/related; boundary=\"0000000000009a43ae06599a746b\"  --0000000000009a43ae06599a746b Content-Type: multipart/alternative; boundary=\"0000000000009a43b306599a746c\"  --0000000000009a43b306599a746c Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 20:36:55 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customercare@bench.com.ph",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--000000000000f3dd1b06599a761e Content-Type: multipart/related; boundary=\"000000000000f3ef7306599a7692\"  --000000000000f3ef7306599a7692 Content-Type: multipart/alternative; boundary=\"000000000000f3ef7b06599a7693\"  --000000000000f3ef7b06599a7693 Content-Type: text/plain; charset=\"UTF-8\" Content-Transfer-Encoding: quoted-printable   ** Add"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 20:37:50 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customercare@bench.com.ph",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--00000000000038b71e06599a7a38 Content-Type: multipart/related; boundary=\"00000000000038c02b06599a7a39\"  --00000000000038c02b06599a7a39 Content-Type: multipart/alternative; boundary=\"00000000000038c02e06599a7a3a\"  --00000000000038c02e06599a7a3a Content-Type: text/plain; charset=\"UTF-8\" Content-Transfer-Encoding: quoted-printable   ** Add"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 21:03:42 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customercare@regattalifestyle.com",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--000000000000b864fd06599ad680 Content-Type: multipart/related; boundary=\"000000000000b86e4306599ad681\"  --000000000000b86e4306599ad681 Content-Type: multipart/alternative; boundary=\"000000000000b86e4a06599ad682\"  --000000000000b86e4a06599ad682 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 21:37:37 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customercare@puregold.com.ph",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--0000000000000a4a1e06599b5014 Content-Type: multipart/related; boundary=\"0000000000000a5ef706599b502a\"  --0000000000000a5ef706599b502a Content-Type: multipart/alternative; boundary=\"0000000000000a5f0206599b502b\"  --0000000000000a5f0206599b502b Content-Type: text/plain; charset=\"UTF-8\"   ** Message not delivered **  There was a problem "
+    },
+    {
+      "date": "Fri, 21 Aug 2026 21:37:58 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customercare@keds.com.ph",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--00000000000042c7f106599b518e Content-Type: multipart/related; boundary=\"00000000000042d0f006599b51a5\"  --00000000000042d0f006599b51a5 Content-Type: multipart/alternative; boundary=\"00000000000042d0f206599b51a6\"  --00000000000042d0f206599b51a6 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 21:38:42 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customercare@pony.com.ph",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--000000000000e7d9a206599b53c8 Content-Type: multipart/related; boundary=\"000000000000e7e99e06599b53ec\"  --000000000000e7e99e06599b53ec Content-Type: multipart/alternative; boundary=\"000000000000e7e9a306599b53ed\"  --000000000000e7e9a306599b53ed Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 21:42:39 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customercare@memofashion.com",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--000000000000062a1906599b628a Content-Type: multipart/related; boundary=\"000000000000063d0206599b62a0\"  --000000000000063d0206599b62a0 Content-Type: multipart/alternative; boundary=\"000000000000063d0906599b62a1\"  --000000000000063d0906599b62a1 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 21:43:53 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customer.care@robinsonsretail.com.ph",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--0000000000007141df06599b666a Content-Type: multipart/related; boundary=\"00000000000071509206599b669c\"  --00000000000071509206599b669c Content-Type: multipart/alternative; boundary=\"00000000000071509706599b669d\"  --00000000000071509706599b669d Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 22:02:21 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customercare@oxgnfashion.com",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--0000000000007134fd06599ba8b9 Content-Type: multipart/related; boundary=\"00000000000071431506599ba8c7\"  --00000000000071431506599ba8c7 Content-Type: multipart/alternative; boundary=\"00000000000071431806599ba8c8\"  --00000000000071431806599ba8c8 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 22:36:15 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "info@complexlifestylestore.com",
+      "diagnosticReason": "550 5.7.26 - Authentication Policy (SPF/DKIM alignment issue)",
+      "snippet": "--000000000000b7934c06599c219a Content-Type: multipart/related; boundary=\"000000000000b7a56106599c21d8\"  --000000000000b7a56106599c21d8 Content-Type: multipart/alternative; boundary=\"000000000000b7a56506599c21d9\"  --000000000000b7a56506599c21d9 Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 22:39:35 -0700 (PDT)",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "failedRecipient": "customercare@chrissports.com",
+      "diagnosticReason": "550 5.1.1 - Recipient User Account Does Not Exist (Dead/Invalid Mailbox)",
+      "snippet": "--000000000000a7249f06599c2d6d Content-Type: multipart/related; boundary=\"000000000000a7353d06599c2d6e\"  --000000000000a7353d06599c2d6e Content-Type: multipart/alternative; boundary=\"000000000000a7354806599c2d6f\"  --000000000000a7354806599c2d6f Content-Type: text/plain; charset=\"UTF-8\"   ** Address not found **  Your message wasn't deli"
     }
   ],
   "prospectReplies": [
-    {
-      "date": "Wed, 12 Aug 2026 19:00:34 +0000",
-      "from": "\"Zapier\" <events@send.zapier.com>",
-      "subject": "[Reminder] Live workshop: Improve your Meta match rate with CAPI",
-      "snippet": "--_----dsPdBaPoy/qOpOUreXuZUw===_80/5D-51419-2D2CC7A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  [Live workshop] Improve your Meta match rate with CAPI "
-    },
-    {
-      "date": "Wed, 12 Aug 2026 18:36:26 +0000",
-      "from": "\"Boom 3D Windows\" <marketing@globaldelight.com>",
-      "subject": "Save 75% on Boom 3D today! | Back to School Sale 📒",
-      "snippet": " This is a MIME encoded message.  --MIMEboundary5BFBD7D2 Content-Type: text/plain; charset=\"utf-8\" Content-Transfer-Encoding: 7bit  Experience deeper immersion in movies and games, higher fidelit"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 00:35:19 +0000",
-      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
-      "subject": "Virtual Assistant (Salesforce) at NeoWork. 29 more work from home jobs",
-      "snippet": "--_----PiUvymh+r2Nh/PuYwsmFgg===_4F/1F-27071-7411D7A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A30 new work from home jobs=0A=0AJobs"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 01:35:07 +0000",
-      "from": "Dribbble <no-reply@n.dribbble.com>",
-      "subject": "🖋️ Discover the Agencies & Tools Driving Creative Work in 2026",
-      "snippet": "--0a09d927be748203af1ab3536250810ae1eae6b07484fe40718b5009ed7a Content-Type: text/plain; charset=\"utf-8\" Content-Transfer-Encoding: quoted-printable  =E2=80=8A  =E2=80=8A  August 12, 2026 ( h"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 03:21:40 +0000",
-      "from": "Dribbble <no-reply@dribbble.com>",
-      "subject": "Execute faster with ready-to-buy services on Dribbble.",
-      "snippet": "--e91e37b625d403fdebc1c3d3f95e0821965e480148e0f85bd297f8bebc5f Content-Type: text/plain; charset=\"utf-8\" Content-Transfer-Encoding: quoted-printable  Browse thousands of pre-priced service offerin"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 03:30:42 +0000",
-      "from": "Jovin from Mobbin <jovin@mobbin.com>",
-      "subject": "Discover why designers love Mobbin",
-      "snippet": "--d4177fd9acb2952177c4097f7880fe682a51304f771ec6d7c1cb7c5e1618 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"utf-8\"  Mobbin logo  Hi there,  Are you tired of s"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 03:33:14 +0000",
-      "from": "\"GrabPoints.com\" <info@mail.grabpoints.com>",
-      "subject": "🎉 Your Opinion Counts - Get 2632 points in just 15 minutes",
-      "snippet": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"> <html xmlns=\"http://www.w3.org/1999/xhtml\">   <head>     <meta http-equiv=\""
-    },
-    {
-      "date": "Thu, 13 Aug 2026 04:25:40 +0000",
-      "from": "Joe at PostHog <joe@posthog.com>",
-      "subject": "Welcome to PostHog!",
-      "snippet": "--d16ae9df3295207e504e2f6b7a6ea2c9f9666940041438dac24e56e8bfbb Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"utf-8\"  We've got self-driving tools, and hedgehogs ga"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 03:46:11 +0100",
-      "from": "Yotspot <no-reply@yotspot.com>",
-      "subject": "Yotspot - New jobs for you!",
-      "snippet": "PCFET0NUWVBFIGh0bWw+CjxodG1sPgoJCQkJPGhlYWQ+CgkJCQkJPG1ldGEgbmFtZT0idmlld3Bv cnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCI+CgkJCQkJPG1ldGEgaHR0cC1lcXVpdj0i Q29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 06:53:28 +0000",
-      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
-      "subject": "AI, E-commerce, Design & Marketing Expert at BioHack Group Ltd. 29 more automation work from home jobs",
-      "snippet": "--_----n+RMP3XCKaQDsSCBSV0WQg===_D3/2D-40561-8E96D7A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A30 new automation work from home job"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 07:07:21 +0000",
-      "from": "Quora Suggested Spaces <anotherpointofview-space@quora.com>",
-      "subject": "ZELENSKYY CONFIRMS RUSSIA IS LOSING BATTLEFIELD INITIATIVE Zelenskyy has confirmed what most have known since early 2026. Russia is losing the batt...",
-      "snippet": "--===============8393699618311484951== Content-Type: text/plain; charset=\"utf-8\" MIME-Version: 1.0 Content-Transfer-Encoding: quoted-printable  Trending Stories from Another Point of View  ----"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 08:27:56 +0000",
-      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
-      "subject": "Landing Page & GHL Automation Specialist (Part Time | $5-$15/hr) at PrimeTime VA. 29 more automation specialist jobs in Philippines",
-      "snippet": "--_----4hD/cxqwS43K4nuwO7Ih+g===_AA/9A-56135-C008D7A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A30 new automation specialist jobs in"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:06:42 +0000",
-      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
-      "subject": "Landing Page & GHL Automation Specialist (Part Time | $5-$15/hr) at PrimeTime VA. 29 more automation jobs",
-      "snippet": "--_----mGKKUyya07OqZIjfcJFIlQ===_DC/96-28405-2298D7A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A30 new automation jobs=0A=0AJobs 1-3"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 11:27:12 +0000",
-      "from": "\"Indeed\" <donotreply@match.indeed.com>",
-      "subject": "Zapier Automation Specialist @ Offshorly",
-      "snippet": "--_----WTXqbzeXgXGBry5Os7efhA===_28/8D-20677-01AAD7A6 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=\"UTF-8\"  Hi Mharc Christian,  It looks like your background could be a mat"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 13:12:59 +0000",
-      "from": "\"GrabPoints.com\" <info@mail.grabpoints.com>",
-      "subject": "📊 Share Your Thoughts - Earn 2632 points in only 15 minutes",
-      "snippet": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"> <html xmlns=\"http://www.w3.org/1999/xhtml\">   <head>     <meta http-equiv=\""
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:24:55 -0400 (EDT)",
-      "from": "FlexJobs <notify@mg.flexjobs.com>",
-      "subject": "Don’t miss today’s  jobs!",
-      "snippet": "------=_Part_163770699_1516579387.1786631095973 Content-Type: multipart/related;  \tboundary=\"----=_Part_163770700_708124583.1786631095973\"  ------=_Part_163770700_708124583.1786631095973 Content-"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:02:19 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: .github/workflows/validate-attestation.yml - main (8e64e9e)",
-      "snippet": "--part_0fea0892167fd3067727e0b9483f0344e3d79bb9afb920c58173d4a67f0c745f Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] .github/workflows/vali"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:02:24 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python Unit Tests - main (8e64e9e)",
-      "snippet": "--part_6c900ebd7c2c1a727a27437a088158e8923af9d87037f00f4140fff1055f8370 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python Unit Tests work"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:02:25 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Master CI Pipeline & Security Gating - main (8e64e9e)",
-      "snippet": "--part_7c2475b5eead8efa41b9ce20afc6a28912979eeffd788e157819d5960fb429b0 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Master CI Pipeline & S"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:02:23 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python + Node (acorn) Tests Matrix - main (8e64e9e)",
-      "snippet": "--part_ee7fab837ab38160aceee9dd2ef6b57d99522268ab7f10f8280d8d43ec799297 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python + Node (acorn) "
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:02:31 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Gemini 3.6 Flash Deterministic Code Audit - main (8e64e9e)",
-      "snippet": "--part_5ca4b5b3884c0f58b0b2333ab3f524ac4532ba4d83c6b9fbb1258f7082528924 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Gemini 3.6 Flash Deter"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:02:32 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Validate Design Tokens - main (8e64e9e)",
-      "snippet": "--part_63706ea4e3cf59cb403c490ac27f6816afb94b7e68e62561738912cf1681b344 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Validate Design Tokens"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:02:25 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: FAANG-Tier Zero-Defect CI Pipeline - main (8e64e9e)",
-      "snippet": "--part_c3995fb620099ec785cca0cc99eca818225502a73d9055c63e3bc5991b5344df Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] FAANG-Tier Zero-Defect"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:02:48 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: .github/workflows/validate-attestation.yml - main (f535ce5)",
-      "snippet": "--part_b63b750ffd61c9b72192a704eb59e45fc2228ea31d42e42f5a05d36396d68a9e Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] .github/workflows/vali"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:02:53 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Gemini 3.6 Flash Deterministic Code Audit - main (f535ce5)",
-      "snippet": "--part_66b4f687d12a218e55d9c2df8868ca6febd1e92de49747b52180d6cf937fee75 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Gemini 3.6 Flash Deter"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:02:53 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python + Node (acorn) Tests Matrix - main (f535ce5)",
-      "snippet": "--part_0346413e8f6f4992975b05c47d546d990f7427ae68431cb5600b7f10b9676625 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python + Node (acorn) "
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:02:53 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python Unit Tests - main (f535ce5)",
-      "snippet": "--part_611d22547555202b874a248dd947828172f90d3a6abd038c70581cb19fb3bc77 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python Unit Tests work"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:02:54 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Master CI Pipeline & Security Gating - main (f535ce5)",
-      "snippet": "--part_84a873f9a3adf307da99483f254350108090253b1580e18b85d155556200c367 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Master CI Pipeline & S"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:02:55 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: FAANG-Tier Zero-Defect CI Pipeline - main (f535ce5)",
-      "snippet": "--part_aa68ad1667ae1b4f23221759d6f00dcb80e7d278ed5ef5b009b80fcaaed08e44 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] FAANG-Tier Zero-Defect"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:03:00 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Validate Design Tokens - main (f535ce5)",
-      "snippet": "--part_9af74b4e5d21121401cea37a7d4748e013680b24a0719ad5812c6c3b3f7e9843 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Validate Design Tokens"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:03:19 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: .github/workflows/validate-attestation.yml - main (f1c0848)",
-      "snippet": "--part_a87dfd8fbb898447b2cbb98869d80a9f25f93f186f999c484595751fea241273 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] .github/workflows/vali"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:03:24 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python Unit Tests - main (f1c0848)",
-      "snippet": "--part_aca445b07969d07654fa997d2b1f02db1e654c004f719cbc73b82c182292662e Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python Unit Tests work"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:03:25 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Validate Design Tokens - main (f1c0848)",
-      "snippet": "--part_c54e847d9570ed42b050a035e2182322c418e1835586508a242a0da4147cb045 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Validate Design Tokens"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:03:25 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python + Node (acorn) Tests Matrix - main (f1c0848)",
-      "snippet": "--part_e79a026e28f5359d5571d8d61365d411056b2142b755a7e5eee7f4005fc43327 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python + Node (acorn) "
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:03:26 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Gemini 3.6 Flash Deterministic Code Audit - main (f1c0848)",
-      "snippet": "--part_1b7caafc059c85e33298c94722a45a343707eddb25633821e00bcd3dfba55885 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Gemini 3.6 Flash Deter"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:03:32 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Master CI Pipeline & Security Gating - main (f1c0848)",
-      "snippet": "--part_ecc15abc44f8ee3d35519db23e6850bdb0cf96e94044ae3c9f780b215ab4aae1 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Master CI Pipeline & S"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:03:25 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: FAANG-Tier Zero-Defect CI Pipeline - main (f1c0848)",
-      "snippet": "--part_ce55d3e446c3d12169a28410b42a687a35ce4ae2dd23cdea8cb93639d15f306e Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] FAANG-Tier Zero-Defect"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:03:49 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: .github/workflows/validate-attestation.yml - main (9b3db2b)",
-      "snippet": "--part_30bce75b6fa5886f4b57828f54d395ea2d622cc463467fd9ea3d342aa1a06095 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] .github/workflows/vali"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:03:53 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python + Node (acorn) Tests Matrix - main (9b3db2b)",
-      "snippet": "--part_8b63ff62a4d880864a7f8935ba9e11c98fd537793eb0935b98ee9419998eefab Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python + Node (acorn) "
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:03:54 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: FAANG-Tier Zero-Defect CI Pipeline - main (9b3db2b)",
-      "snippet": "--part_4142019709c6660bce80f4472cd31d25d9ac6c4f1a8f0c3c43f140690dc23748 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] FAANG-Tier Zero-Defect"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:03:55 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Gemini 3.6 Flash Deterministic Code Audit - main (9b3db2b)",
-      "snippet": "--part_5bee2c34f1b4769830accac88b86f8e858947fc1ebef9d6877c392c5e350763f Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Gemini 3.6 Flash Deter"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:03:54 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python Unit Tests - main (9b3db2b)",
-      "snippet": "--part_40a5ae420a93d0c2ed2a8f8c7fb5d1ce6b91c70044cde423c5087a02afaf116e Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python Unit Tests work"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:03:54 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Master CI Pipeline & Security Gating - main (9b3db2b)",
-      "snippet": "--part_3a19be7b4c322ef3bd34d4f003ae63b89489f63828eacfaa39171cfd59833d07 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Master CI Pipeline & S"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:03:54 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Validate Design Tokens - main (9b3db2b)",
-      "snippet": "--part_b4816207b129cd1fe263c32a56229c2f12fab12b2644338ee743f31e088daf17 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Validate Design Tokens"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:05:00 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: .github/workflows/validate-attestation.yml - main (e4b05bd)",
-      "snippet": "--part_9d6c8de28fc8927bdca01d87b0c7a75f85e201d43ed6b6edd85a44b0ff119488 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] .github/workflows/vali"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:05:04 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python Unit Tests - main (e4b05bd)",
-      "snippet": "--part_c7ab45b3157ec3f246637488f1319290834cefb074efd6355cb4fb44f74156d9 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python Unit Tests work"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:05:04 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: FAANG-Tier Zero-Defect CI Pipeline - main (e4b05bd)",
-      "snippet": "--part_65a33b9ffb506d89f15e8242790f7b2f4f36e8d822423baa070bb2a66a851524 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] FAANG-Tier Zero-Defect"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:05:05 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Validate Design Tokens - main (e4b05bd)",
-      "snippet": "--part_f292a4a4d52d6747a93e5beb74df87d20fb7b34c3b3c3d7521c603aebaae1c74 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Validate Design Tokens"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:05:05 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Gemini 3.6 Flash Deterministic Code Audit - main (e4b05bd)",
-      "snippet": "--part_9048730135126931e93bf92492c119e5e1ea3a43632fe8150ebb243bc380866c Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Gemini 3.6 Flash Deter"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:05:06 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python + Node (acorn) Tests Matrix - main (e4b05bd)",
-      "snippet": "--part_e1b839dc7af2ee721318adfbaf808ea80ecfc05bb570d8aff630a5677d84bf18 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python + Node (acorn) "
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:05:07 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Master CI Pipeline & Security Gating - main (e4b05bd)",
-      "snippet": "--part_2bea4173f8116c8e8fa5c1036b83174ed26ff513d6c5d3aab2d706e068adf7a5 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Master CI Pipeline & S"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:05:45 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: .github/workflows/validate-attestation.yml - main (22926e4)",
-      "snippet": "--part_fe02b4eeeb14a8ea629dcfec0bcc16c606a2efbe7d98e04e5d027f19d1541580 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] .github/workflows/vali"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:05:50 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Validate Design Tokens - main (22926e4)",
-      "snippet": "--part_2903d9036fdec5b94651b90935f67c105fd9ae813785e6b70d9b485c8971ec29 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Validate Design Tokens"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:05:51 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python + Node (acorn) Tests Matrix - main (22926e4)",
-      "snippet": "--part_affc4f0250de7643c5639f1671dec428dcb609229a8f0e221393501e0312d90e Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python + Node (acorn) "
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:05:51 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Gemini 3.6 Flash Deterministic Code Audit - main (22926e4)",
-      "snippet": "--part_f932ede17ed423a504659e5fd425dd014c47f04af7ec20db3da7cd27cc96feef Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Gemini 3.6 Flash Deter"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:05:51 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python Unit Tests - main (22926e4)",
-      "snippet": "--part_3b2685512e5516230765a093f451474979b2cc5d671c6bd696486f1ba1ff6e6b Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python Unit Tests work"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:05:52 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Master CI Pipeline & Security Gating - main (22926e4)",
-      "snippet": "--part_09cda6a095d369182c97ee40d622208338ca4d8c1f9ab39705a7a0813d0b8dd6 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Master CI Pipeline & S"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:05:54 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: FAANG-Tier Zero-Defect CI Pipeline - main (22926e4)",
-      "snippet": "--part_1d413a175a0857d9dc712f6fbfe3b5dfb532cef08aeccfdaeeb71c2abd576e03 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] FAANG-Tier Zero-Defect"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:07:02 -0600",
-      "from": "\"WSO2\" <response@wso2.com>",
-      "subject": "New Training and Certification Available for WSO2 Integration Platform",
-      "snippet": "This is a multi-part message in MIME format.  --TgpsYavFIIrM=_?: Content-Type: text/plain; \tcharset=\"utf-8\" Content-Transfer-Encoding: 8bit  New training program: master WSO2's evolving Integra"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:12:27 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: .github/workflows/validate-attestation.yml - main (b10f8e4)",
-      "snippet": "--part_fa0671297eefc2e41a787c0c158335909925429d63142caf391e16c966f370fb Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] .github/workflows/vali"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:12:32 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Gemini 3.6 Flash Deterministic Code Audit - main (b10f8e4)",
-      "snippet": "--part_5de58b45395b3fa26d751aa5eb02503422ad5eac707faf66d3173266044a1baa Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Gemini 3.6 Flash Deter"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:12:32 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python + Node (acorn) Tests Matrix - main (b10f8e4)",
-      "snippet": "--part_5906236141369890ccfb30ab17cf9efdb441efdcfcef43195a6a9bbca815378c Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python + Node (acorn) "
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:12:34 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Validate Design Tokens - main (b10f8e4)",
-      "snippet": "--part_a5786dac1797844bcedcca8ea4a872fd6479b022948e07d5ce66d195a17e8ffd Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Validate Design Tokens"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:12:36 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: FAANG-Tier Zero-Defect CI Pipeline - main (b10f8e4)",
-      "snippet": "--part_4cf03c93c5158912d6a3a6db4337262fef32629fad40abacf5e32cdd364185d0 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] FAANG-Tier Zero-Defect"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:12:38 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python Unit Tests - main (b10f8e4)",
-      "snippet": "--part_3ba6a0108dae8cd9ec3deea1b4b1a4cfbc292493ad733c019c91584f816544e1 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python Unit Tests work"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:12:39 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Master CI Pipeline & Security Gating - main (b10f8e4)",
-      "snippet": "--part_078a95b0d6aa23026d82153eb38cfcf4e3b3b8e18234913536d16f91d9b91c5a Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Master CI Pipeline & S"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:28:03 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: .github/workflows/validate-attestation.yml - main (15ca8e1)",
-      "snippet": "--part_c1b1b97d6c1fb916e979fd739e7b00e2ab74d005f0f178fcc7e19fd0c7373025 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] .github/workflows/vali"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:28:08 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python + Node (acorn) Tests Matrix - main (15ca8e1)",
-      "snippet": "--part_cd9fee6849ccebbc5c2d46bacfd661cc5d4811313400c177c1c9b2780d007ecb Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python + Node (acorn) "
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:28:08 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Master CI Pipeline & Security Gating - main (15ca8e1)",
-      "snippet": "--part_d22f488a640392dd7f5c80d54c480d397c22d39ce60b2cfb21aba4e5bb33325b Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Master CI Pipeline & S"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:28:07 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Validate Design Tokens - main (15ca8e1)",
-      "snippet": "--part_e099f94fed3e26c469819b426c6100efe2be6d249c80a25c500e36f6c018d43a Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Validate Design Tokens"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:28:08 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python Unit Tests - main (15ca8e1)",
-      "snippet": "--part_f3eed66cc7493b15c51bab9a76f3838f0de81618db58f864ffe056b629320912 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python Unit Tests work"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:28:08 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Gemini 3.6 Flash Deterministic Code Audit - main (15ca8e1)",
-      "snippet": "--part_d61377e97d60baa4384a2ba417f6c693698cc82569ae169cdf91cfd6d786979c Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Gemini 3.6 Flash Deter"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:28:09 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: FAANG-Tier Zero-Defect CI Pipeline - main (15ca8e1)",
-      "snippet": "--part_9a856ec2e2d0a375ec0766871eda94b08684da9eee24a2e74d57029ad7eff81a Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] FAANG-Tier Zero-Defect"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:32:28 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: .github/workflows/validate-attestation.yml - main (0bb3e3b)",
-      "snippet": "--part_49b06d63e8d31f23308cc41decac3722779729e1b630946b872f6b7938a1ec6c Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] .github/workflows/vali"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:32:33 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Gemini 3.6 Flash Deterministic Code Audit - main (0bb3e3b)",
-      "snippet": "--part_e3cdc8b6de5fb365575bc0a8d6621aa5ccc5388cbd5abd13435d8eac75ab83ea Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Gemini 3.6 Flash Deter"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:32:33 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python + Node (acorn) Tests Matrix - main (0bb3e3b)",
-      "snippet": "--part_9120f60f4d1580040549a074f7ca0f68ef6955e409890fb4269dad8e06894e92 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python + Node (acorn) "
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:32:33 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Validate Design Tokens - main (0bb3e3b)",
-      "snippet": "--part_d8f293c1146ed045025637e6ea028509ac6f89587c5c02c4690305a23dff6e18 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Validate Design Tokens"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:32:33 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python Unit Tests - main (0bb3e3b)",
-      "snippet": "--part_ff2980426d10d6626c7833678808d2110e778abb168ac07af064978b59118309 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python Unit Tests work"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:32:35 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Master CI Pipeline & Security Gating - main (0bb3e3b)",
-      "snippet": "--part_ba3af01e99f1c37e6a3ac77507804cda3caf4e1d734cd35e911c8f05d311abad Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Master CI Pipeline & S"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:32:40 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: FAANG-Tier Zero-Defect CI Pipeline - main (0bb3e3b)",
-      "snippet": "--part_e3ed89414a728fa89286bfeb8f7f5ca721c797f009ee5ad1cf345a2ca9012336 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] FAANG-Tier Zero-Defect"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:52:11 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: .github/workflows/validate-attestation.yml - main (80e1a2c)",
-      "snippet": "--part_03cb3d7352fc244e2f601ecb62ab76c8eb190e0250c59c262c2845815f632a37 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] .github/workflows/vali"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:52:15 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Gemini 3.6 Flash Deterministic Code Audit - main (80e1a2c)",
-      "snippet": "--part_6bee531d411e4d050a3b8d708276ec74a7467ce8411314499528f8d42a67fff2 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Gemini 3.6 Flash Deter"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:52:16 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python + Node (acorn) Tests Matrix - main (80e1a2c)",
-      "snippet": "--part_c526450a805577d7d82cd1b78d0bfb6c6c73abed029f4f8795c3e681978f8286 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python + Node (acorn) "
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:52:16 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Master CI Pipeline & Security Gating - main (80e1a2c)",
-      "snippet": "--part_1abbf799f7339e32b29293020ae84c713cbc368856f79842e4c42cac5b50815c Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Master CI Pipeline & S"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:52:16 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python Unit Tests - main (80e1a2c)",
-      "snippet": "--part_5f49fcbb81b796449928f2d987200d41fc2db4ab7870dd19d0648ee025f9b0e4 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python Unit Tests work"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:52:23 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: FAANG-Tier Zero-Defect CI Pipeline - main (80e1a2c)",
-      "snippet": "--part_54eba1f7ab89f4707159ac4225a00de85354776b05d3eefb0161825ca3c69477 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] FAANG-Tier Zero-Defect"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 09:52:16 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Validate Design Tokens - main (80e1a2c)",
-      "snippet": "--part_57ad54b20188cbdf5d5b1d35a259eb3736e92b1eace580c304ded605ea88f6b4 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Validate Design Tokens"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 17:00:35 +0000 (UTC)",
-      "from": "GitHub <no-reply@github.com>",
-      "subject": "See what developers are building at GitHub Universe",
-      "snippet": "--904c3c740f3982ff619530f0be6d6b873470a41c6abf0993773e01036fcb Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=utf-8 Mime-Version: 1.0  Discover fresh ideas, communi"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:02:11 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: .github/workflows/validate-attestation.yml - main (02331dd)",
-      "snippet": "--part_02c5d861ce42145bb935c8bca9e57f2c8b8d085eb5a6431f52122761fb610fa1 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] .github/workflows/vali"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:02:16 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: FAANG-Tier Zero-Defect CI Pipeline - main (02331dd)",
-      "snippet": "--part_3a50d1106fb4af7076307f38888a0f2c0df2b85882dbcea6dbf64bc1816cf04c Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] FAANG-Tier Zero-Defect"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:02:16 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Gemini 3.6 Flash Deterministic Code Audit - main (02331dd)",
-      "snippet": "--part_928c2ee1b75f892d4c57e57cbb11ff7c07a0edb573014fbf22be779576ee6585 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Gemini 3.6 Flash Deter"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:02:17 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python + Node (acorn) Tests Matrix - main (02331dd)",
-      "snippet": "--part_5f68b33ce5da0f9a7ac927f3be016a51337f84534dcf1cc9a830a9fdf7d8ddb0 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python + Node (acorn) "
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:02:17 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Validate Design Tokens - main (02331dd)",
-      "snippet": "--part_0d478642ee3487ab6236c0e0125f083d5e9ff1c6ea9426af452a5579b576c6d9 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Validate Design Tokens"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:02:17 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Master CI Pipeline & Security Gating - main (02331dd)",
-      "snippet": "--part_09a8a3d1edef27b100b80497e039412bf3cabf8ed86c3d0c4bcff8a7315a5953 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Master CI Pipeline & S"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:02:16 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python Unit Tests - main (02331dd)",
-      "snippet": "--part_99915231ad5ac34c6b0bfb8a09affdca24540eb40d6f6fdb9dd160cab745b35b Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python Unit Tests work"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:07:52 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: .github/workflows/validate-attestation.yml - main (62cac8b)",
-      "snippet": "--part_a26c23a657e11e8a47b23cb12e83ad2e331c13a39a2e2ed9b931ee493f0313a9 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] .github/workflows/vali"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:07:57 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python Unit Tests - main (62cac8b)",
-      "snippet": "--part_bf0dfb62258d35a31e0c52f423023d73b49a980eb0abb92fa1a1e8de07565507 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python Unit Tests work"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:07:57 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python + Node (acorn) Tests Matrix - main (62cac8b)",
-      "snippet": "--part_f76f646cb71962418fa13c15d8f5e334e67b593f45d04f9e8ab9ae590f717de1 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python + Node (acorn) "
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:07:57 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Validate Design Tokens - main (62cac8b)",
-      "snippet": "--part_e4d42000da76ebe3dae0bf940a91801a53533f99bd0f2c6ccfe90bd411c9194f Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Validate Design Tokens"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:07:57 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: FAANG-Tier Zero-Defect CI Pipeline - main (62cac8b)",
-      "snippet": "--part_4f226291cdb4fcfcd58a316d4f9a9e244ca7f0f8cfea5ecd0b6d6703bf67e319 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] FAANG-Tier Zero-Defect"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:08:03 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Gemini 3.6 Flash Deterministic Code Audit - main (62cac8b)",
-      "snippet": "--part_900bbfde32c51e8eda9edf0191c5d574ce7fef04ab6cf9420d8c4722680ebc29 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Gemini 3.6 Flash Deter"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:08:05 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Master CI Pipeline & Security Gating - main (62cac8b)",
-      "snippet": "--part_8a961a8ad492064186a476853f0e728a19847c34a2de05114fae274d26c4f544 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Master CI Pipeline & S"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:22:27 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: .github/workflows/validate-attestation.yml - main (64e2129)",
-      "snippet": "--part_34c9bb8f8c17274e7c3f5d45760ebb449a824f3c006bf151f1decfb2fb638fb4 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] .github/workflows/vali"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:22:31 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python Unit Tests - main (64e2129)",
-      "snippet": "--part_c4b4bc4c8879be6af1dfa2b4f3538af00b29c2793b795f86166a79b6eec14040 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python Unit Tests work"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:22:31 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Validate Design Tokens - main (64e2129)",
-      "snippet": "--part_7b12bc99527b4433ee24901b2b739b8a774a51cad08a0952704c771aa66fbb5d Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Validate Design Tokens"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:22:32 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python + Node (acorn) Tests Matrix - main (64e2129)",
-      "snippet": "--part_24063d4352b4a690ac584a6208503f00444feca679a8b31b10673bf7d165c9ed Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python + Node (acorn) "
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:22:32 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: FAANG-Tier Zero-Defect CI Pipeline - main (64e2129)",
-      "snippet": "--part_553e2d54f312627eaec8ee4e224c4700f67386c2504b97a7131544b4e85771ca Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] FAANG-Tier Zero-Defect"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:22:32 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Master CI Pipeline & Security Gating - main (64e2129)",
-      "snippet": "--part_4ccfe124c04fbc8e98ec214e70a04212bbd3dfe2193d6797101964e5a342568d Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Master CI Pipeline & S"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 17:22:37 +0000",
-      "from": "Apollo <hello@mail.apollo.io>",
-      "subject": "How 300+ GTM pros are using AI in 2026",
-      "snippet": "--92eab27c0ea53c3b30d4a5ead491a571a4fa3c975f59e86de4cb245a18d0 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"utf-8\"  Apollo's 2026 AI in Sales and Go-to-Market rep"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:22:38 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Gemini 3.6 Flash Deterministic Code Audit - main (64e2129)",
-      "snippet": "--part_fa1e91701efee799ac79618e3b138007aa9ff6611f70170164c365a93cc93f70 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Gemini 3.6 Flash Deter"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 17:32:18 +0000",
-      "from": "PostHog <hey@posthog.com>",
-      "subject": "A new device logged into your account",
-      "snippet": "--622a7011305f149a7e031b89160dbf0be512963959b1bf79c7a5ba740fd0 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"utf-8\"  If this is unexpected, let us know. =C2=A0  "
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:43:20 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: .github/workflows/validate-attestation.yml - main (d736c50)",
-      "snippet": "--part_c2d1ae179d84a569143506f91fa8293818f10533c0d339cfa888436435ad937e Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] .github/workflows/vali"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:43:23 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python + Node (acorn) Tests Matrix - main (d736c50)",
-      "snippet": "--part_8d5f4f662a81a5cd6f59e451828d1b460b6f31e61a1a99736135f104160d4d25 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python + Node (acorn) "
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:43:23 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Gemini 3.6 Flash Deterministic Code Audit - main (d736c50)",
-      "snippet": "--part_3e4093154f545dec8541ec070a12289d17bf9855451dbe35f19a471fc5092923 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Gemini 3.6 Flash Deter"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:43:24 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Python Unit Tests - main (d736c50)",
-      "snippet": "--part_3d046dbaeceb4bf742f4e14ca726d020724cb7709ef4da5daa1e5a42be5fb7ab Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python Unit Tests work"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:43:24 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: FAANG-Tier Zero-Defect CI Pipeline - main (d736c50)",
-      "snippet": "--part_3e6e88cac86282971a36ceb9f41d0193931032b43fb3f1a94fb80eb1525c3e9c Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] FAANG-Tier Zero-Defect"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:43:25 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Validate Design Tokens - main (d736c50)",
-      "snippet": "--part_6a06756177aacb982837c910a7fa9517cba44b7738af7cb58f36f4e531c2c59b Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Validate Design Tokens"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 10:43:24 -0700",
-      "from": "\"mckyinso01\" <notifications@github.com>",
-      "subject": "[mckyinso01/antigravity-ide] Run failed: Master CI Pipeline & Security Gating - main (d736c50)",
-      "snippet": "--part_4fe1dd65de5757483a5bb33c85cf2bc7ade44bde0be96e610390c305938340db Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Master CI Pipeline & S"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 19:13:00 +0000 (UTC)",
-      "from": "Awesome Screenshot <no_reply@awesomescreenshot.com>",
-      "subject": "Welcome to Awesome Screenshot",
-      "snippet": "<!DOCTYPE html     PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"> <html xmlns=\"http://www.w3.org/1999/xhtml\">  <head>     <meta http-eq"
-    },
-    {
-      "date": "Thu, 13 Aug 2026 23:16:27 +0000",
-      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
-      "subject": "Marketing & Content Virtual Assistant at AMLBA Management Consultancy Services. 29 more work from home jobs",
-      "snippet": "--_----1Z4Mdj9+RQ3UyudYSeiyqg===_0D/17-08982-B405E7A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A30 new work from home jobs=0A=0AJobs"
-    },
-    {
-      "date": "Fri, 14 Aug 2026 03:57:32 +0100",
-      "from": "Yotspot <no-reply@yotspot.com>",
-      "subject": "Yotspot - New jobs for you!",
-      "snippet": "PCFET0NUWVBFIGh0bWw+CjxodG1sPgoJCQkJPGhlYWQ+CgkJCQkJPG1ldGEgbmFtZT0idmlld3Bv cnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCI+CgkJCQkJPG1ldGEgaHR0cC1lcXVpdj0i Q29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7"
-    },
-    {
-      "date": "Fri, 14 Aug 2026 06:44:17 +0000",
-      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
-      "subject": "Marketing Automation Specialist at Pavago. 29 more automation specialist jobs in Philippines",
-      "snippet": "--_----6SFsVNFisa38B5Vbc6dLmg===_22/1A-45120-149BE7A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A30 new automation specialist jobs in"
-    },
-    {
-      "date": "Fri, 14 Aug 2026 08:09:51 +0000",
-      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
-      "subject": "Marketing Automation Specialist at Pavago. 29 more automation jobs",
-      "snippet": "--_----jT6lWO9g/kao758WhBG5iQ===_F4/2D-28405-F4DCE7A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A30 new automation jobs=0A=0AJobs 1-3"
-    },
-    {
-      "date": "Fri, 14 Aug 2026 08:41:42 +0000",
-      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
-      "subject": "Remote Marketing Coordinator at Yokly. 29 more automation work from home jobs",
-      "snippet": "--_----4I64W9PrEJRLKGbtaCDNrg===_FA/BE-18402-6C4DE7A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A30 new automation work from home job"
-    },
-    {
-      "date": "Fri, 14 Aug 2026 11:01:23 +0000",
-      "from": "Dubai Duty Free <DubaiDutyFree@email.dubaidutyfree.com>",
-      "subject": "A Few Things to Pick Up Before Heading Back to School",
-      "snippet": "<=21DOCTYPE html PUBLIC =22-//W3C//DTD XHTML 1=2E0 Transitional//EN=22 =22h= ttp://www=2Ew3=2Eorg/TR/xhtml1/DTD/xhtml1-transitional=2Edtd=22> <html xmlns=3D=22http://www=2Ew3=2Eorg/1999/xhtml=22 xml"
-    },
-    {
-      "date": "Fri, 14 Aug 2026 12:13:11 +0000",
-      "from": "MMFYT <contact@mmfyt.fr>",
-      "subject": "I promise, this is the last email to help you :(",
-      "snippet": "<div style=3D\"font-family:Helvetica,Arial,sans-serif;font-size:15px;line-he= ight:1.7;color:#1a1a1a;max-width:560px;margin:0 auto;\">   <p style=3D\"margin:0 0 16px;\">Hi,</p>   <p style=3D\"margin:0 0"
-    },
-    {
-      "date": "Fri, 14 Aug 2026 12:39:36 +0000",
-      "from": "Trip.com <Trip.com@newsletter.trip.com>",
-      "subject": "August Last Minute Hotel Deals: Up to 50% Off!",
-      "snippet": "<!DOCTYPE html><html><head></head><body><span class=3D\"preheader\" style=3D\"= color: transparent; display: none; height: 0; max-height: 0; max-width: 0; = opacity: 0; overflow: hidden; mso-hide: all;"
-    },
-    {
-      "date": "Fri, 14 Aug 2026 14:28:50 +0000",
-      "from": "Marinel Nimes <Marinel.Nimes@alorica.com>",
-      "subject": "🚀 Alorica is Hiring NOW – Apply Today!",
-      "snippet": "--_004_SA0PR07MB76927BAEC983FC8AEBF155CAECDA2SA0PR07MB7692namp_ Content-Type: multipart/alternative; \tboundary=\"_000_SA0PR07MB76927BAEC983FC8AEBF155CAECDA2SA0PR07MB7692namp_\"  --_000_SA0PR07MB7692"
-    },
-    {
-      "date": "Fri, 14 Aug 2026 15:09:47 +0000 (UTC)",
-      "from": "notifications@royalcaribbean.com",
-      "subject": "URGENT ACTION REQUIRED: complete your HEALTH QUESTIONNAIRE online, before arrival to the ship",
-      "snippet": "------=_Part_243248_1045242413.1786720187518 content-transfer-encoding: base64 Content-Type: text/html; charset=UTF-8  PHA+QXJlIHlvdSBleGNpdGVkIHRvIHNlZSB5b3VyIG5ldyBjcmV3IGZhbWlseSBvbmJvYXJkIHNv "
-    },
     {
       "date": "Fri, 14 Aug 2026 16:44:56 +0000",
       "from": "PayMongo Team <no-reply-otp@paymongo.com>",
@@ -2739,6 +2173,726 @@
       "from": "FormSubmit <submissions@formsubmit.co>",
       "subject": "Action Required: Activate FormSubmit on https://omnistock.linkable.it.com/",
       "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 01:26:24 +0000",
+      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
+      "subject": "Implementation QA Specialist- Philippines - Remote at Online Marketing Gurus. 29 more work from home jobs",
+      "snippet": "--_----keoJzgiHEbqC7GD0u6D97A===_8F/27-65487-0C7568A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A30 new work from home jobs=0A=0AJobs"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 02:05:07 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (Unknown, Global/VPN)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 02:05:07 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (Unknown, Global/VPN)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 02:05:07 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (Unknown, Global/VPN)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 02:05:07 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (Unknown, Global/VPN)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 02:05:07 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "📦 [OmniStock Lead] New 3PL / Logistics Prospect Launched OmniStock ERP Workstation (Unknown, Global/VPN)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 02:43:48 +0000",
+      "from": "Trip.com <Trip.com@newsletter.trip.com>",
+      "subject": "Go Thailand from ₱319 🇹🇭",
+      "snippet": "<!DOCTYPE html><html><head></head><body><span class=3D\"preheader\" style=3D\"= color: transparent; display: none; height: 0; max-height: 0; max-width: 0; = opacity: 0; overflow: hidden; mso-hide: all;"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 03:53:15 +0100",
+      "from": "Yotspot <no-reply@yotspot.com>",
+      "subject": "Yotspot - New jobs for you!",
+      "snippet": "PCFET0NUWVBFIGh0bWw+CjxodG1sPgoJCQkJPGhlYWQ+CgkJCQkJPG1ldGEgbmFtZT0idmlld3Bv cnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCI+CgkJCQkJPG1ldGEgaHR0cC1lcXVpdj0i Q29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 03:20:57 +0000",
+      "from": "Dribbble <no-reply@n.dribbble.com>",
+      "subject": "☝🏼How Brands Actually Decide Who Gets the Project",
+      "snippet": "--d3cfd535b928373a9345f06b7fe48e7fef29648d60a4b944cccce6fa8ae5 Content-Type: text/plain; charset=\"utf-8\" Content-Transfer-Encoding: quoted-printable  Why craft alone loses the pitch, and what wins"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 03:46:37 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "⚡ [SACCADE-UI LEAD] OPEN_AGENCY_LICENSING_MODAL",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 04:11:26 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🏥 [Hospital Lead] New Visitor Launched Clinical Pristine OS (Unknown, Global/VPN)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 04:25:47 +0000",
+      "from": "Joe at PostHog <joe@posthog.com>",
+      "subject": "How much money comes from your top 10 users?",
+      "snippet": "--728691d24c0ca5ac6681c420b27651e6926d291d1d02fefb61ca7f9b6a1d Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"utf-8\"  Hey there,  Joe from PostHog here with an em"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 04:48:49 +0000",
+      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
+      "subject": "Senior Shopify Developer at Ask & Embla. 20 more automation work from home jobs",
+      "snippet": "--_----HCnLN+w3qR/xtlLFet+zEA===_C6/26-26416-137868A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A21 new automation work from home job"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 06:15:58 +0000",
+      "from": "\"GrabPoints.com\" <info@mail.grabpoints.com>",
+      "subject": "🚨 Limited Time Survey - Receive 2632 points in 15 minutes",
+      "snippet": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"> <html xmlns=\"http://www.w3.org/1999/xhtml\">   <head>     <meta http-equiv=\""
+    },
+    {
+      "date": "Thu, 20 Aug 2026 06:40:11 +0000",
+      "from": "\"Pinterest\" <recommendations@inspire.pinterest.com>",
+      "subject": "mharc, this was meant for you",
+      "snippet": "--_----pOv5TLcwA+0D0G76lc0yMA===_B9/56-12381-B41A68A6 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=\"UTF-8\"  To view this content open the following URL in your browser: https:"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 06:54:57 +0000",
+      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
+      "subject": "Implementation QA Specialist- Philippines - Remote at Online Marketing Gurus. 29 more automation specialist jobs in Philippines",
+      "snippet": "--_----0Tn9T9cX5BYmTTpS7/TElQ===_47/2D-42328-1C4A68A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A30 new automation specialist jobs in"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 07:50:44 +0000",
+      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
+      "subject": "Web Developer at Granny Flats X. 29 more automation jobs",
+      "snippet": "--_----opuYSVPxRhItAgLkhEUS8w===_08/D2-53019-4D1B68A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A30 new automation jobs=0A=0AJobs 1-3"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 08:08:09 +0000",
+      "from": "Quora Suggested Spaces <narcismdisorde-space@quora.com>",
+      "subject": "A narc will never FORGIVE you for what they Did to You... It may sound strange but this is how they think; when they hurt you- by lying, cheating, ...",
+      "snippet": "--===============3800611721456392031== Content-Type: text/plain; charset=\"utf-8\" MIME-Version: 1.0 Content-Transfer-Encoding: quoted-printable  Trending Stories from Relationship with Narcissist "
+    },
+    {
+      "date": "Thu, 20 Aug 2026 11:48:30 +0000",
+      "from": "Vercel <notifications@vercel.com>",
+      "subject": "1 new project available to import",
+      "snippet": "------=_Part_549350_1463333432.1787226510929 Content-Type: text/plain; charset=UTF-8 Content-Transfer-Encoding: quoted-printable  VercelHello, mckyinso01.  We detected a new repository in mckyin"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 12:34:15 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🏥 [Hospital Lead] New Visitor Launched Clinical Pristine OS (Unknown, Global/VPN)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 12:43:18 +0000",
+      "from": "Vercel <notifications@vercel.com>",
+      "subject": "1 new project available to import",
+      "snippet": "------=_Part_624382_1353355381.1787229798567 Content-Type: text/plain; charset=UTF-8 Content-Transfer-Encoding: quoted-printable  VercelHello, mckyinso01.  We detected a new repository in mckyin"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:43:35 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: .github/workflows/validate-attestation.yml - main (1e99e6b)",
+      "snippet": "--part_bd039ac5889ceb34c7832d6ec47796390e0db1f05fd816d6a72f0a2aeb41992d Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] .github/workflows/vali"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:43:40 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Validate Design Tokens - main (1e99e6b)",
+      "snippet": "--part_ac1618bd0276a0f63642ffcfe5f8a06038c7b9ada8157cab6fd716c13f3a468e Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Validate Design Tokens"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:43:40 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Gemini 3.6 Flash Deterministic Code Audit - main (1e99e6b)",
+      "snippet": "--part_1629308e8aa4e07fe1816eeac1b55647e952b867fca9b02c87d29a002909aadd Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Gemini 3.6 Flash Deter"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:43:41 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Python + Node (acorn) Tests Matrix - main (1e99e6b)",
+      "snippet": "--part_92368089e30040429d1df6a1d335c60f86191022416be5de87bd70da775da9a5 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python + Node (acorn) "
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:43:41 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: FAANG-Tier Zero-Defect CI Pipeline - main (1e99e6b)",
+      "snippet": "--part_993cca40e006b6929d01e1b9bb498b88bcf98f7d729480c2438051e11f39475f Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] FAANG-Tier Zero-Defect"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:43:42 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Python Unit Tests - main (1e99e6b)",
+      "snippet": "--part_32083239ff65839fd3b5e96a28c5f1d62aa3778221fde08085e9913b32f0e27e Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python Unit Tests work"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:43:41 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Master CI Pipeline & Security Gating - main (1e99e6b)",
+      "snippet": "--part_482245dcdd29a965c19e1f19f0e55fd1bc0f636090c8f9d91226e75061ec5211 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Master CI Pipeline & S"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:47:43 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: .github/workflows/validate-attestation.yml - main (1905755)",
+      "snippet": "--part_6508af0f9bdddeb95e308f246c223e65068dceff9e548737d5e544454f759393 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] .github/workflows/vali"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:47:48 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Gemini 3.6 Flash Deterministic Code Audit - main (1905755)",
+      "snippet": "--part_0494018d53592b355abb3d32d2a4ca494879eb094b555b4d5b0f5f4547e9c40a Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Gemini 3.6 Flash Deter"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:47:48 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Python + Node (acorn) Tests Matrix - main (1905755)",
+      "snippet": "--part_ba5f03e61249897ec56bfdfb5670356b145d047341cb5938ef998082b1ac9d6c Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python + Node (acorn) "
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:47:49 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Validate Design Tokens - main (1905755)",
+      "snippet": "--part_44b2721cfa105f0e0fcfcb94421c3e45c69e9245f840f2200b6324be7497fbe3 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Validate Design Tokens"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:47:49 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Python Unit Tests - main (1905755)",
+      "snippet": "--part_a9ccb3e999ecf8ed8fa69bf02b954ad22fd22d5c01c59c7306009713f2403d16 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python Unit Tests work"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:47:50 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Master CI Pipeline & Security Gating - main (1905755)",
+      "snippet": "--part_90b83c6de7647b3acdd3bbc3938269ce5515d4bdbe085bb540f572cd9e2f5333 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Master CI Pipeline & S"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:47:50 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: FAANG-Tier Zero-Defect CI Pipeline - main (1905755)",
+      "snippet": "--part_63d052ba36065660589fcf8c71e52fb41fd3af947ad788317d919bb52dd8a799 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] FAANG-Tier Zero-Defect"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:51:38 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: .github/workflows/validate-attestation.yml - main (1f8d68b)",
+      "snippet": "--part_5eaf2e0f82c041257ef477bbf849e04e14e8bf5c04546d65b2082fc4955c47e2 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] .github/workflows/vali"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:51:43 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Gemini 3.6 Flash Deterministic Code Audit - main (1f8d68b)",
+      "snippet": "--part_9c156dbc9ea88c5fa0021e95cbf495884cce8200fe8412b7c777ad88cfb6acec Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Gemini 3.6 Flash Deter"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:51:44 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Validate Design Tokens - main (1f8d68b)",
+      "snippet": "--part_72068181c45035ea788b30907ae73b496077de694d9a073ec90e98b22bec0367 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Validate Design Tokens"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:51:44 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Python Unit Tests - main (1f8d68b)",
+      "snippet": "--part_6f5ba21bf082d2b2bd03b0a4de0f84e56fc683efe2d57bec9dd9096466b63a7b Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python Unit Tests work"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:51:45 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: FAANG-Tier Zero-Defect CI Pipeline - main (1f8d68b)",
+      "snippet": "--part_1c9a6fd5525727f0832fbb4305a6b9594bcc7baf6025458874265910a25e7b92 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] FAANG-Tier Zero-Defect"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:51:46 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Master CI Pipeline & Security Gating - main (1f8d68b)",
+      "snippet": "--part_6cb2ff9cb91ac3f824e8e5cced5a431c80a635cf12da0672c2b18001575eb10d Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Master CI Pipeline & S"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:51:46 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Python + Node (acorn) Tests Matrix - main (1f8d68b)",
+      "snippet": "--part_4cc9ed0482bbcd221f748e1d87c941bdc8521ea4c7ff699622edfdc45406a6f6 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python + Node (acorn) "
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:54:06 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: .github/workflows/validate-attestation.yml - main (f0d434f)",
+      "snippet": "--part_f1810ffb41d65cd6d827f6331e83eaac912087af8ced1f49953d81f02fc21bab Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] .github/workflows/vali"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:54:10 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Validate Design Tokens - main (f0d434f)",
+      "snippet": "--part_38394878279ddd42dad08cb5f9bd0373c07a5096f69b3ca8c58abbf6fd5416e6 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Validate Design Tokens"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:54:10 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Python + Node (acorn) Tests Matrix - main (f0d434f)",
+      "snippet": "--part_75c96b93ee7397cf78c46478f1a8a9b3dd69e23345a198d49b273f6f87e1b4be Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python + Node (acorn) "
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:54:10 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Python Unit Tests - main (f0d434f)",
+      "snippet": "--part_36326e3eb091e2dfb889a83648f867b18a8bedddc8892afe8f8595f8ff47ce10 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python Unit Tests work"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:54:11 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Gemini 3.6 Flash Deterministic Code Audit - main (f0d434f)",
+      "snippet": "--part_827f705ea3e8213cf44874eee58f24b1f6d010b3dbdd3dda9e7ad201ca0d93dc Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Gemini 3.6 Flash Deter"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:54:11 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Master CI Pipeline & Security Gating - main (f0d434f)",
+      "snippet": "--part_7b0b2e715352031511411095403f1481a4f30e958195226a0b2fc86feb113d65 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Master CI Pipeline & S"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:54:11 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: FAANG-Tier Zero-Defect CI Pipeline - main (f0d434f)",
+      "snippet": "--part_ec013ada454e52f95a6528b5a2c17c51a4a91b061caf0d14b0ad60bda6a0b1ec Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] FAANG-Tier Zero-Defect"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:56:12 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: .github/workflows/validate-attestation.yml - main (1414569)",
+      "snippet": "--part_12d744a159d3751f73fae9bfb1cb4b3ababef8678411430edd8f173fe3133ddc Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] .github/workflows/vali"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:56:17 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Python Unit Tests - main (1414569)",
+      "snippet": "--part_3684f6b7603c28781d1e7c11578c66a983a6256c443559aa501ce2ca04bb5bc5 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python Unit Tests work"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:56:17 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Gemini 3.6 Flash Deterministic Code Audit - main (1414569)",
+      "snippet": "--part_3da276b16d483d6281d9ab181bf3cd01b14f7bfccd361d4a6160b3e8f7d8f3d0 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Gemini 3.6 Flash Deter"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:56:18 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Validate Design Tokens - main (1414569)",
+      "snippet": "--part_2846b5c546882e368ef86739b009eadab8e2aab73eae0b5c9d79c7d2fe679722 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Validate Design Tokens"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:56:18 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Python + Node (acorn) Tests Matrix - main (1414569)",
+      "snippet": "--part_18edfa7ecdaec477c1ae0cb5e1e0799ed9b3075c3699986c699387dae68b9907 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python + Node (acorn) "
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:56:19 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: FAANG-Tier Zero-Defect CI Pipeline - main (1414569)",
+      "snippet": "--part_ef7c4c5a9c37e9d2cf15bbd6742948cb2161a8d4b793dd0178ab2723e5d747a6 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] FAANG-Tier Zero-Defect"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 05:56:19 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Master CI Pipeline & Security Gating - main (1414569)",
+      "snippet": "--part_20996ca63db487c2ec7bd7ee0fc547460d12243ae2426e2796505e85233ca58d Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Master CI Pipeline & S"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 12:59:12 +0000",
+      "from": "Tino from n8n <events@info.n8n.io>",
+      "subject": "Super Early Bird Pricing ends Tomorrow",
+      "snippet": "--af46cac9933688e6d545649f3843d425107bd3e5c6b8fc12464c2019d97d Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"utf-8\"  Super Early Bird pricing for our first-ever co"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 10:16:21 -0400 (EDT)",
+      "from": "FlexJobs <notify@mg.flexjobs.com>",
+      "subject": "Don’t miss today’s  jobs!",
+      "snippet": "------=_Part_246699329_1916642064.1787235381363 Content-Type: multipart/related;  \tboundary=\"----=_Part_246699330_396443802.1787235381363\"  ------=_Part_246699330_396443802.1787235381363 Content-"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 14:41:33 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🏥 [Hospital Lead] New Visitor Launched Clinical Pristine OS (Unknown, Global/VPN)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 14:48:18 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🏥 [Hospital Lead] New Visitor Launched Clinical Pristine OS (Council Bluffs, United States)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 18:34:51 +0000",
+      "from": "\"Coursera\" <Coursera@m.learn.coursera.org>",
+      "subject": "✨ New from Microsoft: Learn Enterprise AI Governance",
+      "snippet": "--_----KHAeVMDCoaFALkPAPwbO3Q===_D6/A6-50153-BC8478A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Offer inside: Save 40% on three months of Coursera Plus"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 19:58:00 +0000",
+      "from": "\"GrabPoints.com\" <info@mail.grabpoints.com>",
+      "subject": "🌟 Contribute Your Opinion - Earn 2632 points in 15 minutes",
+      "snippet": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"> <html xmlns=\"http://www.w3.org/1999/xhtml\">   <head>     <meta http-equiv=\""
+    },
+    {
+      "date": "Thu, 20 Aug 2026 20:29:17 +0000",
+      "from": "\"GrabPoints.com\" <info@mail.grabpoints.com>",
+      "subject": "mharc, Your Weekly Report Has Arrived - Earn 7 days in a row, win a prize!",
+      "snippet": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.= w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"> <html xmlns=3D\"http://www.w3.org/1999/xhtml\">   <head>     <meta http-eq"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 00:44:23 +0000",
+      "from": "\"GrabPoints.com\" <info@mail.grabpoints.com>",
+      "subject": "🗣️ Help Shape Our Future - Earn 2632 points in 15 minutes",
+      "snippet": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"> <html xmlns=\"http://www.w3.org/1999/xhtml\">   <head>     <meta http-equiv=\""
+    },
+    {
+      "date": "Fri, 21 Aug 2026 01:30:42 +0000 (UTC)",
+      "from": "Ola OMOLARA via LinkedIn <invitations@linkedin.com>",
+      "subject": "Ola accepted your invitation, explore their network",
+      "snippet": "------=_Part_8552433_957081922.1787275842805 Content-Type: text/plain;charset=UTF-8 Content-Transfer-Encoding: quoted-printable Content-ID: text-body  ----------------------------------------  "
+    },
+    {
+      "date": "Fri, 21 Aug 2026 01:56:24 +0000",
+      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
+      "subject": "Data Entry Specialist at CC.Talent. 29 more work from home jobs",
+      "snippet": "--_----4qGrX5wlXhLdQ4vBcQi4Uw===_A7/95-47924-840B78A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A30 new work from home jobs=0A=0AJobs"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 02:39:16 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "🏥 [Hospital Lead] New Visitor Launched Clinical Pristine OS (Santa Clara, United States)",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 02:42:08 +0000",
+      "from": "Trip.com <Trip.com@newsletter.trip.com>",
+      "subject": "Your welcome voucher is waiting ✈️",
+      "snippet": "<!DOCTYPE html><html><head></head><body><span class=3D\"preheader\" style=3D\"= color: transparent; display: none; height: 0; max-height: 0; max-width: 0; = opacity: 0; overflow: hidden; mso-hide: all;"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 03:46:02 +0000",
+      "from": "FormSubmit <submissions@formsubmit.co>",
+      "subject": "💎 [NEW SOFTWARE BUYOUT ORDER] LNK-2026-0WMF9 - Dr. Robert Vance, MD",
+      "snippet": "<!doctype html> <html lang=3D\"en\"> <head>     <meta charset=3D\"UTF-8\"= >     <meta name=3D\"viewport\"           content=3D\"width=3Ddevice-width= , user-scalable=3Dno, initial-scale=3D1.0, maximu"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 20:58:29 -0700",
+      "from": "\"service@intl.paypal.com\" <service@intl.paypal.com>",
+      "subject": "Your PayPal verification code",
+      "snippet": "<html dir=3D\"ltr\" lang=3D\"en\">=0A=0A  <head>=0A    <meta http-equiv=3D\"Cont= ent-Type\" content=3D\"text/html; charset=3Dutf-8\" />=0A    <meta name=3D\"vie= wport\" content=3D\"initial-scale=3D1.0,minimu"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 20:59:33 -0700",
+      "from": "\"service@intl.paypal.com\" <service@intl.paypal.com>",
+      "subject": "You’ve added another way to log in to PayPal",
+      "snippet": "<html dir=3D\"ltr\" lang=3D\"en\">=0A=0A  <head>=0A    <meta http-equiv=3D\"Cont= ent-Type\" content=3D\"text/html; charset=3Dutf-8\" />=0A    <meta name=3D\"vie= wport\" content=3D\"initial-scale=3D1.0,minimu"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 21:00:24 -0700",
+      "from": "\"service@intl.paypal.com\" <service@intl.paypal.com>",
+      "subject": "You added your phone number to your account",
+      "snippet": "<html dir=3D\"ltr\" lang=3D\"en\">=0A=0A  <head>=0A    <meta http-equiv=3D\"Cont= ent-Type\" content=3D\"text/html; charset=3Dutf-8\" />=0A    <meta name=3D\"vie= wport\" content=3D\"initial-scale=3D1.0,minimu"
+    },
+    {
+      "date": "Thu, 20 Aug 2026 21:02:13 -0700",
+      "from": "\"service@intl.paypal.com\" <service@intl.paypal.com>",
+      "subject": "You changed your security question and answer",
+      "snippet": " Hello, Mharc Christian Gatan =0AThe security questions and answers for Mha= rc Christian Gatan's PayPal account were changed on Aug 21, 2026.=0A=0A=0AI= f you didn=E2=80=99t authorize this change, "
+    },
+    {
+      "date": "Fri, 21 Aug 2026 04:05:12 +0000",
+      "from": "Linear <support@updates.linear.app>",
+      "subject": "An update to Linear’s pricing",
+      "snippet": "--3t8m97x024o Content-Type: text/plain; charset=UTF-8 Content-Transfer-Encoding: quoted-printable  We=E2=80=99re reducing pricing for coding sessions.  =CD=8F =C2=A0=E2=80=87=C2=AD=CD=8F =C2=A0="
+    },
+    {
+      "date": "Fri, 21 Aug 2026 05:42:03 +0000",
+      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
+      "subject": "Web Developer at Granny Flats X. 29 more automation work from home jobs",
+      "snippet": "--_----xy5x1UdAK4dhJiuShWdR5A===_78/9B-46881-B25E78A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A30 new automation work from home job"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 03:42:18 +0100",
+      "from": "Yotspot <no-reply@yotspot.com>",
+      "subject": "Yotspot - New jobs for you!",
+      "snippet": "PCFET0NUWVBFIGh0bWw+CjxodG1sPgoJCQkJPGhlYWQ+CgkJCQkJPG1ldGEgbmFtZT0idmlld3Bv cnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCI+CgkJCQkJPG1ldGEgaHR0cC1lcXVpdj0i Q29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 06:21:50 +0000",
+      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
+      "subject": "List Building Specialist at Confidential. 29 more automation specialist jobs in Philippines",
+      "snippet": "--_----ZYA9PYI/3EGUNmH5OcHOfg===_C6/99-56017-E7EE78A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A30 new automation specialist jobs in"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 06:40:19 +0000",
+      "from": "\"Pinterest\" <recommendations@explore.pinterest.com>",
+      "subject": "You do you",
+      "snippet": "--_----8ylxsN4qr9nlJ0zUY3csqA===_CA/D0-54040-3D2F78A6 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=\"UTF-8\"  To view this content open the following URL in your browser: https:"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 08:41:07 +0000",
+      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
+      "subject": "Web Developer at Granny Flats X. 29 more automation jobs",
+      "snippet": "--_----Bend6xa5NyvDCBtFgFl8bg===_30/4E-58128-32F088A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A30 new automation jobs=0A=0AJobs 1-3"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 11:03:02 +0000",
+      "from": "Dubai Duty Free <DubaiDutyFree@email.dubaidutyfree.com>",
+      "subject": "Cherry Wood: A Scent of Modern Elegance",
+      "snippet": "<=21DOCTYPE html PUBLIC =22-//W3C//DTD XHTML 1=2E0 Transitional//EN=22 =22h= ttp://www=2Ew3=2Eorg/TR/xhtml1/DTD/xhtml1-transitional=2Edtd=22> <html xmlns=3D=22http://www=2Ew3=2Eorg/1999/xhtml=22 xml"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 12:41:02 +0000 (UTC)",
+      "from": "Spaceship <hello@spaceship.com>",
+      "subject": "Start your website free for 30 days",
+      "snippet": "--dafc3182fe292f4fc725f69638106bb2696bba957e02b2d6dabb654ba43d Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=utf-8 Mime-Version: 1.0  Your domain is ready. Alf bui"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 14:59:26 +0000",
+      "from": "\"Zapier\" <events@send.zapier.com>",
+      "subject": "A framework for knowing when (and when not) to use AI",
+      "snippet": "--_----lZ6wFSMx6DenDBZdA5mIAQ===_2B/F3-51397-EC7688A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  A framework for knowing when (and when not) to use AI  "
+    },
+    {
+      "date": "Fri, 21 Aug 2026 16:52:56 +0000 (UTC)",
+      "from": "Namecheap <hello@namecheap.com>",
+      "subject": "Get off to a flying start",
+      "snippet": "--402163a59ffe9a86d65f301c3846d35536e6267d53158414ad8fe6e633cd Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=utf-8 Mime-Version: 1.0  Namecheap Ready to get starte"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 17:10:01 +0000",
+      "from": "\"GrabPoints.com\" <info@mail.grabpoints.com>",
+      "subject": "📊 Share Your Thoughts - Earn 2632 points in only 15 minutes",
+      "snippet": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"> <html xmlns=\"http://www.w3.org/1999/xhtml\">   <head>     <meta http-equiv=\""
+    },
+    {
+      "date": "Fri, 21 Aug 2026 16:36:28 +0000",
+      "from": "\"AuDimix by Boom 3D\" <marketing@globaldelight.com>",
+      "subject": "Your music practice assistant, AuDimix 🎶",
+      "snippet": " This is a MIME encoded message.  --MIMEboundary637E7456 Content-Type: text/plain; charset=\"utf-8\" Content-Transfer-Encoding: 7bit  Remove vocals and instruments from any song with AuDimix for Wi"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 19:05:31 +0000 (UTC)",
+      "from": "Spaceship <hello@spaceship.com>",
+      "subject": "Your complete digital toolkit",
+      "snippet": "--bb985b12e7333bc334d3f3014b72bbadfa90507900e32d15d5dbc37a3ef8 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=utf-8 Mime-Version: 1.0  From domains to hosting, emai"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 19:18:59 +0000",
+      "from": "\"Indeed\" <no-reply@indeed.com>",
+      "subject": "The Automation Specialist job at OVATech OPC was closed",
+      "snippet": "<!-- Title -->=0A<!-- Job card -->=0A<!-- Message text -->=0A<!-- CTAs -->= =0A<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://w= ww.w3.org/TR/xhtml1/DTD/xhtml1-transitional.d"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 19:18:59 +0000",
+      "from": "\"Indeed\" <no-reply@indeed.com>",
+      "subject": "The AI Product Systems Specialist job at OVATech OPC was closed",
+      "snippet": "<!-- Title -->=0A<!-- Job card -->=0A<!-- Message text -->=0A<!-- CTAs -->= =0A<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://w= ww.w3.org/TR/xhtml1/DTD/xhtml1-transitional.d"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 21:05:25 +0000",
+      "from": "\"Coursera\" <Coursera@m.learn.coursera.org>",
+      "subject": "Your special offer is still waiting",
+      "snippet": "--_----Ds1r+FmxITbxgyfq+FSqtA===_87/FB-47851-59DB88A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  =F0=9F=94=91 Unlock a 40% savings on three months of Co"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 21:06:44 +0000",
+      "from": "MMFYT <contact@mmfyt.fr>",
+      "subject": "I saw your profile on OFMJOBS",
+      "snippet": "<div style=3D\"font-family:Helvetica,Arial,sans-serif;font-size:15px;line-he= ight:1.7;color:#1a1a1a;max-width:560px;margin:0 auto;\">   <p style=3D\"margin:0 0 16px;\">Hi,</p>   <p style=3D\"margin:0 0"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 22:16:13 +0000",
+      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
+      "subject": "Office Administrator - Work from Home / Midshift at Twoconnect. 28 more work from home jobs",
+      "snippet": "--_----hvw9j7ZXNcLzS3PVXNTvOA===_1D/55-11772-D2EC88A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A29 new work from home jobs=0A=0AJobs"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 23:21:20 +0000",
+      "from": "Perplexity <team@mail.perplexity.ai>",
+      "subject": "Better answers for everything you're curious about",
+      "snippet": "--i9qupmev9hp Content-Type: text/plain; charset=UTF-8 Content-Transfer-Encoding: quoted-printable  See how people are using Perplexity to answer their toughest questions     See how people ar"
+    },
+    {
+      "date": "Sat, 22 Aug 2026 02:48:24 +0000",
+      "from": "Trip.com <Trip.com@newsletter.trip.com>",
+      "subject": "Go Japan from ₱725 🇯🇵",
+      "snippet": "<!DOCTYPE html><html><head></head><body><span class=3D\"preheader\" style=3D\"= color: transparent; display: none; height: 0; max-height: 0; max-width: 0; = opacity: 0; overflow: hidden; mso-hide: all;"
+    },
+    {
+      "date": "Sat, 22 Aug 2026 03:05:21 +0000 (UTC)",
+      "from": "Crunchyroll <hello@mail.crunchyroll.com>",
+      "subject": "ME-OW! BLACK TORCH Packs a Powerful Punch",
+      "snippet": "--8272cca40560c03c0891de56e18b5798ee616e612b01b7b0931bff201497 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=utf-8 Mime-Version: 1.0  Discover the anime that fans "
+    },
+    {
+      "date": "Sat, 22 Aug 2026 03:25:10 +0000",
+      "from": "Vercel <notifications@vercel.com>",
+      "subject": "1 new project available to import",
+      "snippet": "------=_Part_47533_569668798.1787369110434 Content-Type: text/plain; charset=UTF-8 Content-Transfer-Encoding: quoted-printable  VercelHello, mckyinso01.  We detected a new repository in mckyinso"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 20:25:28 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: .github/workflows/validate-attestation.yml - main (f03ffed)",
+      "snippet": "--part_e86d6deb65860274f0de8efeab1662c0f33f1cdd7f67dd5a3e7bda97a67d80c4 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] .github/workflows/vali"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 20:25:33 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Gemini 3.6 Flash Deterministic Code Audit - main (f03ffed)",
+      "snippet": "--part_23bb321190039abf412d8e89fdd73e6f15e04e93f6e232ae63005c55cd57d800 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Gemini 3.6 Flash Deter"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 20:25:33 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Validate Design Tokens - main (f03ffed)",
+      "snippet": "--part_2bbfab4ae720c601b73c2f151ba35df739dcb35abfdbd333845145b3766357f6 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Validate Design Tokens"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 20:25:33 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Python Unit Tests - main (f03ffed)",
+      "snippet": "--part_45ef22ff2fbba85382695ce9c38b321f09d646c9f7e0f0b7b55c97f18867bc5c Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python Unit Tests work"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 20:25:33 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Python + Node (acorn) Tests Matrix - main (f03ffed)",
+      "snippet": "--part_f500a5071106475944461e9eb5a651904a37e97cfe6352f4cb16ff50d3249547 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python + Node (acorn) "
+    },
+    {
+      "date": "Fri, 21 Aug 2026 20:25:34 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: FAANG-Tier Zero-Defect CI Pipeline - main (f03ffed)",
+      "snippet": "--part_670a87e526fa6ff873530a5912e407fe37c5f29e034def4a9de8f08be27ddfaf Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] FAANG-Tier Zero-Defect"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 20:25:33 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Master CI Pipeline & Security Gating - main (f03ffed)",
+      "snippet": "--part_e955242d14115bc4b4078ad26cba19d0813f6a5bb7f57a7ae689114061523daa Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Master CI Pipeline & S"
+    },
+    {
+      "date": "Sat, 22 Aug 2026 05:37:01 +0000",
+      "from": "Toby's Customer Support <support@tobys.com>",
+      "subject": "Re: Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Toby's Sports",
+      "snippet": " ----==_mimepart_6a89357dd540e_220678b8130977 Content-Type: text/plain;  charset=UTF-8 Content-Transfer-Encoding: quoted-printable    Dear Valued Customer,     Thank you for reaching out! Our Cu"
+    },
+    {
+      "date": "Sat, 22 Aug 2026 05:37:49 +0000",
+      "from": "Runnr Customer Support <support@runnr.com.ph>",
+      "subject": "Re: Eliminating WMS SaaS per-user fees + 45% shorter picker routes for RUNNR Philippines",
+      "snippet": " ----==_mimepart_6a8935ad98b0_1e866565959433045b9 Content-Type: text/plain;  charset=UTF-8 Content-Transfer-Encoding: quoted-printable    Dear Valued Customer,     Thank you for reaching out! Ou"
+    },
+    {
+      "date": "Sat, 22 Aug 2026 03:51:08 +0100",
+      "from": "Yotspot <no-reply@yotspot.com>",
+      "subject": "Yotspot - New jobs for you!",
+      "snippet": "PCFET0NUWVBFIGh0bWw+CjxodG1sPgoJCQkJPGhlYWQ+CgkJCQkJPG1ldGEgbmFtZT0idmlld3Bv cnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCI+CgkJCQkJPG1ldGEgaHR0cC1lcXVpdj0i Q29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 22:47:07 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: .github/workflows/validate-attestation.yml - main (bd56923)",
+      "snippet": "--part_f3f69bf7ee323acc88f70a0053c037099b097e941003ed08fd18e3b9b426ba61 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] .github/workflows/vali"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 22:47:12 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Gemini 3.6 Flash Deterministic Code Audit - main (bd56923)",
+      "snippet": "--part_541dd593ad4809a77e46555d9070330d02bbd754937e67856713c2725c352edd Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Gemini 3.6 Flash Deter"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 22:47:11 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Validate Design Tokens - main (bd56923)",
+      "snippet": "--part_90b02dda631f425c6d015b9bf5a835ec36f4bf124a52ccf529f77d6e5ad42cc0 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Validate Design Tokens"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 22:47:12 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Master CI Pipeline & Security Gating - main (bd56923)",
+      "snippet": "--part_dd88cefda9964ad428944190927fb58981a83528aea234e953b69d3aa5f0673c Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Master CI Pipeline & S"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 22:47:13 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Python + Node (acorn) Tests Matrix - main (bd56923)",
+      "snippet": "--part_8060a3227bd6a4e57134f1c8263485f480c9355e4af79723a207b53d76476238 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python + Node (acorn) "
+    },
+    {
+      "date": "Fri, 21 Aug 2026 22:47:12 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: FAANG-Tier Zero-Defect CI Pipeline - main (bd56923)",
+      "snippet": "--part_497850ea02e8916ec184c75b87e65df495cd74b7aa643f638cc6232595e70d1b Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] FAANG-Tier Zero-Defect"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 22:47:13 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Python Unit Tests - main (bd56923)",
+      "snippet": "--part_42aee90882f309b1e1d99948b5541e6b560749333b0e01c2a2fcb7a76aceed79 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python Unit Tests work"
+    },
+    {
+      "date": "Sat, 22 Aug 2026 06:08:27 +0000",
+      "from": "\"Indeed\" <donotreply@jobalert.indeed.com>",
+      "subject": "Web Developer at Granny Flats X. 29 more automation work from home jobs",
+      "snippet": "--_----ATmZR/osS7LnZvLp38EXHw===_DC/11-55311-ADC398A6 Content-Transfer-Encoding: quoted-printable Content-Type: text/plain; charset=\"UTF-8\"  Indeed Job Alert=0A30 new automation work from home job"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 23:11:11 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: .github/workflows/validate-attestation.yml - main (e294cb9)",
+      "snippet": "--part_c09b5e2df6a21381748092c67f6be4e5cda92f0873d8286ecb2c70139e76d082 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] .github/workflows/vali"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 23:11:16 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Gemini 3.6 Flash Deterministic Code Audit - main (e294cb9)",
+      "snippet": "--part_f504fdbcd0adb474a8d1464b1a9386364578a946d9d4dea19bc787bc543e990e Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Gemini 3.6 Flash Deter"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 23:11:16 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Python + Node (acorn) Tests Matrix - main (e294cb9)",
+      "snippet": "--part_ea589000102f98b3007a61ab88af82e192c85bcc8b199f4a664abecf94615d1e Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python + Node (acorn) "
+    },
+    {
+      "date": "Fri, 21 Aug 2026 23:11:17 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Master CI Pipeline & Security Gating - main (e294cb9)",
+      "snippet": "--part_2a012a6c30bc49c71c02d8a04e4783b9cac71361b0e2bee5e300ea24598b42aa Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Master CI Pipeline & S"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 23:11:17 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Validate Design Tokens - main (e294cb9)",
+      "snippet": "--part_0b484b00ade575b94fdcdd0d8bcf66d817a180525fa10d493e7f953cfec3aa12 Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Validate Design Tokens"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 23:11:18 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: Python Unit Tests - main (e294cb9)",
+      "snippet": "--part_1aa19507a9214aa0c4e8d97aa5cdecc6f8ffef8fbef59ab90d52f6ace18dfc4e Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] Python Unit Tests work"
+    },
+    {
+      "date": "Fri, 21 Aug 2026 23:11:18 -0700",
+      "from": "\"mckyinso01\" <notifications@github.com>",
+      "subject": "[mckyinso01/antigravity-ide] Run failed: FAANG-Tier Zero-Defect CI Pipeline - main (e294cb9)",
+      "snippet": "--part_55022c6317e76ceb8f278761285d720af13bcbb552db2c04caff334c07f27d8f Content-Transfer-Encoding: 7bit Content-Type: text/plain; charset=UTF-8  [mckyinso01/antigravity-ide] FAANG-Tier Zero-Defect"
     }
   ]
 }

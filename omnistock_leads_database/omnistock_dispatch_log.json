@@ -663,5 +663,55 @@
     "messageId": "<cf0690aa-bd67-9135-f610-ffce21bf3662@gmail.com>",
     "timestamp": "2026-08-22T05:39:35.424Z",
     "status": "DELIVERED"
+  },
+  {
+    "id": 66,
+    "company": "Wilcon Depot",
+    "email": "customer_care@wilcon.com.ph",
+    "sector": "Hardware & Appliance",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Wilcon Depot",
+    "messageId": "<e49ac747-63b1-e589-f3d6-7a1f7b0c6c5c@gmail.com>",
+    "timestamp": "2026-08-22T06:13:32.353Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 67,
+    "company": "Handyman Do It Best",
+    "email": "customercare@handyman.com.ph",
+    "sector": "Hardware & Appliance",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Handyman Do It Best",
+    "messageId": "<4fccee79-5291-307e-49b3-d39a8d257060@gmail.com>",
+    "timestamp": "2026-08-22T06:14:11.374Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 68,
+    "company": "True Value Philippines",
+    "email": "customercare@truevalue.com.ph",
+    "sector": "Hardware & Appliance",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for True Value Philippines",
+    "messageId": "<ce9a4d10-4c93-8b87-6870-22ca2a6f8062@gmail.com>",
+    "timestamp": "2026-08-22T06:15:00.890Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 69,
+    "company": "Ace Hardware Philippines",
+    "email": "customercare@acehardware.ph",
+    "sector": "Hardware & Appliance",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Ace Hardware Philippines",
+    "messageId": "<fb6fd026-1de8-a15d-710e-197de3332326@gmail.com>",
+    "timestamp": "2026-08-22T06:15:56.881Z",
+    "status": "DELIVERED"
+  },
+  {
+    "id": 70,
+    "company": "Citi Hardware",
+    "email": "customercare@citihardware.com",
+    "sector": "Hardware & Appliance",
+    "subject": "Eliminating WMS SaaS per-user fees + 45% shorter picker routes for Citi Hardware",
+    "messageId": "<7bd14c1a-fd97-e54e-cf5b-0ede7093c84a@gmail.com>",
+    "timestamp": "2026-08-22T06:16:49.615Z",
+    "status": "DELIVERED"
   }
 ]

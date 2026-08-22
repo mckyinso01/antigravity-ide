@@ -1,10 +1,10 @@
 {
-  "currentIndex": 65,
-  "totalDispatched": 60,
+  "currentIndex": 70,
+  "totalDispatched": 65,
   "dailyBatchSize": 5,
   "delaySecondsMin": 35,
   "delaySecondsMax": 55,
-  "lastDispatchedAt": "2026-08-22T05:39:35.425Z",
+  "lastDispatchedAt": "2026-08-22T06:16:49.616Z",
   "status": "IDLE",
   "history": [
     {
@@ -66,6 +66,13 @@
     {
       "runAt": "2026-08-22T05:39:35.426Z",
       "batchRange": "61-65",
+      "successCount": 5,
+      "skippedCount": 0,
+      "failedCount": 0
+    },
+    {
+      "runAt": "2026-08-22T06:16:49.616Z",
+      "batchRange": "66-70",
       "successCount": 5,
       "skippedCount": 0,
       "failedCount": 0

@@ -6,8 +6,9 @@
     "domain": "rsc.com.ph",
     "email": "robsupermarket@rsc.com.ph",
     "channel": "Official Corporate Portal",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 2,
@@ -16,9 +17,10 @@
     "domain": "robinsonsretail.com.ph",
     "email": "customer.care@robinsonsretail.com.ph",
     "channel": "Official Customer Care",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 3,
@@ -27,9 +29,10 @@
     "domain": "puregold.com.ph",
     "email": "customercare@puregold.com.ph",
     "channel": "Official Corporate Contact",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 4,
@@ -38,9 +41,10 @@
     "domain": "smmarkets.ph",
     "email": "customercare@smmarkets.ph",
     "channel": "Official Customer Portal",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 5,
@@ -49,9 +53,10 @@
     "domain": "metroretail.com.ph",
     "email": "customer.care@metroretail.com.ph",
     "channel": "Official Corporate Contact",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 6,
@@ -60,8 +65,9 @@
     "domain": "allday.com.ph",
     "email": "info@allday.com.ph",
     "channel": "Official Business Contact",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 7,
@@ -70,8 +76,9 @@
     "domain": "landers.ph",
     "email": "help@landers.ph",
     "channel": "Official Member Support",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 8,
@@ -80,9 +87,10 @@
     "domain": "puregold.com.ph",
     "email": "customercare@puregold.com.ph",
     "channel": "Official Parent Group Helpdesk",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 9,
@@ -91,8 +99,9 @@
     "domain": "waltermart.com.ph",
     "email": "waltermartinfo@waltermart.com.ph",
     "channel": "Official Corporate Portal",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 10,
@@ -101,8 +110,9 @@
     "domain": "fishermall.com.ph",
     "email": "customercare@fishermall.com.ph",
     "channel": "Official Support Channel",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 11,
@@ -111,8 +121,9 @@
     "domain": "super8.ph",
     "email": "customercare@super8.ph",
     "channel": "Official Business Portal",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 12,
@@ -121,8 +132,9 @@
     "domain": "lcc.com.ph",
     "email": "customer_service@lcc.com.ph",
     "channel": "Official Support Email",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 13,
@@ -131,9 +143,10 @@
     "domain": "sanroquesupermarket.com.ph",
     "email": "info@sanroquesupermarket.com.ph",
     "channel": "Official Regional Supermarket",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 14,
@@ -142,8 +155,9 @@
     "domain": "nccc.com.ph",
     "email": "customercare@nccc.com.ph",
     "channel": "Official Customer Support",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 15,
@@ -152,10 +166,11 @@
     "domain": "kccmalls.com",
     "email": "customercare@kccmalls.com",
     "channel": "Official Support Channel",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
     "status": "BOUNCED",
-    "decision_maker": "Arvin T. Chan (Chairperson & CEO)"
+    "decision_maker": "Arvin T. Chan (Chairperson & CEO)",
+    "email_is_verified": false
   },
   {
     "id": 16,
@@ -164,8 +179,9 @@
     "domain": "princeretail.com",
     "email": "customercare@princeretail.com",
     "channel": "Official Retail Group Portal",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 17,
@@ -174,8 +190,9 @@
     "domain": "pioneercentre.com",
     "email": "info@pioneercentre.com",
     "channel": "Official Store Contact",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 18,
@@ -184,9 +201,10 @@
     "domain": "eversupermarket.com",
     "email": "info@eversupermarket.com",
     "channel": "Official Retail Portal",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 19,
@@ -195,8 +213,9 @@
     "domain": "isetann.com.ph",
     "email": "customercare@isetann.com.ph",
     "channel": "Official Retail Contact",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 20,
@@ -205,9 +224,10 @@
     "domain": "sanroquesupermarket.com.ph",
     "email": "info@sanroquesupermarket.com.ph",
     "channel": "Official Corporate Email",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 21,
@@ -216,10 +236,11 @@
     "domain": "ultramega.com.ph",
     "email": "info@ultramega.com.ph",
     "channel": "Official Wholesale Portal",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
     "decision_maker": "Benito Lim (President & Owner) / Julie Lim (VP Operations)",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 22,
@@ -228,10 +249,11 @@
     "domain": "robinsonsretail.com.ph",
     "email": "customer.care@robinsonsretail.com.ph",
     "channel": "Official Retail Unit",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
     "decision_maker": "Robina Gokongwei-Pe (CEO) / Stanley C. Co (COO)",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 23,
@@ -240,9 +262,10 @@
     "domain": "nccc.com.ph",
     "email": "customercare@nccc.com.ph",
     "channel": "Official Regional Retailer",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "decision_maker": "Lim Family Executive Directorate (NCCC / Choice Mart Group)"
+    "decision_maker": "Lim Family Executive Directorate (NCCC / Choice Mart Group)",
+    "email_is_verified": false
   },
   {
     "id": 24,
@@ -251,9 +274,10 @@
     "domain": "smmarkets.ph",
     "email": "customercare@smmarkets.ph",
     "channel": "Official SM Markets Portal",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 25,
@@ -262,9 +286,10 @@
     "domain": "southsupermarket.com.ph",
     "email": "inquiry@southsupermarket.com.ph",
     "channel": "Official Customer Portal",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "decision_maker": "Executive Operations Board (Grand Union Supermarket Inc)"
+    "decision_maker": "Executive Operations Board (Grand Union Supermarket Inc)",
+    "email_is_verified": false
   },
   {
     "id": 26,
@@ -273,10 +298,11 @@
     "domain": "mercurydrug.com",
     "email": "feedback@mercurydrug.com",
     "channel": "Official Corporate Feedback",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
     "decision_maker": "Executive Stewardship & National Supply Chain Directorate",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 27,
@@ -285,9 +311,10 @@
     "domain": "southstardrug.com.ph",
     "email": "customercare@southstardrug.com.ph",
     "channel": "Official Customer Care",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "decision_maker": "Stanley C. Co (President & CEO) / Thaddeus L. Sanchez (General Manager)"
+    "decision_maker": "Stanley C. Co (President & CEO) / Thaddeus L. Sanchez (General Manager)",
+    "email_is_verified": false
   },
   {
     "id": 28,
@@ -296,9 +323,10 @@
     "domain": "watsons.com.ph",
     "email": "watsons.customercare@watsons.com.ph",
     "channel": "Official Corporate Support",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "decision_maker": "Danilo S. Chiong (Managing Director) / Jessie Calinog (Head of Supply Chain)"
+    "decision_maker": "Danilo S. Chiong (Managing Director) / Jessie Calinog (Head of Supply Chain)",
+    "email_is_verified": false
   },
   {
     "id": 29,
@@ -307,10 +335,11 @@
     "domain": "robinsonsretail.com.ph",
     "email": "customer.care@robinsonsretail.com.ph",
     "channel": "Official Pharmacy Portal",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
     "decision_maker": "Michael G. So (General Manager) / Mariel Crisostomo (Group GM)",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 30,
@@ -319,9 +348,10 @@
     "domain": "generika.com.ph",
     "email": "customercare@generika.com.ph",
     "channel": "Official Customer Portal",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "decision_maker": "Adrian Gino Guinto (President & CEO) / Atty. Yet Abarca (AC Health Pharma CEO)"
+    "decision_maker": "Adrian Gino Guinto (President & CEO) / Atty. Yet Abarca (AC Health Pharma CEO)",
+    "email_is_verified": false
   },
   {
     "id": 31,
@@ -330,8 +360,9 @@
     "domain": "tgp.com.ph",
     "email": "customercare@tgp.com.ph",
     "channel": "Official Franchise Support",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 32,
@@ -340,8 +371,9 @@
     "domain": "stjosephdrug.com",
     "email": "info@stjosephdrug.com",
     "channel": "Official Corporate Email",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 33,
@@ -350,8 +382,9 @@
     "domain": "nccc.com.ph",
     "email": "customercare@nccc.com.ph",
     "channel": "Official Corporate Support",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 34,
@@ -360,9 +393,10 @@
     "domain": "medexpress.com.ph",
     "email": "customercare@medexpress.com.ph",
     "channel": "Official Pharmacy Support",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 35,
@@ -371,9 +405,10 @@
     "domain": "doh.gov.ph",
     "email": "info@doh.gov.ph",
     "channel": "Official Institutional Channel",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 36,
@@ -382,9 +417,10 @@
     "domain": "healthyoptions.com.ph",
     "email": "customercare@healthyoptions.com.ph",
     "channel": "Official Retail Support",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 37,
@@ -393,8 +429,9 @@
     "domain": "eo-executiveoptical.com",
     "email": "customercare@eo-executiveoptical.com",
     "channel": "Official Health Retailer",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 38,
@@ -403,9 +440,10 @@
     "domain": "idealvisioncenter.com.ph",
     "email": "customercare@idealvisioncenter.com.ph",
     "channel": "Official Optical Retailer",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 39,
@@ -414,8 +452,9 @@
     "domain": "sunniesface.com",
     "email": "hello@sunniesface.com",
     "channel": "Official Brand Support",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 40,
@@ -424,9 +463,10 @@
     "domain": "smmarkets.ph",
     "email": "customercare@smmarkets.ph",
     "channel": "Official SM Retail Group",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 41,
@@ -435,9 +475,10 @@
     "domain": "robinsonsretail.com.ph",
     "email": "customer.care@robinsonsretail.com.ph",
     "channel": "Official Robinsons Retail Unit",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 42,
@@ -446,8 +487,9 @@
     "domain": "miniso.ph",
     "email": "customercare@miniso.ph",
     "channel": "Official Retail Support",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 43,
@@ -456,8 +498,9 @@
     "domain": "mumuso.com.ph",
     "email": "info@mumuso.com.ph",
     "channel": "Official Retail Contact",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 44,
@@ -466,8 +509,9 @@
     "domain": "yoyoso.ph",
     "email": "info@yoyoso.ph",
     "channel": "Official Retail Portal",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 45,
@@ -476,8 +520,9 @@
     "domain": "kkv.ph",
     "email": "contact@kkv.ph",
     "channel": "Official Retail Portal",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 46,
@@ -486,9 +531,10 @@
     "domain": "penshoppe.com",
     "email": "customercare@penshoppe.com",
     "channel": "Official Corporate Brand",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 47,
@@ -497,9 +543,10 @@
     "domain": "bench.com.ph",
     "email": "customercare@bench.com.ph",
     "channel": "Official Corporate Portal",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 48,
@@ -508,9 +555,10 @@
     "domain": "bayo.com.ph",
     "email": "customercare@bayo.com.ph",
     "channel": "Official Fashion Portal",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 49,
@@ -519,9 +567,10 @@
     "domain": "kamiseta.com",
     "email": "customercare@kamiseta.com",
     "channel": "Official Brand Portal",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 50,
@@ -530,9 +579,10 @@
     "domain": "plainsandprints.com",
     "email": "customercare@plainsandprints.com",
     "channel": "Official Corporate Portal",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 51,
@@ -541,9 +591,10 @@
     "domain": "robinsonsretail.com.ph",
     "email": "customer.care@robinsonsretail.com.ph",
     "channel": "Official Retail Portal",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 52,
@@ -552,9 +603,10 @@
     "domain": "bench.com.ph",
     "email": "customercare@bench.com.ph",
     "channel": "Official Brand Group",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 53,
@@ -563,9 +615,10 @@
     "domain": "bench.com.ph",
     "email": "customercare@bench.com.ph",
     "channel": "Official Brand Group",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 54,
@@ -574,8 +627,9 @@
     "domain": "forme.com.ph",
     "email": "customercare@forme.com.ph",
     "channel": "Official Corporate Support",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 55,
@@ -584,9 +638,10 @@
     "domain": "regattalifestyle.com",
     "email": "customercare@regattalifestyle.com",
     "channel": "Official Corporate Support",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 56,
@@ -595,9 +650,10 @@
     "domain": "oxgnfashion.com",
     "email": "customercare@oxgnfashion.com",
     "channel": "Official Corporate Support",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 57,
@@ -606,9 +662,10 @@
     "domain": "memofashion.com",
     "email": "customercare@memofashion.com",
     "channel": "Official Corporate Support",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 58,
@@ -617,8 +674,9 @@
     "domain": "sperryshoes.com.ph",
     "email": "customercare@sperryshoes.com.ph",
     "channel": "Official Shoe Retailer",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 59,
@@ -627,9 +685,10 @@
     "domain": "keds.com.ph",
     "email": "customercare@keds.com.ph",
     "channel": "Official Shoe Retailer",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 60,
@@ -638,9 +697,10 @@
     "domain": "pony.com.ph",
     "email": "customercare@pony.com.ph",
     "channel": "Official Shoe Retailer",
-    "verification_status": "100% VERIFIED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
     "verification_reason": "100% VERIFIED ACTIVE",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "email_is_verified": false
   },
   {
     "id": 61,
@@ -649,8 +709,9 @@
     "domain": "complexlifestylestore.com",
     "email": "info@complexlifestylestore.com",
     "channel": "Official Footwear Outlet",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 62,
@@ -659,8 +720,9 @@
     "domain": "tobys.com",
     "email": "support@tobys.com",
     "channel": "Official Sports Retailer",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 63,
@@ -669,8 +731,9 @@
     "domain": "runnr.com.ph",
     "email": "support@runnr.com.ph",
     "channel": "Official Sports Retailer",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 64,
@@ -679,8 +742,9 @@
     "domain": "olympicvillage.com.ph",
     "email": "info@olympicvillage.com.ph",
     "channel": "Official Sports Chain",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 65,
@@ -689,8 +753,9 @@
     "domain": "chrissports.com",
     "email": "customercare@chrissports.com",
     "channel": "Official Sports Chain",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 66,
@@ -699,8 +764,9 @@
     "domain": "wilcon.com.ph",
     "email": "customer_care@wilcon.com.ph",
     "channel": "Official Corporate Contact",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 67,
@@ -709,8 +775,9 @@
     "domain": "handyman.com.ph",
     "email": "customercare@handyman.com.ph",
     "channel": "Official Robinsons Retail Unit",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 68,
@@ -719,8 +786,9 @@
     "domain": "truevalue.com.ph",
     "email": "customercare@truevalue.com.ph",
     "channel": "Official Robinsons Retail Unit",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 69,
@@ -729,8 +797,9 @@
     "domain": "acehardware.ph",
     "email": "customercare@acehardware.ph",
     "channel": "Official SM Retail Unit",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 70,
@@ -739,8 +808,9 @@
     "domain": "citihardware.com",
     "email": "customercare@citihardware.com",
     "channel": "Official Depot Portal",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 71,
@@ -749,8 +819,9 @@
     "domain": "allhome.com.ph",
     "email": "info@allhome.com.ph",
     "channel": "Official Home Depot Portal",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 72,
@@ -759,8 +830,9 @@
     "domain": "mrdiy.com",
     "email": "customercare.ph@mrdiy.com",
     "channel": "Official PH Customer Care",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 73,
@@ -769,8 +841,9 @@
     "domain": "abenson.com",
     "email": "customerservice@abenson.com",
     "channel": "Official Electronics Retailer",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 74,
@@ -779,8 +852,9 @@
     "domain": "smappliance.com",
     "email": "customercare@smappliance.com",
     "channel": "Official SM Retail Unit",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 75,
@@ -789,8 +863,9 @@
     "domain": "robinsonsappliances.com.ph",
     "email": "customer.care@robinsonsappliances.com.ph",
     "channel": "Official Robinsons Retail Unit",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 76,
@@ -799,8 +874,9 @@
     "domain": "ansons.ph",
     "email": "customerservice@ansons.ph",
     "channel": "Official Electronics Outlet",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 77,
@@ -809,8 +885,9 @@
     "domain": "automatic-centre.com",
     "email": "customercare@automatic-centre.com",
     "channel": "Official Electronics Outlet",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 78,
@@ -819,8 +896,9 @@
     "domain": "western.com.ph",
     "email": "customercare@western.com.ph",
     "channel": "Official Electronics Outlet",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 79,
@@ -829,8 +907,9 @@
     "domain": "abenson.com",
     "email": "customerservice@abenson.com",
     "channel": "Official Retail Network",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 80,
@@ -839,8 +918,9 @@
     "domain": "imperialappliance.com",
     "email": "info@imperialappliance.com",
     "channel": "Official Regional Retailer",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 81,
@@ -849,8 +929,9 @@
     "domain": "octagon.com.ph",
     "email": "support@octagon.com.ph",
     "channel": "Official IT Retailer",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 82,
@@ -859,8 +940,9 @@
     "domain": "pcx.com.ph",
     "email": "sales@pcx.com.ph",
     "channel": "Official IT Retailer",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 83,
@@ -869,8 +951,9 @@
     "domain": "siliconvalley.com.ph",
     "email": "support@siliconvalley.com.ph",
     "channel": "Official IT Retailer",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 84,
@@ -879,8 +962,9 @@
     "domain": "complink.com.ph",
     "email": "sales@complink.com.ph",
     "channel": "Official IT Retailer",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 85,
@@ -889,8 +973,9 @@
     "domain": "villman.com",
     "email": "sales@villman.com",
     "channel": "Official IT Retailer",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 86,
@@ -899,8 +984,9 @@
     "domain": "jollibee.com.ph",
     "email": "feedback@jollibee.com.ph",
     "channel": "Official Corporate Feedback",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 87,
@@ -909,8 +995,9 @@
     "domain": "chowking.com",
     "email": "feedback@chowking.com",
     "channel": "Official Brand Portal",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 88,
@@ -919,8 +1006,9 @@
     "domain": "greenwich.com.ph",
     "email": "feedback@greenwich.com.ph",
     "channel": "Official Brand Portal",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 89,
@@ -929,8 +1017,9 @@
     "domain": "redribbonbakeshop.com.ph",
     "email": "feedback@redribbonbakeshop.com.ph",
     "channel": "Official Bakery Portal",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 90,
@@ -939,8 +1028,9 @@
     "domain": "manginasal.com",
     "email": "feedback@manginasal.com",
     "channel": "Official Restaurant Portal",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 91,
@@ -949,8 +1039,9 @@
     "domain": "maxsgroupinc.com",
     "email": "customercare@maxsgroupinc.com",
     "channel": "Official Restaurant Group",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 92,
@@ -959,8 +1050,9 @@
     "domain": "pancakehouse.com.ph",
     "email": "customercare@pancakehouse.com.ph",
     "channel": "Official Restaurant Portal",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 93,
@@ -969,8 +1061,9 @@
     "domain": "yellowcabpizza.com",
     "email": "customercare@yellowcabpizza.com",
     "channel": "Official Pizza Chain",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 94,
@@ -979,8 +1072,9 @@
     "domain": "krispykreme.com.ph",
     "email": "customercare@krispykreme.com.ph",
     "channel": "Official Bakery Chain",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 95,
@@ -989,8 +1083,9 @@
     "domain": "goldilocks.com.ph",
     "email": "customercare@goldilocks.com.ph",
     "channel": "Official Bakery Chain",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 96,
@@ -999,8 +1094,9 @@
     "domain": "potatocorner.com",
     "email": "customercare@potatocorner.com",
     "channel": "Official Franchise Outlet",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 97,
@@ -1009,8 +1105,9 @@
     "domain": "shakeyspizza.ph",
     "email": "customercare@shakeyspizza.ph",
     "channel": "Official Restaurant Portal",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 98,
@@ -1019,8 +1116,9 @@
     "domain": "boscoffee.com",
     "email": "customercare@boscoffee.com",
     "channel": "Official Cafe Chain",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 99,
@@ -1029,8 +1127,9 @@
     "domain": "seattlesbest.com.ph",
     "email": "customercare@seattlesbest.com.ph",
     "channel": "Official Cafe Chain",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   },
   {
     "id": 100,
@@ -1039,7 +1138,8 @@
     "domain": "figarocoffee.com",
     "email": "customercare@figarocoffee.com",
     "channel": "Official Cafe Chain",
-    "verification_status": "100% VERIFIED",
-    "verification_reason": "100% VERIFIED ACTIVE"
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "verification_reason": "100% VERIFIED ACTIVE",
+    "email_is_verified": false
   }
 ]

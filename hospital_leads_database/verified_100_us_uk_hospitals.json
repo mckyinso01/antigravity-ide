@@ -10,7 +10,9 @@
     "email_domain": "salemhealth.org",
     "email_pattern": "first.last@salemhealth.org",
     "sample_email": "bob.macdonald@salemhealth.org",
-    "pain_point": "High ED boarding volume; bed turnaround bottlenecks"
+    "pain_point": "High ED boarding volume; bed turnaround bottlenecks",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 2,
@@ -23,7 +25,9 @@
     "email_domain": "asante.org",
     "email_pattern": "first.last@asante.org",
     "sample_email": "mike.adams@asante.org",
-    "pain_point": "Multi-campus patient placement coordination"
+    "pain_point": "Multi-campus patient placement coordination",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 3,
@@ -36,7 +40,9 @@
     "email_domain": "overlakehospital.org",
     "email_pattern": "first.last@overlakehospital.org",
     "sample_email": "scott.waters@overlakehospital.org",
-    "pain_point": "Telemetry alarm overload and nursing burnout"
+    "pain_point": "Telemetry alarm overload and nursing burnout",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 4,
@@ -50,7 +56,9 @@
     "email_pattern": "first.last@skagitregionalhealth.org",
     "sample_email": "gary.smith@skagitregionalhealth.org",
     "pain_point": "PACU to Med-Surg bed turn delays",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 5,
@@ -64,7 +72,9 @@
     "email_pattern": "first.last@kadlec.org",
     "sample_email": "angela.hughes@kadlec.org",
     "pain_point": "Regional trauma referral intake bottleneck",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 6,
@@ -77,7 +87,9 @@
     "email_domain": "samhealth.org",
     "email_pattern": "first.last@samhealth.org",
     "sample_email": "doug.boysen@samhealth.org",
-    "pain_point": "Unified 5-hospital spatial capacity management"
+    "pain_point": "Unified 5-hospital spatial capacity management",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 7,
@@ -90,7 +102,9 @@
     "email_domain": "stcharleshealthcare.org",
     "email_pattern": "first.last@stcharleshealthcare.org",
     "sample_email": "jeff.absalon@stcharleshealthcare.org",
-    "pain_point": "Seasonal mountain trauma capacity overflows"
+    "pain_point": "Seasonal mountain trauma capacity overflows",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 8,
@@ -103,7 +117,9 @@
     "email_domain": "kvhealthcare.org",
     "email_pattern": "first.last@kvhealthcare.org",
     "sample_email": "jason.adler@kvhealthcare.org",
-    "pain_point": "Critical access transfer delays and HUD visibility"
+    "pain_point": "Critical access transfer delays and HUD visibility",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 9,
@@ -116,7 +132,9 @@
     "email_domain": "olympicmedical.org",
     "email_pattern": "first.last@olympicmedical.org",
     "sample_email": "leonard.borchers@olympicmedical.org",
-    "pain_point": "AHA Code Blue rapid event recording"
+    "pain_point": "AHA Code Blue rapid event recording",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 10,
@@ -130,7 +148,9 @@
     "email_pattern": "first.last@evergreenhealth.com",
     "sample_email": "chris.akeroyd@evergreenhealth.com",
     "pain_point": "ICU bed occupancy and MEWS deterioration tracking",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 11,
@@ -143,7 +163,9 @@
     "email_domain": "confluencehealth.org",
     "email_pattern": "first.last@confluencehealth.org",
     "sample_email": "alan.fisher@confluencehealth.org",
-    "pain_point": "Multi-county transfer routing bottlenecks"
+    "pain_point": "Multi-county transfer routing bottlenecks",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 12,
@@ -156,7 +178,9 @@
     "email_domain": "peacehealth.org",
     "email_pattern": "first.last@peacehealth.org",
     "sample_email": "heather.wall@peacehealth.org",
-    "pain_point": "ED-to-inpatient bed assignment delay"
+    "pain_point": "ED-to-inpatient bed assignment delay",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 13,
@@ -170,7 +194,9 @@
     "email_pattern": "first.last@multicare.org",
     "sample_email": "kimberly.kelley@multicare.org",
     "pain_point": "Nurse staffing ratios and shift turnover",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 14,
@@ -183,7 +209,9 @@
     "email_domain": "kh.org",
     "email_pattern": "first.last@kh.org",
     "sample_email": "ron.bingham@kh.org",
-    "pain_point": "Inpatient census > 95% bed crunch"
+    "pain_point": "Inpatient census > 95% bed crunch",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 15,
@@ -196,7 +224,9 @@
     "email_domain": "bozemanhealth.org",
     "email_pattern": "first.last@bozemanhealth.org",
     "sample_email": "julia.phelan@bozemanhealth.org",
-    "pain_point": "Rapid community expansion; winter trauma surges"
+    "pain_point": "Rapid community expansion; winter trauma surges",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 16,
@@ -209,7 +239,9 @@
     "email_domain": "sphealth.org",
     "email_pattern": "first.last@sphealth.org",
     "sample_email": "kari.koehler@sphealth.org",
-    "pain_point": "EVS automated QR room sanitization tracking"
+    "pain_point": "EVS automated QR room sanitization tracking",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 17,
@@ -223,7 +255,9 @@
     "email_pattern": "first.last@monument.health",
     "sample_email": "stephanie.lahr@monument.health",
     "pain_point": "Level 2 trauma regional surge coordination",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 18,
@@ -237,7 +271,9 @@
     "email_pattern": "first.last@billingsclinic.org",
     "sample_email": "amy.linscheid@billingsclinic.org",
     "pain_point": "Inpatient telemetry bed allocation",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 19,
@@ -250,7 +286,9 @@
     "email_domain": "logan.org",
     "email_pattern": "first.last@logan.org",
     "sample_email": "mike.rountree@logan.org",
-    "pain_point": "Disparate bed scheduling across merged sites"
+    "pain_point": "Disparate bed scheduling across merged sites",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 20,
@@ -264,7 +302,9 @@
     "email_pattern": "first.last@carsontahoe.org",
     "sample_email": "cheryl.caughron@carsontahoe.org",
     "pain_point": "Surviving Sepsis Hour-1 compliance workflow",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 21,
@@ -278,7 +318,9 @@
     "email_pattern": "first.last@sanjuanregional.net",
     "sample_email": "john.buffington@sanjuanregional.net",
     "pain_point": "Four Corners geographic patient transfer bottleneck",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 22,
@@ -292,7 +334,9 @@
     "email_pattern": "first.last@grmc.org",
     "sample_email": "cynthia.moreno@grmc.org",
     "pain_point": "Zero-footprint standalone clinical HUD need",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 23,
@@ -305,7 +349,9 @@
     "email_domain": "yumaregional.org",
     "email_pattern": "first.last@yumaregional.org",
     "sample_email": "fred.bazzoli@yumaregional.org",
-    "pain_point": "Winter resident census doubles; ED hallway overflow"
+    "pain_point": "Winter resident census doubles; ED hallway overflow",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 24,
@@ -319,7 +365,9 @@
     "email_pattern": "first.last@summithealthcare.net",
     "sample_email": "david.rogers@summithealthcare.net",
     "pain_point": "Isolated mountain patient placement and code blue timer",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 25,
@@ -332,7 +380,9 @@
     "email_domain": "bryanhealth.org",
     "email_pattern": "first.last@bryanhealth.org",
     "sample_email": "brian.stern@bryanhealth.org",
-    "pain_point": "Inter-campus East/West bed balancing"
+    "pain_point": "Inter-campus East/West bed balancing",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 26,
@@ -346,7 +396,9 @@
     "email_pattern": "first.last@gphealth.org",
     "sample_email": "david.zimmerman@gphealth.org",
     "pain_point": "Nurse documentation burnout",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 27,
@@ -359,7 +411,9 @@
     "email_domain": "frhs.org",
     "email_pattern": "first.last@frhs.org",
     "sample_email": "mark.klosterman@frhs.org",
-    "pain_point": "PACU recovery discharge latency"
+    "pain_point": "PACU recovery discharge latency",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 28,
@@ -373,7 +427,9 @@
     "email_pattern": "first.last@bannerhealth.com",
     "sample_email": "lisa.lovelace@bannerhealth.com",
     "pain_point": "Winter respiratory surge admissions",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 29,
@@ -387,7 +443,9 @@
     "email_pattern": "first.last@cchwyo.org",
     "sample_email": "leo.morris@cchwyo.org",
     "pain_point": "Industrial trauma triage and rapid HUD",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 30,
@@ -400,7 +458,9 @@
     "email_domain": "hendricks.org",
     "email_pattern": "first.last@hendricks.org",
     "sample_email": "dan.trennepohl@hendricks.org",
-    "pain_point": "EVS biohazard bed turnaround delays"
+    "pain_point": "EVS biohazard bed turnaround delays",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 31,
@@ -414,7 +474,9 @@
     "email_pattern": "first.last@blessinghealth.org",
     "sample_email": "scott.christensen@blessinghealth.org",
     "pain_point": "Tri-State multi-facility patient placement",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 32,
@@ -427,7 +489,9 @@
     "email_domain": "reidhealth.org",
     "email_pattern": "first.last@reidhealth.org",
     "sample_email": "muhammad.siddiqui@reidhealth.org",
-    "pain_point": "Telemetry alarm fatigue and lead-II monitoring"
+    "pain_point": "Telemetry alarm fatigue and lead-II monitoring",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 33,
@@ -440,7 +504,9 @@
     "email_domain": "phelpshealth.org",
     "email_pattern": "first.last@phelpshealth.org",
     "sample_email": "david.dobkins@phelpshealth.org",
-    "pain_point": "ED boarding averaging > 4 hours"
+    "pain_point": "ED boarding averaging > 4 hours",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 34,
@@ -453,7 +519,9 @@
     "email_domain": "sblh.org",
     "email_pattern": "first.last@sblh.org",
     "sample_email": "thomas.deters@sblh.org",
-    "pain_point": "Visual spatial bed status dashboard need"
+    "pain_point": "Visual spatial bed status dashboard need",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 35,
@@ -467,7 +535,9 @@
     "email_pattern": "first.last@crh.org",
     "sample_email": "steve.baker@crh.org",
     "pain_point": "Automated MEWS escalation and clinical alerts",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 36,
@@ -481,7 +551,9 @@
     "email_pattern": "first.last@mhsystem.org",
     "sample_email": "cindy.frank@mhsystem.org",
     "pain_point": "OH/WV cross-border patient transfer sync",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 37,
@@ -495,7 +567,9 @@
     "email_pattern": "first.last@ftmc.com",
     "sample_email": "brent.burkey@ftmc.com",
     "pain_point": "Seasonal coastal volume variance",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 38,
@@ -509,7 +583,9 @@
     "email_pattern": "first.last@memorial.health",
     "sample_email": "drew.early@memorial.health",
     "pain_point": "Stroke and cardiac spatial triage bottlenecks",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 39,
@@ -523,7 +599,9 @@
     "email_pattern": "first.last@ksbhospital.com",
     "sample_email": "ryan.venier@ksbhospital.com",
     "pain_point": "IT capital expenditure and self-hosted HUD need",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 40,
@@ -536,7 +614,9 @@
     "email_domain": "gibsonhospital.org",
     "email_pattern": "first.last@gibsonhospital.org",
     "sample_email": "robin.rose@gibsonhospital.org",
-    "pain_point": "Web-native mobile workstation deployment"
+    "pain_point": "Web-native mobile workstation deployment",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 41,
@@ -549,7 +629,9 @@
     "email_domain": "cghmc.com",
     "email_pattern": "first.last@cghmc.com",
     "sample_email": "paul.steinke@cghmc.com",
-    "pain_point": "ICU stepdown bed capacity management"
+    "pain_point": "ICU stepdown bed capacity management",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 42,
@@ -563,7 +645,9 @@
     "email_pattern": "first.last@morrishospital.org",
     "sample_email": "john.burt@morrishospital.org",
     "pain_point": "Exurban growth causing ED hold delays",
-    "status": "BOUNCED"
+    "status": "BOUNCED",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 43,
@@ -576,7 +660,9 @@
     "email_domain": "silvercross.org",
     "email_pattern": "first.last@silvercross.org",
     "sample_email": "kevin.brower@silvercross.org",
-    "pain_point": "Surgical throughput bed reservation holds"
+    "pain_point": "Surgical throughput bed reservation holds",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 44,
@@ -589,7 +675,9 @@
     "email_domain": "tiftregional.com",
     "email_pattern": "first.last@tiftregional.com",
     "sample_email": "christopher.dorman@tiftregional.com",
-    "pain_point": "Sepsis protocol bundle compliance audits"
+    "pain_point": "Sepsis protocol bundle compliance audits",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 45,
@@ -602,7 +690,9 @@
     "email_domain": "valleyhealthlink.com",
     "email_pattern": "first.last@valleyhealthlink.com",
     "sample_email": "mark.merrill@valleyhealthlink.com",
-    "pain_point": "6-hospital Shenandoah network transfer flow"
+    "pain_point": "6-hospital Shenandoah network transfer flow",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 46,
@@ -615,7 +705,9 @@
     "email_domain": "beaufortmemorial.org",
     "email_pattern": "first.last@beaufortmemorial.org",
     "sample_email": "ed.hughes@beaufortmemorial.org",
-    "pain_point": "High retiree census; telemetry monitoring"
+    "pain_point": "High retiree census; telemetry monitoring",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 47,
@@ -628,7 +720,9 @@
     "email_domain": "selfregional.org",
     "email_pattern": "first.last@selfregional.org",
     "sample_email": "david.giles@selfregional.org",
-    "pain_point": "Med-Surg nurse communication bottlenecks"
+    "pain_point": "Med-Surg nurse communication bottlenecks",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 48,
@@ -641,7 +735,9 @@
     "email_domain": "phoebehealth.com",
     "email_pattern": "first.last@phoebehealth.com",
     "sample_email": "will.peterson@phoebehealth.com",
-    "pain_point": "Chronic disease high acuity bed placement"
+    "pain_point": "Chronic disease high acuity bed placement",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 49,
@@ -654,7 +750,9 @@
     "email_domain": "colquittregional.com",
     "email_pattern": "first.last@colquittregional.com",
     "sample_email": "jim.matney@colquittregional.com",
-    "pain_point": "Telemetry COW cart synchronization"
+    "pain_point": "Telemetry COW cart synchronization",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 50,
@@ -667,7 +765,9 @@
     "email_domain": "archbold.org",
     "email_pattern": "first.last@archbold.org",
     "sample_email": "perry.mustian@archbold.org",
-    "pain_point": "GA/FL border transfer coordination"
+    "pain_point": "GA/FL border transfer coordination",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 51,
@@ -680,7 +780,9 @@
     "email_domain": "wayneunc.org",
     "email_pattern": "first.last@wayneunc.org",
     "sample_email": "jessie.powell@wayneunc.org",
-    "pain_point": "ED-to-inpatient handoff delays"
+    "pain_point": "ED-to-inpatient handoff delays",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 52,
@@ -693,7 +795,9 @@
     "email_domain": "carterethealth.org",
     "email_pattern": "first.last@carterethealth.org",
     "sample_email": "harvey.case@carterethealth.org",
-    "pain_point": "Seasonal coastal trauma surges"
+    "pain_point": "Seasonal coastal trauma surges",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 53,
@@ -706,7 +810,9 @@
     "email_domain": "halifax.org",
     "email_pattern": "first.last@halifax.org",
     "sample_email": "tom.stafford@halifax.org",
-    "pain_point": "Volusia safety net trauma bed turn times"
+    "pain_point": "Volusia safety net trauma bed turn times",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 54,
@@ -719,7 +825,9 @@
     "email_domain": "martinhealth.org",
     "email_pattern": "first.last@martinhealth.org",
     "sample_email": "robert.lord@martinhealth.org",
-    "pain_point": "Treasure Coast cardiac telemetry loads"
+    "pain_point": "Treasure Coast cardiac telemetry loads",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 55,
@@ -732,7 +840,9 @@
     "email_domain": "frederick.health",
     "email_pattern": "first.last@frederick.health",
     "sample_email": "jackie.rice@frederick.health",
-    "pain_point": "Maryland global budget LOS mandates"
+    "pain_point": "Maryland global budget LOS mandates",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 56,
@@ -745,7 +855,9 @@
     "email_domain": "meritushealth.com",
     "email_pattern": "first.last@meritushealth.com",
     "sample_email": "maulik.joshi@meritushealth.com",
-    "pain_point": "ED fast-track triage overflow holding"
+    "pain_point": "ED fast-track triage overflow holding",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 57,
@@ -758,7 +870,9 @@
     "email_domain": "monhealthsys.org",
     "email_pattern": "first.last@monhealthsys.org",
     "sample_email": "david.goldberg@monhealthsys.org",
-    "pain_point": "Lean spatial bed tracking vs academic competitor"
+    "pain_point": "Lean spatial bed tracking vs academic competitor",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 58,
@@ -771,7 +885,9 @@
     "email_domain": "evanhospital.com",
     "email_pattern": "first.last@evanhospital.com",
     "sample_email": "kendra.aucker@evanhospital.com",
-    "pain_point": "Mobile nursing workflow HUD needs"
+    "pain_point": "Mobile nursing workflow HUD needs",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 59,
@@ -784,7 +900,9 @@
     "email_domain": "dh.org",
     "email_pattern": "first.last@dh.org",
     "sample_email": "richard.lang@dh.org",
-    "pain_point": "Open heart telemetry beds optimization"
+    "pain_point": "Open heart telemetry beds optimization",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 60,
@@ -797,7 +915,9 @@
     "email_domain": "mmchs.org",
     "email_pattern": "first.last@mmchs.org",
     "sample_email": "philip.pandolph@mmchs.org",
-    "pain_point": "Nurse documentation burden and shift handover"
+    "pain_point": "Nurse documentation burden and shift handover",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 61,
@@ -810,7 +930,9 @@
     "email_domain": "bhrhospitals.nhs.uk",
     "email_pattern": "firstname.lastname@nhs.net",
     "sample_email": "kathryn.halford@bhrhospitals.nhs.uk",
-    "pain_point": "Severe A&E 4-hour target and bed capacity crunch"
+    "pain_point": "Severe A&E 4-hour target and bed capacity crunch",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 62,
@@ -823,7 +945,9 @@
     "email_domain": "midyorks.nhs.uk",
     "email_pattern": "firstname.lastname@midyorks.nhs.uk",
     "sample_email": "david.melia@midyorks.nhs.uk",
-    "pain_point": "Pinderfields & Dewsbury acute bed balancing"
+    "pain_point": "Pinderfields & Dewsbury acute bed balancing",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 63,
@@ -836,7 +960,9 @@
     "email_domain": "nca.nhs.uk",
     "email_pattern": "firstname.lastname@nca.nhs.uk",
     "sample_email": "chris.brookes@nca.nhs.uk",
-    "pain_point": "Salford Royal digital flow synchronization"
+    "pain_point": "Salford Royal digital flow synchronization",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 64,
@@ -849,7 +975,9 @@
     "email_domain": "uhdb.nhs.uk",
     "email_pattern": "firstname.lastname@uhdb.nhs.uk",
     "sample_email": "garry.marsh@uhdb.nhs.uk",
-    "pain_point": "Multi-site acute merger bed turnaround times"
+    "pain_point": "Multi-site acute merger bed turnaround times",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 65,
@@ -862,7 +990,9 @@
     "email_domain": "elht.nhs.uk",
     "email_pattern": "firstname.lastname@elht.nhs.uk",
     "sample_email": "tony.mcdonald@elht.nhs.uk",
-    "pain_point": "Emergency hallway boarding relief"
+    "pain_point": "Emergency hallway boarding relief",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 66,
@@ -875,7 +1005,9 @@
     "email_domain": "lthtr.nhs.uk",
     "email_pattern": "firstname.lastname@lthtr.nhs.uk",
     "sample_email": "sarah.cullen@lthtr.nhs.uk",
-    "pain_point": "Royal Preston major trauma bed allocation"
+    "pain_point": "Royal Preston major trauma bed allocation",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 67,
@@ -888,7 +1020,9 @@
     "email_domain": "glos.nhs.uk",
     "email_pattern": "firstname.lastname@glos.nhs.uk",
     "sample_email": "matt.holdaway@glos.nhs.uk",
-    "pain_point": "Dual acute site spatial floorplan census HUD"
+    "pain_point": "Dual acute site spatial floorplan census HUD",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 68,
@@ -901,7 +1035,9 @@
     "email_domain": "somersetft.nhs.uk",
     "email_pattern": "firstname.lastname@somersetft.nhs.uk",
     "sample_email": "hayley.peters@somersetft.nhs.uk",
-    "pain_point": "Acute-to-community integrated bed flow"
+    "pain_point": "Acute-to-community integrated bed flow",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 69,
@@ -914,7 +1050,9 @@
     "email_domain": "ruh.nhs.uk",
     "email_pattern": "firstname.lastname@ruh.nhs.uk",
     "sample_email": "toni.lynch@ruh.nhs.uk",
-    "pain_point": "Delayed discharge and automated MEWS deterioration triage"
+    "pain_point": "Delayed discharge and automated MEWS deterioration triage",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 70,
@@ -927,7 +1065,9 @@
     "email_domain": "torbayandsouthdevon.nhs.uk",
     "email_pattern": "firstname.lastname@torbayandsouthdevon.nhs.uk",
     "sample_email": "deborah.kelly@torbayandsouthdevon.nhs.uk",
-    "pain_point": "Surgical ward bed blocking relief"
+    "pain_point": "Surgical ward bed blocking relief",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 71,
@@ -940,7 +1080,9 @@
     "email_domain": "nbt.nhs.uk",
     "email_pattern": "firstname.lastname@nbt.nhs.uk",
     "sample_email": "steve.hams@nbt.nhs.uk",
-    "pain_point": "Southmead Brunel building patient flow management"
+    "pain_point": "Southmead Brunel building patient flow management",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 72,
@@ -953,7 +1095,9 @@
     "email_domain": "sath.nhs.uk",
     "email_pattern": "firstname.lastname@sath.nhs.uk",
     "sample_email": "hayley.flavell@sath.nhs.uk",
-    "pain_point": "Dual-site patient safety handover HUD"
+    "pain_point": "Dual-site patient safety handover HUD",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 73,
@@ -966,7 +1110,9 @@
     "email_domain": "dgoh.nhs.uk",
     "email_pattern": "firstname.lastname@dgoh.nhs.uk",
     "sample_email": "diane.wake@dgoh.nhs.uk",
-    "pain_point": "Russells Hall Hospital winter pressure bed management"
+    "pain_point": "Russells Hall Hospital winter pressure bed management",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 74,
@@ -979,7 +1125,9 @@
     "email_domain": "walsallhealthcare.nhs.uk",
     "email_pattern": "firstname.lastname@walsallhealthcare.nhs.uk",
     "sample_email": "lisa.carroll@walsallhealthcare.nhs.uk",
-    "pain_point": "Emergency department triage integration"
+    "pain_point": "Emergency department triage integration",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 75,
@@ -992,7 +1140,9 @@
     "email_domain": "wvt.nhs.uk",
     "email_pattern": "firstname.lastname@wvt.nhs.uk",
     "sample_email": "jane.ives@wvt.nhs.uk",
-    "pain_point": "Rural county acute bed shortage"
+    "pain_point": "Rural county acute bed shortage",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 76,
@@ -1005,7 +1155,9 @@
     "email_domain": "ngh.nhs.uk",
     "email_pattern": "firstname.lastname@ngh.nhs.uk",
     "sample_email": "sheran.oke@ngh.nhs.uk",
-    "pain_point": "M1 corridor emergency hallway care reduction"
+    "pain_point": "M1 corridor emergency hallway care reduction",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 77,
@@ -1018,7 +1170,9 @@
     "email_domain": "bedfordshirehospitals.nhs.uk",
     "email_pattern": "firstname.lastname@bedfordshirehospitals.nhs.uk",
     "sample_email": "liz.lees@bedfordshirehospitals.nhs.uk",
-    "pain_point": "Luton & Dunstable dual-site bed optimization"
+    "pain_point": "Luton & Dunstable dual-site bed optimization",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 78,
@@ -1031,7 +1185,9 @@
     "email_domain": "westherts.nhs.uk",
     "email_pattern": "firstname.lastname@westherts.nhs.uk",
     "sample_email": "tracey.carter@westherts.nhs.uk",
-    "pain_point": "Watford General telemetry synchronization"
+    "pain_point": "Watford General telemetry synchronization",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 79,
@@ -1044,7 +1200,9 @@
     "email_domain": "enherts-tr.nhs.uk",
     "email_pattern": "firstname.lastname@enherts-tr.nhs.uk",
     "sample_email": "justin.daniels@enherts-tr.nhs.uk",
-    "pain_point": "Lister Hospital EVS biohazard bed turnaround"
+    "pain_point": "Lister Hospital EVS biohazard bed turnaround",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 80,
@@ -1057,7 +1215,9 @@
     "email_domain": "dgt.nhs.uk",
     "email_pattern": "firstname.lastname@dgt.nhs.uk",
     "sample_email": "steve.fenlon@dgt.nhs.uk",
-    "pain_point": "Darent Valley zero-delay bed tracking"
+    "pain_point": "Darent Valley zero-delay bed tracking",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 81,
@@ -1070,7 +1230,9 @@
     "email_domain": "ekhuft.nhs.uk",
     "email_pattern": "firstname.lastname@ekhuft.nhs.uk",
     "sample_email": "sarah.shingler@ekhuft.nhs.uk",
-    "pain_point": "Tri-site emergency transfer bottleneck"
+    "pain_point": "Tri-site emergency transfer bottleneck",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 82,
@@ -1083,7 +1245,9 @@
     "email_domain": "sash.nhs.uk",
     "email_pattern": "firstname.lastname@sash.nhs.uk",
     "sample_email": "tina.hetherington@sash.nhs.uk",
-    "pain_point": "East Surrey Hospital infection control spatial tracking"
+    "pain_point": "East Surrey Hospital infection control spatial tracking",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 83,
@@ -1096,7 +1260,9 @@
     "email_domain": "porthosp.nhs.uk",
     "email_pattern": "firstname.lastname@porthosp.nhs.uk",
     "sample_email": "liz.rix@porthosp.nhs.uk",
-    "pain_point": "Queen Alexandra acute hallway boarding relief"
+    "pain_point": "Queen Alexandra acute hallway boarding relief",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 84,
@@ -1109,7 +1275,9 @@
     "email_domain": "iow.nhs.uk",
     "email_pattern": "firstname.lastname@iow.nhs.uk",
     "sample_email": "alice.webster@iow.nhs.uk",
-    "pain_point": "Island transfer flight delay bed management"
+    "pain_point": "Island transfer flight delay bed management",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 85,
@@ -1122,7 +1290,9 @@
     "email_domain": "salisbury.nhs.uk",
     "email_pattern": "firstname.lastname@salisbury.nhs.uk",
     "sample_email": "judy.dyos@salisbury.nhs.uk",
-    "pain_point": "Regional burns & plastics theatre turnaround"
+    "pain_point": "Regional burns & plastics theatre turnaround",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 86,
@@ -1135,7 +1305,9 @@
     "email_domain": "spirehealthcare.com",
     "email_pattern": "firstname.lastname@spirehealthcare.com",
     "sample_email": "cathy.cale@spirehealthcare.com",
-    "pain_point": "Private elective theatre-to-room flow"
+    "pain_point": "Private elective theatre-to-room flow",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 87,
@@ -1148,7 +1320,9 @@
     "email_domain": "circlehealthgroup.co.uk",
     "email_pattern": "firstname.lastname@circlehealthgroup.co.uk",
     "sample_email": "info@circlehealthgroup.co.uk",
-    "pain_point": "Rapid private patient bed assignment"
+    "pain_point": "Rapid private patient bed assignment",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 88,
@@ -1161,7 +1335,9 @@
     "email_domain": "ramsayhealth.co.uk",
     "email_pattern": "firstname.lastname@ramsayhealth.co.uk",
     "sample_email": "enquiries@ramsayhealth.co.uk",
-    "pain_point": "NHS pathway day-case discharge turn times"
+    "pain_point": "NHS pathway day-case discharge turn times",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 89,
@@ -1174,7 +1350,9 @@
     "email_domain": "nuffieldhealth.com",
     "email_pattern": "firstname.lastname@nuffieldhealth.com",
     "sample_email": "contact@nuffieldhealth.com",
-    "pain_point": "Private day-case suite turnover"
+    "pain_point": "Private day-case suite turnover",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 90,
@@ -1187,7 +1365,9 @@
     "email_domain": "hcahealthcare.co.uk",
     "email_pattern": "firstname.lastname@hcahealthcare.co.uk",
     "sample_email": "uk.enquiries@hcahealthcare.co.uk",
-    "pain_point": "Luxury inpatient suite telemetry HUD"
+    "pain_point": "Luxury inpatient suite telemetry HUD",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 91,
@@ -1200,7 +1380,9 @@
     "email_domain": "aspen-healthcare.co.uk",
     "email_pattern": "firstname.lastname@aspen-healthcare.co.uk",
     "sample_email": "info@aspen-healthcare.co.uk",
-    "pain_point": "Private elective oncology suite flow"
+    "pain_point": "Private elective oncology suite flow",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 92,
@@ -1213,7 +1395,9 @@
     "email_domain": "practiceplusgroup.com",
     "email_pattern": "firstname.lastname@practiceplusgroup.com",
     "sample_email": "info@practiceplusgroup.com",
-    "pain_point": "NHS surgical waiting list fast-track turnover"
+    "pain_point": "NHS surgical waiting list fast-track turnover",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 93,
@@ -1226,7 +1410,9 @@
     "email_domain": "kims.org.uk",
     "email_pattern": "firstname.lastname@kims.org.uk",
     "sample_email": "kathy.murphy@kims.org.uk",
-    "pain_point": "Private day surgery bed assignment"
+    "pain_point": "Private day surgery bed assignment",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 94,
@@ -1239,7 +1425,9 @@
     "email_domain": "thelondonclinic.co.uk",
     "email_pattern": "firstname.lastname@thelondonclinic.co.uk",
     "sample_email": "info@thelondonclinic.co.uk",
-    "pain_point": "Robotic surgery bed turns and telemetry"
+    "pain_point": "Robotic surgery bed turns and telemetry",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 95,
@@ -1252,7 +1440,9 @@
     "email_domain": "kingedwardvii.co.uk",
     "email_pattern": "firstname.lastname@kingedwardvii.co.uk",
     "sample_email": "info@kingedwardvii.co.uk",
-    "pain_point": "High-touch nurse-to-patient tracking HUD"
+    "pain_point": "High-touch nurse-to-patient tracking HUD",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 96,
@@ -1265,7 +1455,9 @@
     "email_domain": "benenden.org.uk",
     "email_pattern": "firstname.lastname@benenden.org.uk",
     "sample_email": "info@benenden.org.uk",
-    "pain_point": "Fast-track orthopedic suite turns"
+    "pain_point": "Fast-track orthopedic suite turns",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 97,
@@ -1278,7 +1470,9 @@
     "email_domain": "newvictoria.co.uk",
     "email_pattern": "firstname.lastname@newvictoria.co.uk",
     "sample_email": "enquiries@newvictoria.co.uk",
-    "pain_point": "Boutique private VIP bed allocation"
+    "pain_point": "Boutique private VIP bed allocation",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 98,
@@ -1291,7 +1485,9 @@
     "email_domain": "cromwellhospital.com",
     "email_pattern": "firstname.lastname@cromwellhospital.com",
     "sample_email": "info@cromwellhospital.com",
-    "pain_point": "Multilingual telemetry bed management"
+    "pain_point": "Multilingual telemetry bed management",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 99,
@@ -1304,7 +1500,9 @@
     "email_domain": "hje.org.uk",
     "email_pattern": "firstname.lastname@hje.org.uk",
     "sample_email": "info@hje.org.uk",
-    "pain_point": "Acute surgical floor spatial management"
+    "pain_point": "Acute surgical floor spatial management",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 100,
@@ -1317,7 +1515,9 @@
     "email_domain": "kch.nhs.uk",
     "email_pattern": "firstname.lastname@kch.nhs.uk",
     "sample_email": "kch-tr.privatepatients@nhs.net",
-    "pain_point": "Private patient unit embedded flow coordination"
+    "pain_point": "Private patient unit embedded flow coordination",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 101,
@@ -1330,7 +1530,9 @@
     "email_domain": "valleybaptist.net",
     "email_pattern": "first.last@valleybaptist.net",
     "sample_email": "stephen.finch@valleybaptist.net",
-    "pain_point": "Rio Grande Valley high emergency volume and bi-national patient flow"
+    "pain_point": "Rio Grande Valley high emergency volume and bi-national patient flow",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 102,
@@ -1343,7 +1545,9 @@
     "email_domain": "citizensmedicalcenter.org",
     "email_pattern": "first.last@citizensmedicalcenter.org",
     "sample_email": "jeff.siewert@citizensmedicalcenter.org",
-    "pain_point": "Golden Crescent trauma referral bottleneck"
+    "pain_point": "Golden Crescent trauma referral bottleneck",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 103,
@@ -1356,7 +1560,9 @@
     "email_domain": "shannonhealth.org",
     "email_pattern": "first.last@shannonhealth.org",
     "sample_email": "bryan.horner@shannonhealth.org",
-    "pain_point": "West Texas regional expansion; inter-facility transfer bed holds"
+    "pain_point": "West Texas regional expansion; inter-facility transfer bed holds",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 104,
@@ -1369,7 +1575,9 @@
     "email_domain": "kaweahhealth.org",
     "email_pattern": "first.last@kaweahhealth.org",
     "sample_email": "luke.schneider@kaweahhealth.org",
-    "pain_point": "Central Valley agricultural trauma and ED hallway boarding"
+    "pain_point": "Central Valley agricultural trauma and ED hallway boarding",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 105,
@@ -1382,7 +1590,9 @@
     "email_domain": "salinasvalleyhealth.com",
     "email_pattern": "first.last@salinasvalleyhealth.com",
     "sample_email": "audrey.parks@salinasvalleyhealth.com",
-    "pain_point": "Monterey County emergency surge management"
+    "pain_point": "Monterey County emergency surge management",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 106,
@@ -1395,7 +1605,9 @@
     "email_domain": "marshallmedical.org",
     "email_pattern": "first.last@marshallmedical.org",
     "sample_email": "chris.akiyama@marshallmedical.org",
-    "pain_point": "Sierra Foothills rural isolation and winter weather trauma"
+    "pain_point": "Sierra Foothills rural isolation and winter weather trauma",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 107,
@@ -1408,7 +1620,9 @@
     "email_domain": "bartonhealth.org",
     "email_pattern": "first.last@bartonhealth.org",
     "sample_email": "david.orr@bartonhealth.org",
-    "pain_point": "Ski season orthopedic trauma surgery throughput"
+    "pain_point": "Ski season orthopedic trauma surgery throughput",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 108,
@@ -1421,7 +1635,9 @@
     "email_domain": "nhslothian.scot.nhs.uk",
     "email_pattern": "firstname.lastname@nhslothian.scot.nhs.uk",
     "sample_email": "martin.egan@nhslothian.scot.nhs.uk",
-    "pain_point": "Scottish 4-hour emergency target and acute delayed discharge"
+    "pain_point": "Scottish 4-hour emergency target and acute delayed discharge",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 109,
@@ -1434,7 +1650,9 @@
     "email_domain": "ggc.scot.nhs.uk",
     "email_pattern": "firstname.lastname@ggc.scot.nhs.uk",
     "sample_email": "alastair.bishop@ggc.scot.nhs.uk",
-    "pain_point": "Queen Elizabeth University Hospital acute flow coordination"
+    "pain_point": "Queen Elizabeth University Hospital acute flow coordination",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   },
   {
     "id": 110,
@@ -1447,6 +1665,8 @@
     "email_domain": "wales.nhs.uk",
     "email_pattern": "firstname.lastname@wales.nhs.uk",
     "sample_email": "digital.director@wales.nhs.uk",
-    "pain_point": "Grange University Hospital acute emergency bed placement"
+    "pain_point": "Grange University Hospital acute emergency bed placement",
+    "verification_status": "REQUIRES_SMTP_HANDSHAKE_BEFORE_DISPATCH",
+    "sample_email_is_verified": false
   }
 ]
