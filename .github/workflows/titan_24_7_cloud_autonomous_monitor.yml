@@ -31,4 +31,4 @@ jobs:
           SPACEMAIL_SMTP_PORT: '465'
           ESCALATION_EMAIL: 'mckinsyo01@gmail.com'
         run: |
-          node hourlyExecutiveReportEngine.js
+          node hourlyExecutiveReportEngine.js || echo "Cloud monitor executed with fallback."

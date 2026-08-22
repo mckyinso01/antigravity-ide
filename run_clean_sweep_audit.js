@@ -54,20 +54,24 @@ async function runCleanSweep() {
     console.log(`   ${res.healthy ? '✅' : '❌'} ${url.padEnd(36)} -> HTTP ${res.statusCode} | Latency: ${res.latency}ms`);
   }
 
-  // 2. Audit Local Running Servers
-  console.log('\n🖥️ 2. AUDITING LOCAL DEV PREVIEW ENGINES:');
-  const LOCAL_PORTS = [
-    'http://localhost:8089',
-    'http://localhost:4173',
-    'http://localhost:4174',
-    'http://localhost:4179',
-    'http://localhost:8094',
-    'http://localhost:8095'
-  ];
+  // 2. Audit Local Running Servers (Skipped in GitHub Actions CI where local servers don't run)
+  if (!process.env.CI) {
+    console.log('\n🖥️ 2. AUDITING LOCAL DEV PREVIEW ENGINES:');
+    const LOCAL_PORTS = [
+      'http://localhost:8089',
+      'http://localhost:4173',
+      'http://localhost:4174',
+      'http://localhost:4179',
+      'http://localhost:8094',
+      'http://localhost:8095'
+    ];
 
-  for (const url of LOCAL_PORTS) {
-    const res = await pingUrl(url);
-    console.log(`   ${res.healthy ? '✅' : '❌'} ${url.padEnd(36)} -> HTTP ${res.statusCode} | Latency: ${res.latency}ms`);
+    for (const url of LOCAL_PORTS) {
+      const res = await pingUrl(url);
+      console.log(`   ${res.healthy ? '✅' : '❌'} ${url.padEnd(36)} -> HTTP ${res.statusCode} | Latency: ${res.latency}ms`);
+    }
+  } else {
+    console.log('\n🖥️ 2. LOCAL DEV PREVIEW ENGINES: Skipped (Running in GitHub Actions CI Cloud Environment)');
   }
 
   // 3. Audit Video Arsenal

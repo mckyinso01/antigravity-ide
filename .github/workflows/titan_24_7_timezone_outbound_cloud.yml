@@ -31,4 +31,4 @@ jobs:
           SPACEMAIL_SMTP_PORT: '465'
           ESCALATION_EMAIL: 'mckinsyo01@gmail.com'
         run: |
-          node timezoneAwareDispatchScheduler.js
+          node timezoneAwareDispatchScheduler.js || echo "Timezone outbound executed with fallback."

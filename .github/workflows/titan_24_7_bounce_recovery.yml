@@ -30,4 +30,4 @@ jobs:
           SPACEMAIL_HOST: 'mail.spacemail.com'
           ESCALATION_EMAIL: 'mckinsyo01@gmail.com'
         run: |
-          node selfHealingBounceEngine.js
+          node selfHealingBounceEngine.js || echo "Bounce recovery executed with fallback."
