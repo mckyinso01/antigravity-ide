@@ -1,0 +1,24 @@
+{
+  "name": "escrow-agreement-portal",
+  "version": "1.0.0",
+  "description": "Self-Serve Milestone Escrow & Legally Binding Agreement Generator SaaS",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "escrow",
+    "invoice-generator",
+    "freelance-contracts",
+    "paypal",
+    "stripe"
+  ],
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0"
+  }
+}

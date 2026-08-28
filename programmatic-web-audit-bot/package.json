@@ -1,0 +1,21 @@
+{
+  "name": "programmatic-web-audit-bot",
+  "version": "1.0.0",
+  "description": "Autonomous 24/7 Website Speed, Security & Core Web Vitals Audit Bot",
+  "main": "auto_daemon.js",
+  "type": "module",
+  "scripts": {
+    "audit": "node audit_scanner.js",
+    "daemon": "node auto_daemon.js"
+  },
+  "keywords": [
+    "lighthouse",
+    "web-audit",
+    "core-web-vitals",
+    "lead-gen-bot"
+  ],
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "nodemailer": "^6.10.0"
+  }
+}

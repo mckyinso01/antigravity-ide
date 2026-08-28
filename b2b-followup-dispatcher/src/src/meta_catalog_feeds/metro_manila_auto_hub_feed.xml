@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">
+  <channel>
+    <title>Metro Manila Auto Hub Auto Inventory Feed</title>
+    <link>https://metromanilaautohub.linkable.it.com</link>
+    <description>Automated Meta Marketplace & Instagram Shopping Vehicle Catalog</description>
+    <lastBuildDate>2026-08-28T16:00:05.459Z</lastBuildDate>
+    
+    <item>
+      <g:id>1G1YY22U565108492</g:id>
+      <g:vin>1G1YY22U565108492</g:vin>
+      <g:title><![CDATA[2023 Chevrolet Corvette Stingray 3LT]]></g:title>
+      <g:description><![CDATA[Certified Pre-Owned 2023 Chevrolet Corvette Stingray 3LT. Mileage: 8,420 mi. Verified OBD-II Status: CLEARED. Inspected by Metro Manila Auto Hub.]]></g:description>
+      <g:availability>in_stock</g:availability>
+      <g:condition>certified_preowned</g:condition>
+      <g:price>79900.00 USD</g:price>
+      <g:link>https://metromanilaautohub.linkable.it.com?vin=1G1YY22U565108492</g:link>
+      <g:image_link>https://metromanilaautohub.linkable.it.com/images/1G1YY22U565108492.jpg</g:image_link>
+      <g:brand>Chevrolet</g:brand>
+      <g:year>2023</g:year>
+      <g:mileage>8420 MI</g:mileage>
+      <g:custom_label_0>FRESH_ARRIVAL</g:custom_label_0>
+      <g:custom_label_1>CLEAN_TELEMETRICS</g:custom_label_1>
+    </item>
+    <item>
+      <g:id>5UXCR6C05M9E41209</g:id>
+      <g:vin>5UXCR6C05M9E41209</g:vin>
+      <g:title><![CDATA[2024 BMW X5 xDrive40i M-Sport]]></g:title>
+      <g:description><![CDATA[Certified Pre-Owned 2024 BMW X5 xDrive40i M-Sport. Mileage: 14,200 mi. Verified OBD-II Status: P0128 (PASS). Inspected by Metro Manila Auto Hub.]]></g:description>
+      <g:availability>in_stock</g:availability>
+      <g:condition>certified_preowned</g:condition>
+      <g:price>63500.00 USD</g:price>
+      <g:link>https://metromanilaautohub.linkable.it.com?vin=5UXCR6C05M9E41209</g:link>
+      <g:image_link>https://metromanilaautohub.linkable.it.com/images/5UXCR6C05M9E41209.jpg</g:image_link>
+      <g:brand>BMW</g:brand>
+      <g:year>2024</g:year>
+      <g:mileage>14200 MI</g:mileage>
+      <g:custom_label_0>SPECIAL_OFFER</g:custom_label_0>
+      <g:custom_label_1>INSPECTION_PENDING</g:custom_label_1>
+    </item>
+    <item>
+      <g:id>1FTFW1ED4NFC99142</g:id>
+      <g:vin>1FTFW1ED4NFC99142</g:vin>
+      <g:title><![CDATA[2023 Ford F-150 Lightning Lariat (EV)]]></g:title>
+      <g:description><![CDATA[Certified Pre-Owned 2023 Ford F-150 Lightning Lariat (EV). Mileage: 19,800 mi. Verified OBD-II Status: CLEARED. Inspected by Metro Manila Auto Hub.]]></g:description>
+      <g:availability>in_stock</g:availability>
+      <g:condition>certified_preowned</g:condition>
+      <g:price>56900.00 USD</g:price>
+      <g:link>https://metromanilaautohub.linkable.it.com?vin=1FTFW1ED4NFC99142</g:link>
+      <g:image_link>https://metromanilaautohub.linkable.it.com/images/1FTFW1ED4NFC99142.jpg</g:image_link>
+      <g:brand>Ford</g:brand>
+      <g:year>2023</g:year>
+      <g:mileage>19800 MI</g:mileage>
+      <g:custom_label_0>SPECIAL_OFFER</g:custom_label_0>
+      <g:custom_label_1>CLEAN_TELEMETRICS</g:custom_label_1>
+    </item>
+    <item>
+      <g:id>WAUZZZF27N1049281</g:id>
+      <g:vin>WAUZZZF27N1049281</g:vin>
+      <g:title><![CDATA[2022 Audi RS6 Avant Quattro]]></g:title>
+      <g:description><![CDATA[Certified Pre-Owned 2022 Audi RS6 Avant Quattro. Mileage: 26,400 mi. Verified OBD-II Status: CLEARED. Inspected by Metro Manila Auto Hub.]]></g:description>
+      <g:availability>in_stock</g:availability>
+      <g:condition>certified_preowned</g:condition>
+      <g:price>112000.00 USD</g:price>
+      <g:link>https://metromanilaautohub.linkable.it.com?vin=WAUZZZF27N1049281</g:link>
+      <g:image_link>https://metromanilaautohub.linkable.it.com/images/WAUZZZF27N1049281.jpg</g:image_link>
+      <g:brand>Audi</g:brand>
+      <g:year>2022</g:year>
+      <g:mileage>26400 MI</g:mileage>
+      <g:custom_label_0>FRESH_ARRIVAL</g:custom_label_0>
+      <g:custom_label_1>CLEAN_TELEMETRICS</g:custom_label_1>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BunkerTrust Maritime | EU ETS Carbon Tax & Marine Fuel Anomaly Ledger</title>
+  <meta name="description" content="ISO 8217:2024, FuelEU Maritime Regulation EU 2023/1805, and EU Directive 2023/959 compliant real-time Coriolis MFM fuel aeration anomaly detector, multi-tank inventory, and EU ETS carbon tax ledger.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  
+  <!-- Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Topbar: Precision Swiss Daylight Header -->
+  <header class="topbar">
+    <div class="brand-section">
+      <div class="brand-logo" aria-hidden="true">BT</div>
+      <div>
+        <h1 class="brand-title" style="display:inline; font-size:16px;">BunkerTrust Maritime</h1>
+        <span class="brand-sub">ISO 8217:2024 • EU ETS DIRECTIVE 2023/959 • FUELEU REG 2023/1805</span>
+      </div>
+    </div>
+    
+    <div class="topbar-right">
+      <!-- Vessel IMO Pill -->
+      <div class="vessel-pill">
+        <span>VESSEL:</span>
+        <strong id="vesselImoTag">IMO 9844210 (M/V ATLANTIC VANGUARD)</strong>
+      </div>
+
+      <!-- Multi-Tank Inventory Pill (Absorbed from Veson IMOS) -->
+      <button id="btnTanksModal" type="button" class="nist-pill" aria-label="View Onboard Bunker Tank Distribution">
+        <span class="nist-dot" aria-hidden="true"></span>
+        <span>ONBOARD TANKS: 4 ACTIVE (995 MT)</span>
+      </button>
+
+      <!-- Coriolis MFM Calibration Pill -->
+      <button id="btnMfmCert" type="button" class="mfm-pill" aria-label="View Coriolis MFM Calibration Certificate">
+        <span class="mfm-dot" aria-hidden="true"></span>
+        <span>CORIOLIS MFM: ISO/IEC 17025 (EMERSON ELITE)</span>
+      </button>
+
+      <div class="system-status-pill">
+        <div class="live-indicator-dot" aria-hidden="true"></div>
+        <span>TELEMETRY: LIVE</span>
+        <span style="color:#64748b;" aria-hidden="true">|</span>
+        <span class="tabular" id="systemClock">00:00:00 UTC</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Workspace Container -->
+  <main class="container">
+    
+    <!-- Action Bar & Global Voyage Route Selector -->
+    <section class="action-bar" aria-label="Voyage and Bunker Action Bar">
+      <div class="action-left">
+        <label for="voyageSelect" class="facility-label">SCHEDULED COMMERCIAL VOYAGE &amp; PORT:</label>
+        <select id="voyageSelect" class="voyage-selector" aria-label="Select Scheduled Voyage">
+          <option value="RTD-SGP-01">RTD-SGP-01: Rotterdam ➔ Singapore (8,240 NM • Extra-EU 50% Scope)</option>
+          <option value="ANT-HAM-02">ANT-HAM-02: Antwerp ➔ Hamburg (480 NM • Intra-EU 100% Scope)</option>
+          <option value="SHA-RTM-03">SHA-RTM-03: Shanghai ➔ Rotterdam (14,350 NM • Extra-EU 50% Scope)</option>
+          <option value="GEN-BCN-04">GEN-BCN-04: Genoa ➔ Barcelona (350 NM • Intra-EU 100% Scope)</option>
+        </select>
+        <span id="bdnTag" class="panel-badge badge-blue">BDN: #BDN-RTD-2026-8941 (850 MT VLSFO)</span>
+      </div>
+
+      <div class="action-buttons">
+        <button id="btnSimulateTheft" type="button" class="btn btn-danger">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Simulate Cappuccino Aeration Theft (12.4% Air)
+        </button>
+        <button id="btnDevilsAttack" type="button" class="btn btn-warning">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Devil's Maritime Attack Suite
+        </button>
+        <button id="btnOpenSignModal" type="button" class="btn btn-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Sign Electronic BDN (Dual-Witness)
+        </button>
+        <button id="btnExportDossier" type="button" class="btn btn-outline">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          Export EU ETS &amp; MRV Dossier
+        </button>
+      </div>
+    </section>
+
+    <!-- Key Performance Indicators (KPIs) -->
+    <section class="kpi-grid" aria-label="Key Maritime Metrics">
+      <div class="kpi-card alert-border" id="kpiMassCard">
+        <div class="kpi-title">CORIOLIS MASS FLOW RATE (REAL-TIME)</div>
+        <div class="kpi-value tabular" id="valMassRate">495.2 MT/hr</div>
+        <div class="kpi-sub" id="subMassRate">Nominal Volumetric Rate: 500.0 m³/hr</div>
+      </div>
+
+      <div class="kpi-card primary-border">
+        <div class="kpi-title">APPARENT FUEL DENSITY @ 15°C</div>
+        <div class="kpi-value tabular" id="valApparentDensity">990.4 kg/m³</div>
+        <div class="kpi-sub" id="subDensityDelta">ISO Standard: 991.0 kg/m³ (Δ -0.6 kg/m³)</div>
+      </div>
+
+      <div class="kpi-card warning-border" id="kpiTheftCard">
+        <div class="kpi-title">AERATION THEFT LOSS ("CAPPUCCINO")</div>
+        <div class="kpi-value tabular" id="valTheftLoss">$0.00 Lost</div>
+        <div class="kpi-sub" id="subTheftDeficit">Physical Mass Delivered: 100% Invoiced</div>
+      </div>
+
+      <div class="kpi-card success-border" id="kpiEtsCard">
+        <div class="kpi-title">EU ETS &amp; FUELEU REGULATORY LIABILITY</div>
+        <div class="kpi-value tabular" id="valEtsTax">€76,409.77</div>
+        <div class="kpi-sub" id="subEtsScope">Extra-EU 50% Scope • FuelEU Deficit: €29,280.00</div>
+      </div>
+    </section>
+
+    <!-- Main Grid: Waveform Telemetry & ISO 8217 Lab Specification Triage -->
+    <section class="main-grid">
+      
+      <!-- Left: 60fps Real-Time Coriolis MFM Canvas & Mass Reconciliation -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Real-Time Coriolis MFM Telemetry &amp; Micro-Bubble Aeration Stream
+          </div>
+          <span class="panel-badge badge-blue tabular" id="dataPointsCount">120 READINGS LOADED</span>
+        </div>
+
+        <div class="canvas-wrapper">
+          <canvas id="coriolisCanvas" role="img" aria-label="Real-time Coriolis mass flow rate and apparent density graph indicating aeration anomalies"></canvas>
+        </div>
+
+        <div class="canvas-legend">
+          <div class="legend-item">
+            <div class="legend-color" style="background:#0284c7;" aria-hidden="true"></div>
+            <span>True Coriolis Mass Flow (MT/hr)</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background:#059669;" aria-hidden="true"></div>
+            <span>Standard Density Baseline (991.0 kg/m³)</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background:#dc2626;" aria-hidden="true"></div>
+            <span>Aeration Dip ("Cappuccino Anomaly")</span>
+          </div>
+        </div>
+
+        <!-- Mass Reconciliation & FuelEU Surplus Comparison Box -->
+        <div class="reconciliation-box">
+          <div class="recon-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Bunker Delivery Reconciliation &amp; FuelEU Compliance Balance
+          </div>
+          <div class="recon-grid">
+            <div class="recon-col">
+              <span class="recon-label">Barge Invoiced Mass (Nominal)</span>
+              <span class="recon-val text-cobalt tabular" id="reconInvoicedMass">850.0 MT</span>
+              <span class="recon-note">Calculated from Dipstick Volume</span>
+            </div>
+            <div class="recon-col">
+              <span class="recon-label">Coriolis Physical Delivered</span>
+              <span class="recon-val text-emerald tabular" id="reconDeliveredMass">848.8 MT</span>
+              <span class="recon-note" id="reconMassStatus">Nominal Variance (-0.14%)</span>
+            </div>
+            <div class="recon-col">
+              <span class="recon-label">FuelEU Compliance Deficit</span>
+              <span class="recon-val text-amber tabular" id="reconFuelEuBalance">€29,280.00 Penalty</span>
+              <span class="recon-note">Target: 91.16 g-CO2eq/MJ</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="formula-box">
+          <div class="formula-title">FuelEU Maritime (Regulation EU 2023/1805) Mathematical Law:</div>
+          <div class="formula-code">CB = (Target_GHG - Actual_GHG) • E_total  |  Penalty (€) = (|CB| / (GHG_act • 41.0)) • 2,400 EUR/t</div>
+          <p style="color:var(--text-secondary);">
+            FuelEU mandates a progressive greenhouse gas intensity reduction on marine energy (2% in 2025, 6% in 2030). Non-compliant fossil VLSFO incurs a statutory €2,400/t VLSFO-equivalent financial penalty.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: ISO 8217:2024 Lab Quality Specification HUD -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            ISO 8217:2024 Fuel Quality Spec
+          </div>
+          <span class="panel-badge badge-green" id="isoComplianceBadge">LAB SPEC VERIFIED</span>
+        </div>
+
+        <div class="iso-body">
+          <div class="iso-row iso-pass" id="isoRowSulfur">
+            <div>
+              <div class="iso-param">Sulfur Content (m/m)</div>
+              <div class="iso-limit">Limit: Max 0.50% (Global) / 0.10% (SECA)</div>
+            </div>
+            <div class="iso-result text-emerald" id="isoValSulfur">0.48% (PASS)</div>
+          </div>
+
+          <div class="iso-row iso-pass" id="isoRowDensity">
+            <div>
+              <div class="iso-param">Density @ 15°C (kg/m³)</div>
+              <div class="iso-limit">Limit: Max 991.0 kg/m³</div>
+            </div>
+            <div class="iso-result text-emerald" id="isoValDensity">988.5 kg/m³</div>
+          </div>
+
+          <div class="iso-row iso-pass" id="isoRowFlashpoint">
+            <div>
+              <div class="iso-param">Flashpoint (°C - SOLAS)</div>
+              <div class="iso-limit">Limit: Min 60.0°C (SOLAS Safety)</div>
+            </div>
+            <div class="iso-result text-emerald" id="isoValFlashpoint">64.0°C (PASS)</div>
+          </div>
+
+          <div class="iso-row iso-pass" id="isoRowCatFines">
+            <div>
+              <div class="iso-param">Cat Fines Al+Si (mg/kg)</div>
+              <div class="iso-limit">Limit: Max 60.0 mg/kg (Abrasive Wear)</div>
+            </div>
+            <div class="iso-result text-emerald" id="isoValCatFines">32.0 mg/kg</div>
+          </div>
+
+          <div class="iso-row iso-pass" id="isoRowWater">
+            <div>
+              <div class="iso-param">Water Content (v/v)</div>
+              <div class="iso-limit">Limit: Max 0.50% v/v</div>
+            </div>
+            <div class="iso-result text-emerald" id="isoValWater">0.12% (PASS)</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Immutable BDN Cryptographic Audit Trail Table -->
+    <section class="panel" aria-label="BDN Ledger Table Section">
+      <div class="panel-header">
+        <div class="panel-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Immutable Bunker Delivery Note (BDN) Cryptographic Ledger
+        </div>
+        <span class="panel-badge badge-green">SHA-256 WORM SEAL ACTIVE</span>
+      </div>
+
+      <div class="audit-table-wrapper">
+        <table class="audit-table">
+          <thead>
+            <tr>
+              <th scope="col">Timestamp (UTC)</th>
+              <th scope="col">BDN Reference</th>
+              <th scope="col">Vessel &amp; Terminal</th>
+              <th scope="col">Invoiced vs Delivered</th>
+              <th scope="col">Aeration Deficit</th>
+              <th scope="col">Dollar Loss</th>
+              <th scope="col">Dual-Witness Signers</th>
+              <th scope="col">Cryptographic SHA-256 Seal</th>
+            </tr>
+          </thead>
+          <tbody id="bdnTableBody">
+            <tr>
+              <td class="timestamp">2026-08-28T14:15:22.081Z</td>
+              <td><code>BDN-RTD-2026-8941</code></td>
+              <td>IMO 9844210 (Port of Rotterdam)</td>
+              <td class="tabular">850.0 MT / 848.8 MT</td>
+              <td><span class="panel-badge badge-green">0.14% (NOMINAL)</span></td>
+              <td class="tabular">$744.00</td>
+              <td>Chief Eng. T. Lindqvist / Capt. P. Van Dijk</td>
+              <td><span class="hash-pill">9c4f...192a</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal: Onboard Multi-Tank Bunker Distribution (Absorbed from Veson IMOS) -->
+  <div class="modal-overlay" id="tanksModal" role="dialog" aria-modal="true" aria-labelledby="tanksModalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title" id="tanksModalTitle">Onboard Multi-Tank Distribution &amp; Compatibility Matrix</div>
+        <button id="btnCloseTanksModal" type="button" aria-label="Close Tanks modal" class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="reconciliation-box" style="margin:0; background:#ffffff;">
+          <div class="recon-title">
+            <span>VESSEL TANK ALLOCATION (TOTAL: 995 MT ONBOARD)</span>
+            <span class="panel-badge badge-green" style="margin-left:auto;">COMPATIBLE</span>
+          </div>
+          <div class="iso-body" style="padding:10px 0;">
+            <div class="iso-row iso-pass">
+              <div>
+                <div class="iso-param">Tank 1P (Port Deep Tank)</div>
+                <div class="iso-limit">Fuel: VLSFO RMG 380 • Viscosity: 380 cSt @ 50°C</div>
+              </div>
+              <div class="iso-result text-cobalt">420.0 MT (42.2%)</div>
+            </div>
+            <div class="iso-row iso-pass">
+              <div>
+                <div class="iso-param">Tank 1S (Starboard Deep Tank)</div>
+                <div class="iso-limit">Fuel: VLSFO RMG 380 • Viscosity: 380 cSt @ 50°C</div>
+              </div>
+              <div class="iso-result text-cobalt">430.0 MT (43.2%)</div>
+            </div>
+            <div class="iso-row iso-pass">
+              <div>
+                <div class="iso-param">Tank 2P (MDO Wing Tank)</div>
+                <div class="iso-limit">Fuel: LSMGO DMA • Viscosity: 6.0 cSt @ 40°C</div>
+              </div>
+              <div class="iso-result text-emerald">85.0 MT (8.5%)</div>
+            </div>
+            <div class="iso-row iso-pass">
+              <div>
+                <div class="iso-param">Tank 2S (Biofuel Clean Tank)</div>
+                <div class="iso-limit">Fuel: Bio-Methanol (Zero-Carbon) • Viscosity: 1.2 cSt</div>
+              </div>
+              <div class="iso-result text-emerald">60.0 MT (6.1%)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="btnCloseTanksFooter" type="button" class="btn btn-outline">Close Tank Allocation</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Coriolis MFM Calibration Certificate -->
+  <div class="modal-overlay" id="mfmModal" role="dialog" aria-modal="true" aria-labelledby="mfmModalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title" id="mfmModalTitle">Emerson Micro Motion ELITE Coriolis MFM Calibration</div>
+        <button id="btnCloseMfmModal" type="button" aria-label="Close Coriolis calibration modal" class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="reconciliation-box" style="margin:0; background:#ffffff;">
+          <div class="recon-title">
+            <span>CERTIFICATE: ISO-17025-CORIOLIS-77412</span>
+            <span class="panel-badge badge-green" style="margin-left:auto;">CALIBRATION ACTIVE</span>
+          </div>
+          <div class="recon-grid" style="grid-template-columns: repeat(2, 1fr); margin-top:12px;">
+            <div class="recon-col">
+              <span class="recon-label">Sensor Model &amp; Serial</span>
+              <span class="recon-val tabular" style="font-size:13px;">CMF400M • SN: 14890241</span>
+            </div>
+            <div class="recon-col">
+              <span class="recon-label">Calibration Date &amp; Expiry</span>
+              <span class="recon-val tabular text-emerald" style="font-size:13px;">2026-02-10 ➔ 2027-02-10</span>
+            </div>
+            <div class="recon-col">
+              <span class="recon-label">Mass Flow Accuracy</span>
+              <span class="recon-val tabular" style="font-size:13px;">±0.05% of rate</span>
+            </div>
+            <div class="recon-col">
+              <span class="recon-label">Density Accuracy</span>
+              <span class="recon-val tabular" style="font-size:13px;">±0.2 kg/m³ (0.0002 g/cm³)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="btnCloseMfmFooter" type="button" class="btn btn-outline">Close Calibration Record</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Devil's Maritime Attack Suite -->
+  <div class="modal-overlay" id="devilsModal" role="dialog" aria-modal="true" aria-labelledby="devilsModalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title" id="devilsModalTitle">👹 Devil's Team Maritime Adversarial Stress Suite</div>
+        <button id="btnCloseDevilsModal" type="button" aria-label="Close Devils modal" class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:12px; color:var(--text-secondary); margin-bottom:14px;">
+          Execute adversarial edge cases designed by Mitnick, Geohot, Samy Kamkar, Charlie Miller, and Barnaby Jack to stress-test cryptographic BDN hashing, FuelEU penalty logic, and STCW qualifications.
+        </p>
+
+        <div class="devils-suite-grid">
+          <div class="devils-item">
+            <div class="devils-item-header">
+              <span class="devils-name">Kevin Mitnick: BDN Mass Forgery Attack</span>
+              <span class="panel-badge badge-blue">WORM INTEGRITY</span>
+            </div>
+            <p class="devils-desc">Simulates a rogue bunker supplier attempting to alter delivered metric tons post-signature to hide $84,000 theft.</p>
+            <button id="btnRunMitnickAttack" type="button" class="btn btn-outline btn-sm">Execute BDN Forgery Attack</button>
+          </div>
+
+          <div class="devils-item">
+            <div class="devils-item-header">
+              <span class="devils-name">Geohot: Zero Nautical Mile &amp; DWT Singularity</span>
+              <span class="panel-badge badge-blue">MATH BOUNDS</span>
+            </div>
+            <p class="devils-desc">Injects 0 NM distance and 0 DWT into IMO CII algorithm to stress-test division-by-zero protections.</p>
+            <button id="btnRunGeohotAttack" type="button" class="btn btn-outline btn-sm">Stress Test Zero-Distance Singularity</button>
+          </div>
+
+          <div class="devils-item">
+            <div class="devils-item-header">
+              <span class="devils-name">Charlie Miller: Unqualified Chief Engineer Sign-Off</span>
+              <span class="panel-badge badge-blue">STCW SECURITY</span>
+            </div>
+            <p class="devils-desc">Attempts to sign official Bunker Delivery Note with expired STCW Regulation III/2 Chief Engineer license.</p>
+            <button id="btnRunCharlieAttack" type="button" class="btn btn-outline btn-sm">Test STCW License Gate</button>
+          </div>
+        </div>
+
+        <div id="devilsOutputBox" class="devils-output-box" tabindex="0" role="region" aria-label="Adversarial Simulation Output">
+          Adversarial test console standby. Select a stress scenario above to execute.
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="btnCloseDevilsFooter" type="button" class="btn btn-outline">Close Suite</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Dual-Witness Electronic BDN Sign-off -->
+  <div class="modal-overlay" id="signModal" role="dialog" aria-modal="true" aria-labelledby="signModalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title" id="signModalTitle">Dual-Witness Cryptographic Bunker Delivery Note (BDN)</div>
+        <button id="btnCloseSignModal" type="button" aria-label="Close signature modal" class="modal-close-btn">&times;</button>
+      </div>
+      <form id="bdnSignatureForm" onsubmit="event.preventDefault();">
+        <div class="modal-body">
+          <p style="font-size:13px; color:var(--text-secondary); margin-bottom:14px;">
+            Both the Receiving Vessel Chief Engineer and the Bunker Barge Master must execute this cryptographic record in accordance with MARPOL Annex VI Regulation 18.
+          </p>
+
+          <!-- STCW License Credential Status Box -->
+          <div id="stcwStatusBox" class="stcw-status-box stcw-pass">
+            <div class="flex-row items-center gap-2">
+              <span class="stcw-icon">✅</span>
+              <strong id="stcwStatusTitle">STCW III/2 LICENSE VERIFIED</strong>
+            </div>
+            <div class="stcw-detail" id="stcwStatusDetail">
+              Chief Engineer License: IMO-STCW-884920 (Unlimited HP) • Valid until 2028-06-30
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputChiefEngineer" class="form-label">Receiving Chief Engineer Full Name</label>
+            <input type="text" id="inputChiefEngineer" name="chiefEngineer" class="form-input" value="Chief Eng. Torsten Lindqvist" autocomplete="username" required>
+          </div>
+
+          <div class="form-group">
+            <label for="inputBargeMaster" class="form-label">Bunker Supplier Barge Master</label>
+            <input type="text" id="inputBargeMaster" name="bargeMaster" class="form-input" value="Capt. Pieter Van Dijk (Bunker Barge VITA-02)" autocomplete="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="inputBdnNotes" class="form-label">Bunkering Observation &amp; Discrepancy Remarks</label>
+            <textarea id="inputBdnNotes" name="bdnNotes" class="form-textarea" rows="3" required>Coriolis Mass Flow Meter verified 848.8 MT delivered. Aeration variance 0.14% within allowable ISO 8217 limits. Sealed continuous drip samples taken at manifold.</textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="inputEngineerPin" class="form-label">Chief Engineer Security Passcode</label>
+            <input type="password" id="inputEngineerPin" name="engineerPin" class="form-input" value="12345678" autocomplete="current-password" placeholder="Enter secure PIN" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="btnCancelSign" type="button" class="btn btn-outline">Cancel</button>
+          <button id="btnConfirmSign" type="submit" class="btn btn-primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Execute Cryptographic BDN Seal
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: EU ETS, FuelEU & IMO DCS Voyage Dossier Viewer -->
+  <div class="modal-overlay" id="dossierModal" role="dialog" aria-modal="true" aria-labelledby="dossierModalTitle">
+    <div class="modal-card dossier-card">
+      <div class="modal-header">
+        <div class="modal-title" id="dossierModalTitle">EU ETS, FuelEU Maritime &amp; IMO DCS Official Voyage Regulatory Dossier</div>
+        <button id="btnCloseDossierModal" type="button" aria-label="Close dossier modal" class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body" style="padding:16px;">
+        <div class="dossier-content" id="dossierText" tabindex="0" role="region" aria-label="Generated Voyage Dossier Content"></div>
+      </div>
+      <div class="modal-footer">
+        <button id="btnCopyDossier" type="button" class="btn btn-outline">Copy Full Markdown Dossier</button>
+        <button id="btnPrintDossier" type="button" class="btn btn-primary">Print Official Inspection PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- App Script (ES Module) -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>

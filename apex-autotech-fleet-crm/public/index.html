@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex AutoTech | Automotive Dealership Inventory, Fleet Dispatch & CRM OS</title>
+  <meta name="description" content="High-performance automotive dealership inventory management, OBD-II fleet dispatch telemetry, and automated CRM pipeline OS for Apex AutoTech.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="brand-section">
+      <div class="brand-logo" aria-hidden="true">APX</div>
+      <div>
+        <h1 class="brand-title" style="display:inline; font-size:15px;">Apex AutoTech OS</h1>
+        <span class="brand-sub">DEALERSHIP INVENTORY • OBD-II TELEMETRY • CRM ENGINE</span>
+      </div>
+    </div>
+    
+    <div class="topbar-right">
+      <div class="dealer-pill">
+        <span>DEALERSHIP:</span>
+        <strong>APEX PREMIER MOTORS (LOT #1)</strong>
+      </div>
+
+      <div class="status-pill">
+        <div class="pulse-dot" aria-hidden="true"></div>
+        <span>CAN-BUS: ACTIVE</span>
+        <span style="color:var(--border-strong);" aria-hidden="true">|</span>
+        <span class="tabular" id="systemClock">00:00:00 UTC</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Tab Navigation -->
+  <nav class="tab-nav" aria-label="Main Navigation">
+    <button id="tabBtnInventory" type="button" class="tab-btn active">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      Dealership Inventory &amp; Lot Aging
+    </button>
+    <button id="tabBtnTelemetry" type="button" class="tab-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      OBD-II Fleet Dispatch Stream
+    </button>
+    <button id="tabBtnCrm" type="button" class="tab-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      CRM Client Pipeline &amp; Follow-up
+    </button>
+  </nav>
+
+  <main class="container">
+
+    <!-- KPI Summary Grid -->
+    <section class="kpi-grid" aria-label="Key Performance Indicators">
+      <div class="kpi-card kpi-blue">
+        <div class="kpi-title">Active Lot Inventory Value</div>
+        <div class="kpi-val tabular" id="valTotalInventory">$312,300</div>
+        <div class="kpi-sub">4 Premium Vehicles in Stock</div>
+      </div>
+
+      <div class="kpi-card kpi-green">
+        <div class="kpi-title">Projected Net Gross Margin</div>
+        <div class="kpi-val tabular text-emerald" id="valTotalMargin">$38,780</div>
+        <div class="kpi-sub">Avg 12.4% Net Dealer Spread</div>
+      </div>
+
+      <div class="kpi-card kpi-amber">
+        <div class="kpi-title">OBD-II Fleet Fuel Efficiency</div>
+        <div class="kpi-val tabular text-amber" id="valFleetMpg">35.4 MPG</div>
+        <div class="kpi-sub">Cruising: 65 MPH • 1.84 GPH</div>
+      </div>
+
+      <div class="kpi-card kpi-blue">
+        <div class="kpi-title">Active CRM Pipeline Leads</div>
+        <div class="kpi-val tabular" id="valActiveLeads">3 High-Intent</div>
+        <div class="kpi-sub">1 Test Drive • 1 Lease RFP</div>
+      </div>
+    </section>
+
+    <!-- Global Action Bar -->
+    <section class="action-bar" aria-label="Quick Actions">
+      <div class="btn-group">
+        <button id="btnSimulateMisfire" type="button" class="btn btn-danger">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Simulate OBD-II P0300 Misfire Fault
+        </button>
+        <button id="btnDevilsAutoSuite" type="button" class="btn btn-warning">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Devil's Automotive Security Suite
+        </button>
+      </div>
+
+      <div class="btn-group">
+        <button id="btnOpenHandoverModal" type="button" class="btn btn-primary">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Execute Digital Vehicle Handover (SHA-256)
+        </button>
+      </div>
+    </section>
+
+    <!-- TAB 1: DEALERSHIP INVENTORY VIEW -->
+    <section id="viewInventory" class="tab-view">
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/></svg>
+            Dealership Vehicle Stock &amp; Holding Cost Ledger
+          </div>
+          <span class="badge badge-green">4 UNITS ACTIVE ON LOT</span>
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Vehicle Description</th>
+                <th scope="col">VIN</th>
+                <th scope="col">Mileage</th>
+                <th scope="col">Cost Basis</th>
+                <th scope="col">Sticker Price</th>
+                <th scope="col">Lot Aging</th>
+                <th scope="col">Net Gross Margin</th>
+                <th scope="col">OBD-II Health</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody id="inventoryTableBody">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: OBD-II FLEET TELEMETRY VIEW -->
+    <section id="viewTelemetry" class="tab-view" style="display:none;">
+      <div class="main-grid">
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              60fps Real-Time OBD-II CAN-Bus Telemetry Stream
+            </div>
+            <span class="badge badge-blue tabular" id="telemVehicleTag">BMW X5 (VIN: ...1209)</span>
+          </div>
+
+          <div class="canvas-wrapper">
+            <canvas id="telemetryCanvas" role="img" aria-label="Real-time OBD-II speed, fuel flow and engine RPM waveform"></canvas>
+          </div>
+
+          <div style="margin-top:14px; display:flex; gap:16px; font-size:11px;">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <div style="width:10px; height:3px; background:#3b82f6;" aria-hidden="true"></div>
+              <span>Vehicle Speed (MPH)</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:6px;">
+              <div style="width:10px; height:3px; background:#10b981;" aria-hidden="true"></div>
+              <span>Instantaneous MPG</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:6px;">
+              <div style="width:10px; height:3px; background:#ef4444;" aria-hidden="true"></div>
+              <span>DTC Fault Trigger</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              OBD-II Diagnostic Trouble Codes
+            </div>
+            <span class="badge badge-green" id="dtcStatusBadge">SYSTEM NOMINAL</span>
+          </div>
+
+          <div id="dtcContainer" style="display:flex; flex-direction:column; gap:10px;">
+            <div class="kanban-card" style="margin:0;">
+              <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                <strong class="text-blue">P0128: Thermostat Regulation</strong>
+                <span class="badge badge-amber">LOW SEVERITY</span>
+              </div>
+              <p style="font-size:11px; color:var(--text-secondary);">Coolant temperature below optimal threshold. Cleared for local test drive.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: CRM PIPELINE VIEW -->
+    <section id="viewCrm" class="tab-view" style="display:none;">
+      <div class="kanban-board">
+        
+        <!-- Col 1: Inbound Inquiry -->
+        <div class="kanban-col">
+          <div class="kanban-header">
+            <span>1. Inbound Leads</span>
+            <span class="badge badge-blue">1 ACTIVE</span>
+          </div>
+          <div class="kanban-card">
+            <div class="kanban-client">Dr. Evelyn Foster</div>
+            <div class="kanban-vehicle">2022 Audi RS6 Avant Quattro</div>
+            <div class="kanban-meta">
+              <span>Online Inquiry</span>
+              <span class="text-emerald">Budget: $115k</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Test Drive Scheduled -->
+        <div class="kanban-col">
+          <div class="kanban-header">
+            <span>2. Test Drive Confirmed</span>
+            <span class="badge badge-green">1 ACTIVE</span>
+          </div>
+          <div class="kanban-card">
+            <div class="kanban-client">Alexander Hayes</div>
+            <div class="kanban-vehicle">2024 BMW X5 xDrive40i</div>
+            <div class="kanban-meta">
+              <span>Tomorrow @ 2:00 PM</span>
+              <span class="text-blue">Trade: '19 Lexus</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 3: Financing & Approval -->
+        <div class="kanban-col">
+          <div class="kanban-header">
+            <span>3. Financing / Lease RFP</span>
+            <span class="badge badge-amber">1 ACTIVE</span>
+          </div>
+          <div class="kanban-card">
+            <div class="kanban-client">Apex Commercial Logistics</div>
+            <div class="kanban-vehicle">Ford F-150 Fleet Unit (x4)</div>
+            <div class="kanban-meta">
+              <span>Master Lease RFP</span>
+              <span class="text-emerald">$227k Total</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 4: Handover Completed -->
+        <div class="kanban-col">
+          <div class="kanban-header">
+            <span>4. Delivered &amp; Sealed</span>
+            <span class="badge badge-green">1 DELIVERED</span>
+          </div>
+          <div class="kanban-card">
+            <div class="kanban-client">Marcus Thorne (Self-Delivery)</div>
+            <div class="kanban-vehicle">Corvette Stingray 3LT</div>
+            <div class="kanban-meta">
+              <span>SHA-256 Sealed</span>
+              <span class="hash-pill">8f4a...912c</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Cryptographic Handover Audit Ledger Table -->
+    <section class="panel" style="margin-top:24px;" aria-label="Digital Handover Ledger">
+      <div class="panel-header">
+        <div class="panel-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Immutable Digital Vehicle Handover &amp; Service Delivery Ledger
+        </div>
+        <span class="badge badge-green">WORM SHA-256 VERIFIED</span>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Timestamp (UTC)</th>
+              <th scope="col">Record ID</th>
+              <th scope="col">Vehicle VIN</th>
+              <th scope="col">Client Name</th>
+              <th scope="col">Agent / Technician</th>
+              <th scope="col">Odometer</th>
+              <th scope="col">Type</th>
+              <th scope="col">SHA-256 Cryptographic Seal</th>
+            </tr>
+          </thead>
+          <tbody id="handoverTableBody">
+            <tr>
+              <td class="tabular">2026-08-28T14:30:11Z</td>
+              <td><code>HANDOVER-910241</code></td>
+              <td><code>1G1YY22U565108492</code></td>
+              <td>Marcus Thorne</td>
+              <td>Samantha Ray (Senior Sales Lead)</td>
+              <td class="tabular">8,420 mi</td>
+              <td><span class="badge badge-green">FINAL_VEHICLE_DELIVERY</span></td>
+              <td><span class="hash-pill">8f4a19b2...912ca871</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal: Dual-Signature Vehicle Handover -->
+  <div class="modal-overlay" id="handoverModal" role="dialog" aria-modal="true" aria-labelledby="handoverModalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title" id="handoverModalTitle">Digital Vehicle Handover &amp; Service Sign-off</div>
+        <button id="btnCloseHandoverModal" type="button" aria-label="Close modal" class="modal-close-btn">&times;</button>
+      </div>
+      <form id="handoverForm" onsubmit="event.preventDefault();">
+        <div class="modal-body">
+          <p style="font-size:12px; color:var(--text-secondary); margin-bottom:14px;">
+            Generates an immutable WORM SHA-256 digital certificate verifying customer acceptance, pre-delivery inspection (PDI), and odometer mileage.
+          </p>
+
+          <div class="form-group">
+            <label for="selectHandoverVin" class="form-label">Vehicle Stock (VIN &amp; Model)</label>
+            <select id="selectHandoverVin" class="form-select" required>
+              <option value="5UXCR6C05M9E41209">2024 BMW X5 xDrive40i (VIN: 5UXCR6C05M9E41209)</option>
+              <option value="WAUZZZF27N1049281">2022 Audi RS6 Avant (VIN: WAUZZZF27N1049281)</option>
+              <option value="1FTFW1ED4NFC99142">2023 Ford F-150 Lightning (VIN: 1FTFW1ED4NFC99142)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="inputClientName" class="form-label">Purchasing Client / Fleet Manager Full Name</label>
+            <input type="text" id="inputClientName" class="form-input" value="Alexander Hayes" autocomplete="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="inputAgentName" class="form-label">Delivering Sales / Service Representative</label>
+            <input type="text" id="inputAgentName" class="form-input" value="Marcus Thorne (Founder, Apex AutoTech)" autocomplete="username" required>
+          </div>
+
+          <div class="form-group">
+            <label for="inputOdometer" class="form-label">Verified Handover Odometer Reading (Miles)</label>
+            <input type="number" id="inputOdometer" class="form-input tabular" value="14205" required>
+          </div>
+
+          <div class="form-group">
+            <label for="inputHandoverNotes" class="form-label">Inspection Notes &amp; Key Issuance</label>
+            <textarea id="inputHandoverNotes" class="form-textarea" rows="2" required>Vehicle fully detailed, PDI inspection passed, two master key fobs issued, full tank of fuel verified.</textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="btnCancelHandover" type="button" class="btn btn-outline">Cancel</button>
+          <button id="btnConfirmHandover" type="submit" class="btn btn-primary">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Cryptographically Seal Handover
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Devil's Automotive Security Suite -->
+  <div class="modal-overlay" id="devilsAutoModal" role="dialog" aria-modal="true" aria-labelledby="devilsAutoModalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title" id="devilsAutoModalTitle">👹 Devil's Automotive Adversarial Test Suite</div>
+        <button id="btnCloseDevilsAutoModal" type="button" aria-label="Close modal" class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:12px; color:var(--text-secondary); margin-bottom:14px;">
+          Adversarial penetration tests designed by Kevin Mitnick, Geohot, and Charlie Miller to stress-test dealership odometer integrity, CAN-Bus injection resistance, and telematics authentication.
+        </p>
+
+        <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:14px;">
+          <button id="btnAttackMitnickOdometer" type="button" class="btn btn-outline" style="justify-content:flex-start;">
+            <span>1. Kevin Mitnick: Odometer Rollback &amp; Title Wash Attack</span>
+          </button>
+          <button id="btnAttackGeohotCanBus" type="button" class="btn btn-outline" style="justify-content:flex-start;">
+            <span>2. Geohot: CAN-Bus High-Frequency Packet Flood</span>
+          </button>
+          <button id="btnAttackCharlieMillerTelematics" type="button" class="btn btn-outline" style="justify-content:flex-start;">
+            <span>3. Charlie Miller: Remote Telematics Gatekeeper Intercept</span>
+          </button>
+        </div>
+
+        <div id="devilsAutoOutput" class="canvas-wrapper" style="height:120px; padding:12px; font-family:'JetBrains Mono', monospace; font-size:11px; color:#60a5fa; overflow-y:auto;" tabindex="0" role="region" aria-label="Adversarial output console">
+          Adversarial test console standby. Select a stress scenario above to execute.
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="btnCloseDevilsAutoFooter" type="button" class="btn btn-outline">Close Suite</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Client Script (ES Module) -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>

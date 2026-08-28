@@ -1,0 +1,21 @@
+{
+  "name": "b2b-followup-dispatcher",
+  "version": "1.0.0",
+  "description": "High-Conversion Multi-Touchpoint B2B Outreach & Fast-Cash Revenue Engine",
+  "main": "src/dispatcher.js",
+  "type": "module",
+  "scripts": {
+    "dry-run": "node src/dispatcher.js --dry-run",
+    "send": "node src/dispatcher.js --live",
+    "daemon": "node src/revenue_daemon.js",
+    "invoice": "node src/invoice_kit.js --generate-sample",
+    "monitor": "node src/revenue_monitor.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^16.4.7",
+    "express": "^5.2.1",
+    "imap-simple": "^5.1.0",
+    "nodemailer": "^6.10.0"
+  }
+}

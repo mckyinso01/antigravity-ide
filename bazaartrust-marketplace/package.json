@@ -1,0 +1,15 @@
+{
+  "name": "bazaartrust-marketplace",
+  "version": "1.0.0",
+  "description": "Multi-Vendor Marketplace OS with Automated Commission Splits & Escrow Protection for Tariq Al-Mansoor",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test_marketplace.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^4.22.2"
+  }
+}

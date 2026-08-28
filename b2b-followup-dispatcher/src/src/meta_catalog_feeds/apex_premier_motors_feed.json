@@ -1,0 +1,93 @@
+{
+  "dealership": "Apex Premier Motors",
+  "syncTimestampUtc": "2026-08-28T16:00:05.455Z",
+  "vehicleCount": 4,
+  "totalStockValueUsd": 312300,
+  "feedSchema": "meta_commerce_vehicle_catalog_v2",
+  "vehicles": [
+    {
+      "id": "1G1YY22U565108492",
+      "vin": "1G1YY22U565108492",
+      "title": "2023 Chevrolet Corvette Stingray 3LT",
+      "description": "Certified Pre-Owned 2023 Chevrolet Corvette Stingray 3LT. Mileage: 8,420 mi. Verified OBD-II Status: CLEARED. Inspected by Apex Premier Motors.",
+      "availability": "in_stock",
+      "condition": "certified_preowned",
+      "price": "79900.00 USD",
+      "link": "https://apexautotech.linkable.it.com?vin=1G1YY22U565108492",
+      "image_link": "https://apexautotech.linkable.it.com/images/1G1YY22U565108492.jpg",
+      "brand": "Chevrolet",
+      "vehicle_type": "car_truck",
+      "year": 2023,
+      "mileage": {
+        "value": 8420,
+        "unit": "MI"
+      },
+      "fb_page_id": "10992817290124",
+      "custom_label_0": "FRESH_ARRIVAL",
+      "custom_label_1": "CLEAN_TELEMETRICS"
+    },
+    {
+      "id": "5UXCR6C05M9E41209",
+      "vin": "5UXCR6C05M9E41209",
+      "title": "2024 BMW X5 xDrive40i M-Sport",
+      "description": "Certified Pre-Owned 2024 BMW X5 xDrive40i M-Sport. Mileage: 14,200 mi. Verified OBD-II Status: P0128 (PASS). Inspected by Apex Premier Motors.",
+      "availability": "in_stock",
+      "condition": "certified_preowned",
+      "price": "63500.00 USD",
+      "link": "https://apexautotech.linkable.it.com?vin=5UXCR6C05M9E41209",
+      "image_link": "https://apexautotech.linkable.it.com/images/5UXCR6C05M9E41209.jpg",
+      "brand": "BMW",
+      "vehicle_type": "car_truck",
+      "year": 2024,
+      "mileage": {
+        "value": 14200,
+        "unit": "MI"
+      },
+      "fb_page_id": "10992817290124",
+      "custom_label_0": "SPECIAL_OFFER",
+      "custom_label_1": "INSPECTION_PENDING"
+    },
+    {
+      "id": "1FTFW1ED4NFC99142",
+      "vin": "1FTFW1ED4NFC99142",
+      "title": "2023 Ford F-150 Lightning Lariat (EV)",
+      "description": "Certified Pre-Owned 2023 Ford F-150 Lightning Lariat (EV). Mileage: 19,800 mi. Verified OBD-II Status: CLEARED. Inspected by Apex Premier Motors.",
+      "availability": "in_stock",
+      "condition": "certified_preowned",
+      "price": "56900.00 USD",
+      "link": "https://apexautotech.linkable.it.com?vin=1FTFW1ED4NFC99142",
+      "image_link": "https://apexautotech.linkable.it.com/images/1FTFW1ED4NFC99142.jpg",
+      "brand": "Ford",
+      "vehicle_type": "car_truck",
+      "year": 2023,
+      "mileage": {
+        "value": 19800,
+        "unit": "MI"
+      },
+      "fb_page_id": "10992817290124",
+      "custom_label_0": "SPECIAL_OFFER",
+      "custom_label_1": "CLEAN_TELEMETRICS"
+    },
+    {
+      "id": "WAUZZZF27N1049281",
+      "vin": "WAUZZZF27N1049281",
+      "title": "2022 Audi RS6 Avant Quattro",
+      "description": "Certified Pre-Owned 2022 Audi RS6 Avant Quattro. Mileage: 26,400 mi. Verified OBD-II Status: CLEARED. Inspected by Apex Premier Motors.",
+      "availability": "in_stock",
+      "condition": "certified_preowned",
+      "price": "112000.00 USD",
+      "link": "https://apexautotech.linkable.it.com?vin=WAUZZZF27N1049281",
+      "image_link": "https://apexautotech.linkable.it.com/images/WAUZZZF27N1049281.jpg",
+      "brand": "Audi",
+      "vehicle_type": "car_truck",
+      "year": 2022,
+      "mileage": {
+        "value": 26400,
+        "unit": "MI"
+      },
+      "fb_page_id": "10992817290124",
+      "custom_label_0": "FRESH_ARRIVAL",
+      "custom_label_1": "CLEAN_TELEMETRICS"
+    }
+  ]
+}

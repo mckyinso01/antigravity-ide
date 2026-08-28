@@ -1,0 +1,15 @@
+{
+  "name": "apex-autotech-fleet-crm",
+  "version": "1.0.0",
+  "description": "Automotive Dealership Inventory, Fleet Dispatch Telemetry & CRM OS for Apex AutoTech",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test_fleet.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^4.22.2"
+  }
+}

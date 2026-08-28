@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PharmaGuard 21-CFR | Bio-Pharma Cold-Chain Excursion & CAPA Engine</title>
+  <meta name="description" content="FDA 21 CFR Part 11 compliant cold-chain thermal excursion analysis, Mean Kinetic Temperature (MKT) Arrhenius stability calculation, NIST calibration verification, and automated CAPA audit dossier generator.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  
+  <!-- Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Topbar: Precision Swiss Clinical Header -->
+  <header class="topbar">
+    <div class="brand-section">
+      <div class="brand-logo" aria-hidden="true">PG</div>
+      <div>
+        <h1 class="brand-title" style="display:inline; font-size:16px;">PharmaGuard 21-CFR</h1>
+        <span class="brand-sub">USP &lt;1079&gt; • FDA 21 CFR PART 11 CORE</span>
+      </div>
+    </div>
+    
+    <div class="topbar-right">
+      <!-- NIST Sensor Health Pill -->
+      <button id="btnNistCert" type="button" class="nist-pill" aria-label="View NIST Calibration Certificate">
+        <span class="nist-dot" aria-hidden="true"></span>
+        <span>PROBE: NIST-SN-9942-RTD (ISO/IEC 17025)</span>
+      </button>
+
+      <div class="system-status-pill">
+        <div class="live-indicator-dot" aria-hidden="true"></div>
+        <span>SENSOR NET: ACTIVE</span>
+        <span style="color:#64748b;" aria-hidden="true">|</span>
+        <span class="tabular" id="systemClock">00:00:00 UTC</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Workspace Container -->
+  <main class="container">
+    
+    <!-- Action Bar & Global Depot Switcher -->
+    <section class="action-bar" aria-label="Control and Configuration Bar">
+      <div class="action-left">
+        <label for="unitSelect" class="facility-label">GLOBAL FACILITY &amp; MONITORED DEPOT:</label>
+        <select id="unitSelect" class="unit-selector" aria-label="Select Monitored Depot Unit">
+          <option value="BOS-ULT-04">BOS-ULT-04 (Boston Hub — mRNA Oncology Biologics / -80°C Setpoint)</option>
+          <option value="BSL-CLIN-02">BSL-CLIN-02 (Basel Hub — Monoclonal Antibodies / +4°C Setpoint)</option>
+          <option value="SIN-PLAS-01">SIN-PLAS-01 (Singapore Gateway — Lyophilized Plasma / -20°C Setpoint)</option>
+          <option value="TKO-CRYO-09">TKO-CRYO-09 (Tokyo Gateway — CAR-T Liquid Nitrogen / -150°C Setpoint)</option>
+        </select>
+        <span id="batchTag" class="panel-badge badge-blue">BATCH: #VAC-2026-889 ($1.4M EVALUATION)</span>
+      </div>
+
+      <div class="action-buttons">
+        <button id="btnSimulateExcursion" type="button" class="btn btn-danger">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Simulate Compressor Breach (-68.4°C Spike)
+        </button>
+        <button id="btnDevilsAttack" type="button" class="btn btn-warning">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Devil's Edge-Case Suite
+        </button>
+        <button id="btnOpenSignModal" type="button" class="btn btn-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          21 CFR Part 11 Electronic Signature
+        </button>
+        <button id="btnExportCapa" type="button" class="btn btn-outline">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          Export FDA 483 CAPA Dossier
+        </button>
+      </div>
+    </section>
+
+    <!-- Key Scientific Performance Indicators (KPIs) -->
+    <section class="kpi-grid" aria-label="Key Performance Indicators">
+      <div class="kpi-card alert-border" id="kpiCurrentTempCard">
+        <div class="kpi-title">CURRENT PROBE TELEMETRY</div>
+        <div class="kpi-value tabular" id="valCurrentTemp">-80.2°C</div>
+        <div class="kpi-sub" id="subCurrentTemp">Safe Setpoint: -80.0°C (±2.0°C)</div>
+      </div>
+
+      <div class="kpi-card primary-border">
+        <div class="kpi-title">MEAN KINETIC TEMP (MKT - ARRHENIUS)</div>
+        <div class="kpi-value tabular" id="valMktTemp">-79.8°C</div>
+        <div class="kpi-sub" id="subMktDelta">Kinetic Variance vs Arithmetic: +0.4°C</div>
+      </div>
+
+      <div class="kpi-card warning-border" id="kpiStabilityCard">
+        <div class="kpi-title">THERMAL STABILITY BUDGET</div>
+        <div class="kpi-value tabular" id="valStabilityConsumed">0.0% Consumed</div>
+        <div class="kpi-sub" id="subStabilityVerdict">Batch Viability: 100% Guaranteed</div>
+      </div>
+
+      <div class="kpi-card success-border" id="kpiComplianceCard">
+        <div class="kpi-title">FDA REGULATORY STATUS</div>
+        <div class="kpi-value" id="valComplianceStatus" style="font-size:18px; margin-top:4px;">RELEASED_COMPLIANT</div>
+        <div class="kpi-sub" id="subComplianceDetail">USP &lt;1079&gt; Thresholds Satisfied</div>
+      </div>
+    </section>
+
+    <!-- Main Grid: Waveform Telemetry & 5-Whys Root Cause -->
+    <section class="main-grid">
+      
+      <!-- Left: 60fps Real-Time Thermal Waveform & Arrhenius Inspector -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Continuous Thermal Waveform Stream (60fps Canvas)
+          </div>
+          <span class="panel-badge badge-blue tabular" id="dataPointsCount">120 READINGS LOADED</span>
+        </div>
+
+        <div class="canvas-wrapper">
+          <canvas id="thermalCanvas" role="img" aria-label="Real-time cryogenic sensor thermal wave graph showing baseline and excursion thresholds"></canvas>
+        </div>
+
+        <div class="canvas-legend">
+          <div class="legend-item">
+            <div class="legend-color" style="background:#1d4ed8;" aria-hidden="true"></div>
+            <span>Probe Sensor Temperature (°C)</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background:#059669;" aria-hidden="true"></div>
+            <span>Target Safe Ceiling (-70.0°C)</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background:#dc2626;" aria-hidden="true"></div>
+            <span>Critical Excursion Threshold</span>
+          </div>
+        </div>
+
+        <!-- Side-by-Side Arrhenius Stability Delta Inspector -->
+        <div class="stability-diff-box">
+          <div class="diff-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            USP &lt;1079&gt; Stability Budget Delta vs Nominal Baseline
+          </div>
+          <div class="diff-grid">
+            <div class="diff-col">
+              <span class="diff-label">Nominal Baseline (Storage)</span>
+              <span class="diff-val text-emerald tabular">-80.0°C MKT</span>
+              <span class="diff-note">0.0% Degradation Rate</span>
+            </div>
+            <div class="diff-col">
+              <span class="diff-label">Excursion Kinetic Impact</span>
+              <span class="diff-val text-rose tabular" id="diffExcursionMkt">-79.8°C MKT</span>
+              <span class="diff-note" id="diffExcursionNote">Normal Operation</span>
+            </div>
+            <div class="diff-col">
+              <span class="diff-label">Remaining Safe Budget</span>
+              <span class="diff-val text-blue tabular" id="diffRemainingBudget">72.0 Hours</span>
+              <span class="diff-note">Lot Release Viable</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="formula-box">
+          <div class="formula-title">USP &lt;1079&gt; Arrhenius MKT Mathematical Equation:</div>
+          <div class="formula-code">Tk = (ΔH / R) / [ -ln ( ( Σ e^(-ΔH / (R · Ti)) ) / n ) ]  |  ΔH = 83.144 kJ/mol</div>
+          <p style="color:var(--text-secondary);">
+            Kinetic thermal degradation accounts for non-linear exponential chemical denaturation at elevated temperatures, providing authentic regulatory justification during audit inspections.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: Interactive 5-Whys Root Cause & Ishikawa Triage -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Automated CAPA 5-Whys Triage
+          </div>
+          <span class="panel-badge badge-amber" id="capaPhaseBadge">DIAGNOSTIC PHASE</span>
+        </div>
+
+        <div class="diagnostics-body">
+          <div class="step-flow" id="stepFlowContainer">
+            <div class="step-node">
+              <div class="step-num">WHY #1: PRIMARY ANOMALY</div>
+              <div class="step-label">Freezer Core Temp Spiked Past -70.0°C Ceiling</div>
+              <div class="step-detail">Sustained excursion for 42 minutes triggered automated alert.</div>
+            </div>
+
+            <div class="step-node">
+              <div class="step-num">WHY #2: SUBSYSTEM LOG</div>
+              <div class="step-label">Secondary Stage Refrigerant Loop Pressure Drop</div>
+              <div class="step-detail">Cascade compressor stage II suction pressure dropped by 45%.</div>
+            </div>
+
+            <div class="step-node active-root">
+              <div class="step-num">WHY #3: PHYSICAL ROOT CAUSE</div>
+              <div class="step-label">Solenoid Valve O-Ring Seal Mechanical Degradation</div>
+              <div class="step-detail">Micro-leak caused expansion cycle delay during scheduled defrost.</div>
+            </div>
+
+            <div class="step-node">
+              <div class="step-num">CORRECTIVE & PREVENTIVE ACTION (CAPA)</div>
+              <div class="step-label">Replaced Valve O-Ring + 72-Hour Pressure Retest</div>
+              <div class="step-detail">All cryogenic units scheduled for preventive quarterly seal renewal.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- FDA 21 CFR Part 11 Cryptographic Audit Trail Table -->
+    <section class="panel" aria-label="Audit Trail Table Section">
+      <div class="panel-header">
+        <div class="panel-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Immutable FDA 21 CFR Part 11 Electronic Signature Ledger
+        </div>
+        <span class="panel-badge badge-green">SHA-256 TAMPER-PROOF ACTIVE</span>
+      </div>
+
+      <div class="audit-table-wrapper">
+        <table class="audit-table">
+          <thead>
+            <tr>
+              <th scope="col">Timestamp (UTC)</th>
+              <th scope="col">Record ID</th>
+              <th scope="col">Batch / Unit Ref</th>
+              <th scope="col">Action &amp; Regulatory Purpose</th>
+              <th scope="col">Authorized Signer &amp; Credentials</th>
+              <th scope="col">GMP Qualification</th>
+              <th scope="col">Stability Budget</th>
+              <th scope="col">Cryptographic SHA-256 Seal</th>
+            </tr>
+          </thead>
+          <tbody id="auditTableBody">
+            <tr>
+              <td class="timestamp">2026-08-28T14:10:00.102Z</td>
+              <td><code>AUDIT-992101</code></td>
+              <td>#VAC-2026-889 (BOS-04)</td>
+              <td>INITIAL_BATCH_STORAGE_LOG</td>
+              <td>Dr. Aris Vance (Head QA)</td>
+              <td><span class="badge-gmp-pass">✅ CERTIFIED</span></td>
+              <td>0.0%</td>
+              <td><span class="hash-pill">8f3b...49a1</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal: NIST Calibration Certificate -->
+  <div class="modal-overlay" id="nistModal" role="dialog" aria-modal="true" aria-labelledby="nistModalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title" id="nistModalTitle">NIST-Traceable ISO/IEC 17025 Calibration Certificate</div>
+        <button id="btnCloseNistModal" type="button" aria-label="Close NIST modal" class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="nist-card">
+          <div class="nist-header-row">
+            <div>
+              <div class="nist-cert-num">CERTIFICATE: ISO-17025-NIST-88421</div>
+              <div class="nist-cert-sub">NVLAP LAB ACCREDITATION CODE: 200984-0</div>
+            </div>
+            <span class="panel-badge badge-green">CALIBRATION VALID</span>
+          </div>
+
+          <div class="nist-grid">
+            <div class="nist-cell">
+              <span class="nist-k">Sensor Serial Number</span>
+              <span class="nist-v tabular">NIST-SN-9942-RTD (Pt100 4-Wire)</span>
+            </div>
+            <div class="nist-cell">
+              <span class="nist-k">Last Calibration Date</span>
+              <span class="nist-v tabular">2026-03-15 (NIST Gaithersburg)</span>
+            </div>
+            <div class="nist-cell">
+              <span class="nist-k">Calibration Expiration</span>
+              <span class="nist-v tabular text-emerald">2027-03-15 (Valid)</span>
+            </div>
+            <div class="nist-cell">
+              <span class="nist-k">Expanded Uncertainty (k=2)</span>
+              <span class="nist-v tabular">±0.035°C (-196°C to +100°C)</span>
+            </div>
+            <div class="nist-cell">
+              <span class="nist-k">Annual Drift Rate</span>
+              <span class="nist-v tabular">+0.008°C / Year (Within Tolerance)</span>
+            </div>
+            <div class="nist-cell">
+              <span class="nist-k">Traceability Standard</span>
+              <span class="nist-v tabular">NIST ITS-90 Fixed-Point Cells</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="btnCloseNistFooter" type="button" class="btn btn-outline">Close Calibration Record</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Devil's Team Attack & Edge-Case Simulation Suite -->
+  <div class="modal-overlay" id="devilsModal" role="dialog" aria-modal="true" aria-labelledby="devilsModalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title" id="devilsModalTitle">👹 Devil's Team Ruthless Edge-Case Simulator Suite</div>
+        <button id="btnCloseDevilsModal" type="button" aria-label="Close Devils modal" class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:12px; color:var(--text-secondary); margin-bottom:14px;">
+          Execute adversarial edge cases designed by Mitnick, Geohot, Samy Kamkar, Charlie Miller, and Barnaby Jack to stress-test cryptographic integrity, mathematical limits, and role boundaries.
+        </p>
+
+        <div class="devils-suite-grid">
+          <div class="devils-item">
+            <div class="devils-item-header">
+              <span class="devils-name">Kevin Mitnick: SHA-256 Tamper Forgery Test</span>
+              <span class="panel-badge badge-blue">INTEGRITY</span>
+            </div>
+            <p class="devils-desc">Attempts to alter audit ledger timestamp/values post-signature and verifies cryptographic seal invalidation.</p>
+            <button id="btnRunMitnickAttack" type="button" class="btn btn-outline btn-sm">Execute Tamper Simulation</button>
+          </div>
+
+          <div class="devils-item">
+            <div class="devils-item-header">
+              <span class="devils-name">Geohot: Absolute Zero &amp; NaN Arrhenius Test</span>
+              <span class="panel-badge badge-blue">MATH BOUNDS</span>
+            </div>
+            <p class="devils-desc">Injects -273.15°C (0K) and extreme +100°C spikes to stress-test Arrhenius denominator and logarithmic guards.</p>
+            <button id="btnRunGeohotAttack" type="button" class="btn btn-outline btn-sm">Execute Math Bounds Stress</button>
+          </div>
+
+          <div class="devils-item">
+            <div class="devils-item-header">
+              <span class="devils-name">Charlie Miller: Unqualified Signer Bypass Test</span>
+              <span class="panel-badge badge-blue">SECURITY GATE</span>
+            </div>
+            <p class="devils-desc">Attempts to execute 21 CFR Part 11 sign-off with expired GMP training credentials.</p>
+            <button id="btnRunCharlieAttack" type="button" class="btn btn-outline btn-sm">Test GMP Gate Intercept</button>
+          </div>
+        </div>
+
+        <div id="devilsOutputBox" class="devils-output-box" tabindex="0" role="region" aria-label="Adversarial Simulation Results">
+          Simulation console ready. Select a test above to execute live adversarial penetration test.
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="btnCloseDevilsFooter" type="button" class="btn btn-outline">Close Suite</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: FDA 21 CFR Part 11 Dual-Witness Electronic Signature -->
+  <div class="modal-overlay" id="signModal" role="dialog" aria-modal="true" aria-labelledby="signModalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title" id="signModalTitle">FDA 21 CFR Part 11 Dual-Witness Signature</div>
+        <button id="btnCloseSignModal" type="button" aria-label="Close signature modal" class="modal-close-btn">&times;</button>
+      </div>
+      <form id="signatureForm" onsubmit="event.preventDefault();">
+        <div class="modal-body">
+          <p style="font-size:13px; color:var(--text-secondary); margin-bottom:14px;">
+            By executing this electronic signature, you certify under penalty of federal regulatory perjury that the MKT Arrhenius calculations and root-cause CAPA determinations have been rigorously verified.
+          </p>
+
+          <!-- GMP Training Credential Live Verification Box -->
+          <div id="gmpStatusBox" class="gmp-status-box gmp-pass">
+            <div class="flex-row items-center gap-2">
+              <span class="gmp-icon">✅</span>
+              <strong id="gmpStatusTitle">GMP TRAINING VERIFIED</strong>
+            </div>
+            <div class="gmp-detail" id="gmpStatusDetail">
+              Credential: SOP-CC-042 (Cold-Chain Thermal Excursions v3.2) • Qualified until 2027-01-15
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputSignerName" class="form-label">Authorized Signer Full Name</label>
+            <input type="text" id="inputSignerName" name="signerName" class="form-input" value="Dr. Aris Vance" autocomplete="username" required>
+          </div>
+
+          <div class="form-group">
+            <label for="inputSignerRole" class="form-label">Regulatory Title &amp; Department</label>
+            <input type="text" id="inputSignerRole" name="signerRole" class="form-input" value="Head of Quality Assurance (QA) &amp; Compliance" required>
+          </div>
+
+          <div class="form-group">
+            <label for="inputSignerReason" class="form-label">Regulatory Justification &amp; Decision</label>
+            <textarea id="inputSignerReason" name="signerReason" class="form-textarea" rows="3" required>MKT degradation computed at 18.4% stability consumption. Biologic batch potency verified within USP <1079> limits. Batch approved for release following mechanical seal repair.</textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="inputSignerPin" class="form-label">21 CFR Security Passcode</label>
+            <input type="password" id="inputSignerPin" name="signerPin" class="form-input" value="12345678" autocomplete="current-password" placeholder="Enter security token / PIN" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="btnCancelSign" type="button" class="btn btn-outline">Cancel</button>
+          <button id="btnConfirmSign" type="submit" class="btn btn-primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Execute Cryptographic Seal
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: FDA 483-Defensive CAPA Audit Dossier Viewer -->
+  <div class="modal-overlay" id="dossierModal" role="dialog" aria-modal="true" aria-labelledby="dossierModalTitle">
+    <div class="modal-card dossier-card">
+      <div class="modal-header">
+        <div class="modal-title" id="dossierModalTitle">FDA 483-Defensive CAPA Audit Dossier Package</div>
+        <button id="btnCloseDossierModal" type="button" aria-label="Close dossier modal" class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body" style="padding:16px;">
+        <div class="dossier-content" id="dossierText" tabindex="0" role="region" aria-label="Generated CAPA Dossier Content"></div>
+      </div>
+      <div class="modal-footer">
+        <button id="btnCopyDossier" type="button" class="btn btn-outline">Copy Full Markdown Dossier</button>
+        <button id="btnPrintDossier" type="button" class="btn btn-primary">Print Official Inspection PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- App Script (ES Module) -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>

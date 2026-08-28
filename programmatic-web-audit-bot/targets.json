@@ -1,0 +1,125 @@
+[
+  {
+    "domain": "example.com",
+    "businessName": "Example Corp",
+    "contactEmail": "admin@example.com",
+    "status": "AUDITED",
+    "lastAuditedAt": "2026-08-27T13:10:46.239Z",
+    "reportFile": "audit_example.com_1787836246238.md",
+    "loadTimeMs": 167
+  },
+  {
+    "domain": "httpbin.org",
+    "businessName": "HttpBin Cloud",
+    "contactEmail": "contact@httpbin.org",
+    "status": "AUDITED",
+    "lastAuditedAt": "2026-08-27T13:10:47.430Z",
+    "reportFile": "audit_httpbin.org_1787836247430.md",
+    "loadTimeMs": 1190
+  },
+  {
+    "domain": "brightviewdental.com",
+    "businessName": "BrightView Dental Clinic",
+    "contactEmail": "info@brightviewdental.com",
+    "status": "QUEUED",
+    "addedAt": "2026-08-27T13:17:43.584Z"
+  },
+  {
+    "domain": "summitbuildersinc.com",
+    "businessName": "Summit Builders Construction",
+    "contactEmail": "bids@summitbuildersinc.com",
+    "status": "QUEUED",
+    "addedAt": "2026-08-27T13:17:43.584Z"
+  },
+  {
+    "domain": "apexlogistics3pl.com",
+    "businessName": "Apex Global Logistics",
+    "contactEmail": "dispatch@apexlogistics3pl.com",
+    "status": "QUEUED",
+    "addedAt": "2026-08-27T13:17:43.584Z"
+  },
+  {
+    "domain": "premierlawgroup.net",
+    "businessName": "Premier Law Partners",
+    "contactEmail": "inquiries@premierlawgroup.net",
+    "status": "QUEUED",
+    "addedAt": "2026-08-27T13:17:43.584Z"
+  },
+  {
+    "domain": "vanguardhealthclinic.org",
+    "businessName": "Vanguard Health Clinic",
+    "contactEmail": "contact@vanguardhealthclinic.org",
+    "status": "QUEUED",
+    "addedAt": "2026-08-27T13:17:43.584Z"
+  },
+  {
+    "domain": "catalystgrowthagency.io",
+    "businessName": "Catalyst Growth Marketing",
+    "contactEmail": "hello@catalystgrowthagency.io",
+    "status": "QUEUED",
+    "addedAt": "2026-08-27T13:17:43.584Z"
+  },
+  {
+    "domain": "silverlineelectrical.com",
+    "businessName": "Silverline Commercial Electric",
+    "contactEmail": "service@silverlineelectrical.com",
+    "status": "QUEUED",
+    "addedAt": "2026-08-27T13:17:43.584Z"
+  },
+  {
+    "domain": "metroplumbingservices.com",
+    "businessName": "Metro Commercial Plumbing",
+    "contactEmail": "dispatch@metroplumbingservices.com",
+    "status": "QUEUED",
+    "addedAt": "2026-08-27T13:17:43.584Z"
+  },
+  {
+    "domain": "novadigitalventures.com",
+    "businessName": "Nova Digital Studio",
+    "contactEmail": "founders@novadigitalventures.com",
+    "status": "QUEUED",
+    "addedAt": "2026-08-27T13:17:43.584Z"
+  },
+  {
+    "domain": "beaconwealthadvisors.com",
+    "businessName": "Beacon Wealth Management",
+    "contactEmail": "advisors@beaconwealthadvisors.com",
+    "status": "QUEUED",
+    "addedAt": "2026-08-27T13:17:43.584Z"
+  },
+  {
+    "domain": "precisionmachiningcorp.com",
+    "businessName": "Precision Industrial Machining",
+    "contactEmail": "quotes@precisionmachiningcorp.com",
+    "status": "QUEUED",
+    "addedAt": "2026-08-27T13:17:43.584Z"
+  },
+  {
+    "domain": "clarityeyecarecenter.com",
+    "businessName": "Clarity Eye Specialists",
+    "contactEmail": "care@clarityeyecarecenter.com",
+    "status": "QUEUED",
+    "addedAt": "2026-08-27T13:17:43.584Z"
+  },
+  {
+    "domain": "vertexcloudconsulting.com",
+    "businessName": "Vertex Cloud IT Solutions",
+    "contactEmail": "info@vertexcloudconsulting.com",
+    "status": "QUEUED",
+    "addedAt": "2026-08-27T13:17:43.584Z"
+  },
+  {
+    "domain": "crestviewrealtygroup.com",
+    "businessName": "Crestview Commercial Realty",
+    "contactEmail": "listings@crestviewrealtygroup.com",
+    "status": "QUEUED",
+    "addedAt": "2026-08-27T13:17:43.584Z"
+  },
+  {
+    "domain": "elementalsaaslabs.io",
+    "businessName": "Elemental Software Labs",
+    "contactEmail": "team@elementalsaaslabs.io",
+    "status": "QUEUED",
+    "addedAt": "2026-08-27T13:17:43.584Z"
+  }
+]

@@ -1,0 +1,2593 @@
+[
+  {
+    "leadId": "lead-clin-001",
+    "company": "Cleveland Clinic Foundation",
+    "email": "hatches@ccf.org",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<6924c9af-46cb-43ce-b489-dc3b2183a66a@linkable.it.com>",
+    "timestamp": "2026-08-26T03:16:03.108Z"
+  },
+  {
+    "leadId": "lead-clin-002",
+    "company": "The Johns Hopkins Hospital",
+    "email": "dbaker@jhmi.edu",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<ec8d3969-3228-e0d1-57b4-a5a817b12318@linkable.it.com>",
+    "timestamp": "2026-08-26T03:16:10.127Z"
+  },
+  {
+    "leadId": "lead-clin-003",
+    "company": "Mount Sinai Health System",
+    "email": "roopa.kohli-seth@mountsinai.org",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<327eb992-f007-27f4-89be-c571c35553fd@linkable.it.com>",
+    "timestamp": "2026-08-26T03:16:18.908Z"
+  },
+  {
+    "leadId": "lead-site-001",
+    "company": "Turner Construction Company",
+    "email": "dpaquette@tcco.com",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<ce5372be-321b-f352-a426-9f6e8f609300@linkable.it.com>",
+    "timestamp": "2026-08-26T03:16:24.801Z"
+  },
+  {
+    "leadId": "lead-site-002",
+    "company": "Skanska USA Building",
+    "email": "bryan.northrop@skanska.com",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<402c8469-3312-9d61-7f07-a50abdfd2c30@linkable.it.com>",
+    "timestamp": "2026-08-26T03:16:33.229Z"
+  },
+  {
+    "leadId": "lead-wms-001",
+    "company": "Americold Logistics",
+    "email": "aishling.obrien@americold.com",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<4c6e8f8c-98e8-e179-bc90-390789657e02@linkable.it.com>",
+    "timestamp": "2026-08-26T03:16:39.039Z"
+  },
+  {
+    "leadId": "lead-wms-002",
+    "company": "Lineage Logistics",
+    "email": "krobinson@lineagelogistics.com",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<190effac-188c-5b7b-ce21-1c825baf22ed@linkable.it.com>",
+    "timestamp": "2026-08-26T03:16:46.637Z"
+  },
+  {
+    "leadId": "lead-sacc-001",
+    "company": "AKQA Global Digital Agency",
+    "email": "ajaz.ahmed@akqa.com",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<7c1bee58-a5e5-f1cb-c8ab-19c49ba26613@linkable.it.com>",
+    "timestamp": "2026-08-26T03:16:54.931Z"
+  },
+  {
+    "leadId": "lead-omni-001",
+    "company": "Robinsons Supermarket",
+    "email": "robsupermarket@rsc.com.ph",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<82666c0b-325a-4905-f7fe-40f176f4c01d@linkable.it.com>",
+    "timestamp": "2026-08-26T03:17:03.631Z"
+  },
+  {
+    "leadId": "lead-omni-002",
+    "company": "Puregold Price Club",
+    "email": "customercare@puregold.com.ph",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<afccd480-0403-3839-a077-e715ebbadc2a@linkable.it.com>",
+    "timestamp": "2026-08-26T03:17:11.212Z"
+  },
+  {
+    "leadId": "lead-ems-001",
+    "company": "TaskUs Philippines Operations",
+    "email": "peopleops@taskus.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:17:17.074Z"
+  },
+  {
+    "leadId": "lead-ems-001",
+    "company": "TaskUs Philippines Operations",
+    "email": "peopleops@taskus.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:19:02.171Z"
+  },
+  {
+    "leadId": "lead-auto-RFP-001",
+    "company": "WAS Turbine Center (World Aviation Services)",
+    "email": "rfq@wasturbine.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:02.455Z"
+  },
+  {
+    "leadId": "lead-auto-RFP-002",
+    "company": "gd nbr (Hyperlocal Community Platform)",
+    "email": "team@gdnbr.io",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:04.220Z"
+  },
+  {
+    "leadId": "lead-auto-RFP-003",
+    "company": "Mobile MVP Product Team",
+    "email": "founder@mobileappaudit.io",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:05.842Z"
+  },
+  {
+    "leadId": "lead-auto-RFP-004",
+    "company": "LiveFlow Finance",
+    "email": "lasse@liveflow.io",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:07.584Z"
+  },
+  {
+    "leadId": "lead-auto-RFP-005",
+    "company": "UPAC Packaging Ltd",
+    "email": "operations@upac.co.uk",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:09.398Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-1",
+    "company": "Pentagram Design",
+    "email": "bierut@pentagram.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:11.225Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-2",
+    "company": "Huge Inc.",
+    "email": "fjohannesdottir@hugeinc.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:13.056Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-3",
+    "company": "R/GA",
+    "email": "tiffany.rolfe@rga.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:14.783Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-4",
+    "company": "Work & Co (Accenture Song)",
+    "email": "mohan@work.co",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:16.435Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-5",
+    "company": "Code and Theory",
+    "email": "dan@codeandtheory.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:18.130Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-6",
+    "company": "Instrument",
+    "email": "vince@instrument.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:19.856Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-7",
+    "company": "Basic/Agency (Dept)",
+    "email": "matt@basicagency.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:21.489Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-8",
+    "company": "Fantasy Interactive (FI)",
+    "email": "david@fantasy.co",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:24.477Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-9",
+    "company": "Metalab",
+    "email": "andrew@metalab.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:26.181Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-10",
+    "company": "Clay Global",
+    "email": "anton@clay.global",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:29.095Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-11",
+    "company": "Ueno (Twitter/X)",
+    "email": "halli@ueno.co",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:31.226Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-12",
+    "company": "Locomotive",
+    "email": "jf@locomotive.ca",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:32.941Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-13",
+    "company": "Active Theory",
+    "email": "andy@activetheory.net",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:35.023Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-14",
+    "company": "Hello Monday (DEPT)",
+    "email": "anders@hellomonday.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:36.841Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-15",
+    "company": "Dogstudio / DEPT",
+    "email": "henry@dogstudio.co",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:38.659Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-16",
+    "company": "Resn",
+    "email": "rik@resn.co.nz",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:40.384Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-17",
+    "company": "Stink Studios",
+    "email": "james.britton@stinkstudios.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:42.219Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-18",
+    "company": "Media.Monks",
+    "email": "wesley@mediamonks.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:43.876Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-20",
+    "company": "Wiredcraft",
+    "email": "ronan@wiredcraft.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:45.570Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-21",
+    "company": "Conversion Rate Experts",
+    "email": "karl@conversion-rate-experts.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:47.354Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-22",
+    "company": "Speero by CXL",
+    "email": "peep@speero.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:49.312Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-23",
+    "company": "Widerfunnel",
+    "email": "cgoward@widerfunnel.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:50.992Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-24",
+    "company": "BlastX Consulting",
+    "email": "gangel@blastx.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:53.177Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-25",
+    "company": "SiteTuners",
+    "email": "tim@sitetuners.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:54.939Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-1",
+    "company": "Turner Construction Company",
+    "email": "pdavoren@tcco.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:56.697Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-2",
+    "company": "Skanska USA Building",
+    "email": "richard.cavallaro@skanska.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:22:58.453Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-3",
+    "company": "DPR Construction",
+    "email": "georgep@dpr.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:00.192Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-4",
+    "company": "Clark Construction Group",
+    "email": "robert.moser@clarkconstruction.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:01.846Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-5",
+    "company": "Hensel Phelps Construction",
+    "email": "mchoutka@henselphelps.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:03.566Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-6",
+    "company": "Suffolk Construction",
+    "email": "jfish@suffolk.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:05.271Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-7",
+    "company": "Whiting-Turner Contracting",
+    "email": "morgan.gilligan@whiting-turner.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:06.979Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-8",
+    "company": "Mortenson Construction",
+    "email": "dan.johnson@mortenson.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:08.638Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-9",
+    "company": "McCarthy Building Companies",
+    "email": "rsedey@mccarthy.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:10.360Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-10",
+    "company": "JE Dunn Construction",
+    "email": "gordon.lansford@jedunn.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:12.088Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-11",
+    "company": "Gilbane Building Company",
+    "email": "tflannery@gilbaneco.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:13.805Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-12",
+    "company": "Balfour Beatty US",
+    "email": "lblondin@balfourbeattyus.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:15.527Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-13",
+    "company": "Webcor Builders",
+    "email": "mrossie@webcor.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:17.295Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-14",
+    "company": "Austin Commercial",
+    "email": "dwalls@austin-ind.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:18.991Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-15",
+    "company": "Swinerton Builders",
+    "email": "efoster@swinerton.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:20.605Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-16",
+    "company": "Holder Construction",
+    "email": "mramos@holder.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:22.463Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-17",
+    "company": "Clayco Inc.",
+    "email": "clarkb@claycorp.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:24.175Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-18",
+    "company": "Walsh Group",
+    "email": "mwalsh@walshgroup.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:25.842Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-19",
+    "company": "Sundt Construction",
+    "email": "mhoover@sundt.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:27.547Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-20",
+    "company": "Robins & Morton",
+    "email": "rsavage@robinsmorton.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:29.881Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-21",
+    "company": "Ryan Companies US",
+    "email": "brian.murray@ryancompanies.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:31.539Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-22",
+    "company": "Brasfield & Gorrie",
+    "email": "jgorrie@brasfieldgorrie.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:33.436Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-23",
+    "company": "Pepper Construction",
+    "email": "spepper@pepperconstruction.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:35.189Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-24",
+    "company": "Shawmut Design and Construction",
+    "email": "lhiscoe@shawmut.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:36.996Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-25",
+    "company": "Barton Malow Company",
+    "email": "ryan.maibach@bartonmalow.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:38.670Z"
+  },
+  {
+    "leadId": "lead-auto-CLINICAL-1",
+    "company": "Salem Health",
+    "email": "bob.macdonald@salemhealth.org",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:40.646Z"
+  },
+  {
+    "leadId": "lead-auto-CLINICAL-2",
+    "company": "Asante Health System",
+    "email": "mike.adams@asante.org",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:42.555Z"
+  },
+  {
+    "leadId": "lead-auto-CLINICAL-3",
+    "company": "Overlake Medical Center",
+    "email": "scott.waters@overlakehospital.org",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:44.943Z"
+  },
+  {
+    "leadId": "lead-auto-CLINICAL-4",
+    "company": "Skagit Regional Health",
+    "email": "gary.smith@skagitregionalhealth.org",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:48.760Z"
+  },
+  {
+    "leadId": "lead-auto-CLINICAL-5",
+    "company": "Kadlec Regional Medical Center",
+    "email": "angela.hughes@kadlec.org",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:50.492Z"
+  },
+  {
+    "leadId": "lead-auto-CLINICAL-6",
+    "company": "Samaritan Health Services",
+    "email": "doug.boysen@samhealth.org",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:52.336Z"
+  },
+  {
+    "leadId": "lead-auto-CLINICAL-7",
+    "company": "St. Charles Health System",
+    "email": "jeff.absalon@stcharleshealthcare.org",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:54.746Z"
+  },
+  {
+    "leadId": "lead-auto-CLINICAL-8",
+    "company": "Kittitas Valley Healthcare",
+    "email": "jason.adler@kvhealthcare.org",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:56.484Z"
+  },
+  {
+    "leadId": "lead-auto-CLINICAL-9",
+    "company": "Olympic Medical Center",
+    "email": "leonard.borchers@olympicmedical.org",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:23:58.844Z"
+  },
+  {
+    "leadId": "lead-auto-CLINICAL-10",
+    "company": "EvergreenHealth",
+    "email": "chris.akeroyd@evergreenhealth.com",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:24:00.720Z"
+  },
+  {
+    "leadId": "lead-auto-CLINICAL-11",
+    "company": "Confluence Health",
+    "email": "alan.fisher@confluencehealth.org",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:24:02.440Z"
+  },
+  {
+    "leadId": "lead-auto-CLINICAL-12",
+    "company": "PeaceHealth Sacred Heart",
+    "email": "heather.wall@peacehealth.org",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:24:04.163Z"
+  },
+  {
+    "leadId": "lead-auto-CLINICAL-13",
+    "company": "MultiCare Deaconess Hospital",
+    "email": "kimberly.kelley@multicare.org",
+    "touchpoint": 1,
+    "status": "FAILED",
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "timestamp": "2026-08-26T03:24:07.349Z"
+  },
+  {
+    "leadId": "lead-ems-001",
+    "company": "TaskUs Philippines Operations",
+    "email": "peopleops@taskus.com",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<e36faa1f-5a5a-d27a-105b-06310944554a@linkable.it.com>",
+    "timestamp": "2026-08-26T03:33:24.771Z"
+  },
+  {
+    "leadId": "lead-auto-RFP-001",
+    "company": "WAS Turbine Center (World Aviation Services)",
+    "email": "rfq@wasturbine.com",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<e35291c7-08b9-efc7-293d-29c64a443384@linkable.it.com>",
+    "timestamp": "2026-08-26T03:42:25.684Z"
+  },
+  {
+    "leadId": "lead-auto-RFP-002",
+    "company": "gd nbr (Hyperlocal Community Platform)",
+    "email": "team@gdnbr.io",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<fca6ea64-1eb4-5413-a109-f7d5cfd4e4c9@linkable.it.com>",
+    "timestamp": "2026-08-26T03:51:25.308Z"
+  },
+  {
+    "leadId": "lead-auto-RFP-003",
+    "company": "Mobile MVP Product Team",
+    "email": "founder@mobileappaudit.io",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<62da9096-d320-d759-5cbe-dd2f9c6929ed@linkable.it.com>",
+    "timestamp": "2026-08-26T04:03:25.318Z"
+  },
+  {
+    "leadId": "lead-auto-RFP-004",
+    "company": "LiveFlow Finance",
+    "email": "lasse@liveflow.io",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<bf44443b-52ee-e30f-64fd-69f5f1e84e28@linkable.it.com>",
+    "timestamp": "2026-08-26T04:03:33.804Z"
+  },
+  {
+    "leadId": "lead-auto-RFP-005",
+    "company": "UPAC Packaging Ltd",
+    "email": "operations@upac.co.uk",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<abc622b6-55c0-d375-9ed0-b06214f147a8@linkable.it.com>",
+    "timestamp": "2026-08-26T04:03:42.028Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-1",
+    "company": "Pentagram Design",
+    "email": "bierut@pentagram.com",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<09d9b3ce-ee1f-f0fa-6291-93ddceebe455@linkable.it.com>",
+    "timestamp": "2026-08-26T04:12:26.313Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-2",
+    "company": "Huge Inc.",
+    "email": "fjohannesdottir@hugeinc.com",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<4db12599-ea3d-9739-6d89-fab49f25423c@linkable.it.com>",
+    "timestamp": "2026-08-26T04:15:25.823Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-3",
+    "company": "R/GA",
+    "email": "tiffany.rolfe@rga.com",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<43b35352-fad5-81a6-fbeb-3c1637e6847d@linkable.it.com>",
+    "timestamp": "2026-08-26T04:15:33.005Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-4",
+    "company": "Work & Co (Accenture Song)",
+    "email": "mohan@work.co",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<3c0fe205-b9af-0496-db2e-90cbcc7d75cb@linkable.it.com>",
+    "timestamp": "2026-08-26T04:18:25.291Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-5",
+    "company": "Code and Theory",
+    "email": "dan@codeandtheory.com",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<aab2b374-0c9a-6cfb-8663-9a6a9104ec6b@linkable.it.com>",
+    "timestamp": "2026-08-26T04:18:32.287Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-6",
+    "company": "Instrument",
+    "email": "vince@instrument.com",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<b4696f65-2c04-2078-1146-f02db2674283@linkable.it.com>",
+    "timestamp": "2026-08-26T04:18:40.525Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-7",
+    "company": "Basic/Agency (Dept)",
+    "email": "matt@basicagency.com",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<141d57e5-b633-6160-ba4d-58649c4d5b95@linkable.it.com>",
+    "timestamp": "2026-08-26T04:18:48.862Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-8",
+    "company": "Fantasy Interactive (FI)",
+    "email": "david@fantasy.co",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<319da8a7-6e62-b9ef-703a-7db11b3cda8f@linkable.it.com>",
+    "timestamp": "2026-08-26T04:18:56.290Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-9",
+    "company": "Metalab",
+    "email": "andrew@metalab.com",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<a8560b32-b965-f59c-dcf9-8647617d6ae7@linkable.it.com>",
+    "timestamp": "2026-08-26T04:19:02.953Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-10",
+    "company": "Clay Global",
+    "email": "anton@clay.global",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<fb1f2f1d-5677-6bd0-11cd-0b7ddf1a12ca@linkable.it.com>",
+    "timestamp": "2026-08-26T04:19:10.603Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-11",
+    "company": "Ueno (Twitter/X)",
+    "email": "halli@ueno.co",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<a222320e-2df2-3f0b-3950-4aa0976b9b2e@linkable.it.com>",
+    "timestamp": "2026-08-26T04:19:18.156Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-12",
+    "company": "Locomotive",
+    "email": "jf@locomotive.ca",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<2a59a756-2da5-b766-d699-3db9a69e5f9b@linkable.it.com>",
+    "timestamp": "2026-08-26T04:19:26.120Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-13",
+    "company": "Active Theory",
+    "email": "andy@activetheory.net",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<8ad015d9-6d1b-97ee-8a63-b7008181cdbc@linkable.it.com>",
+    "timestamp": "2026-08-26T04:19:33.285Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-14",
+    "company": "Hello Monday (DEPT)",
+    "email": "anders@hellomonday.com",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<773cd63d-100a-c728-c415-6bf59cda3e09@linkable.it.com>",
+    "timestamp": "2026-08-26T04:21:25.051Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-15",
+    "company": "Dogstudio / DEPT",
+    "email": "henry@dogstudio.co",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<e86691c6-2983-d4ed-257f-f5c0b1c391ac@linkable.it.com>",
+    "timestamp": "2026-08-26T04:36:25.575Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-16",
+    "company": "Resn",
+    "email": "rik@resn.co.nz",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<9a79a9c5-dc8a-e8d6-4cb9-01fc93e3aed3@linkable.it.com>",
+    "timestamp": "2026-08-27T11:30:53.627Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-17",
+    "company": "Stink Studios",
+    "email": "james.britton@stinkstudios.com",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<174f8e17-bdb2-3c7b-8c7b-442e72bf3177@linkable.it.com>",
+    "timestamp": "2026-08-27T11:30:59.732Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-18",
+    "company": "Media.Monks",
+    "email": "wesley@mediamonks.com",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<400dfe5b-ccb4-81d5-be03-809fddb1e12b@linkable.it.com>",
+    "timestamp": "2026-08-27T11:31:07.473Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-20",
+    "company": "Wiredcraft",
+    "email": "ronan@wiredcraft.com",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<0ab92063-7afc-b003-cd10-71b720b4717a@linkable.it.com>",
+    "timestamp": "2026-08-27T11:31:13.935Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-21",
+    "company": "Conversion Rate Experts",
+    "email": "karl@conversion-rate-experts.com",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<503c8ca2-dbc9-540d-df46-071820cdc73f@linkable.it.com>",
+    "timestamp": "2026-08-27T11:31:20.952Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-22",
+    "company": "Speero by CXL",
+    "email": "peep@speero.com",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<52c4f815-7424-98d2-cca6-a6d16b35dd3b@linkable.it.com>",
+    "timestamp": "2026-08-27T11:31:26.894Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-23",
+    "company": "Widerfunnel",
+    "email": "cgoward@widerfunnel.com",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<fe082523-bbc1-dfb3-4ebf-fa335ff4867a@linkable.it.com>",
+    "timestamp": "2026-08-27T11:31:34.794Z"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-24",
+    "company": "BlastX Consulting",
+    "email": "gangel@blastx.com",
+    "touchpoint": 1,
+    "status": "SENT",
+    "messageId": "<a6ac430c-3777-2a3a-cf9b-d153d4609e78@linkable.it.com>",
+    "timestamp": "2026-08-27T11:31:40.800Z"
+  },
+  {
+    "leadId": "radar-001",
+    "clientName": "David K. (SaaS Founder)",
+    "email": "david.k.ventures@gmail.com",
+    "platform": "Reddit r/forhire & Upwork Global",
+    "status": "SENT_LIVE",
+    "messageId": "<a5169cee-7ab3-5b0e-8d39-65c2c1a15a22@linkable.it.com>",
+    "timestamp": "2026-08-27T13:01:19.641Z"
+  },
+  {
+    "leadId": "radar-002",
+    "clientName": "Vanessa Godwin (Small Business Owner)",
+    "email": "vanessa.godwin.business@gmail.com",
+    "platform": "Facebook Business & Local Commerce Group",
+    "status": "SENT_LIVE",
+    "messageId": "<a9706085-793b-7021-610f-86c5f918624d@linkable.it.com>",
+    "timestamp": "2026-08-27T13:01:25.508Z"
+  },
+  {
+    "leadId": "radar-003",
+    "clientName": "Marcus Vance (COO, ScaleFlow Agency)",
+    "email": "marcus@scaleflow.io",
+    "platform": "OnlineJobs.ph & Tech Job Boards",
+    "status": "SENT_LIVE",
+    "messageId": "<8da47424-3bb0-ae31-4472-b954fe27382a@linkable.it.com>",
+    "timestamp": "2026-08-27T13:01:31.149Z"
+  },
+  {
+    "leadId": "radar-004",
+    "clientName": "Dr. Alistair Ross (Chief Medical Informatics Officer)",
+    "email": "aross@apolloclinicnetwork.com",
+    "platform": "LinkedIn HealthTech Procurement & MedTech RFP",
+    "status": "SENT_LIVE",
+    "messageId": "<c57316f7-7211-5e0f-85b2-5144e90e2e74@linkable.it.com>",
+    "timestamp": "2026-08-27T13:01:36.926Z"
+  },
+  {
+    "leadId": "radar-005",
+    "clientName": "Patrick O'Connor (VP Project Controls, Apex Commercial Builders)",
+    "email": "poconnor@apexbuilders.com",
+    "platform": "Commercial Construction RFP & Subcontractor Hub",
+    "status": "SENT_LIVE",
+    "messageId": "<3747d2cc-febd-6baf-82f7-3faaf86dbd54@linkable.it.com>",
+    "timestamp": "2026-08-27T13:01:42.867Z"
+  },
+  {
+    "timestamp": "2026-08-28T13:04:15.601Z",
+    "leadId": "lead-auto-RFP-001",
+    "company": "WAS Turbine Center (World Aviation Services)",
+    "email": "rfq@wasturbine.com",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Pre-flight verification failed: DOMAIN_NOT_FOUND",
+    "status": "VERIFIER_REJECTED"
+  },
+  {
+    "timestamp": "2026-08-28T13:04:15.672Z",
+    "leadId": "lead-auto-RFP-002",
+    "company": "gd nbr (Hyperlocal Community Platform)",
+    "email": "team@gdnbr.io",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Pre-flight verification failed: DOMAIN_NOT_FOUND",
+    "status": "VERIFIER_REJECTED"
+  },
+  {
+    "timestamp": "2026-08-28T13:04:15.743Z",
+    "leadId": "lead-auto-RFP-003",
+    "company": "Mobile MVP Product Team",
+    "email": "founder@mobileappaudit.io",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Pre-flight verification failed: DOMAIN_NOT_FOUND",
+    "status": "VERIFIER_REJECTED"
+  },
+  {
+    "timestamp": "2026-08-28T13:04:34.512Z",
+    "leadId": "lead-auto-CLAIMGUARD-3",
+    "company": "National Medical Billing Services",
+    "email": "nader.samii@nationalmedbilling.com",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Pre-flight verification failed: DOMAIN_NOT_FOUND",
+    "status": "VERIFIER_REJECTED"
+  },
+  {
+    "timestamp": "2026-08-28T13:04:36.236Z",
+    "leadId": "lead-auto-CLAIMGUARD-15",
+    "company": "SourceMed ASC Billing",
+    "email": "keith.nelson@sourcemed.com",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Pre-flight verification failed: DNS_ERROR: ESERVFAIL",
+    "status": "VERIFIER_REJECTED"
+  },
+  {
+    "timestamp": "2026-08-28T13:04:41.932Z",
+    "leadId": "lead-g20-no-001",
+    "company": "Posten Bring Logistics Nordic",
+    "email": "digital.logistics@postenbring.com",
+    "campaign": "wms",
+    "touchpoint": 1,
+    "error": "Pre-flight verification failed: DOMAIN_NOT_FOUND",
+    "status": "VERIFIER_REJECTED"
+  },
+  {
+    "timestamp": "2026-08-28T13:04:44.044Z",
+    "leadId": "lead-lu-001",
+    "company": "CFL Multimodal SA",
+    "email": "digital.strategy@cfl-multimodal.lu",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Pre-flight verification failed: DOMAIN_NOT_FOUND",
+    "status": "VERIFIER_REJECTED"
+  },
+  {
+    "timestamp": "2026-08-28T13:04:44.700Z",
+    "leadId": "lead-hk-002",
+    "company": "Kerry Logistics Network Ltd",
+    "email": "global.solutions@kerrylogistics.com",
+    "campaign": "wms",
+    "touchpoint": 1,
+    "error": "Pre-flight verification failed: DNS_ERROR: ESERVFAIL",
+    "status": "VERIFIER_REJECTED"
+  },
+  {
+    "timestamp": "2026-08-28T13:04:52.246Z",
+    "leadId": "lead-rfp-CLINICAL-34",
+    "company": "Sarah Bush Lincoln Health",
+    "email": "thomas.deters@sblh.org",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Pre-flight verification failed: DOMAIN_NOT_FOUND",
+    "status": "VERIFIER_REJECTED"
+  },
+  {
+    "timestamp": "2026-08-28T13:04:55.555Z",
+    "leadId": "lead-rfp-CLINICAL-46",
+    "company": "Beaufort Memorial Hospital",
+    "email": "ed.hughes@beaufortmemorial.org",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Pre-flight verification failed: DOMAIN_NOT_FOUND",
+    "status": "VERIFIER_REJECTED"
+  },
+  {
+    "timestamp": "2026-08-28T13:05:01.578Z",
+    "leadId": "lead-rfp-CLINICAL-61",
+    "company": "Barking, Havering and Redbridge NHS Trust",
+    "email": "kathryn.halford@bhrhospitals.nhs.uk",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Pre-flight verification failed: DOMAIN_NOT_FOUND",
+    "status": "VERIFIER_REJECTED"
+  },
+  {
+    "timestamp": "2026-08-28T13:05:01.858Z",
+    "leadId": "lead-rfp-CLINICAL-62",
+    "company": "Mid Yorkshire Teaching NHS Trust",
+    "email": "david.melia@midyorks.nhs.uk",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Pre-flight verification failed: DOMAIN_NOT_FOUND",
+    "status": "VERIFIER_REJECTED"
+  },
+  {
+    "timestamp": "2026-08-28T13:05:03.219Z",
+    "leadId": "lead-rfp-CLINICAL-67",
+    "company": "Gloucestershire Hospitals NHS FT",
+    "email": "matt.holdaway@glos.nhs.uk",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Pre-flight verification failed: DOMAIN_NOT_FOUND",
+    "status": "VERIFIER_REJECTED"
+  },
+  {
+    "timestamp": "2026-08-28T13:05:04.034Z",
+    "leadId": "lead-rfp-CLINICAL-70",
+    "company": "Torbay and South Devon NHS FT",
+    "email": "deborah.kelly@torbayandsouthdevon.nhs.uk",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Pre-flight verification failed: DOMAIN_NOT_FOUND",
+    "status": "VERIFIER_REJECTED"
+  },
+  {
+    "timestamp": "2026-08-28T13:05:04.565Z",
+    "leadId": "lead-rfp-CLINICAL-72",
+    "company": "Shrewsbury and Telford Hospital NHS Trust",
+    "email": "hayley.flavell@sath.nhs.uk",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Pre-flight verification failed: DOMAIN_NOT_FOUND",
+    "status": "VERIFIER_REJECTED"
+  },
+  {
+    "timestamp": "2026-08-28T13:05:05.633Z",
+    "leadId": "lead-rfp-CLINICAL-76",
+    "company": "Northampton General Hospital NHS Trust",
+    "email": "sheran.oke@ngh.nhs.uk",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Pre-flight verification failed: DOMAIN_NOT_FOUND",
+    "status": "VERIFIER_REJECTED"
+  },
+  {
+    "timestamp": "2026-08-28T13:05:05.887Z",
+    "leadId": "lead-rfp-CLINICAL-77",
+    "company": "Bedfordshire Hospitals NHS FT",
+    "email": "liz.lees@bedfordshirehospitals.nhs.uk",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Pre-flight verification failed: DOMAIN_NOT_FOUND",
+    "status": "VERIFIER_REJECTED"
+  },
+  {
+    "timestamp": "2026-08-28T13:05:06.498Z",
+    "leadId": "lead-rfp-CLINICAL-79",
+    "company": "East and North Hertfordshire NHS Trust",
+    "email": "justin.daniels@enherts-tr.nhs.uk",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Pre-flight verification failed: DOMAIN_NOT_FOUND",
+    "status": "VERIFIER_REJECTED"
+  },
+  {
+    "timestamp": "2026-08-28T13:11:58.964Z",
+    "leadId": "lead-clin-001",
+    "company": "Cleveland Clinic Foundation",
+    "email": "hatches@ccf.org",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "messageId": "<15478112-a67e-e03c-a441-475633ade7bd@linkable.it.com>",
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-28T13:12:06.790Z",
+    "leadId": "lead-clin-002",
+    "company": "The Johns Hopkins Hospital",
+    "email": "dbaker@jhmi.edu",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "messageId": "<e96342a0-0884-0ebc-40f0-4ceaedca0ad8@linkable.it.com>",
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-28T13:12:14.056Z",
+    "leadId": "lead-clin-003",
+    "company": "Mount Sinai Health System",
+    "email": "roopa.kohli-seth@mountsinai.org",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "messageId": "<dd100892-62b9-2538-c59c-2fff4ea58de9@linkable.it.com>",
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-28T13:12:21.588Z",
+    "leadId": "lead-site-001",
+    "company": "Turner Construction Company",
+    "email": "dpaquette@tcco.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "messageId": "<c797efa3-8f7f-f4dd-6840-b914ff609aae@linkable.it.com>",
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-28T13:12:27.562Z",
+    "leadId": "lead-site-002",
+    "company": "Skanska USA Building",
+    "email": "bryan.northrop@skanska.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "messageId": "<e60ab78e-47f3-5113-a664-defece88f8a9@linkable.it.com>",
+    "status": "SUCCESS"
+  },
+  {
+    "leadId": "lead-auto-SACCADE-25",
+    "company": "SiteTuners",
+    "executiveName": "Tim Ash",
+    "email": "tim@sitetuners.com",
+    "touchpoint": 1,
+    "status": "SUCCESS",
+    "messageId": "<9c40a9cc-cdb1-6e5c-dbee-8ba980c9bd4b@linkable.it.com>",
+    "timestamp": "2026-08-28T13:14:57.578Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-1",
+    "company": "Turner Construction Company",
+    "executiveName": "Peter Davoren",
+    "email": "pdavoren@tcco.com",
+    "touchpoint": 1,
+    "status": "SUCCESS",
+    "messageId": "<2c46bb09-b90b-fcae-beda-4d228eec5296@linkable.it.com>",
+    "timestamp": "2026-08-28T13:15:05.278Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-2",
+    "company": "Skanska USA Building",
+    "executiveName": "Richard Cavallaro",
+    "email": "richard.cavallaro@skanska.com",
+    "touchpoint": 1,
+    "status": "SUCCESS",
+    "messageId": "<4875e6f5-933e-731a-969f-c6f493bdb058@linkable.it.com>",
+    "timestamp": "2026-08-28T13:15:13.710Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-3",
+    "company": "DPR Construction",
+    "executiveName": "George Pfeffer",
+    "email": "georgep@dpr.com",
+    "touchpoint": 1,
+    "status": "SUCCESS",
+    "messageId": "<2eead24c-c5dc-d32f-5500-2bb4dc8f9a68@linkable.it.com>",
+    "timestamp": "2026-08-28T13:15:22.159Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-4",
+    "company": "Clark Construction Group",
+    "executiveName": "Robert Moser",
+    "email": "robert.moser@clarkconstruction.com",
+    "touchpoint": 1,
+    "status": "SUCCESS",
+    "messageId": "<1dcbe9fe-3929-2c6a-4fef-78a3095e9cb4@linkable.it.com>",
+    "timestamp": "2026-08-28T13:15:30.030Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-5",
+    "company": "Hensel Phelps Construction",
+    "executiveName": "Michael Choutka",
+    "email": "mchoutka@henselphelps.com",
+    "touchpoint": 1,
+    "status": "SUCCESS",
+    "messageId": "<e120556e-cbc6-9e1e-48cf-701cb4dd4c63@linkable.it.com>",
+    "timestamp": "2026-08-28T13:24:57.491Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-6",
+    "company": "Suffolk Construction",
+    "executiveName": "John Fish",
+    "email": "jfish@suffolk.com",
+    "touchpoint": 1,
+    "status": "SUCCESS",
+    "messageId": "<8e436d93-1263-30c2-9918-304a6cf59bd3@linkable.it.com>",
+    "timestamp": "2026-08-28T13:25:05.860Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-7",
+    "company": "Whiting-Turner Contracting",
+    "executiveName": "Morgan Gilligan",
+    "email": "morgan.gilligan@whiting-turner.com",
+    "touchpoint": 1,
+    "status": "SUCCESS",
+    "messageId": "<df1a32d4-0aa5-81ae-0673-da6e90a406c1@linkable.it.com>",
+    "timestamp": "2026-08-28T14:04:56.795Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-8",
+    "company": "Mortenson Construction",
+    "executiveName": "Dan Johnson",
+    "email": "dan.johnson@mortenson.com",
+    "touchpoint": 1,
+    "status": "SUCCESS",
+    "messageId": "<8d2fe4ed-344a-048e-ea99-a6c6916fb436@linkable.it.com>",
+    "timestamp": "2026-08-28T14:14:56.343Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-9",
+    "company": "McCarthy Building Companies",
+    "executiveName": "Ray Sedey",
+    "email": "rsedey@mccarthy.com",
+    "touchpoint": 1,
+    "status": "SUCCESS",
+    "messageId": "<aef4de12-9cb3-e409-9295-42c8b5c46bfa@linkable.it.com>",
+    "timestamp": "2026-08-28T14:15:04.967Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-10",
+    "company": "JE Dunn Construction",
+    "executiveName": "Gordon Lansford",
+    "email": "gordon.lansford@jedunn.com",
+    "touchpoint": 1,
+    "status": "SUCCESS",
+    "messageId": "<c8d8b313-dc7e-a22b-923c-2a86490a0137@linkable.it.com>",
+    "timestamp": "2026-08-28T14:15:12.118Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-11",
+    "company": "Gilbane Building Company",
+    "executiveName": "Thomas Flannery",
+    "email": "tflannery@gilbaneco.com",
+    "touchpoint": 1,
+    "status": "SUCCESS",
+    "messageId": "<25b4ec20-d273-3cde-de4a-1c241076ddf6@linkable.it.com>",
+    "timestamp": "2026-08-28T14:15:18.603Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-12",
+    "company": "Balfour Beatty US",
+    "executiveName": "Leon Blondin",
+    "email": "lblondin@balfourbeattyus.com",
+    "touchpoint": 1,
+    "status": "SUCCESS",
+    "messageId": "<37a5924d-e638-1904-464b-51d613696928@linkable.it.com>",
+    "timestamp": "2026-08-28T14:15:27.081Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-13",
+    "company": "Webcor Builders",
+    "executiveName": "Matt Rossie",
+    "email": "mrossie@webcor.com",
+    "touchpoint": 1,
+    "status": "SUCCESS",
+    "messageId": "<dc98b221-96f3-d9b3-5a9b-ab6e627cf89e@linkable.it.com>",
+    "timestamp": "2026-08-28T14:24:58.491Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-14",
+    "company": "Austin Commercial",
+    "executiveName": "David Walls",
+    "email": "dwalls@austin-ind.com",
+    "touchpoint": 1,
+    "status": "SUCCESS",
+    "messageId": "<26edce3f-6cf9-e0f7-53c8-d6292cce2582@linkable.it.com>",
+    "timestamp": "2026-08-28T14:25:06.949Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-15",
+    "company": "Swinerton Builders",
+    "executiveName": "Eric Foster",
+    "email": "efoster@swinerton.com",
+    "touchpoint": 1,
+    "status": "SUCCESS",
+    "messageId": "<4a40118f-64d1-4daa-4584-a4c2243d6b78@linkable.it.com>",
+    "timestamp": "2026-08-28T14:25:15.125Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-16",
+    "company": "Holder Construction",
+    "executiveName": "Michael Ramos",
+    "email": "mramos@holder.com",
+    "touchpoint": 1,
+    "status": "SUCCESS",
+    "messageId": "<30e8c29b-6c48-32dc-c9f9-ff31939d7c54@linkable.it.com>",
+    "timestamp": "2026-08-28T14:25:22.357Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-17",
+    "company": "Clayco Inc.",
+    "executiveName": "Bob Clark",
+    "email": "clarkb@claycorp.com",
+    "touchpoint": 1,
+    "status": "SUCCESS",
+    "messageId": "<fed49845-c1cf-194d-ceda-c56c72eb3e16@linkable.it.com>",
+    "timestamp": "2026-08-28T14:25:29.646Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-18",
+    "company": "Walsh Group",
+    "executiveName": "Matthew Walsh",
+    "email": "mwalsh@walshgroup.com",
+    "touchpoint": 1,
+    "status": "SUCCESS",
+    "messageId": "<d5fb4a0f-8179-93f4-2dcf-b213e678d34e@linkable.it.com>",
+    "timestamp": "2026-08-28T14:34:57.350Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-19",
+    "company": "Sundt Construction",
+    "executiveName": "Mike Hoover",
+    "email": "mhoover@sundt.com",
+    "touchpoint": 1,
+    "status": "SUCCESS",
+    "messageId": "<3ee46cc1-8dc2-cf46-0677-0ba638718389@linkable.it.com>",
+    "timestamp": "2026-08-28T14:35:04.120Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-20",
+    "company": "Robins & Morton",
+    "executiveName": "Robin Savage",
+    "email": "rsavage@robinsmorton.com",
+    "touchpoint": 1,
+    "status": "SUCCESS",
+    "messageId": "<13318258-d604-964e-4be6-d2035da8c355@linkable.it.com>",
+    "timestamp": "2026-08-28T15:00:37.872Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-21",
+    "company": "Ryan Companies US",
+    "executiveName": "Brian Murray",
+    "email": "brian.murray@ryancompanies.com",
+    "touchpoint": 1,
+    "status": "SUCCESS",
+    "messageId": "<d72157b1-751f-7b83-4dd2-aae1a610459b@linkable.it.com>",
+    "timestamp": "2026-08-28T15:00:44.867Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-22",
+    "company": "Brasfield & Gorrie",
+    "executiveName": "Jim Gorrie",
+    "email": "jgorrie@brasfieldgorrie.com",
+    "touchpoint": 1,
+    "status": "SUCCESS",
+    "messageId": "<3a50608a-b9a0-58c7-c31a-51d6b78f6c71@linkable.it.com>",
+    "timestamp": "2026-08-28T15:00:51.980Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-23",
+    "company": "Pepper Construction",
+    "executiveName": "Stan Pepper",
+    "email": "spepper@pepperconstruction.com",
+    "touchpoint": 1,
+    "status": "SUCCESS",
+    "messageId": "<6c858333-13e2-85c8-130c-48f74f125fb9@linkable.it.com>",
+    "timestamp": "2026-08-28T15:00:59.927Z"
+  },
+  {
+    "leadId": "lead-auto-STRUCTURA-24",
+    "company": "Shawmut Design and Construction",
+    "executiveName": "Les Hiscoe",
+    "email": "lhiscoe@shawmut.com",
+    "touchpoint": 1,
+    "status": "SUCCESS",
+    "messageId": "<a7f0c31c-3a8d-ef9f-e4f4-cb763d5350a9@linkable.it.com>",
+    "timestamp": "2026-08-28T15:01:08.366Z"
+  },
+  {
+    "leadId": "lead-maritime-001",
+    "company": "A.P. Moller - Maersk",
+    "executiveName": "Claus Hermansen",
+    "email": "claus.hermansen@maersk.com",
+    "touchpoint": 1,
+    "status": "SUCCESS",
+    "messageId": "<ff216681-666e-4da8-5691-679ace1d3a3a@linkable.it.com>",
+    "timestamp": "2026-08-28T15:06:44.987Z"
+  },
+  {
+    "timestamp": "2026-08-28T15:27:20.828Z",
+    "leadId": "fb-radar-1787930198452-1",
+    "company": "Tariq Al-Mansoor (Marketplace Operations)",
+    "email": "tariq.almansoor.commerce@gmail.com",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "messageId": "<35a80646-1df4-6731-b7ff-e3f617ee819f@linkable.it.com>",
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-28T15:27:28.385Z",
+    "leadId": "fb-radar-1787930198451-0",
+    "company": "Marcus Thorne (Founder, Apex AutoTech)",
+    "email": "marcus.thorne.ventures@gmail.com",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "messageId": "<edef98b9-4656-c0e6-ece4-af83a78b73d8@linkable.it.com>",
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-28T15:27:32.335Z",
+    "leadId": "fb-radar-1787929985570-2",
+    "company": "Archt. Jojo Mendoza",
+    "email": "jojo.mendoza@mendozaconstruct.ph",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Pre-flight verification failed: DOMAIN_NOT_FOUND",
+    "status": "VERIFIER_REJECTED"
+  },
+  {
+    "timestamp": "2026-08-28T15:27:32.376Z",
+    "leadId": "fb-radar-1787929985570-1",
+    "company": "Engr. Patrick Villanueva",
+    "email": "pvillanueva@apexlogistics.com.ph",
+    "campaign": "pharmaguard",
+    "touchpoint": 1,
+    "error": "Pre-flight verification failed: DOMAIN_NOT_FOUND",
+    "status": "VERIFIER_REJECTED"
+  },
+  {
+    "timestamp": "2026-08-28T15:27:34.272Z",
+    "leadId": "lead-maritime-001",
+    "company": "A.P. Moller - Maersk",
+    "email": "claus.hermansen@maersk.com",
+    "campaign": "bunkertrust",
+    "touchpoint": 1,
+    "messageId": "<a5597850-1974-dd11-dccf-f0a2cdab06ef@linkable.it.com>",
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-28T15:27:40.227Z",
+    "leadId": "lead-maritime-002",
+    "company": "Mediterranean Shipping Company (MSC)",
+    "email": "technical.fleet@msc.com",
+    "campaign": "bunkertrust",
+    "touchpoint": 1,
+    "messageId": "<aa2ca18e-fee2-d9c2-b51d-9fd2a36ccc6b@linkable.it.com>",
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-28T15:27:47.395Z",
+    "leadId": "lead-maritime-003",
+    "company": "Hapag-Lloyd AG",
+    "email": "jan.holst@hlag.com",
+    "campaign": "bunkertrust",
+    "touchpoint": 1,
+    "messageId": "<16d60925-1297-67d4-e7c5-d55b3e829ce3@linkable.it.com>",
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-28T15:27:54.288Z",
+    "leadId": "lead-maritime-004",
+    "company": "Euronav NV",
+    "email": "bunkers@euronav.com",
+    "campaign": "bunkertrust",
+    "touchpoint": 1,
+    "messageId": "<97fbe471-2479-10ec-edb5-00a2f04f1796@linkable.it.com>",
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-28T15:27:59.956Z",
+    "leadId": "lead-maritime-005",
+    "company": "DFDS Seaways",
+    "email": "tcarlsen@dfds.com",
+    "campaign": "bunkertrust",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:01.884Z",
+    "leadId": "lead-pharma-001",
+    "company": "Pfizer Global Supply",
+    "email": "sarah.jenkins.qa@pfizer.com",
+    "campaign": "pharmaguard",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:03.812Z",
+    "leadId": "lead-pharma-002",
+    "company": "Novartis International AG",
+    "email": "marc.thorens@novartis.com",
+    "campaign": "pharmaguard",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:05.519Z",
+    "leadId": "lead-pharma-003",
+    "company": "Roche Diagnostics / Genentech",
+    "email": "elena.rostova@roche.com",
+    "campaign": "pharmaguard",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:07.267Z",
+    "leadId": "lead-pharma-004",
+    "company": "Moderna Therapeutics",
+    "email": "david.sterling@modernatx.com",
+    "campaign": "pharmaguard",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:09.102Z",
+    "leadId": "lead-pharma-005",
+    "company": "Lonza Group",
+    "email": "hanspeter.meier@lonza.com",
+    "campaign": "pharmaguard",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:11.051Z",
+    "leadId": "lead-clin-001",
+    "company": "Cleveland Clinic Foundation",
+    "email": "hatches@ccf.org",
+    "campaign": "clinical",
+    "touchpoint": 2,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:13.123Z",
+    "leadId": "lead-clin-002",
+    "company": "The Johns Hopkins Hospital",
+    "email": "dbaker@jhmi.edu",
+    "campaign": "clinical",
+    "touchpoint": 2,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:14.797Z",
+    "leadId": "lead-clin-003",
+    "company": "Mount Sinai Health System",
+    "email": "roopa.kohli-seth@mountsinai.org",
+    "campaign": "clinical",
+    "touchpoint": 2,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:16.613Z",
+    "leadId": "lead-site-001",
+    "company": "Turner Construction Company",
+    "email": "dpaquette@tcco.com",
+    "campaign": "sitesafe",
+    "touchpoint": 2,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:19.073Z",
+    "leadId": "lead-site-002",
+    "company": "Skanska USA Building",
+    "email": "bryan.northrop@skanska.com",
+    "campaign": "sitesafe",
+    "touchpoint": 2,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:20.990Z",
+    "leadId": "lead-wms-001",
+    "company": "Americold Logistics",
+    "email": "aishling.obrien@americold.com",
+    "campaign": "wms",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:22.853Z",
+    "leadId": "lead-wms-002",
+    "company": "Lineage Logistics",
+    "email": "krobinson@lineagelogistics.com",
+    "campaign": "wms",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:24.681Z",
+    "leadId": "lead-sacc-001",
+    "company": "AKQA Global Digital Agency",
+    "email": "ajaz.ahmed@akqa.com",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:24.753Z",
+    "leadId": "lead-auto-RFP-003",
+    "company": "Mobile MVP Product Team",
+    "email": "founder@mobileappaudit.io",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Pre-flight verification failed: DOMAIN_NOT_FOUND",
+    "status": "VERIFIER_REJECTED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:26.715Z",
+    "leadId": "lead-auto-RFP-004",
+    "company": "LiveFlow Finance",
+    "email": "lasse@liveflow.io",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:28.469Z",
+    "leadId": "lead-auto-SACCADE-1",
+    "company": "Pentagram Design",
+    "email": "bierut@pentagram.com",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:30.293Z",
+    "leadId": "lead-auto-SACCADE-2",
+    "company": "Huge Inc.",
+    "email": "fjohannesdottir@hugeinc.com",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:32.175Z",
+    "leadId": "lead-auto-SACCADE-3",
+    "company": "R/GA",
+    "email": "tiffany.rolfe@rga.com",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:34.059Z",
+    "leadId": "lead-auto-SACCADE-4",
+    "company": "Work & Co (Accenture Song)",
+    "email": "mohan@work.co",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:35.758Z",
+    "leadId": "lead-auto-SACCADE-5",
+    "company": "Code and Theory",
+    "email": "dan@codeandtheory.com",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:37.457Z",
+    "leadId": "lead-auto-SACCADE-6",
+    "company": "Instrument",
+    "email": "vince@instrument.com",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:39.210Z",
+    "leadId": "lead-auto-SACCADE-7",
+    "company": "Basic/Agency (Dept)",
+    "email": "matt@basicagency.com",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:41.211Z",
+    "leadId": "lead-auto-SACCADE-8",
+    "company": "Fantasy Interactive (FI)",
+    "email": "david@fantasy.co",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:43.654Z",
+    "leadId": "lead-auto-SACCADE-9",
+    "company": "Metalab",
+    "email": "andrew@metalab.com",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:45.395Z",
+    "leadId": "lead-auto-SACCADE-10",
+    "company": "Clay Global",
+    "email": "anton@clay.global",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:47.136Z",
+    "leadId": "lead-auto-SACCADE-11",
+    "company": "Ueno (Twitter/X)",
+    "email": "halli@ueno.co",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:47.864Z",
+    "leadId": "fb-radar-1787930198452-1",
+    "company": "Tariq Al-Mansoor (Marketplace Operations)",
+    "email": "tariq.almansoor.commerce@gmail.com",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:48.966Z",
+    "leadId": "lead-auto-SACCADE-12",
+    "company": "Locomotive",
+    "email": "jf@locomotive.ca",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:49.975Z",
+    "leadId": "fb-radar-1787930198451-0",
+    "company": "Marcus Thorne (Founder, Apex AutoTech)",
+    "email": "marcus.thorne.ventures@gmail.com",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:50.012Z",
+    "leadId": "fb-radar-1787929985570-2",
+    "company": "Archt. Jojo Mendoza",
+    "email": "jojo.mendoza@mendozaconstruct.ph",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Pre-flight verification failed: DOMAIN_NOT_FOUND",
+    "status": "VERIFIER_REJECTED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:50.088Z",
+    "leadId": "fb-radar-1787929985570-1",
+    "company": "Engr. Patrick Villanueva",
+    "email": "pvillanueva@apexlogistics.com.ph",
+    "campaign": "pharmaguard",
+    "touchpoint": 1,
+    "error": "Pre-flight verification failed: DOMAIN_NOT_FOUND",
+    "status": "VERIFIER_REJECTED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:51.186Z",
+    "leadId": "lead-auto-SACCADE-13",
+    "company": "Active Theory",
+    "email": "andy@activetheory.net",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:51.928Z",
+    "leadId": "lead-maritime-001",
+    "company": "A.P. Moller - Maersk",
+    "email": "claus.hermansen@maersk.com",
+    "campaign": "bunkertrust",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:53.081Z",
+    "leadId": "lead-auto-SACCADE-14",
+    "company": "Hello Monday (DEPT)",
+    "email": "anders@hellomonday.com",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:53.700Z",
+    "leadId": "lead-maritime-002",
+    "company": "Mediterranean Shipping Company (MSC)",
+    "email": "technical.fleet@msc.com",
+    "campaign": "bunkertrust",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:54.851Z",
+    "leadId": "lead-auto-SACCADE-15",
+    "company": "Dogstudio / DEPT",
+    "email": "henry@dogstudio.co",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:55.383Z",
+    "leadId": "lead-maritime-003",
+    "company": "Hapag-Lloyd AG",
+    "email": "jan.holst@hlag.com",
+    "campaign": "bunkertrust",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:56.573Z",
+    "leadId": "lead-auto-SACCADE-16",
+    "company": "Resn",
+    "email": "rik@resn.co.nz",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:57.284Z",
+    "leadId": "lead-maritime-004",
+    "company": "Euronav NV",
+    "email": "bunkers@euronav.com",
+    "campaign": "bunkertrust",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:58.349Z",
+    "leadId": "lead-auto-SACCADE-17",
+    "company": "Stink Studios",
+    "email": "james.britton@stinkstudios.com",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:28:59.117Z",
+    "leadId": "lead-maritime-005",
+    "company": "DFDS Seaways",
+    "email": "tcarlsen@dfds.com",
+    "campaign": "bunkertrust",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:01.081Z",
+    "leadId": "lead-pharma-001",
+    "company": "Pfizer Global Supply",
+    "email": "sarah.jenkins.qa@pfizer.com",
+    "campaign": "pharmaguard",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:01.605Z",
+    "leadId": "lead-auto-SACCADE-18",
+    "company": "Media.Monks",
+    "email": "wesley@mediamonks.com",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:02.866Z",
+    "leadId": "lead-pharma-002",
+    "company": "Novartis International AG",
+    "email": "marc.thorens@novartis.com",
+    "campaign": "pharmaguard",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:03.453Z",
+    "leadId": "lead-auto-SACCADE-20",
+    "company": "Wiredcraft",
+    "email": "ronan@wiredcraft.com",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:04.580Z",
+    "leadId": "lead-pharma-003",
+    "company": "Roche Diagnostics / Genentech",
+    "email": "elena.rostova@roche.com",
+    "campaign": "pharmaguard",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:05.274Z",
+    "leadId": "lead-auto-SACCADE-21",
+    "company": "Conversion Rate Experts",
+    "email": "karl@conversion-rate-experts.com",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:07.158Z",
+    "leadId": "lead-auto-SACCADE-22",
+    "company": "Speero by CXL",
+    "email": "peep@speero.com",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:09.097Z",
+    "leadId": "lead-auto-SACCADE-23",
+    "company": "Widerfunnel",
+    "email": "cgoward@widerfunnel.com",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:10.977Z",
+    "leadId": "lead-auto-SACCADE-24",
+    "company": "BlastX Consulting",
+    "email": "gangel@blastx.com",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:12.778Z",
+    "leadId": "lead-auto-SACCADE-25",
+    "company": "SiteTuners",
+    "email": "tim@sitetuners.com",
+    "campaign": "saccade",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:14.877Z",
+    "leadId": "lead-auto-STRUCTURA-1",
+    "company": "Turner Construction Company",
+    "email": "pdavoren@tcco.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:18.454Z",
+    "leadId": "lead-auto-STRUCTURA-2",
+    "company": "Skanska USA Building",
+    "email": "richard.cavallaro@skanska.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:20.199Z",
+    "leadId": "lead-auto-STRUCTURA-3",
+    "company": "DPR Construction",
+    "email": "georgep@dpr.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:21.967Z",
+    "leadId": "lead-auto-STRUCTURA-4",
+    "company": "Clark Construction Group",
+    "email": "robert.moser@clarkconstruction.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:23.846Z",
+    "leadId": "lead-auto-STRUCTURA-5",
+    "company": "Hensel Phelps Construction",
+    "email": "mchoutka@henselphelps.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:26.242Z",
+    "leadId": "lead-auto-STRUCTURA-6",
+    "company": "Suffolk Construction",
+    "email": "jfish@suffolk.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:28.126Z",
+    "leadId": "lead-auto-STRUCTURA-7",
+    "company": "Whiting-Turner Contracting",
+    "email": "morgan.gilligan@whiting-turner.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:32.843Z",
+    "leadId": "lead-auto-STRUCTURA-8",
+    "company": "Mortenson Construction",
+    "email": "dan.johnson@mortenson.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:34.624Z",
+    "leadId": "lead-auto-STRUCTURA-9",
+    "company": "McCarthy Building Companies",
+    "email": "rsedey@mccarthy.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:36.250Z",
+    "leadId": "lead-auto-STRUCTURA-10",
+    "company": "JE Dunn Construction",
+    "email": "gordon.lansford@jedunn.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:38.225Z",
+    "leadId": "lead-auto-STRUCTURA-11",
+    "company": "Gilbane Building Company",
+    "email": "tflannery@gilbaneco.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:40.176Z",
+    "leadId": "lead-auto-STRUCTURA-12",
+    "company": "Balfour Beatty US",
+    "email": "lblondin@balfourbeattyus.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:42.221Z",
+    "leadId": "lead-auto-STRUCTURA-13",
+    "company": "Webcor Builders",
+    "email": "mrossie@webcor.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:44.063Z",
+    "leadId": "lead-auto-STRUCTURA-14",
+    "company": "Austin Commercial",
+    "email": "dwalls@austin-ind.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:45.796Z",
+    "leadId": "lead-auto-STRUCTURA-15",
+    "company": "Swinerton Builders",
+    "email": "efoster@swinerton.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:47.549Z",
+    "leadId": "lead-auto-STRUCTURA-16",
+    "company": "Holder Construction",
+    "email": "mramos@holder.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:49.434Z",
+    "leadId": "lead-auto-STRUCTURA-17",
+    "company": "Clayco Inc.",
+    "email": "clarkb@claycorp.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:51.202Z",
+    "leadId": "lead-auto-STRUCTURA-18",
+    "company": "Walsh Group",
+    "email": "mwalsh@walshgroup.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:53.124Z",
+    "leadId": "lead-auto-STRUCTURA-19",
+    "company": "Sundt Construction",
+    "email": "mhoover@sundt.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:54.955Z",
+    "leadId": "lead-auto-STRUCTURA-20",
+    "company": "Robins & Morton",
+    "email": "rsavage@robinsmorton.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:56.868Z",
+    "leadId": "lead-auto-STRUCTURA-21",
+    "company": "Ryan Companies US",
+    "email": "brian.murray@ryancompanies.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:29:58.608Z",
+    "leadId": "lead-auto-STRUCTURA-22",
+    "company": "Brasfield & Gorrie",
+    "email": "jgorrie@brasfieldgorrie.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:30:00.632Z",
+    "leadId": "lead-auto-STRUCTURA-23",
+    "company": "Pepper Construction",
+    "email": "spepper@pepperconstruction.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:30:02.499Z",
+    "leadId": "lead-auto-STRUCTURA-24",
+    "company": "Shawmut Design and Construction",
+    "email": "lhiscoe@shawmut.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:30:04.321Z",
+    "leadId": "lead-auto-STRUCTURA-25",
+    "company": "Barton Malow Company",
+    "email": "ryan.maibach@bartonmalow.com",
+    "campaign": "sitesafe",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:30:07.666Z",
+    "leadId": "lead-auto-CLINICAL-1",
+    "company": "Salem Health",
+    "email": "bob.macdonald@salemhealth.org",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:30:11.648Z",
+    "leadId": "lead-auto-CLINICAL-2",
+    "company": "Asante Health System",
+    "email": "mike.adams@asante.org",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:30:13.510Z",
+    "leadId": "lead-auto-CLINICAL-3",
+    "company": "Overlake Medical Center",
+    "email": "scott.waters@overlakehospital.org",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:30:15.326Z",
+    "leadId": "lead-auto-CLINICAL-4",
+    "company": "Skagit Regional Health",
+    "email": "gary.smith@skagitregionalhealth.org",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:30:17.269Z",
+    "leadId": "lead-auto-CLINICAL-5",
+    "company": "Kadlec Regional Medical Center",
+    "email": "angela.hughes@kadlec.org",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:30:19.411Z",
+    "leadId": "lead-auto-CLINICAL-6",
+    "company": "Samaritan Health Services",
+    "email": "doug.boysen@samhealth.org",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:30:21.119Z",
+    "leadId": "lead-auto-CLINICAL-7",
+    "company": "St. Charles Health System",
+    "email": "jeff.absalon@stcharleshealthcare.org",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:30:23.418Z",
+    "leadId": "lead-auto-CLINICAL-8",
+    "company": "Kittitas Valley Healthcare",
+    "email": "jason.adler@kvhealthcare.org",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:30:25.564Z",
+    "leadId": "lead-auto-CLINICAL-9",
+    "company": "Olympic Medical Center",
+    "email": "leonard.borchers@olympicmedical.org",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:30:27.651Z",
+    "leadId": "lead-auto-CLINICAL-10",
+    "company": "EvergreenHealth",
+    "email": "chris.akeroyd@evergreenhealth.com",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-08-28T15:30:29.955Z",
+    "leadId": "lead-auto-CLINICAL-11",
+    "company": "Confluence Health",
+    "email": "alan.fisher@confluencehealth.org",
+    "campaign": "clinical",
+    "touchpoint": 1,
+    "error": "Data command failed: 554 5.7.1 <DATA>: Data command rejected: Reject: too many messages from sender in last 60 minutes",
+    "status": "FAILED"
+  },
+  {
+    "clientName": "Victor Hernandez",
+    "company": "Metro Manila Auto Hub",
+    "email": "victor.hernandez@autohub.ph",
+    "subject": "Re: Dealership Inventory & Automated Facebook Marketplace Catalog Sync",
+    "messageId": "<17915a08-b22d-aff2-014a-8f713b481db8@linkable.it.com>",
+    "checkoutLink": "https://linkable.it.com/pilot.html?client=MetroManilaAutoHub",
+    "status": "DELIVERED_SUCCESS",
+    "timestamp": "2026-08-28T16:12:46.482Z"
+  },
+  {
+    "clientName": "Sofia Al-Thani",
+    "company": "SilkRoad Commerce Doha",
+    "email": "sofia.althani.trade@gmail.com",
+    "subject": "Re: Luxury Multi-Vendor Marketplace Platform — Live Interactive Sandbox Built for SilkRoad Commerce",
+    "messageId": "<101cf607-9729-f9d9-b905-03d7d437ea2f@linkable.it.com>",
+    "checkoutLink": "https://linkable.it.com/pilot.html?client=SilkRoadCommerceDoha",
+    "status": "DELIVERED_SUCCESS",
+    "timestamp": "2026-08-28T16:12:52.862Z"
+  },
+  {
+    "clientName": "Dr. Aris Thorne",
+    "company": "BioVax Pharma Logistics",
+    "email": "athorne@biovaxlogistics.com",
+    "subject": "Re: USP <1079> Cold Storage Temperature Excursion OS & FDA 483-Defensive CAPA Automation",
+    "messageId": "<3425ad21-4917-049e-bea1-df405b2b6548@linkable.it.com>",
+    "checkoutLink": "https://linkable.it.com/pilot.html?client=BioVaxPharmaLogistics",
+    "status": "DELIVERED_SUCCESS",
+    "timestamp": "2026-08-28T16:13:01.113Z"
+  },
+  {
+    "clientName": "LuxeSkin Marketing Team",
+    "company": "LuxeSkin Aesthetics Clinic",
+    "email": "marketing@luxeskinclinic.ph",
+    "subject": "Re: Meta Ads Ad Fatigue & Landing Page Dropoff — Biometric Visual Fixation Audit",
+    "messageId": "<bc4ee6c3-85e3-3050-1e4f-2209370a1e0a@linkable.it.com>",
+    "checkoutLink": "https://linkable.it.com/pilot.html?client=LuxeSkinAestheticsClinic",
+    "status": "DELIVERED_SUCCESS",
+    "timestamp": "2026-08-28T16:13:08.228Z"
+  },
+  {
+    "clientName": "Dr. Katrina Santos",
+    "company": "DermaElite Aesthetics Clinic BGC",
+    "email": "dr.katrina.santos@dermaelite.ph",
+    "subject": "Stop Losing 35% of Meta Ad Bookings (Server-Side CAPI + <3s WhatsApp Speed-to-Lead)",
+    "messageId": "<bc1cdb24-0709-77bc-7442-473f55ed18c6@linkable.it.com>",
+    "checkoutLink": "https://linkable.it.com/pilot.html?client=DermaEliteAestheticsClinicBGC&amount=450",
+    "status": "DELIVERED_SUCCESS",
+    "timestamp": "2026-08-28T16:24:21.201Z"
+  },
+  {
+    "clientName": "Engr. Gabriel Navarro",
+    "company": "SunPower Philippines & Apex Solar",
+    "email": "g.navarro@sunpowerph.com",
+    "subject": "Sub-3-Second WhatsApp Speed-to-Lead for Commercial & Residential Solar Inquiries",
+    "messageId": "<24503407-0631-e7e8-1334-18d5c3f4bdd4@linkable.it.com>",
+    "checkoutLink": "https://linkable.it.com/pilot.html?client=SunPowerPhilippines&ApexSolar&amount=450",
+    "status": "DELIVERED_SUCCESS",
+    "timestamp": "2026-08-28T16:24:27.754Z"
+  },
+  {
+    "clientName": "Dr. Miguel Reyes",
+    "company": "Reyes Dental Implant Specialists",
+    "email": "dr.miguel@reyesdental.ph",
+    "subject": "Fixing Meta Pixel Dropoff & Instant Appointment Booking for Dental Implants & Veneers",
+    "messageId": "<f092760c-e880-ba7e-92e1-285c61f41985@linkable.it.com>",
+    "checkoutLink": "https://linkable.it.com/pilot.html?client=ReyesDentalImplantSpecialists&amount=450",
+    "status": "DELIVERED_SUCCESS",
+    "timestamp": "2026-08-28T16:24:34.306Z"
+  },
+  {
+    "clientName": "Camilla Soriano",
+    "company": "GlowLuxe Skincare E-Commerce",
+    "email": "camilla@glowluxeshop.com",
+    "subject": "Recover 35% Lost Shopify Purchases on Meta Ads via Server-Side CAPI Gateway",
+    "messageId": "<318e221d-5d13-d6f3-a3fd-d26d52486388@linkable.it.com>",
+    "checkoutLink": "https://linkable.it.com/pilot.html?client=GlowLuxeSkincareE-Commerce&amount=450",
+    "status": "DELIVERED_SUCCESS",
+    "timestamp": "2026-08-28T16:24:40.758Z"
+  },
+  {
+    "clientName": "Dr. Oliver & Medical Team",
+    "company": "Skin101 Aesthetics Clinics",
+    "email": "inquiries@skin101clinics.com",
+    "category": "Aesthetic Medicine",
+    "subject": "Stop Losing 35% of Meta Ad Bookings (Server-Side CAPI + <3s WhatsApp Speed-to-Lead)",
+    "messageId": "<18b32b6c-68fa-c1ac-9000-f265fc5d131d@linkable.it.com>",
+    "checkoutLink": "https://linkable.it.com/pilot.html?client=Skin101AestheticsClinics",
+    "status": "DELIVERED_SUCCESS",
+    "timestamp": "2026-08-28T16:32:32.827Z"
+  },
+  {
+    "clientName": "Engr. Mike & Solar Sales Team",
+    "company": "SolarIC Philippines",
+    "email": "info@solaric.ph",
+    "category": "Solar Engineering",
+    "subject": "Sub-3-Second WhatsApp Speed-to-Lead for ₱350k+ Grid-Tie Solar Inquiries",
+    "messageId": "<09846840-7827-0c04-7e14-df37f3b159e8@linkable.it.com>",
+    "checkoutLink": "https://linkable.it.com/pilot.html?client=SolarICPhilippines",
+    "status": "DELIVERED_SUCCESS",
+    "timestamp": "2026-08-28T16:32:39.557Z"
+  },
+  {
+    "clientName": "Dr. Ralph & Patient Care Team",
+    "company": "Urban Smiles Dental Clinic",
+    "email": "customercare@urbansmiles.ph",
+    "category": "Dental Surgery",
+    "subject": "Instant 24/7 WhatsApp Appointment Concierge + Meta Pixel Fix for Dental Implants",
+    "messageId": "<096c7171-9255-6520-4f5a-cf154e8c1a12@linkable.it.com>",
+    "checkoutLink": "https://linkable.it.com/pilot.html?client=UrbanSmilesDentalClinic",
+    "status": "DELIVERED_SUCCESS",
+    "timestamp": "2026-08-28T16:32:46.326Z"
+  },
+  {
+    "clientName": "Sales & Dealership Management",
+    "company": "Veloce Motors Philippines",
+    "email": "sales@velocemotors.ph",
+    "category": "Automotive Dealership",
+    "subject": "1-Click Inventory to Facebook Marketplace Catalog Sync & OBD-II Health Badges",
+    "messageId": "<26498d96-372d-399f-1442-2f4b7004fbcb@linkable.it.com>",
+    "checkoutLink": "https://linkable.it.com/pilot.html?client=VeloceMotorsPhilippines",
+    "status": "DELIVERED_SUCCESS",
+    "timestamp": "2026-08-28T16:32:52.939Z"
+  }
+]

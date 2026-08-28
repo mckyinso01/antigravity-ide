@@ -1,0 +1,33 @@
+{
+  "name": "linkable-ai-saas-kit",
+  "version": "1.0.0",
+  "description": "Production-Ready Multi-Agent AI SaaS Boilerplate with Stripe, PayPal, PostgreSQL & Gemini SDK",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "saas-boilerplate",
+    "ai-agents",
+    "gemini-api",
+    "stripe",
+    "paypal",
+    "nextjs",
+    "tailwind"
+  ],
+  "author": "Linkable Systems",
+  "license": "Commercial",
+  "dependencies": {
+    "@google/genai": "^0.1.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "pg": "^8.13.1",
+    "stripe": "^17.7.0"
+  }
+}

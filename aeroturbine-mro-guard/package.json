@@ -1,0 +1,15 @@
+{
+  "name": "aeroturbine-mro-guard",
+  "version": "1.0.0",
+  "description": "Commercial Aviation Turbine LLP Cycles & FAA Part 145 Airworthiness Engine OS",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test_turbine.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}

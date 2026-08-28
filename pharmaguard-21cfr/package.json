@@ -1,0 +1,22 @@
+{
+  "name": "pharmaguard-21cfr",
+  "version": "1.0.0",
+  "description": "Bio-Pharma Cold-Chain Excursion & FDA 21 CFR Part 11 Automated CAPA Engine",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node test_math.js"
+  },
+  "keywords": [
+    "cold-chain",
+    "mkt-calculation",
+    "fda-21cfr-part11",
+    "biopharma",
+    "capa-engine",
+    "thermal-telemetry"
+  ],
+  "author": "Linkable AI Systems",
+  "license": "Commercial"
+}

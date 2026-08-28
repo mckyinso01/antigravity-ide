@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BazaarTrust | Multi-Vendor Marketplace OS & Automated Escrow Engine</title>
+  <meta name="description" content="High-performance multi-vendor marketplace platform with automated commission splits, buyer escrow holding, and SHA-256 cryptographic release seals for Tariq Al-Mansoor.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="brand-section">
+      <div class="brand-logo" aria-hidden="true">BT</div>
+      <div>
+        <h1 class="brand-title" style="display:inline; font-size:15px;">BazaarTrust OS</h1>
+        <span class="brand-sub">MULTI-VENDOR ESCROW • COMMISSION SPLITS • WORM AUDIT</span>
+      </div>
+    </div>
+    
+    <div class="topbar-right">
+      <div class="escrow-pill">
+        <span>ESCROW VAULT:</span>
+        <strong id="escrowVaultStatus">4 ACTIVE CONTRACTS ($2,075.00)</strong>
+      </div>
+
+      <div class="status-pill">
+        <div class="pulse-dot" aria-hidden="true"></div>
+        <span>ESCROW PIPELINE: LIVE</span>
+        <span style="color:var(--border-strong);" aria-hidden="true">|</span>
+        <span class="tabular" id="systemClock">00:00:00 UTC</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Nav -->
+  <nav class="tab-nav" aria-label="Marketplace Navigation">
+    <button id="tabBtnCatalog" type="button" class="tab-btn active">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      Multi-Vendor Catalog &amp; Storefronts
+    </button>
+    <button id="tabBtnEscrow" type="button" class="tab-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Active Escrow Pipeline Stream
+    </button>
+    <button id="tabBtnRecon" type="button" class="tab-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Vendor Payout &amp; Commission Ledger
+    </button>
+  </nav>
+
+  <main class="container">
+
+    <!-- KPI Grid -->
+    <section class="kpi-grid" aria-label="Key Marketplace Metrics">
+      <div class="kpi-card kpi-emerald">
+        <div class="kpi-title">Gross Escrow Volume (GMV)</div>
+        <div class="kpi-val tabular" id="valGrossVolume">$2,075.00</div>
+        <div class="kpi-sub">4 Multi-Vendor Orders Held</div>
+      </div>
+
+      <div class="kpi-card kpi-violet">
+        <div class="kpi-title">Platform Commission Yield</div>
+        <div class="kpi-val tabular text-violet" id="valPlatformFee">$249.00</div>
+        <div class="kpi-sub">Avg 12.0% Automated Split</div>
+      </div>
+
+      <div class="kpi-card kpi-blue">
+        <div class="kpi-title">Vendor Net Payout Pool</div>
+        <div class="kpi-val tabular" id="valVendorPayout">$1,664.82</div>
+        <div class="kpi-sub">After 2.9% Gateway &amp; 5% Reserve</div>
+      </div>
+
+      <div class="kpi-card kpi-amber">
+        <div class="kpi-title">Dispute Rolling Reserve</div>
+        <div class="kpi-val tabular" id="valRollingReserve">$87.62</div>
+        <div class="kpi-sub">14-Day Chargeback Buffer</div>
+      </div>
+    </section>
+
+    <!-- Global Action Bar -->
+    <section class="action-bar" aria-label="Marketplace Actions">
+      <div class="btn-group">
+        <button id="btnSimulatePurchase" type="button" class="btn btn-primary">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          Simulate $280 Buyer Purchase into Escrow
+        </button>
+        <button id="btnDevilsMarketplaceSuite" type="button" class="btn btn-warning">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Devil's Marketplace Security Suite
+        </button>
+      </div>
+
+      <div class="btn-group">
+        <button id="btnOpenReleaseModal" type="button" class="btn btn-outline">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Release Escrow Payout (SHA-256)
+        </button>
+      </div>
+    </section>
+
+    <!-- TAB 1: PRODUCT CATALOG -->
+    <section id="viewCatalog" class="tab-view">
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            Verified Multi-Vendor Marketplace Catalog
+          </div>
+          <span class="badge badge-green">4 VERIFIED MERCHANTS</span>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: ACTIVE ESCROW PIPELINE -->
+    <section id="viewEscrow" class="tab-view" style="display:none;">
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            60fps Real-Time Escrow Inflow &amp; Payout Release Stream
+          </div>
+          <span class="badge badge-green">DYNAMIC COMMISSION ARBITRATION</span>
+        </div>
+
+        <div class="canvas-wrapper">
+          <canvas id="escrowCanvas" role="img" aria-label="Real-time escrow order volume and commission flow waveform"></canvas>
+        </div>
+
+        <div style="margin-top:14px; display:flex; gap:16px; font-size:11px;">
+          <div style="display:flex; align-items:center; gap:6px;">
+            <div style="width:10px; height:3px; background:#10b981;" aria-hidden="true"></div>
+            <span>Escrow Inflow Volume ($)</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:6px;">
+            <div style="width:10px; height:3px; background:#8b5cf6;" aria-hidden="true"></div>
+            <span>Platform Commission Retained ($)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: VENDOR RECONCILIATION TABLE -->
+    <section id="viewRecon" class="tab-view" style="display:none;">
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+            Active Escrow Orders &amp; Vendor Payout Ledger
+          </div>
+          <span class="badge badge-violet">AUTOMATED 3-WAY SPLIT</span>
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Order Reference</th>
+                <th scope="col">Buyer</th>
+                <th scope="col">Vendor &amp; Store</th>
+                <th scope="col">Order Gross</th>
+                <th scope="col">Platform Fee (12.5%)</th>
+                <th scope="col">5% Reserve</th>
+                <th scope="col">Vendor Net Payout</th>
+                <th scope="col">Escrow Status</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody id="ordersTableBody">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Immutable Escrow Release Audit Trail Table -->
+    <section class="panel" style="margin-top:24px;" aria-label="Escrow Release Ledger">
+      <div class="panel-header">
+        <div class="panel-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Immutable WORM SHA-256 Escrow Payout Audit Trail
+        </div>
+        <span class="badge badge-green">SHA-256 CRYPTOGRAPHIC INTEGRITY</span>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Timestamp (UTC)</th>
+              <th scope="col">Release ID</th>
+              <th scope="col">Order Reference</th>
+              <th scope="col">Vendor Beneficiary</th>
+              <th scope="col">Gross Amount</th>
+              <th scope="col">Platform Fee</th>
+              <th scope="col">Vendor Payout</th>
+              <th scope="col">SHA-256 Release Seal</th>
+            </tr>
+          </thead>
+          <tbody id="releaseTableBody">
+            <tr>
+              <td class="tabular">2026-08-28T14:45:20Z</td>
+              <td><code>RELEASE-881204</code></td>
+              <td><code>ESCROW-2026-8813</code></td>
+              <td>Aether Acoustic Labs</td>
+              <td class="tabular">$450.00</td>
+              <td class="tabular text-violet">+$45.00</td>
+              <td class="tabular text-emerald"><strong>$372.07</strong></td>
+              <td><span class="hash-pill">4f9a12c8...8812bf9a</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal: Cryptographic Escrow Release -->
+  <div class="modal-overlay" id="releaseModal" role="dialog" aria-modal="true" aria-labelledby="releaseModalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title" id="releaseModalTitle">Cryptographic Escrow Payout Release</div>
+        <button id="btnCloseReleaseModal" type="button" aria-label="Close modal" class="modal-close-btn">&times;</button>
+      </div>
+      <form id="releaseForm" onsubmit="event.preventDefault();">
+        <div class="modal-body">
+          <p style="font-size:12px; color:var(--text-secondary); margin-bottom:14px;">
+            Generates an immutable WORM SHA-256 cryptographic certificate authorizing bank wire / Stripe Connect transfer from escrow to the verified merchant.
+          </p>
+
+          <div class="form-group">
+            <label for="selectOrderRelease" class="form-label">Escrow Order Reference</label>
+            <select id="selectOrderRelease" class="form-select" required>
+              <option value="ESCROW-2026-8812">ESCROW-2026-8812 (Titanium Keyboard • Apex Precision • $280.00)</option>
+              <option value="ESCROW-2026-8813">ESCROW-2026-8813 (Studio Headphones • Aether Labs • $450.00)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="inputReleasedBy" class="form-label">Authorizing Party / Signer</label>
+            <input type="text" id="inputReleasedBy" class="form-input" value="Tariq Al-Mansoor (Marketplace Operations Lead)" autocomplete="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="inputReleaseNotes" class="form-label">Delivery Verification Remarks</label>
+            <textarea id="inputReleaseNotes" class="form-textarea" rows="2" required>Customer signature verified on courier delivery. 48-hour inspection window elapsed with zero dispute. Authorized for vendor disbursement.</textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="btnCancelRelease" type="button" class="btn btn-outline">Cancel</button>
+          <button id="btnConfirmRelease" type="submit" class="btn btn-primary">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Execute SHA-256 Escrow Release
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Devil's Marketplace Security Suite -->
+  <div class="modal-overlay" id="devilsMarketplaceModal" role="dialog" aria-modal="true" aria-labelledby="devilsMarketplaceModalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title" id="devilsMarketplaceModalTitle">👹 Devil's Marketplace Adversarial Test Suite</div>
+        <button id="btnCloseDevilsMarketplaceModal" type="button" aria-label="Close modal" class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:12px; color:var(--text-secondary); margin-bottom:14px;">
+          Adversarial penetration test vectors created by Kevin Mitnick, Geohot, and Charlie Miller to stress-test escrow double-spending, penny-rounding fee manipulation, and unauthorized vendor fund drainage.
+        </p>
+
+        <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:14px;">
+          <button id="btnAttackMitnickDoubleSpend" type="button" class="btn btn-outline" style="justify-content:flex-start;">
+            <span>1. Kevin Mitnick: Escrow Double-Spend &amp; Replay Release Attack</span>
+          </button>
+          <button id="btnAttackGeohotPennyRounding" type="button" class="btn btn-outline" style="justify-content:flex-start;">
+            <span>2. Geohot: Multi-Party Penny Shaving Floating Point Exploit</span>
+          </button>
+          <button id="btnAttackCharlieMillerDrain" type="button" class="btn btn-outline" style="justify-content:flex-start;">
+            <span>3. Charlie Miller: Unauthorized Vendor Escrow Balance Drain</span>
+          </button>
+        </div>
+
+        <div id="devilsMarketplaceOutput" class="canvas-wrapper" style="height:120px; padding:12px; font-family:'JetBrains Mono', monospace; font-size:11px; color:#34d399; overflow-y:auto;" tabindex="0" role="region" aria-label="Adversarial output console">
+          Adversarial test console standby. Select a stress scenario above to execute.
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="btnCloseDevilsMarketplaceFooter" type="button" class="btn btn-outline">Close Suite</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Client Script (ES Module) -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
