@@ -10,6 +10,7 @@ import dotenv from 'dotenv';
 import nodemailer from 'nodemailer';
 import imaps from 'imap-simple';
 import { TEMPLATES } from './templates.js';
+import { forwardInboundClientEmail, sendAutomationSummaryReport } from './founder_notifier.js';
 
 dotenv.config();
 
@@ -99,6 +100,15 @@ async function checkInboundReplies() {
         replies.push({ from, subject, date, snippet, timestamp: new Date().toISOString() });
         console.log(`🎉 [INBOUND ALERT] New Client Response from: ${from}`);
         newCount++;
+
+        // Forward immediately to Founder's direct Gmail (mckinsyo01@gmail.com)
+        forwardInboundClientEmail({
+          from,
+          subject,
+          date,
+          body: snippet,
+          snippet
+        }).catch(e => console.error(`⚠️ Cloud forward error: ${e.message}`));
       }
     }
 
@@ -175,6 +185,7 @@ async function executeCloudOutbound() {
   }
 
   console.log(`📊 Cloud Outbound Cycle Finished: ${sentCount} messages sent.`);
+  return sentCount;
 }
 
 async function main() {
@@ -182,7 +193,19 @@ async function main() {
   console.log('⚡ 24/7 CLOUD REVENUE RUNNER ACTIVATED');
   console.log('='.repeat(65));
   await checkInboundReplies();
-  await executeCloudOutbound();
+  const sent = await executeCloudOutbound();
+
+  if (sent > 0) {
+    const activeLeads = loadLeads();
+    await sendAutomationSummaryReport({
+      dispatchedThisCycle: sent,
+      verifiedLeadsInQueue: activeLeads.filter(l => !l.status || !l.status.includes('DELIVERED')).length,
+      inboundRepliesCount: (JSON.parse(fs.existsSync(INBOUND_FILE) ? fs.readFileSync(INBOUND_FILE, 'utf-8') : '[]')).length,
+      mode: '24/7 GitHub Actions Cloud Runner',
+      nextCycle: '20 Minutes (GitHub Actions Cron)'
+    }).catch(e => console.error(`⚠️ Cloud report error: ${e.message}`));
+  }
+
   console.log('='.repeat(65));
   console.log('🏁 Cloud Cycle Completed Successfully.');
   console.log('='.repeat(65));

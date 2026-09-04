@@ -11,6 +11,7 @@ import nodemailer from 'nodemailer';
 import imaps from 'imap-simple';
 import { TEMPLATES } from './templates.js';
 import { verifyEmailPreFlight } from './email_verifier.js';
+import { forwardInboundClientEmail, sendAutomationSummaryReport } from './founder_notifier.js';
 
 dotenv.config();
 
@@ -86,6 +87,15 @@ function recordInboundReply(reply) {
     console.log(`\n🎉 [INBOUND LEAD ALERT] New Client Message Received from: ${reply.from}`);
     console.log(`   Subject: ${reply.subject}`);
     console.log(`   Snippet: ${reply.snippet}`);
+
+    // Forward immediately to Founder's direct Gmail (mckinsyo01@gmail.com)
+    forwardInboundClientEmail({
+      from: reply.from,
+      subject: reply.subject,
+      date: reply.date,
+      body: reply.snippet,
+      snippet: reply.snippet
+    }).catch(e => console.error(`⚠️ Inbound forward error: ${e.message}`));
   }
 }
 
@@ -228,6 +238,17 @@ async function runRevenueCycle() {
     const sent = await executeOutboundBatch();
     console.log(`\n📊 Cycle Summary: ${sent} executive emails dispatched.`);
     console.log(`💤 Next automated cycle in 10 minutes (${new Date(Date.now() + CYCLE_INTERVAL_MS).toLocaleTimeString('en-US', { hour12: true })})...`);
+
+    if (sent > 0) {
+      const activeLeads = loadLeads();
+      sendAutomationSummaryReport({
+        dispatchedThisCycle: sent,
+        verifiedLeadsInQueue: activeLeads.filter(l => !l.status || !l.status.includes('DELIVERED')).length,
+        inboundRepliesCount: (JSON.parse(fs.existsSync(INBOUND_FILE) ? fs.readFileSync(INBOUND_FILE, 'utf-8') : '[]')).length,
+        mode: '10-Minute Autonomous Daemon',
+        nextCycle: '10 Minutes'
+      }).catch(e => console.error(`⚠️ Automation summary error: ${e.message}`));
+    }
   } catch (err) {
     console.error(`❌ Cycle Fatal Error: ${err.message}`);
   } finally {
