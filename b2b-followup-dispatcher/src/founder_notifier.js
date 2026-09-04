@@ -164,71 +164,10 @@ ${body || snippet || 'No body content available.'}
 }
 
 /**
- * Sends automation system health and cycle summary reports to founder's direct Gmail.
+ * Sends automation system health and cycle summary reports.
+ * PERMANENTLY SUPPRESSED per founder directive: Only real human client emails with genuine attachments/inquiries are forwarded.
  */
 export async function sendAutomationSummaryReport(summary) {
-  const timestamp = new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' });
-  const subject = `📊 [AUTOMATION REPORT] Linkable Revenue & Dispatch Pulse (${timestamp})`;
-
-  const html = `
-    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 620px; margin: 0 auto; background: #0f172a; color: #f8fafc; border-radius: 12px; overflow: hidden; border: 1px solid #334155;">
-      <div style="background: #1e293b; padding: 20px 24px; border-bottom: 1px solid #334155;">
-        <span style="background: #10b981; color: #ffffff; font-weight: bold; font-size: 10px; padding: 3px 8px; border-radius: 9999px; text-transform: uppercase;">System Operational</span>
-        <h2 style="margin: 10px 0 0 0; font-size: 20px; color: #ffffff;">24/7 Automation & Revenue Digest</h2>
-      </div>
-
-      <div style="padding: 24px;">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px;">
-          <div style="background: #1e293b; padding: 14px; border-radius: 8px; text-align: center;">
-            <div style="font-size: 24px; font-weight: bold; color: #38bdf8;">${summary.dispatchedThisCycle || summary.totalSent || 0}</div>
-            <div style="font-size: 12px; color: #94a3b8;">Dispatched This Window</div>
-          </div>
-          <div style="background: #1e293b; padding: 14px; border-radius: 8px; text-align: center;">
-            <div style="font-size: 24px; font-weight: bold; color: #4ade80;">${summary.verifiedLeadsInQueue || summary.queueCount || 0}</div>
-            <div style="font-size: 12px; color: #94a3b8;">Verified Leads in Queue</div>
-          </div>
-        </div>
-
-        <table style="width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 13px;">
-          <tr>
-            <td style="padding: 8px 0; color: #94a3b8;">🛰️ Engine Mode:</td>
-            <td style="padding: 8px 0; color: #f8fafc; font-weight: 600;">${summary.mode || '24/7 Cloud + Local Daemon'}</td>
-          </tr>
-          <tr>
-            <td style="padding: 8px 0; color: #94a3b8;">🛡️ DNS & Deliverability:</td>
-            <td style="padding: 8px 0; color: #4ade80; font-weight: 600;">Pre-Flight MX Handshake Verified (Zero-Bounce)</td>
-          </tr>
-          <tr>
-            <td style="padding: 8px 0; color: #94a3b8;">⏱️ Next Execution Cycle:</td>
-            <td style="padding: 8px 0; color: #f8fafc;">${summary.nextCycle || '10 Minutes'}</td>
-          </tr>
-          <tr>
-            <td style="padding: 8px 0; color: #94a3b8;">📬 Inbound Client Replies:</td>
-            <td style="padding: 8px 0; color: #38bdf8; font-weight: 600;">${summary.inboundRepliesCount || 0} Detected</td>
-          </tr>
-        </table>
-
-        ${summary.notes ? `<div style="background: #1e293b; padding: 12px; border-radius: 6px; font-size: 12px; color: #cbd5e1; margin-top: 12px;">${summary.notes}</div>` : ''}
-      </div>
-
-      <div style="background: #090d16; padding: 12px 24px; text-align: center; border-top: 1px solid #1e293b; font-size: 11px; color: #64748b;">
-        Automated Report Generated for ${RECIPIENT_EMAIL} | Sender: ${SENDER_EMAIL}
-      </div>
-    </div>
-  `;
-
-  try {
-    const info = await transporter.sendMail({
-      from: `"${SENDER_NAME}" <${SENDER_EMAIL}>`,
-      to: RECIPIENT_EMAIL,
-      subject,
-      text: `Automation Report:\nDispatched: ${summary.dispatchedThisCycle || 0}\nQueue: ${summary.verifiedLeadsInQueue || 0}\nInbound: ${summary.inboundRepliesCount || 0}\nTime: ${timestamp}`,
-      html
-    });
-    console.log(`✅ [FOUNDER NOTIFIER] Automation Summary dispatched to ${RECIPIENT_EMAIL}! (MsgId: ${info.messageId})`);
-    return { success: true, messageId: info.messageId };
-  } catch (err) {
-    console.error(`❌ [FOUNDER NOTIFIER SUMMARY FAILED]: ${err.message}`);
-    return { success: false, error: err.message };
-  }
+  console.log('🔇 [FOUNDER NOTIFIER] Automated digest report suppressed per founder directive. Zero artificial clutter dispatched.');
+  return { success: true, suppressed: true };
 }
