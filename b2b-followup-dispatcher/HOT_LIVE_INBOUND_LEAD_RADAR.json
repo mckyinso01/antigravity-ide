@@ -1,5 +1,14 @@
 [
   {
+    "timestamp": "2026-09-16T11:28:13.951Z",
+    "from": "Gmail Team <mail-noreply@google.com>",
+    "subject": "Tips for using Gmail",
+    "intent": "HOT_INTERESTED_LEAD",
+    "agreementId": "ESC-093948",
+    "agreementUrl": "http://localhost:3001/agreement.html?id=ESC-093948",
+    "status": "PROPOSAL_GENERATED"
+  },
+  {
     "id": "fb-radar-1787930198452-1",
     "sourcePlatform": "Reddit r/forhire & Global Commerce",
     "clientTitle": "[Hiring] Experienced Full-Stack Team for Multi-Vendor E-Commerce Platform",

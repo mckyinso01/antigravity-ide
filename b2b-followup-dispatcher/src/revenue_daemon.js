@@ -33,7 +33,7 @@ console.log('='.repeat(65));
 const imapConfig = {
   imap: {
     user: process.env.SMTP_USER || 'mharcgatan@linkable.it.com',
-    password: process.env.SMTP_PASS || 'Melonjuice01!',
+    password: process.env.SMTP_PASS,
     host: 'mail.spacemail.com',
     port: 993,
     tls: true,
@@ -48,7 +48,7 @@ const transporter = nodemailer.createTransport({
   secure: true,
   auth: {
     user: process.env.SMTP_USER || 'mharcgatan@linkable.it.com',
-    pass: process.env.SMTP_PASS || 'Melonjuice01!'
+    pass: process.env.SMTP_PASS
   },
   tls: { rejectUnauthorized: false }
 });

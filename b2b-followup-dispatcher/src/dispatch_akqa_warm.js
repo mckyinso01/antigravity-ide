@@ -32,7 +32,7 @@ async function executeStep1AKQA() {
     secure: true,
     auth: {
       user: process.env.SMTP_USER || 'mharcgatan@linkable.it.com',
-      pass: process.env.SMTP_PASS || 'Melonjuice01!'
+      pass: process.env.SMTP_PASS
     }
   });
 

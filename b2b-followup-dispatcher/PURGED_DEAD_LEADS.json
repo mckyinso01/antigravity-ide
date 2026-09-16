@@ -1,0 +1,648 @@
+[
+  {
+    "email": "jojo.mendoza@mendozaconstruct.ph",
+    "name": "Decision Maker",
+    "company": "Enterprise Target",
+    "source": "radar_lead",
+    "status": "PURGED_DEAD_MX",
+    "reason": "ENODATA"
+  },
+  {
+    "email": "pvillanueva@apexlogistics.com.ph",
+    "name": "Decision Maker",
+    "company": "Enterprise Target",
+    "source": "radar_lead",
+    "status": "PURGED_DEAD_MX",
+    "reason": "ENODATA"
+  },
+  {
+    "email": "ramon@castillobrands.ph",
+    "name": "Decision Maker",
+    "company": "Enterprise Target",
+    "source": "radar_lead",
+    "status": "PURGED_DEAD_MX",
+    "reason": "ENODATA"
+  },
+  {
+    "email": "aross@apolloclinicnetwork.com",
+    "name": "Decision Maker",
+    "company": "Enterprise Target",
+    "source": "radar_lead",
+    "status": "PURGED_DEAD_MX",
+    "reason": "ENOTFOUND"
+  },
+  {
+    "email": "poconnor@apexbuilders.com",
+    "name": "Decision Maker",
+    "company": "Enterprise Target",
+    "source": "radar_lead",
+    "status": "PURGED_DEAD_MX",
+    "reason": "ENODATA"
+  },
+  {
+    "email": "victor.hernandez@autohub.ph",
+    "name": "Decision Maker",
+    "company": "Metro Manila Auto Hub",
+    "source": "radar_lead",
+    "status": "PURGED_DEAD_MX",
+    "reason": "ENODATA"
+  },
+  {
+    "email": "athorne@biovaxlogistics.com",
+    "name": "Decision Maker",
+    "company": "BioVax Pharma Logistics",
+    "source": "radar_lead",
+    "status": "PURGED_DEAD_MX",
+    "reason": "ENOTFOUND"
+  },
+  {
+    "email": "thomas.deters@sblh.org",
+    "name": "Executive",
+    "company": "Sarah Bush Lincoln Health",
+    "source": "dispatch_log",
+    "status": "PURGED_DEAD_MX",
+    "reason": "ENOTFOUND"
+  },
+  {
+    "email": "kathryn.halford@bhrhospitals.nhs.uk",
+    "name": "Executive",
+    "company": "Barking, Havering and Redbridge NHS Trust",
+    "source": "dispatch_log",
+    "status": "PURGED_DEAD_MX",
+    "reason": "ENODATA"
+  },
+  {
+    "email": "david.melia@midyorks.nhs.uk",
+    "name": "Executive",
+    "company": "Mid Yorkshire Teaching NHS Trust",
+    "source": "dispatch_log",
+    "status": "PURGED_DEAD_MX",
+    "reason": "ENODATA"
+  },
+  {
+    "email": "matt.holdaway@glos.nhs.uk",
+    "name": "Executive",
+    "company": "Gloucestershire Hospitals NHS FT",
+    "source": "dispatch_log",
+    "status": "PURGED_DEAD_MX",
+    "reason": "ENODATA"
+  },
+  {
+    "email": "deborah.kelly@torbayandsouthdevon.nhs.uk",
+    "name": "Executive",
+    "company": "Torbay and South Devon NHS FT",
+    "source": "dispatch_log",
+    "status": "PURGED_DEAD_MX",
+    "reason": "ENODATA"
+  },
+  {
+    "email": "hayley.flavell@sath.nhs.uk",
+    "name": "Executive",
+    "company": "Shrewsbury and Telford Hospital NHS Trust",
+    "source": "dispatch_log",
+    "status": "PURGED_DEAD_MX",
+    "reason": "ENODATA"
+  },
+  {
+    "email": "sheran.oke@ngh.nhs.uk",
+    "name": "Executive",
+    "company": "Northampton General Hospital NHS Trust",
+    "source": "dispatch_log",
+    "status": "PURGED_DEAD_MX",
+    "reason": "ENODATA"
+  },
+  {
+    "email": "liz.lees@bedfordshirehospitals.nhs.uk",
+    "name": "Executive",
+    "company": "Bedfordshire Hospitals NHS FT",
+    "source": "dispatch_log",
+    "status": "PURGED_DEAD_MX",
+    "reason": "ENODATA"
+  },
+  {
+    "email": "justin.daniels@enherts-tr.nhs.uk",
+    "name": "Executive",
+    "company": "East and North Hertfordshire NHS Trust",
+    "source": "dispatch_log",
+    "status": "PURGED_DEAD_MX",
+    "reason": "ENODATA"
+  },
+  {
+    "email": "tina.hetherington@sash.nhs.uk",
+    "name": "Executive",
+    "company": "Surrey and Sussex Healthcare NHS Trust",
+    "source": "dispatch_log",
+    "status": "PURGED_DEAD_MX",
+    "reason": "ENODATA"
+  },
+  {
+    "email": "liz.rix@porthosp.nhs.uk",
+    "name": "Executive",
+    "company": "Portsmouth Hospitals University NHS Trust",
+    "source": "dispatch_log",
+    "status": "PURGED_DEAD_MX",
+    "reason": "ENODATA"
+  },
+  {
+    "email": "alice.webster@iow.nhs.uk",
+    "name": "Executive",
+    "company": "Isle of Wight NHS Trust",
+    "source": "dispatch_log",
+    "status": "PURGED_DEAD_MX",
+    "reason": "ENODATA"
+  },
+  {
+    "email": "judy.dyos@salisbury.nhs.uk",
+    "name": "Executive",
+    "company": "Salisbury NHS Foundation Trust",
+    "source": "dispatch_log",
+    "status": "PURGED_DEAD_MX",
+    "reason": "ENODATA"
+  },
+  {
+    "email": "ed.hughes@beaufortmemorial.org",
+    "name": "Executive",
+    "company": "Beaufort Memorial Hospital",
+    "source": "dispatch_log",
+    "status": "PURGED_DEAD_MX",
+    "reason": "ESERVFAIL"
+  },
+  {
+    "email": "harvey.case@carterethealth.org",
+    "name": "Executive",
+    "company": "Carteret Health Care",
+    "source": "dispatch_log",
+    "status": "PURGED_DEAD_MX",
+    "reason": "ESERVFAIL"
+  },
+  {
+    "email": "ross.cris@mayo.edu",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.923Z"
+  },
+  {
+    "email": "craig.richardville@imail.org",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "kristin.myers@mountsinai.org",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "zoran.bolevich@health.nsw.gov.au",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "bret.morris@sa.gov.au",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "damian.green@health.qld.gov.au",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "holger.kaufmann@health.wa.gov.au",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "sutherlandj@ramsayhealth.com.au",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "geoff.neate@healthscope.com.au",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "penny.rae@ahs.ca",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "shayneh@adhb.govt.nz",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "digital@waikatodhb.health.nz",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "digital@cdhb.health.nz",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "carsten.frischmuth@helios-gesundheit.de",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "michael.schoepf@sana.de",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "j.dupont@elsan.care",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "christian.weskott@hirslanden.ch",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "frindlisbacher@swissmedical.net",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "emanuele.vignola@grupposandonato.it",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "mreischl@schoen-klinik.de",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "r.luigies@antoniusziekenhuis.nl",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "jarcos@unav.es",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "stefan.sjostrom@capio.se",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "thomas.mlczoch@premiqamed.at",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "digital@thh.nhs.uk",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "digital@croydonhealth.nhs.uk",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "digital@medway.nhs.uk",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "lisa.carroll@walsallhealthcare.nhs.uk",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "digital@barnsley.nhs.uk",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "digital@dbth.nhs.uk",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "digital@royalsurrey.nhs.uk",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "digital@nth.nhs.uk",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "digital@rothgen.nhs.uk",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "digital@asph.nhs.uk",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "digital@york.nhs.uk",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "digital@walsallhealthcare.nhs.uk",
+    "reason": "GMAIL_DSN_550_BOUNCE",
+    "purgedAt": "2026-09-04T13:49:16.924Z"
+  },
+  {
+    "email": "mmanzione@rakutensl.com",
+    "reason": "BOUNCE_DSN_FAILURE",
+    "date": "2026-09-04T16:31:24.628Z"
+  },
+  {
+    "email": "joern.schmersahl@rhenus.com",
+    "reason": "BOUNCE_DSN_FAILURE",
+    "date": "2026-09-04T16:31:24.636Z"
+  },
+  {
+    "email": "jeffrey.musser@expeditors.com",
+    "reason": "BOUNCE_DSN_FAILURE",
+    "date": "2026-09-04T16:31:24.636Z"
+  },
+  {
+    "email": "bbechtel@bechtel.com",
+    "reason": "BOUNCE_DSN_FAILURE",
+    "date": "2026-09-04T16:31:24.636Z"
+  },
+  {
+    "email": "dbrown@pcl.com",
+    "reason": "BOUNCE_DSN_FAILURE",
+    "date": "2026-09-04T16:31:24.636Z"
+  },
+  {
+    "email": "pkozicz@alberici.com",
+    "reason": "BOUNCE_DSN_FAILURE",
+    "date": "2026-09-04T16:31:24.636Z"
+  },
+  {
+    "email": "jake.nabholz@nabholz.com",
+    "reason": "BOUNCE_DSN_FAILURE",
+    "date": "2026-09-04T16:31:24.636Z"
+  },
+  {
+    "email": "bcrossland@crossland.com",
+    "reason": "BOUNCE_DSN_FAILURE",
+    "date": "2026-09-04T16:31:24.636Z"
+  },
+  {
+    "email": "jbowles@emjcorp.com",
+    "reason": "BOUNCE_DSN_FAILURE",
+    "date": "2026-09-04T16:31:24.636Z"
+  },
+  {
+    "email": "bspapen@weberlogistics.com",
+    "name": "Bob Spapen",
+    "title": "Chief Executive Officer",
+    "company": "Weber Logistics",
+    "source": "omnistock_wms_wave",
+    "status": "PURGED_BOUNCED_550",
+    "reason": "550 Invalid Recipient - Mimecast rejected address",
+    "purgedAt": "2026-09-05T02:25:35.505Z",
+    "linkedin": "https://www.linkedin.com/company/weber-logistics",
+    "campaign": "omnistock_wms",
+    "demoUrl": "https://omnistock.linkable.it.com"
+  },
+  {
+    "email": "bkelly@complog.com",
+    "name": "Bob Kelly",
+    "title": "Chief Executive Officer",
+    "company": "Comprehensive Logistics",
+    "source": "omnistock_wms_wave",
+    "status": "PURGED_BOUNCED_550",
+    "reason": "550 5.4.1 Recipient address rejected: Access denied",
+    "purgedAt": "2026-09-05T02:25:35.506Z",
+    "linkedin": "https://www.linkedin.com/company/comprehensive-logistics-co.-inc.",
+    "campaign": "omnistock_wms",
+    "demoUrl": "https://omnistock.linkable.it.com"
+  },
+  {
+    "email": "dfinch@linbeck.com",
+    "name": "David Finch",
+    "title": "Chief Executive Officer",
+    "company": "Linbeck Group",
+    "source": "structurapro_wave",
+    "status": "PURGED_BOUNCED_550",
+    "reason": "550 5.4.1 Recipient address rejected: Access denied",
+    "purgedAt": "2026-09-05T02:25:35.506Z",
+    "linkedin": "https://www.linkedin.com/company/linbeck-group-llc",
+    "campaign": "structurapro",
+    "demoUrl": "https://sitesafe.linkable.it.com"
+  },
+  {
+    "email": "dgiles@level10gc.com",
+    "name": "Dennis Giles",
+    "title": "President / CEO",
+    "company": "Level 10 Construction",
+    "source": "structurapro_wave",
+    "status": "PURGED_BOUNCED_550",
+    "reason": "[Postmaster] Recipient email address possibly incorrect",
+    "purgedAt": "2026-09-05T02:25:35.506Z",
+    "linkedin": "https://www.linkedin.com/company/level-10-construction",
+    "campaign": "structurapro",
+    "demoUrl": "https://sitesafe.linkable.it.com"
+  },
+  {
+    "email": "info@kingedwardvii.co.uk",
+    "name": "Executive Leadership",
+    "title": "Chief Executive",
+    "company": "King Edward VII's Hospital",
+    "source": "claimguard_healthcare_wave",
+    "status": "PURGED_BOUNCED_550",
+    "reason": "550 5.4.1 Recipient address rejected: Access denied",
+    "purgedAt": "2026-09-05T02:25:35.506Z",
+    "linkedin": "https://www.linkedin.com/company/king-edward-vii's-hospital",
+    "campaign": "claimguard",
+    "demoUrl": "https://claimguard.linkable.it.com"
+  },
+  {
+    "email": "postmaster@jolecoresourcesinc933.onmicrosoft.com",
+    "name": "Operations Leadership",
+    "company": "St. Joseph Drug / Joleco Resources",
+    "source": "inbox_audit_bounce",
+    "status": "PURGED_INBOX_BOUNCE",
+    "reason": "UNDELIVERABLE_EXCHANGE_REJECTION (Forklift pitch rejected by MS 365 postmaster)",
+    "purgedAt": "2026-09-15T12:19:44.022Z"
+  },
+  {
+    "email": "customercare@southstardrug.com.ph",
+    "name": "Customer Support Desk",
+    "company": "Southstar Drug",
+    "source": "inbox_audit_bounce",
+    "status": "PURGED_INBOX_BOUNCE",
+    "reason": "AUTOMATED_ZENDESK_TICKETING_LOOP (Generates welcome ticket instead of human lead)",
+    "purgedAt": "2026-09-15T12:19:44.023Z"
+  },
+  {
+    "email": "support@thegenericspharmacy.zendesk.com",
+    "name": "TGP Support Desk",
+    "company": "The Generics Pharmacy (TGP)",
+    "source": "inbox_audit_bounce",
+    "status": "PURGED_INBOX_BOUNCE",
+    "reason": "AUTOMATED_ZENDESK_TICKETING_LOOP (Generates support ticket instead of human lead)",
+    "purgedAt": "2026-09-15T12:19:44.023Z"
+  },
+  {
+    "email": "postmaster@skagitregionalhealth.org",
+    "name": "Skagit Postmaster",
+    "company": "Skagit Regional Health",
+    "source": "inbox_audit_bounce",
+    "status": "PURGED_INBOX_BOUNCE",
+    "reason": "UNDELIVERABLE_EXCHANGE_550",
+    "purgedAt": "2026-09-15T12:19:44.023Z"
+  },
+  {
+    "email": "postmaster@valleybaptist.net",
+    "name": "Valley Baptist Postmaster",
+    "company": "Valley Baptist Medical Center",
+    "source": "inbox_audit_bounce",
+    "status": "PURGED_INBOX_BOUNCE",
+    "reason": "UNDELIVERABLE_EXCHANGE_550",
+    "purgedAt": "2026-09-15T12:19:44.024Z"
+  },
+  {
+    "email": "clinicaltrial@colquittregional.com",
+    "name": "Oncology / Clinical Trials",
+    "company": "Colquitt Regional Medical Center",
+    "source": "inbox_audit_bounce",
+    "status": "PURGED_INBOX_BOUNCE",
+    "reason": "APPRIVER_GATEWAY_FAILURE (Encrypted gateway rejection)",
+    "purgedAt": "2026-09-15T12:19:44.024Z"
+  },
+  {
+    "email": "customercare@puregold.com.ph",
+    "name": "Executive Leader",
+    "company": "Puregold Price Club",
+    "source": "master_followup_540_scrub",
+    "status": "PURGED_GENERIC_DESK",
+    "reason": "GENERIC_INFO_OR_SUPPORT_PREFIX",
+    "purgedAt": "2026-09-15T12:19:44.025Z"
+  },
+  {
+    "email": "inquiries@skin101clinics.com",
+    "name": "Executive Leader",
+    "company": "Skin101 Aesthetics Clinics",
+    "source": "master_followup_540_scrub",
+    "status": "PURGED_GENERIC_DESK",
+    "reason": "GENERIC_INFO_OR_SUPPORT_PREFIX",
+    "purgedAt": "2026-09-15T12:19:44.026Z"
+  },
+  {
+    "email": "info@solaric.ph",
+    "name": "Executive Leader",
+    "company": "SolarIC Philippines",
+    "source": "master_followup_540_scrub",
+    "status": "PURGED_GENERIC_DESK",
+    "reason": "GENERIC_INFO_OR_SUPPORT_PREFIX",
+    "purgedAt": "2026-09-15T12:19:44.026Z"
+  },
+  {
+    "email": "customercare@urbansmiles.ph",
+    "name": "Executive Leader",
+    "company": "Urban Smiles Dental Clinic",
+    "source": "master_followup_540_scrub",
+    "status": "PURGED_GENERIC_DESK",
+    "reason": "GENERIC_INFO_OR_SUPPORT_PREFIX",
+    "purgedAt": "2026-09-15T12:19:44.026Z"
+  },
+  {
+    "email": "info@summithealthcare.net",
+    "name": "Clinical Operations",
+    "company": "Summit Healthcare",
+    "source": "master_followup_540_scrub",
+    "status": "PURGED_GENERIC_DESK",
+    "reason": "GENERIC_INFO_OR_SUPPORT_PREFIX",
+    "purgedAt": "2026-09-15T12:19:44.026Z"
+  },
+  {
+    "email": "info@circlehealthgroup.co.uk",
+    "name": "Executive",
+    "company": "Circle Health Group (HQ)",
+    "source": "master_followup_540_scrub",
+    "status": "PURGED_GENERIC_DESK",
+    "reason": "GENERIC_INFO_OR_SUPPORT_PREFIX",
+    "purgedAt": "2026-09-15T12:19:44.026Z"
+  },
+  {
+    "email": "contact@nuffieldhealth.com",
+    "name": "Executive",
+    "company": "Nuffield Health (HQ)",
+    "source": "master_followup_540_scrub",
+    "status": "PURGED_GENERIC_DESK",
+    "reason": "GENERIC_INFO_OR_SUPPORT_PREFIX",
+    "purgedAt": "2026-09-15T12:19:44.026Z"
+  },
+  {
+    "email": "info@aspen-healthcare.co.uk",
+    "name": "Executive",
+    "company": "Aspen Healthcare",
+    "source": "master_followup_540_scrub",
+    "status": "PURGED_GENERIC_DESK",
+    "reason": "GENERIC_INFO_OR_SUPPORT_PREFIX",
+    "purgedAt": "2026-09-15T12:19:44.026Z"
+  },
+  {
+    "email": "info@practiceplusgroup.com",
+    "name": "Executive",
+    "company": "Practice Plus Group",
+    "source": "master_followup_540_scrub",
+    "status": "PURGED_GENERIC_DESK",
+    "reason": "GENERIC_INFO_OR_SUPPORT_PREFIX",
+    "purgedAt": "2026-09-15T12:19:44.026Z"
+  },
+  {
+    "email": "info@thelondonclinic.co.uk",
+    "name": "Executive",
+    "company": "The London Clinic",
+    "source": "master_followup_540_scrub",
+    "status": "PURGED_GENERIC_DESK",
+    "reason": "GENERIC_INFO_OR_SUPPORT_PREFIX",
+    "purgedAt": "2026-09-15T12:19:44.026Z"
+  },
+  {
+    "email": "info@benenden.org.uk",
+    "name": "Executive",
+    "company": "Benenden Hospital",
+    "source": "master_followup_540_scrub",
+    "status": "PURGED_GENERIC_DESK",
+    "reason": "GENERIC_INFO_OR_SUPPORT_PREFIX",
+    "purgedAt": "2026-09-15T12:19:44.026Z"
+  },
+  {
+    "email": "info@cromwellhospital.com",
+    "name": "Executive",
+    "company": "Cromwell Hospital",
+    "source": "master_followup_540_scrub",
+    "status": "PURGED_GENERIC_DESK",
+    "reason": "GENERIC_INFO_OR_SUPPORT_PREFIX",
+    "purgedAt": "2026-09-15T12:19:44.026Z"
+  },
+  {
+    "email": "info@hje.org.uk",
+    "name": "Executive",
+    "company": "St John & St Elizabeth Hospital",
+    "source": "master_followup_540_scrub",
+    "status": "PURGED_GENERIC_DESK",
+    "reason": "GENERIC_INFO_OR_SUPPORT_PREFIX",
+    "purgedAt": "2026-09-15T12:19:44.026Z"
+  },
+  {
+    "email": "info@dpr.com",
+    "name": "Executive Leader",
+    "company": "DPR Construction",
+    "source": "master_followup_540_scrub",
+    "status": "PURGED_GENERIC_DESK",
+    "reason": "GENERIC_INFO_OR_SUPPORT_PREFIX",
+    "purgedAt": "2026-09-15T12:19:44.026Z"
+  }
+]

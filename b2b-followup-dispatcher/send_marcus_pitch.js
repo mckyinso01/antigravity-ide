@@ -9,7 +9,7 @@ const transporter = nodemailer.createTransport({
   secure: true,
   auth: {
     user: process.env.SMTP_USER || 'mharcgatan@linkable.it.com',
-    pass: process.env.SMTP_PASS || 'Melonjuice01!'
+    pass: process.env.SMTP_PASS
   },
   tls: { rejectUnauthorized: false }
 });

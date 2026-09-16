@@ -9,7 +9,11 @@
     "send": "node src/dispatcher.js --live",
     "daemon": "node src/revenue_daemon.js",
     "invoice": "node src/invoice_kit.js --generate-sample",
-    "monitor": "node src/revenue_monitor.js"
+    "monitor": "node src/revenue_monitor.js",
+    "crm:dry-run": "node src/multi_channel_crm_engine.js",
+    "crm:live": "node src/multi_channel_crm_engine.js --live",
+    "crm:social": "node src/social_lead_dorker.js --test",
+    "crm:close": "node src/autonomous_deal_closer.js --test-escrow"
   },
   "dependencies": {
     "cors": "^2.8.6",

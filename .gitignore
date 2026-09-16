@@ -23,3 +23,30 @@ yarn-error.log*
 Thumbs.db
 *.tmp
 *.bak
+
+# Temporary test media & screenshots
+*.png
+*.jpg
+*.jpeg
+*.mp3
+
+# Local IDE config & scratch runners
+argv.json
+automate_indeed_application.mjs
+check_cf.mjs
+check_edge_indeed.mjs
+navigate_edge_auth.mjs
+parse_ddg.py
+search_indeed_jobs.py
+start_and_control_edge.mjs
+
+# IDE mirror agent caches (canonical source is .agents)
+.claude/
+.codex/
+.cursor/
+.gemini/
+.kiro/
+.opencode/
+.pi/
+.trae/
+.trae-cn/

@@ -458,5 +458,258 @@ Mharc Gatan
 Lead Solutions Architect | PharmaGuard 21-CFR
 Direct: mharcgatan@linkable.it.com`
     }
+  },
+  apex: {
+    1: {
+      subject: (company) => `Re: Predictive OBD-II Telematics & Fleet Maintenance OS — ${company}`,
+      body: (lead) => `Dear ${lead.executiveName || lead.contactName || 'Fleet Operations Leadership'},
+
+Following up on our note regarding the Apex Autotech Fleet CRM for ${lead.organization || lead.company || lead.companyName}.
+
+When commercial vehicles experience unscheduled roadside breakdowns, roadside towing costs and missed delivery SLA penalties quickly chew into quarterly fleet margins.
+
+We deployed an interactive live sandbox for your fleet superintendents:
+
+👉 Live Interactive Demo: ${lead.demoUrl || 'https://apex-autotech.linkable.it.com'}
+
+Key Capabilities:
+• Real-time OBD-II DTC diagnostic fault interception & sensor stream telemetry
+• Automated PM (Preventive Maintenance) scheduling based on actual engine run-hours & mileage
+• 1-Click Repair Order & Parts Inventory Dispatch
+• Driver safety scoring and fuel efficiency optimization ledger
+
+⚡ 48-HOUR FLEET PILOT:
+We offer a dedicated 48-hour pilot pre-loaded with your vehicle classifications for a flat $500 USD refundable pilot deposit (100% credited towards perpetual deployment).
+
+Would your fleet operations team be open to a 10-minute demonstration this week?
+
+Best regards,
+Mharc Gatan
+Lead Solutions Architect | Apex Autotech
+Direct: mharcgatan@linkable.it.com`
+    },
+    2: {
+      subject: (company) => `Re: Cutting unscheduled fleet downtime at ${company}`,
+      body: (lead) => `Dear ${lead.executiveName || lead.contactName},
+
+Quick follow-up on how Apex Autotech Fleet CRM (${lead.demoUrl || 'https://apex-autotech.linkable.it.com'}) automates maintenance schedules and reduces repair shop turn-around times by 28%.
+
+Would you like a private sandbox walk-through for your dispatch and maintenance team?
+
+Best regards,
+Mharc Gatan
+Lead Solutions Architect | Apex Autotech
+Direct: mharcgatan@linkable.it.com`
+    },
+    3: {
+      subject: (company) => `Closing file for ${company} fleet telematics`,
+      body: (lead) => `Dear ${lead.executiveName || lead.contactName},
+
+Assuming commercial fleet management automation isn't an immediate focus right now, I'll close out your file.
+
+You can test the live system anytime at: ${lead.demoUrl || 'https://apex-autotech.linkable.it.com'}
+
+Best regards,
+Mharc Gatan
+Lead Solutions Architect | Apex Autotech
+Direct: mharcgatan@linkable.it.com`
+    }
+  },
+  linkable: {
+    1: {
+      subject: (company) => `Re: Rapid 24-48h Custom Web App & SaaS Delivery — ${company}`,
+      body: (lead) => `Hi ${lead.executiveName || lead.contactName || 'Executive Leadership'},
+
+Saw your operations at ${lead.organization || lead.company || lead.companyName}.
+
+Instead of traditional agencies requiring 3-month discovery phases or bloated retainers, we deliver production web platforms, SaaS portals, and automation tools on rapid 24-48 hour functional sprint cycles.
+
+👉 Live Architecture Portfolio: ${lead.demoUrl || 'https://linkable.it.com'}
+
+Key Highlights:
+• 100/100 Lighthouse Performance & Sub-0.4s First Contentful Paint
+• Zero-Vendor-Lockin clean Node.js & modern frontend architecture
+• High-converting responsive UX with zero template bloat
+• Milestone-based Escrow terms (Start with a refundable $650 sprint deposit; balance only upon 100% verified delivery)
+
+What software feature or internal tool does ${lead.organization || lead.company || lead.companyName} need built or fixed first? I can turn around an interactive prototype within 24 hours.
+
+Best regards,
+Mharc Gatan
+Lead Full-Stack Architect | Linkable Systems
+Direct: mharcgatan@linkable.it.com`
+    },
+    2: {
+      subject: (company) => `Re: Eliminating software delivery delays at ${company}`,
+      body: (lead) => `Hi ${lead.executiveName || lead.contactName},
+
+Following up on our rapid 24-48 hour software delivery sprints (${lead.demoUrl || 'https://linkable.it.com'}).
+
+If you have an MVP, dashboard, or client portal needing immediate deployment, we can launch a dedicated functional sprint this week.
+
+Let me know if you'd like a quick 5-minute overview!
+
+Best regards,
+Mharc Gatan
+Lead Full-Stack Architect | Linkable Systems
+Direct: mharcgatan@linkable.it.com`
+    },
+    3: {
+      subject: (company) => `Closing file for ${company}`,
+      body: (lead) => `Hi ${lead.executiveName || lead.contactName},
+
+I haven't heard back, so I assume you're fully covered on the engineering front.
+
+Feel free to bookmark our live architecture portfolio: ${lead.demoUrl || 'https://linkable.it.com'}
+
+Best regards,
+Mharc Gatan
+Lead Full-Stack Architect | Linkable Systems
+Direct: mharcgatan@linkable.it.com`
+    }
+  },
+  aeroturbine: {
+    1: {
+      subject: (company) => `Re: Gas Turbine MRO Lifecycle & FAA Part 145 Traceability — ${company}`,
+      body: (lead) => `Dear ${lead.executiveName || lead.contactName || 'Maintenance & Quality Leadership'},
+
+Following up on our note regarding AeroTurbine MRO Guard for ${lead.organization || lead.company || lead.companyName}.
+
+Managing gas turbine overhaul cycles, hot-section boroscope inspections, and FAA/EASA airworthiness compliance logs across multiple stations often creates costly component quarantine delays.
+
+We deployed an interactive live sandbox for your technical engineering team:
+
+👉 Live Interactive Demo: ${lead.demoUrl || 'https://aeroturbine.linkable.it.com'}
+
+Key Capabilities:
+• Real-time Gas Turbine Rotor & Stator Life-Limited Part (LLP) cycle tracking
+• Automated FAA Form 8130-3 and EASA Form 1 dual-release compliance dossiers
+• Boroscope inspection image annotation with sub-millimeter crack depth logs
+• 48-Hour Private Sandbox Pilot ($950 refundable deposit)
+
+Would your MRO engineering team be open for a 10-minute walkthrough this week?
+
+Best regards,
+Mharc Gatan
+Lead Solutions Architect | AeroTurbine MRO Guard
+Direct: mharcgatan@linkable.it.com`
+    },
+    2: {
+      subject: (company) => `Re: Slashing turbine MRO turnaround time at ${company}`,
+      body: (lead) => `Dear ${lead.executiveName || lead.contactName},
+
+Quick note on how AeroTurbine MRO Guard accelerates repair station throughput and prevents parts traceability bottlenecks.
+
+Let me know if your team would like a private evaluation sandbox!
+
+Best regards,
+Mharc Gatan
+Lead Solutions Architect | AeroTurbine MRO Guard
+Direct: mharcgatan@linkable.it.com`
+    },
+    3: {
+      subject: (company) => `Closing file on ${company} turbine maintenance`,
+      body: (lead) => `Dear ${lead.executiveName || lead.contactName},
+
+Assuming turbine maintenance tracking isn't a current priority, I'll close out your file.
+
+Best regards,
+Mharc Gatan
+Lead Solutions Architect | AeroTurbine MRO Guard
+Direct: mharcgatan@linkable.it.com`
+    }
+  },
+  webaudit: {
+    1: {
+      subject: (company) => `Re: Mobile Speed & Core Web Vitals Audit for ${company}`,
+      body: (lead) => `Hi ${lead.executiveName || lead.contactName || 'Leadership Team'},
+
+Noticed ${lead.organization || lead.company || lead.companyName} is losing up to 35% of mobile traffic due to Core Web Vitals layout shifts and render delays.
+
+We built an automated speed remediation sprint delivering guaranteed sub-0.4s DOM paint:
+
+👉 Live Audit Sandbox: ${lead.demoUrl || 'https://audit.linkable.it.com'}
+
+• 100/100 Mobile & Desktop PageSpeed Optimization
+• Fixes Largest Contentful Paint (LCP) and Cumulative Layout Shift (CLS)
+• Flat $350 USD refundable sprint deposit via Escrow
+
+Would you be open for a quick 5-minute visual report for your website?
+
+Best regards,
+Mharc Gatan
+Lead Performance Engineer | Linkable Systems
+Direct: mharcgatan@linkable.it.com`
+    },
+    2: {
+      subject: (company) => `Re: Boosting conversion rates at ${company}`,
+      body: (lead) => `Hi ${lead.executiveName || lead.contactName},
+
+Following up on our performance optimization sprint for ${lead.organization || lead.company || lead.companyName}.
+
+Let me know if you'd like us to run a free audit on your main conversion landing pages!
+
+Best regards,
+Mharc Gatan
+Lead Performance Engineer | Linkable Systems
+Direct: mharcgatan@linkable.it.com`
+    },
+    3: {
+      subject: (company) => `Closing file for ${company}`,
+      body: (lead) => `Hi ${lead.executiveName || lead.contactName},
+
+Closing out your file for now. You can check our performance tools anytime at: ${lead.demoUrl || 'https://audit.linkable.it.com'}
+
+Best regards,
+Mharc Gatan
+Lead Performance Engineer | Linkable Systems
+Direct: mharcgatan@linkable.it.com`
+    }
   }
 };
+
+/**
+ * Generates tailored LinkedIn InMail / Connection Note Pitch
+ */
+export function getLinkedInPitch(appKey, lead) {
+  const company = lead.companyName || lead.company || lead.organization || 'your organization';
+  const name = lead.executiveName && lead.executiveName !== 'Executive Leadership' ? lead.executiveName.split(' ')[0] : 'there';
+  const demoUrl = lead.demoUrl || 'https://linkable.it.com';
+
+  switch ((appKey || '').toLowerCase()) {
+    case 'pharmaguard':
+      return `Hi ${name}, saw your quality operations at ${company}. We built a zero-lockin OS for USP <1079> Arrhenius excursion math & FDA Part 11 CAPA: ${demoUrl}. We offer a 48-hr pilot backed by refundable escrow. Open to a 5-min look?`;
+    case 'bunkertrust':
+      return `Hi ${name}, noticed your bunker operations at ${company}. We engineered an automated Coriolis aeration intercept & EU ETS €75.50/t ledger: ${demoUrl}. Available for a quick 48-hr pilot. Open to connecting?`;
+    case 'apex':
+      return `Hi ${name}, saw your fleet operations at ${company}. We deployed an automated OBD-II telematics & preventive maintenance OS: ${demoUrl}. Cuts unscheduled downtime by 28%. Open to a 5-min demo?`;
+    case 'sitesafe':
+      return `Hi ${name}, noticed your jobsites at ${company}. We built an automated NOAA weather delay claim & OSHA 300 compliance engine: ${demoUrl}. Open to a quick 5-min walkthrough?`;
+    case 'saccade':
+      return `Hi ${name}, noticed your campaigns at ${company}. Saccade-UI uses biological eye-tracking to predict ad visual fixation in sub-5ms: ${demoUrl}. Can generate a free creative audit if interested!`;
+    default:
+      return `Hi ${name}, noticed your work at ${company}. We deliver production web platforms and custom SaaS on rapid 24-48h sprints with refundable escrow terms: ${demoUrl}. Open to exploring?`;
+  }
+}
+
+/**
+ * Generates direct Facebook Messenger Pitch (m.me/)
+ */
+export function getFacebookMessengerPitch(appKey, lead) {
+  const company = lead.companyName || lead.company || lead.organization || 'your team';
+  const demoUrl = lead.demoUrl || 'https://linkable.it.com';
+
+  switch ((appKey || '').toLowerCase()) {
+    case 'pharmaguard':
+      return `Hello ${company} team! We noticed your cold-chain operations. When temperature excursions happen, proving batch stability to FDA auditors is tough. We built a live Arrhenius MKT calculator & CAPA engine: ${demoUrl}. Can we run a quick 48-hr test pilot for your QA team?`;
+    case 'bunkertrust':
+      return `Hello ${company} team! Marine fuel aeration & EU ETS compliance are costing shipowners thousands per voyage. We built a live verification ledger: ${demoUrl}. Would your technical superintendents be open to testing a sandbox?`;
+    case 'apex':
+      return `Hello ${company} team! Unscheduled fleet breakdowns and repair shop delays eat up margins. We built an automated OBD-II fleet maintenance OS: ${demoUrl}. Can we set up a 48-hr pilot for your fleet?`;
+    case 'sitesafe':
+      return `Hello ${company} team! Weather delay disputes and jobsite OSHA tracking cost general contractors thousands. We built a 1-click NOAA-certified weather claim engine: ${demoUrl}. Let us know if you'd like a quick 5-minute demo!`;
+    default:
+      return `Hello ${company} team! Need a high-performance web app, customer portal, or custom automation delivered in 24-48 hours? Test our live engine: ${demoUrl}. 100% refundable milestone escrow to start. Let us know what you need built!`;
+  }
+}
+

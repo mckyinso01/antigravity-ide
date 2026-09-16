@@ -5,7 +5,7 @@ dotenv.config();
 const config = {
   imap: {
     user: process.env.SMTP_USER || 'mharcgatan@linkable.it.com',
-    password: process.env.SMTP_PASS || 'Melonjuice01!',
+    password: process.env.SMTP_PASS,
     host: 'mail.spacemail.com',
     port: 993,
     tls: true,

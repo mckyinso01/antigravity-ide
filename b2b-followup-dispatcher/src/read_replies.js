@@ -2,10 +2,10 @@ import imaps from 'imap-simple';
 import dotenv from 'dotenv';
 dotenv.config();
 
-const config = {
+const spacemailConfig = {
   imap: {
-    user: process.env.SMTP_USER || 'mharcgatan@linkable.it.com',
-    password: process.env.SMTP_PASS || 'Melonjuice01!',
+    user: 'mharcgatan@linkable.it.com',
+    password: process.env.SPACEMAIL_PASS || process.env.SMTP_PASS,
     host: 'mail.spacemail.com',
     port: 993,
     tls: true,
@@ -15,8 +15,9 @@ const config = {
 };
 
 async function readSpecificEmails() {
-  const connection = await imaps.connect(config);
-  for (const box of ['INBOX', 'Trash']) {
+  const connection = await imaps.connect(spacemailConfig);
+  console.log('✅ Connected to SpaceMail IMAP successfully.');
+  for (const box of ['INBOX']) {
     await connection.openBox(box);
     const messages = await connection.search(['ALL'], { bodies: ['HEADER', 'TEXT'], markSeen: false });
     for (const m of messages) {

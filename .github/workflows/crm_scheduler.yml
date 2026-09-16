@@ -1,0 +1,52 @@
+name: Autonomous B2B Multi-Channel CRM Cloud Runner
+
+on:
+  schedule:
+    # Runs Monday to Friday at 1:00 PM UTC and 6:00 PM UTC (Morning & Afternoon US/EU Business Hours)
+    - cron: '0 13,18 * * 1-5'
+  workflow_dispatch: # Allows manual 1-click trigger from GitHub website anytime
+
+jobs:
+  run-crm-automation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: 'b2b-followup-dispatcher/package-lock.json'
+
+      - name: Install Dependencies
+        working-directory: b2b-followup-dispatcher
+        run: npm ci
+
+      - name: Execute Multi-Channel CRM Pipeline (Live Outreach & Inbound Deal Closing)
+        working-directory: b2b-followup-dispatcher
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST || 'smtp.gmail.com' }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT || '465' }}
+          SMTP_SECURE: 'true'
+          SMTP_USER: ${{ secrets.SMTP_USER || 'mckinsyo01@gmail.com' }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          SENDER_NAME: ${{ secrets.SENDER_NAME || 'Mharc Gatan - Linkable Systems' }}
+          SENDER_EMAIL: ${{ secrets.SENDER_EMAIL || 'mharcgatan@linkable.it.com' }}
+          DIRECT_REPORT_EMAIL: ${{ secrets.DIRECT_REPORT_EMAIL || 'mckinsyo01@gmail.com' }}
+          FOUNDER_PHONE: ${{ secrets.FOUNDER_PHONE || '639622812703' }}
+          CALLMEBOT_WHATSAPP_APIKEY: ${{ secrets.CALLMEBOT_WHATSAPP_APIKEY }}
+          ESCROW_PUBLIC_URL: 'https://escrowflow.linkable.it.com'
+        run: |
+          node src/multi_channel_crm_engine.js --live
+
+      - name: Commit & Push Updated CRM Databases & Inbound Leads
+        run: |
+          git config --global user.name "Linkable Autonomous CRM Bot"
+          git config --global user.email "bot@linkable.it.com"
+          git add b2b-followup-dispatcher/MASTER_MULTI_CHANNEL_CRM_LEADS.json b2b-followup-dispatcher/LINKEDIN_BOUNCE_RECOVERY_QUEUE.json b2b-followup-dispatcher/HOT_LIVE_INBOUND_LEAD_RADAR.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(crm): auto-sync enriched leads and closing radars [skip ci]" && git push)

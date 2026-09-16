@@ -1,21 +1,81 @@
 import nodemailer from 'nodemailer';
+import https from 'node:https';
 import dotenv from 'dotenv';
 dotenv.config();
 
 const RECIPIENT_EMAIL = process.env.DIRECT_REPORT_EMAIL || 'mckinsyo01@gmail.com';
-const SENDER_NAME = process.env.SENDER_NAME || 'Mharc Gatan | Linkable Systems';
-const SENDER_EMAIL = process.env.SENDER_EMAIL || 'mharcgatan@linkable.it.com';
+const SENDER_NAME = process.env.SENDER_NAME || 'Linkable Autonomous Alert';
+const SENDER_EMAIL = process.env.SENDER_EMAIL || process.env.SMTP_USER || 'mckinsyo01@gmail.com';
+const FOUNDER_PHONE = process.env.FOUNDER_PHONE || '639622812703';
 
 const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST || 'mail.spacemail.com',
+  host: process.env.SMTP_HOST || 'smtp.gmail.com',
   port: parseInt(process.env.SMTP_PORT || '465', 10),
-  secure: true,
+  secure: process.env.SMTP_SECURE === 'true' || true,
   auth: {
-    user: process.env.SMTP_USER || 'mharcgatan@linkable.it.com',
-    pass: process.env.SMTP_PASS || 'Melonjuice01!'
+    user: process.env.SMTP_USER || 'mckinsyo01@gmail.com',
+    pass: process.env.SMTP_PASS
   },
   tls: { rejectUnauthorized: false }
 });
+
+/**
+ * Sends direct WhatsApp message to +639622812703 via CallMeBot (if apikey is set)
+ */
+export async function sendWhatsAppAlert(messageText) {
+  const apiKey = process.env.CALLMEBOT_WHATSAPP_APIKEY;
+  if (!apiKey) return false;
+
+  return new Promise((resolve) => {
+    try {
+      const encodedMsg = encodeURIComponent(messageText);
+      const url = `https://api.callmebot.com/whatsapp.php?phone=${FOUNDER_PHONE}&text=${encodedMsg}&apikey=${apiKey}`;
+      https.get(url, (res) => {
+        resolve(res.statusCode === 200);
+      }).on('error', () => resolve(false));
+    } catch {
+      resolve(false);
+    }
+  });
+}
+
+/**
+ * Sends direct Telegram message to Founder's phone (if bot token is set)
+ */
+export async function sendTelegramAlert(messageText) {
+  const token = process.env.TELEGRAM_BOT_TOKEN;
+  const chatId = process.env.TELEGRAM_CHAT_ID;
+  if (!token || !chatId) return false;
+
+  return new Promise((resolve) => {
+    try {
+      const payload = JSON.stringify({
+        chat_id: chatId,
+        text: messageText,
+        parse_mode: 'Markdown'
+      });
+
+      const req = https.request({
+        hostname: 'api.telegram.org',
+        port: 443,
+        path: `/bot${token}/sendMessage`,
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Content-Length': Buffer.byteLength(payload)
+        }
+      }, (res) => {
+        resolve(res.statusCode === 200);
+      });
+
+      req.on('error', () => resolve(false));
+      req.write(payload);
+      req.end();
+    } catch {
+      resolve(false);
+    }
+  });
+}
 
 /**
  * Dispatches an urgent VIP alert to founder's direct Gmail when a high-converting prospect is identified.
@@ -109,6 +169,16 @@ Timestamp: ${timestamp}
       html
     });
     console.log(`✅ [FOUNDER NOTIFIER] High-Prospect Alert successfully dispatched to ${RECIPIENT_EMAIL}! (MsgId: ${info.messageId})`);
+    
+    // Also trigger direct phone notifications to +639622812703 (WhatsApp / Telegram)
+    sendWhatsAppAlert(text).then(sent => {
+      if (sent) console.log(`📲 [WHATSAPP ALERT] Sent to +${FOUNDER_PHONE}`);
+    }).catch(() => {});
+
+    sendTelegramAlert(text).then(sent => {
+      if (sent) console.log(`📲 [TELEGRAM ALERT] Sent to Telegram`);
+    }).catch(() => {});
+
     return { success: true, messageId: info.messageId };
   } catch (err) {
     console.error(`❌ [FOUNDER NOTIFIER FAILED]: ${err.message}`);
