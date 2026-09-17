@@ -1,0 +1,115 @@
+import React from 'react';
+import { Toaster } from "@/components/ui/toaster"
+import { QueryClientProvider } from '@tanstack/react-query'
+import { queryClientInstance } from '@/lib/query-client'
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import PageNotFound from './lib/PageNotFound';
+import { AuthProvider, useAuth } from '@/lib/AuthContext';
+import UserNotRegisteredError from '@/components/UserNotRegisteredError';
+
+// Layout
+import AppLayout from './components/layout/AppLayout';
+
+// Pages
+import Dashboard from './pages/Dashboard';
+import Inventory from './pages/Inventory';
+import POS from './pages/POS';
+import Analytics from './pages/Analytics';
+import Pricing from './pages/Pricing';
+import Categories from './pages/Categories';
+import Suppliers from './pages/Suppliers';
+import Recipes from './pages/Recipes';
+import Alerts from './pages/Alerts';
+import Customers from './pages/Customers';
+import PurchaseOrders from './pages/PurchaseOrders';
+import StockAdjustments from './pages/StockAdjustments';
+import SalesReport from './pages/SalesReport';
+import Monetization from './pages/Monetization';
+import Settings from './pages/Settings';
+import Automations from './pages/Automations';
+import Landing from './pages/Landing';
+import Login from './pages/Login';
+
+const ProtectedLayout = () => {
+  const { isAuthenticated } = useAuth();
+  if (!isAuthenticated) {
+    return <Navigate to="/login" replace />;
+  }
+  return <AppLayout />;
+};
+
+const AuthenticatedApp = () => {
+  const { isAuthenticated, isLoadingAuth, isLoadingPublicSettings, authError } = useAuth();
+
+  // Save referral code from URL before any auth redirect with defensive try-catch guard
+  React.useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const ref = params.get('ref');
+      if (ref) {
+        sessionStorage.setItem('pending_referral', ref);
+      }
+    } catch (err) {
+      console.error("App referral code exception:", err);
+    }
+  }, []);
+
+  if (isLoadingPublicSettings || isLoadingAuth) {
+    return (
+      <div className="fixed inset-0 flex items-center justify-center bg-[#050811] text-slate-100">
+        <div className="text-center">
+          <div className="w-10 h-10 border-4 border-blue-900 border-t-blue-500 rounded-full animate-spin mx-auto mb-3"></div>
+          <p className="text-xs text-blue-400 font-mono tracking-wide">Loading OmniStock Engine...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (authError) {
+    if (authError.type === 'user_not_registered') {
+      return <UserNotRegisteredError />;
+    }
+  }
+
+  return (
+    <Routes>
+      <Route path="/" element={isAuthenticated ? <Navigate to="/dashboard" replace /> : <Login />} />
+      <Route path="/login" element={isAuthenticated ? <Navigate to="/dashboard" replace /> : <Login />} />
+      <Route element={<ProtectedLayout />}>
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/inventory" element={<Inventory />} />
+        <Route path="/pos" element={<POS />} />
+        <Route path="/analytics" element={<Analytics />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/categories" element={<Categories />} />
+        <Route path="/suppliers" element={<Suppliers />} />
+        <Route path="/recipes" element={<Recipes />} />
+        <Route path="/alerts" element={<Alerts />} />
+        <Route path="/customers" element={<Customers />} />
+        <Route path="/purchase-orders" element={<PurchaseOrders />} />
+        <Route path="/stock-adjustments" element={<StockAdjustments />} />
+        <Route path="/sales-report" element={<SalesReport />} />
+        <Route path="/monetization" element={<Monetization />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/automations" element={<Automations />} />
+      </Route>
+      <Route path="/landing" element={<Landing />} />
+      <Route path="*" element={<PageNotFound />} />
+    </Routes>
+  );
+};
+
+function App() {
+  return (
+    <AuthProvider>
+      <QueryClientProvider client={queryClientInstance}>
+        <Router>
+          <AuthenticatedApp />
+        </Router>
+        <Toaster />
+      </QueryClientProvider>
+    </AuthProvider>
+  )
+}
+
+export default App

@@ -1,0 +1,93 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Product name"
+    },
+    "sku": {
+      "type": "string",
+      "description": "Stock Keeping Unit code"
+    },
+    "barcode": {
+      "type": "string",
+      "description": "Barcode number"
+    },
+    "description": {
+      "type": "string",
+      "description": "Product description"
+    },
+    "category_id": {
+      "type": "string",
+      "description": "Linked category ID"
+    },
+    "category": {
+      "type": "string",
+      "description": "Category name (for display)"
+    },
+    "supplier_id": {
+      "type": "string",
+      "description": "Linked supplier ID"
+    },
+    "supplier_name": {
+      "type": "string",
+      "description": "Supplier name (for display)"
+    },
+    "photo_url": {
+      "type": "string",
+      "description": "Product photo URL"
+    },
+    "source_image_url": {
+      "type": "string",
+      "description": "URL of the original catalogue image this product was extracted from (AI scan source)"
+    },
+    "price": {
+      "type": "number",
+      "description": "Selling price"
+    },
+    "cost": {
+      "type": "number",
+      "description": "Cost price"
+    },
+    "quantity": {
+      "type": "number",
+      "description": "Current stock quantity",
+      "default": 0
+    },
+    "unit": {
+      "type": "string",
+      "description": "Unit of measurement (e.g., ml, g, kg, pcs)",
+      "default": "pcs"
+    },
+    "low_stock_threshold": {
+      "type": "number",
+      "description": "Alert when stock falls below this level",
+      "default": 10
+    },
+    "expiry_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Product expiry date (if applicable)"
+    },
+    "tags": {
+      "type": "array",
+      "description": "Product tags for filtering",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "inactive"
+      ],
+      "default": "active",
+      "description": "Product status"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "previewPort": 3000,
+  "healthPath": "/",
+  "startCommand": "docker compose -f docker-compose.base44.yml up -d",
+  "secrets": [
+    {
+      "name": "VITE_BASE44_APP_ID",
+      "description": "Base44 App ID for the OmniStock app — find it in the Base44 Builder dashboard for your omnistock app",
+      "requiredAtBoot": true,
+      "generatedForDevelopment": true
+    },
+    {
+      "name": "VITE_BASE44_APP_BASE_URL",
+      "description": "Base44 backend URL for the OmniStock app — find it in the Base44 Builder dashboard (e.g. https://your-app.base44.app)",
+      "requiredAtBoot": true,
+      "generatedForDevelopment": true
+    }
+  ]
+}
