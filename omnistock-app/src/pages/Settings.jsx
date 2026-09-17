@@ -6,6 +6,7 @@ import { Trash2, AlertTriangle, Moon, Sun, Monitor, ShieldCheck, KeyRound } from
 import { DESIGN_TOKENS } from "@/lib/designSystem";
 import { useAuth } from "@/lib/AuthContext";
 import MfaChallengeModal from "@/components/auth/MfaChallengeModal";
+import DynamicDataImporter from "@/components/settings/DynamicDataImporter";
 
 export default function Settings() {
   const { mfaVerified } = useAuth();
@@ -111,6 +112,9 @@ export default function Settings() {
           </Button>
         </CardContent>
       </Card>
+
+      {/* Dynamic Data Importer */}
+      <DynamicDataImporter />
 
       {/* Danger Zone */}
       <Card className="water-breathing-card border border-rose-800/60 bg-rose-950/20 shadow-xl rounded-2xl app-card-hover">
