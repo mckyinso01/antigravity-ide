@@ -4,7 +4,7 @@ import {
   AlertTriangle, RefreshCw, Play, SkipForward, ArrowRight, BookOpen,
   Lock, Cpu, Eye, Target, Anchor, Filter, Clock, ChevronRight,
   Sparkles, Layers, Check, X, FileCode, ExternalLink, AlertOctagon,
-  Crown, Link2
+  Crown, Link2, Download, FileText
 } from 'lucide-react';
 import lifecycleConfig from '../agents/production-lifecycle.json';
 import skillsCatalog from '../agents/skills-catalog.json';
@@ -18,6 +18,7 @@ import {
 } from '../agents/audits';
 import RoleScenariosTab from '../components/agents/RoleScenariosTab';
 import ConnectorsTab from '../components/agents/ConnectorsTab';
+import { exportAuditCSV, exportAuditPDF } from '../utils/auditExport';
 
 const TITAN_ICONS = {
   mitnick: Shield,
@@ -207,6 +208,26 @@ export default function ProductionEngine() {
             >
               <Lock className="w-4 h-4" />
               <span>Strict Gate Audit</span>
+            </button>
+
+            <button
+              onClick={() => exportAuditCSV(auditState)}
+              disabled={!auditState.findings?.length}
+              className="px-3.5 py-2.5 bg-slate-800/80 hover:bg-slate-700 border border-slate-600/50 rounded-xl text-xs font-semibold text-slate-200 flex items-center gap-2 transition-all shadow hover:text-white disabled:opacity-40 disabled:cursor-not-allowed"
+              title="Export audit findings as CSV"
+            >
+              <FileText className="w-4 h-4 text-emerald-400" />
+              <span>Export CSV</span>
+            </button>
+
+            <button
+              onClick={() => exportAuditPDF(auditState)}
+              disabled={!auditState.findings?.length}
+              className="px-3.5 py-2.5 bg-slate-800/80 hover:bg-slate-700 border border-slate-600/50 rounded-xl text-xs font-semibold text-slate-200 flex items-center gap-2 transition-all shadow hover:text-white disabled:opacity-40 disabled:cursor-not-allowed"
+              title="Export full audit report as PDF"
+            >
+              <Download className="w-4 h-4 text-rose-400" />
+              <span>Export PDF</span>
             </button>
           </div>
         </div>

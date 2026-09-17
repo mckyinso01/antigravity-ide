@@ -4,9 +4,10 @@ import {
   Shield, Zap, Eye, Target, Anchor, Play, RefreshCw, CheckCircle2,
   AlertTriangle, ArrowRight, DollarSign, Receipt, Calculator, Building,
   FileText, Check, AlertOctagon, Terminal, Sparkles, ChevronRight,
-  BarChart3, Lock, ShieldAlert, ShieldCheck
+  BarChart3, Lock, ShieldAlert, ShieldCheck, X, Users
 } from 'lucide-react';
-import { ENTERPRISE_ROLES, TITANS, getThreatSeverity } from '../../agents/audits';
+import { ENTERPRISE_ROLES, TITANS, getThreatSeverity, CROSS_ROLE_SCENARIOS } from '../../agents/audits';
+import { validateAgainstThreat } from '../../agents/defenses';
 
 const ROLE_ICONS = {
   owner: Crown,
@@ -23,6 +24,15 @@ const TITAN_ICONS = {
   kamkar: Eye,
   miller: Target,
   jack: Anchor
+};
+
+const ROLE_COLORS = {
+  owner: { gradient: 'from-emerald-600 to-emerald-900', text: 'text-emerald-400', bg: 'bg-emerald-500/20', border: 'border-emerald-500/40' },
+  branch_manager: { gradient: 'from-blue-600 to-blue-900', text: 'text-blue-400', bg: 'bg-blue-500/20', border: 'border-blue-500/40' },
+  cashier: { gradient: 'from-amber-600 to-amber-900', text: 'text-amber-400', bg: 'bg-amber-500/20', border: 'border-amber-500/40' },
+  inventory_specialist: { gradient: 'from-purple-600 to-purple-900', text: 'text-purple-400', bg: 'bg-purple-500/20', border: 'border-purple-500/40' },
+  cost_analyst: { gradient: 'from-cyan-600 to-cyan-900', text: 'text-cyan-400', bg: 'bg-cyan-500/20', border: 'border-cyan-500/40' },
+  marketing_strategist: { gradient: 'from-rose-600 to-rose-900', text: 'text-rose-400', bg: 'bg-rose-500/20', border: 'border-rose-500/40' },
 };
 
 export default function RoleScenariosTab({ onSelectRoleInAudit, auditFindings = [] }) {
@@ -81,18 +91,33 @@ export default function RoleScenariosTab({ onSelectRoleInAudit, auditFindings = 
     ]);
 
     await new Promise(r => setTimeout(r, 700));
-    const intercepted = true; // Defense catches the threat
-    setSimulationLogs(prev => [
-      ...prev,
-      `[${new Date().toLocaleTimeString()}] [GATE VERDICT]: Intercepted! Exploit attempt neutralized by Zero-Defect defensive guardrail.`,
-      `[DEFENSE ACTIVE]: ${threat.defense}`
-    ]);
+    const payload = JSON.parse(getSamplePayload(selectedRole.id, titanId));
+    const validation = validateAgainstThreat(selectedRole.id, titanId, payload);
+
+    const newLogs = [
+      `[${new Date().toLocaleTimeString()}] [SCHEMA]: ${validation.defenseSchemaName}`,
+    ];
+
+    if (validation.intercepted) {
+      newLogs.push(`[${new Date().toLocaleTimeString()}] [GATE VERDICT]: Intercepted! ${validation.violations.length} violation(s) detected by Zod schema.`);
+      validation.violations.forEach(v => newLogs.push(`  ✗ ${v}`));
+      newLogs.push(`[DEFENSE ACTIVE]: ${threat.defense}`);
+    } else {
+      newLogs.push(`[${new Date().toLocaleTimeString()}] [GATE VERDICT]: BREACH! Payload bypassed ${validation.defenseSchemaName}.`);
+      newLogs.push(`[DEFENSE GAP]: ${threat.defense}`);
+    }
+
+    setSimulationLogs(prev => [...prev, ...newLogs]);
 
     setSimulationResult({
       titan,
       threat,
-      intercepted,
-      remediationSummary: `Neutralized vector: ${threat.vector}. Zero-defect verification passed.`
+      intercepted: validation.intercepted,
+      violations: validation.violations,
+      defenseSchemaName: validation.defenseSchemaName,
+      remediationSummary: validation.intercepted
+        ? `Neutralized vector: ${threat.vector}. ${validation.violations.length} schema violation(s) caught.`
+        : `BREACH: Payload bypassed ${validation.defenseSchemaName}. Defense gap requires immediate attention.`,
     });
     setIsSimulating(false);
   };
@@ -581,6 +606,116 @@ export default function RoleScenariosTab({ onSelectRoleInAudit, auditFindings = 
         </div>
       </div>
 
+      {/* CROSS-ROLE INTERACTION SCENARIOS */}
+      <div className="bg-[#0B1C30]/90 border border-slate-800 rounded-2xl p-5 space-y-4">
+        <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+          <div className="flex items-center gap-2.5">
+            <Users className="w-5 h-5 text-[#00E5FF]" />
+            <div>
+              <h3 className="text-sm font-bold text-white">
+                Cross-Role Interaction Scenarios
+              </h3>
+              <p className="text-xs text-slate-400 mt-0.5">
+                Adversarial collisions between 2+ enterprise roles — where workflow overlap creates exploitable threat surfaces.
+              </p>
+            </div>
+          </div>
+          <span className="text-xs font-mono text-slate-400">
+            {CROSS_ROLE_SCENARIOS.length} Collision Scenarios
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4">
+          {CROSS_ROLE_SCENARIOS.map((scen) => {
+            const roles = scen.participatingRoles.map(rid => {
+              const role = ENTERPRISE_ROLES.find(r => r.id === rid);
+              const Icon = ROLE_ICONS[rid] || Crown;
+              const color = ROLE_COLORS[rid] || ROLE_COLORS.owner;
+              return { role, Icon, color, id: rid };
+            });
+
+            return (
+              <div key={scen.id} className="bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden">
+                {/* Split-color gradient header */}
+                <div className={`bg-gradient-to-r ${roles[0]?.color.gradient || 'from-slate-800 to-slate-900'} p-4`}>
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-2">
+                        {roles.map(({ id, Icon, color }) => (
+                          <div key={id} className={`p-1.5 rounded-lg ${color.bg} ${color.text} border ${color.border}`}>
+                            <Icon className="w-4 h-4" />
+                          </div>
+                        ))}
+                        <div className="text-rose-400 font-bold text-lg">⚡</div>
+                      </div>
+                      <h4 className="text-sm font-bold text-white">{scen.title}</h4>
+                    </div>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-black/30 text-white/80 border border-white/20 shrink-0">
+                      {scen.id}
+                    </span>
+                  </div>
+                  <div className="mt-2 flex flex-wrap items-center gap-2">
+                    {roles.map(({ id, role, color }) => (
+                      <span key={id} className={`text-[10px] font-mono px-2 py-0.5 rounded ${color.bg} ${color.text} border ${color.border}`}>
+                        {role?.title || id}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Body */}
+                <div className="p-4 space-y-3">
+                  <div className="text-xs text-slate-300 bg-slate-950/60 p-3 rounded-lg border border-slate-800 leading-relaxed">
+                    <span className="font-mono text-slate-400 font-bold block mb-1">Collision Context:</span>
+                    {scen.context}
+                  </div>
+
+                  <div>
+                    <span className="text-xs font-mono text-slate-400 font-bold block mb-2">Collusion Workflow:</span>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {scen.workflow.map((step, sIdx) => (
+                        <div key={sIdx} className="bg-slate-950 p-2.5 rounded-lg border border-slate-800/80 text-xs text-slate-300 flex items-start gap-2">
+                          <ChevronRight className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                          <span>{step}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Cross-role threats */}
+                  <div className="space-y-2">
+                    <span className="text-xs font-mono text-slate-400 font-bold block">Cross-Role Threat Vectors:</span>
+                    {scen.crossRoleThreats.map((threat, tIdx) => {
+                      const titan = TITANS.find(t => t.id === threat.titanId) || TITANS[0];
+                      const TitanIcon = TITAN_ICONS[threat.titanId] || Shield;
+                      return (
+                        <div key={tIdx} className="bg-slate-950/60 border border-rose-900/30 rounded-lg p-3 space-y-2">
+                          <div className="flex items-center gap-2">
+                            <span className="text-base">{titan.avatar}</span>
+                            <TitanIcon className="w-4 h-4 text-rose-400" />
+                            <span className="text-xs font-bold text-rose-300">{threat.vector}</span>
+                          </div>
+                          <p className="text-[11px] text-slate-400 leading-relaxed">{threat.description}</p>
+                          <div className="bg-blue-950/40 border border-blue-500/30 p-2 rounded-lg text-[11px] text-slate-300 flex items-start gap-1.5">
+                            <ShieldCheck className="w-3.5 h-3.5 text-[#00E5FF] shrink-0 mt-0.5" />
+                            <span>{threat.defense}</span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  <div className="bg-rose-950/30 border border-rose-500/20 p-2.5 rounded-lg text-xs text-rose-200 flex items-center gap-2">
+                    <AlertTriangle className="w-4 h-4 text-rose-400 shrink-0" />
+                    <span><strong>Business Impact:</strong> {scen.businessImpact}</span>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
       {/* LIVE INTERACTIVE SIMULATION RUNNER MODAL / DRAWER */}
       {(isSimulating || simulationResult) && (
         <div className="bg-slate-950 border border-blue-500/50 rounded-2xl p-5 shadow-2xl space-y-4 animate-in fade-in">
@@ -636,21 +771,41 @@ export default function RoleScenariosTab({ onSelectRoleInAudit, auditFindings = 
           </div>
 
           {simulationResult && (
-            <div className="bg-emerald-950/60 border border-emerald-500/50 p-3.5 rounded-xl flex items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
+            <div className={`p-3.5 rounded-xl flex items-center justify-between gap-4 ${
+              simulationResult.intercepted
+                ? 'bg-emerald-950/60 border border-emerald-500/50'
+                : 'bg-rose-950/60 border border-rose-500/50'
+            }`}>
+              <div className="flex items-start gap-3">
+                {simulationResult.intercepted ? (
+                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                ) : (
+                  <AlertOctagon className="w-5 h-5 text-rose-400 shrink-0 mt-0.5" />
+                )}
                 <div>
-                  <div className="text-xs font-bold text-emerald-200">
-                    Defensive Barrier Confirmed: Exploit Neutralized
+                  <div className={`text-xs font-bold ${simulationResult.intercepted ? 'text-emerald-200' : 'text-rose-200'}`}>
+                    {simulationResult.intercepted ? 'Defensive Barrier Confirmed: Exploit Neutralized' : 'BREACH: Defense Gap Detected'}
                   </div>
                   <div className="text-xs text-slate-300 mt-0.5">
                     {simulationResult.remediationSummary}
                   </div>
+                  {simulationResult.violations?.length > 0 && (
+                    <div className="mt-2 space-y-0.5">
+                      {simulationResult.violations.map((v, i) => (
+                        <div key={i} className="text-[11px] font-mono text-rose-300/90 flex items-start gap-1">
+                          <X className="w-3 h-3 text-rose-400 shrink-0 mt-0.5" />
+                          <span>{v}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
 
-              <span className="px-2.5 py-1 bg-emerald-600 text-white font-mono text-xs font-bold rounded-lg shrink-0">
-                PASSED (0 BREACH)
+              <span className={`px-2.5 py-1 text-white font-mono text-xs font-bold rounded-lg shrink-0 ${
+                simulationResult.intercepted ? 'bg-emerald-600' : 'bg-rose-600'
+              }`}>
+                {simulationResult.intercepted ? 'PASSED (0 BREACH)' : 'BREACH DETECTED'}
               </span>
             </div>
           )}

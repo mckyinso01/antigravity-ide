@@ -225,6 +225,30 @@ export const ENTERPRISE_ROLES = [
           'Step 4: Manager rejects void, flags suspicious pattern, and logs incident in supervisor journal.'
         ],
         businessImpact: 'Prevents internal cash theft and protects inventory decrement accuracy.'
+      },
+      {
+        id: 'scenario-mgr-2',
+        title: 'Multi-Branch Shift Handoff Reconciliation Discrepancy',
+        context: 'At closing time, Branch #1 reports a cash drawer overage of $340 while Branch #3 reports a shortage of $215. The manager must reconcile both before end-of-day bank deposit.',
+        workflow: [
+          'Step 1: Manager opens Shift Reconciliation Dashboard showing both branches side-by-side.',
+          'Step 2: Branch #1 overage traced to a $340 cash sale that was mistakenly ringed up under "dine-in" instead of "takeout" (different VAT category).',
+          'Step 3: Branch #3 shortage traced to a voided transaction that was approved but never logged to the audit trail due to a terminal sync delay.',
+          'Step 4: Manager corrects the VAT categorization at Branch #1, retrieves the void audit log from Branch #3 offline buffer, and signs the dual-branch reconciliation.'
+        ],
+        businessImpact: 'Ensures accurate tax reporting across branches and prevents $215 unexplained cash shortage from escalating to an audit flag.'
+      },
+      {
+        id: 'scenario-mgr-3',
+        title: 'Regulatory Health Inspection Audit Trail Response',
+        context: 'A municipal health inspector arrives unannounced and requests 90 days of temperature logs, supplier receiving records, and employee food handling certifications.',
+        workflow: [
+          'Step 1: Manager accesses Compliance Audit Dashboard and selects the 90-day reporting window.',
+          'Step 2: System compiles batch receiving temperature logs, cold-storage monitoring records, and staff certification expiry calendar.',
+          'Step 3: Inspector flags two expired food handler certifications and one missing cold-chain temperature reading from 3 weeks ago.',
+          'Step 4: Manager generates corrective action report, schedules re-certification for the two staff members, and submits the digital compliance response via the inspector tablet.'
+        ],
+        businessImpact: 'Avoids regulatory fines of up to $5,000 per violation and maintains the establishment operating license.'
       }
     ],
 
@@ -324,6 +348,30 @@ export const ENTERPRISE_ROLES = [
           'Step 4: Internet reconnects at 1:15 PM; system silently batches and syncs 42 queued transactions with cloud backend without duplicate billing.'
         ],
         businessImpact: 'Zero lost revenue, zero customer walk-outs, and 100% continuity during infrastructure failure.'
+      },
+      {
+        id: 'scenario-cashier-2',
+        title: 'Split Payment Dispute and Chargeback Resolution',
+        context: 'A customer disputes a $145 charge claiming they only authorized $100 on their card and $45 in cash. The cashier must produce proof of the split-tender agreement.',
+        workflow: [
+          'Step 1: Cashier retrieves the original transaction receipt #TRX-7741 showing the split-tender breakdown.',
+          'Step 2: System displays the timestamped payment log: $45.00 CASH (12:03:15 PM) + $100.00 VISA ****1234 (12:03:22 PM).',
+          'Step 3: Cashier prints the digital receipt with the customer signature capture and split-tender confirmation.',
+          'Step 4: Manager reviews the evidence package and submits a chargeback dispute response to the payment processor with the receipt attachment.'
+        ],
+        businessImpact: 'Resolves the chargeback dispute with documented evidence and prevents $100 in fraudulent reversal.'
+      },
+      {
+        id: 'scenario-cashier-3',
+        title: 'End-of-Shift Cash Drawer Overage Investigation',
+        context: 'At end-of-shift reconciliation, the cashier counts $847 in the drawer, but the system expected $812 — a $35 unexplained overage.',
+        workflow: [
+          'Step 1: Cashier performs blind count; system reports $35 overage vs expected float.',
+          'Step 2: Manager reviews the shift transaction log and identifies a customer who was charged twice for a $17.50 combo meal due to a network retry.',
+          'Step 3: System flags the duplicate charge (same idempotency key, two successful responses) and generates a refund authorization.',
+          'Step 4: Manager approves the $17.50 refund, logs the overage root cause, and the remaining $17.50 is attributed to an unrecorded cash sale from a manual entry.'
+        ],
+        businessImpact: 'Identifies a double-charge system bug, issues a customer refund, and maintains drawer accuracy for audit compliance.'
       }
     ],
 
@@ -424,6 +472,30 @@ export const ENTERPRISE_ROLES = [
           'Step 4: Driver signs digital delivery discrepancy form on POS tablet.'
         ],
         businessImpact: 'Instantly saves $500 overbilling and prevents distorted food cost calculations.'
+      },
+      {
+        id: 'scenario-inv-2',
+        title: 'Cross-Branch Emergency Stock Transfer During Peak Demand',
+        context: 'Branch #4 runs out of premium ribeye steaks on a Saturday night with 30 orders still in the kitchen. Branch #2 (3km away) has 40 units in stock.',
+        workflow: [
+          'Step 1: Branch #4 inventory system triggers a stock-out alert and queries the inter-branch availability matrix.',
+          'Step 2: System identifies Branch #2 has 40 units of ribeye and auto-generates an Inter-Branch Transfer Order #XFER-3391.',
+          'Step 3: Branch #2 inventory specialist confirms dispatch with tamper-seal ID and digital signature on the transfer manifest.',
+          'Step 4: Branch #4 receives the transfer, scans the tamper seal, and the system updates both branch stock ledgers atomically.'
+        ],
+        businessImpact: 'Prevents 30 cancelled orders ($2,100 in lost revenue) and maintains customer satisfaction during peak service.'
+      },
+      {
+        id: 'scenario-inv-3',
+        title: 'Perishable Batch Expiry Mass Write-Off Event',
+        context: 'A refrigeration unit failure at Branch #1 compromises 60 units of dairy and meat products worth $1,800. The inventory specialist must execute a compliant mass write-off.',
+        workflow: [
+          'Step 1: Cold-storage IoT sensor alerts that Unit B temperature exceeded 8°C for 4+ hours, triggering a food safety quarantine flag.',
+          'Step 2: Inventory specialist scans all affected batch/lot barcodes into the Quarantine Write-Off module.',
+          'Step 3: System generates a mass write-off journal entry with reason code "REFRIGERATION_FAILURE", attaches the IoT temperature log as evidence, and routes for manager approval.',
+          'Step 4: Manager approves the $1,800 write-off; system updates the stock ledger, notifies the Cost Analyst for margin impact, and files the insurance claim documentation.'
+        ],
+        businessImpact: 'Ensures food safety compliance, prevents spoiled product from reaching customers, and triggers insurance recovery for $1,800 in losses.'
       }
     ],
 
@@ -523,6 +595,30 @@ export const ENTERPRISE_ROLES = [
           'Step 4: Generates pricing recommendation scenario showing a $0.75 price increase restores target margin while retaining customer volume.'
         ],
         businessImpact: 'Maintains annual gross profit and averts $28,000 in unbudgeted ingredient inflation erosion.'
+      },
+      {
+        id: 'scenario-cost-2',
+        title: 'Menu Engineering Quarterly Review and Item Retirement Decision',
+        context: 'Quarterly menu analysis reveals 6 menu items classified as "Dogs" (low profitability, low popularity) collectively contributing only 3% of revenue but consuming 12% of prep labor hours.',
+        workflow: [
+          'Step 1: Analyst opens the BCG Menu Matrix and filters for items in the "Dog" quadrant over the last 90 days.',
+          'Step 2: System ranks the 6 Dog items by total contribution margin: bottom 3 items net negative margin after labor allocation.',
+          'Step 3: Analyst simulates removing the 3 worst items and projects a 4% labor cost reduction with only 1.2% revenue loss.',
+          'Step 4: Generates a retirement recommendation report with replacement menu candidates from the "Star" and "Plowhorse" quadrants for the next menu cycle.'
+        ],
+        businessImpact: 'Optimizes kitchen labor utilization by 4% and improves overall menu profitability by $3,200/month.'
+      },
+      {
+        id: 'scenario-cost-3',
+        title: 'Standard vs Actual Variance Investigation — Kitchen Over-Pouring',
+        context: 'Monthly variance report shows actual liquor usage exceeded theoretical consumption by $2,400 — a 7% variance well above the 2% tolerance threshold.',
+        workflow: [
+          'Step 1: Analyst opens the Standard vs Actual Variance Report and filters for the spirits category.',
+          'Step 2: System pinpoints the top 3 SKUs with the highest variance: premium vodka (+18%), gin (+12%), and whiskey (+9%).',
+          'Step 3: Analyst cross-references with POS pour-size settings and discovers the bartender is free-pouring instead of using the calibrated 1.5oz jiggers.',
+          'Step 4: Generates a corrective action memo recommending calibrated pour spouts and weekly variance monitoring for the bar station.'
+        ],
+        businessImpact: 'Recovers $2,400/month in over-pour losses and establishes a 2% variance monitoring threshold for all bar operations.'
       }
     ],
 
@@ -623,6 +719,30 @@ export const ENTERPRISE_ROLES = [
           'Step 4: System enforces global budget cap of 500 total redemptions; automatically expires promo when cap is reached.'
         ],
         businessImpact: 'Prevents $45,000 in catastrophic margin loss and preserves promotion ROI.'
+      },
+      {
+        id: 'scenario-mkt-2',
+        title: 'Loyalty Program Point Drain Fraud Detection',
+        context: 'A customer account redeems $320 worth of loyalty rewards across 4 separate visits in a single day, far exceeding normal redemption patterns.',
+        workflow: [
+          'Step 1: Anti-fraud engine flags the account "CUST-88412" for abnormal redemption velocity (4 redemptions in 6 hours).',
+          'Step 2: System freezes the account pending investigation and alerts the marketing strategist.',
+          'Step 3: Analyst reviews the redemption log: all 4 redemptions were processed at the same terminal by the same cashier, suggesting staff-assisted point draining.',
+          'Step 4: Analyst triggers an SMS OTP verification requirement for all future high-value redemptions and files an incident report for the cashier investigation.'
+        ],
+        businessImpact: 'Prevents $320 in fraudulent reward redemption and closes a staff-collusion loyalty drain vulnerability.'
+      },
+      {
+        id: 'scenario-mkt-3',
+        title: 'Multi-Channel Campaign Attribution and ROAS Reconciliation',
+        context: 'Marketing ran simultaneous campaigns across SMS, Facebook Ads, and in-store QR codes. Finance demands proof of which channel drove the $18,500 weekend revenue spike.',
+        workflow: [
+          'Step 1: Analyst opens the Multi-Channel Attribution Dashboard and selects the campaign date range.',
+          'Step 2: System attributes revenue by channel: SMS (38%), Facebook Ads (44%), QR codes (18%) using last-touch attribution.',
+          'Step 3: Cross-references ad spend: SMS ($450), Facebook ($1,200), QR ($50) — calculating ROAS of 15.6x, 6.8x, and 66.6x respectively.',
+          'Step 4: Generates a channel optimization report recommending budget reallocation: increase SMS spend, maintain Facebook, and expand QR code placements.'
+        ],
+        businessImpact: 'Optimizes marketing spend allocation and demonstrates $18,500 in attributable revenue with clear ROAS per channel.'
       }
     ],
 
@@ -665,6 +785,153 @@ export const ENTERPRISE_ROLES = [
     ]
   }
 ];
+
+/**
+ * Cross-Role Interaction Scenarios
+ * Models adversarial interactions between 2+ enterprise roles where the
+ * collision between their workflows creates exploitable threat surfaces.
+ */
+export const CROSS_ROLE_SCENARIOS = [
+  {
+    id: 'crossrole-1',
+    title: 'Cashier + Manager Void Fraud Collusion',
+    participatingRoles: ['cashier', 'branch_manager'],
+    context: 'A cashier and a branch manager collude to split pocketed cash: the cashier voids completed orders after payment, and the manager approves the voids without inspection in exchange for a cut.',
+    workflow: [
+      'Step 1: Cashier completes a $120 cash order and pockets the money.',
+      'Step 2: Cashier initiates a post-tender void, claiming the customer cancelled.',
+      'Step 3: Manager approves the void with a static PIN — no inspection of kitchen timestamps or delivery confirmation.',
+      'Step 4: Inventory ledger shows the items as "voided" but physical stock was consumed, creating a shrinkage gap the manager attributes to "waste".'
+    ],
+    crossRoleThreats: [
+      {
+        titanId: 'mitnick',
+        vector: 'Static PIN Sharing Enables Collusive Void Approval',
+        description: 'The manager shares their static 4-digit PIN with the cashier, allowing self-approved voids without any actual manager oversight.',
+        defense: 'Dynamic TOTP on manager device + mandatory kitchen timestamp verification before void approval — no static PINs.'
+      },
+      {
+        titanId: 'kamkar',
+        vector: 'Void Audit Trail Suppression via Shared Session',
+        description: 'Manager stays logged into the POS terminal, allowing the cashier to use the elevated session to approve their own voids.',
+        defense: 'Ephemeral single-action privilege elevation: manager session auto-reverts to cashier within 30 seconds of each override.'
+      }
+    ],
+    businessImpact: 'Collusive void fraud can drain $2,000-$5,000/month per branch if the PIN-sharing pattern goes undetected.'
+  },
+  {
+    id: 'crossrole-2',
+    title: 'Inventory Specialist + Cost Analyst Margin Manipulation to Hide Shrinkage',
+    participatingRoles: ['inventory_specialist', 'cost_analyst'],
+    context: 'An inventory specialist and a cost analyst collude to mask theft by adjusting standard recipe costs upward, making actual vs theoretical variance appear normal despite physical stock disappearing.',
+    workflow: [
+      'Step 1: Inventory specialist removes high-value liquor bottles from the storeroom without logging a transaction.',
+      'Step 2: Cost analyst inflates the standard recipe yield loss percentage for the affected SKUs, making the theoretical consumption appear higher.',
+      'Step 3: The variance between theoretical and actual usage shrinks, hiding the theft in "acceptable" variance thresholds.',
+      'Step 4: Monthly margin reports show normal food cost ratios, while actual profitability is eroded by the unrecorded shrinkage.'
+    ],
+    crossRoleThreats: [
+      {
+        titanId: 'mitnick',
+        vector: 'Dual-Role Standard Cost Manipulation Without Dual Authorization',
+        description: 'The cost analyst modifies standard recipe costs without requiring a second approver, enabling single-actor margin manipulation.',
+        defense: 'Standard cost master records locked behind strict dual-authorization workflow with immutable audit logging.'
+      },
+      {
+        titanId: 'jack',
+        vector: 'Inventory Ledger Gap From Unlogged Stock Removal',
+        description: 'Physical stock is removed without a corresponding ledger journal entry, creating an untraceable gap between system and reality.',
+        defense: 'Immutable double-entry inventory ledger: stock levels are derived exclusively from sum of auditable transaction events — no direct quantity edits.'
+      }
+    ],
+    businessImpact: 'Undetected collusion can mask $3,000-$8,000/month in stolen inventory and corrupt menu engineering decisions with false cost data.'
+  },
+  {
+    id: 'crossrole-3',
+    title: 'Marketing Strategist + Cashier Promo Code Abuse Stacking',
+    participatingRoles: ['marketing_strategist', 'cashier'],
+    context: 'A marketing strategist leaks a high-value internal promo code to a cashier, who applies it alongside customer discounts to pocket the difference in cash.',
+    workflow: [
+      'Step 1: Marketing strategist creates a "STAFF100" promo code worth $100 off, intended for employee meal comp.',
+      'Step 2: Cashier applies STAFF100 to a regular customer $85 order, charges the customer $85 cash, and voids the $100 discount as a "staff meal".',
+      'Step 3: The $15 overage goes into the drawer, and the cashier extracts it during shift close.',
+      'Step 4: Promo code redemption reports show normal staff meal patterns, masking the abuse.'
+    ],
+    crossRoleThreats: [
+      {
+        titanId: 'miller',
+        vector: 'Internal Promo Code Parameter Fuzzing and Misuse',
+        description: 'The STAFF100 code has no usage cap, no role-restriction, and no per-shift limit, allowing unlimited exploitation.',
+        defense: 'Strict promo code schema: alphanumeric [A-Z0-9_-]{3,20}, role-restricted, usage-capped, with 500ms rate limiting.'
+      },
+      {
+        titanId: 'geohot',
+        vector: 'Concurrent Redemption Race on Single-Use Staff Code',
+        description: 'If the code is single-use, the cashier races to redeem it before the legitimate staff member, or exploits a sync delay to redeem twice.',
+        defense: 'Distributed atomic compare-and-swap (CAS) lock ensuring single execution of single-use promo codes.'
+      }
+    ],
+    businessImpact: 'Unrestricted internal promo codes can drain $500-$1,500/month in fraudulent discounts per cashier.'
+  },
+  {
+    id: 'crossrole-4',
+    title: 'Owner + Manager Cash Skimming Cover-Up',
+    participatingRoles: ['owner', 'branch_manager'],
+    context: 'A branch manager systematically skims $50-$100 per shift from cash drawers. When the owner investigates the variance, the manager manipulates the reconciliation reports to show the shortages as "supplier short-deliveries".',
+    workflow: [
+      'Step 1: Manager skims $80 from Branch #2 cash drawer during Friday night shift.',
+      'Step 2: Owner notices a recurring $60-$100 weekly variance pattern at Branch #2 and requests an explanation.',
+      'Step 3: Manager attributes the variance to supplier short-deliveries and generates false receiving discrepancy reports to cover the gap.',
+      'Step 4: Owner cross-references with the inventory specialist PO matching records and discovers no corresponding supplier discrepancy claims exist.'
+    ],
+    crossRoleThreats: [
+      {
+        titanId: 'mitnick',
+        vector: 'Reconciliation Report Falsification via Manager Access Level',
+        description: 'The manager has write access to reconciliation reports, enabling them to fabricate supplier discrepancy explanations.',
+        defense: 'Reconciliation reports must be cryptographically signed and immutable once submitted; supplier discrepancies must cross-reference PO matching records automatically.'
+      },
+      {
+        titanId: 'jack',
+        vector: 'Cash Drawer Float Manipulation Across Shifts',
+        description: 'Manager exploits the gap between opening and closing float counts across shifts, skimming small amounts that fall within the $2 variance tolerance.',
+        defense: 'Cumulative variance tracking: individual variances within tolerance but recurring patterns trigger escalation alerts above $20/week cumulative drift.'
+      }
+    ],
+    businessImpact: 'Systematic cash skimming can drain $1,500-$4,000/month per branch if reconciliation falsification goes undetected.'
+  },
+  {
+    id: 'crossrole-5',
+    title: 'Inventory Specialist + Cashier Stock Theft via POS Manipulation',
+    participatingRoles: ['inventory_specialist', 'cashier'],
+    context: 'An inventory specialist and cashier collude to steal high-value items: the inventory specialist marks stock as "damaged/expired" in the write-off ledger, and the cashier sells the same items as off-menu cash sales with no receipt.',
+    workflow: [
+      'Step 1: Inventory specialist marks 5 bottles of premium whiskey ($450 value) as "broken during restocking" in the write-off ledger.',
+      'Step 2: Instead of disposing the bottles, the specialist hands them to the cashier.',
+      'Step 3: Cashier sells the whiskey to regular customers as off-menu items, pocketing the cash with no POS record.',
+      'Step 4: Inventory ledger shows the whiskey as written off, and POS shows no corresponding sale — the theft is invisible in standard reports.'
+    ],
+    crossRoleThreats: [
+      {
+        titanId: 'jack',
+        vector: 'Write-Off Ledger Entry Without Physical Evidence Verification',
+        description: 'The inventory specialist logs a write-off without requiring photo evidence or supervisor physical verification of the damaged goods.',
+        defense: 'Mandatory photo upload for all write-offs + supervisor physical verification signature + random audit sampling of 10% of write-offs.'
+      },
+      {
+        titanId: 'kamkar',
+        vector: 'Off-Menu Cash Sales Invisible to POS Audit Trail',
+        description: 'Cashier processes sales outside the POS system, leaving no digital transaction record to cross-reference against inventory.',
+        defense: 'Reconcile cash drawer float against POS transaction volume — unexplained cash overages trigger investigation alerts.'
+      }
+    ],
+    businessImpact: 'Collusive stock theft via write-off manipulation can drain $2,000-$6,000/month in high-value inventory per branch.'
+  }
+];
+
+export function getCrossRoleScenarios() {
+  return CROSS_ROLE_SCENARIOS;
+}
 
 export function getRoleById(roleId) {
   return ENTERPRISE_ROLES.find(r => r.id === roleId) || ENTERPRISE_ROLES[0];
