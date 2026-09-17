@@ -27,12 +27,15 @@ export function runDevilsTeamAudit(mode = 'continuous', context = {}) {
     ...auditJack(context, mode),
   ];
 
-  // Merge persisted remediations / waivers if any
+  // Merge persisted waivers only — audit modules are source of truth for open/remediated status
   const savedState = getPersistedAuditState();
+  const savedAuditPass = savedState?.auditPass || 0;
+  const currentAuditPass = allFindings[0]?.auditPass || 1;
   const mergedFindings = allFindings.map(f => {
     const existing = savedState?.findings?.find(ef => ef.id === f.id);
-    if (existing) {
-      return { ...f, status: existing.status, waivedReason: existing.waivedReason, remediatedAt: existing.remediatedAt };
+    // Only preserve user-applied waivers from previous runs
+    if (existing && existing.status === 'waived') {
+      return { ...f, status: 'waived', waivedReason: existing.waivedReason };
     }
     return f;
   });
@@ -51,6 +54,7 @@ export function runDevilsTeamAudit(mode = 'continuous', context = {}) {
     id: `dt-audit-${Date.now()}`,
     timestamp: new Date().toISOString(),
     mode,
+    auditPass: currentAuditPass,
     durationMs,
     findings: mergedFindings,
     metrics: {
