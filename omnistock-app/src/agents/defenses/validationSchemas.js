@@ -166,3 +166,70 @@ export const dpoPrivacySchema = z.object({
   response_encrypted: z.boolean().refine(v => v === true, 'DSR responses must be delivered via encrypted download links'),
   mfa_token: z.string().min(1, 'Hardware-token MFA is required for DPO access'),
 });
+
+// === F&B MANAGEMENT ROLE SCHEMAS ===
+
+// F&B Director / Restaurant Manager: POS Reconciliation & Void Fraud
+export const posReconciliationSchema = z.object({
+  action: z.string().min(1, 'Action is required'),
+  requester_role: z.string().min(1, 'Requester role is required'),
+  mfa_token: z.string().min(1, 'Hardware-key MFA token is required for executive POS access'),
+  void_reason: z.string().min(1, 'Void reason code is required'),
+  post_tender: z.boolean().refine(v => v === false, 'Post-tender voids are blocked — manager approval with 2-minute delay required'),
+  settlement_match: z.boolean().refine(v => v === true, 'Settlement must match POS transaction log — dual-control reconciliation required'),
+  session_timeout: z.number().max(15, 'Session timeout must not exceed 15 minutes for POS access'),
+});
+
+// Purchasing Manager: Supplier Order & PO Control
+export const supplierOrderSchema = z.object({
+  action: z.string().min(1, 'Action is required'),
+  supplier_id: z.string().min(1, 'Supplier ID must exist in the approved vendor database'),
+  unit_price: z.number().positive('Unit price must be positive — negative prices are blocked'),
+  quantity: z.number().int('Quantity must be an integer').positive('Quantity must be a positive integer'),
+  dual_approval: z.boolean().refine(v => v === true, 'Dual-approval is required for POs >$5K'),
+  price_benchmark_verified: z.boolean().refine(v => v === true, 'Price must be verified against market benchmark — variances >8% trigger audit'),
+  supplier_certified: z.boolean().refine(v => v === true, 'Supplier must have valid food safety certification'),
+});
+
+// QA Manager: HACCP Compliance & Temperature Control
+export const haccpComplianceSchema = z.object({
+  action: z.string().min(1, 'Action is required'),
+  ccp_id: z.string().min(1, 'Critical Control Point ID is required'),
+  temperature_c: z.number().min(-40, 'Temperature must be within physical bounds (min -40°C)').max(120, 'Temperature must be within physical bounds (max 120°C)'),
+  sensor_signed: z.boolean().refine(v => v === true, 'Temperature readings must be IoT-sensor cryptographically signed'),
+  deviation_alert: z.boolean().refine(v => v === true, 'Out-of-range readings must trigger automatic deviation alerts'),
+  hash_chain: z.boolean().refine(v => v === true, 'HACCP logs must use cryptographic hash chain — no manual overrides'),
+  ccp_lock: z.boolean().refine(v => v === true, 'CCP station lock must be acquired — no concurrent readings'),
+});
+
+// F&B Director: Banquet Allocation & Venue Booking
+export const banquetAllocationSchema = z.object({
+  action: z.string().min(1, 'Action is required'),
+  venue_slot: z.string().min(1, 'Venue slot ID is required'),
+  slot_lock: z.boolean().refine(v => v === true, 'Distributed mutex lock on venue slot is required — no double-booking'),
+  event_id: z.string().min(1, 'Event ID is required'),
+  guaranteed_revenue: z.number().nonnegative('Guaranteed revenue cannot be negative'),
+  attrition_tracked: z.boolean().refine(v => v === true, 'Attrition tracking must be enabled for banquet allocations'),
+});
+
+// F&B Director: Franchise Compliance & Royalty
+export const franchiseComplianceSchema = z.object({
+  action: z.string().min(1, 'Action is required'),
+  franchise_id: z.string().min(1, 'Franchise location ID is required'),
+  violation_count: z.number().int('Violation count must be an integer').min(0, 'Violation count cannot be negative — fuzzed inputs are blocked'),
+  compliance_score: z.number().min(0, 'Compliance score must be 0-100').max(100, 'Compliance score must be 0-100'),
+  royalty_reported: z.number().nonnegative('Royalty amount cannot be negative'),
+  hash_chain: z.boolean().refine(v => v === true, 'Offline transaction journal must use cryptographic hash chain — missing sequences flag tampering'),
+  server_computed: z.boolean().refine(v => v === true, 'Compliance scores must be server-side computed from raw audit data'),
+});
+
+// Purchasing Manager / QA Manager: Cold-Chain Temperature Monitoring
+export const coldChainSchema = z.object({
+  action: z.string().min(1, 'Action is required'),
+  transport_route: z.string().min(1, 'Transport route ID is required'),
+  temperature_c: z.number().min(-40, 'Temperature must be within physical bounds (min -40°C)').max(120, 'Temperature must be within physical bounds (max 120°C)'),
+  iot_logged: z.boolean().refine(v => v === true, 'Temperature readings must be IoT-logged with local cryptographic hashing'),
+  gap_detected: z.boolean().refine(v => v === false, 'Cold-chain gaps detected during transport — rejection alert required'),
+  receiving_verified: z.boolean().refine(v => v === true, 'Receiving temperature verification is required before product acceptance'),
+  hash_chain: z.boolean().refine(v => v === true, 'Cold-chain logs must use cryptographic hash chain — tampering detected on sync'),
+});

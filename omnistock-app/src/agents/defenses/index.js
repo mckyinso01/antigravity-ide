@@ -21,6 +21,12 @@ import {
   complianceAuditSchema,
   socAlertSchema,
   dpoPrivacySchema,
+  posReconciliationSchema,
+  supplierOrderSchema,
+  haccpComplianceSchema,
+  banquetAllocationSchema,
+  franchiseComplianceSchema,
+  coldChainSchema,
 } from './validationSchemas';
 
 // Lookup table mirroring THREAT_SEVERITY_MAP structure
@@ -104,6 +110,31 @@ const THREAT_SCHEMA_MAP = {
   'dpo_miller': { schema: dpoPrivacySchema, name: 'DPO Privacy Protection Schema' },
   'dpo_jack': { schema: dpoPrivacySchema, name: 'DPO Privacy Protection Schema' },
   'dpo_kamkar': { schema: dpoPrivacySchema, name: 'DPO Privacy Protection Schema' },
+  // === F&B MANAGEMENT ROLES ===
+  // F&B Director
+  'fb_director_mitnick': { schema: posReconciliationSchema, name: 'POS Reconciliation & MFA Schema' },
+  'fb_director_geohot': { schema: banquetAllocationSchema, name: 'Banquet Allocation Mutex Schema' },
+  'fb_director_miller': { schema: franchiseComplianceSchema, name: 'Franchise Compliance Bounds Schema' },
+  'fb_director_jack': { schema: franchiseComplianceSchema, name: 'Franchise Compliance Hash Chain Schema' },
+  'fb_director_kamkar': { schema: posReconciliationSchema, name: 'POS Reconciliation Zero-Persistence Schema' },
+  // Restaurant Manager
+  'restaurant_manager_mitnick': { schema: posReconciliationSchema, name: 'POS Reconciliation TOTP Schema' },
+  'restaurant_manager_geohot': { schema: posReconciliationSchema, name: 'POS Reconciliation Atomic Lock Schema' },
+  'restaurant_manager_miller': { schema: haccpComplianceSchema, name: 'HACCP Temperature Bounds Schema' },
+  'restaurant_manager_jack': { schema: posReconciliationSchema, name: 'POS Reconciliation HMAC Schema' },
+  'restaurant_manager_kamkar': { schema: posReconciliationSchema, name: 'POS Reconciliation PCI Schema' },
+  // Purchasing Manager
+  'purchasing_manager_mitnick': { schema: supplierOrderSchema, name: 'Supplier Order MFA Schema' },
+  'purchasing_manager_geohot': { schema: supplierOrderSchema, name: 'Supplier Order Budget Lock Schema' },
+  'purchasing_manager_miller': { schema: supplierOrderSchema, name: 'Supplier Order Bounds Schema' },
+  'purchasing_manager_jack': { schema: coldChainSchema, name: 'Cold-Chain IoT Hash Chain Schema' },
+  'purchasing_manager_kamkar': { schema: supplierOrderSchema, name: 'Supplier Order Data Masking Schema' },
+  // QA Manager
+  'qa_manager_mitnick': { schema: haccpComplianceSchema, name: 'HACCP Inspector Verification Schema' },
+  'qa_manager_geohot': { schema: haccpComplianceSchema, name: 'HACCP CCP Lock Schema' },
+  'qa_manager_miller': { schema: haccpComplianceSchema, name: 'HACCP Temperature Fuzzing Schema' },
+  'qa_manager_jack': { schema: haccpComplianceSchema, name: 'HACCP Offline Hash Chain Schema' },
+  'qa_manager_kamkar': { schema: supplierOrderSchema, name: 'Allergen Matrix Access Control Schema' },
 };
 
 /**

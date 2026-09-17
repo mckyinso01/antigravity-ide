@@ -4,7 +4,7 @@ import {
   AlertTriangle, RefreshCw, Play, SkipForward, ArrowRight, BookOpen,
   Lock, Cpu, Eye, Target, Anchor, Filter, Clock, ChevronRight,
   Sparkles, Layers, Check, X, FileCode, ExternalLink, AlertOctagon,
-  Crown, Link2, Download, FileText
+  Crown, Link2, Download, FileText, UtensilsCrossed
 } from 'lucide-react';
 import lifecycleConfig from '../agents/production-lifecycle.json';
 import skillsCatalog from '../agents/skills-catalog.json';
@@ -18,6 +18,7 @@ import {
 } from '../agents/audits';
 import RoleScenariosTab from '../components/agents/RoleScenariosTab';
 import SecurityScenariosTab from '../components/agents/SecurityScenariosTab';
+import FBManagementScenariosTab from '../components/agents/FBManagementScenariosTab';
 import ConnectorsTab from '../components/agents/ConnectorsTab';
 import { exportAuditCSV, exportAuditPDF } from '../utils/auditExport';
 
@@ -316,6 +317,18 @@ export default function ProductionEngine() {
           </button>
 
           <button
+            onClick={() => setActiveTab('fb-management')}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+              activeTab === 'fb-management'
+                ? 'bg-amber-600 text-white shadow-md shadow-amber-900/40'
+                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900'
+            }`}
+          >
+            <UtensilsCrossed className="w-4 h-4 text-amber-400" />
+            <span>F&B Management (4 Roles)</span>
+          </button>
+
+          <button
             onClick={() => setActiveTab('devils-team')}
             className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
               activeTab === 'devils-team'
@@ -524,6 +537,11 @@ export default function ProductionEngine() {
       {/* TAB: SECURITY SCENARIOS */}
       {activeTab === 'security' && (
         <SecurityScenariosTab />
+      )}
+
+      {/* TAB: F&B MANAGEMENT SCENARIOS */}
+      {activeTab === 'fb-management' && (
+        <FBManagementScenariosTab />
       )}
 
       {/* TAB 2: DEVIL'S TEAM 5-TITAN ADVERSARIAL AUDIT */}
