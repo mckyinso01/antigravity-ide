@@ -6,7 +6,7 @@ import {
   FileText, Check, AlertOctagon, Terminal, Sparkles, ChevronRight,
   BarChart3, Lock, ShieldAlert, ShieldCheck
 } from 'lucide-react';
-import { ENTERPRISE_ROLES, TITANS } from '../../agents/audits';
+import { ENTERPRISE_ROLES, TITANS, getThreatSeverity } from '../../agents/audits';
 
 const ROLE_ICONS = {
   owner: Crown,
@@ -42,7 +42,7 @@ export default function RoleScenariosTab({ onSelectRoleInAudit, auditFindings = 
   const RoleIcon = ROLE_ICONS[selectedRole.id] || Crown;
 
   // Filter findings for this role
-  const roleFindings = auditFindings.filter(f => f.role === selectedRole.id || f.role === 'all');
+  const roleFindings = auditFindings.filter(f => f.role === selectedRole.id || f.role === 'all' || selectedRole.auditRoleAliases?.includes(f.role));
   const criticalRoleFindings = roleFindings.filter(f => f.severity === 'critical' && f.status === 'open');
 
   // Computed financial figures for Owner
@@ -138,7 +138,7 @@ export default function RoleScenariosTab({ onSelectRoleInAudit, auditFindings = 
           {ENTERPRISE_ROLES.map((role) => {
             const Icon = ROLE_ICONS[role.id] || Crown;
             const isSelected = selectedRoleId === role.id;
-            const count = auditFindings.filter(f => f.role === role.id && f.status === 'open').length;
+            const count = auditFindings.filter(f => (f.role === role.id || role.auditRoleAliases?.includes(f.role)) && f.status === 'open').length;
 
             return (
               <button
@@ -520,6 +520,13 @@ export default function RoleScenariosTab({ onSelectRoleInAudit, auditFindings = 
           {selectedRole.devilsTeamThreats.map((threat) => {
             const titan = TITANS.find(t => t.id === threat.titanId) || TITANS[0];
             const TitanIcon = TITAN_ICONS[threat.titanId] || Shield;
+            const threatSeverity = getThreatSeverity(selectedRole.id, threat.titanId);
+            const severityColorClass = {
+              critical: 'bg-rose-500/20 text-rose-400 border-rose-500/40',
+              high: 'bg-orange-500/20 text-orange-400 border-orange-500/40',
+              medium: 'bg-amber-500/20 text-amber-400 border-amber-500/40',
+              low: 'bg-blue-500/20 text-blue-400 border-blue-500/40',
+            }[threatSeverity] || 'bg-slate-500/20 text-slate-400 border-slate-500/40';
 
             return (
               <div
@@ -531,7 +538,12 @@ export default function RoleScenariosTab({ onSelectRoleInAudit, auditFindings = 
                     <div className="flex items-center gap-2">
                       <span className="text-lg">{titan.avatar}</span>
                       <div>
-                        <div className="text-xs font-bold text-white">{threat.titanName}</div>
+                        <div className="text-xs font-bold text-white flex items-center gap-1.5">
+                          {threat.titanName}
+                          <span className={`px-1.5 py-0.5 rounded text-[9px] font-mono font-bold uppercase border ${severityColorClass}`}>
+                            {threatSeverity}
+                          </span>
+                        </div>
                         <div className="text-[10px] font-mono text-slate-400">{titan.role}</div>
                       </div>
                     </div>

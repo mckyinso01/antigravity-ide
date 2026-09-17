@@ -368,6 +368,7 @@ export const ENTERPRISE_ROLES = [
 
   {
     id: 'inventory_specialist',
+    auditRoleAliases: ['inventory'],
     title: 'Inventory Specialist / Stock Controller',
     subtitle: 'Procurement, Stock Takes, Batch Tracking & Shrinkage Control',
     badge: 'Logistics',
@@ -566,6 +567,7 @@ export const ENTERPRISE_ROLES = [
 
   {
     id: 'marketing_strategist',
+    auditRoleAliases: ['marketing'],
     title: 'Marketing Strategist',
     subtitle: 'Campaigns, Customer Loyalty, Dynamic Promotions & Retention',
     badge: 'Growth',
@@ -670,4 +672,43 @@ export function getRoleById(roleId) {
 
 export function getAllRoleScenarios() {
   return ENTERPRISE_ROLES;
+}
+
+// Severity ratings for each role+titan threat combination
+// Critical = financial fraud, data exposure, tampering | High = race conditions, credential theft | Medium = fuzzing, precision, leakage
+const THREAT_SEVERITY_MAP = {
+  'owner_mitnick': 'critical',
+  'owner_geohot': 'high',
+  'owner_miller': 'critical',
+  'owner_kamkar': 'critical',
+  'owner_jack': 'critical',
+  'branch_manager_mitnick': 'high',
+  'branch_manager_geohot': 'high',
+  'branch_manager_miller': 'high',
+  'branch_manager_kamkar': 'medium',
+  'branch_manager_jack': 'high',
+  'cashier_mitnick': 'high',
+  'cashier_geohot': 'high',
+  'cashier_miller': 'critical',
+  'cashier_kamkar': 'critical',
+  'cashier_jack': 'critical',
+  'inventory_specialist_mitnick': 'high',
+  'inventory_specialist_geohot': 'high',
+  'inventory_specialist_miller': 'medium',
+  'inventory_specialist_kamkar': 'medium',
+  'inventory_specialist_jack': 'critical',
+  'cost_analyst_mitnick': 'high',
+  'cost_analyst_geohot': 'medium',
+  'cost_analyst_miller': 'medium',
+  'cost_analyst_kamkar': 'high',
+  'cost_analyst_jack': 'medium',
+  'marketing_strategist_mitnick': 'high',
+  'marketing_strategist_geohot': 'high',
+  'marketing_strategist_miller': 'medium',
+  'marketing_strategist_kamkar': 'critical',
+  'marketing_strategist_jack': 'high',
+};
+
+export function getThreatSeverity(roleId, titanId) {
+  return THREAT_SEVERITY_MAP[`${roleId}_${titanId}`] || 'medium';
 }

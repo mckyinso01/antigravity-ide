@@ -10,7 +10,7 @@ import lifecycleConfig from '../agents/production-lifecycle.json';
 import skillsCatalog from '../agents/skills-catalog.json';
 import {
   getEngineState, subscribeEngine, setPhase, toggleSkillSkip,
-  executeSkill, runAutoPhase, getExecutionLogs, getAllPatterns, addCustomPattern, resetEngineState
+  executeSkill, runAutoPhase, getExecutionLogs, getAllPatterns, addCustomPattern, resetEngineState, saveEngineState
 } from '../agents/engine';
 import {
   runDevilsTeamAudit, updateFindingStatus, applyGateOverride, revokeGateOverride, getGateOverride,
@@ -33,6 +33,12 @@ const SEVERITY_COLORS = {
   medium: 'bg-amber-500/20 text-amber-400 border-amber-500/40',
   low: 'bg-blue-500/20 text-blue-400 border-blue-500/40',
   info: 'bg-slate-500/20 text-slate-400 border-slate-500/40',
+};
+
+// Maps roleScenarios.js role IDs to the shorter IDs used in audit module findings
+const ROLE_ALIAS_MAP = {
+  inventory_specialist: ['inventory'],
+  marketing_strategist: ['marketing'],
 };
 
 export default function ProductionEngine() {
@@ -71,7 +77,7 @@ export default function ProductionEngine() {
   // Filtered findings
   const filteredFindings = auditState.findings?.filter(f => {
     if (titanFilter !== 'all' && f.titan !== titanFilter) return false;
-    if (roleFilter !== 'all' && f.role !== roleFilter && f.role !== 'all') return false;
+    if (roleFilter !== 'all' && f.role !== roleFilter && f.role !== 'all' && !(ROLE_ALIAS_MAP[roleFilter]?.includes(f.role))) return false;
     if (severityFilter !== 'all') {
       if (severityFilter === 'open' && f.status !== 'open') return false;
       if (severityFilter === 'remediated' && f.status !== 'remediated') return false;
@@ -83,12 +89,18 @@ export default function ProductionEngine() {
 
   const handleRunContinuousAudit = () => {
     const res = runDevilsTeamAudit('continuous');
-    setEngineState(getEngineState());
+    const state = getEngineState();
+    state.lastAuditResult = res;
+    saveEngineState(state);
+    setEngineState({ ...state });
   };
 
   const handleRunGateAudit = () => {
     const res = runDevilsTeamAudit('strict_gate');
-    setEngineState(getEngineState());
+    const state = getEngineState();
+    state.lastAuditResult = res;
+    saveEngineState(state);
+    setEngineState({ ...state });
   };
 
   const handleRemediate = (findingId) => {
@@ -599,9 +611,9 @@ export default function ProductionEngine() {
                   <option value="owner">Owner (Costs, Income, Taxes)</option>
                   <option value="branch_manager">Team Manager / Supervisor</option>
                   <option value="cashier">Cashier</option>
-                  <option value="inventory">Inventory Specialist</option>
+                  <option value="inventory_specialist">Inventory Specialist</option>
                   <option value="cost_analyst">Cost Analyst</option>
-                  <option value="marketing">Marketing Strategist</option>
+                  <option value="marketing_strategist">Marketing Strategist</option>
                 </select>
               </div>
             </div>
