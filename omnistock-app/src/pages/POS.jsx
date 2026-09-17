@@ -23,6 +23,7 @@ import { validate, cartItemSchema, barcodeSchema, discountSchema } from "@/lib/s
 import { withCircuitBreaker } from "@/lib/security/circuitBreaker";
 import { api } from "@/lib/apiClient";
 import { maskPhone } from "@/lib/security/masking";
+import { monitorAndPrune } from "@/lib/security/storageMonitor";
 import { useAuth } from "@/lib/AuthContext";
 
 const PAYMENT_METHODS = [
@@ -284,6 +285,14 @@ export default function POS() {
     }
 
     trackPriceChangesFromTransaction(txn, selectedCustomer?.name ? `POS - ${selectedCustomer.name}` : "POS");
+
+    // Check storage quota after transaction creation (JACK-GATE-04)
+    monitorAndPrune(async () => {
+      try {
+        const oldTxns = await db.transactions.orderBy('created_date').limit(50).toArray();
+        if (oldTxns.length > 0) await db.transactions.bulkDelete(oldTxns.map(t => t.id));
+      } catch (e) { /* best-effort pruning */ }
+    }).catch(() => {});
 
     setLastTransaction({ ...txn, items: cart, total, change: Math.max(0, change), paymentMethod, customerName: selectedCustomer?.name });
     setShowThermalModal(true);

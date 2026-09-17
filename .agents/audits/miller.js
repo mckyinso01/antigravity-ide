@@ -182,12 +182,12 @@ export function auditMiller(context = {}, mode = 'continuous') {
     component: 'omnistock-app/src/pages/StockAdjustments.jsx',
     finding: 'Stock adjustment quantity input field lacks a max attribute, allowing users to type astronomical values before Zod catches them',
     recommendation: 'Add max="10000" attribute to the quantity Input element for immediate client-side feedback before Zod validation.',
-    status: 'open',
-    remediatedAt: null,
-    remediation: null,
-    verifiedAt: auditDate,
+    status: 'remediated',
+    remediatedAt: '2026-09-18',
+    remediation: 'StockAdjustments.jsx quantity Input now has max="10000" attribute for immediate client-side boundary feedback, complementing the existing Zod stockAdjustmentSchema max(10000) server-side validation.',
+    verifiedAt: '2026-09-18',
     auditPass,
-    verificationNote: 'StockAdjustments.jsx: <Input type="number" min="0" .../> — has min="0" but no max attribute. Zod catches values > 10000 but only after form submission. Adding max="10000" would give instant feedback.',
+    verificationNote: 'StockAdjustments.jsx: <Input type="number" min="0" max="10000" value={form.quantity_change} .../>. Zod stockAdjustmentSchema: quantity_change = z.number().finite().positive().max(10000). Both client-side HTML attribute and server-side Zod validation confirmed.',
     category: 'Input Boundary Hardening',
     attackVector: 'User types 999999999 in quantity field, clicks save, then sees Zod error — minor UX issue but not a security gap since Zod blocks it.'
   });

@@ -106,7 +106,7 @@ router.post('/customers/decrypt', authRequired, requireRole('owner', 'admin', 'm
 
 // ─── Tax Rate Validation ─────────────────────────────────────────────────
 
-router.post('/tax-rates/validate', authRequired, requireRole('owner', 'admin'), validateBody(taxRateSchema), (req, res) => {
+router.post('/tax-rates/validate', authRequired, requireRole('owner', 'admin'), requireStepUp, validateBody(taxRateSchema), (req, res) => {
   res.json({ valid: true, data: req.validatedBody });
 });
 
@@ -142,7 +142,7 @@ router.post('/stock-adjustments/validate', authRequired, validateBody(stockAdjus
 
 // ─── Write-off (dual-party sign-off) ─────────────────────────────────────
 
-router.post('/writeoffs/validate', authRequired, validateBody(writeOffSchema), (req, res) => {
+router.post('/writeoffs/validate', authRequired, requireStepUp, validateBody(writeOffSchema), (req, res) => {
   res.json({ valid: true, data: req.validatedBody, requires_dual_signoff: req.validatedBody.value_estimate > 100 });
 });
 

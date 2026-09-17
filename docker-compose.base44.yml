@@ -12,7 +12,7 @@ services:
     environment:
       - __VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS
       - VITE_API_URL=http://backend:4000
-    command: sh -c "npm install --no-package-lock && npx vite --host 0.0.0.0 --port 5173"
+    command: sh -c "chown -R node:node /app/node_modules 2>/dev/null; su node -s /bin/sh -c 'npm install --no-package-lock && npx vite --host 0.0.0.0 --port 5173'"
     depends_on:
       backend:
         condition: service_healthy
@@ -37,7 +37,7 @@ services:
       - JWT_SECRET=dev-jwt-secret-omnistock-2026
       - HMAC_SECRET=dev-hmac-secret-omnistock-2026
       - CORS_ORIGIN=true
-    command: sh -c "npm install --no-package-lock && node --watch src/server.js"
+    command: sh -c "chown -R node:node /app/node_modules 2>/dev/null; su node -s /bin/sh -c 'npm install --no-package-lock && node --watch src/server.js'"
     healthcheck:
       test: ["CMD", "node", "-e", "fetch('http://localhost:4000/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
       interval: 10s
