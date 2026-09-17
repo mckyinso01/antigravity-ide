@@ -3,7 +3,8 @@ import {
   Shield, ShieldAlert, ShieldCheck, Zap, Terminal, CheckCircle2,
   AlertTriangle, RefreshCw, Play, SkipForward, ArrowRight, BookOpen,
   Lock, Cpu, Eye, Target, Anchor, Filter, Clock, ChevronRight,
-  Sparkles, Layers, Check, X, FileCode, ExternalLink, AlertOctagon
+  Sparkles, Layers, Check, X, FileCode, ExternalLink, AlertOctagon,
+  Crown
 } from 'lucide-react';
 import lifecycleConfig from '../agents/production-lifecycle.json';
 import skillsCatalog from '../agents/skills-catalog.json';
@@ -12,8 +13,10 @@ import {
   executeSkill, runAutoPhase, getExecutionLogs, getAllPatterns, addCustomPattern, resetEngineState
 } from '../agents/engine';
 import {
-  runDevilsTeamAudit, updateFindingStatus, applyGateOverride, revokeGateOverride, getGateOverride
+  runDevilsTeamAudit, updateFindingStatus, applyGateOverride, revokeGateOverride, getGateOverride,
+  ENTERPRISE_ROLES
 } from '../agents/audits';
+import RoleScenariosTab from '../components/agents/RoleScenariosTab';
 
 const TITAN_ICONS = {
   mitnick: Shield,
@@ -36,6 +39,7 @@ export default function ProductionEngine() {
   const [activeTab, setActiveTab] = useState('skills'); // 'skills' | 'devils-team' | 'patterns' | 'history'
   const [titanFilter, setTitanFilter] = useState('all');
   const [severityFilter, setSeverityFilter] = useState('all');
+  const [roleFilter, setRoleFilter] = useState('all');
   const [selectedFinding, setSelectedFinding] = useState(null);
   const [isOverrideModalOpen, setIsOverrideModalOpen] = useState(false);
   const [overrideReason, setOverrideReason] = useState('');
@@ -66,6 +70,7 @@ export default function ProductionEngine() {
   // Filtered findings
   const filteredFindings = auditState.findings?.filter(f => {
     if (titanFilter !== 'all' && f.titan !== titanFilter) return false;
+    if (roleFilter !== 'all' && f.role !== roleFilter && f.role !== 'all') return false;
     if (severityFilter !== 'all') {
       if (severityFilter === 'open' && f.status !== 'open') return false;
       if (severityFilter === 'remediated' && f.status !== 'remediated') return false;
@@ -252,6 +257,18 @@ export default function ProductionEngine() {
           </button>
 
           <button
+            onClick={() => setActiveTab('roles')}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+              activeTab === 'roles'
+                ? 'bg-blue-600 text-white shadow-md shadow-blue-900/40'
+                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900'
+            }`}
+          >
+            <Crown className="w-4 h-4 text-[#00E5FF]" />
+            <span>Role Scenarios & Devil's Team (6 Roles)</span>
+          </button>
+
+          <button
             onClick={() => setActiveTab('devils-team')}
             className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
               activeTab === 'devils-team'
@@ -434,6 +451,17 @@ export default function ProductionEngine() {
         </div>
       )}
 
+      {/* TAB: ROLE SCENARIOS & DEVIL'S TEAM */}
+      {activeTab === 'roles' && (
+        <RoleScenariosTab
+          auditFindings={auditState.findings || []}
+          onSelectRoleInAudit={(roleId) => {
+            setRoleFilter(roleId);
+            setActiveTab('devils-team');
+          }}
+        />
+      )}
+
       {/* TAB 2: DEVIL'S TEAM 5-TITAN ADVERSARIAL AUDIT */}
       {activeTab === 'devils-team' && (
         <div className="space-y-6">
@@ -526,24 +554,43 @@ export default function ProductionEngine() {
           </div>
 
           {/* Filter Bar */}
-          <div className="flex flex-wrap items-center justify-between gap-3 bg-slate-900/60 border border-slate-800 p-3 rounded-xl text-xs">
-            <div className="flex items-center gap-2">
-              <span className="font-mono text-slate-400 flex items-center gap-1">
-                <Filter className="w-3.5 h-3.5" /> Severity:
-              </span>
-              {['all', 'open', 'critical', 'high', 'medium', 'remediated'].map((sev) => (
-                <button
-                  key={sev}
-                  onClick={() => setSeverityFilter(sev)}
-                  className={`px-2.5 py-1 rounded-lg font-mono uppercase text-[10px] font-bold transition-all ${
-                    severityFilter === sev
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-slate-800 text-slate-400 hover:text-white'
-                  }`}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-900/60 border border-slate-800 p-3 rounded-xl text-xs">
+            <div className="flex flex-wrap items-center gap-3">
+              <div className="flex items-center gap-1.5">
+                <span className="font-mono text-slate-400 flex items-center gap-1">
+                  <Filter className="w-3.5 h-3.5" /> Severity:
+                </span>
+                {['all', 'open', 'critical', 'high', 'medium', 'remediated'].map((sev) => (
+                  <button
+                    key={sev}
+                    onClick={() => setSeverityFilter(sev)}
+                    className={`px-2 py-0.5 rounded-lg font-mono uppercase text-[10px] font-bold transition-all ${
+                      severityFilter === sev
+                        ? 'bg-blue-600 text-white'
+                        : 'bg-slate-800 text-slate-400 hover:text-white'
+                    }`}
+                  >
+                    {sev}
+                  </button>
+                ))}
+              </div>
+
+              <div className="flex items-center gap-1.5 border-l border-slate-800 pl-3">
+                <span className="font-mono text-slate-400">Target Role:</span>
+                <select
+                  value={roleFilter}
+                  onChange={(e) => setRoleFilter(e.target.value)}
+                  className="bg-slate-800 border border-slate-700 text-slate-200 text-[11px] rounded px-2 py-0.5 font-mono"
                 >
-                  {sev}
-                </button>
-              ))}
+                  <option value="all">All Roles</option>
+                  <option value="owner">Owner (Costs, Income, Taxes)</option>
+                  <option value="branch_manager">Team Manager / Supervisor</option>
+                  <option value="cashier">Cashier</option>
+                  <option value="inventory">Inventory Specialist</option>
+                  <option value="cost_analyst">Cost Analyst</option>
+                  <option value="marketing">Marketing Strategist</option>
+                </select>
+              </div>
             </div>
 
             <div className="font-mono text-slate-400">
@@ -567,12 +614,17 @@ export default function ProductionEngine() {
                   }`}
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                    <div className="flex items-center gap-2.5">
+                    <div className="flex flex-wrap items-center gap-2">
                       <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase border ${SEVERITY_COLORS[finding.severity]}`}>
                         {finding.severity}
                       </span>
                       <span className="font-mono text-xs text-slate-400">{finding.id}</span>
                       <span className="text-xs font-semibold text-slate-300">Titan: {finding.titanName}</span>
+                      {finding.roleName && (
+                        <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-blue-950/80 text-[#00E5FF] border border-blue-800/40">
+                          {finding.roleName}
+                        </span>
+                      )}
                     </div>
 
                     <div className="flex items-center gap-2">

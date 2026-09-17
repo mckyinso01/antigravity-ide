@@ -4,6 +4,8 @@ import auditKamkar from './kamkar';
 import auditMiller from './miller';
 import auditJack from './jack';
 
+export * from './roleScenarios';
+
 export const TITANS = [
   { id: 'mitnick', name: 'Kevin Mitnick', role: 'Access Control & Social Eng.', avatar: '🛡️', color: 'emerald' },
   { id: 'geohot', name: 'George Hotz', role: 'System Edge Cases & Concurrency', avatar: '⚡', color: 'blue' },
