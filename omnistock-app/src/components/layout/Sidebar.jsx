@@ -2,10 +2,16 @@ import { Link, useLocation } from "react-router-dom";
 import {
   LayoutDashboard, Package, ShoppingCart, BarChart2, Tag, Truck,
   ChefHat, Bell, Users, ClipboardList, Sliders, DollarSign, X,
-  FileText, Crown, Settings, Zap
+  FileText, Crown, Settings, Zap, ShieldAlert, Sparkles
 } from "lucide-react";
 
 const navGroups = [
+  {
+    label: "Studio Engine",
+    items: [
+      { path: "/production-engine", label: "Production & Devil's Audit", icon: ShieldAlert },
+    ],
+  },
   {
     label: "Main",
     items: [

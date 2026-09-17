@@ -1,0 +1,104 @@
+{
+  "version": "2.1.0",
+  "company": "Enterprise SaaS Production Studio",
+  "engine": "Maestro Workflow + Devil's Team 5-Titan Audit",
+  "phases": [
+    {
+      "id": "intake",
+      "name": "Phase 1: Intake & Topology",
+      "description": "Establish conventions, initialize context (.maestro.md), and assemble agent team architecture.",
+      "autoSkills": ["onboard-agent", "teach-maestro", "compose"],
+      "optionalSkills": ["specialize", "adapt-workflow"],
+      "trigger": "project_init",
+      "continuousAudit": false,
+      "estimatedDuration": "2m"
+    },
+    {
+      "id": "build",
+      "name": "Phase 2: Active Build & Orchestration",
+      "description": "Orchestrate multi-step pipelines, turbocharge parallel execution, and enrich domain context.",
+      "autoSkills": ["chain", "turbocharge", "enrich"],
+      "optionalSkills": ["amplify", "streamline"],
+      "trigger": "feature_development",
+      "continuousAudit": true,
+      "estimatedDuration": "5m"
+    },
+    {
+      "id": "audit",
+      "name": "Phase 3: Adversarial Quality Gate",
+      "description": "Systematic 5-dimension diagnostic scan coupled with the 5-Titan Devil's Team penetration audit.",
+      "autoSkills": ["diagnose", "zero-defect", "evaluate"],
+      "optionalSkills": [],
+      "trigger": "pre_release",
+      "auditEngine": "devils_team_5_titans",
+      "continuousAudit": true,
+      "gateBlockingSeverities": ["critical"],
+      "estimatedDuration": "3m"
+    },
+    {
+      "id": "remediation",
+      "name": "Phase 4: Defensive Hardening",
+      "description": "Apply fortify error handlers, circuit breakers, and defense-in-depth safety guardrails to findings.",
+      "autoSkills": ["fortify", "guard"],
+      "optionalSkills": ["temper", "accelerate"],
+      "trigger": "on_audit_findings",
+      "continuousAudit": true,
+      "estimatedDuration": "4m"
+    },
+    {
+      "id": "ship",
+      "name": "Phase 5: Delivery & Pattern Absorption",
+      "description": "Refine prompts & code, calibrate standards, capture sessions, and absorb reusable patterns.",
+      "autoSkills": ["refine", "calibrate", "capture", "extract-pattern"],
+      "optionalSkills": ["recap", "reflect", "iterate"],
+      "trigger": "deployment_ready",
+      "gateRequirement": "devils_team_passed",
+      "estimatedDuration": "2m"
+    }
+  ],
+  "devilsTeam": {
+    "titans": [
+      {
+        "id": "mitnick",
+        "name": "Kevin Mitnick",
+        "focus": "Auth, Social Engineering & Access Control",
+        "avatar": "🛡️",
+        "weight": "high"
+      },
+      {
+        "id": "geohot",
+        "name": "George Hotz (Geohot)",
+        "focus": "System Edge Cases, Logic Bypass & Race Conditions",
+        "avatar": "⚡",
+        "weight": "high"
+      },
+      {
+        "id": "kamkar",
+        "name": "Samy Kamkar",
+        "focus": "Data Exposure, Privacy Leaks & Client Storage Security",
+        "avatar": "👁️",
+        "weight": "high"
+      },
+      {
+        "id": "miller",
+        "name": "Charlie Miller",
+        "focus": "Fuzz Testing, Type Coercion & Input Validation",
+        "avatar": "🎯",
+        "weight": "high"
+      },
+      {
+        "id": "jack",
+        "name": "Barnaby Jack",
+        "focus": "Infrastructure, Supply Chain & Service Hardening",
+        "avatar": "⚓",
+        "weight": "high"
+      }
+    ],
+    "gateRules": {
+      "blockOnCritical": true,
+      "allowAdminOverride": true,
+      "continuousModeFrequency": "file_change_or_demand",
+      "gateModeAuditDepth": "deep"
+    }
+  }
+}

@@ -1,10 +1,13 @@
-import { Menu, Bell, ChevronLeft, User, LogOut, Database } from "lucide-react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Menu, Bell, ChevronLeft, User, LogOut, Database, ShieldCheck, ShieldAlert, Sparkles } from "lucide-react";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import { useAuth } from "@/lib/AuthContext";
+import { useState, useEffect } from "react";
+import { getEngineState, subscribeEngine } from "@/agents/engine";
 
 const pageTitles = {
   "/": "Dashboard",
   "/dashboard": "Dashboard",
+  "/production-engine": "Maestro Production Engine & Devil's Audit",
   "/inventory": "Inventory",
   "/pos": "Point of Sale",
   "/analytics": "Analytics",
@@ -28,6 +31,14 @@ export default function TopBar({ onMenuClick, alertCount = 0 }) {
   const title = pageTitles[location.pathname] || "OmniStock POS";
   const isRoot = location.pathname === "/" || location.pathname === "/dashboard";
   const userEmail = sessionStorage.getItem('omnistock_user_email') || 'operator@omnistock.io';
+  const [engineState, setEngineState] = useState(getEngineState());
+
+  useEffect(() => {
+    const unsub = subscribeEngine((s) => setEngineState(s));
+    return unsub;
+  }, []);
+
+  const isBlocked = engineState?.lastAuditResult?.gateDecision === 'BLOCKED';
 
   const handleLogout = () => {
     logout();
@@ -68,6 +79,29 @@ export default function TopBar({ onMenuClick, alertCount = 0 }) {
         <h1 className="text-lg font-bold text-white tracking-tight">{title}</h1>
       </div>
       <div className="flex items-center gap-3">
+        {/* Maestro Production Engine Gate Indicator */}
+        <Link
+          to="/production-engine"
+          title="Open Maestro Production Engine & Devil's Team Gate"
+          className={`hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-mono border transition-all app-card-hover ${
+            isBlocked
+              ? 'bg-rose-950/60 border-rose-500/50 text-rose-300 hover:bg-rose-900/60 shadow-[0_0_12px_rgba(244,63,94,0.3)] animate-pulse'
+              : 'bg-emerald-950/50 border-emerald-500/40 text-emerald-300 hover:bg-emerald-900/50 shadow-[0_0_12px_rgba(16,185,129,0.2)]'
+          }`}
+        >
+          {isBlocked ? (
+            <>
+              <ShieldAlert className="w-3.5 h-3.5 text-rose-400" />
+              <span className="font-bold">Gate: BLOCKED</span>
+            </>
+          ) : (
+            <>
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+              <span className="font-bold">Gate: PASS</span>
+            </>
+          )}
+        </Link>
+
         {/* Dexie.js Offline DB Sync Status Badge */}
         <div className="hidden md:flex items-center gap-2 px-3 py-1.5 bg-[#071322] border border-emerald-500/40 text-emerald-300 rounded-xl text-xs font-mono shadow-[0_0_12px_rgba(16,185,129,0.2)]">
           <Database className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />

@@ -26,6 +26,14 @@ docker compose -f docker-compose.base44.yml up -d
 - The Vite proxy crashes if `VITE_BASE44_APP_BASE_URL` is not a valid URL — do NOT put a random string there.
 - Generated development secrets for these were NOT used because random strings break the Vite proxy. Only `.env.base44-defaults` is in env_file.
 
+## Maestro Production Engine & Devil's Team Audit Gate
+- Production lifecycle config: `.agents/production-lifecycle.json` & `omnistock-app/src/agents/production-lifecycle.json`
+- Skills catalog: `.agents/skills-catalog.json` (25 skills categorized across 5 production phases)
+- Devil's Team 5-Titan audit modules: `.agents/audits/` & `omnistock-app/src/agents/audits/` (Mitnick, Geohot, Kamkar, Miller, Jack)
+- Compounding pattern library: `.agents/patterns/patterns.json` & `omnistock-app/src/agents/patterns/`
+- Command Center route: `/production-engine` (accessible from Sidebar under 'Studio Engine' and TopBar Gate status pill)
+- Gate policy: Strict pre-deployment gate blocks deployment if any open critical vulnerabilities exist; supports signed admin override.
+
 ## Notes
 - App renders and is navigable with placeholder env vars (UI uses Dexie.js + mock auth).
 - Base44 SDK API calls will fail until real credentials are provided.

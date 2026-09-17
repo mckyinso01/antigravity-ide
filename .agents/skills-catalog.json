@@ -1,0 +1,177 @@
+[
+  {
+    "id": "accelerate",
+    "name": "accelerate",
+    "description": "Use when the workflow is too slow, too expensive, or both and needs latency, cost, or token usage optimization.",
+    "category": "enhancement",
+    "version": "2.0.0"
+  },
+  {
+    "id": "adapt-workflow",
+    "name": "adapt-workflow",
+    "description": "Use when porting a workflow to a different AI provider, deployment environment, model tier, or organizational context.",
+    "category": "utility",
+    "version": "2.0.0"
+  },
+  {
+    "id": "agent-workflow",
+    "name": "agent-workflow",
+    "description": "Use when any Maestro command is invoked — provides foundational workflow design principles across prompt engineering, context management, tool orchestration, agent architecture, feedback loops, knowledge systems, and guardrails.",
+    "category": "core",
+    "version": "2.0.0"
+  },
+  {
+    "id": "amplify",
+    "name": "amplify",
+    "description": "Use when the workflow works but needs to handle more complex cases or produce higher-quality output through better tools, context, prompts, or models.",
+    "category": "enhancement",
+    "version": "2.0.0"
+  },
+  {
+    "id": "calibrate",
+    "name": "calibrate",
+    "description": "Use when workflow components are inconsistent, naming conventions vary, or a new team member's work needs alignment to project standards.",
+    "category": "fix",
+    "version": "2.0.0"
+  },
+  {
+    "id": "capture",
+    "name": "capture",
+    "description": "Capture a session summary — what was done, what decisions were made, and what to do next.",
+    "category": "utility",
+    "version": "2.0.0"
+  },
+  {
+    "id": "chain",
+    "name": "chain",
+    "description": "Use when the workflow needs multi-step processing with sequential, parallel, or conditional tool compositions and proper data flow.",
+    "category": "enhancement",
+    "version": "2.0.0"
+  },
+  {
+    "id": "compose",
+    "name": "compose",
+    "description": "Use when a single agent demonstrably cannot handle the task and multi-agent coordination is justified.",
+    "category": "enhancement",
+    "version": "2.0.0"
+  },
+  {
+    "id": "diagnose",
+    "name": "diagnose",
+    "description": "Use when the user wants to find problems, audit workflow quality, or get a comprehensive health check on their AI workflow.",
+    "category": "analysis",
+    "version": "2.0.0"
+  },
+  {
+    "id": "enrich",
+    "name": "enrich",
+    "description": "Use when the agent needs access to information beyond its training data — knowledge sources, RAG pipelines, or grounding data.",
+    "category": "enhancement",
+    "version": "2.0.0"
+  },
+  {
+    "id": "evaluate",
+    "name": "evaluate",
+    "description": "Use when the user wants a quality review, interaction audit, or to test the workflow against realistic scenarios.",
+    "category": "analysis",
+    "version": "2.0.0"
+  },
+  {
+    "id": "extract-pattern",
+    "name": "extract-pattern",
+    "description": "Use when the user wants to create templates, extract reusable patterns, document solutions, or build a pattern library from working workflows.",
+    "category": "utility",
+    "version": "2.0.0"
+  },
+  {
+    "id": "fortify",
+    "name": "fortify",
+    "description": "Use when the workflow lacks error handling, has been failing in production, or needs retry logic, fallback strategies, and circuit breakers.",
+    "category": "fix",
+    "version": "2.0.0"
+  },
+  {
+    "id": "guard",
+    "name": "guard",
+    "description": "Use when deploying to production, handling sensitive data, or the workflow needs safety constraints, input validation, and security boundaries.",
+    "category": "enhancement",
+    "version": "2.0.0"
+  },
+  {
+    "id": "iterate",
+    "name": "iterate",
+    "description": "Use when the workflow needs to self-correct, improve over time, or establish feedback loops and evaluation cycles.",
+    "category": "enhancement",
+    "version": "2.0.0"
+  },
+  {
+    "id": "onboard-agent",
+    "name": "onboard-agent",
+    "description": "Use when starting a new project, adding a new agent to an existing system, or setting up workflow infrastructure from scratch.",
+    "category": "utility",
+    "version": "2.0.0"
+  },
+  {
+    "id": "recap",
+    "name": "recap",
+    "description": "Quick summary of the last session — commands run, files changed, and what to do next.",
+    "category": "utility",
+    "version": "2.0.0"
+  },
+  {
+    "id": "refine",
+    "name": "refine",
+    "description": "Use when the workflow works but needs polish, or as the final step in a diagnose → fix → refine cycle before shipping.",
+    "category": "fix",
+    "version": "2.0.0"
+  },
+  {
+    "id": "reflect",
+    "name": "reflect",
+    "description": "Analyze command history to identify which skills work, which fail, and where to improve.",
+    "category": "analysis",
+    "version": "2.0.0"
+  },
+  {
+    "id": "specialize",
+    "name": "specialize",
+    "description": "Use when the user wants to tailor a workflow for a specific industry, domain, or vertical with specialized expertise, terminology, and guardrails.",
+    "category": "utility",
+    "version": "2.0.0"
+  },
+  {
+    "id": "streamline",
+    "name": "streamline",
+    "description": "Use when the workflow feels too complex, has accumulated cruft, or has redundant steps and overlapping tools that need consolidation.",
+    "category": "fix",
+    "version": "2.0.0"
+  },
+  {
+    "id": "teach-maestro",
+    "name": "teach-maestro",
+    "description": "Use when starting a new project with Maestro or when no .maestro.md context file exists yet. Run once per project.",
+    "category": "utility",
+    "version": "2.0.0"
+  },
+  {
+    "id": "temper",
+    "name": "temper",
+    "description": "Use when the workflow feels over-engineered, has premature optimizations, unnecessary abstraction layers, or complexity beyond actual requirements.",
+    "category": "enhancement",
+    "version": "2.0.0"
+  },
+  {
+    "id": "turbocharge",
+    "name": "turbocharge",
+    "description": "Use when the user wants to push past conventional workflow limits with advanced performance techniques like parallel orchestration, streaming pipelines, or adaptive routing.",
+    "category": "enhancement",
+    "version": "2.0.0"
+  },
+  {
+    "id": "zero-defect",
+    "name": "zero-defect",
+    "description": "Use when you need maximum precision on a critical task — production deployments, security-sensitive code, financial calculations, or any work where mistakes are unacceptable.",
+    "category": "fix",
+    "version": "2.0.0"
+  }
+]

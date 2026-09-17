@@ -1,0 +1,57 @@
+[
+  {
+    "id": "pat-001",
+    "title": "Offline-First Reactive IndexedDB with Dexie.js",
+    "category": "Architecture & Resiliency",
+    "skillOrigin": "compose",
+    "titanApproved": ["geohot", "jack"],
+    "description": "Enables uninterrupted POS checkout transactions during intermittent network disconnects by queuing writes in Dexie.js with atomic rollback.",
+    "codeSnippet": "db.transaction('rw', db.inventory, db.sales, async () => {\n  const item = await db.inventory.get(id);\n  if (item.stock < qty) throw new Error('Out of stock');\n  await db.inventory.update(id, { stock: item.stock - qty, version: item.version + 1 });\n  await db.sales.add({ id: generateUUID(), timestamp: Date.now() });\n});",
+    "benefit": "Zero lost sales during cloud network outages, sub-10ms UI checkout responsiveness.",
+    "tags": ["offline-first", "dexie", "atomic-transaction"]
+  },
+  {
+    "id": "pat-002",
+    "title": "Dual-Mode Devil's Team Gatekeeper",
+    "category": "Security & Adversarial QA",
+    "skillOrigin": "guard",
+    "titanApproved": ["mitnick", "miller"],
+    "description": "Continuous non-blocking security telemetry during development paired with a strict blocking gate at deployment time for open critical findings.",
+    "codeSnippet": "const findings = runDevilsTeamAudit('strict_gate');\nif (findings.some(f => f.severity === 'critical' && f.status === 'open')) {\n  throw new DeploymentBlockedError('Devil\\'s Team Gate: Critical vulnerabilities detected');\n}",
+    "benefit": "Eliminates high-severity security breaches before they reach live enterprise client tenants.",
+    "tags": ["gate-enforcement", "adversarial-audit", "zero-defect"]
+  },
+  {
+    "id": "pat-003",
+    "title": "Finite Numerical Boundary Guard for SaaS Pricing & Cart",
+    "category": "Input Validation & Integrity",
+    "skillOrigin": "fortify",
+    "titanApproved": ["miller", "geohot"],
+    "description": "Zod-powered runtime validation that rejects negative numbers, NaN, infinite floats, and exponential notation at the model boundary.",
+    "codeSnippet": "const CartItemSchema = z.object({\n  productId: z.string().uuid(),\n  quantity: z.number().int().positive().max(99999),\n  unitPrice: z.number().finite().nonnegative()\n});",
+    "benefit": "Prevents negative transaction balance attacks, infinite inventory generation, and calculation drift.",
+    "tags": ["zod", "input-validation", "financial-safety"]
+  },
+  {
+    "id": "pat-004",
+    "title": "Client-Side Token Scrubbing & Memory Zeroization",
+    "category": "Data Hygiene & Privacy",
+    "skillOrigin": "zero-defect",
+    "titanApproved": ["kamkar", "mitnick"],
+    "description": "Automatic redaction of PII and authorization headers before logging, canvas generation, or error reporting.",
+    "codeSnippet": "function sanitizeTelemetry(payload) {\n  const sensitiveKeys = ['token', 'password', 'apiKey', 'creditCard', 'phone'];\n  return JSON.parse(JSON.stringify(payload, (key, value) => \n    sensitiveKeys.includes(key) ? '***REDACTED***' : value\n  ));\n}",
+    "benefit": "Prevents inadvertent leakage of enterprise customer credentials to third-party log aggregators.",
+    "tags": ["privacy", "pii-masking", "security"]
+  },
+  {
+    "id": "pat-005",
+    "title": "Exponential Backoff Circuit Breaker for Third-Party SaaS Connectors",
+    "category": "Fault Tolerance",
+    "skillOrigin": "turbocharge",
+    "titanApproved": ["jack"],
+    "description": "Wraps external API connectors (Jira, Slack, Notion) in a 3-strike circuit breaker with jittered exponential backoff and in-memory fallback.",
+    "codeSnippet": "async function resilientFetch(fn, maxRetries = 3) {\n  for (let attempt = 0; attempt < maxRetries; attempt++) {\n    try {\n      return await fn();\n    } catch (err) {\n      if (attempt === maxRetries - 1) throw err;\n      await new Promise(r => setTimeout(r, 2 ** attempt * 1000 + Math.random() * 200));\n    }\n  }\n}",
+    "benefit": "Prevents downstream webhook/API latency spikes from hanging interactive user operations.",
+    "tags": ["resiliency", "circuit-breaker", "retry"]
+  }
+]
