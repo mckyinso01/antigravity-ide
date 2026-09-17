@@ -5,6 +5,7 @@ import auditMiller from './miller';
 import auditJack from './jack';
 
 export * from './roleScenarios';
+export * from './securityRoleScenarios';
 
 export const TITANS = [
   { id: 'mitnick', name: 'Kevin Mitnick', role: 'Access Control & Social Eng.', avatar: '🛡️', color: 'emerald' },

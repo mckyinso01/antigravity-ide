@@ -17,6 +17,7 @@ import {
   ENTERPRISE_ROLES
 } from '../agents/audits';
 import RoleScenariosTab from '../components/agents/RoleScenariosTab';
+import SecurityScenariosTab from '../components/agents/SecurityScenariosTab';
 import ConnectorsTab from '../components/agents/ConnectorsTab';
 import { exportAuditCSV, exportAuditPDF } from '../utils/auditExport';
 
@@ -303,6 +304,18 @@ export default function ProductionEngine() {
           </button>
 
           <button
+            onClick={() => setActiveTab('security')}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+              activeTab === 'security'
+                ? 'bg-rose-600 text-white shadow-md shadow-rose-900/40'
+                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900'
+            }`}
+          >
+            <Lock className="w-4 h-4 text-rose-400" />
+            <span>Security Scenarios (7 Roles)</span>
+          </button>
+
+          <button
             onClick={() => setActiveTab('devils-team')}
             className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
               activeTab === 'devils-team'
@@ -506,6 +519,11 @@ export default function ProductionEngine() {
             setActiveTab('devils-team');
           }}
         />
+      )}
+
+      {/* TAB: SECURITY SCENARIOS */}
+      {activeTab === 'security' && (
+        <SecurityScenariosTab />
       )}
 
       {/* TAB 2: DEVIL'S TEAM 5-TITAN ADVERSARIAL AUDIT */}

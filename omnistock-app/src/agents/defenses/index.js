@@ -14,6 +14,13 @@ import {
   stockAdjustmentSchema,
   recipeYieldSchema,
   promoApplySchema,
+  securityPolicySchema,
+  infraHardeningSchema,
+  incidentContainmentSchema,
+  penTestSchema,
+  complianceAuditSchema,
+  socAlertSchema,
+  dpoPrivacySchema,
 } from './validationSchemas';
 
 // Lookup table mirroring THREAT_SEVERITY_MAP structure
@@ -54,6 +61,49 @@ const THREAT_SCHEMA_MAP = {
   'marketing_strategist_miller': { schema: promoApplySchema, name: 'Promo Anti-Stacking Schema' },
   'marketing_strategist_kamkar': { schema: promoApplySchema, name: 'Promo Anti-Stacking Schema' },
   'marketing_strategist_jack': { schema: promoApplySchema, name: 'Promo Anti-Stacking Schema' },
+  // === SECURITY ROLES ===
+  // CISO
+  'ciso_mitnick': { schema: securityPolicySchema, name: 'Executive Security Policy MFA Schema' },
+  'ciso_geohot': { schema: securityPolicySchema, name: 'Executive Security Policy MFA Schema' },
+  'ciso_miller': { schema: securityPolicySchema, name: 'Executive Security Policy MFA Schema' },
+  'ciso_jack': { schema: securityPolicySchema, name: 'Executive Security Policy MFA Schema' },
+  'ciso_kamkar': { schema: securityPolicySchema, name: 'Executive Security Policy MFA Schema' },
+  // Security Engineer
+  'security_engineer_mitnick': { schema: infraHardeningSchema, name: 'Infrastructure Hardening Schema' },
+  'security_engineer_geohot': { schema: infraHardeningSchema, name: 'Infrastructure Hardening Schema' },
+  'security_engineer_miller': { schema: infraHardeningSchema, name: 'Infrastructure Hardening Schema' },
+  'security_engineer_jack': { schema: infraHardeningSchema, name: 'Infrastructure Hardening Schema' },
+  'security_engineer_kamkar': { schema: infraHardeningSchema, name: 'Infrastructure Hardening Schema' },
+  // Incident Responder
+  'incident_responder_mitnick': { schema: incidentContainmentSchema, name: 'Incident Containment & Forensics Schema' },
+  'incident_responder_geohot': { schema: incidentContainmentSchema, name: 'Incident Containment & Forensics Schema' },
+  'incident_responder_miller': { schema: incidentContainmentSchema, name: 'Incident Containment & Forensics Schema' },
+  'incident_responder_jack': { schema: incidentContainmentSchema, name: 'Incident Containment & Forensics Schema' },
+  'incident_responder_kamkar': { schema: incidentContainmentSchema, name: 'Incident Containment & Forensics Schema' },
+  // Penetration Tester
+  'pen_tester_mitnick': { schema: penTestSchema, name: 'Penetration Test Exploit Schema' },
+  'pen_tester_geohot': { schema: penTestSchema, name: 'Penetration Test Exploit Schema' },
+  'pen_tester_miller': { schema: penTestSchema, name: 'Penetration Test Exploit Schema' },
+  'pen_tester_jack': { schema: penTestSchema, name: 'Penetration Test Exploit Schema' },
+  'pen_tester_kamkar': { schema: penTestSchema, name: 'Penetration Test Exploit Schema' },
+  // Compliance Officer
+  'compliance_officer_mitnick': { schema: complianceAuditSchema, name: 'Compliance Framework Audit Schema' },
+  'compliance_officer_geohot': { schema: complianceAuditSchema, name: 'Compliance Framework Audit Schema' },
+  'compliance_officer_miller': { schema: complianceAuditSchema, name: 'Compliance Framework Audit Schema' },
+  'compliance_officer_jack': { schema: complianceAuditSchema, name: 'Compliance Framework Audit Schema' },
+  'compliance_officer_kamkar': { schema: complianceAuditSchema, name: 'Compliance Framework Audit Schema' },
+  // SOC Analyst
+  'soc_analyst_mitnick': { schema: socAlertSchema, name: 'SOC Alert Triage Schema' },
+  'soc_analyst_geohot': { schema: socAlertSchema, name: 'SOC Alert Triage Schema' },
+  'soc_analyst_miller': { schema: socAlertSchema, name: 'SOC Alert Triage Schema' },
+  'soc_analyst_jack': { schema: socAlertSchema, name: 'SOC Alert Triage Schema' },
+  'soc_analyst_kamkar': { schema: socAlertSchema, name: 'SOC Alert Triage Schema' },
+  // DPO
+  'dpo_mitnick': { schema: dpoPrivacySchema, name: 'DPO Privacy Protection Schema' },
+  'dpo_geohot': { schema: dpoPrivacySchema, name: 'DPO Privacy Protection Schema' },
+  'dpo_miller': { schema: dpoPrivacySchema, name: 'DPO Privacy Protection Schema' },
+  'dpo_jack': { schema: dpoPrivacySchema, name: 'DPO Privacy Protection Schema' },
+  'dpo_kamkar': { schema: dpoPrivacySchema, name: 'DPO Privacy Protection Schema' },
 };
 
 /**
