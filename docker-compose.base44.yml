@@ -25,7 +25,6 @@ services:
   backend:
     image: node:22-slim
     working_dir: /app
-    user: "node"
     volumes:
       - ./backend:/app
     ports:
