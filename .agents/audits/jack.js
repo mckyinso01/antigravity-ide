@@ -38,7 +38,7 @@ export function auditJack(context = {}, mode = 'continuous') {
   });
 
   // JACK-02: Docker container runs as root
-  // REOPENED: user: "node" was removed from docker-compose.base44.yml to fix npm install permissions.
+  // REMEDIATED: chown node_modules volume at startup, then su to node user for dev server.
   findings.push({
     id: 'JACK-02',
     titan: 'jack',
@@ -49,12 +49,12 @@ export function auditJack(context = {}, mode = 'continuous') {
     finding: 'Container runtime executes as root user in development compose configuration',
     component: 'docker-compose.base44.yml',
     recommendation: 'Add user: node directive in production container specifications to enforce unprivileged execution.',
-    status: 'open',
-    remediatedAt: null,
-    remediation: null,
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
+    remediation: 'docker-compose.base44.yml: both web and backend services use named volumes for node_modules. Startup command: chown -R node:node /app/node_modules, then su node -s /bin/sh -c "npm install && <dev server>". Process runs as node user (uid 1000), not root.',
     verifiedAt: auditDate,
     auditPass,
-    verificationNote: 'docker-compose.base44.yml backend service: user: "node" was removed because node user cannot write node_modules to bind-mounted volume (EACCES). Both web and backend services now run as root. Fix: use a named volume for node_modules or chown the bind mount at startup.',
+    verificationNote: 'docker-compose.base44.yml web: command: sh -c "chown -R node:node /app/node_modules; su node -s /bin/sh -c \'npx vite --host 0.0.0.0 --port 5173\'". backend: command: sh -c "chown -R node:node /app/node_modules; su node -s /bin/sh -c \'node --watch src/server.js\'". Both use web_node_modules / backend_node_modules named volumes. Confirmed non-root execution.',
     category: 'Container Hardening',
     attackVector: 'Container breakout vectors allow arbitrary filesystem modifications on the host.'
   });
@@ -126,7 +126,7 @@ export function auditJack(context = {}, mode = 'continuous') {
   });
 
   // JACK-INV-03: Physical inventory write-off sign-off chain
-  // REOPENED: Uses confirm() dialog, not actual cryptographic dual-party sign-off.
+  // REMEDIATED: Supervisor sign-off modal with supervisor_id + supervisor_signature fields.
   findings.push({
     id: 'JACK-INV-03',
     titan: 'jack',
@@ -137,18 +137,18 @@ export function auditJack(context = {}, mode = 'continuous') {
     component: 'omnistock-app/src/pages/StockAdjustments.jsx',
     finding: 'Physical inventory count discrepancies lack cryptographic sign-off chain for shrinkage write-offs',
     recommendation: 'Mandate dual-party digital sign-off (Inventory Specialist + Supervisor) for any write-off exceeding $100.',
-    status: 'open',
-    remediatedAt: null,
-    remediation: null,
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
+    remediation: 'StockAdjustments.jsx: replaced confirm() dialog with SupervisorSignOffModal component. handleSignOffConfirm(signOffData) sets adjustmentData.supervisor_id and adjustmentData.supervisor_signature before writing to Dexie. Backend writeOffSchema validates these fields for write-offs > $100.',
     verifiedAt: auditDate,
     auditPass,
-    verificationNote: 'StockAdjustments.jsx: if (valueEstimate > 100) { if (!confirm("...supervisor has approved.")) return; } — uses browser confirm() dialog. Backend writeOffSchema requires supervisor_id + supervisor_signature for > $100, but client never sends these fields. The confirm() dialog is not a cryptographic sign-off.',
+    verificationNote: 'StockAdjustments.jsx: handleSignOffConfirm async (signOffData) => { adjustmentData.supervisor_id = signOffData.supervisor_id; adjustmentData.supervisor_signature = signOffData.supervisor_signature; }. Dexie record includes supervisor_id and supervisor_signature fields. SupervisorSignOffModal rendered with writeOffValue={pendingSignOff.valueEstimate}. Confirmed.',
     category: 'Physical Shrinkage Defense',
     attackVector: 'Inventory controller marks whole cases of premium spirits as "broken in transit" without verifiable photographic proof or supervisor sign-off.'
   });
 
   // JACK-GATE-04: IndexedDB storage quota monitoring
-  // REOPENED: monitorAndPrune exists but only called on backup import, not during regular operations.
+  // REMEDIATED: monitorAndPrune now called on app startup, periodic interval, and after POS transactions.
   findings.push({
     id: 'JACK-GATE-04',
     titan: 'jack',
@@ -159,19 +159,20 @@ export function auditJack(context = {}, mode = 'continuous') {
     finding: 'IndexedDB storage quota unmonitored; risk of silent quota breach in high-volume stores',
     component: 'omnistock-app/src/lib/db.js',
     recommendation: 'Query navigator.storage.estimate() and trigger proactive pruning when usage exceeds 80%.',
-    status: 'open',
-    remediatedAt: null,
-    remediation: null,
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
+    remediation: 'storageMonitor.js: monitorAndPrune(pruneFn) checks navigator.storage.estimate() at 80% threshold. Now integrated into: (1) App.jsx on startup + 60s periodic interval, (2) POS.jsx after each transaction creation, (3) db.js importBackup. High-volume stores get proactive pruning during regular operation.',
     verifiedAt: auditDate,
     auditPass,
-    verificationNote: 'storageMonitor.js: monitorAndPrune(pruneFn) checks navigator.storage.estimate() at 80% threshold. db.js: called only in importBackup(). NOT called on app startup, not after transaction creation, not on periodic interval. High-volume stores would still hit silent quota breaches during normal operation.',
+    verificationNote: 'App.jsx: monitorAndPrune(pruneOldTransactions) on mount + setInterval 60s. POS.jsx: monitorAndPrune(async () => { prune old transactions }) after transaction creation. db.js: monitorAndPrune in importBackup. Confirmed across all three integration points.',
     category: 'Storage Exhaustion',
     attackVector: 'Browser silently drops write operations when disk quota is reached, losing un-synced sales receipts.'
   });
 
   // ─── NEW FINDINGS (2nd pass) ─────────────────────────────────────────────
 
-  // NEW-JACK-05: Backend JWT secret uses hardcoded dev fallback
+  // JACK-05: Backend JWT secret uses hardcoded dev fallback
+  // REMEDIATED: Fail-fast guards added for JWT_SECRET, HMAC_SECRET, and PII_ENCRYPTION_KEY in production.
   findings.push({
     id: 'JACK-05',
     titan: 'jack',
@@ -179,15 +180,15 @@ export function auditJack(context = {}, mode = 'continuous') {
     severity: 'medium',
     role: 'all',
     roleName: 'Infrastructure',
-    component: 'backend/src/config/env.js',
+    component: 'backend/src/config/env.js & backend/src/services/crypto.js',
     finding: 'Backend JWT and HMAC secrets use hardcoded development fallback values when env vars are missing',
     recommendation: 'Fail fast on startup if JWT_SECRET or HMAC_SECRET are not set in production (NODE_ENV=production). Remove hardcoded fallbacks for production builds.',
-    status: 'open',
-    remediatedAt: null,
-    remediation: null,
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
+    remediation: 'env.js: jwt.secret getter throws "FATAL: JWT_SECRET must be set in production" when NODE_ENV=production and JWT_SECRET missing. hmac.secret getter throws "FATAL: HMAC_SECRET must be set in production" similarly. crypto.js: ENCRYPTION_KEY throws "FATAL: PII_ENCRYPTION_KEY must be set in production" when NODE_ENV=production and PII_ENCRYPTION_KEY missing. Dev fallbacks remain only for development mode.',
     verifiedAt: auditDate,
     auditPass,
-    verificationNote: 'env.js: jwt.secret = process.env.JWT_SECRET || "dev-secret-change-in-production". hmac.secret = process.env.HMAC_SECRET || "dev-hmac-secret-change-in-production". crypto.js: ENCRYPTION_KEY uses scryptSync("omnistock-dev-key") fallback. In production, an attacker who reads the source can forge JWT tokens and HMAC signatures.',
+    verificationNote: 'env.js: if (process.env.NODE_ENV === "production" && !process.env.JWT_SECRET) throw new Error("FATAL: JWT_SECRET must be set in production..."). Same pattern for HMAC_SECRET. crypto.js: if (process.env.NODE_ENV === "production") throw new Error("FATAL: PII_ENCRYPTION_KEY must be set in production..."). Dev fallbacks (scryptSync, dev-secret) only apply when NODE_ENV !== production. Confirmed.',
     category: 'Secret Management',
     attackVector: 'If deployed to production without setting JWT_SECRET, attacker can forge admin JWT tokens using the hardcoded fallback.'
   });
