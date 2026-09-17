@@ -4,7 +4,7 @@ import {
   AlertTriangle, RefreshCw, Play, SkipForward, ArrowRight, BookOpen,
   Lock, Cpu, Eye, Target, Anchor, Filter, Clock, ChevronRight,
   Sparkles, Layers, Check, X, FileCode, ExternalLink, AlertOctagon,
-  Crown
+  Crown, Link2
 } from 'lucide-react';
 import lifecycleConfig from '../agents/production-lifecycle.json';
 import skillsCatalog from '../agents/skills-catalog.json';
@@ -17,6 +17,7 @@ import {
   ENTERPRISE_ROLES
 } from '../agents/audits';
 import RoleScenariosTab from '../components/agents/RoleScenariosTab';
+import ConnectorsTab from '../components/agents/ConnectorsTab';
 
 const TITAN_ICONS = {
   mitnick: Shield,
@@ -295,6 +296,18 @@ export default function ProductionEngine() {
           >
             <BookOpen className="w-4 h-4" />
             <span>Pattern Absorption Library ({allPatterns.length})</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('connectors')}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+              activeTab === 'connectors'
+                ? 'bg-blue-600 text-white shadow-md shadow-blue-900/40'
+                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900'
+            }`}
+          >
+            <Link2 className="w-4 h-4 text-[#00E5FF]" />
+            <span>Studio Connectors (4)</span>
           </button>
 
           <button
@@ -688,6 +701,11 @@ export default function ProductionEngine() {
             })}
           </div>
         </div>
+      )}
+
+      {/* TAB: STUDIO CONNECTORS & TELEMETRY */}
+      {activeTab === 'connectors' && (
+        <ConnectorsTab auditFindings={auditState.findings || []} />
       )}
 
       {/* TAB 3: PATTERN ABSORPTION LIBRARY */}
