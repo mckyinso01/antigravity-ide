@@ -6,9 +6,16 @@ import crypto from 'crypto';
  * In production, the key comes from environment; in dev, a derived key is used.
  */
 
-const ENCRYPTION_KEY = process.env.PII_ENCRYPTION_KEY
-  ? Buffer.from(process.env.PII_ENCRYPTION_KEY, 'hex')
-  : crypto.scryptSync('omnistock-dev-key', 'salt', 32);
+// Fail fast in production if encryption key is missing (JACK-05)
+const ENCRYPTION_KEY = (() => {
+  if (process.env.PII_ENCRYPTION_KEY) {
+    return Buffer.from(process.env.PII_ENCRYPTION_KEY, 'hex');
+  }
+  if (process.env.NODE_ENV === 'production') {
+    throw new Error('FATAL: PII_ENCRYPTION_KEY must be set in production. Set the PII_ENCRYPTION_KEY environment variable (32-byte hex).');
+  }
+  return crypto.scryptSync('omnistock-dev-key', 'salt', 32);
+})();
 
 const ALGORITHM = 'aes-256-gcm';
 

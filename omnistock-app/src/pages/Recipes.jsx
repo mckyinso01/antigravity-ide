@@ -9,6 +9,7 @@ import RecipeFormModal from "@/components/recipes/RecipeFormModal";
 import RecipeDetailModal from "@/components/recipes/RecipeDetailModal";
 import YieldCalculatorPanel from "@/components/recipes/YieldCalculatorPanel";
 import { calculateRecipeCostDetails } from "@/utils/costing";
+import { sanitizeText } from "@/lib/security/sanitize";
 
 import { DESIGN_TOKENS } from "@/lib/designSystem";
 
@@ -184,9 +185,9 @@ function RecipeCard({ recipe, products, onEdit, onDelete, onView, onCalculate })
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between gap-2">
           <div className="flex-1 min-w-0">
-            <CardTitle className="text-base font-semibold text-white truncate">{recipe.name}</CardTitle>
+            <CardTitle className="text-base font-semibold text-white truncate">{sanitizeText(recipe.name)}</CardTitle>
             {recipe.product_name && (
-              <p className="text-xs text-slate-400 mt-0.5">Produces: <span className="font-medium text-cyan-300">{recipe.product_name}</span></p>
+              <p className="text-xs text-slate-400 mt-0.5">Produces: <span className="font-medium text-cyan-300">{sanitizeText(recipe.product_name)}</span></p>
             )}
           </div>
           <Badge

@@ -1,3 +1,5 @@
+import { toFixed6, multiplyFixed6, divideFixed6 } from '@/lib/security/decimal';
+
 export const UNITS_CONVERSION = {
   // Volume: base unit is ml
   'l_ml': 1000,
@@ -67,7 +69,8 @@ export function calculateIngredientCost(ingredient, product) {
   const productCost = Number(product.cost) || 0;
   const ingredientQty = Number(ingredient.quantity_per_batch) || 0;
   const convertedQty = convertQuantity(ingredientQty, ingredient.unit, product.unit);
-  return convertedQty * productCost;
+  // Use 6-decimal fixed-point math for fractional BOM ingredients (GEOHOT-COST-02)
+  return multiplyFixed6(convertedQty, productCost);
 }
 
 export function calculateRecipeCostDetails(recipe, products) {
@@ -77,7 +80,8 @@ export function calculateRecipeCostDetails(recipe, products) {
   const ingredientCosts = ingredients.map(ing => {
     const prod = products.find(p => p.id === ing.product_id);
     const cost = calculateIngredientCost(ing, prod);
-    totalBatchCost += cost;
+    // Accumulate using 6-decimal fixed-point math (GEOHOT-COST-02)
+    totalBatchCost = toFixed6(totalBatchCost + cost);
     return {
       ...ing,
       cost,
@@ -87,7 +91,8 @@ export function calculateRecipeCostDetails(recipe, products) {
   });
 
   const yieldQty = Number(recipe.yield_quantity) || 1;
-  const costPerServing = totalBatchCost / yieldQty;
+  // Use fixed-point division for cost per serving (GEOHOT-COST-02)
+  const costPerServing = divideFixed6(totalBatchCost, yieldQty);
 
   const finishedProd = products.find(p => p.id === recipe.product_id);
   const sellingPrice = finishedProd ? Number(finishedProd.price) : 0;

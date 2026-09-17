@@ -3,10 +3,12 @@ import { entities } from "@/lib/db";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Badge } from "@/components/ui/badge";
 import { X, Search, RotateCcw, CheckCircle2 } from "lucide-react";
 import { format } from "date-fns";
 import { DESIGN_TOKENS } from "@/lib/designSystem";
+import SupervisorOverrideModal from "@/components/pos/SupervisorOverrideModal";
+
+const SUPERVISOR_OVERRIDE_THRESHOLD = 1000;
 
 export default function RefundModal({ onClose }) {
   const [transactions, setTransactions] = useState([]);
@@ -17,6 +19,7 @@ export default function RefundModal({ onClose }) {
   const [refundReason, setRefundReason] = useState("");
   const [processing, setProcessing] = useState(false);
   const [done, setDone] = useState(false);
+  const [showSupervisorOverride, setShowSupervisorOverride] = useState(false);
 
   useEffect(() => {
     try {
@@ -37,12 +40,25 @@ export default function RefundModal({ onClose }) {
     setRefundItems((txn.items || []).map(item => ({ ...item, refund_qty: 0 })));
   };
 
-  const processRefund = async () => {
-    const itemsToRefund = refundItems.filter(i => i.refund_qty > 0);
-    if (itemsToRefund.length === 0) return alert("Select items to refund.");
-    setProcessing(true);
+  const updateRefundQty = (idx, qty) => {
+    setRefundItems(prev => prev.map((item, i) =>
+      i === idx ? { ...item, refund_qty: Math.min(qty, item.quantity) } : item
+    ));
+  };
 
-    const refundTotal = itemsToRefund.reduce((s, i) => s + i.refund_qty * i.unit_price, 0);
+  const itemsToRefund = refundItems.filter(i => i.refund_qty > 0);
+  const refundTotal = itemsToRefund.reduce((s, i) => s + i.refund_qty * i.unit_price, 0);
+
+  const processRefund = async (overrideToken) => {
+    if (itemsToRefund.length === 0) return alert("Select items to refund.");
+
+    // Supervisor override for high-value refunds (MITNICK-MGR-02)
+    if (refundTotal > SUPERVISOR_OVERRIDE_THRESHOLD && !overrideToken) {
+      setShowSupervisorOverride(true);
+      return;
+    }
+
+    setProcessing(true);
 
     await entities.Transaction.create({
       transaction_number: `REF-${Date.now()}`,
@@ -168,8 +184,8 @@ export default function RefundModal({ onClose }) {
               <div className="space-y-1.5">
                 <Label className="text-slate-200">Refund Reason</Label>
                 <select
-                  value={reason}
-                  onChange={e => setReason(e.target.value)}
+                  value={refundReason}
+                  onChange={e => setRefundReason(e.target.value)}
                   className="flex h-9 w-full rounded-md border border-slate-700 bg-[#071322] px-3 py-1.5 text-sm text-white focus:outline-none focus:ring-1 focus:ring-cyan-500"
                 >
                   <option value="returned" className="bg-[#071322] text-white">Customer Returned</option>
@@ -181,7 +197,7 @@ export default function RefundModal({ onClose }) {
 
               <div className="p-3 bg-[#071322] rounded-xl border border-slate-800 flex justify-between items-center text-sm font-bold">
                 <span className="text-slate-300">Total Refund:</span>
-                <span className="text-rose-400 font-mono text-base">₱{totalRefund.toFixed(2)}</span>
+                <span className="text-rose-400 font-mono text-base">₱{refundTotal.toFixed(2)}</span>
               </div>
             </>
           )}
@@ -191,15 +207,25 @@ export default function RefundModal({ onClose }) {
           <div className="sticky bottom-0 bg-[#0B1C30] border-t border-slate-800 px-6 py-4 flex gap-2 justify-end rounded-b-2xl">
             <Button variant="ghost" className={DESIGN_TOKENS.buttons.secondary} onClick={onClose}>Cancel</Button>
             <Button
-              onClick={processRefund}
-              disabled={submitting || totalRefund <= 0}
+              onClick={() => processRefund()}
+              disabled={processing || refundTotal <= 0}
               className={DESIGN_TOKENS.buttons.danger + " text-xs font-bold gap-1 cursor-pointer"}
             >
-              {submitting ? "Processing..." : `Refund ₱${totalRefund.toFixed(2)}`}
+              {processing ? "Processing..." : `Refund ₱${refundTotal.toFixed(2)}`}
             </Button>
           </div>
         )}
       </div>
+
+      {showSupervisorOverride && (
+        <SupervisorOverrideModal
+          onApproved={(token) => {
+            setShowSupervisorOverride(false);
+            processRefund(token);
+          }}
+          onCancel={() => setShowSupervisorOverride(false)}
+        />
+      )}
     </div>
   );
 }

@@ -8,6 +8,8 @@ import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import { RoleGuard } from '@/components/auth/RoleGuard';
 import { referralCodeSchema } from '@/lib/security/validators';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
+import { monitorAndPrune } from '@/lib/security/storageMonitor';
+import { db } from '@/lib/db';
 
 // Layout
 import AppLayout from './components/layout/AppLayout';
@@ -42,7 +44,27 @@ const ProtectedLayout = () => {
 };
 
 const AuthenticatedApp = () => {
-  const { isAuthenticated, isLoadingAuth, isLoadingPublicSettings, authError } = useAuth();
+  const { isAuthenticated, isLoadingAuth, isLoadingPublicSettings, authError, isOffline } = useAuth();
+
+  // Storage quota monitoring on startup + periodic interval (JACK-GATE-04)
+  React.useEffect(() => {
+    const pruneOldTransactions = async () => {
+      try {
+        const oldTxns = await db.transactions.orderBy('created_date').limit(100).toArray();
+        if (oldTxns.length > 0) {
+          await db.transactions.bulkDelete(oldTxns.map(t => t.id));
+        }
+      } catch (e) { /* best-effort pruning */ }
+    };
+
+    // Check on startup
+    monitorAndPrune(pruneOldTransactions).catch(() => {});
+    // Check every 5 minutes
+    const interval = setInterval(() => {
+      monitorAndPrune(pruneOldTransactions).catch(() => {});
+    }, 5 * 60 * 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   // Save referral code from URL with alphanumeric sanitization (MITNICK-03)
   React.useEffect(() => {
@@ -79,7 +101,14 @@ const AuthenticatedApp = () => {
   }
 
   return (
-    <Routes>
+    <>
+      {/* OFFLINE MODE banner — shown when backend is unreachable (MITNICK-05) */}
+      {isOffline && isAuthenticated && (
+        <div className="bg-amber-500/90 text-black text-xs font-bold text-center py-1.5 px-4 z-50 sticky top-0">
+          ⚠ OFFLINE MODE — Backend unavailable. Running with limited cashier-only access. Some features may not work.
+        </div>
+      )}
+      <Routes>
       <Route path="/" element={isAuthenticated ? <Navigate to="/dashboard" replace /> : <Login />} />
       <Route path="/login" element={isAuthenticated ? <Navigate to="/dashboard" replace /> : <Login />} />
       <Route element={<ProtectedLayout />}>
@@ -103,7 +132,8 @@ const AuthenticatedApp = () => {
       </Route>
       <Route path="/landing" element={<Landing />} />
       <Route path="*" element={<PageNotFound />} />
-    </Routes>
+      </Routes>
+    </>
   );
 };
 

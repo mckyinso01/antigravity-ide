@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { entities, db } from "@/lib/db";
 import { base44 } from "@/api/base44Client";
 import { convertQuantity } from "@/utils/costing";
@@ -18,10 +18,12 @@ import BarcodeScanner from "@/components/shared/BarcodeScanner";
 import { trackPriceChangesFromTransaction } from "@/lib/priceChangeTracker";
 import DESIGN_TOKENS from "@/lib/designSystem";
 import { toCents, fromCents, multiplyMoney, sumMoney, subMoney } from "@/lib/security/decimal";
-import { generateIdempotencyKey, acquireActionLock, releaseActionLock } from "@/lib/security/idempotency";
+import { generateIdempotencyKey, acquireActionLock, releaseActionLock, debounce } from "@/lib/security/idempotency";
 import { validate, cartItemSchema, barcodeSchema, discountSchema } from "@/lib/security/validators";
 import { withCircuitBreaker } from "@/lib/security/circuitBreaker";
 import { api } from "@/lib/apiClient";
+import { maskPhone } from "@/lib/security/masking";
+import { useAuth } from "@/lib/AuthContext";
 
 const PAYMENT_METHODS = [
   { value: "cash", label: "Cash", icon: Banknote },
@@ -41,9 +43,15 @@ const PAYMENT_METHODS = [
 const SPLIT_METHODS = PAYMENT_METHODS.filter(m => m.value !== "split");
 
 export default function POS() {
+  const { user } = useAuth();
+  const userRole = user?.role || 'cashier';
+  const canViewPII = ['owner', 'admin', 'manager'].includes(userRole);
   const [products, setProducts] = useState([]);
   const [customers, setCustomers] = useState([]);
   const [search, setSearch] = useState("");
+  const [searchInput, setSearchInput] = useState("");
+  // Debounce search to throttle rapid barcode scanner keystrokes (GEOHOT-GATE-04)
+  const debouncedSetSearch = useMemo(() => debounce(setSearch, 200), []);
   const [cart, setCart] = useState([]);
   const [paymentMethod, setPaymentMethod] = useState("cash");
   const [amountTendered, setAmountTendered] = useState("");
@@ -313,12 +321,12 @@ export default function POS() {
             <input
               type="text"
               placeholder="Search product, SKU, or scan barcode (Press Enter to quick-add)..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
+              value={searchInput}
+              onChange={(e) => { setSearchInput(e.target.value); debouncedSetSearch(e.target.value); }}
               onKeyDown={(e) => {
-                if (e.key === "Enter" && search.trim()) {
+                if (e.key === "Enter" && searchInput.trim()) {
                   // Cap barcode length to 48 chars (MILLER-03)
-                  const query = search.trim().slice(0, 48);
+                  const query = searchInput.trim().slice(0, 48);
                   const v = validate(barcodeSchema, query);
                   if (!v.success) return;
 
@@ -331,6 +339,7 @@ export default function POS() {
                   if (match) {
                     addToCart(match);
                     setSearch("");
+                    setSearchInput("");
                   }
                 }
               }}
@@ -480,7 +489,7 @@ export default function POS() {
                     <button key={c.id} onClick={() => { setSelectedCustomer(c); setCustomerSearch(""); setShowCustomerSearch(false); }}
                       className="w-full text-left px-3.5 py-2.5 hover:bg-slate-800/80 border-b border-slate-800/50 last:border-0 transition-colors text-sm">
                       <p className="font-bold text-white">{c.name}</p>
-                      <p className="text-xs font-mono text-slate-400">{c.phone || "No phone"} · {c.loyalty_points || 0} pts</p>
+                      <p className="text-xs font-mono text-slate-400">{canViewPII ? (c.phone || "No phone") : (c.phone ? maskPhone(c.phone) : "No phone")} · {c.loyalty_points || 0} pts</p>
                     </button>
                   ))
                 )}

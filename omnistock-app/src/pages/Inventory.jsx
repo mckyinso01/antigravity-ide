@@ -12,9 +12,11 @@ import ProductFormModal from "@/components/inventory/ProductFormModal";
 import CatalogueUploaderModal from "@/components/inventory/CatalogueUploaderModal";
 import RecipeIngredientModal from "@/components/inventory/RecipeIngredientModal";
 import ProductCard from "@/components/inventory/ProductCard";
+import VirtualizedProductList from "@/components/inventory/VirtualizedProductList";
 import BarcodeScanner from "@/components/shared/BarcodeScanner";
 import { exportProductsToCsv, downloadCsv, parseProductsCsv, csvRowsToProducts } from "@/lib/csv";
 import DESIGN_TOKENS from "@/lib/designSystem";
+import { api } from "@/lib/apiClient";
 
 export default function Inventory() {
   const [products, setProducts] = useState([]);
@@ -31,8 +33,20 @@ export default function Inventory() {
   const [showCatalogue, setShowCatalogue] = useState(false);
   const [showRecipeModal, setShowRecipeModal] = useState(false);
   const [recipeProduct, setRecipeProduct] = useState(null);
+  const [listHeight, setListHeight] = useState(600);
 
   const scrollRef = useRef(null);
+
+  // Calculate available height for virtualized list (GEOHOT-03)
+  useEffect(() => {
+    const updateHeight = () => {
+      // Subtract header (~80px) + filters (~70px) + padding
+      setListHeight(Math.max(400, window.innerHeight - 200));
+    };
+    updateHeight();
+    window.addEventListener('resize', updateHeight);
+    return () => window.removeEventListener('resize', updateHeight);
+  }, []);
 
   const loadData = async () => {
     setLoading(true);
@@ -42,7 +56,14 @@ export default function Inventory() {
         entities.Category.list("name", 100).catch(() => []),
         entities.Supplier.list("name", 100).catch(() => []),
       ]);
-      setProducts(p || []);
+      // Apply backend ABAC field filtering for cost/margin (KAMKAR-INV-03)
+      // Falls back to raw products if backend unavailable (ProductCard also has client-side ABAC)
+      let filteredProducts = p || [];
+      try {
+        const filtered = await api.security.filterProductsByRole(p || []);
+        if (filtered?.records?.length) filteredProducts = filtered.records;
+      } catch (e) { /* best-effort: client-side ABAC in ProductCard is the fallback */ }
+      setProducts(filteredProducts);
       setCategories(c || []);
       setSuppliers(s || []);
     } catch (err) {
@@ -279,16 +300,12 @@ export default function Inventory() {
             <p className="text-xs text-slate-400 mt-1">Add your first product or import via CSV to populate inventory</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {filtered.map((product) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                onEdit={() => { setEditingProduct(product); setShowForm(true); }}
-                onDelete={() => handleDelete(product.id)}
-              />
-            ))}
-          </div>
+          <VirtualizedProductList
+            products={filtered}
+            onEdit={(product) => { setEditingProduct(product); setShowForm(true); }}
+            onDelete={handleDelete}
+            height={listHeight}
+          />
         )}
       </div>
 

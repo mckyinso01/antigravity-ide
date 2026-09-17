@@ -10,6 +10,7 @@ export const AuthProvider = ({ children }) => {
   const [isLoadingPublicSettings, setIsLoadingPublicSettings] = useState(false);
   const [authError, setAuthError] = useState(null);
   const [mfaVerified, setMfaVerified] = useState(false);
+  const [isOffline, setIsOffline] = useState(false);
 
   useEffect(() => {
     checkAuthState();
@@ -38,11 +39,13 @@ export const AuthProvider = ({ children }) => {
         setIsAuthenticated(false);
       }
     } catch (err) {
-      // Backend not available — fall back to legacy sessionStorage for dev
+      // Backend not available — fall back to legacy sessionStorage for dev (MITNICK-05)
+      // Default to cashier role, NOT admin, to prevent privilege escalation via DevTools
+      setIsOffline(true);
       const token = sessionStorage.getItem('omnistock_auth_token');
       const storedEmail = sessionStorage.getItem('omnistock_user_email') || 'operator@omnistock.io';
       if (token) {
-        setUser({ name: 'OmniStock Operator', email: storedEmail, role: 'admin' });
+        setUser({ name: 'OmniStock Operator', email: storedEmail, role: 'cashier' });
         setIsAuthenticated(true);
       } else {
         setUser(null);
@@ -63,11 +66,13 @@ export const AuthProvider = ({ children }) => {
       // Keep sessionStorage as fallback for offline
       sessionStorage.setItem('omnistock_user_email', userEmail);
     } catch (err) {
-      // Fallback to mock auth if backend unavailable
+      // Fallback to mock auth if backend unavailable (MITNICK-05)
+      // Default to cashier role, NOT admin, to prevent privilege escalation via DevTools
       console.warn('[Auth] Backend login failed, using mock:', err.message);
+      setIsOffline(true);
       sessionStorage.setItem('omnistock_auth_token', 'mock_omnistock_token_2026');
       sessionStorage.setItem('omnistock_user_email', userEmail);
-      setUser({ name: 'OmniStock Operator', email: userEmail, role: 'admin' });
+      setUser({ name: 'OmniStock Operator', email: userEmail, role: 'cashier' });
       setIsAuthenticated(true);
     }
   };
@@ -108,6 +113,7 @@ export const AuthProvider = ({ children }) => {
       isLoadingPublicSettings,
       authError,
       mfaVerified,
+      isOffline,
       login,
       logout,
       verifyMfa,

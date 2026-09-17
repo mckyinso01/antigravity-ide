@@ -11,6 +11,7 @@ import { Plus, ArrowUp, ArrowDown, RefreshCw, Package, X } from "lucide-react";
 import { format } from "date-fns";
 import { trackPriceChangesFromAdjustment } from "@/lib/priceChangeTracker";
 import { validate, stockAdjustmentSchema } from "@/lib/security/validators";
+import SupervisorSignOffModal from "@/components/inventory/SupervisorSignOffModal";
 
 const REASONS = ["restock", "damaged", "expired", "lost", "theft", "correction", "returned", "other"];
 const REASON_COLORS = {
@@ -34,6 +35,8 @@ export default function StockAdjustments() {
   const [saving, setSaving] = useState(false);
   const [form, setForm] = useState({ product_id: "", adjustment_type: "add", quantity_change: 1, reason: "restock", notes: "" });
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [showSignOff, setShowSignOff] = useState(false);
+  const [pendingSignOff, setPendingSignOff] = useState(null);
 
   useEffect(() => { loadData(); }, []);
 
@@ -84,6 +87,8 @@ export default function StockAdjustments() {
       quantity_after: after,
       reason: form.reason,
       notes: form.notes,
+      prodCost: prod.cost || 0,
+      prodPrice: prod.price || 0,
     };
 
     const v = validate(stockAdjustmentSchema, adjustmentData);
@@ -92,37 +97,55 @@ export default function StockAdjustments() {
     // Dual-party sign-off for write-offs > $100 (JACK-INV-03)
     const valueEstimate = (prod.cost || 0) * form.quantity_change;
     if (valueEstimate > 100 && form.reason !== 'restock' && form.reason !== 'returned') {
-      if (!confirm(`This write-off is estimated at $${valueEstimate.toFixed(2)}.\nDual-party sign-off is required.\nContinue only if supervisor has approved.`)) {
-        return;
-      }
+      // Show supervisor sign-off modal instead of browser confirm()
+      setPendingSignOff({ adjustmentData, valueEstimate });
+      setShowSignOff(true);
+      return;
     }
 
+    await executeSave(adjustmentData);
+  };
+
+  const handleSignOffConfirm = async (signOffData) => {
+    setShowSignOff(false);
+    if (!pendingSignOff) return;
+    const { adjustmentData } = pendingSignOff;
+    // Include supervisor sign-off fields in the adjustment record
+    adjustmentData.supervisor_id = signOffData.supervisor_id;
+    adjustmentData.supervisor_signature = signOffData.supervisor_signature;
+    setPendingSignOff(null);
+    await executeSave(adjustmentData);
+  };
+
+  const executeSave = async (adjustmentData) => {
     setSaving(true);
 
     await Promise.all([
-      entities.Product.update(form.product_id, { quantity: after }),
+      entities.Product.update(form.product_id, { quantity: adjustmentData.quantity_after }),
       entities.StockAdjustment.create({
-        product_id: form.product_id,
-        product_name: prod.name,
-        adjustment_type: form.adjustment_type,
-        quantity_before: before,
-        quantity_change: form.quantity_change,
-        quantity_after: after,
-        reason: form.reason,
-        notes: form.notes,
+        product_id: adjustmentData.product_id,
+        product_name: adjustmentData.product_name,
+        adjustment_type: adjustmentData.adjustment_type,
+        quantity_before: adjustmentData.quantity_before,
+        quantity_change: adjustmentData.quantity_change,
+        quantity_after: adjustmentData.quantity_after,
+        reason: adjustmentData.reason,
+        notes: adjustmentData.notes,
+        supervisor_id: adjustmentData.supervisor_id || null,
+        supervisor_signature: adjustmentData.supervisor_signature || null,
       }),
     ]);
 
     // Track cost price changes if product has a cost recorded
-    if (prod.cost) {
+    if (adjustmentData.prodCost) {
       await trackPriceChangesFromAdjustment({
-        productId: form.product_id,
-        oldCost: prod.cost,
-        newCost: prod.cost,
-        oldPrice: prod.price,
-        newPrice: prod.price,
+        productId: adjustmentData.product_id,
+        oldCost: adjustmentData.prodCost,
+        newCost: adjustmentData.prodCost,
+        oldPrice: adjustmentData.prodPrice,
+        newPrice: adjustmentData.prodPrice,
         adjustedBy: "Stock Adjustment",
-        reason: `${form.reason} — ${form.notes || "qty adjusted"}`,
+        reason: `${adjustmentData.reason} — ${adjustmentData.notes || "qty adjusted"}`,
       });
     }
 
@@ -193,6 +216,7 @@ export default function StockAdjustments() {
                 <Input
                   type="number"
                   min="0"
+                  max="10000"
                   value={form.quantity_change}
                   onChange={e => setForm(f => ({ ...f, quantity_change: Number(e.target.value) }))}
                   className="bg-[#071322] border-slate-700 text-cyan-300 font-mono"
@@ -263,6 +287,14 @@ export default function StockAdjustments() {
           ))
         )}
       </div>
+
+      {showSignOff && pendingSignOff && (
+        <SupervisorSignOffModal
+          writeOffValue={pendingSignOff.valueEstimate}
+          onConfirm={handleSignOffConfirm}
+          onCancel={() => { setShowSignOff(false); setPendingSignOff(null); }}
+        />
+      )}
     </div>
   );
 }

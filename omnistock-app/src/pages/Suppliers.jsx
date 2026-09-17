@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Plus, Truck, Phone, Mail, MapPin, Pencil, Trash2, X, Loader2 } from "lucide-react";
 import { DESIGN_TOKENS } from "@/lib/designSystem";
 import { maskPhone, maskEmail } from "@/lib/security/masking";
+import { sanitizeText } from "@/lib/security/sanitize";
 import { useAuth } from "@/lib/AuthContext";
 
 export default function Suppliers() {
@@ -164,8 +165,8 @@ export default function Suppliers() {
               <CardContent className="p-5 space-y-4">
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <p className="font-bold text-white text-base font-sans tracking-tight">{s.name}</p>
-                    {s.contact_person && <p className="text-xs text-slate-400 mt-0.5">Contact: {s.contact_person}</p>}
+                    <p className="font-bold text-white text-base font-sans tracking-tight">{sanitizeText(s.name)}</p>
+                    {s.contact_person && <p className="text-xs text-slate-400 mt-0.5">Contact: {sanitizeText(s.contact_person)}</p>}
                   </div>
                   <div className="flex items-center gap-1.5 shrink-0">
                     <Badge className={s.status === "active" ? "bg-emerald-950/80 text-emerald-300 border border-emerald-500/50 font-mono text-xs px-2.5 py-0.5" : "bg-slate-800/80 text-slate-400 border border-slate-700 font-mono text-xs px-2.5 py-0.5"}>
@@ -176,7 +177,8 @@ export default function Suppliers() {
                 <div className="space-y-1.5 text-xs text-slate-300 font-mono">
                   {s.phone && <p className="flex items-center gap-2 text-slate-300"><Phone className="w-3.5 h-3.5 text-cyan-400 shrink-0" />{canViewPII ? s.phone : maskPhone(s.phone)}</p>}
                   {s.email && <p className="flex items-center gap-2 text-slate-300"><Mail className="w-3.5 h-3.5 text-cyan-400 shrink-0" />{canViewPII ? s.email : maskEmail(s.email)}</p>}
-                  {s.address && <p className="flex items-center gap-2 text-slate-300"><MapPin className="w-3.5 h-3.5 text-cyan-400 shrink-0" /><span className="truncate">{s.address}</span></p>}
+                  {s.address && <p className="flex items-center gap-2 text-slate-300"><MapPin className="w-3.5 h-3.5 text-cyan-400 shrink-0" /><span className="truncate">{sanitizeText(s.address)}</span></p>}
+                  {s.notes && <p className="text-xs text-slate-400 italic border-t border-slate-800/40 pt-1.5 mt-1.5">{sanitizeText(s.notes)}</p>}
                 </div>
                 <div className="flex gap-1.5 justify-end border-t border-slate-800/80 pt-3">
                   <button onClick={() => openEdit(s)} className={DESIGN_TOKENS.icons.iconButton} title="Edit Supplier">

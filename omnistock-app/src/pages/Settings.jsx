@@ -4,11 +4,19 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Trash2, AlertTriangle, Moon, Sun, Monitor, ShieldCheck, KeyRound } from "lucide-react";
 import { DESIGN_TOKENS } from "@/lib/designSystem";
+import { useAuth } from "@/lib/AuthContext";
+import MfaChallengeModal from "@/components/auth/MfaChallengeModal";
 
 export default function Settings() {
+  const { mfaVerified } = useAuth();
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [deleting, setDeleting] = useState(false);
   const [confirmText, setConfirmText] = useState("");
+
+  // MFA step-up enforcement (MITNICK-OWNER-01)
+  if (!mfaVerified) {
+    return <MfaChallengeModal title="MFA Required — System Settings" />;
+  }
 
   const handleDeleteAccount = async () => {
     if (confirmText !== "DELETE") return;

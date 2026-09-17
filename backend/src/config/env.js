@@ -9,7 +9,13 @@ export const config = {
 
   // JWT configuration
   jwt: {
-    secret: process.env.JWT_SECRET || 'dev-secret-change-in-production',
+    // Fail fast in production if secret is missing (JACK-05)
+    secret: (() => {
+      if (process.env.NODE_ENV === 'production' && !process.env.JWT_SECRET) {
+        throw new Error('FATAL: JWT_SECRET must be set in production. Set the JWT_SECRET environment variable.');
+      }
+      return process.env.JWT_SECRET || 'dev-secret-change-in-production';
+    })(),
     expiresIn: '8h',
     cookieName: 'omnistock_jwt',
     // SameSite=None requires Secure; in dev (http) we fall back to lax
@@ -24,7 +30,13 @@ export const config = {
 
   // HMAC signing key for receipts and void tokens
   hmac: {
-    secret: process.env.HMAC_SECRET || 'dev-hmac-secret-change-in-production',
+    // Fail fast in production if secret is missing (JACK-05)
+    secret: (() => {
+      if (process.env.NODE_ENV === 'production' && !process.env.HMAC_SECRET) {
+        throw new Error('FATAL: HMAC_SECRET must be set in production. Set the HMAC_SECRET environment variable.');
+      }
+      return process.env.HMAC_SECRET || 'dev-hmac-secret-change-in-production';
+    })(),
   },
 
   // CORS — allow the Vite dev server origin
