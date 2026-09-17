@@ -34,6 +34,7 @@ docker compose -f docker-compose.base44.yml up -d
 - Command Center route: `/production-engine` (accessible from Sidebar under 'Studio Engine' and TopBar Gate status pill)
 - Gate policy: Strict pre-deployment gate blocks deployment if any open critical vulnerabilities exist; supports signed admin override.
 - Enterprise Connectors: Jira (`WeeklyPulse Jira`), Slack (`SocialShare Slack`), Notion (`Social_Share Notion`), Intercom (`WeeklyPulse Intercom`) wired into pipeline phases for automated ticket creation, telemetry broadcasts, and pattern exports.
+- Dual-Mode OAuth: BYO_SHARED (workspace-level shared credentials for automated pipeline dispatches) + APP_USER multi-OAuth (per-user personal account linking via `base44.connectors.connectAppUser` / `disconnectAppUser`). Falls back to localStorage mock when SDK credentials are placeholders.
 - Enterprise Role Scenarios: 6 personas (Owner, Team Manager, Cashier, Inventory Specialist, Cost Analyst, Marketing Strategist) with full operational day-in-the-life simulations, feature blueprints (including Owner Costs, Income & Tax Accrual command center), and 5-Titan threat defense matrix.
 
 ## Notes

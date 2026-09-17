@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Link2, CheckCircle2, RefreshCw, Send, AlertTriangle, ExternalLink,
   MessageSquare, Bug, BookOpen, Headphones, ArrowRight, ShieldAlert,
-  Zap, Clock, FileCode, Check, Play, Terminal
+  Zap, Clock, FileCode, Check, Play, Terminal, UserPlus, UserX, Link as LinkIcon
 } from 'lucide-react';
 import {
   ENTERPRISE_CONNECTORS,
   getConnectorLogs,
-  dispatchConnectorAction
+  dispatchConnectorAction,
+  checkAllUserConnections,
+  connectUserAccount,
+  disconnectUserAccount
 } from '../../agents/connectors';
 
 const CONNECTOR_ICONS = {
@@ -21,8 +24,45 @@ export default function ConnectorsTab({ auditFindings = [] }) {
   const [logs, setLogs] = useState(getConnectorLogs());
   const [activeDispatching, setActiveDispatching] = useState(null);
   const [actionSuccessMessage, setActionSuccessMessage] = useState(null);
+  const [userConnections, setUserConnections] = useState({});
+  const [connectingUser, setConnectingUser] = useState(null);
 
   const criticalFindings = auditFindings.filter(f => f.severity === 'critical' && f.status === 'open');
+
+  // Load per-user connection statuses on mount
+  useEffect(() => {
+    let mounted = true;
+    checkAllUserConnections().then((result) => {
+      if (mounted) setUserConnections(result);
+    });
+    return () => { mounted = false; };
+  }, []);
+
+  const handleConnectUser = async (connectorId, realConnectorId) => {
+    setConnectingUser(connectorId);
+    try {
+      await connectUserAccount(realConnectorId);
+      const updated = await checkAllUserConnections();
+      setUserConnections(updated);
+    } catch (e) {
+      console.error('Failed to connect user account:', e);
+    } finally {
+      setConnectingUser(null);
+    }
+  };
+
+  const handleDisconnectUser = async (connectorId, realConnectorId) => {
+    setConnectingUser(connectorId);
+    try {
+      await disconnectUserAccount(realConnectorId);
+      const updated = await checkAllUserConnections();
+      setUserConnections(updated);
+    } catch (e) {
+      console.error('Failed to disconnect user account:', e);
+    } finally {
+      setConnectingUser(null);
+    }
+  };
 
   const handleTriggerAction = async (connectorId, actionName, payload = {}) => {
     setActiveDispatching(connectorId);
@@ -52,17 +92,20 @@ export default function ConnectorsTab({ auditFindings = [] }) {
               <Link2 className="w-6 h-6" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 flex-wrap">
                 <span className="px-2 py-0.5 text-[10px] font-mono font-bold uppercase rounded bg-blue-500/20 text-[#00E5FF] border border-blue-500/40">
-                  Workspace Connectors Active
+                  Dual-Mode OAuth
                 </span>
-                <span className="text-xs font-mono text-slate-400">
-                  4 Enterprise Integrations Registered
+                <span className="px-2 py-0.5 text-[10px] font-mono font-bold uppercase rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                  BYO_SHARED ✓
+                </span>
+                <span className="px-2 py-0.5 text-[10px] font-mono font-bold uppercase rounded bg-purple-500/20 text-purple-400 border border-purple-500/40">
+                  APP_USER Multi-OAuth
                 </span>
               </div>
-              <h2 className="text-xl font-bold text-white mt-1">Enterprise Studio Connectors & Telemetry</h2>
+              <h2 className="text-xl font-bold text-white mt-1">Enterprise Studio Connectors & Multi-OAuth</h2>
               <p className="text-xs text-slate-300 mt-1 max-w-2xl leading-relaxed">
-                Seamlessly orchestrating Jira defect tracking, Slack operational broadcasts, Notion architecture syncing, and Intercom client escalations into the 5-phase Maestro pipeline.
+                Each team member connects their own Jira, Slack, Notion & Intercom accounts via per-user OAuth — alongside shared workspace credentials for automated pipeline dispatches.
               </p>
             </div>
           </div>
@@ -111,7 +154,7 @@ export default function ConnectorsTab({ auditFindings = [] }) {
                         <h3 className="text-sm font-bold text-white">{connector.name}</h3>
                         <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-emerald-950 text-emerald-400 border border-emerald-800/50 flex items-center gap-1">
                           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                          Connected
+                          Shared
                         </span>
                       </div>
                       <div className="text-[11px] font-mono text-slate-400 mt-0.5">
@@ -128,6 +171,54 @@ export default function ConnectorsTab({ auditFindings = [] }) {
                 <p className="text-xs text-slate-300 mt-3 leading-relaxed">
                   {connector.description}
                 </p>
+
+                {/* Per-User Multi-OAuth Connection Status */}
+                <div className="mt-3 bg-slate-950/60 border border-slate-800/80 rounded-xl p-3 space-y-2">
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-1.5">
+                      <LinkIcon className="w-3.5 h-3.5 text-purple-400" />
+                      <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400">
+                        Your Personal OAuth
+                      </span>
+                    </div>
+                    {userConnections[connector.id]?.connected ? (
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/40 flex items-center gap-1">
+                        <CheckCircle2 className="w-3 h-3" />
+                        Connected
+                      </span>
+                    ) : (
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">
+                        Not Linked
+                      </span>
+                    )}
+                  </div>
+
+                  {userConnections[connector.id]?.connected ? (
+                    <button
+                      onClick={() => handleDisconnectUser(connector.id, connector.connectorId)}
+                      disabled={connectingUser === connector.id}
+                      className="w-full px-3 py-1.5 bg-rose-600/20 hover:bg-rose-600/30 text-rose-300 border border-rose-500/40 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-all disabled:opacity-50"
+                    >
+                      {connectingUser === connector.id ? (
+                        <><RefreshCw className="w-3.5 h-3.5 animate-spin" /> Disconnecting...</>
+                      ) : (
+                        <><UserX className="w-3.5 h-3.5" /> Disconnect My Account</>
+                      )}
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => handleConnectUser(connector.id, connector.connectorId)}
+                      disabled={connectingUser === connector.id}
+                      className="w-full px-3 py-1.5 bg-purple-600/20 hover:bg-purple-600/30 text-purple-300 border border-purple-500/40 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-all disabled:opacity-50"
+                    >
+                      {connectingUser === connector.id ? (
+                        <><RefreshCw className="w-3.5 h-3.5 animate-spin" /> Authorizing...</>
+                      ) : (
+                        <><UserPlus className="w-3.5 h-3.5" /> Connect My Account via OAuth</>
+                      )}
+                    </button>
+                  )}
+                </div>
 
                 {/* Pipeline Triggers */}
                 <div className="mt-3.5 space-y-1.5">
@@ -148,7 +239,7 @@ export default function ConnectorsTab({ auditFindings = [] }) {
               {/* Action Buttons */}
               <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between gap-2">
                 <span className="text-[10px] font-mono text-slate-400">
-                  Mode: OAuth BYO_SHARED
+                  Dispatch via: {userConnections[connector.id]?.connected ? 'Personal OAuth' : 'Shared Workspace'}
                 </span>
 
                 <button

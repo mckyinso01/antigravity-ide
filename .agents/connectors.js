@@ -1,7 +1,10 @@
 /**
  * Enterprise Studio Connectors
  * Wires Jira, Slack, Notion, and Intercom into the Maestro Production Pipeline & Devil's Team Audit Gate.
+ * Supports dual-mode OAuth: BYO_SHARED (workspace-level) and APP_USER (per-user multi-OAuth).
  */
+
+import { base44 } from '../api/base44Client';
 
 export const ENTERPRISE_CONNECTORS = [
   {
@@ -168,6 +171,92 @@ export async function dispatchConnectorAction(connectorId, actionType, payload =
   });
 
   return { success: true, log };
+}
+
+// ─── Per-User Multi-OAuth (APP_USER mode) ───
+
+const LOCAL_STORAGE_KEY_USER_CONNECTIONS = 'omnistock_user_connector_connections';
+
+/**
+ * Check if the current app user has connected their own OAuth account for a connector.
+ * Uses the Base44 SDK's service-role endpoint to read the app-user's connection.
+ * Returns { connected: boolean, connectionConfig: object|null } or { connected: false } on failure.
+ */
+export async function checkUserConnection(connectorId) {
+  try {
+    const connection = await base44.asServiceRole.connectors.getCurrentAppUserConnection(connectorId);
+    if (connection?.accessToken) {
+      return { connected: true, connectionConfig: connection.connectionConfig };
+    }
+    return { connected: false };
+  } catch (e) {
+    // SDK not available (placeholder credentials) — fall back to localStorage mock
+    return { connected: getMockUserConnections()[connectorId] || false };
+  }
+}
+
+/**
+ * Initiate per-user OAuth flow. Redirects the browser to the provider's consent screen.
+ * Returns the redirect_url or throws on failure.
+ */
+export async function connectUserAccount(connectorId) {
+  try {
+    const redirectUrl = await base44.connectors.connectAppUser(connectorId);
+    if (redirectUrl) {
+      window.location.href = redirectUrl;
+      return redirectUrl;
+    }
+    throw new Error('No redirect URL returned');
+  } catch (e) {
+    // SDK not available — simulate connection in localStorage for demo
+    setMockUserConnection(connectorId, true);
+    return null;
+  }
+}
+
+/**
+ * Disconnect the current app user's OAuth account for a connector.
+ */
+export async function disconnectUserAccount(connectorId) {
+  try {
+    await base44.connectors.disconnectAppUser(connectorId);
+  } catch (e) {
+    // SDK not available — simulate disconnection in localStorage for demo
+  }
+  setMockUserConnection(connectorId, false);
+}
+
+/**
+ * Check all connectors for the current app user's connection status.
+ * Returns a map: { [connectorId]: { connected: boolean, connectionConfig: object|null } }
+ */
+export async function checkAllUserConnections() {
+  const results = {};
+  for (const connector of ENTERPRISE_CONNECTORS) {
+    results[connector.id] = await checkUserConnection(connector.connectorId);
+  }
+  return results;
+}
+
+// ─── Mock localStorage fallback (used when SDK credentials are placeholders) ───
+
+function getMockUserConnections() {
+  try {
+    const raw = localStorage.getItem(LOCAL_STORAGE_KEY_USER_CONNECTIONS);
+    return raw ? JSON.parse(raw) : {};
+  } catch (e) {
+    return {};
+  }
+}
+
+function setMockUserConnection(connectorId, connected) {
+  const current = getMockUserConnections();
+  if (connected) {
+    current[connectorId] = { connected: true, connectedAt: new Date().toISOString() };
+  } else {
+    delete current[connectorId];
+  }
+  localStorage.setItem(LOCAL_STORAGE_KEY_USER_CONNECTIONS, JSON.stringify(current));
 }
 
 function getInitialMockLogs() {
