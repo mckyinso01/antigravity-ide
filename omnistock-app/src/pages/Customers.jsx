@@ -6,8 +6,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Plus, Search, Users, Pencil, Trash2, Phone, Mail, Star, Loader2, X, DollarSign, ShoppingBag } from "lucide-react";
 import { DESIGN_TOKENS } from "@/lib/designSystem";
+import { maskPhone, maskEmail, maskExportRow } from "@/lib/security/masking";
+import { encryptPII } from "@/lib/security/crypto";
+import { useAuth } from "@/lib/AuthContext";
 
 export default function Customers() {
+  const { user } = useAuth();
+  const userRole = user?.role || 'cashier';
+  // Only owner/admin/manager can see unmasked PII (KAMKAR-01)
+  const canViewPII = ['owner', 'admin', 'manager'].includes(userRole);
   const [customers, setCustomers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
@@ -54,10 +61,15 @@ export default function Customers() {
     if (!form.name.trim()) return alert("Name is required.");
     setSaving(true);
     try {
+      // Encrypt PII before writing to Dexie (KAMKAR-01)
+      const encryptedForm = { ...form };
+      if (form.phone) encryptedForm.phone_enc = await encryptPII(form.phone);
+      if (form.email) encryptedForm.email_enc = await encryptPII(form.email);
+
       if (editingId) {
-        await entities.Customer.update(editingId, form);
+        await entities.Customer.update(editingId, encryptedForm);
       } else {
-        await entities.Customer.create({ ...form, total_spent: 0, visit_count: 0, loyalty_points: 100 });
+        await entities.Customer.create({ ...encryptedForm, total_spent: 0, visit_count: 0, loyalty_points: 100 });
       }
     } catch (err) {
       console.error("Customer Save Exception:", err);
@@ -66,6 +78,26 @@ export default function Customers() {
       setShowForm(false);
       loadData();
     }
+  };
+
+  // CSV export with column masking (KAMKAR-MKT-02)
+  const handleExportCSV = () => {
+    if (!canViewPII) {
+      return alert("Manager or admin authorization required to export customer data.");
+    }
+    const maskedRows = customers.map(c => maskExportRow(c));
+    const headers = Object.keys(maskedRows[0] || {});
+    const csv = [
+      headers.join(','),
+      ...maskedRows.map(r => headers.map(h => `"${r[h] || ''}"`).join(','))
+    ].join('\n');
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `customers-export-${new Date().toISOString().split('T')[0]}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
   };
 
   const handleDelete = async (id) => {
@@ -107,9 +139,14 @@ export default function Customers() {
             </p>
           </div>
         </div>
-        <Button onClick={openAdd} className={DESIGN_TOKENS.buttons.glowingAction + " gap-2 text-xs font-bold px-5 py-2.5 cursor-pointer active:scale-95 transition-all shrink-0"}>
-          <Plus className="w-4 h-4" /> Add Customer
-        </Button>
+        <div className="flex gap-2 shrink-0">
+          <Button onClick={handleExportCSV} variant="outline" className="gap-2 text-xs font-bold px-4 py-2.5 border-slate-600 text-slate-300 hover:text-white">
+            Export CSV
+          </Button>
+          <Button onClick={openAdd} className={DESIGN_TOKENS.buttons.glowingAction + " gap-2 text-xs font-bold px-5 py-2.5 cursor-pointer active:scale-95 transition-all"}>
+            <Plus className="w-4 h-4" /> Add Customer
+          </Button>
+        </div>
       </div>
 
       {/* Search & Actions */}
@@ -226,8 +263,8 @@ export default function Customers() {
                     </div>
                   </div>
                   <div className="text-xs text-slate-300 font-mono space-y-1.5">
-                    {c.phone && <p className="flex items-center gap-2 text-slate-300"><Phone className="w-3.5 h-3.5 text-cyan-400" />{c.phone}</p>}
-                    {c.email && <p className="flex items-center gap-2 text-slate-300"><Mail className="w-3.5 h-3.5 text-cyan-400" />{c.email}</p>}
+                    {c.phone && <p className="flex items-center gap-2 text-slate-300"><Phone className="w-3.5 h-3.5 text-cyan-400" />{canViewPII ? c.phone : maskPhone(c.phone)}</p>}
+                    {c.email && <p className="flex items-center gap-2 text-slate-300"><Mail className="w-3.5 h-3.5 text-cyan-400" />{canViewPII ? c.email : maskEmail(c.email)}</p>}
                   </div>
                   <div className="grid grid-cols-3 gap-2 border-t border-slate-800/80 pt-3.5 text-center text-xs">
                     <div>

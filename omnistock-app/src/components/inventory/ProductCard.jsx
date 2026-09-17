@@ -2,8 +2,12 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Pencil, Trash2, Package, AlertTriangle } from "lucide-react";
+import { useAuth } from "@/lib/AuthContext";
 
 export default function ProductCard({ product, onEdit, onDelete }) {
+  const { user } = useAuth();
+  // ABAC: cost and margin only visible to inventory, analyst, owner, admin (KAMKAR-INV-03)
+  const canViewCost = ['inventory', 'analyst', 'owner', 'admin'].includes(user?.role || 'cashier');
   const qty = product.quantity || 0;
   const threshold = product.low_stock_threshold || 10;
   const isLow = qty <= threshold && qty > 0;
@@ -47,7 +51,7 @@ export default function ProductCard({ product, onEdit, onDelete }) {
             <div className="flex items-center justify-between pt-1">
               <div>
                 <p className="text-xl font-bold font-mono text-cyan-400">₱{(product.price || 0).toLocaleString("en-PH", { minimumFractionDigits: 2 })}</p>
-                {margin !== null && (
+                {canViewCost && margin !== null && (
                   <p className="text-xs font-mono text-slate-400">
                     Cost: ₱{(product.cost || 0).toLocaleString()} · <span className="text-emerald-400 font-bold">{margin}% margin</span>
                   </p>

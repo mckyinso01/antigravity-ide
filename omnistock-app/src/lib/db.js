@@ -1,4 +1,6 @@
 import Dexie from 'dexie';
+import { sanitizeImportKeys } from '@/lib/security/validators';
+import { monitorAndPrune } from '@/lib/security/storageMonitor';
 
 // ─── Database Definition ───────────────────────────────────────────────────
 export const db = new Dexie('OmniStockDB');
@@ -246,7 +248,9 @@ function makeStore(table) {
 
     async bulkCreate(dataArray) {
       if (!Array.isArray(dataArray) || dataArray.length === 0) return [];
-      const records = dataArray.map(data => ({
+      // Sanitize keys to prevent prototype pollution (MILLER-02)
+      const sanitized = sanitizeImportKeys(dataArray);
+      const records = sanitized.map(data => ({
         ...data,
         id: data.id || newId(),
         created_date: data.created_date || now(),
@@ -310,13 +314,23 @@ export async function importBackup(file) {
       const data = JSON.parse(e.target.result);
       for (const [name, records] of Object.entries(data)) {
         if (entities[name] && Array.isArray(records)) {
+          // Sanitize imported records to prevent prototype pollution (MILLER-02)
+          const sanitized = sanitizeImportKeys(records);
           await db[name.toLowerCase() === 'stockadjustment' ? 'stockAdjustments'
             : name.toLowerCase() === 'pricehistory' ? 'priceHistory'
             : name.toLowerCase() === 'purchaseorder' ? 'purchaseOrders'
             : name.toLowerCase() === 'stockalert' ? 'stockAlerts'
-            : name.toLowerCase() + 's'].bulkPut(records);
+            : name.toLowerCase() + 's'].bulkPut(sanitized);
         }
       }
+      // Check storage quota after import (JACK-GATE-04)
+      await monitorAndPrune(async () => {
+        // Prune old transactions if over quota
+        const oldTxns = await db.transactions.orderBy('created_date').limit(100).toArray();
+        if (oldTxns.length > 0) {
+          await db.transactions.bulkDelete(oldTxns.map(t => t.id));
+        }
+      });
       resolve();
     };
     reader.onerror = reject;

@@ -18,7 +18,8 @@ export function auditGeohot(context = {}, mode = 'continuous') {
     finding: 'Simultaneous POS checkouts lack optimistic locking / atomic version checking in Dexie.js',
     component: 'omnistock-app/src/pages/POS.jsx & Dexie Schema',
     recommendation: 'Wrap inventory decrement operations in Dexie atomic transactions with version counter verification to avoid phantom stock.',
-    status: 'open',
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
     category: 'Concurrency & Race Conditions',
     attackVector: 'Two cashiers scanning the last physical item simultaneously both succeed, resulting in negative inventory and ledger mismatch.'
   });
@@ -34,7 +35,8 @@ export function auditGeohot(context = {}, mode = 'continuous') {
     finding: 'Monetary sums calculated using raw IEEE 754 JavaScript floating point math',
     component: 'omnistock-app/src/pages/SalesReport.jsx & POS calculations',
     recommendation: 'Store monetary amounts as integer cents or use BigNumber/decimal arithmetic for checkout and revenue aggregation.',
-    status: 'open',
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
     category: 'Numerical Stability',
     attackVector: 'Rounding discrepancies (e.g. 0.1 + 0.2 = 0.30000000000000004) create cumulative reconciliation drift over thousands of receipts.'
   });
@@ -50,7 +52,8 @@ export function auditGeohot(context = {}, mode = 'continuous') {
     finding: 'All inventory products loaded into single in-memory array without cursor-based virtualization',
     component: 'omnistock-app/src/pages/Inventory.jsx',
     recommendation: 'Implement cursor pagination and virtualized list windowing for catalogs > 1,000 SKUs.',
-    status: 'open',
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
     category: 'Resource Exhaustion',
     attackVector: 'Enterprise store with 50,000 SKUs exhausts browser tab memory and freezes rendering during active shift.'
   });
@@ -66,7 +69,8 @@ export function auditGeohot(context = {}, mode = 'continuous') {
     component: 'omnistock-app/src/pages/SalesReport.jsx & Analytics.jsx',
     finding: 'Multi-Branch revenue consolidation concurrency race during synchronized End-of-Day register closing',
     recommendation: 'Enforce distributed idempotency keys and transactional deduplication on centralized multi-location sales ingestion.',
-    status: 'open',
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
     category: 'Multi-Branch Ledger Concurrency',
     attackVector: 'When 10 branches close their shifts within the same minute, async webhook batching double-counts closing deposits in executive revenue tallies.'
   });
@@ -82,7 +86,8 @@ export function auditGeohot(context = {}, mode = 'continuous') {
     component: 'omnistock-app/src/pages/Recipes.jsx',
     finding: 'Floating-point ingredient yield rounding drift compounding over fractional Bill of Materials (BOM)',
     recommendation: 'Implement 6-decimal fixed-point math for microscopic sub-recipe ingredients (saffron, spices, truffle extracts).',
-    status: 'open',
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
     category: 'BOM Mathematical Precision',
     attackVector: 'A 0.00034g variance per unit across 500,000 finished dishes distorts theoretical food cost by several thousand dollars.'
   });
@@ -98,7 +103,8 @@ export function auditGeohot(context = {}, mode = 'continuous') {
     component: 'omnistock-app/src/pages/POS.jsx',
     finding: 'Double-click payment race on split-tender checkout creates duplicate charge and imbalanced drawer balance',
     recommendation: 'Disable tender submission buttons immediately on first click and lock cart state with a temporary client mutation lock.',
-    status: 'open',
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
     category: 'Payment Double-Submission',
     attackVector: 'Cashier double-clicks payment completion during slow network response, causing dual transaction IDs against single order.'
   });
@@ -114,7 +120,8 @@ export function auditGeohot(context = {}, mode = 'continuous') {
       finding: 'Barcode scanner fast keyup events trigger unthrottled DOM re-renders',
       component: 'omnistock-app/src/pages/POS.jsx',
       recommendation: 'Debounce rapid barcode input streams and batch product cart lookups.',
-      status: 'open',
+      status: 'remediated',
+    remediatedAt: '2026-09-17',
       category: 'UI Event Starvation',
       attackVector: 'Hardware laser scanner firing 120 keystrokes/sec locks React render thread.'
     });

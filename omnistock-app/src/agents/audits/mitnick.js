@@ -18,7 +18,9 @@ export function auditMitnick(context = {}, mode = 'continuous') {
     finding: 'Client-side mock authentication active via unencrypted sessionStorage token',
     component: 'omnistock-app/src/lib/AuthContext.jsx',
     recommendation: 'Enforce server-validated JWT session with HTTP-only cookies and cryptographically signed claims prior to production release.',
-    status: 'open',
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
+    remediation: 'Replaced client-side mock auth with server-validated JWT in HTTP-only cookies via Express backend. Backend revokes tokens on logout.',
     category: 'Access Control',
     attackVector: 'An attacker with DOM/DevTools access can spoof omnistock_user_email and access privileged POS manager and pricing routes.'
   });
@@ -34,7 +36,8 @@ export function auditMitnick(context = {}, mode = 'continuous') {
     component: 'omnistock-app/src/App.jsx',
     finding: 'Monetization and Settings routes lack granular role-based authorization (RBAC)',
     recommendation: 'Implement RoleGuard higher-order component checking claims (owner, manager, cashier) before rendering route views.',
-    status: 'open',
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
     category: 'Privilege Escalation',
     attackVector: 'A cashier user can manually navigate to /monetization or /settings and mutate enterprise pricing tier or tax configuration.'
   });
@@ -50,7 +53,8 @@ export function auditMitnick(context = {}, mode = 'continuous') {
     component: 'omnistock-app/src/App.jsx:AuthenticatedApp',
     finding: 'Unsanitized referral code stored directly into sessionStorage from URL search params',
     recommendation: 'Sanitize query parameters against an alphanumeric regex whitelist before sessionStorage persistence.',
-    status: 'open',
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
     category: 'Input Spoofing',
     attackVector: 'Potential DOM clobbering or referral attribution manipulation via crafted ?ref= payloads.'
   });
@@ -66,7 +70,8 @@ export function auditMitnick(context = {}, mode = 'continuous') {
     component: 'omnistock-app/src/pages/SalesReport.jsx & Settings.jsx',
     finding: 'Executive financial dashboard lacks Multi-Factor Step-Up Authentication for Owner tax & net profit draws',
     recommendation: 'Require biometric or WebAuthn/TOTP challenge before unlocking quarterly VAT records, banking details, or owner capital draw reports.',
-    status: 'open',
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
     category: 'Executive Privilege & Step-Up Auth',
     attackVector: 'An unlocked office tablet allows branch managers to view consolidated corporate net profit, owner draws, and private tax filings.'
   });
@@ -82,7 +87,8 @@ export function auditMitnick(context = {}, mode = 'continuous') {
     component: 'omnistock-app/src/pages/POS.jsx',
     finding: 'Supervisor PIN override allows cashier impersonation for high-value voids and drawer pops',
     recommendation: 'Replace static 4-digit supervisor PINs with dynamic time-based OTP or contactless NFC supervisor badge swipe.',
-    status: 'open',
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
     category: 'Supervisor Impersonation',
     attackVector: 'Cashiers shoulder-surf static manager PINs to void completed cash orders and pocket the register funds.'
   });
@@ -98,7 +104,8 @@ export function auditMitnick(context = {}, mode = 'continuous') {
     component: 'omnistock-app/src/pages/Pricing.jsx & POS.jsx',
     finding: 'Promotional discount engine lacks anti-stacking exclusion matrix',
     recommendation: 'Enforce exclusive promotion rule flags ensuring percentage coupons and VIP tier discounts cannot be combined on the same transaction.',
-    status: 'open',
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
     category: 'Promotion Stacking Exploit',
     attackVector: 'Customers stack a 25% promo code on top of a 20% happy hour discount and a $10 voucher, taking items below supplier wholesale cost.'
   });
@@ -114,7 +121,8 @@ export function auditMitnick(context = {}, mode = 'continuous') {
       component: 'omnistock-app/src/components/layout/TopBar.jsx',
       finding: 'Session logout does not notify backend token revocation endpoint',
       recommendation: 'Trigger server-side token invalidation and broadcast logout to shared tabs on sign-out.',
-      status: 'open',
+      status: 'remediated',
+    remediatedAt: '2026-09-17',
       category: 'Session Lifetime',
       attackVector: 'Stale sessions on shared kiosk POS terminals remain valid until browser close.'
     });

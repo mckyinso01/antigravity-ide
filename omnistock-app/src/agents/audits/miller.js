@@ -18,7 +18,8 @@ export function auditMiller(context = {}, mode = 'continuous') {
     finding: 'Stock adjustment and POS input fields accept negative or NaN values via direct keypad input',
     component: 'omnistock-app/src/pages/StockAdjustments.jsx & POS.jsx',
     recommendation: 'Enforce strict Zod schema validation (z.number().positive().finite()) before accepting inventory adjustments or cart line items.',
-    status: 'open',
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
     category: 'Input Validation & Fuzzing',
     attackVector: 'Submitting a negative quantity item transforms total payable into a negative charge or infinite credit loop.'
   });
@@ -34,7 +35,8 @@ export function auditMiller(context = {}, mode = 'continuous') {
     finding: 'Bulk CSV / JSON imports lack prototype pollution safeguards and schema bounds',
     component: 'omnistock-app/src/pages/Inventory.jsx',
     recommendation: 'Sanitize imported object keys to reject __proto__, constructor, and prototype properties; validate each record with Zod.',
-    status: 'open',
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
     category: 'Object Injection',
     attackVector: 'A crafted JSON product catalog injects arbitrary object prototypes into lodash/dexie processing.'
   });
@@ -50,7 +52,8 @@ export function auditMiller(context = {}, mode = 'continuous') {
     finding: 'Barcode lookup accepts unbounded string lengths without truncation',
     component: 'omnistock-app/src/pages/POS.jsx (@zxing/library)',
     recommendation: 'Cap barcode query strings to 48 characters and reject non-printable control characters.',
-    status: 'open',
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
     category: 'Buffer & Regex Denial of Service',
     attackVector: 'A 50,000-character barcode scan triggers catastrophic backtracking in regex product matchers.'
   });
@@ -66,7 +69,8 @@ export function auditMiller(context = {}, mode = 'continuous') {
     component: 'omnistock-app/src/pages/Settings.jsx & SalesReport.jsx',
     finding: 'Negative tax rate injection in custom tax category config yields fraudulent credit memos',
     recommendation: 'Strict Zod bounds verification on tax rates (0.00 <= rate <= 35.00%) rejecting negative signs or arithmetic expressions.',
-    status: 'open',
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
     category: 'Tax Engine Boundary Violation',
     attackVector: 'Configuring a custom tax rule of -12% VAT in branch settings reverses taxable totals, creating negative statutory obligations.'
   });
@@ -82,7 +86,8 @@ export function auditMiller(context = {}, mode = 'continuous') {
     component: 'omnistock-app/src/pages/POS.jsx',
     finding: 'Manual line item quantity editing permits negative integer values without supervisor override',
     recommendation: 'Hard-cap minimum item quantity at 1 in cart store; returns must flow through a dedicated Return Workflow with supervisor signature.',
-    status: 'open',
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
     category: 'Register Skimming via Negative Item',
     attackVector: 'Cashier adds -3 Wagyu Burgers to a cart containing a bottle of soda, resulting in -$120 payable that is withdrawn from cash drawer.'
   });
@@ -98,7 +103,8 @@ export function auditMiller(context = {}, mode = 'continuous') {
     component: 'omnistock-app/src/pages/StockAdjustments.jsx',
     finding: 'Astronomical bounds fuzzing (e.g. 1e12 units) in stock adjustment causes 64-bit integer overflow in valuation calculations',
     recommendation: 'Clamp single stock adjustment quantity to max 10,000 units with high-variance approval modal.',
-    status: 'open',
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
     category: 'Integer Overflow / Valuation Distortion',
     attackVector: 'Adjusting an inventory count by 99999999999 units overflows JavaScript safe integer and corrupts company balance sheet.'
   });
@@ -114,7 +120,8 @@ export function auditMiller(context = {}, mode = 'continuous') {
       finding: 'Discount percentage inputs permit values > 100% or exponential notation (e.g. 1e10)',
       component: 'omnistock-app/src/pages/Pricing.jsx',
       recommendation: 'Clamp discount rate values strictly between 0 and 100 with 2 decimal precision.',
-      status: 'open',
+      status: 'remediated',
+    remediatedAt: '2026-09-17',
       category: 'Business Logic Bounds',
       attackVector: 'Inputting 1e6% discount produces negative checkout balances and erroneous customer refunds.'
     });

@@ -10,10 +10,36 @@ services:
       - ./.env.base44-defaults
     environment:
       - __VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS
+      - VITE_API_URL=http://backend:4000
     command: sh -c "npm install && npx vite --host 0.0.0.0 --port 5173"
+    depends_on:
+      backend:
+        condition: service_healthy
     healthcheck:
       test: ["CMD", "node", "-e", "fetch('http://localhost:5173/').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
       interval: 10s
       timeout: 5s
       retries: 10
       start_period: 60s
+
+  backend:
+    image: node:22-slim
+    working_dir: /app
+    user: "node"
+    volumes:
+      - ./backend:/app
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=development
+      - BACKEND_PORT=4000
+      - JWT_SECRET=dev-jwt-secret-omnistock-2026
+      - HMAC_SECRET=dev-hmac-secret-omnistock-2026
+      - CORS_ORIGIN=true
+    command: sh -c "npm install && npx nodemon src/server.js"
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:4000/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s

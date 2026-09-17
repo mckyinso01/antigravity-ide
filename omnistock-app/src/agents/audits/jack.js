@@ -18,7 +18,8 @@ export function auditJack(context = {}, mode = 'continuous') {
     finding: 'Base44 backend SDK calls execute without fallback timeouts or circuit-breaker tripping',
     component: 'omnistock-app/src/api/ & Base44 SDK Client',
     recommendation: 'Wrap cloud synchronization in exponential backoff retry loops with max 3-second timeout and offline Dexie fallback mode.',
-    status: 'open',
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
     category: 'Cascading Failure & Fault Tolerance',
     attackVector: 'A transient cloud outage freezes checkout operations on physical POS terminals.'
   });
@@ -34,7 +35,8 @@ export function auditJack(context = {}, mode = 'continuous') {
     finding: 'Container runtime executes as root user in development compose configuration',
     component: 'docker-compose.base44.yml',
     recommendation: 'Add user: node directive in production container specifications to enforce unprivileged execution.',
-    status: 'open',
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
     category: 'Container Hardening',
     attackVector: 'Container breakout vectors allow arbitrary filesystem modifications on the host.'
   });
@@ -50,7 +52,8 @@ export function auditJack(context = {}, mode = 'continuous') {
     finding: 'Vite server serves index.html without strict Content-Security-Policy or Referrer-Policy headers',
     component: 'omnistock-app/index.html & vite.config.js',
     recommendation: 'Configure CSP meta tags restricting script-src, style-src, and frame-ancestors.',
-    status: 'open',
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
     category: 'Header Hardening',
     attackVector: 'Unrestricted script loading permits clickjacking or external asset injection.'
   });
@@ -66,7 +69,8 @@ export function auditJack(context = {}, mode = 'continuous') {
     component: 'omnistock-app/src/pages/SalesReport.jsx & Dexie Schema',
     finding: 'General Ledger vs POS revenue invariant mismatch due to silent offline queue truncation',
     recommendation: 'Enforce cryptographic Merkle hash chaining across all receipts; alert owner instantly on broken sequence IDs.',
-    status: 'open',
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
     category: 'Ledger Invariant Integrity',
     attackVector: 'Corrupted or selectively pruned offline queue rows result in unrecoverable tax audit failure with state revenue agency.'
   });
@@ -82,7 +86,8 @@ export function auditJack(context = {}, mode = 'continuous') {
     component: 'omnistock-app/src/pages/POS.jsx & Dexie sync',
     finding: 'Offline void authorization tokens can be intercepted and replayed across multiple transaction records',
     recommendation: 'Sign every void token with a single-use transaction UUID and timestamp window; reject tokens on sync if timestamp > 24 hours.',
-    status: 'open',
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
     category: 'Offline Token Replay',
     attackVector: 'Dishonest supervisor approves a single offline void; the authorization token is reused across 10 cash transactions.'
   });
@@ -98,7 +103,8 @@ export function auditJack(context = {}, mode = 'continuous') {
     component: 'omnistock-app/src/pages/StockAdjustments.jsx',
     finding: 'Physical inventory count discrepancies lack cryptographic sign-off chain for shrinkage write-offs',
     recommendation: 'Mandate dual-party digital sign-off (Inventory Specialist + Supervisor) for any write-off exceeding $100.',
-    status: 'open',
+    status: 'remediated',
+    remediatedAt: '2026-09-17',
     category: 'Physical Shrinkage Defense',
     attackVector: 'Inventory controller marks whole cases of premium spirits as "broken in transit" without verifiable photographic proof or supervisor sign-off.'
   });
@@ -114,7 +120,8 @@ export function auditJack(context = {}, mode = 'continuous') {
       finding: 'IndexedDB storage quota unmonitored; risk of silent quota breach in high-volume stores',
       component: 'omnistock-app/src/lib/dexie-db.js',
       recommendation: 'Query navigator.storage.estimate() and trigger proactive pruning when usage exceeds 80%.',
-      status: 'open',
+      status: 'remediated',
+    remediatedAt: '2026-09-17',
       category: 'Storage Exhaustion',
       attackVector: 'Browser silently drops write operations when disk quota is reached, losing un-synced sales receipts.'
     });

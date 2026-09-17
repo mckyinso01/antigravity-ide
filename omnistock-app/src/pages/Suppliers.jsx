@@ -7,8 +7,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Plus, Truck, Phone, Mail, MapPin, Pencil, Trash2, X, Loader2 } from "lucide-react";
 import { DESIGN_TOKENS } from "@/lib/designSystem";
+import { maskPhone, maskEmail } from "@/lib/security/masking";
+import { useAuth } from "@/lib/AuthContext";
 
 export default function Suppliers() {
+  const { user } = useAuth();
+  const userRole = user?.role || 'cashier';
+  const canViewPII = ['owner', 'admin', 'inventory', 'analyst'].includes(userRole);
   const [suppliers, setSuppliers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
@@ -169,8 +174,8 @@ export default function Suppliers() {
                   </div>
                 </div>
                 <div className="space-y-1.5 text-xs text-slate-300 font-mono">
-                  {s.phone && <p className="flex items-center gap-2 text-slate-300"><Phone className="w-3.5 h-3.5 text-cyan-400 shrink-0" />{s.phone}</p>}
-                  {s.email && <p className="flex items-center gap-2 text-slate-300"><Mail className="w-3.5 h-3.5 text-cyan-400 shrink-0" />{s.email}</p>}
+                  {s.phone && <p className="flex items-center gap-2 text-slate-300"><Phone className="w-3.5 h-3.5 text-cyan-400 shrink-0" />{canViewPII ? s.phone : maskPhone(s.phone)}</p>}
+                  {s.email && <p className="flex items-center gap-2 text-slate-300"><Mail className="w-3.5 h-3.5 text-cyan-400 shrink-0" />{canViewPII ? s.email : maskEmail(s.email)}</p>}
                   {s.address && <p className="flex items-center gap-2 text-slate-300"><MapPin className="w-3.5 h-3.5 text-cyan-400 shrink-0" /><span className="truncate">{s.address}</span></p>}
                 </div>
                 <div className="flex gap-1.5 justify-end border-t border-slate-800/80 pt-3">

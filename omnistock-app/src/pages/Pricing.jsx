@@ -8,6 +8,7 @@ import { Search, TrendingUp, Save, History, Layers, CheckSquare, Square } from "
 import { useApiToast } from "@/hooks/useApiToast";
 import HelpTip from "@/components/ui/HelpTip";
 import { DESIGN_TOKENS } from "@/lib/designSystem";
+import { validate, discountSchema } from "@/lib/security/validators";
 
 export default function Pricing() {
   const [products, setProducts] = useState([]);
@@ -16,9 +17,13 @@ export default function Pricing() {
   const [loading, setLoading] = useState(true);
   const [edits, setEdits] = useState({});
   const [saving, setSaving] = useState(false);
-  const [targetMargin, setTargetMargin] = useState(30);
+  const [targetMargin, setTargetMarginRaw] = useState(30);
+  // Clamp target margin to 0-100 (MILLER-GATE-04)
+  const setTargetMargin = (v) => setTargetMarginRaw(Math.min(100, Math.max(0, v)));
   const [selectedIds, setSelectedIds] = useState(new Set());
-  const [bulkMarkup, setBulkMarkup] = useState(10);
+  const [bulkMarkup, setBulkMarkupRaw] = useState(10);
+  // Clamp bulk markup to 0-100 (MILLER-GATE-04)
+  const setBulkMarkup = (v) => setBulkMarkupRaw(Math.min(100, Math.max(0, v)));
   const [bulkSaving, setBulkSaving] = useState(false);
   const { toastSuccess, toastError } = useApiToast();
 

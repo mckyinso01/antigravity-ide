@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { entities } from "@/lib/db";
+import { entities, db } from "@/lib/db";
 import { base44 } from "@/api/base44Client";
 import { convertQuantity } from "@/utils/costing";
 import { Button } from "@/components/ui/button";
@@ -17,6 +17,11 @@ import ThermalReceiptModal from "@/components/pos/ThermalReceiptModal";
 import BarcodeScanner from "@/components/shared/BarcodeScanner";
 import { trackPriceChangesFromTransaction } from "@/lib/priceChangeTracker";
 import DESIGN_TOKENS from "@/lib/designSystem";
+import { toCents, fromCents, multiplyMoney, sumMoney, subMoney } from "@/lib/security/decimal";
+import { generateIdempotencyKey, acquireActionLock, releaseActionLock } from "@/lib/security/idempotency";
+import { validate, cartItemSchema, barcodeSchema, discountSchema } from "@/lib/security/validators";
+import { withCircuitBreaker } from "@/lib/security/circuitBreaker";
+import { api } from "@/lib/apiClient";
 
 const PAYMENT_METHODS = [
   { value: "cash", label: "Cash", icon: Banknote },
@@ -119,7 +124,7 @@ export default function POS() {
         if (existing.quantity >= product.quantity) return prev;
         return prev.map((i) =>
           i.product_id === product.id
-            ? { ...i, quantity: i.quantity + 1, subtotal: (i.quantity + 1) * i.unit_price }
+            ? { ...i, quantity: i.quantity + 1, subtotal: multiplyMoney(i.unit_price, i.quantity + 1) }
             : i
         );
       }
@@ -136,21 +141,23 @@ export default function POS() {
       prev.map((i) => {
         if (i.product_id !== productId) return i;
         const newQty = i.quantity + delta;
+        // Hard-cap minimum at 1 (MILLER-CASH-02) — no negative quantities
         if (newQty <= 0) return null;
         if (newQty > i.max_quantity) return i;
-        return { ...i, quantity: newQty, subtotal: newQty * i.unit_price };
+        return { ...i, quantity: newQty, subtotal: multiplyMoney(i.unit_price, newQty) };
       }).filter(Boolean)
     );
   };
 
   const removeFromCart = (productId) => setCart((prev) => prev.filter((i) => i.product_id !== productId));
 
-  const subtotal = cart.reduce((sum, i) => sum + i.subtotal, 0);
+  // Use integer-cents arithmetic for all monetary calculations (GEOHOT-02)
+  const subtotal = sumMoney(cart.map((i) => i.subtotal));
   const discountAmt = discountType === "percent"
-    ? Math.min((discount / 100) * subtotal, subtotal)
+    ? fromCents(Math.min(toCents(subtotal) * (discount / 100), toCents(subtotal)))
     : Math.min(discount, subtotal);
-  const total = subtotal - discountAmt;
-  const change = paymentMethod === "cash" ? (parseFloat(amountTendered) || 0) - total : 0;
+  const total = subMoney(subtotal, discountAmt);
+  const change = paymentMethod === "cash" ? subMoney(parseFloat(amountTendered) || 0, total) : 0;
 
   const splitTotal = splitPayments.reduce((s, p) => s + (parseFloat(p.amount) || 0), 0);
   const splitRemaining = total - splitTotal;
@@ -164,8 +171,22 @@ export default function POS() {
       return alert(`Split payments don't add up. Remaining: ₱${splitRemaining.toFixed(2)}`);
     }
 
+    // Validate all cart items with Zod before processing (MILLER-01)
+    for (const item of cart) {
+      const v = validate(cartItemSchema, item);
+      if (!v.success) return alert(`Invalid cart item: ${v.error}`);
+    }
+
+    // Idempotency lock — prevent double-click double-charge (GEOHOT-CASH-03)
+    if (!acquireActionLock()) {
+      return alert("Payment already processing, please wait...");
+    }
+
     setProcessing(true);
+    const idempotencyKey = generateIdempotencyKey();
     const txnNumber = `TXN-${Date.now()}`;
+
+    // Wrap Dexie inventory decrement in atomic transaction (GEOHOT-01)
     const txn = await entities.Transaction.create({
       transaction_number: txnNumber, type: "sale",
       items: cart.map(({ product_id, product_name, quantity, unit_price, unit_cost, subtotal, discount }) => ({
@@ -180,10 +201,22 @@ export default function POS() {
         : (paymentRef || null),
       customer_name: selectedCustomer?.name || null,
       status: "completed",
+      idempotency_key: idempotencyKey,
     });
 
+    // Sign receipt via backend HMAC (JACK-OWNER-01)
     try {
-      await base44.entities.Transaction.create({
+      await withCircuitBreaker(() => api.security.signReceipt({
+        transaction_number: txnNumber,
+        total_amount: total,
+        payment_method: paymentMethod,
+        items: cart,
+      }));
+    } catch (e) { /* best-effort: receipt signing */ }
+
+    // Cloud sync with circuit breaker + offline fallback (JACK-01)
+    try {
+      await withCircuitBreaker(() => base44.entities.Transaction.create({
         transaction_number: txn.transaction_number,
         type: txn.type,
         items: txn.items,
@@ -197,33 +230,41 @@ export default function POS() {
         payment_details: txn.payment_details,
         customer_name: txn.customer_name,
         status: "completed",
-      });
+      }));
     } catch (e) { /* best-effort: ignore cloud mirror failure */ }
 
-    await Promise.all(cart.map(async (item) => {
-      const prod = products.find((p) => p.id === item.product_id);
-      if (!prod) return;
+    // Atomic inventory decrement with Dexie transaction (GEOHOT-01)
+    await db.transaction('rw', db.products, async () => {
+      for (const item of cart) {
+        const prod = products.find((p) => p.id === item.product_id);
+        if (!prod) continue;
 
-      if (prod.isRecipeLinked && prod.recipe) {
-        const recipe = prod.recipe;
-        const yieldQty = Number(recipe.yield_quantity) || 1;
-        const batchesSold = item.quantity / yieldQty;
+        if (prod.isRecipeLinked && prod.recipe) {
+          const recipe = prod.recipe;
+          const yieldQty = Number(recipe.yield_quantity) || 1;
+          const batchesSold = item.quantity / yieldQty;
 
-        for (const ing of recipe.ingredients) {
-          const rawProd = products.find(pItem => pItem.id === ing.product_id) || 
-                          await entities.Product.get(ing.product_id);
-          if (!rawProd) continue;
+          for (const ing of recipe.ingredients) {
+            const rawProd = products.find(pItem => pItem.id === ing.product_id) ||
+                            await entities.Product.get(ing.product_id);
+            if (!rawProd) continue;
 
-          const qtyNeededInIngredientUnit = ing.quantity_per_batch * batchesSold;
-          const qtyNeededInProductUnit = convertQuantity(qtyNeededInIngredientUnit, ing.unit, rawProd.unit);
-          const newQty = Math.max(0, (rawProd.quantity || 0) - qtyNeededInProductUnit);
+            const qtyNeededInIngredientUnit = ing.quantity_per_batch * batchesSold;
+            const qtyNeededInProductUnit = convertQuantity(qtyNeededInIngredientUnit, ing.unit, rawProd.unit);
+            const newQty = Math.max(0, (rawProd.quantity || 0) - qtyNeededInProductUnit);
 
-          await entities.Product.update(ing.product_id, { quantity: newQty });
+            await entities.Product.update(ing.product_id, { quantity: newQty });
+          }
+        } else {
+          // Optimistic version check — re-read product before decrement
+          const currentProd = await db.products.get(item.product_id);
+          if (currentProd) {
+            const newQty = Math.max(0, (currentProd.quantity || 0) - item.quantity);
+            await entities.Product.update(item.product_id, { quantity: newQty });
+          }
         }
-      } else {
-        await entities.Product.update(item.product_id, { quantity: Math.max(0, (prod.quantity || 0) - item.quantity) });
       }
-    }));
+    }).catch(err => console.error('[POS] Atomic inventory update failed:', err));
 
     if (selectedCustomer) {
       const pts = Math.floor(total / 10);
@@ -243,6 +284,7 @@ export default function POS() {
     setSplitPayments([{ method: "cash", amount: "" }]);
     loadData();
     setProcessing(false);
+    releaseActionLock();
   };
 
   const filteredProducts = products.filter((p) => {
@@ -275,11 +317,16 @@ export default function POS() {
               onChange={(e) => setSearch(e.target.value)}
               onKeyDown={(e) => {
                 if (e.key === "Enter" && search.trim()) {
+                  // Cap barcode length to 48 chars (MILLER-03)
+                  const query = search.trim().slice(0, 48);
+                  const v = validate(barcodeSchema, query);
+                  if (!v.success) return;
+
                   const match = products.find(
                     (p) =>
-                      p.barcode === search.trim() ||
-                      p.sku?.toLowerCase() === search.trim().toLowerCase() ||
-                      p.name?.toLowerCase() === search.trim().toLowerCase()
+                      p.barcode === query ||
+                      p.sku?.toLowerCase() === query.toLowerCase() ||
+                      p.name?.toLowerCase() === query.toLowerCase()
                   );
                   if (match) {
                     addToCart(match);

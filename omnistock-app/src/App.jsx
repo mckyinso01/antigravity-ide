@@ -5,6 +5,8 @@ import { queryClientInstance } from '@/lib/query-client'
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
+import { RoleGuard } from '@/components/auth/RoleGuard';
+import { referralCodeSchema } from '@/lib/security/validators';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 
 // Layout
@@ -42,13 +44,17 @@ const ProtectedLayout = () => {
 const AuthenticatedApp = () => {
   const { isAuthenticated, isLoadingAuth, isLoadingPublicSettings, authError } = useAuth();
 
-  // Save referral code from URL before any auth redirect with defensive try-catch guard
+  // Save referral code from URL with alphanumeric sanitization (MITNICK-03)
   React.useEffect(() => {
     try {
       const params = new URLSearchParams(window.location.search);
       const ref = params.get('ref');
       if (ref) {
-        sessionStorage.setItem('pending_referral', ref);
+        // Sanitize: only allow alphanumeric, underscore, hyphen
+        const sanitized = ref.replace(/[^A-Za-z0-9_-]/g, '').slice(0, 50);
+        if (sanitized && referralCodeSchema.safeParse(sanitized).success) {
+          sessionStorage.setItem('pending_referral', sanitized);
+        }
       }
     } catch (err) {
       console.error("App referral code exception:", err);
@@ -80,20 +86,20 @@ const AuthenticatedApp = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/inventory" element={<Inventory />} />
         <Route path="/pos" element={<POS />} />
-        <Route path="/analytics" element={<Analytics />} />
-        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/analytics" element={<RoleGuard path="/analytics"><Analytics /></RoleGuard>} />
+        <Route path="/pricing" element={<RoleGuard path="/pricing"><Pricing /></RoleGuard>} />
         <Route path="/categories" element={<Categories />} />
-        <Route path="/suppliers" element={<Suppliers />} />
-        <Route path="/recipes" element={<Recipes />} />
+        <Route path="/suppliers" element={<RoleGuard path="/suppliers"><Suppliers /></RoleGuard>} />
+        <Route path="/recipes" element={<RoleGuard path="/recipes"><Recipes /></RoleGuard>} />
         <Route path="/alerts" element={<Alerts />} />
-        <Route path="/customers" element={<Customers />} />
-        <Route path="/purchase-orders" element={<PurchaseOrders />} />
-        <Route path="/stock-adjustments" element={<StockAdjustments />} />
-        <Route path="/sales-report" element={<SalesReport />} />
-        <Route path="/monetization" element={<Monetization />} />
-        <Route path="/settings" element={<Settings />} />
+        <Route path="/customers" element={<RoleGuard path="/customers"><Customers /></RoleGuard>} />
+        <Route path="/purchase-orders" element={<RoleGuard path="/purchase-orders"><PurchaseOrders /></RoleGuard>} />
+        <Route path="/stock-adjustments" element={<RoleGuard path="/stock-adjustments"><StockAdjustments /></RoleGuard>} />
+        <Route path="/sales-report" element={<RoleGuard path="/sales-report"><SalesReport /></RoleGuard>} />
+        <Route path="/monetization" element={<RoleGuard path="/monetization"><Monetization /></RoleGuard>} />
+        <Route path="/settings" element={<RoleGuard path="/settings"><Settings /></RoleGuard>} />
         <Route path="/automations" element={<Automations />} />
-        <Route path="/production-engine" element={<ProductionEngine />} />
+        <Route path="/production-engine" element={<RoleGuard path="/production-engine"><ProductionEngine /></RoleGuard>} />
       </Route>
       <Route path="/landing" element={<Landing />} />
       <Route path="*" element={<PageNotFound />} />

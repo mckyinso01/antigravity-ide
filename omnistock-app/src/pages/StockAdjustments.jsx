@@ -10,6 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Plus, ArrowUp, ArrowDown, RefreshCw, Package, X } from "lucide-react";
 import { format } from "date-fns";
 import { trackPriceChangesFromAdjustment } from "@/lib/priceChangeTracker";
+import { validate, stockAdjustmentSchema } from "@/lib/security/validators";
 
 const REASONS = ["restock", "damaged", "expired", "lost", "theft", "correction", "returned", "other"];
 const REASON_COLORS = {
@@ -63,15 +64,40 @@ export default function StockAdjustments() {
   const handleSave = async () => {
     if (!form.product_id) return alert("Select a product.");
     if (!form.quantity_change || form.quantity_change <= 0) return alert("Enter a valid quantity.");
+
     const prod = products.find(p => p.id === form.product_id);
     if (!prod) return;
 
-    setSaving(true);
+    // Validate with Zod before processing (MILLER-01, MILLER-INV-03)
     const before = prod.quantity || 0;
     let after = before;
     if (form.adjustment_type === "add") after = before + form.quantity_change;
     else if (form.adjustment_type === "subtract") after = Math.max(0, before - form.quantity_change);
     else if (form.adjustment_type === "set") after = form.quantity_change;
+
+    const adjustmentData = {
+      product_id: form.product_id,
+      product_name: prod.name,
+      adjustment_type: form.adjustment_type,
+      quantity_before: before,
+      quantity_change: form.quantity_change,
+      quantity_after: after,
+      reason: form.reason,
+      notes: form.notes,
+    };
+
+    const v = validate(stockAdjustmentSchema, adjustmentData);
+    if (!v.success) return alert(`Validation failed: ${v.error}`);
+
+    // Dual-party sign-off for write-offs > $100 (JACK-INV-03)
+    const valueEstimate = (prod.cost || 0) * form.quantity_change;
+    if (valueEstimate > 100 && form.reason !== 'restock' && form.reason !== 'returned') {
+      if (!confirm(`This write-off is estimated at $${valueEstimate.toFixed(2)}.\nDual-party sign-off is required.\nContinue only if supervisor has approved.`)) {
+        return;
+      }
+    }
+
+    setSaving(true);
 
     await Promise.all([
       entities.Product.update(form.product_id, { quantity: after }),
